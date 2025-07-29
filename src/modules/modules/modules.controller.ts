@@ -1,7 +1,8 @@
-import { Controller, Get, Param, ParseUUIDPipe } from '@nestjs/common';
-import { ApiOkResponse } from '@nestjs/swagger';
+import { Controller, Get, Param, ParseUUIDPipe, Query } from '@nestjs/common';
+import { ApiOkResponse, ApiQuery } from '@nestjs/swagger';
 import { ModulesService } from './modules.service';
 import { Module as ModuleEntity } from './models/Module.entity';
+import { ModulesQueryDto } from './dto/modules-query.dto';
 
 @Controller('modules')
 export class ModulesController {
@@ -17,7 +18,28 @@ export class ModulesController {
 
   @Get()
   @ApiOkResponse({ type: [ModuleEntity] })
-  async getModules(): Promise<ModuleEntity[]> {
-    return this.modulesService.findAll();
+  @ApiQuery({
+    name: 'minQuestions',
+    required: false,
+    description: 'Filter modules by minimum number of questions',
+    type: 'integer',
+    example: 5,
+  })
+  @ApiQuery({
+    name: 'maxQuestions',
+    required: false,
+    description: 'Filter modules by maximum number of questions',
+    type: 'integer',
+    example: 20,
+  })
+  @ApiQuery({
+    name: 'exactQuestions',
+    required: false,
+    description: 'Filter modules by exact number of questions',
+    type: 'integer',
+    example: 10,
+  })
+  async getModules(@Query() query: ModulesQueryDto): Promise<ModuleEntity[]> {
+    return this.modulesService.findAll(query);
   }
 }

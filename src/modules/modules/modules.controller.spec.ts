@@ -1,30 +1,111 @@
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { ModulesController } from './modules.controller';
 import { ModulesService } from './modules.service';
+import { Module as ModuleEntity } from './models/Module.entity';
+
+const mockModulesService = {
+  findUnique: vi.fn(),
+  findAll: vi.fn(),
+};
+
+let controller: ModulesController;
+
+beforeEach(() => {
+  controller = new ModulesController(
+    mockModulesService as unknown as ModulesService,
+  );
+  vi.clearAllMocks();
+});
 
 describe('ModulesController', () => {
-  it('gets a module from service', async () => {
-    const service = {
-      findUnique: vi.fn().mockResolvedValue({
+  describe('getModule', () => {
+    it('gets a module from service', async () => {
+      const expectedModule = {
         id: 'm1',
         name: { en_text: 'mod', he_text: 'מודול' },
         subModules: [],
         parentModules: [],
-        prerequisites: [],
-        postrequisites: [],
-      }),
-    } as unknown as ModulesService;
+      };
 
-    const controller = new ModulesController(service);
-    const result = await controller.getModule('m1');
+      mockModulesService.findUnique.mockResolvedValue(expectedModule);
 
-    expect(result).toEqual({
-      id: 'm1',
-      name: { en_text: 'mod', he_text: 'מודול' },
-      subModules: [],
-      parentModules: [],
-      prerequisites: [],
-      postrequisites: [],
+      const result = await controller.getModule('m1');
+
+      expect(mockModulesService.findUnique).toHaveBeenCalledWith('m1');
+      expect(result).toEqual(expectedModule);
+    });
+
+    it('should return null when module not found', async () => {
+      const moduleId = '550e8400-e29b-41d4-a716-446655440000';
+      mockModulesService.findUnique.mockResolvedValue(null);
+
+      const result = await controller.getModule(moduleId);
+
+      expect(result).toBeNull();
+    });
+  });
+
+  describe('getModules', () => {
+    it('should return all modules when no filters provided', async () => {
+      const expectedModules: ModuleEntity[] = [
+        {
+          id: '1',
+          name: {
+            en_text: 'Module 1',
+            he_text: 'מודול 1',
+          },
+        },
+        {
+          id: '2',
+          name: {
+            en_text: 'Module 2',
+            he_text: 'מודול 2',
+          },
+        },
+      ];
+
+      mockModulesService.findAll.mockResolvedValue(expectedModules);
+
+      const result = await controller.getModules({});
+
+      expect(mockModulesService.findAll).toHaveBeenCalledWith({});
+      expect(result).toEqual(expectedModules);
+    });
+
+    it('should pass minQuestions filter to service', async () => {
+      const queryDto = { minQuestions: 5 };
+      const expectedModules: ModuleEntity[] = [];
+
+      mockModulesService.findAll.mockResolvedValue(expectedModules);
+
+      const result = await controller.getModules(queryDto);
+
+      expect(mockModulesService.findAll).toHaveBeenCalledWith(queryDto);
+      expect(result).toEqual(expectedModules);
+    });
+
+    it('should pass exactQuestions filter to service', async () => {
+      const queryDto = { exactQuestions: 3 };
+      const expectedModules: ModuleEntity[] = [];
+
+      mockModulesService.findAll.mockResolvedValue(expectedModules);
+
+      const result = await controller.getModules(queryDto);
+
+      expect(mockModulesService.findAll).toHaveBeenCalledWith(queryDto);
+      expect(result).toEqual(expectedModules);
+    });
+
+    it('should pass combined filters to service', async () => {
+      const queryDto = { minQuestions: 2, maxQuestions: 8 };
+      const expectedModules: ModuleEntity[] = [];
+
+      mockModulesService.findAll.mockResolvedValue(expectedModules);
+
+      const result = await controller.getModules(queryDto);
+
+      expect(mockModulesService.findAll).toHaveBeenCalledWith(queryDto);
+      expect(result).toEqual(expectedModules);
     });
   });
 });
