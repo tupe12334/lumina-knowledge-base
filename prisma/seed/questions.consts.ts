@@ -573,4 +573,92 @@ export const QUESTIONS: QuestionSeedData[] = [
       },
     ],
   },
+  {
+    id: '7eeac0c9-70da-41c9-81c5-8d7d021d35de',
+    translationId: '87bf2c16-3e44-4a93-b2c4-abead40c51f5',
+    text: {
+      en_text:
+        'How many ways can you choose 5 cards from a standard deck such that exactly 3 are hearts?',
+      he_text:
+        'בכמה דרכים ניתן לבחור 5 קלפים מחבילת קלפים רגילה כך שבדיוק 3 מתוכם יהיו לבבות?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: '9c8e5d2a-4b7f-4c8d-9e0a-1b2c3d4e5f6a',
+    answers: [
+      {
+        id: '1821e0aa-3ee5-4b41-8084-876b59401015',
+        numberAnswer: {
+          id: '5e190214-b2d2-45bf-b2d8-d0ebc451a80b',
+          value: 211926,
+        },
+      },
+    ],
+  },
+  {
+    id: 'c3ee52fe-d3aa-4766-b37a-e27db485e155',
+    translationId: '5f9313d3-6258-4fe1-87f6-21a39af92d29',
+    text: {
+      en_text:
+        'From a group of 7 men and 5 women, how many committees of 4 can be formed that contain at least 2 women?',
+      he_text:
+        'מתוך קבוצה של 7 גברים ו־5 נשים, כמה ועדות של 4 אפשר להרכיב שבהן יש לפחות 2 נשים?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: '9c8e5d2a-4b7f-4c8d-9e0a-1b2c3d4e5f6a',
+    answers: [
+      {
+        id: 'f35b76ba-4d11-4978-868c-854c1a3c521d',
+        numberAnswer: {
+          id: 'ce79c2bd-dfeb-4c6f-9c5e-9c2f56d72835',
+          value: 285,
+        },
+      },
+    ],
+  },
+  {
+    id: 'd16b0597-0099-4399-b68e-e383e7ce9c2b',
+    translationId: '21885747-9432-4370-8901-0e0cf137297c',
+    text: {
+      en_text:
+        'How many ways can 8 identical balls be distributed into 4 distinct boxes if each box must contain at least one ball?',
+      he_text:
+        'בכמה דרכים ניתן לחלק 8 כדורים זהים ל־4 תיבות שונות כך שבכל תיבה יהיה לפחות כדור אחד?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: '9c8e5d2a-4b7f-4c8d-9e0a-1b2c3d4e5f6a',
+    answers: [
+      {
+        id: '8b528449-52c3-4714-9748-6fc6a7903d44',
+        numberAnswer: {
+          id: '427c74b8-1687-44d5-8887-ee57da5a0353',
+          value: 35,
+        },
+      },
+    ],
+  },
+  {
+    id: 'afde050e-2e6a-498d-9f60-41a0a4d6ad1e',
+    translationId: 'f39a03e3-8807-462b-bb79-0a8f5d3afbc7',
+    text: {
+      en_text:
+        'How many non‐negative integer solutions are there to x₁ + x₂ + x₃ + x₄ = 15 if each xᵢ is at most 6?',
+      he_text:
+        'כמה פתרונות במספרים שלמים אי‐שליליים קיימים למשוואה x₁ + x₂ + x₃ + x₄ = 15 כאשר כל xᵢ אינו עולה על 6?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: '9c8e5d2a-4b7f-4c8d-9e0a-1b2c3d4e5f6a',
+    answers: [
+      {
+        id: '3b3f073f-1d7f-4dc8-a68e-420466cb4dec',
+        numberAnswer: {
+          id: '43e640b6-8d6b-4daf-a2c7-66f7b322aebc',
+          value: 180,
+        },
+      },
+    ],
+  },
 ] satisfies QuestionSeedData[];
