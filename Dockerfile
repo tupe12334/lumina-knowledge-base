@@ -29,7 +29,6 @@ RUN --mount=type=cache,target=/root/.local/share/pnpm/store \
 
 # Build the project
 COPY --from=builder /app/out/full/ .
-RUN pnpm turbo run build --filter=@lumina/env-config --filter=@lumina/services-configs
 RUN pnpm turbo run build --filter=@lumina/knowledge-base
 
 # Stage 4: Production image

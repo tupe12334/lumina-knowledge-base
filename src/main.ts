@@ -1,8 +1,8 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { setupSwagger } from './swagger/setup-swagger';
-import { DEFAULT_CORS } from '@lumina/services-configs';
 import { env } from './env';
+import { DEFAULT_CORS } from './consts';
 
 process.title = 'lumina-server';
 

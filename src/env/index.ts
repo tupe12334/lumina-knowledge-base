@@ -1,4 +1,3 @@
-import { loadEnv } from '@lumina/env-config';
 import { serverEnvSchema } from './schema';
 
-export const env = loadEnv(serverEnvSchema);
+export const env = serverEnvSchema.parse(process.env);
