@@ -605,6 +605,11 @@ exports[`seed snapshot > saves seeded data snapshot 1`] = `
     },
     {
       "createdAt": 1970-01-01T00:00:00.000Z,
+      "id": "c6dd59ac-1802-4bc9-b91e-ca77bb32620e",
+      "updatedAt": null,
+    },
+    {
+      "createdAt": 1970-01-01T00:00:00.000Z,
       "id": "78123942-6F56-4C66-8881-B49BC26E107D",
       "updatedAt": null,
     },
@@ -1889,6 +1894,13 @@ exports[`seed snapshot > saves seeded data snapshot 1`] = `
       "createdAt": 1970-01-01T00:00:00.000Z,
       "id": "9c8e5d2a-4b7f-4c8d-9e0a-1b2c3d4e5f6a",
       "translationId": "b8a9c2d3-4e5f-4567-8901-2a3b4c5d6e7f",
+      "updatedAt": null,
+    },
+    {
+      "blockId": "c6dd59ac-1802-4bc9-b91e-ca77bb32620e",
+      "createdAt": 1970-01-01T00:00:00.000Z,
+      "id": "c6dd59ac-1802-4bc9-b91e-ca77bb32620e",
+      "translationId": "b046c3a7-4e8f-4571-a015-0a7cc33daca2",
       "updatedAt": null,
     },
     {
@@ -3559,6 +3571,13 @@ In the Faculty of Arts, you’re not just learning about the world — you’re 
       "en_text": "Combinations",
       "he_text": "חליפות",
       "id": "b8a9c2d3-4e5f-4567-8901-2a3b4c5d6e7f",
+      "updatedAt": null,
+    },
+    {
+      "createdAt": 1970-01-01T00:00:00.000Z,
+      "en_text": "Permutations",
+      "he_text": "צירופים",
+      "id": "b046c3a7-4e8f-4571-a015-0a7cc33daca2",
       "updatedAt": null,
     },
     {

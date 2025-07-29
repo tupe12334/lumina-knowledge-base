@@ -51,6 +51,7 @@ export const seedModules = async (
       'Multiplication Principle': 'A468A6C2-1D32-47D6-BC32-562F2F71BCB3',
       'Min Max Algorithm': 'f5f24066-f9e1-4087-9d6a-598042cb0d2b',
       Combinations: 'b8a9c2d3-4e5f-4567-8901-2a3b4c5d6e7f',
+      Permutations: 'b046c3a7-4e8f-4571-a015-0a7cc33daca2',
     };
     return translationMap[moduleText] || '';
   };
@@ -99,6 +100,7 @@ export const seedModules = async (
     'Multiplication Principle': '81BE3915-2C63-470E-85FE-55C1062DEFF3',
     'Min Max Algorithm': '70bf7dc6-cbb8-4f2e-b2e3-1736586c7d9d',
     Combinations: '9c8e5d2a-4b7f-4c8d-9e0a-1b2c3d4e5f6a',
+    Permutations: 'c6dd59ac-1802-4bc9-b91e-ca77bb32620e',
   };
 
   const modules = [
@@ -217,6 +219,12 @@ export const seedModules = async (
     {
       en_text: 'Combinations',
       he_text: 'חליפות',
+      parent: 'Combinatorics',
+      course: 'Discrete Mathematics',
+    },
+    {
+      en_text: 'Permutations',
+      he_text: 'צירופים',
       parent: 'Combinatorics',
       course: 'Discrete Mathematics',
     },
