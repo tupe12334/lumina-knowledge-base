@@ -526,4 +526,25 @@ export const QUESTIONS: QuestionSeedData[] = [
       },
     ],
   },
+  {
+    id: '3b84d950-8d79-4dd2-92f5-3e231ba870ef',
+    translationId: 'f4e15a03-0822-47ca-ab99-522416a28365',
+    text: {
+      en_text:
+        'Let A and B be finite sets with |A| = 3 and |B| = 4. How many elements does A × B contain?',
+      he_text:
+        'נניח A ו־B הן קבוצות סופיות שמספר איבריהן הוא |A| = 3 ו־|B| = 4. כמה איברים מכילה המכפלה הקרטזית A × B?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: '81BE3915-2C63-470E-85FE-55C1062DEFF3',
+    answers: [
+      {
+        id: '1e7deeb9-e88c-4c91-a95c-79536c6be7cd',
+        numberAnswer: {
+          value: 12,
+        },
+      },
+    ],
+  },
 ] satisfies QuestionSeedData[];
