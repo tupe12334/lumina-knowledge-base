@@ -536,6 +536,46 @@ export const QUESTIONS: QuestionSeedData[] = [
     ],
   },
   {
+    id: 'D0920552-1AFA-493D-9019-4FFDBE079A32',
+    translationId: 'E07E39B7-1EDE-4F5F-B988-01D92FED7BE3',
+    text: {
+      en_text: "How many permutations are there of the letters in the word 'APPLE'?",
+      he_text: "כמה תמורות יש לאותיות במילה 'APPLE'?",
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: '2b8d7f9c-3a4e-4b5f-8c9d-1e2f3a4b5c6d',
+    answers: [
+      {
+        id: 'D0920552-1AFA-493D-9019-4FFDBE079A32-answer',
+        numberAnswer: {
+          id: 'D0920552-1AFA-493D-9019-4FFDBE079A32-number-answer',
+          value: 60,
+        },
+      },
+    ],
+  },
+  {
+    id: '9C030140-9A43-46ED-9B57-9E7A17ABEB41',
+    translationId: 'F2EA2E63-3376-4CB8-85EA-4F70DE1603AB',
+    text: {
+      en_text: "In how many distinct ways can the letters of the word 'MISSISSIPPI' be arranged?",
+      he_text: "בכמה דרכים שונות ניתן לסדר את האותיות במילה 'MISSISSIPPI'?",
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: '2b8d7f9c-3a4e-4b5f-8c9d-1e2f3a4b5c6d',
+    answers: [
+      {
+        id: '9C030140-9A43-46ED-9B57-9E7A17ABEB41-answer',
+        numberAnswer: {
+          id: '9C030140-9A43-46ED-9B57-9E7A17ABEB41-number-answer',
+          value: 34650,
+        },
+      },
+    ],
+  },
+  {
     id: 'ec882e46-05be-4b12-9715-514963a7fdc1',
     translationId: '894bc578-2725-4d23-bf16-b57ccf3b0a80',
     text: {
