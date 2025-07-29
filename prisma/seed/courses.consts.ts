@@ -618,4 +618,13 @@ export const courses = [
     disciplineId: disciplineIdMap['Computer Science'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
+  {
+    id: 'de4a2333-2f9f-46c2-8006-38fa9e9cc466',
+    blockId: '34882399-4d6c-4812-a01f-f1e6aaca802f',
+    translationId: 'b5b8e1fb-02be-4c0f-b0dd-d0cf037f887c',
+    en_name: 'Artificial Intelligence',
+    he_name: 'בינה מלכותית',
+    disciplineId: disciplineIdMap['Computer Science'],
+    universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
+  },
 ];
