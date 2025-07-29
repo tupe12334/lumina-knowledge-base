@@ -484,4 +484,24 @@ export const QUESTIONS: QuestionSeedData[] = [
       },
     ],
   },
+  {
+    id: 'c1533f9b-bf48-401f-9055-496e6cf1e7ff',
+    translationId: '7750cecd-29cb-4eb1-b513-328284bf9866',
+    text: {
+      en_text:
+        'A menu offers 3 appetizers and 4 desserts. How many choices are available if you may choose one item from either category?',
+      he_text:
+        'במסעדה מוצעים 3 מתאבנים ו־4 קינוחים. כמה אפשרויות בחירה יש אם ניתן לבחור פריט אחד מאחת הקטגוריות?',
+    },
+    type: QuestionType.value,
+    moduleId: '78123942-6F56-4C66-8881-B49BC26E107D',
+    answers: [
+      {
+        id: 'ce178537-7265-4713-ab70-ae7e2a2f57b3',
+        numberAnswer: {
+          value: 7,
+        },
+      },
+    ],
+  },
 ] satisfies QuestionSeedData[];
