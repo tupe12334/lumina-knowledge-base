@@ -21,7 +21,9 @@ export type QuestionSeedData = {
       isCorrect: boolean;
     }[];
     unitAnswer?: Prisma.UnitAnswerUncheckedCreateWithoutAnswerInput;
-    numberAnswer?: Prisma.NumberAnswerUncheckedCreateWithoutAnswerInput;
+    numberAnswer?: Prisma.NumberAnswerUncheckedCreateWithoutAnswerInput & {
+      id: string;
+    };
   }[];
   parts?: {
     id: string;
@@ -41,7 +43,9 @@ export type QuestionSeedData = {
           isCorrect: boolean;
         }[];
         unitAnswer?: Prisma.UnitAnswerUncheckedCreateWithoutAnswerInput;
-        numberAnswer?: Prisma.NumberAnswerUncheckedCreateWithoutAnswerInput;
+        numberAnswer?: Prisma.NumberAnswerUncheckedCreateWithoutAnswerInput & {
+          id: string;
+        };
       }[];
     };
   }[];
@@ -193,10 +197,12 @@ export async function seedQuestions(tx: Prisma.TransactionClient) {
             await tx.numberAnswer.upsert({
               where: { answerId: answer.id },
               update: {
+                id: numberAnswer.id,
                 value: numberAnswer.value,
                 answer: { connect: { id: answer.id } },
               },
               create: {
+                id: numberAnswer.id,
                 value: numberAnswer.value,
                 answer: { connect: { id: answer.id } },
               },
@@ -291,10 +297,12 @@ export async function seedQuestions(tx: Prisma.TransactionClient) {
         await tx.numberAnswer.upsert({
           where: { answerId: answer.id },
           update: {
+            id: numberAnswer.id,
             value: numberAnswer.value,
             answer: { connect: { id: answer.id } },
           },
           create: {
+            id: numberAnswer.id,
             value: numberAnswer.value,
             answer: { connect: { id: answer.id } },
           },

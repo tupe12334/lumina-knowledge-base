@@ -447,6 +447,7 @@ export const QUESTIONS: QuestionSeedData[] = [
             {
               id: 'a73521cc-1565-4d86-8719-c26456aaeb9d',
               numberAnswer: {
+                id: '7711ec4b-750b-4a0c-a28c-2a2d5f161e4a',
                 value: 1500625,
               },
             },
@@ -471,6 +472,7 @@ export const QUESTIONS: QuestionSeedData[] = [
             {
               id: '71ab66ac-28a2-4a66-a331-5131519ef454',
               numberAnswer: {
+                id: 'ad39d2ef-8ba8-41b2-b19d-dcd4a24d2a59',
                 value: 919602,
               },
             },
@@ -500,6 +502,7 @@ export const QUESTIONS: QuestionSeedData[] = [
       {
         id: 'ce178537-7265-4713-ab70-ae7e2a2f57b3',
         numberAnswer: {
+          id: '252e9f47-f4bc-41d5-a874-833382d06df2',
           value: 7,
         },
       },
@@ -521,6 +524,7 @@ export const QUESTIONS: QuestionSeedData[] = [
       {
         id: '0119d10c-89a2-4f4a-90c2-f64dbde97558',
         numberAnswer: {
+          id: 'db91b513-9e85-4a0e-852c-6827ab6dc877',
           value: 12,
         },
       },
@@ -542,6 +546,7 @@ export const QUESTIONS: QuestionSeedData[] = [
       {
         id: '1e7deeb9-e88c-4c91-a95c-79536c6be7cd',
         numberAnswer: {
+          id: 'bd264741-e9f4-4e92-847d-8a6ee7ea8ed0',
           value: 12,
         },
       },
