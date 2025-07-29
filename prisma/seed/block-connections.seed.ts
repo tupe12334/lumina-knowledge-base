@@ -16,8 +16,10 @@ export async function seedBlockConnections(
 
   for (const connection of connections) {
     try {
-      await tx.blockRelationship.create({
-        data: {
+      await tx.blockRelationship.upsert({
+        where: { id: connection.id },
+        update: {},
+        create: {
           id: connection.id,
           prerequisiteId: connection.prerequisiteBlockId,
           postrequisiteId: connection.postrequisiteBlockId,

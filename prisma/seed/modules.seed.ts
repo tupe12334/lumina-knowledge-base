@@ -47,6 +47,8 @@ export const seedModules = async (
       'Graph Theory': '09d74ad2-a8eb-4120-90df-81190243d3cf',
       Combinatorics: 'afb0c4a6-d7ce-4a3b-a1ee-28c783f4be8a',
       Permutation: 'f272cd23-f130-4467-9fad-b1ec33abc0e1',
+      'Sum Principle': '187640FA-5A52-4AC3-8EBC-1FB89091E6E8',
+      'Multiplication Principle': 'A468A6C2-1D32-47D6-BC32-562F2F71BCB3',
     };
     return translationMap[moduleText] || '';
   };
@@ -91,6 +93,8 @@ export const seedModules = async (
     'Graph Theory': '8f4e9a3b-2c1d-4f5e-9a8b-7c3d6e5f8a9b',
     Combinatorics: '2b8d7f9c-3a4e-4b5f-8c9d-1e2f3a4b5c6d',
     Permutation: '65acc4b0-c258-4bd0-8eb0-e686006d224d',
+    'Sum Principle': '78123942-6F56-4C66-8881-B49BC26E107D',
+    'Multiplication Principle': '81BE3915-2C63-470E-85FE-55C1062DEFF3',
   };
 
   const modules = [
@@ -203,6 +207,18 @@ export const seedModules = async (
     {
       en_text: 'Permutation',
       he_text: 'תמורות',
+      parent: 'Combinatorics',
+      course: 'Discrete Mathematics',
+    },
+    {
+      en_text: 'Sum Principle',
+      he_text: 'עקרון החיבור',
+      parent: 'Combinatorics',
+      course: 'Discrete Mathematics',
+    },
+    {
+      en_text: 'Multiplication Principle',
+      he_text: 'עקרון הכפל',
       parent: 'Combinatorics',
       course: 'Discrete Mathematics',
     },

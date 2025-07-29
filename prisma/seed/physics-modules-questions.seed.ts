@@ -534,7 +534,7 @@ export const seedPhysicsModulesAndQuestions = async (
     const selectAnswers = [
       {
         id: '3c99eef6-652f-4dac-8fe2-9191f02ffc38',
-        translationId: 'sa-distance-1-7km-text',
+        translationId: 'a34d7a4b-9f41-4739-becb-a920ec24f13c',
         text: { en_text: '0.7 km', he_text: '0.7 ק״מ' },
         isCorrect: false,
       },

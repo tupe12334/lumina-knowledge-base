@@ -144,7 +144,7 @@ export const QUESTIONS: QuestionSeedData[] = [
           },
           {
             id: 'OPT4-Q1A-2024-EXAM-LOGIC-FORMALIZATION',
-            translationId: '2c3e4a5b-7d8f-4e9a-1b2c-1a2b3c4d5e6f',
+            translationId: '338bee00-49e8-47f1-afd7-ab19015bdf2a',
             text: {
               en_text: 'All previous statements are equivalent',
               he_text: 'כל ההצהרות הקודמות שוות',
@@ -172,7 +172,7 @@ export const QUESTIONS: QuestionSeedData[] = [
         selectAnswers: [
           {
             id: 'OPT1-Q1B-2024-EXAM-SET-THEORY',
-            translationId: '3d4f5b6c-8e9f-4a1b-2c3d-2b3c4d5e6f7a',
+            translationId: 'd18996b8-4006-460d-a20c-720e7f830eb1',
             text: {
               en_text:
                 'There exists a small open interval (a,b) such that A ∩ (a,b) = ℵ₀',
@@ -182,7 +182,7 @@ export const QUESTIONS: QuestionSeedData[] = [
           },
           {
             id: 'OPT2-Q1B-2024-EXAM-SET-THEORY',
-            translationId: '4e5a6c7d-9f1a-4b2c-3d4e-3c4d5e6f7a8b',
+            translationId: '85854db4-bde9-4adf-b574-20fb84bd9d8e',
             text: {
               en_text:
                 'There exists a small open interval (a,b) such that A ∩ (a,b) ≠ ℵ₀',
@@ -192,7 +192,7 @@ export const QUESTIONS: QuestionSeedData[] = [
           },
           {
             id: 'OPT3-Q1B-2024-EXAM-SET-THEORY',
-            translationId: '5f6b7d8e-1a2b-4c3d-4e5f-4d5e6f7a8b9c',
+            translationId: 'ed575596-a4f8-4dad-a044-1cd48d755c80',
             text: {
               en_text:
                 'There exists a small open interval (a,b) such that (ℝ \\ A) ∩ (a,b) = ℵ₀',
@@ -202,7 +202,7 @@ export const QUESTIONS: QuestionSeedData[] = [
           },
           {
             id: 'OPT4-Q1B-2024-EXAM-SET-THEORY',
-            translationId: '6a7c8e9f-2b3c-4d4e-5f6a-5e6f7a8b9c1d',
+            translationId: '90791bd5-4763-4ab5-84c1-1a5917180894',
             text: {
               en_text: 'All previous statements are equivalent',
               he_text: 'כל ההצהרות הקודמות שוות',
@@ -228,7 +228,7 @@ export const QUESTIONS: QuestionSeedData[] = [
         selectAnswers: [
           {
             id: 'OPT1-Q1C-2024-EXAM-GRAPH-THEORY',
-            translationId: '7b8d9f1a-3c4d-4e5f-6a7b-6f7a8b9c1d2e',
+            translationId: 'e625868b-df75-4b35-ba75-50c73a5759ef',
             text: {
               en_text: 'G is not planar',
               he_text: 'G אינו מישורי',
@@ -237,7 +237,7 @@ export const QUESTIONS: QuestionSeedData[] = [
           },
           {
             id: 'OPT2-Q1C-2024-EXAM-GRAPH-THEORY',
-            translationId: '8c9e1b2c-4d5e-4f6a-7b8c-7a8b9c1d2e3f',
+            translationId: '8e8e35ce-8ff5-442d-803f-c3086f0abc74',
             text: {
               en_text: 'G is not Hamiltonian',
               he_text: 'G אינו המילטוני',
@@ -330,7 +330,7 @@ export const QUESTIONS: QuestionSeedData[] = [
               selectAnswers: [
                 {
                   id: 'A5-PART1-YES-2024-EXAM-GRAPH-ANALYSIS',
-                  translationId: '2f3b4d5e-7a8c-4f9a-1b2d-1d2e3f4a5b6c',
+                  translationId: 'c1d6bbad-b174-4f06-8dbd-89aaac420be5',
                   text: {
                     en_text: 'Yes',
                     he_text: 'כן',
@@ -339,7 +339,7 @@ export const QUESTIONS: QuestionSeedData[] = [
                 },
                 {
                   id: 'A5-PART1-NO-2024-EXAM-GRAPH-ANALYSIS',
-                  translationId: '3a4c5e6f-8b9d-4a1c-2e3f-2e3f4a5b6c7d',
+                  translationId: '5ad96b46-8670-4368-858b-453472383bd2',
                   text: {
                     en_text: 'No',
                     he_text: 'לא',
@@ -369,7 +369,7 @@ export const QUESTIONS: QuestionSeedData[] = [
               selectAnswers: [
                 {
                   id: 'A5-PART2-YES-2024-EXAM-GRAPH-ANALYSIS',
-                  translationId: '4b5d6f7a-9c1e-4b2d-3f4a-3f4a5b6c7d8e',
+                  translationId: '95bdde6b-9777-4473-a5ff-b2cd6592231e',
                   text: {
                     en_text: 'Yes',
                     he_text: 'כן',
@@ -378,7 +378,7 @@ export const QUESTIONS: QuestionSeedData[] = [
                 },
                 {
                   id: 'A5-PART2-NO-2024-EXAM-GRAPH-ANALYSIS',
-                  translationId: '5c6e7a8b-1d2f-4c3e-4a5b-4a5b6c7d8e9f',
+                  translationId: 'eedc4961-4bf4-4c36-8fa2-2e489decc386',
                   text: {
                     en_text: 'No',
                     he_text: 'לא',
