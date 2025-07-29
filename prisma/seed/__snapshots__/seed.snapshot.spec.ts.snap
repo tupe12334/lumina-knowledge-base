@@ -29,12 +29,6 @@ exports[`seed snapshot > saves seeded data snapshot 1`] = `
     },
     {
       "createdAt": 1970-01-01T00:00:00.000Z,
-      "id": "A2-2024-EXAM-RELATIONS-EQUIVALENCE",
-      "questionId": "15285731-9c62-4bff-8cbb-e6e7ce529286",
-      "updatedAt": null,
-    },
-    {
-      "createdAt": 1970-01-01T00:00:00.000Z,
       "id": "A4-2024-EXAM-SEQUENCES-LETTERS",
       "questionId": "6a8b4690-6daf-44f4-b58d-23ff1ff8d51d",
       "updatedAt": null,
@@ -621,6 +615,11 @@ exports[`seed snapshot > saves seeded data snapshot 1`] = `
     },
     {
       "createdAt": 1970-01-01T00:00:00.000Z,
+      "id": "f2866b62-f4f6-4e22-8fcc-f4bd8bbdb275",
+      "updatedAt": null,
+    },
+    {
+      "createdAt": 1970-01-01T00:00:00.000Z,
       "id": "78123942-6F56-4C66-8881-B49BC26E107D",
       "updatedAt": null,
     },
@@ -756,6 +755,13 @@ exports[`seed snapshot > saves seeded data snapshot 1`] = `
       "id": "fcfd331c-bd37-4a51-b638-866fa5df19fe",
       "postrequisiteId": "87a1da94-793c-4565-8706-8fd073a50cf6",
       "prerequisiteId": "9c8e5d2a-4b7f-4c8d-9e0a-1b2c3d4e5f6a",
+      "updatedAt": null,
+    },
+    {
+      "createdAt": 1970-01-01T00:00:00.000Z,
+      "id": "27d30775-72bb-41a2-b974-3d9883e6bb12",
+      "postrequisiteId": "f2866b62-f4f6-4e22-8fcc-f4bd8bbdb275",
+      "prerequisiteId": "c6dd59ac-1802-4bc9-b91e-ca77bb32620e",
       "updatedAt": null,
     },
     {
@@ -1929,6 +1935,13 @@ exports[`seed snapshot > saves seeded data snapshot 1`] = `
       "updatedAt": null,
     },
     {
+      "blockId": "f2866b62-f4f6-4e22-8fcc-f4bd8bbdb275",
+      "createdAt": 1970-01-01T00:00:00.000Z,
+      "id": "f2866b62-f4f6-4e22-8fcc-f4bd8bbdb275",
+      "translationId": "e7c5b81e-5aad-4715-ab5d-c08122c05ef1",
+      "updatedAt": null,
+    },
+    {
       "blockId": "78123942-6F56-4C66-8881-B49BC26E107D",
       "createdAt": 1970-01-01T00:00:00.000Z,
       "id": "78123942-6F56-4C66-8881-B49BC26E107D",
@@ -2146,15 +2159,6 @@ exports[`seed snapshot > saves seeded data snapshot 1`] = `
     {
       "createdAt": 1970-01-01T00:00:00.000Z,
       "deletedAt": null,
-      "id": "15285731-9c62-4bff-8cbb-e6e7ce529286",
-      "translationId": "20e2f3d7-584a-4cb0-a2b0-d876da5e5343",
-      "type": "void",
-      "updatedAt": null,
-      "validationStatus": "ai_generated",
-    },
-    {
-      "createdAt": 1970-01-01T00:00:00.000Z,
-      "deletedAt": null,
       "id": "6a8b4690-6daf-44f4-b58d-23ff1ff8d51d",
       "translationId": "d5f0c74e-7fa6-442d-9339-635eafd81a40",
       "type": "void",
@@ -2362,6 +2366,14 @@ exports[`seed snapshot > saves seeded data snapshot 1`] = `
       "blockRelationshipId": "fcfd331c-bd37-4a51-b638-866fa5df19fe",
       "createdAt": 1970-01-01T00:00:00.000Z,
       "id": "60158639-40cb-43b6-b89e-57fe34cd9800",
+      "key": "TYPE",
+      "updatedAt": null,
+      "value": "hard",
+    },
+    {
+      "blockRelationshipId": "27d30775-72bb-41a2-b974-3d9883e6bb12",
+      "createdAt": 1970-01-01T00:00:00.000Z,
+      "id": "3a2e73e6-3274-484e-af07-6fe40cd22ef9",
       "key": "TYPE",
       "updatedAt": null,
       "value": "hard",
@@ -3638,6 +3650,13 @@ In the Faculty of Arts, you’re not just learning about the world — you’re 
     },
     {
       "createdAt": 1970-01-01T00:00:00.000Z,
+      "en_text": "Permutations with Repetitions",
+      "he_text": "צירופים עם חזרות",
+      "id": "e7c5b81e-5aad-4715-ab5d-c08122c05ef1",
+      "updatedAt": null,
+    },
+    {
+      "createdAt": 1970-01-01T00:00:00.000Z,
       "en_text": "Sum Principle",
       "he_text": "עקרון החיבור",
       "id": "187640FA-5A52-4AC3-8EBC-1FB89091E6E8",
@@ -3809,25 +3828,6 @@ In the Faculty of Arts, you’re not just learning about the world — you’re 
       "en_text": "Either G is planar or G is Eulerian",
       "he_text": "או ש-G מישורי או ש-G אוילריאני",
       "id": "9d1f2c3d-5e6f-4a7b-8c9d-8b9c1d2e3f4a",
-      "updatedAt": null,
-    },
-    {
-      "createdAt": 1970-01-01T00:00:00.000Z,
-      "en_text": "The question defines relations R and S on the set A = {1,2,3,4} × {1,2,3,4} as:
-- For all (x₁,y₁),(x₂,y₂) ∈ A, (x₁,y₁)R(x₂,y₂) if and only if min{x₁,y₁} = min{x₂,y₂}
-- For all (x₁,y₁),(x₂,y₂) ∈ A, (x₁,y₁)S(x₂,y₂) if and only if x₁ < x₂ and y₁ < y₂
-
-The question asks to:
-1. Show that R is an equivalence relation and describe its equivalence classes (11 points)
-2. Show that S is a partial order (16 points)",
-      "he_text": "השאלה מגדירה יחסים R ו-S על הקבוצה A = {1,2,3,4} × {1,2,3,4} כ:
-- לכל (x₁,y₁),(x₂,y₂) ∈ A, (x₁,y₁)R(x₂,y₂) אם ורק אם min{x₁,y₁} = min{x₂,y₂}
-- לכל (x₁,y₁),(x₂,y₂) ∈ A, (x₁,y₁)S(x₂,y₂) אם ורק אם x₁ < x₂ ו-y₁ < y₂
-
-השאלה מבקשת:
-1. להראות ש-R הוא יחס שקילות ולתאר את מחלקות השקילות שלו (11 נקודות)
-2. להראות ש-S הוא סדר חלקי (16 נקודות)",
-      "id": "20e2f3d7-584a-4cb0-a2b0-d876da5e5343",
       "updatedAt": null,
     },
     {

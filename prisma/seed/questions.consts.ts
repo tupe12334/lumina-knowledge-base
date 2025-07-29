@@ -270,23 +270,6 @@ export const QUESTIONS: QuestionSeedData[] = [
     ],
   },
   {
-    id: '15285731-9c62-4bff-8cbb-e6e7ce529286',
-    translationId: '20e2f3d7-584a-4cb0-a2b0-d876da5e5343',
-    text: {
-      en_text:
-        'The question defines relations R and S on the set A = {1,2,3,4} × {1,2,3,4} as:\n- For all (x₁,y₁),(x₂,y₂) ∈ A, (x₁,y₁)R(x₂,y₂) if and only if min{x₁,y₁} = min{x₂,y₂}\n- For all (x₁,y₁),(x₂,y₂) ∈ A, (x₁,y₁)S(x₂,y₂) if and only if x₁ < x₂ and y₁ < y₂\n\nThe question asks to:\n1. Show that R is an equivalence relation and describe its equivalence classes (11 points)\n2. Show that S is a partial order (16 points)',
-      he_text:
-        'השאלה מגדירה יחסים R ו-S על הקבוצה A = {1,2,3,4} × {1,2,3,4} כ:\n- לכל (x₁,y₁),(x₂,y₂) ∈ A, (x₁,y₁)R(x₂,y₂) אם ורק אם min{x₁,y₁} = min{x₂,y₂}\n- לכל (x₁,y₁),(x₂,y₂) ∈ A, (x₁,y₁)S(x₂,y₂) אם ורק אם x₁ < x₂ ו-y₁ < y₂\n\nהשאלה מבקשת:\n1. להראות ש-R הוא יחס שקילות ולתאר את מחלקות השקילות שלו (11 נקודות)\n2. להראות ש-S הוא סדר חלקי (16 נקודות)',
-    },
-    type: QuestionType.void,
-    moduleId: '6e19169a-959d-4f5d-a475-de09ca9ba8cd',
-    answers: [
-      {
-        id: 'A2-2024-EXAM-RELATIONS-EQUIVALENCE',
-      },
-    ],
-  },
-  {
     id: '6a8b4690-6daf-44f4-b58d-23ff1ff8d51d',
     translationId: 'd5f0c74e-7fa6-442d-9339-635eafd81a40',
     text: {
