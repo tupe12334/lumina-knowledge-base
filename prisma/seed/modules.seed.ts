@@ -49,6 +49,7 @@ export const seedModules = async (
       Permutation: 'f272cd23-f130-4467-9fad-b1ec33abc0e1',
       'Sum Principle': '187640FA-5A52-4AC3-8EBC-1FB89091E6E8',
       'Multiplication Principle': 'A468A6C2-1D32-47D6-BC32-562F2F71BCB3',
+      'Min Max Algorithm': 'f5f24066-f9e1-4087-9d6a-598042cb0d2b',
     };
     return translationMap[moduleText] || '';
   };
@@ -95,6 +96,7 @@ export const seedModules = async (
     Permutation: '65acc4b0-c258-4bd0-8eb0-e686006d224d',
     'Sum Principle': '78123942-6F56-4C66-8881-B49BC26E107D',
     'Multiplication Principle': '81BE3915-2C63-470E-85FE-55C1062DEFF3',
+    'Min Max Algorithm': '70bf7dc6-cbb8-4f2e-b2e3-1736586c7d9d',
   };
 
   const modules = [
@@ -306,6 +308,11 @@ export const seedModules = async (
       he_text: 'תכונות הערך המוחלט',
       parent: 'Absolute Value',
       courses: ['Calculus A', 'Infinitesimal Calculus 1'],
+    },
+    {
+      en_text: 'Min Max Algorithm',
+      he_text: 'אלגוריתם מינ-מקס',
+      course: 'Artificial Intelligence',
     },
   ];
 
