@@ -46,6 +46,7 @@ export const seedModules = async (
     const translationMap: Record<string, string> = {
       'Graph Theory': '09d74ad2-a8eb-4120-90df-81190243d3cf',
       Combinatorics: 'afb0c4a6-d7ce-4a3b-a1ee-28c783f4be8a',
+      Permutation: 'f272cd23-f130-4467-9fad-b1ec33abc0e1',
     };
     return translationMap[moduleText] || '';
   };
@@ -89,6 +90,7 @@ export const seedModules = async (
     'Properties of the Absolute Value': '04479133-a106-4341-82cd-c19240a87ed9',
     'Graph Theory': '8f4e9a3b-2c1d-4f5e-9a8b-7c3d6e5f8a9b',
     Combinatorics: '2b8d7f9c-3a4e-4b5f-8c9d-1e2f3a4b5c6d',
+    Permutation: '65acc4b0-c258-4bd0-8eb0-e686006d224d',
   };
 
   const modules = [
@@ -197,6 +199,12 @@ export const seedModules = async (
       he_text: 'קומבינטוריקה',
       course: 'Discrete Mathematics',
       prerequisite: 'Set Theory',
+    },
+    {
+      en_text: 'Permutation',
+      he_text: 'תמורות',
+      parent: 'Combinatorics',
+      course: 'Discrete Mathematics',
     },
     {
       en_text: 'Prenex Normal Form',
