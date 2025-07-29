@@ -45,8 +45,6 @@ COPY --from=installer /app/node_modules ./node_modules
 COPY --from=installer /app/apps/knowledge-base/node_modules ./apps/knowledge-base/node_modules
 COPY --from=installer /app/apps/knowledge-base/generated ./apps/knowledge-base/generated
 
-# Copy workspace packages that are dependencies
-COPY --from=installer /app/packages ./packages
 
 # Copy Prisma files directly from builder stage to ensure they're included
 COPY --from=builder /app/apps/knowledge-base/prisma ./apps/knowledge-base/prisma
