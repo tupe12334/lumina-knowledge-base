@@ -1,0 +1,82 @@
+import {
+  THE_COLLEGE_OF_MANAGEMENT_ACADEMIC_STUDIES_EN_NAME,
+  THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME,
+} from './universities.consts';
+
+const faculties = {
+  [THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME]: [],
+  [THE_COLLEGE_OF_MANAGEMENT_ACADEMIC_STUDIES_EN_NAME]: ['Computer Science'],
+};
+
+export const degreeCourses = {
+  [THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME]: {
+    'Computer Science': [
+      'Introduction to Computer Science and Java',
+      'Data Structures and Introduction to Algorithms',
+      'System Programming Laboratory',
+      'Defensive Systems Programming',
+      'Logic for Computer Science Students',
+      'Infinitesimal Calculus 1',
+      'Infinitesimal Calculus 2',
+      'Linear Algebra 1',
+      'Linear Algebra 2',
+      'Discrete Mathematics',
+      'Database Systems',
+      'Probability and Introduction to Statistics for Computer Science',
+      'Algorithms',
+      'Computational Models',
+      'Computer Graphics',
+      'Data Mining',
+      'Computer Organization',
+    ],
+    Mathematics: [
+      'Infinitesimal Calculus 1',
+      'Infinitesimal Calculus 2',
+      'Infinitesimal Calculus 3',
+      'Linear Algebra 1',
+      'Linear Algebra 2',
+      'Discrete Mathematics',
+      'Introduction to Differential Equations',
+      'Introduction to Statistics and Probability for Science Students',
+      'Statistical Inference',
+      'Logic for Computer Science Students',
+      'Complementary Integral Calculus',
+      'Linear Algebra for Science',
+      'Probability and Introduction to Statistics for Computer Science',
+    ],
+    'Cognitive Science': [
+      'Introduction to Computer Science and Java',
+      'Introduction to Java',
+      'Calculus A',
+    ],
+    Psychology: ['Introduction to Psychology'],
+    Economics: [
+      'Introduction to Microeconomics',
+      'Introduction to Macroeconomics',
+      'Basic Concepts in Econometrics',
+      'Labor Economics',
+      'Intergenerational Economics',
+      'International Real Economics',
+      'Macroeconomics A',
+      'Macroeconomics B',
+      'Microeconomics A',
+      'Microeconomics B',
+      'Microeconomics C',
+      'Monetary Economics',
+      'Political Economy',
+      'Public Economics',
+      'Social Preference and Choice',
+      'Strategic Thinking: Game Theory and its Applications in Economics and Management',
+      'The Economics of Israel',
+      'Auctions and Electronic Markets: Mechanism Design and Algorithms',
+    ],
+  },
+  [THE_COLLEGE_OF_MANAGEMENT_ACADEMIC_STUDIES_EN_NAME]: {
+    'Computer Science': [
+      'Introduction to Computer Science and Java',
+      'Data Structures and Introduction to Algorithms',
+      'Algorithms',
+      'Computational Models',
+    ],
+  },
+};

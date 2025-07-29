@@ -1,0 +1,272 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model University {
+  id            String      @id @default(uuid())
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+  name          Translation @relation(fields: [translationId], references: [id])
+  courses       Course[]
+  translationId String
+  Degree        Degree[]
+  Faculty       Faculty[]
+}
+
+model Faculty {
+  id            String       @id @default(uuid())
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+  name          Translation  @relation("FacultyName", fields: [translationId], references: [id])
+  description   Translation  @relation("FacultyDescription", fields: [descriptionId], references: [id])
+  descriptionId String
+  translationId String
+  universityId  String
+  university    University   @relation(fields: [universityId], references: [id])
+  Discipline    Discipline[]
+
+  @@unique([translationId, universityId])
+}
+
+model Degree {
+  id            String      @id @default(uuid())
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+  name          Translation @relation(fields: [translationId], references: [id])
+  translationId String
+  universityId  String
+  university    University  @relation(fields: [universityId], references: [id])
+  courses       Course[]
+  disciplineId  String?
+  discipline    Discipline? @relation(fields: [disciplineId], references: [id])
+}
+
+model Course {
+  id            String      @id @default(uuid())
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+  name          Translation @relation(fields: [translationId], references: [id])
+  translationId String
+  disciplineId  String
+  universityId  String
+  university    University  @relation(fields: [universityId], references: [id])
+  discipline    Discipline  @relation(fields: [disciplineId], references: [id])
+  modules       Module[]    @relation("CourseModules")
+  publishedAt   DateTime?
+  blockId       String
+  Block         Block       @relation(fields: [blockId], references: [id])
+  Degree        Degree[]
+
+  @@unique([translationId, universityId])
+}
+
+model Discipline {
+  id            String      @id @default(uuid())
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+  name          Translation @relation(fields: [translationId], references: [id])
+  translationId String
+  courses       Course[]
+  facultyId     String?
+  faculty       Faculty?    @relation(fields: [facultyId], references: [id])
+  Degree        Degree[]
+}
+
+model Block {
+  id              String              @id @default(uuid())
+  createdAt       DateTime            @default(now())
+  updatedAt       DateTime            @updatedAt
+  prerequisiteFor BlockRelationship[] @relation("Prerequisites")
+  postrequisiteOf BlockRelationship[] @relation("Postquisites")
+  // Relations
+  Module          Module[]
+  Course          Course[]
+}
+
+model BlockRelationship {
+  id              String                 @id @default(uuid())
+  createdAt       DateTime               @default(now())
+  updatedAt       DateTime               @updatedAt
+  prerequisiteId  String
+  postrequisiteId String
+  prerequisite    Block                  @relation("Prerequisites", fields: [prerequisiteId], references: [id])
+  postrequisite   Block                  @relation("Postquisites", fields: [postrequisiteId], references: [id])
+  metadata        RelationshipMetadata[]
+
+  @@unique([prerequisiteId, postrequisiteId])
+}
+
+enum RelationshipMetadataKey {
+  // The reason for the relationship
+  REASON
+  // The type of the relationship (e.g., "hard", "soft")
+  TYPE
+  // A description of the relationship
+  DESCRIPTION
+}
+
+model RelationshipMetadata {
+  id                  String                  @id @default(uuid())
+  createdAt           DateTime                @default(now())
+  updatedAt           DateTime                @updatedAt
+  key                 RelationshipMetadataKey
+  value               String
+  blockRelationshipId String
+  blockRelationship   BlockRelationship       @relation(fields: [blockRelationshipId], references: [id])
+
+  @@unique([key, blockRelationshipId])
+}
+
+model Module {
+  id               String             @id @default(uuid())
+  createdAt        DateTime           @default(now())
+  updatedAt        DateTime           @updatedAt
+  name             Translation        @relation(fields: [translationId], references: [id])
+  translationId    String
+  subModules       Module[]           @relation("ModuleHierarchy")
+  parentModules    Module[]           @relation("ModuleHierarchy")
+  Course           Course[]           @relation("CourseModules")
+  Questions        Question[]
+  LearningResource LearningResource[]
+  blockId          String
+  Block            Block              @relation(fields: [blockId], references: [id])
+}
+
+model Translation {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  // By ISO 639-1 standard
+  en_text   String
+  he_text   String
+
+  // Relations
+  University         University[]
+  Course             Course[]
+  Discipline         Discipline[]
+  Module             Module[]
+  Question           Question[]
+  Degree             Degree[]
+  FacultyName        Faculty[]      @relation("FacultyName")
+  FacultyDescription Faculty[]      @relation("FacultyDescription")
+  SelectAnswer       SelectAnswer[]
+}
+
+enum QuestionType {
+  selection
+  value
+  // If a question can't be answered so its don't have element in the Answer array
+  void
+}
+
+enum QuestionValidationStatus {
+  ai_generated
+  in_manual_review
+  approved
+  rejected
+}
+
+model Question {
+  id               String                   @id @default(uuid())
+  createdAt        DateTime                 @default(now())
+  updatedAt        DateTime                 @updatedAt
+  deletedAt        DateTime?
+  validationStatus QuestionValidationStatus @default(ai_generated)
+  // Math will be represented in LaTeX format
+  text             Translation              @relation(fields: [translationId], references: [id])
+  translationId    String
+  Answer           Answer[]
+  type             QuestionType
+  Modules          Module[]
+  Parts            QuestionPart[]
+  PartOf           QuestionPart[]           @relation("QuestionParts")
+}
+
+model QuestionPart {
+  id             String   @id @default(uuid())
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  questionId     String
+  question       Question @relation(fields: [questionId], references: [id])
+  partQuestionId String
+  partQuestion   Question @relation("QuestionParts", fields: [partQuestionId], references: [id])
+  order          Int
+
+  @@unique([questionId, order])
+}
+
+model Answer {
+  id           String         @id @default(uuid())
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+  questionId   String
+  question     Question       @relation(fields: [questionId], references: [id])
+  SelectAnswer SelectAnswer[]
+  UnitAnswer   UnitAnswer?
+  NumberAnswer NumberAnswer?
+}
+
+model SelectAnswer {
+  id            String      @id @default(uuid())
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+  isCorrect     Boolean
+  text          Translation @relation(fields: [translationId], references: [id])
+  translationId String
+  answerId      String
+  answer        Answer      @relation(fields: [answerId], references: [id])
+}
+
+model UnitAnswer {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  value     Float
+  unit      Units
+  answerId  String   @unique
+  answer    Answer   @relation(fields: [answerId], references: [id])
+}
+
+model NumberAnswer {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  value     Float
+  answerId  String   @unique
+  answer    Answer   @relation(fields: [answerId], references: [id])
+}
+
+// SI units 
+enum Units {
+  meter
+  kilogram
+  second
+  ampere
+  kelvin
+  mole
+  candela
+}
+
+enum LearningResourceType {
+  video
+}
+
+model LearningResource {
+  id          String               @id @default(uuid())
+  createdAt   DateTime             @default(now())
+  updatedAt   DateTime             @updatedAt
+  // ISO 639-1 language code
+  language    String
+  url         String
+  type        LearningResourceType
+  moduleId    String
+  Module      Module               @relation(fields: [moduleId], references: [id])
+  relevance   Float                @default(0.0) // Relevance score for the resource
+  suggestedBy String? // User ID of the person who suggested the resource
+}
