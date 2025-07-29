@@ -688,6 +688,11 @@ exports[`seed snapshot > saves seeded data snapshot 1`] = `
       "id": "04479133-a106-4341-82cd-c19240a87ed9",
       "updatedAt": null,
     },
+    {
+      "createdAt": 1970-01-01T00:00:00.000Z,
+      "id": "70bf7dc6-cbb8-4f2e-b2e3-1736586c7d9d",
+      "updatedAt": null,
+    },
   ],
   "blockRelationship": [
     {
@@ -2000,40 +2005,47 @@ exports[`seed snapshot > saves seeded data snapshot 1`] = `
       "translationId": "3d0c1164-d8fb-46b0-ac93-ec4a6a28ad70",
       "updatedAt": null,
     },
+    {
+      "blockId": "70bf7dc6-cbb8-4f2e-b2e3-1736586c7d9d",
+      "createdAt": 1970-01-01T00:00:00.000Z,
+      "id": "70bf7dc6-cbb8-4f2e-b2e3-1736586c7d9d",
+      "translationId": "f5f24066-f9e1-4087-9d6a-598042cb0d2b",
+      "updatedAt": null,
+    },
   ],
   "numberAnswer": [
     {
       "answerId": "a73521cc-1565-4d86-8719-c26456aaeb9d",
       "createdAt": 1970-01-01T00:00:00.000Z,
-      "id": "5c649dfd-d31a-461e-a4cf-0ebdc5237450",
+      "id": "487aa957-3115-4b18-b679-2e2ecacb2788",
       "updatedAt": null,
       "value": 1500625,
     },
     {
       "answerId": "71ab66ac-28a2-4a66-a331-5131519ef454",
       "createdAt": 1970-01-01T00:00:00.000Z,
-      "id": "a64b5e86-fd5f-4020-afab-567c98aa6e73",
+      "id": "70367e05-3d4a-4046-a377-0a54ee81dd43",
       "updatedAt": null,
       "value": 919602,
     },
     {
       "answerId": "ce178537-7265-4713-ab70-ae7e2a2f57b3",
       "createdAt": 1970-01-01T00:00:00.000Z,
-      "id": "da7429f4-92e4-41ec-b322-f7e27c0256c9",
+      "id": "9fbb28d1-2a8f-4319-b782-62a4e0458fdb",
       "updatedAt": null,
       "value": 7,
     },
     {
       "answerId": "0119d10c-89a2-4f4a-90c2-f64dbde97558",
       "createdAt": 1970-01-01T00:00:00.000Z,
-      "id": "063f5e48-5512-479e-afa9-9f58fdf67504",
+      "id": "e144b5cf-464e-4a8e-ac4c-272208648eb0",
       "updatedAt": null,
       "value": 12,
     },
     {
       "answerId": "1e7deeb9-e88c-4c91-a95c-79536c6be7cd",
       "createdAt": 1970-01-01T00:00:00.000Z,
-      "id": "d4211f58-f2cb-44dd-96f0-e35847628743",
+      "id": "3148ec73-5c25-4fba-987f-c7558046da91",
       "updatedAt": null,
       "value": 12,
     },
@@ -3542,6 +3554,13 @@ In the Faculty of Arts, you’re not just learning about the world — you’re 
       "en_text": "Multiplication Principle",
       "he_text": "עקרון הכפל",
       "id": "A468A6C2-1D32-47D6-BC32-562F2F71BCB3",
+      "updatedAt": null,
+    },
+    {
+      "createdAt": 1970-01-01T00:00:00.000Z,
+      "en_text": "Min Max Algorithm",
+      "he_text": "אלגוריתם מינ-מקס",
+      "id": "f5f24066-f9e1-4087-9d6a-598042cb0d2b",
       "updatedAt": null,
     },
     {
