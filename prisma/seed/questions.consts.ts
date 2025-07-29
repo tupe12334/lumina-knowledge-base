@@ -539,7 +539,8 @@ export const QUESTIONS: QuestionSeedData[] = [
     id: 'D0920552-1AFA-493D-9019-4FFDBE079A32',
     translationId: 'E07E39B7-1EDE-4F5F-B988-01D92FED7BE3',
     text: {
-      en_text: "How many permutations are there of the letters in the word 'APPLE'?",
+      en_text:
+        "How many permutations are there of the letters in the word 'APPLE'?",
       he_text: "כמה תמורות יש לאותיות במילה 'APPLE'?",
     },
     type: QuestionType.value,
@@ -559,7 +560,8 @@ export const QUESTIONS: QuestionSeedData[] = [
     id: '9C030140-9A43-46ED-9B57-9E7A17ABEB41',
     translationId: 'F2EA2E63-3376-4CB8-85EA-4F70DE1603AB',
     text: {
-      en_text: "In how many distinct ways can the letters of the word 'MISSISSIPPI' be arranged?",
+      en_text:
+        "In how many distinct ways can the letters of the word 'MISSISSIPPI' be arranged?",
       he_text: "בכמה דרכים שונות ניתן לסדר את האותיות במילה 'MISSISSIPPI'?",
     },
     type: QuestionType.value,
@@ -606,7 +608,7 @@ export const QUESTIONS: QuestionSeedData[] = [
         'בכמה דרכים ניתן לבחור 5 קלפים מחבילת קלפים רגילה כך שבדיוק 3 מתוכם יהיו לבבות?',
     },
     type: QuestionType.value,
-    validationStatus: QuestionValidationStatus.approved,
+    validationStatus: QuestionValidationStatus.ai_generated,
     moduleId: '9c8e5d2a-4b7f-4c8d-9e0a-1b2c3d4e5f6a',
     answers: [
       {
@@ -628,7 +630,7 @@ export const QUESTIONS: QuestionSeedData[] = [
         'מתוך קבוצה של 7 גברים ו־5 נשים, כמה ועדות של 4 אפשר להרכיב שבהן יש לפחות 2 נשים?',
     },
     type: QuestionType.value,
-    validationStatus: QuestionValidationStatus.approved,
+    validationStatus: QuestionValidationStatus.ai_generated,
     moduleId: '9c8e5d2a-4b7f-4c8d-9e0a-1b2c3d4e5f6a',
     answers: [
       {
@@ -650,7 +652,7 @@ export const QUESTIONS: QuestionSeedData[] = [
         'בכמה דרכים ניתן לחלק 8 כדורים זהים ל־4 תיבות שונות כך שבכל תיבה יהיה לפחות כדור אחד?',
     },
     type: QuestionType.value,
-    validationStatus: QuestionValidationStatus.approved,
+    validationStatus: QuestionValidationStatus.ai_generated,
     moduleId: '9c8e5d2a-4b7f-4c8d-9e0a-1b2c3d4e5f6a',
     answers: [
       {
@@ -672,7 +674,7 @@ export const QUESTIONS: QuestionSeedData[] = [
         'כמה פתרונות במספרים שלמים אי‐שליליים קיימים למשוואה x₁ + x₂ + x₃ + x₄ = 15 כאשר כל xᵢ אינו עולה על 6?',
     },
     type: QuestionType.value,
-    validationStatus: QuestionValidationStatus.approved,
+    validationStatus: QuestionValidationStatus.ai_generated,
     moduleId: '9c8e5d2a-4b7f-4c8d-9e0a-1b2c3d4e5f6a',
     answers: [
       {
