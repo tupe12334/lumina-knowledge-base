@@ -1,6 +1,9 @@
 import { QuestionSeedData } from './questions.seed';
 import { QuestionType } from '../../generated/client';
 
+const YES_TRANSLATION_ID = 'c1d6bbad-b174-4f06-8dbd-89aaac420be5';
+const NO_TRANSLATION_ID = '5ad96b46-8670-4368-858b-453472383bd2';
+
 /**
  * How to formalize a question and answers
  * A. remove ":" from the end of the question text
@@ -202,7 +205,7 @@ export const QUESTIONS: QuestionSeedData[] = [
           },
           {
             id: 'OPT4-Q1B-2024-EXAM-SET-THEORY',
-            translationId: '90791bd5-4763-4ab5-84c1-1a5917180894',
+            translationId: '338bee00-49e8-47f1-afd7-ab19015bdf2a',
             text: {
               en_text: 'All previous statements are equivalent',
               he_text: 'כל ההצהרות הקודמות שוות',
@@ -255,7 +258,7 @@ export const QUESTIONS: QuestionSeedData[] = [
           },
           {
             id: 'OPT4-Q1C-2024-EXAM-GRAPH-THEORY',
-            translationId: '1e2a3d4e-6f7a-4b8c-9d1e-9c1d2e3f4a5b',
+            translationId: '338bee00-49e8-47f1-afd7-ab19015bdf2a',
             text: {
               en_text: 'All previous statements are equivalent',
               he_text: 'כל ההצהרות הקודמות שוות',
@@ -330,7 +333,7 @@ export const QUESTIONS: QuestionSeedData[] = [
               selectAnswers: [
                 {
                   id: 'A5-PART1-YES-2024-EXAM-GRAPH-ANALYSIS',
-                  translationId: 'c1d6bbad-b174-4f06-8dbd-89aaac420be5',
+                  translationId: YES_TRANSLATION_ID,
                   text: {
                     en_text: 'Yes',
                     he_text: 'כן',
@@ -339,7 +342,7 @@ export const QUESTIONS: QuestionSeedData[] = [
                 },
                 {
                   id: 'A5-PART1-NO-2024-EXAM-GRAPH-ANALYSIS',
-                  translationId: '5ad96b46-8670-4368-858b-453472383bd2',
+                  translationId: NO_TRANSLATION_ID,
                   text: {
                     en_text: 'No',
                     he_text: 'לא',
@@ -369,7 +372,7 @@ export const QUESTIONS: QuestionSeedData[] = [
               selectAnswers: [
                 {
                   id: 'A5-PART2-YES-2024-EXAM-GRAPH-ANALYSIS',
-                  translationId: '95bdde6b-9777-4473-a5ff-b2cd6592231e',
+                  translationId: YES_TRANSLATION_ID,
                   text: {
                     en_text: 'Yes',
                     he_text: 'כן',
@@ -378,7 +381,7 @@ export const QUESTIONS: QuestionSeedData[] = [
                 },
                 {
                   id: 'A5-PART2-NO-2024-EXAM-GRAPH-ANALYSIS',
-                  translationId: 'eedc4961-4bf4-4c36-8fa2-2e489decc386',
+                  translationId: NO_TRANSLATION_ID,
                   text: {
                     en_text: 'No',
                     he_text: 'לא',

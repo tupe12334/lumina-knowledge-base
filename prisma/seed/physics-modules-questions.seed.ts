@@ -540,13 +540,13 @@ export const seedPhysicsModulesAndQuestions = async (
       },
       {
         id: '3065e157-6f71-4c33-a682-5022723f8391',
-        translationId: 'sa-distance-2-7100cm-text',
+        translationId: 'AF770977-4B29-4444-B907-F819EF5D0BEA',
         text: { en_text: '7,100 cm', he_text: '7,100 ס״מ' },
         isCorrect: false,
       },
       {
         id: 'ac218326-9512-4383-8945-4303931d7457',
-        translationId: 'sa-distance-3-69mil-text',
+        translationId: 'EE38E69B-F2B3-477E-A06A-70EBB3E5F87D',
         text: {
           en_text: '6.9*10^6 millimeters',
           he_text: '6.9*10^6 מילימטרים',

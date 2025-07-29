@@ -304,24 +304,15 @@ export const seed = async (prisma: PrismaClient) => {
       ];
 
       for (const translation of translations) {
-        const existingTranslation = await tx.translation.findFirst({
-          where: { en_text: translation.en_text },
+        await tx.translation.upsert({
+          where: { id: translation.id },
+          update: { en_text: translation.en_text, he_text: translation.he_text },
+          create: {
+            id: translation.id,
+            en_text: translation.en_text,
+            he_text: translation.he_text,
+          },
         });
-
-        if (existingTranslation) {
-          await tx.translation.update({
-            where: { id: existingTranslation.id },
-            data: { he_text: translation.he_text },
-          });
-        } else {
-          await tx.translation.create({
-            data: {
-              id: translation.id,
-              en_text: translation.en_text,
-              he_text: translation.he_text,
-            },
-          });
-        }
       }
 
       console.log(`Translations seeded successfully.`);
