@@ -9,7 +9,7 @@ export class QuestionsService {
 
   async findAll(filters?: QuestionsQueryDto): Promise<Question[]> {
     // Build where clause based on filters
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
+
     const where: any = {};
 
     if (filters?.moduleId) {
