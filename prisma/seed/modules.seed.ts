@@ -20,6 +20,8 @@ export const seedModules = async (
         'bba994cb-72e3-465e-b4fa-47d2189870b1',
       'Set Theory_Graph Theory': '06cf92b7-1e0e-4f7a-964b-1527f3f2246a',
       'Set Theory_Combinatorics': 'dada74b5-207c-48f3-8d2e-b8f6b806a801',
+      'Combinations_Combinations with Repetitions':
+        '3c4d5e6f-7a8b-4c9d-0e1f-2a3b4c5d6e7f',
     };
     return relationshipMap[`${prerequisite}_${postrequisite}`] || '';
   };
@@ -37,6 +39,8 @@ export const seedModules = async (
         'b91b3590-cd7a-41ec-89ef-021017f4d93d',
       'dada74b5-207c-48f3-8d2e-b8f6b806a801':
         '8586bfd9-3c66-49e5-8658-4aa3f248ec25',
+      '3c4d5e6f-7a8b-4c9d-0e1f-2a3b4c5d6e7f':
+        '5d6e7f8a-9b0c-4d1e-2f3a-4b5c6d7e8f9a',
     };
     return metadataMap[blockRelationshipId] || '';
   };
@@ -52,6 +56,7 @@ export const seedModules = async (
       'Min Max Algorithm': 'f5f24066-f9e1-4087-9d6a-598042cb0d2b',
       Combinations: 'b8a9c2d3-4e5f-4567-8901-2a3b4c5d6e7f',
       Permutations: 'b046c3a7-4e8f-4571-a015-0a7cc33daca2',
+      'Combinations with Repetitions': '7d8e9f0a-1b2c-3d4e-5f6a-7b8c9d0e1f2a',
     };
     return translationMap[moduleText] || '';
   };
@@ -101,6 +106,7 @@ export const seedModules = async (
     'Min Max Algorithm': '70bf7dc6-cbb8-4f2e-b2e3-1736586c7d9d',
     Combinations: '9c8e5d2a-4b7f-4c8d-9e0a-1b2c3d4e5f6a',
     Permutations: 'c6dd59ac-1802-4bc9-b91e-ca77bb32620e',
+    'Combinations with Repetitions': '1f2e3d4c-5b6a-4c7d-8e9f-0a1b2c3d4e5f',
   };
 
   const modules = [
@@ -220,6 +226,13 @@ export const seedModules = async (
       en_text: 'Combinations',
       he_text: 'חליפות',
       parent: 'Combinatorics',
+      course: 'Discrete Mathematics',
+    },
+    {
+      en_text: 'Combinations with Repetitions',
+      he_text: 'חליפות עם חזרות',
+      parent: 'Combinatorics',
+      prerequisite: 'Combinations',
       course: 'Discrete Mathematics',
     },
     {
