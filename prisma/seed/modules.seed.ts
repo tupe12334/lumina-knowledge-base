@@ -22,6 +22,8 @@ export const seedModules = async (
       'Set Theory_Combinatorics': 'dada74b5-207c-48f3-8d2e-b8f6b806a801',
       'Combinations_Combinations with Repetitions':
         'fcfd331c-bd37-4a51-b638-866fa5df19fe',
+      'Permutations_Permutations with Repetitions':
+        '27d30775-72bb-41a2-b974-3d9883e6bb12',
     };
     return relationshipMap[`${prerequisite}_${postrequisite}`] || '';
   };
@@ -41,6 +43,8 @@ export const seedModules = async (
         '8586bfd9-3c66-49e5-8658-4aa3f248ec25',
       'fcfd331c-bd37-4a51-b638-866fa5df19fe':
         '60158639-40cb-43b6-b89e-57fe34cd9800',
+      '27d30775-72bb-41a2-b974-3d9883e6bb12':
+        '3a2e73e6-3274-484e-af07-6fe40cd22ef9',
     };
     return metadataMap[blockRelationshipId] || '';
   };
@@ -57,6 +61,7 @@ export const seedModules = async (
       Combinations: 'b8a9c2d3-4e5f-4567-8901-2a3b4c5d6e7f',
       Permutations: 'b046c3a7-4e8f-4571-a015-0a7cc33daca2',
       'Combinations with Repetitions': 'e289a3c2-6d14-479d-89e6-a83b56e08287',
+      'Permutations with Repetitions': 'e7c5b81e-5aad-4715-ab5d-c08122c05ef1',
     };
     return translationMap[moduleText] || '';
   };
@@ -107,6 +112,7 @@ export const seedModules = async (
     Combinations: '9c8e5d2a-4b7f-4c8d-9e0a-1b2c3d4e5f6a',
     Permutations: 'c6dd59ac-1802-4bc9-b91e-ca77bb32620e',
     'Combinations with Repetitions': '87a1da94-793c-4565-8706-8fd073a50cf6',
+    'Permutations with Repetitions': 'f2866b62-f4f6-4e22-8fcc-f4bd8bbdb275',
   };
 
   const modules = [
@@ -239,6 +245,13 @@ export const seedModules = async (
       en_text: 'Permutations',
       he_text: 'צירופים',
       parent: 'Combinatorics',
+      course: 'Discrete Mathematics',
+    },
+    {
+      en_text: 'Permutations with Repetitions',
+      he_text: 'צירופים עם חזרות',
+      parent: 'Combinatorics',
+      prerequisite: 'Permutations',
       course: 'Discrete Mathematics',
     },
     {
