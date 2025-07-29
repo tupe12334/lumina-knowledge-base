@@ -686,4 +686,46 @@ export const QUESTIONS: QuestionSeedData[] = [
       },
     ],
   },
+  {
+    id: '0CB337D9-F5CA-43B4-8945-531CF4C57BC2',
+    translationId: 'D9B273B8-4F71-4C1D-994F-DDA7292001BD',
+    text: {
+      en_text: `How many distinct permutations can be made from the letters of the word 'MATHEMATICS'?`,
+      he_text: `כמה תמורות שונות ניתן ליצור מהאותיות במילה 'MATHEMATICS'?`,
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '2b8d7f9c-3a4e-4b5f-8c9d-1e2f3a4b5c6d',
+    answers: [
+      {
+        id: 'EDFB5B2E-FAAC-4FC3-BBA3-8D8A73800F76',
+        numberAnswer: {
+          id: '98D136B1-7B0D-4D2C-BAA8-B83755B3A4C1',
+          value: 4989600,
+        },
+      },
+    ],
+  },
+  {
+    id: '7928652E-847C-4685-8618-2449068369B2',
+    translationId: 'B96A706B-3C1F-43BA-8B1D-BBE44B70E81C',
+    text: {
+      en_text:
+        'In how many ways can 5 boys and 5 girls be seated in a row so that no two girls sit together?',
+      he_text:
+        'בכמה דרכים ניתן להושיב 5 בנים ו-5 בנות בשורה כך שאף שתי בנות לא תשבנה יחד?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '2b8d7f9c-3a4e-4b5f-8c9d-1e2f3a4b5c6d',
+    answers: [
+      {
+        id: '3C95C523-997F-4BC3-A9A4-684E26ED4971',
+        numberAnswer: {
+          id: '8102C2FF-FFE6-4B9B-A4E0-F39CDE5DEA27',
+          value: 86400,
+        },
+      },
+    ],
+  },
 ] satisfies QuestionSeedData[];
