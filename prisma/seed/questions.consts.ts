@@ -505,4 +505,25 @@ export const QUESTIONS: QuestionSeedData[] = [
       },
     ],
   },
+  {
+    id: '4603f4bc-8fb5-42a8-8ebc-672085f10104',
+    translationId: 'b81240ad-ed98-4a7e-9dea-7e922e884d19',
+    text: {
+      en_text:
+        'A coffee shop sells 3 types of coffee and 4 types of pastry. How many different combinations of one coffee and one pastry can you order?',
+      he_text:
+        'בית קפה מוכר 3 סוגי קפה ו־4 סוגי מאפה. כמה שילובים שונים של קפה ומאפה ניתן להזמין?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: '81BE3915-2C63-470E-85FE-55C1062DEFF3',
+    answers: [
+      {
+        id: '0119d10c-89a2-4f4a-90c2-f64dbde97558',
+        numberAnswer: {
+          value: 12,
+        },
+      },
+    ],
+  },
 ] satisfies QuestionSeedData[];
