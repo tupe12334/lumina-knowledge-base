@@ -6,15 +6,15 @@ RUN apk add --no-cache bash netcat-openbsd postgresql-client
 RUN corepack enable && corepack prepare pnpm --activate
 
 # Set working directory
-WORKDIR /app/apps/server
+WORKDIR /app/apps/knowledge-base
 
 # Copy only Prisma-related files and seed scripts
-COPY apps/server/prisma ./prisma
-COPY apps/server/package.json ./package.json
+COPY apps/knowledge-base/prisma ./prisma
+COPY apps/knowledge-base/package.json ./package.json
 
 # Create minimal package.json with only migration/seed dependencies
 RUN echo '{\
-  "name": "server-migration",\
+  "name": "knowledge-base-migration",\
   "version": "0.0.1",\
   "private": true,\
   "dependencies": {\

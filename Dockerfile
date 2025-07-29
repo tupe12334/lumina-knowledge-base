@@ -9,9 +9,9 @@ RUN apk update
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
-# Generate a partial monorepo with a pruned lockfile for server workspace
+# Generate a partial monorepo with a pruned lockfile for knowledge-base workspace
 COPY . .
-RUN pnpm dlx turbo prune @lumina/server --docker
+RUN pnpm dlx turbo prune @lumina/knowledge-base --docker
 
 # Stage 3: Installer stage
 FROM base AS installer
@@ -30,7 +30,7 @@ RUN --mount=type=cache,target=/root/.local/share/pnpm/store \
 # Build the project
 COPY --from=builder /app/out/full/ .
 RUN pnpm turbo run build --filter=@lumina/env-config --filter=@lumina/services-configs
-RUN pnpm turbo run build --filter=@lumina/server
+RUN pnpm turbo run build --filter=@lumina/knowledge-base
 
 # Stage 4: Production image
 FROM node:lts-alpine AS production
@@ -41,17 +41,17 @@ WORKDIR /app
 RUN corepack enable && corepack prepare pnpm --activate
 
 # Copy built application and required node_modules
-COPY --from=installer /app/apps/server/dist ./apps/server/dist
+COPY --from=installer /app/apps/knowledge-base/dist ./apps/knowledge-base/dist
 COPY --from=installer /app/node_modules ./node_modules
-COPY --from=installer /app/apps/server/node_modules ./apps/server/node_modules
-COPY --from=installer /app/apps/server/generated ./apps/server/generated
+COPY --from=installer /app/apps/knowledge-base/node_modules ./apps/knowledge-base/node_modules
+COPY --from=installer /app/apps/knowledge-base/generated ./apps/knowledge-base/generated
 
 # Copy workspace packages that are dependencies
 COPY --from=installer /app/packages ./packages
 
 # Copy Prisma files directly from builder stage to ensure they're included
-COPY --from=builder /app/apps/server/prisma ./apps/server/prisma
-COPY --from=builder /app/apps/server/package.json ./apps/server/package.json
+COPY --from=builder /app/apps/knowledge-base/prisma ./apps/knowledge-base/prisma
+COPY --from=builder /app/apps/knowledge-base/package.json ./apps/knowledge-base/package.json
 
 EXPOSE 3000
-CMD ["node", "apps/server/dist/main.js"]
+CMD ["node", "apps/knowledge-base/dist/main.js"]
