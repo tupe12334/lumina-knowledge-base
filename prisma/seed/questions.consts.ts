@@ -1,5 +1,5 @@
 import { QuestionSeedData } from './questions.seed';
-import { QuestionType } from '../../generated/client';
+import { QuestionType, QuestionValidationStatus } from '../../generated/client';
 
 const YES_TRANSLATION_ID = 'c1d6bbad-b174-4f06-8dbd-89aaac420be5';
 const NO_TRANSLATION_ID = '5ad96b46-8670-4368-858b-453472383bd2';
@@ -494,6 +494,7 @@ export const QUESTIONS: QuestionSeedData[] = [
         'במסעדה מוצעים 3 מתאבנים ו־4 קינוחים. כמה אפשרויות בחירה יש אם ניתן לבחור פריט אחד מאחת הקטגוריות?',
     },
     type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
     moduleId: '78123942-6F56-4C66-8881-B49BC26E107D',
     answers: [
       {

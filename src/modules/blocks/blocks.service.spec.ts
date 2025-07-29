@@ -43,22 +43,24 @@ describe('BlocksService', () => {
       id: 'b1',
       createdAt: expect.any(Date),
       updatedAt: null,
-      Module: [{
-        id: 'm1',
-        createdAt: expect.any(Date),
-        updatedAt: null,
-        translationId: moduleName.id,
-        blockId: 'b1',
-        name: { 
-          id: moduleName.id,
+      Module: [
+        {
+          id: 'm1',
           createdAt: expect.any(Date),
           updatedAt: null,
-          en_text: 'Module', 
-          he_text: 'מודול' 
-        }
-      }],
+          translationId: moduleName.id,
+          blockId: 'b1',
+          name: {
+            id: moduleName.id,
+            createdAt: expect.any(Date),
+            updatedAt: null,
+            en_text: 'Module',
+            he_text: 'מודול',
+          },
+        },
+      ],
       prerequisiteFor: [],
-      postrequisiteOf: []
+      postrequisiteOf: [],
     });
   });
 });

@@ -1,4 +1,8 @@
-import { Prisma, QuestionType } from '../../generated/client';
+import {
+  Prisma,
+  QuestionType,
+  QuestionValidationStatus,
+} from '../../generated/client';
 import { QUESTIONS } from './questions.consts';
 
 export type QuestionSeedData = {
@@ -6,6 +10,7 @@ export type QuestionSeedData = {
   translationId: string;
   text: Prisma.TranslationUncheckedCreateInput;
   type: QuestionType;
+  validationStatus?: QuestionValidationStatus;
   moduleId: string;
   answers: {
     id: string;
@@ -44,8 +49,16 @@ export type QuestionSeedData = {
 
 export async function seedQuestions(tx: Prisma.TransactionClient) {
   for (const questionData of QUESTIONS) {
-    const { id, translationId, text, type, moduleId, answers, parts } =
-      questionData;
+    const {
+      id,
+      translationId,
+      text,
+      type,
+      validationStatus,
+      moduleId,
+      answers,
+      parts,
+    } = questionData;
 
     const translation = await tx.translation.upsert({
       where: { id: translationId },
@@ -63,12 +76,14 @@ export async function seedQuestions(tx: Prisma.TransactionClient) {
       update: {
         text: { connect: { id: translation.id } },
         type: type,
+        validationStatus: validationStatus,
         Modules: { set: [{ id: moduleId }] },
       },
       create: {
         id,
         text: { connect: { id: translation.id } },
         type: type,
+        validationStatus: validationStatus,
         Modules: { connect: [{ id: moduleId }] },
       },
     });
