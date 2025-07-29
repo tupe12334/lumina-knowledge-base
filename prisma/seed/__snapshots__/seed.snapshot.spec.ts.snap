@@ -101,6 +101,12 @@ exports[`seed snapshot > saves seeded data snapshot 1`] = `
     },
     {
       "createdAt": 1970-01-01T00:00:00.000Z,
+      "id": "ec73a468-679d-4997-a29e-99cf84d98e7a",
+      "questionId": "ec882e46-05be-4b12-9715-514963a7fdc1",
+      "updatedAt": null,
+    },
+    {
+      "createdAt": 1970-01-01T00:00:00.000Z,
       "id": "df5c4ed7-7109-4c20-88dd-87e05833d16f",
       "questionId": "3868f16c-c4e5-4df1-9c2e-eeafe926473d",
       "updatedAt": null,
@@ -2092,6 +2098,13 @@ exports[`seed snapshot > saves seeded data snapshot 1`] = `
       "updatedAt": null,
       "value": 12,
     },
+    {
+      "answerId": "ec73a468-679d-4997-a29e-99cf84d98e7a",
+      "createdAt": 1970-01-01T00:00:00.000Z,
+      "id": "2846288c-849a-48f1-84f6-cfdd641a143c",
+      "updatedAt": null,
+      "value": 120,
+    },
   ],
   "question": [
     {
@@ -2230,6 +2243,15 @@ exports[`seed snapshot > saves seeded data snapshot 1`] = `
       "deletedAt": null,
       "id": "3b84d950-8d79-4dd2-92f5-3e231ba870ef",
       "translationId": "f4e15a03-0822-47ca-ab99-522416a28365",
+      "type": "value",
+      "updatedAt": null,
+      "validationStatus": "approved",
+    },
+    {
+      "createdAt": 1970-01-01T00:00:00.000Z,
+      "deletedAt": null,
+      "id": "ec882e46-05be-4b12-9715-514963a7fdc1",
+      "translationId": "894bc578-2725-4d23-bf16-b57ccf3b0a80",
       "type": "value",
       "updatedAt": null,
       "validationStatus": "approved",
@@ -3896,6 +3918,13 @@ The question has multiple parts worth 7, 7, and 13 points",
       "en_text": "Let A and B be finite sets with |A| = 3 and |B| = 4. How many elements does A × B contain?",
       "he_text": "נניח A ו־B הן קבוצות סופיות שמספר איבריהן הוא |A| = 3 ו־|B| = 4. כמה איברים מכילה המכפלה הקרטזית A × B?",
       "id": "f4e15a03-0822-47ca-ab99-522416a28365",
+      "updatedAt": null,
+    },
+    {
+      "createdAt": 1970-01-01T00:00:00.000Z,
+      "en_text": "How many ways can you choose 3 students from a class of 10 students?",
+      "he_text": "בכמה דרכים ניתן לבחור 3 תלמידים מתוך כיתה של 10 תלמידים?",
+      "id": "894bc578-2725-4d23-bf16-b57ccf3b0a80",
       "updatedAt": null,
     },
     {

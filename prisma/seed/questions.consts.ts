@@ -552,4 +552,25 @@ export const QUESTIONS: QuestionSeedData[] = [
       },
     ],
   },
+  {
+    id: 'ec882e46-05be-4b12-9715-514963a7fdc1',
+    translationId: '894bc578-2725-4d23-bf16-b57ccf3b0a80',
+    text: {
+      en_text:
+        'How many ways can you choose 3 students from a class of 10 students?',
+      he_text: 'בכמה דרכים ניתן לבחור 3 תלמידים מתוך כיתה של 10 תלמידים?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: '9c8e5d2a-4b7f-4c8d-9e0a-1b2c3d4e5f6a',
+    answers: [
+      {
+        id: 'ec73a468-679d-4997-a29e-99cf84d98e7a',
+        numberAnswer: {
+          id: '2846288c-849a-48f1-84f6-cfdd641a143c',
+          value: 120,
+        },
+      },
+    ],
+  },
 ] satisfies QuestionSeedData[];
