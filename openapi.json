@@ -898,7 +898,41 @@
     "/modules": {
       "get": {
         "operationId": "ModulesController_getModules",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "minQuestions",
+            "required": false,
+            "in": "query",
+            "description": "Filter modules by minimum number of questions",
+            "schema": {
+              "minimum": 0,
+              "example": 5,
+              "type": "integer"
+            }
+          },
+          {
+            "name": "maxQuestions",
+            "required": false,
+            "in": "query",
+            "description": "Filter modules by maximum number of questions",
+            "schema": {
+              "minimum": 0,
+              "example": 20,
+              "type": "integer"
+            }
+          },
+          {
+            "name": "exactQuestions",
+            "required": false,
+            "in": "query",
+            "description": "Filter modules by exact number of questions",
+            "schema": {
+              "minimum": 0,
+              "example": 10,
+              "type": "integer"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "",
