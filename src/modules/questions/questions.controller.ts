@@ -30,6 +30,12 @@ export class QuestionsController {
     type: 'string',
   })
   @ApiQuery({
+    name: 'questionType',
+    required: false,
+    description: 'Filter questions by question type',
+    enum: ['selection', 'value', 'void'],
+  })
+  @ApiQuery({
     name: 'excludePartQuestions',
     required: false,
     description: 'Exclude questions that are part of other questions',

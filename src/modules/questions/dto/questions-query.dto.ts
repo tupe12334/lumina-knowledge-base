@@ -1,6 +1,9 @@
-import { IsOptional, IsString, IsUUID, IsBoolean } from 'class-validator';
+import { IsOptional, IsString, IsUUID, IsBoolean, IsIn } from 'class-validator';
 import { ApiPropertyOptional } from '@nestjs/swagger';
 import { Transform } from 'class-transformer';
+
+const QUESTION_TYPES = ['selection', 'value', 'void'] as const;
+type QuestionType = (typeof QUESTION_TYPES)[number];
 
 export class QuestionsQueryDto {
   @ApiPropertyOptional({
@@ -20,6 +23,15 @@ export class QuestionsQueryDto {
   @IsString()
   @IsUUID()
   courseId?: string;
+
+  @ApiPropertyOptional({
+    description: 'Filter questions by question type',
+    example: 'selection',
+    enum: QUESTION_TYPES,
+  })
+  @IsOptional()
+  @IsIn(QUESTION_TYPES)
+  questionType?: QuestionType;
 
   @ApiPropertyOptional({
     description: 'Exclude questions that are part of other questions',

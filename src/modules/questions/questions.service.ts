@@ -9,27 +9,16 @@ export class QuestionsService {
 
   async findAll(filters?: QuestionsQueryDto): Promise<Question[]> {
     // Build where clause based on filters
-    interface WhereClause {
-      Modules?: {
-        some: {
-          id?: string;
-          Course?: {
-            some: { id: string };
-          };
-        };
-      };
-      id?: {
-        notIn: string[];
-      };
-    }
-
-    const where: WhereClause = {};
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
+    const where: any = {};
 
     if (filters?.moduleId) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       where.Modules = { some: { id: filters.moduleId } };
     }
 
     if (filters?.courseId) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       where.Modules = {
         some: {
           Course: {
@@ -37,6 +26,11 @@ export class QuestionsService {
           },
         },
       };
+    }
+
+    if (filters?.questionType) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      where.type = filters.questionType;
     }
 
     // If excludePartQuestions is true, exclude questions that are part of other questions
@@ -52,11 +46,13 @@ export class QuestionsService {
         .map((part) => part.partQuestionId);
 
       if (idsToExclude.length > 0) {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         where.id = { notIn: idsToExclude };
       }
     }
 
     const questions = await this.prisma.question.findMany({
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       where,
       include: {
         text: true,

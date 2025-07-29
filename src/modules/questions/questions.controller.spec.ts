@@ -176,6 +176,53 @@ describe('QuestionsController', () => {
     ]);
   });
 
+  it('gets questions filtered by questionType', async () => {
+    const findAllMock = vi.fn().mockResolvedValue([
+      {
+        id: 'q1',
+        text: { en_text: 'Q', he_text: 'ש' },
+        moduleId: 'm1',
+        module: { id: 'm1', name: { en_text: 'mod', he_text: 'מודול' } },
+        answers: [
+          {
+            id: 'a1',
+            text: 'ans',
+            isCorrect: true,
+            questionId: 'q1',
+          },
+        ],
+      },
+    ]);
+    const service = {
+      findAll: findAllMock,
+    } as unknown as QuestionsService;
+
+    const controller = new QuestionsController(service);
+    const result = await controller.getQuestions({
+      questionType: 'selection',
+    });
+
+    expect(findAllMock).toHaveBeenCalledWith({
+      questionType: 'selection',
+    });
+    expect(result).toEqual([
+      {
+        id: 'q1',
+        text: { en_text: 'Q', he_text: 'ש' },
+        moduleId: 'm1',
+        module: { id: 'm1', name: { en_text: 'mod', he_text: 'מודול' } },
+        answers: [
+          {
+            id: 'a1',
+            text: 'ans',
+            isCorrect: true,
+            questionId: 'q1',
+          },
+        ],
+      },
+    ]);
+  });
+
   it('gets a question from service', async () => {
     const service = {
       findUnique: vi.fn().mockResolvedValue({
