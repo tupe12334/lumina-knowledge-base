@@ -728,4 +728,204 @@ export const QUESTIONS: QuestionSeedData[] = [
       },
     ],
   },
+  {
+    id: 'f235ed49-ae6d-4202-8d1a-e5592106f7b0',
+    translationId: 'd4d867eb-48cc-45f6-970a-e8d54bdb39e9',
+    text: {
+      en_text: 'How many ways can 5 distinct objects be arranged in a row?',
+      he_text: 'כמה אפשרויות לסדר 5 עצמים שונים בשורה?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'c6dd59ac-1802-4bc9-b91e-ca77bb32620e',
+    answers: [
+      {
+        id: '2b55f123-42dd-463f-bea6-ce8cd8ef8e1a',
+        numberAnswer: {
+          id: '5d20b3f7-bf99-4eb7-a2f6-f1129899a1c7',
+          value: 120,
+        },
+      },
+    ],
+  },
+  {
+    id: 'b6be29ea-7790-4e42-aac1-12a00e493d1e',
+    translationId: 'eaaa76b5-0c41-44e0-8d6f-c2f03b7fe196',
+    text: {
+      en_text: "How many permutations of the letters in the word 'LEVEL' are possible?",
+      he_text: "כמה תמורות אפשריות לאותיות במילה 'LEVEL'?",
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'c6dd59ac-1802-4bc9-b91e-ca77bb32620e',
+    answers: [
+      {
+        id: 'fe41abf2-52cc-4a47-b980-95f3030a2828',
+        numberAnswer: {
+          id: '6e37cf99-96da-4389-9c94-0f50034ee019',
+          value: 30,
+        },
+      },
+    ],
+  },
+  {
+    id: '2e19beed-16e7-4e45-8a00-749755150309',
+    translationId: 'ff8255b9-c2a5-4b6f-95fe-7d1b98fe4aa8',
+    text: {
+      en_text: 'How many 3-letter arrangements can be formed from A, B, C, D without repetition?',
+      he_text: 'כמה סידורים בני 3 אותיות ניתן ליצור מהאותיות A,B,C,D ללא חזרה?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'c6dd59ac-1802-4bc9-b91e-ca77bb32620e',
+    answers: [
+      {
+        id: '20dca280-c077-441d-bf80-374f315fb58b',
+        numberAnswer: {
+          id: 'f4937a9f-c88f-41f0-bfdd-0ffd7db1e4e0',
+          value: 24,
+        },
+      },
+    ],
+  },
+  {
+    id: '6fc66261-2ece-4828-b7df-abb9f70a9c13',
+    translationId: 'e272682c-6a21-4761-9309-72fad15c33b3',
+    text: {
+      en_text: 'How many ways can 4 books be arranged on a shelf?',
+      he_text: 'כמה דרכים קיימות לסדר 4 ספרים על מדף?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'c6dd59ac-1802-4bc9-b91e-ca77bb32620e',
+    answers: [
+      {
+        id: '57574d74-b8b6-4444-a371-c2d69f5fcf11',
+        numberAnswer: {
+          id: 'a309d254-958e-4e1b-a1a3-392adbe80e7f',
+          value: 24,
+        },
+      },
+    ],
+  },
+  {
+    id: 'ee3a4ec3-c930-41b5-bd2d-453632eed46f',
+    translationId: '9e876f30-59e2-4b8e-81ab-5186dc4d1211',
+    text: {
+      en_text: 'In how many distinct ways can 5 people sit around a circular table?',
+      he_text: 'בכמה דרכים שונות יכולים 5 אנשים לשבת סביב שולחן עגול?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'c6dd59ac-1802-4bc9-b91e-ca77bb32620e',
+    answers: [
+      {
+        id: '9fe9b757-ae38-49e7-b98a-140046cae94d',
+        numberAnswer: {
+          id: '625dd07f-23d2-4e9e-9f1b-7702e2abc5a5',
+          value: 24,
+        },
+      },
+    ],
+  },
+  {
+    id: '76b376fd-00ef-4ac8-b271-5adae1b87ffa',
+    translationId: '1b406d77-ef11-4bdd-bf00-86171c667d7c',
+    text: {
+      en_text: 'How many 4-digit even numbers can be formed using digits 1,2,3,4 without repetition?',
+      he_text: 'כמה מספרים זוגיים בני 4 ספרות ניתן להרכיב מהספרות 1,2,3,4 ללא חזרות?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'c6dd59ac-1802-4bc9-b91e-ca77bb32620e',
+    answers: [
+      {
+        id: 'bf9f8c99-7c6f-4ed8-a37b-6d118840e2c1',
+        numberAnswer: {
+          id: 'fb36ad47-b1e7-47bb-ae24-658211820b0e',
+          value: 12,
+        },
+      },
+    ],
+  },
+  {
+    id: '696df248-43cf-4d31-a04c-21d5bc526201',
+    translationId: '07e38cca-7219-46ee-b9c0-ff5f56afd1d6',
+    text: {
+      en_text: "How many permutations are there of the word 'BANANA'?",
+      he_text: "כמה תמורות יש למילה 'BANANA'?",
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'c6dd59ac-1802-4bc9-b91e-ca77bb32620e',
+    answers: [
+      {
+        id: '4bee6579-07eb-4b61-85c2-8674aad6ba34',
+        numberAnswer: {
+          id: '2c0c5c23-8a47-4961-8ed8-71899bd7ce1a',
+          value: 60,
+        },
+      },
+    ],
+  },
+  {
+    id: '1812c17a-631d-412c-9b53-0bbe8616865b',
+    translationId: '8498d647-63b4-4ad0-8a57-1439605f3def',
+    text: {
+      en_text: 'In how many ways can 8 runners finish a race if ties are not allowed?',
+      he_text: 'בכמה אופנים יכולים 8 רצים לסיים מרוץ ללא תיקו?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'c6dd59ac-1802-4bc9-b91e-ca77bb32620e',
+    answers: [
+      {
+        id: 'b14dc768-484c-4d63-89b4-dec271f81456',
+        numberAnswer: {
+          id: 'cb16e541-89e3-4cdc-9583-1a9497df48c0',
+          value: 40320,
+        },
+      },
+    ],
+  },
+  {
+    id: '731ff527-0bb4-449a-8bb0-8054a7ce4ff7',
+    translationId: 'dde375a5-44af-433d-be3c-1c0a8aeb6570',
+    text: {
+      en_text: 'How many 5-digit numbers greater than 30000 can be formed using digits 1-5 without repetition?',
+      he_text: 'כמה מספרים בני 5 ספרות הגדולים מ-30000 ניתן ליצור מהספרות 1-5 ללא חזרות?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'c6dd59ac-1802-4bc9-b91e-ca77bb32620e',
+    answers: [
+      {
+        id: '9e4d3ade-b3ac-4ec6-bacf-6f8a73643b7c',
+        numberAnswer: {
+          id: 'eac03a1f-15a6-4c16-9451-5dacc7b9ba34',
+          value: 72,
+        },
+      },
+    ],
+  },
+  {
+    id: '4e5c702f-1653-4273-9e0b-6d0d0f371123',
+    translationId: 'ab92366c-e66f-457a-9619-62439a063060',
+    text: {
+      en_text: "How many distinct permutations can be made from the letters of the word 'STATISTICS'?",
+      he_text: "כמה תמורות שונות אפשר ליצור מהאותיות במילה 'STATISTICS'?",
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'c6dd59ac-1802-4bc9-b91e-ca77bb32620e',
+    answers: [
+      {
+        id: '98185bd2-5482-490b-a99f-8685e093f182',
+        numberAnswer: {
+          id: 'b199ee7b-bb1d-484b-8829-4b1f3ae1cccd',
+          value: 50400,
+        },
+      },
+    ],
+  },
 ] satisfies QuestionSeedData[];
