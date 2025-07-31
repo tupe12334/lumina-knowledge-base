@@ -64,6 +64,7 @@ export const seedModules = async (
       'Permutations with Repetitions': 'e7c5b81e-5aad-4715-ab5d-c08122c05ef1',
       'Pascal Triangle': '453489f6-61fa-4699-b275-26d6165dbc89',
       'Binomial Formula': 'ee3583e5-7114-4a42-8a78-c1cb689276c9',
+      'Introduction to Logic': '1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d',
     };
     return translationMap[moduleText] || '';
   };
@@ -117,6 +118,7 @@ export const seedModules = async (
     'Permutations with Repetitions': 'f2866b62-f4f6-4e22-8fcc-f4bd8bbdb275',
     'Pascal Triangle': '82da973e-a84a-44f4-b33f-bcf907961eb3',
     'Binomial Formula': 'e1367766-2b1a-42f9-a725-58d092bbc080',
+    'Introduction to Logic': '3f2e1d4c-5b6a-4789-8c0d-1e2f3a4b5c6d',
   };
 
   const modules = [
@@ -212,6 +214,11 @@ export const seedModules = async (
     {
       en_text: 'Set Theory',
       he_text: 'תורת הקבוצות',
+      course: 'Discrete Mathematics',
+    },
+    {
+      en_text: 'Introduction to Logic',
+      he_text: 'מבוא ללוגיקה',
       course: 'Discrete Mathematics',
     },
     {
