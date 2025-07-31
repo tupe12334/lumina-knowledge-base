@@ -24,6 +24,15 @@ export const seedModules = async (
         'fcfd331c-bd37-4a51-b638-866fa5df19fe',
       'Permutations_Permutations with Repetitions':
         '27d30775-72bb-41a2-b974-3d9883e6bb12',
+      'Basic Logic Concepts_Logical Operators':
+        '4a5b6c7d-8e9f-4012-3456-789abc123def',
+      'Basic Logic Concepts_Truth Values':
+        '5b6c7d8e-9f01-5123-4567-89abcd234eff',
+      'Logical Operators_Logic Gates': '6c7d8e9f-0123-6234-5678-9abcde345f01',
+      'Truth Values_Conditional Statements':
+        '7d8e9f01-1234-7345-6789-abcdef456012',
+      'Logical Operators_Logical Equivalence':
+        '8e9f0123-2345-8456-789a-bcdef0567123',
     };
     return relationshipMap[`${prerequisite}_${postrequisite}`] || '';
   };
@@ -45,6 +54,16 @@ export const seedModules = async (
         '60158639-40cb-43b6-b89e-57fe34cd9800',
       '27d30775-72bb-41a2-b974-3d9883e6bb12':
         '3a2e73e6-3274-484e-af07-6fe40cd22ef9',
+      '4a5b6c7d-8e9f-4012-3456-789abc123def':
+        '9f0e1d2c-3b4a-5968-7edc-ba1234567890',
+      '5b6c7d8e-9f01-5123-4567-89abcd234eff':
+        'a01f2e3d-4c5b-6a79-8fed-cb2345678901',
+      '6c7d8e9f-0123-6234-5678-9abcde345f01':
+        'b120394e-5d6c-7b8a-9012-dc3456789012',
+      '7d8e9f01-1234-7345-6789-abcdef456012':
+        'c2314a5f-6e7d-8c9b-a123-ed4567890123',
+      '8e9f0123-2345-8456-789a-bcdef0567123':
+        'd342b516-7f8e-9d0c-b234-fe5678901234',
     };
     return metadataMap[blockRelationshipId] || '';
   };
@@ -65,6 +84,12 @@ export const seedModules = async (
       'Pascal Triangle': '453489f6-61fa-4699-b275-26d6165dbc89',
       'Binomial Formula': 'ee3583e5-7114-4a42-8a78-c1cb689276c9',
       'Introduction to Logic': '1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d',
+      'Basic Logic Concepts': '2b3c4d5e-6f7a-5b8c-9d0e-1f2a3b4c5d6e',
+      'Logical Operators': '3c4d5e6f-7a8b-6c9d-0e1f-2a3b4c5d6e7f',
+      'Truth Values': '4d5e6f7a-8b9c-7d0e-1f2a-3b4c5d6e7f8a',
+      'Logic Gates': '5e6f7a8b-9c0d-8e1f-2a3b-4c5d6e7f8a9b',
+      'Conditional Statements': '6f7a8b9c-0d1e-9f2a-3b4c-5d6e7f8a9b0c',
+      'Logical Equivalence': '7a8b9c0d-1e2f-0a3b-4c5d-6e7f8a9b0c1d',
     };
     return translationMap[moduleText] || '';
   };
@@ -119,6 +144,12 @@ export const seedModules = async (
     'Pascal Triangle': '82da973e-a84a-44f4-b33f-bcf907961eb3',
     'Binomial Formula': 'e1367766-2b1a-42f9-a725-58d092bbc080',
     'Introduction to Logic': '3f2e1d4c-5b6a-4789-8c0d-1e2f3a4b5c6d',
+    'Basic Logic Concepts': '8b9c0d1e-2f3a-4b5c-6d7e-8f9a0b1c2d3e',
+    'Logical Operators': '9c0d1e2f-3a4b-5c6d-7e8f-9a0b1c2d3e4f',
+    'Truth Values': '0d1e2f3a-4b5c-6d7e-8f9a-0b1c2d3e4f5a',
+    'Logic Gates': '1e2f3a4b-5c6d-7e8f-9a0b-1c2d3e4f5a6b',
+    'Conditional Statements': '2f3a4b5c-6d7e-8f9a-0b1c-2d3e4f5a6b7c',
+    'Logical Equivalence': '3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b7c8d',
   };
 
   const modules = [
@@ -219,6 +250,47 @@ export const seedModules = async (
     {
       en_text: 'Introduction to Logic',
       he_text: 'מבוא ללוגיקה',
+      course: 'Discrete Mathematics',
+    },
+    {
+      en_text: 'Basic Logic Concepts',
+      he_text: 'מושגי יסוד בלוגיקה',
+      parent: 'Introduction to Logic',
+      course: 'Discrete Mathematics',
+    },
+    {
+      en_text: 'Logical Operators',
+      he_text: 'אופרטורים לוגיים',
+      parent: 'Introduction to Logic',
+      prerequisite: 'Basic Logic Concepts',
+      course: 'Discrete Mathematics',
+    },
+    {
+      en_text: 'Truth Values',
+      he_text: 'ערכי אמת',
+      parent: 'Introduction to Logic',
+      prerequisite: 'Basic Logic Concepts',
+      course: 'Discrete Mathematics',
+    },
+    {
+      en_text: 'Logic Gates',
+      he_text: 'שערים לוגיים',
+      parent: 'Introduction to Logic',
+      prerequisite: 'Logical Operators',
+      course: 'Discrete Mathematics',
+    },
+    {
+      en_text: 'Conditional Statements',
+      he_text: 'טענות תנאיות',
+      parent: 'Introduction to Logic',
+      prerequisite: 'Truth Values',
+      course: 'Discrete Mathematics',
+    },
+    {
+      en_text: 'Logical Equivalence',
+      he_text: 'שקילות לוגית',
+      parent: 'Introduction to Logic',
+      prerequisite: 'Logical Operators',
       course: 'Discrete Mathematics',
     },
     {
