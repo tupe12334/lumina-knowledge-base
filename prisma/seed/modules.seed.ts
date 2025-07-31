@@ -25,14 +25,14 @@ export const seedModules = async (
       'Permutations_Permutations with Repetitions':
         '27d30775-72bb-41a2-b974-3d9883e6bb12',
       'Basic Logic Concepts_Logical Operators':
-        '4a5b6c7d-8e9f-4012-3456-789abc123def',
+        '4a5b6c7d-8e9f-4412-a456-789abc123def',
       'Basic Logic Concepts_Truth Values':
-        '5b6c7d8e-9f01-5123-4567-89abcd234eff',
-      'Logical Operators_Logic Gates': '6c7d8e9f-0123-6234-5678-9abcde345f01',
+        '5b6c7d8e-9f01-4123-b567-89abcd234eff',
+      'Logical Operators_Logic Gates': '6c7d8e9f-0123-4234-a678-9abcde345f01',
       'Truth Values_Conditional Statements':
-        '7d8e9f01-1234-7345-6789-abcdef456012',
+        '7d8e9f01-1234-4345-a789-abcdef456012',
       'Logical Operators_Logical Equivalence':
-        '8e9f0123-2345-8456-789a-bcdef0567123',
+        '8e9f0123-2345-4456-a89a-bcdef0567123',
     };
     return relationshipMap[`${prerequisite}_${postrequisite}`] || '';
   };
@@ -54,16 +54,16 @@ export const seedModules = async (
         '60158639-40cb-43b6-b89e-57fe34cd9800',
       '27d30775-72bb-41a2-b974-3d9883e6bb12':
         '3a2e73e6-3274-484e-af07-6fe40cd22ef9',
-      '4a5b6c7d-8e9f-4012-3456-789abc123def':
-        '9f0e1d2c-3b4a-5968-7edc-ba1234567890',
-      '5b6c7d8e-9f01-5123-4567-89abcd234eff':
-        'a01f2e3d-4c5b-6a79-8fed-cb2345678901',
-      '6c7d8e9f-0123-6234-5678-9abcde345f01':
-        'b120394e-5d6c-7b8a-9012-dc3456789012',
-      '7d8e9f01-1234-7345-6789-abcdef456012':
-        'c2314a5f-6e7d-8c9b-a123-ed4567890123',
-      '8e9f0123-2345-8456-789a-bcdef0567123':
-        'd342b516-7f8e-9d0c-b234-fe5678901234',
+      '4a5b6c7d-8e9f-4412-a456-789abc123def':
+        '9f0e1d2c-3b4a-4968-a7dc-ba1234567890',
+      '5b6c7d8e-9f01-4123-b567-89abcd234eff':
+        'a01f2e3d-4c5b-4a79-a8ed-cb2345678901',
+      '6c7d8e9f-0123-4234-a678-9abcde345f01':
+        'b120394e-5d6c-4b8a-9012-dc3456789012',
+      '7d8e9f01-1234-4345-a789-abcdef456012':
+        'c2314a5f-6e7d-4c9b-a123-ed4567890123',
+      '8e9f0123-2345-4456-a89a-bcdef0567123':
+        'd342b516-7f8e-4d0c-b234-fe5678901234',
     };
     return metadataMap[blockRelationshipId] || '';
   };
@@ -83,13 +83,15 @@ export const seedModules = async (
       'Permutations with Repetitions': 'e7c5b81e-5aad-4715-ab5d-c08122c05ef1',
       'Pascal Triangle': '453489f6-61fa-4699-b275-26d6165dbc89',
       'Binomial Formula': 'ee3583e5-7114-4a42-8a78-c1cb689276c9',
+      'Inclusion Principle': '4f5a6b7c-8d9e-4012-a456-789abc123def',
+      'Separation Principle': '5a6b7c8d-9e0f-4123-b567-89abcd234eff',
       'Introduction to Logic': '1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d',
-      'Basic Logic Concepts': '2b3c4d5e-6f7a-5b8c-9d0e-1f2a3b4c5d6e',
-      'Logical Operators': '3c4d5e6f-7a8b-6c9d-0e1f-2a3b4c5d6e7f',
-      'Truth Values': '4d5e6f7a-8b9c-7d0e-1f2a-3b4c5d6e7f8a',
-      'Logic Gates': '5e6f7a8b-9c0d-8e1f-2a3b-4c5d6e7f8a9b',
-      'Conditional Statements': '6f7a8b9c-0d1e-9f2a-3b4c-5d6e7f8a9b0c',
-      'Logical Equivalence': '7a8b9c0d-1e2f-0a3b-4c5d-6e7f8a9b0c1d',
+      'Basic Logic Concepts': '2b3c4d5e-6f7a-4b8c-9d0e-1f2a3b4c5d6e',
+      'Logical Operators': '3c4d5e6f-7a8b-4c9d-a0ef-2a3b4c5d6e7f',
+      'Truth Values': '4d5e6f7a-8b9c-4d0e-a1fa-3b4c5d6e7f8a',
+      'Logic Gates': '5e6f7a8b-9c0d-4e1f-a2ab-4c5d6e7f8a9b',
+      'Conditional Statements': '6f7a8b9c-0d1e-4f2a-a3bc-5d6e7f8a9b0c',
+      'Logical Equivalence': '7a8b9c0d-1e2f-403b-a4cd-6e7f8a9b0c1d',
     };
     return translationMap[moduleText] || '';
   };
@@ -143,13 +145,15 @@ export const seedModules = async (
     'Permutations with Repetitions': 'f2866b62-f4f6-4e22-8fcc-f4bd8bbdb275',
     'Pascal Triangle': '82da973e-a84a-44f4-b33f-bcf907961eb3',
     'Binomial Formula': 'e1367766-2b1a-42f9-a725-58d092bbc080',
+    'Inclusion Principle': '4f5a6b7c-8d9e-4012-a456-789abc123def',
+    'Separation Principle': '5a6b7c8d-9e0f-4123-b567-89abcd234eff',
     'Introduction to Logic': '3f2e1d4c-5b6a-4789-8c0d-1e2f3a4b5c6d',
-    'Basic Logic Concepts': '8b9c0d1e-2f3a-4b5c-6d7e-8f9a0b1c2d3e',
-    'Logical Operators': '9c0d1e2f-3a4b-5c6d-7e8f-9a0b1c2d3e4f',
-    'Truth Values': '0d1e2f3a-4b5c-6d7e-8f9a-0b1c2d3e4f5a',
-    'Logic Gates': '1e2f3a4b-5c6d-7e8f-9a0b-1c2d3e4f5a6b',
-    'Conditional Statements': '2f3a4b5c-6d7e-8f9a-0b1c-2d3e4f5a6b7c',
-    'Logical Equivalence': '3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b7c8d',
+    'Basic Logic Concepts': '8b9c0d1e-2f3a-4b5c-86de-8f9a0b1c2d3e',
+    'Logical Operators': '9c0d1e2f-3a4b-4c6d-87ef-9a0b1c2d3e4f',
+    'Truth Values': '0d1e2f3a-4b5c-4d7e-a8fa-0b1c2d3e4f5a',
+    'Logic Gates': '1e2f3a4b-5c6d-4e8f-a9ab-1c2d3e4f5a6b',
+    'Conditional Statements': '2f3a4b5c-6d7e-4f9a-a0bc-2d3e4f5a6b7c',
+    'Logical Equivalence': '3a4b5c6d-7e8f-409b-a1cd-3e4f5a6b7c8d',
   };
 
   const modules = [
@@ -358,6 +362,18 @@ export const seedModules = async (
     {
       en_text: 'Binomial Formula',
       he_text: 'נוסחת הבינום',
+      parent: 'Combinatorics',
+      course: 'Discrete Mathematics',
+    },
+    {
+      en_text: 'Inclusion Principle',
+      he_text: 'עקרון ההכלה',
+      parent: 'Combinatorics',
+      course: 'Discrete Mathematics',
+    },
+    {
+      en_text: 'Separation Principle',
+      he_text: 'עקרון ההפרדה',
       parent: 'Combinatorics',
       course: 'Discrete Mathematics',
     },
