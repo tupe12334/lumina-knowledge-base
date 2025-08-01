@@ -24,6 +24,8 @@ export const seedModules = async (
         'fcfd331c-bd37-4a51-b638-866fa5df19fe',
       'Permutations_Permutations with Repetitions':
         '27d30775-72bb-41a2-b974-3d9883e6bb12',
+      'Sum Principle_Multiplication Principle':
+        '6a70e70d-a1e0-486e-9c55-b22090cede3f',
       'Basic Logic Concepts_Logical Operators':
         '4a5b6c7d-8e9f-4412-a456-789abc123def',
       'Basic Logic Concepts_Truth Values':
@@ -54,6 +56,8 @@ export const seedModules = async (
         '60158639-40cb-43b6-b89e-57fe34cd9800',
       '27d30775-72bb-41a2-b974-3d9883e6bb12':
         '3a2e73e6-3274-484e-af07-6fe40cd22ef9',
+      '6a70e70d-a1e0-486e-9c55-b22090cede3f':
+        'c5681550-91a0-47ae-83b2-efaaf361ca6b',
       '4a5b6c7d-8e9f-4412-a456-789abc123def':
         '9f0e1d2c-3b4a-4968-a7dc-ba1234567890',
       '5b6c7d8e-9f01-4123-b567-89abcd234eff':
@@ -351,6 +355,7 @@ export const seedModules = async (
       en_text: 'Multiplication Principle',
       he_text: 'עקרון הכפל',
       parent: 'Combinatorics',
+      prerequisite: 'Sum Principle',
       course: 'Discrete Mathematics',
     },
     {
