@@ -15,14 +15,66 @@ export class ModulesService {
         name: true,
         Block: {
           include: {
-            prerequisiteFor: true,
-            postrequisiteOf: true,
+            prerequisiteFor: {
+              include: {
+                postrequisite: {
+                  include: {
+                    Module: {
+                      include: {
+                        name: true,
+                        Block: {
+                          include: {
+                            prerequisiteFor: true,
+                            postrequisiteOf: true,
+                          },
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+            postrequisiteOf: {
+              include: {
+                prerequisite: {
+                  include: {
+                    Module: {
+                      include: {
+                        name: true,
+                        Block: {
+                          include: {
+                            prerequisiteFor: true,
+                            postrequisiteOf: true,
+                          },
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
           },
         },
         subModules: {
           include: {
             name: true,
-            subModules: { include: { name: true } },
+            Block: {
+              include: {
+                prerequisiteFor: true,
+                postrequisiteOf: true,
+              },
+            },
+            subModules: {
+              include: {
+                name: true,
+                Block: {
+                  include: {
+                    prerequisiteFor: true,
+                    postrequisiteOf: true,
+                  },
+                },
+              },
+            },
           },
         },
         parentModules: { include: { name: true } },
