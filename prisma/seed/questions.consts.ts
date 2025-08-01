@@ -752,7 +752,8 @@ export const QUESTIONS: QuestionSeedData[] = [
     id: 'b6be29ea-7790-4e42-aac1-12a00e493d1e',
     translationId: 'eaaa76b5-0c41-44e0-8d6f-c2f03b7fe196',
     text: {
-      en_text: "How many permutations of the letters in the word 'LEVEL' are possible?",
+      en_text:
+        "How many permutations of the letters in the word 'LEVEL' are possible?",
       he_text: "כמה תמורות אפשריות לאותיות במילה 'LEVEL'?",
     },
     type: QuestionType.value,
@@ -772,7 +773,8 @@ export const QUESTIONS: QuestionSeedData[] = [
     id: '2e19beed-16e7-4e45-8a00-749755150309',
     translationId: 'ff8255b9-c2a5-4b6f-95fe-7d1b98fe4aa8',
     text: {
-      en_text: 'How many 3-letter arrangements can be formed from A, B, C, D without repetition?',
+      en_text:
+        'How many 3-letter arrangements can be formed from A, B, C, D without repetition?',
       he_text: 'כמה סידורים בני 3 אותיות ניתן ליצור מהאותיות A,B,C,D ללא חזרה?',
     },
     type: QuestionType.value,
@@ -812,7 +814,8 @@ export const QUESTIONS: QuestionSeedData[] = [
     id: 'ee3a4ec3-c930-41b5-bd2d-453632eed46f',
     translationId: '9e876f30-59e2-4b8e-81ab-5186dc4d1211',
     text: {
-      en_text: 'In how many distinct ways can 5 people sit around a circular table?',
+      en_text:
+        'In how many distinct ways can 5 people sit around a circular table?',
       he_text: 'בכמה דרכים שונות יכולים 5 אנשים לשבת סביב שולחן עגול?',
     },
     type: QuestionType.value,
@@ -832,8 +835,10 @@ export const QUESTIONS: QuestionSeedData[] = [
     id: '76b376fd-00ef-4ac8-b271-5adae1b87ffa',
     translationId: '1b406d77-ef11-4bdd-bf00-86171c667d7c',
     text: {
-      en_text: 'How many 4-digit even numbers can be formed using digits 1,2,3,4 without repetition?',
-      he_text: 'כמה מספרים זוגיים בני 4 ספרות ניתן להרכיב מהספרות 1,2,3,4 ללא חזרות?',
+      en_text:
+        'How many 4-digit even numbers can be formed using digits 1,2,3,4 without repetition?',
+      he_text:
+        'כמה מספרים זוגיים בני 4 ספרות ניתן להרכיב מהספרות 1,2,3,4 ללא חזרות?',
     },
     type: QuestionType.value,
     validationStatus: QuestionValidationStatus.ai_generated,
@@ -872,7 +877,8 @@ export const QUESTIONS: QuestionSeedData[] = [
     id: '1812c17a-631d-412c-9b53-0bbe8616865b',
     translationId: '8498d647-63b4-4ad0-8a57-1439605f3def',
     text: {
-      en_text: 'In how many ways can 8 runners finish a race if ties are not allowed?',
+      en_text:
+        'In how many ways can 8 runners finish a race if ties are not allowed?',
       he_text: 'בכמה אופנים יכולים 8 רצים לסיים מרוץ ללא תיקו?',
     },
     type: QuestionType.value,
@@ -892,8 +898,10 @@ export const QUESTIONS: QuestionSeedData[] = [
     id: '731ff527-0bb4-449a-8bb0-8054a7ce4ff7',
     translationId: 'dde375a5-44af-433d-be3c-1c0a8aeb6570',
     text: {
-      en_text: 'How many 5-digit numbers greater than 30000 can be formed using digits 1-5 without repetition?',
-      he_text: 'כמה מספרים בני 5 ספרות הגדולים מ-30000 ניתן ליצור מהספרות 1-5 ללא חזרות?',
+      en_text:
+        'How many 5-digit numbers greater than 30000 can be formed using digits 1-5 without repetition?',
+      he_text:
+        'כמה מספרים בני 5 ספרות הגדולים מ-30000 ניתן ליצור מהספרות 1-5 ללא חזרות?',
     },
     type: QuestionType.value,
     validationStatus: QuestionValidationStatus.ai_generated,
@@ -912,7 +920,8 @@ export const QUESTIONS: QuestionSeedData[] = [
     id: '4e5c702f-1653-4273-9e0b-6d0d0f371123',
     translationId: 'ab92366c-e66f-457a-9619-62439a063060',
     text: {
-      en_text: "How many distinct permutations can be made from the letters of the word 'STATISTICS'?",
+      en_text:
+        "How many distinct permutations can be made from the letters of the word 'STATISTICS'?",
       he_text: "כמה תמורות שונות אפשר ליצור מהאותיות במילה 'STATISTICS'?",
     },
     type: QuestionType.value,
@@ -988,6 +997,211 @@ export const QUESTIONS: QuestionSeedData[] = [
     answers: [
       {
         id: '1e85ae4e-78d9-406a-8d09-e93e56252aa5',
+      },
+    ],
+  },
+  {
+    id: 'adc25314-48a4-4fb9-8849-45120c8e5b24',
+    translationId: '3eed2bf4-2068-4492-b0a1-d6230df46d99',
+    text: {
+      en_text: 'How many integers from 1 to 100 are divisible by 2 or 5?',
+      he_text: 'כמה מספרים שלמים בין 1 ל-100 מתחלקים ב-2 או ב-5?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '4f5a6b7c-8d9e-4012-a456-789abc123def',
+    answers: [
+      {
+        id: 'dff6c604-8cdc-446c-85a5-711bfe40682d',
+        numberAnswer: {
+          id: '54aca958-6ec4-4fde-9845-8639a72e0e22',
+          value: 60,
+        },
+      },
+    ],
+  },
+  {
+    id: '8c9fbf32-317c-48de-a1d0-3409ad149a3c',
+    translationId: '67cb3992-ad01-4a69-9738-1eacf9bd0985',
+    text: {
+      en_text: 'How many integers from 1 to 100 are divisible by 3 or 7?',
+      he_text: 'כמה מספרים שלמים בין 1 ל-100 מתחלקים ב-3 או ב-7?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '4f5a6b7c-8d9e-4012-a456-789abc123def',
+    answers: [
+      {
+        id: '58b77e86-14d7-4233-972d-4ea4a262bab4',
+        numberAnswer: {
+          id: '83427450-9939-424e-9c89-aa08df4d8d56',
+          value: 43,
+        },
+      },
+    ],
+  },
+  {
+    id: 'e527edaf-afba-4686-9837-5d43bb4899bc',
+    translationId: '5f85faa1-6351-413d-805b-4791490e802c',
+    text: {
+      en_text: 'How many integers from 1 to 200 are divisible by 3 or 5 or 7?',
+      he_text: 'כמה מספרים שלמים בין 1 ל-200 מתחלקים ב-3 או ב-5 או ב-7?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '4f5a6b7c-8d9e-4012-a456-789abc123def',
+    answers: [
+      {
+        id: '422da29f-8f7e-4fc6-9b73-9b39ffccd49e',
+        numberAnswer: {
+          id: '43732a0d-6195-44ca-af4e-d4d8bd297f07',
+          value: 108,
+        },
+      },
+    ],
+  },
+  {
+    id: '05736047-d0a1-44b5-ab41-1ea5c554a109',
+    translationId: 'e5bcbc7d-dbc1-4e25-aff7-742ad9c64cb2',
+    text: {
+      en_text:
+        '40 study math 50 physics 60 computer science 20 study math and physics 25 math and computer science 30 physics and computer science and 5 study all three How many students study at least one subject?',
+      he_text:
+        '40 לומדים מתמטיקה 50 פיזיקה 60 מדעי המחשב 20 לומדים מתמטיקה ופיזיקה 25 מתמטיקה ומדעי המחשב 30 פיזיקה ומדעי המחשב ו-5 לומדים את שלושת המקצועות כמה סטודנטים לומדים לפחות מקצוע אחד?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '4f5a6b7c-8d9e-4012-a456-789abc123def',
+    answers: [
+      {
+        id: 'f32d2330-e058-4404-964d-77ddfa628897',
+        numberAnswer: {
+          id: '00c0ee46-78a6-4e57-b29b-0d73192520c0',
+          value: 80,
+        },
+      },
+    ],
+  },
+  {
+    id: '863a44be-8e03-47f1-88e2-69009ef72a55',
+    translationId: '201abf55-c8fb-4b41-ab80-b373c958a084',
+    text: {
+      en_text: 'How many integers from 1 to 1000 are divisible by 3 or 4?',
+      he_text: 'כמה מספרים שלמים בין 1 ל-1000 מתחלקים ב-3 או ב-4?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '4f5a6b7c-8d9e-4012-a456-789abc123def',
+    answers: [
+      {
+        id: '9be9e6ba-c7d5-4a16-a582-c4f895550e53',
+        numberAnswer: {
+          id: '444a9828-033e-4d78-bb85-600ac328ee91',
+          value: 500,
+        },
+      },
+    ],
+  },
+  {
+    id: 'b09577a0-f325-43eb-a04b-19f0244b38a2',
+    translationId: '74700c15-53ae-4a51-b554-ecafeb5b6840',
+    text: {
+      en_text: 'How many three digit numbers are multiples of 2 or 5?',
+      he_text: 'כמה מספרים בני שלוש ספרות הם כפולות של 2 או 5?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '4f5a6b7c-8d9e-4012-a456-789abc123def',
+    answers: [
+      {
+        id: '1f3e768e-534e-4785-9cb6-f660b32f8c44',
+        numberAnswer: {
+          id: '0b6de177-0a5c-4fc6-8834-ad7e979b4df9',
+          value: 540,
+        },
+      },
+    ],
+  },
+  {
+    id: '3d0e7cbc-c976-4aa5-a1ee-f9249617adf2',
+    translationId: 'b7c0aefb-a927-4452-bc73-65d772e3da25',
+    text: {
+      en_text:
+        '100 like coffee 80 tea 60 juice 30 like coffee and tea 25 coffee and juice 20 tea and juice and 10 like all three How many people like at least one drink?',
+      he_text:
+        '100 אוהבים קפה 80 תה 60 מיץ 30 אוהבים קפה ותה 25 קפה ומיץ 20 תה ומיץ ו-10 אוהבים את כל שלושת המשקאות כמה אנשים אוהבים לפחות משקה אחד?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '4f5a6b7c-8d9e-4012-a456-789abc123def',
+    answers: [
+      {
+        id: 'bc09d484-3c91-418d-83ac-7c77378983de',
+        numberAnswer: {
+          id: '3bb2c27f-c7ff-4a08-bfbe-d0d92f747fc6',
+          value: 175,
+        },
+      },
+    ],
+  },
+  {
+    id: '0078b5b8-2eef-4856-962a-67fb9441fe24',
+    translationId: 'bdf204a0-0e77-46e1-b6e5-5002f7957a94',
+    text: {
+      en_text: 'How many integers from 1 to 100 are divisible by 2 or 3 or 5?',
+      he_text: 'כמה מספרים שלמים בין 1 ל-100 מתחלקים ב-2 או ב-3 או ב-5?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '4f5a6b7c-8d9e-4012-a456-789abc123def',
+    answers: [
+      {
+        id: 'd4c9233e-f3e5-42a0-9c53-66f9d6df3b16',
+        numberAnswer: {
+          id: '22989b36-971f-41f3-af25-0db84f485072',
+          value: 74,
+        },
+      },
+    ],
+  },
+  {
+    id: 'e3281abd-5909-4fec-880e-68f8da4bbdc6',
+    translationId: 'ef83ce26-fcfc-481d-a35a-96267fc5c3ea',
+    text: {
+      en_text:
+        'How many permutations of the word APPLE start with A or end with E?',
+      he_text: 'כמה סידורים של המילה APPLE מתחילים באות A או מסתיימים באות E?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '4f5a6b7c-8d9e-4012-a456-789abc123def',
+    answers: [
+      {
+        id: '94fbc3d6-b524-4418-96e0-3f50be464088',
+        numberAnswer: {
+          id: '2245c703-4b41-453d-8ea4-2500bd977e50',
+          value: 21,
+        },
+      },
+    ],
+  },
+  {
+    id: 'da5384d3-36b9-439d-81c7-4468b53d09bf',
+    translationId: '80ecc9bb-afba-4377-8a64-cb95495ef4b8',
+    text: {
+      en_text: 'How many integers from 1 to 60 are not divisible by 2 or 3?',
+      he_text: 'כמה מספרים שלמים בין 1 ל-60 אינם מתחלקים ב-2 או ב-3?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '4f5a6b7c-8d9e-4012-a456-789abc123def',
+    answers: [
+      {
+        id: '51183f91-9a7d-49c7-b232-d33ec304bd8f',
+        numberAnswer: {
+          id: '994fe719-c40c-4b85-a7fd-81c5d1e1cea5',
+          value: 20,
+        },
       },
     ],
   },

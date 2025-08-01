@@ -41,17 +41,20 @@ describe('BlocksService', () => {
 
     expect(result).toEqual({
       id: 'b1',
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       createdAt: expect.any(Date),
       updatedAt: null,
       Module: [
         {
           id: 'm1',
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
           createdAt: expect.any(Date),
           updatedAt: null,
           translationId: moduleName.id,
           blockId: 'b1',
           name: {
             id: moduleName.id,
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
             createdAt: expect.any(Date),
             updatedAt: null,
             en_text: 'Module',
