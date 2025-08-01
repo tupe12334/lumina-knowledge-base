@@ -964,6 +964,13 @@ exports[`seed snapshot > saves seeded data snapshot 1`] = `
     },
     {
       "createdAt": 1970-01-01T00:00:00.000Z,
+      "id": "6a70e70d-a1e0-486e-9c55-b22090cede3f",
+      "postrequisiteId": "81BE3915-2C63-470E-85FE-55C1062DEFF3",
+      "prerequisiteId": "78123942-6F56-4C66-8881-B49BC26E107D",
+      "updatedAt": null,
+    },
+    {
+      "createdAt": 1970-01-01T00:00:00.000Z,
       "id": "4a400758-507b-4ff0-9799-026577878064",
       "postrequisiteId": "2ca3350d-2870-47c4-b9b4-a397b8bbe7b9",
       "prerequisiteId": "1ba27209-cfc3-4f46-93cc-5df7d272aebc",
@@ -2977,6 +2984,14 @@ exports[`seed snapshot > saves seeded data snapshot 1`] = `
       "blockRelationshipId": "27d30775-72bb-41a2-b974-3d9883e6bb12",
       "createdAt": 1970-01-01T00:00:00.000Z,
       "id": "3a2e73e6-3274-484e-af07-6fe40cd22ef9",
+      "key": "TYPE",
+      "updatedAt": null,
+      "value": "hard",
+    },
+    {
+      "blockRelationshipId": "6a70e70d-a1e0-486e-9c55-b22090cede3f",
+      "createdAt": 1970-01-01T00:00:00.000Z,
+      "id": "c5681550-91a0-47ae-83b2-efaaf361ca6b",
       "key": "TYPE",
       "updatedAt": null,
       "value": "hard",
