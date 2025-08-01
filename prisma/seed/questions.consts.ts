@@ -928,4 +928,67 @@ export const QUESTIONS: QuestionSeedData[] = [
       },
     ],
   },
+  {
+    id: 'ddd90146-abb2-44a4-83c7-e2ca0194ede8',
+    translationId: 'f0822445-f9c1-452d-8c3c-6de61098177b',
+    text: {
+      en_text: 'Is zero an even number',
+      he_text: 'האם אפס הוא מספר זוגי',
+    },
+    type: QuestionType.selection,
+    moduleId: 'a56fb4f6-cd1f-42e2-83ce-16dafaf2f067',
+    answers: [
+      {
+        id: 'b3715e89-9cdd-42db-8053-19d65c8d92a8',
+        selectAnswers: [
+          {
+            id: 'bacac835-0059-457a-aec9-dc8795f1d0ec',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: 'c1414657-15c8-4f05-8584-e6c07907a162',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '8d08ab89-2e8f-4d5d-8a1d-9283e84f2973',
+    translationId: '3774b231-66e2-42b5-964b-a7ca3cffd565',
+    text: {
+      en_text: 'What is the square root of 144',
+      he_text: 'מהו השורש הריבועי של 144',
+    },
+    type: QuestionType.value,
+    moduleId: '6e19169a-959d-4f5d-a475-de09ca9ba8cd',
+    answers: [
+      {
+        id: 'f0c73e13-7562-437c-8e1d-4c4c61fed8b2',
+        numberAnswer: {
+          id: 'e01906b1-305c-44cb-b452-bc71fd0c4568',
+          value: 12,
+        },
+      },
+    ],
+  },
+  {
+    id: '0cca7095-d2b5-402c-8895-c028c791c3b3',
+    translationId: '627d6bc0-5764-4b99-bdca-abdbacd5a82c',
+    text: {
+      en_text: 'Describe your favorite study technique',
+      he_text: 'תאר את שיטת הלמידה המועדפת עליך',
+    },
+    type: QuestionType.void,
+    moduleId: '2b8d7f9c-3a4e-4b5f-8c9d-1e2f3a4b5c6d',
+    answers: [
+      {
+        id: '1e85ae4e-78d9-406a-8d09-e93e56252aa5',
+      },
+    ],
+  },
 ] satisfies QuestionSeedData[];
