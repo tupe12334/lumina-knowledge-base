@@ -496,54 +496,6 @@
         }
       }
     },
-    "/universities": {
-      "get": {
-        "operationId": "UniversitiesController_getUniversities",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/University"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/universities/{id}": {
-      "get": {
-        "operationId": "UniversitiesController_getUniversity",
-        "parameters": [
-          {
-            "name": "id",
-            "required": true,
-            "in": "path",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/University"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/courses": {
       "get": {
         "operationId": "CoursesController_getCourses",
@@ -1144,71 +1096,6 @@
           "he_text"
         ]
       },
-      "Degree": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "createdAt": {
-            "format": "date-time",
-            "type": "string"
-          },
-          "updatedAt": {
-            "format": "date-time",
-            "type": "string"
-          },
-          "name": {
-            "$ref": "#/components/schemas/Translation"
-          },
-          "universityId": {
-            "type": "string"
-          },
-          "university": {
-            "$ref": "#/components/schemas/University"
-          },
-          "courses": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Course"
-            }
-          }
-        },
-        "required": [
-          "id",
-          "createdAt",
-          "updatedAt",
-          "name",
-          "universityId"
-        ]
-      },
-      "University": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "$ref": "#/components/schemas/Translation"
-          },
-          "courses": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Course"
-            }
-          },
-          "degrees": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Degree"
-            }
-          }
-        },
-        "required": [
-          "id",
-          "name"
-        ]
-      },
       "Discipline": {
         "type": "object",
         "properties": {
@@ -1450,6 +1337,71 @@
           "disciplineId",
           "publishedAt",
           "Block"
+        ]
+      },
+      "Degree": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "createdAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "updatedAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "name": {
+            "$ref": "#/components/schemas/Translation"
+          },
+          "universityId": {
+            "type": "string"
+          },
+          "university": {
+            "$ref": "#/components/schemas/University"
+          },
+          "courses": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Course"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "createdAt",
+          "updatedAt",
+          "name",
+          "universityId"
+        ]
+      },
+      "University": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "$ref": "#/components/schemas/Translation"
+          },
+          "courses": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Course"
+            }
+          },
+          "degrees": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Degree"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "name"
         ]
       },
       "SelectAnswer": {
