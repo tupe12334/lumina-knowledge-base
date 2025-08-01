@@ -2,6 +2,106 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type Block {
+  id: ID!
+  modules: [Module!]
+  postrequisiteOf: [BlockRelationship!]
+  prerequisiteFor: [BlockRelationship!]
+}
+
+type BlockRelationship {
+  id: ID!
+  metadata: [RelationshipMetadata!]
+  postrequisite: Block
+  postrequisiteId: String!
+  prerequisite: Block
+  prerequisiteId: String!
+}
+
+type Course {
+  Block: Block
+  discipline: Discipline
+  disciplineId: String!
+  id: ID!
+  modules: [Module!]
+  name: Translation!
+  publishedAt: DateTime
+  university: University
+  universityId: String!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Degree {
+  courses: [Course!]
+  createdAt: DateTime!
+  id: ID!
+  name: Translation!
+  university: University
+  universityId: String!
+  updatedAt: DateTime!
+}
+
+type Discipline {
+  courses: [Course!]
+  id: ID!
+  name: Translation!
+}
+
+type LearningResource {
+  createdAt: DateTime!
+  id: ID!
+  moduleId: String!
+  relevance: Int!
+  suggestedBy: String
+  type: LearningResourceType!
+  updatedAt: DateTime!
+  url: String!
+}
+
+enum LearningResourceType {
+  video
+}
+
+type Module {
+  Block: Block
+  LearningResource: [LearningResource!]
+  id: ID!
+  name: Translation!
+  parentModules: [Module!]
+  subModules: [Module!]
+}
+
 type Query {
   hello: String!
+  universities: [University!]!
+  university(id: ID!): University
+}
+
+type RelationshipMetadata {
+  blockRelationshipId: String!
+  id: ID!
+  key: RelationshipMetadataKey!
+  value: String!
+}
+
+enum RelationshipMetadataKey {
+  DESCRIPTION
+  REASON
+  TYPE
+}
+
+type Translation {
+  en_text: String!
+  he_text: String!
+}
+
+type University {
+  courses: [Course!]
+  degrees: [Degree!]
+  id: ID!
+  name: Translation!
 }
