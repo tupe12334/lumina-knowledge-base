@@ -6,24 +6,28 @@ import { University } from './models/University.entity';
 
 describe('UniversitiesResolver', () => {
   let resolver: UniversitiesResolver;
-  let service: UniversitiesService;
+  let mockService: {
+    findAll: ReturnType<typeof vi.fn>;
+    findUnique: ReturnType<typeof vi.fn>;
+  };
 
   beforeEach(async () => {
+    mockService = {
+      findAll: vi.fn(),
+      findUnique: vi.fn(),
+    };
+
     const module: TestingModule = await Test.createTestingModule({
       providers: [
         UniversitiesResolver,
         {
           provide: UniversitiesService,
-          useValue: {
-            findAll: vi.fn(),
-            findUnique: vi.fn(),
-          },
+          useValue: mockService,
         },
       ],
     }).compile();
 
     resolver = module.get<UniversitiesResolver>(UniversitiesResolver);
-    service = module.get<UniversitiesService>(UniversitiesService);
   });
 
   it('should be defined', () => {
@@ -32,54 +36,42 @@ describe('UniversitiesResolver', () => {
 
   describe('getUniversities', () => {
     it('should return an array of universities', async () => {
-      const mockUniversities: University[] = [
+      const mockUniversities = [
         {
           id: '1',
-          name: { en_text: 'Test University', he_text: 'אוניברסיטת טסט' },
-          courses: [],
-          degrees: [],
         },
-      ];
+      ] as University[];
 
-      const findAllSpy = vi
-        .spyOn(service, 'findAll')
-        .mockResolvedValue(mockUniversities);
+      mockService.findAll.mockResolvedValue(mockUniversities);
 
       const result = await resolver.getUniversities();
 
       expect(result).toEqual(mockUniversities);
-      expect(findAllSpy).toHaveBeenCalled();
+      expect(mockService.findAll).toHaveBeenCalled();
     });
   });
 
   describe('getUniversity', () => {
     it('should return a university by id', async () => {
-      const mockUniversity: University = {
+      const mockUniversity = {
         id: '1',
-        name: { en_text: 'Test University', he_text: 'אוניברסיטת טסט' },
-        courses: [],
-        degrees: [],
-      };
+      } as University;
 
-      const findUniqueSpy = vi
-        .spyOn(service, 'findUnique')
-        .mockResolvedValue(mockUniversity);
+      mockService.findUnique.mockResolvedValue(mockUniversity);
 
       const result = await resolver.getUniversity('1');
 
       expect(result).toEqual(mockUniversity);
-      expect(findUniqueSpy).toHaveBeenCalledWith('1');
+      expect(mockService.findUnique).toHaveBeenCalledWith('1');
     });
 
     it('should return null if university not found', async () => {
-      const findUniqueSpy = vi
-        .spyOn(service, 'findUnique')
-        .mockResolvedValue(null);
+      mockService.findUnique.mockResolvedValue(null);
 
       const result = await resolver.getUniversity('non-existent');
 
       expect(result).toBeNull();
-      expect(findUniqueSpy).toHaveBeenCalledWith('non-existent');
+      expect(mockService.findUnique).toHaveBeenCalledWith('non-existent');
     });
   });
 });
