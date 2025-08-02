@@ -687,6 +687,446 @@ export const QUESTIONS: QuestionSeedData[] = [
     ],
   },
   {
+    id: 'aaf10b9d-c077-4be0-9664-ddc362690beb',
+    translationId: '1631553c-3065-403d-a3aa-8e11f02c2120',
+    text: {
+      en_text:
+        'How many ways can you select 4 donuts from 6 types if repetitions are allowed?',
+      he_text:
+        'בכמה דרכים ניתן לבחור 4 דונאטס מתוך 6 סוגים אם מותר לבחור אותו סוג יותר מפעם אחת?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '87a1da94-793c-4565-8706-8fd073a50cf6',
+    answers: [
+      {
+        id: '14582bd6-a7df-459f-a649-5624968656df',
+        numberAnswer: {
+          id: '26103a24-18b1-41bc-953b-849519041681',
+          value: 126,
+        },
+      },
+    ],
+  },
+  {
+    id: '2836a9da-1042-40ab-a686-44300695758a',
+    translationId: 'fb76aff9-70f7-42ef-9bc7-08bb69cf85e4',
+    text: {
+      en_text:
+        'How many non-negative integer solutions exist for x₁ + x₂ + x₃ = 7?',
+      he_text:
+        'כמה פתרונות במספרים שלמים אי־שליליים קיימים למשוואה x₁ + x₂ + x₃ = 7?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '87a1da94-793c-4565-8706-8fd073a50cf6',
+    answers: [
+      {
+        id: '8d06d736-5684-4fc9-892f-98ec2735c4af',
+        numberAnswer: {
+          id: '6fdfdfb8-6b19-4961-849b-a649fd880361',
+          value: 36,
+        },
+      },
+    ],
+  },
+  {
+    id: '8e73ca25-dac6-4055-b775-8604bcf07a61',
+    translationId: 'fcd1ca85-90f7-49ec-99ff-24f8cd89ec49',
+    text: {
+      en_text:
+        'How many ways can you choose 5 fruits from apples, bananas, oranges and pears if repetitions are allowed?',
+      he_text:
+        'בכמה דרכים ניתן לבחור 5 פירות מתוך תפוחים, בננות, תפוזים ואגסים כאשר מותר בחירה חוזרת?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '87a1da94-793c-4565-8706-8fd073a50cf6',
+    answers: [
+      {
+        id: '9799cdce-08a0-45a4-9ddc-63a2d3490948',
+        numberAnswer: {
+          id: '0023be1e-933f-4dc6-b133-2e60e3ac0205',
+          value: 56,
+        },
+      },
+    ],
+  },
+  {
+    id: '64cbc8a7-9e95-4999-a73d-628713b527ef',
+    translationId: 'd79898d6-6f3e-4611-ae25-41a96c2f706e',
+    text: {
+      en_text:
+        'In how many ways can 10 identical candies be distributed among 3 children?',
+      he_text:
+        'בכמה דרכים ניתן לחלק 10 ממתקים זהים בין 3 ילדים?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '87a1da94-793c-4565-8706-8fd073a50cf6',
+    answers: [
+      {
+        id: '6d82762c-ed83-4127-a85c-1b7c2c322322',
+        numberAnswer: {
+          id: 'c0e1eae3-fdfd-4279-b7bf-2fe5c7c3f015',
+          value: 66,
+        },
+      },
+    ],
+  },
+  {
+    id: '588b6f9c-ae27-47f9-a8e4-678145f2bc38',
+    translationId: 'c0ce7106-b885-4996-b313-55ab834c2dfe',
+    text: {
+      en_text:
+        'How many ways can you select 8 ice cream scoops from 5 flavors if flavors may repeat?',
+      he_text:
+        'בכמה דרכים ניתן לבחור 8 כדורי גלידה מתוך 5 טעמים אם ניתן לבחור טעם יותר מפעם אחת?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '87a1da94-793c-4565-8706-8fd073a50cf6',
+    answers: [
+      {
+        id: 'eb5c8ad1-775a-45b1-a90e-fb8d2f137c45',
+        numberAnswer: {
+          id: 'b868198f-846a-4341-b673-376793437adc',
+          value: 495,
+        },
+      },
+    ],
+  },
+  {
+    id: 'b63dc0f8-0951-44dd-93ca-e3cb1dbd63d0',
+    translationId: '6d7e2c23-ba10-41e4-81bd-b4d586ef924e',
+    text: {
+      en_text:
+        'How many non-negative integer solutions exist for x₁ + x₂ + x₃ + x₄ = 6?',
+      he_text:
+        'כמה פתרונות במספרים שלמים אי־שליליים קיימים למשוואה x₁ + x₂ + x₃ + x₄ = 6?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '87a1da94-793c-4565-8706-8fd073a50cf6',
+    answers: [
+      {
+        id: '7efcc177-115f-4a5e-be93-f7e6c79979f8',
+        numberAnswer: {
+          id: '71860e5b-514b-4674-9af6-78eea49762b2',
+          value: 84,
+        },
+      },
+    ],
+  },
+  {
+    id: 'd0bb0263-5ec1-48d1-85db-dd6eea02067d',
+    translationId: '962e9824-2aad-41eb-93f7-356629f205a3',
+    text: {
+      en_text:
+        'In how many ways can 15 identical balls be placed into 5 distinct boxes?',
+      he_text:
+        'בכמה דרכים ניתן לשים 15 כדורים זהים ב־5 תיבות שונות?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '87a1da94-793c-4565-8706-8fd073a50cf6',
+    answers: [
+      {
+        id: '3030c72e-817d-4f60-9873-dadeeddc587c',
+        numberAnswer: {
+          id: '8fe8289d-5e10-4928-80f1-c612eaae8aec',
+          value: 3876,
+        },
+      },
+    ],
+  },
+  {
+    id: '748f47e6-26ba-4b71-b63a-c0a87dafb3ca',
+    translationId: '62f1128e-aa5b-440c-b989-5c8e21cc5c7a',
+    text: {
+      en_text:
+        'How many ways can you choose 7 cupcakes from 3 flavors if flavors may repeat?',
+      he_text:
+        'בכמה דרכים ניתן לבחור 7 קאפקייקס מתוך 3 טעמים כאשר מותר בחירה חוזרת?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '87a1da94-793c-4565-8706-8fd073a50cf6',
+    answers: [
+      {
+        id: 'c2d10d3d-f3e0-4a99-80dc-248a3d70b1af',
+        numberAnswer: {
+          id: '6b39dde2-ff1f-4d0f-b688-58cdfbac250b',
+          value: 36,
+        },
+      },
+    ],
+  },
+  {
+    id: 'c9a57967-1c17-4b2c-a88d-474ab59469c1',
+    translationId: 'a65d4ab9-cf19-449c-8aac-8086634bd4f2',
+    text: {
+      en_text:
+        'How many ways can you choose 6 candies from 4 types if repetitions are allowed?',
+      he_text:
+        'בכמה דרכים ניתן לבחור 6 ממתקים מתוך 4 סוגים אם מותר לבחור אותו סוג יותר מפעם אחת?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '87a1da94-793c-4565-8706-8fd073a50cf6',
+    answers: [
+      {
+        id: 'ce096208-793b-42bc-95a7-e1cd7a594264',
+        numberAnswer: {
+          id: '959f34b8-74c2-4fc2-a3fe-eee49cfd1e64',
+          value: 84,
+        },
+      },
+    ],
+  },
+  {
+    id: '64889a17-54fb-4edd-b6eb-cf4edd807e3f',
+    translationId: '23087717-eaed-4612-b5ee-43e88794c30d',
+    text: {
+      en_text:
+        'How many non-negative integer solutions exist for x₁ + x₂ + x₃ = 12?',
+      he_text:
+        'כמה פתרונות במספרים שלמים אי־שליליים קיימים למשוואה x₁ + x₂ + x₃ = 12?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '87a1da94-793c-4565-8706-8fd073a50cf6',
+    answers: [
+      {
+        id: 'd0e88715-7ad1-48cc-a364-c5c6543dbeb6',
+        numberAnswer: {
+          id: 'c348eebd-558c-421f-806e-25f041965bc2',
+          value: 91,
+        },
+      },
+    ],
+  },
+  {
+    id: '21c54a9d-c5ad-4d06-8d07-c89acce469cb',
+    translationId: 'd8f724e9-9e1f-4656-ad77-4ade25848835',
+    text: {
+      en_text:
+        'How many non-negative integer solutions exist for x₁ + x₂ + x₃ + x₄ = 9?',
+      he_text:
+        'כמה פתרונות במספרים שלמים אי־שליליים קיימים למשוואה x₁ + x₂ + x₃ + x₄ = 9?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '87a1da94-793c-4565-8706-8fd073a50cf6',
+    answers: [
+      {
+        id: '588a8d02-206d-4e5b-b3ea-5a54b6334bd7',
+        numberAnswer: {
+          id: '5636c8c8-abcf-4227-a10f-8e00d02a3d59',
+          value: 220,
+        },
+      },
+    ],
+  },
+  {
+    id: 'd554a693-d532-42c2-bff3-ad79462494f5',
+    translationId: '3f1cb82d-592e-4df9-a2bf-fcccdec55a6f',
+    text: {
+      en_text:
+        'How many ways can you choose 5 coins from 8 types if repetitions are allowed?',
+      he_text:
+        'בכמה דרכים ניתן לבחור 5 מטבעות מתוך 8 סוגים כאשר מותר בחירה חוזרת?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '87a1da94-793c-4565-8706-8fd073a50cf6',
+    answers: [
+      {
+        id: '0f5f68e6-6b1d-4c12-aa5f-cb5043536f5c',
+        numberAnswer: {
+          id: '79dcf2ca-f99e-4a40-9746-bf20a5ac1063',
+          value: 792,
+        },
+      },
+    ],
+  },
+  {
+    id: '76b2afaa-629e-4379-8e01-0575e74a72b0',
+    translationId: '48508123-6f76-4945-aa1c-1412d894f809',
+    text: {
+      en_text:
+        'In how many ways can 7 identical marbles be distributed into 2 boxes?',
+      he_text:
+        'בכמה דרכים ניתן לחלק 7 גולות זהות לשתי תיבות?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '87a1da94-793c-4565-8706-8fd073a50cf6',
+    answers: [
+      {
+        id: '69cff16d-b025-4d29-8f8c-1c34fb94b548',
+        numberAnswer: {
+          id: 'ead70531-a200-4b6c-877a-9b9e989c0082',
+          value: 8,
+        },
+      },
+    ],
+  },
+  {
+    id: '2ca6fd38-6d9f-41b1-8823-6a36cff5de7e',
+    translationId: 'c1c272c4-b2af-46fd-b5f8-8b291193c02b',
+    text: {
+      en_text:
+        'How many ways can you select 3 ice cream scoops from 10 flavors if flavors may repeat?',
+      he_text:
+        'בכמה דרכים ניתן לבחור 3 כדורי גלידה מתוך 10 טעמים כאשר מותר בחירה חוזרת?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '87a1da94-793c-4565-8706-8fd073a50cf6',
+    answers: [
+      {
+        id: '5bee3bb4-cfbb-46fb-b4bd-542db9e1de43',
+        numberAnswer: {
+          id: 'ad053f03-d46c-40c6-ab0e-af6892656f64',
+          value: 220,
+        },
+      },
+    ],
+  },
+  {
+    id: '55366ebc-51d1-412a-b0a4-33cab00f8c5a',
+    translationId: '9bba34bf-e461-44be-b76f-f398155a3911',
+    text: {
+      en_text:
+        'How many non-negative integer solutions exist for x₁ + x₂ + x₃ + x₄ + x₅ = 8?',
+      he_text:
+        'כמה פתרונות במספרים שלמים אי־שליליים קיימים למשוואה x₁ + x₂ + x₃ + x₄ + x₅ = 8?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '87a1da94-793c-4565-8706-8fd073a50cf6',
+    answers: [
+      {
+        id: '3c7e424a-9185-4771-8fa2-284cb6c3ded9',
+        numberAnswer: {
+          id: 'a23f38bb-2223-4e9d-8dcf-a76fba2f0d17',
+          value: 495,
+        },
+      },
+    ],
+  },
+  {
+    id: '604ff1b4-1b80-485f-a7a1-be1b1fb43dc2',
+    translationId: '9fe79279-2cc8-4531-b892-2c5a4daebb23',
+    text: {
+      en_text:
+        'How many ways can you choose 9 songs from 5 genres if genres may repeat?',
+      he_text:
+        'בכמה דרכים ניתן לבחור 9 שירים מתוך 5 סגנונות אם ניתן לבחור אותו סגנון יותר מפעם אחת?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '87a1da94-793c-4565-8706-8fd073a50cf6',
+    answers: [
+      {
+        id: '6bfca521-f0f3-4094-b9a3-afbda91d152c',
+        numberAnswer: {
+          id: 'beb2776c-5193-4104-b454-ccd3d831fdfd',
+          value: 715,
+        },
+      },
+    ],
+  },
+  {
+    id: '5f6fe70f-7417-4f0c-86b6-5703dc3b9fa7',
+    translationId: '23979268-a195-4e17-b8bf-3b071c664206',
+    text: {
+      en_text:
+        'In how many ways can 11 identical pencils be distributed among 4 students?',
+      he_text:
+        'בכמה דרכים ניתן לחלק 11 עפרונות זהים בין 4 תלמידים?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '87a1da94-793c-4565-8706-8fd073a50cf6',
+    answers: [
+      {
+        id: '6dfe77fa-388f-4749-a491-20068369df09',
+        numberAnswer: {
+          id: '874fcede-b45d-49df-a51b-e51a0f5f813c',
+          value: 364,
+        },
+      },
+    ],
+  },
+  {
+    id: 'a69f2e8c-0a35-4a51-8ba3-f74890ea0b64',
+    translationId: '913e8191-9320-4b00-8087-c77b84d16012',
+    text: {
+      en_text:
+        'How many ways can you choose 4 letters from 7 distinct letters if repetitions are allowed?',
+      he_text:
+        'בכמה דרכים ניתן לבחור 4 אותיות מתוך 7 אותיות שונות כאשר מותר בחירה חוזרת?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '87a1da94-793c-4565-8706-8fd073a50cf6',
+    answers: [
+      {
+        id: 'fee9014e-d481-4681-a241-ebf6862048bc',
+        numberAnswer: {
+          id: '67e88df2-785f-47e8-affa-596909fe3899',
+          value: 210,
+        },
+      },
+    ],
+  },
+  {
+    id: 'f7f54fbc-c140-4fb0-9654-11b39c406563',
+    translationId: '32d50646-3dde-4762-961b-d1d1b15a4c1a',
+    text: {
+      en_text:
+        'How many non-negative integer solutions exist for x₁ + x₂ + x₃ + x₄ + x₅ + x₆ = 5?',
+      he_text:
+        'כמה פתרונות במספרים שלמים אי־שליליים קיימים למשוואה x₁ + x₂ + x₃ + x₄ + x₅ + x₆ = 5?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '87a1da94-793c-4565-8706-8fd073a50cf6',
+    answers: [
+      {
+        id: 'f0b1cd24-bf6c-4f21-bcf0-98ca7a52946b',
+        numberAnswer: {
+          id: '62030862-cafd-4112-b9bb-1adc5c796f93',
+          value: 252,
+        },
+      },
+    ],
+  },
+  {
+    id: '20771ee6-aafe-433b-b153-03b474b67aa3',
+    translationId: '190e3057-0c8f-4d44-a387-b216e8632ede',
+    text: {
+      en_text:
+        'How many ways can you choose 2 items from 6 types with repetition allowed?',
+      he_text:
+        'בכמה דרכים ניתן לבחור 2 פריטים מתוך 6 סוגים כאשר מותר בחירה חוזרת?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '87a1da94-793c-4565-8706-8fd073a50cf6',
+    answers: [
+      {
+        id: '45a02cea-ea88-43e2-bdba-06f62f115540',
+        numberAnswer: {
+          id: '20283b7c-12ca-4eb1-9113-8fd90cf70357',
+          value: 21,
+        },
+      },
+    ],
+  },
+  {
     id: '0CB337D9-F5CA-43B4-8945-531CF4C57BC2',
     translationId: 'D9B273B8-4F71-4C1D-994F-DDA7292001BD',
     text: {
