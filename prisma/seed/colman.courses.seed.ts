@@ -76,10 +76,9 @@ export const seedColmanCourses = async (
   if (!colmanTranslation) {
     throw new Error('Colman university translation not found.');
   }
-  const colmanUniversity = await cache.getUniversity(
-    prisma,
-    THE_COLLEGE_OF_MANAGEMENT_ACADEMIC_STUDIES_EN_NAME,
-  );
+  const colmanUniversity = await prisma.university.findFirst({
+    where: { translationId: colmanTranslation!.id },
+  });
   if (!colmanUniversity) {
     throw new Error('Colman university not found.');
   }
@@ -120,7 +119,7 @@ export const seedColmanCourses = async (
         data: {
           id: course.id,
           translationId: course.translationId,
-          universityId: colmanUniversity!.id,
+          universityId: colmanUniversity.id,
           blockId: course.blockId,
           createdAt: new Date(),
           updatedAt: new Date(),
