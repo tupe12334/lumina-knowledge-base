@@ -83,26 +83,9 @@ export const seedColmanCourses = async (
     throw new Error('Colman university not found.');
   }
 
-  // Create translations first using predictable IDs
+  // Note: Translations are now handled by bulk seedTranslations()
+  // This only creates courses (translations must exist already)
   const allCourses = [...colmanMathCourses, ...colmanCsCourses];
-  for (const course of allCourses) {
-    const existing = await prisma.translation.findUnique({
-      where: { id: course.translationId },
-    });
-    if (!existing) {
-      await prisma.translation.create({
-        data: {
-          id: course.translationId,
-          en_text: course.en_text,
-          he_text: course.he_text,
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-      });
-    }
-  }
-
-  // Then create courses
   for (const course of allCourses) {
     const existingCourse = await prisma.course.findFirst({
       where: {
@@ -110,6 +93,14 @@ export const seedColmanCourses = async (
       },
     });
     if (!existingCourse) {
+      // Look up the translation using the cache
+      const translation = await cache.getTranslation(prisma, course.en_text);
+      if (!translation) {
+        throw new Error(
+          `Translation not found for course: ${course.en_text}. Make sure it's added to translations.consts.ts`,
+        );
+      }
+
       await prisma.block.upsert({
         where: { id: course.blockId },
         update: {},
@@ -118,7 +109,7 @@ export const seedColmanCourses = async (
       await prisma.course.create({
         data: {
           id: course.id,
-          translationId: course.translationId,
+          translationId: translation.id,
           universityId: colmanUniversity.id,
           blockId: course.blockId,
           createdAt: new Date(),

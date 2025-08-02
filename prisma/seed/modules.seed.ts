@@ -489,17 +489,22 @@ export const seedModules = async (
   ];
 
   for (const moduleData of modules) {
+    // Note: Translations are now handled by bulk seedTranslations()
+    // Find existing translation that should exist from bulk operation
     let translation = await cache.getTranslation(tx, moduleData.en_text);
 
     if (!translation) {
+      // Get the pre-determined translation ID that should exist from bulk seeding
       const translationId = getModuleTranslationId(moduleData.en_text);
-      translation = await tx.translation.create({
-        data: {
-          ...(translationId ? { id: translationId } : {}),
-          en_text: moduleData.en_text,
-          he_text: moduleData.he_text,
-        },
+      translation = await tx.translation.findUnique({
+        where: { id: translationId },
       });
+
+      if (!translation) {
+        throw new Error(
+          `Translation for module "${moduleData.en_text}" not found. Expected ID: ${translationId}`,
+        );
+      }
     }
 
     const moduleId = moduleIds[moduleData.en_text];

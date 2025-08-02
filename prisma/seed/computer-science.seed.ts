@@ -9,19 +9,12 @@ export const seedComputerScienceCourses = async (
   const translationIds: Record<string, string> = {};
   for (const courseData of courses) {
     const existing = await cache.getTranslation(tx, courseData.en_name);
-    const translation = existing
-      ? await tx.translation.update({
-          where: { id: existing.id },
-          data: { he_text: courseData.he_name },
-        })
-      : await tx.translation.create({
-          data: {
-            id: courseData.translationId,
-            en_text: courseData.en_name,
-            he_text: courseData.he_name,
-          },
-        });
-    translationIds[courseData.id] = translation.id;
+    if (!existing) {
+      throw new Error(
+        `Translation not found for course '${courseData.en_name}'. Ensure translations are seeded first.`,
+      );
+    }
+    translationIds[courseData.id] = existing.id;
   }
 
   // Then create the courses

@@ -113,7 +113,7 @@ const METADATA_IDS = [
 ] as const;
 
 const SELECT_ANSWER_IDS = [
-  '3c99eef6-652f-4dac-8fe2-9191f02ffc38', // Distance question select answer 1
+  'a34d7a4b-9f41-4739-becb-a920ec24f13c', // Distance question select answer 1
   '3065e157-6f71-4c33-a682-5022723f8391', // Distance question select answer 2
   'ac218326-9512-4383-8945-4303931d7457', // Distance question select answer 3
 ] as const;
@@ -304,14 +304,9 @@ export const seedPhysicsModulesAndQuestions = async (
     let translation = await cache.getTranslation(tx, moduleData.en_name);
 
     if (!translation) {
-      const translationId = getTranslationId(moduleData.en_name);
-      translation = await tx.translation.create({
-        data: {
-          id: translationId,
-          en_text: moduleData.en_name,
-          he_text: moduleData.he_name,
-        },
-      });
+      throw new Error(
+        `Translation not found for module '${moduleData.en_name}'. Ensure translations are seeded first.`,
+      );
     }
 
     // Check if module already exists
@@ -497,13 +492,9 @@ export const seedPhysicsModulesAndQuestions = async (
   );
 
   if (!distanceTranslation) {
-    distanceTranslation = await tx.translation.create({
-      data: {
-        id: getTranslationId(distanceQuestionText),
-        en_text: distanceQuestionText,
-        he_text: 'איזה מהמרחקים הבאים הוא הגדול ביותר, איזה הוא הקטן ביותר?',
-      },
-    });
+    throw new Error(
+      `Translation not found for question '${distanceQuestionText}'. Ensure translations are seeded first.`,
+    );
   }
 
   let distanceQuestion = await tx.question.findFirst({
@@ -533,7 +524,7 @@ export const seedPhysicsModulesAndQuestions = async (
     // Create select answers
     const selectAnswers = [
       {
-        id: '3c99eef6-652f-4dac-8fe2-9191f02ffc38',
+        id: 'a34d7a4b-9f41-4739-becb-a920ec24f13c',
         translationId: 'a34d7a4b-9f41-4739-becb-a920ec24f13c',
         text: { en_text: '0.7 km', he_text: '0.7 ק״מ' },
         isCorrect: false,
@@ -556,19 +547,17 @@ export const seedPhysicsModulesAndQuestions = async (
     ];
 
     for (const selectAnswerData of selectAnswers) {
-      // Create translation for the select answer
-      const selectAnswerTranslation = await tx.translation.upsert({
-        where: { id: selectAnswerData.translationId },
-        update: {
-          en_text: selectAnswerData.text.en_text,
-          he_text: selectAnswerData.text.he_text,
-        },
-        create: {
-          id: selectAnswerData.translationId,
-          en_text: selectAnswerData.text.en_text,
-          he_text: selectAnswerData.text.he_text,
-        },
-      });
+      // Find translation using cache - it should already exist from bulk seeding
+      const selectAnswerTranslation = await cache.getTranslation(
+        tx,
+        selectAnswerData.text.en_text,
+      );
+
+      if (!selectAnswerTranslation) {
+        throw new Error(
+          `Translation not found for text: ${selectAnswerData.text.en_text}. Make sure it's added to translations.consts.ts`,
+        );
+      }
 
       await tx.selectAnswer.create({
         data: {
@@ -587,14 +576,9 @@ export const seedPhysicsModulesAndQuestions = async (
   let areaTranslation = await cache.getTranslation(tx, areaQuestionText);
 
   if (!areaTranslation) {
-    areaTranslation = await tx.translation.create({
-      data: {
-        id: getTranslationId(areaQuestionText),
-        en_text: areaQuestionText,
-        he_text:
-          'חשב את השטח, במטרים רבועים (m²), של מלבן באורך 80 ס"מ וברוחב 120 ס"מ.',
-      },
-    });
+    throw new Error(
+      `Translation not found for question '${areaQuestionText}'. Ensure translations are seeded first.`,
+    );
   }
 
   let areaQuestion = await tx.question.findFirst({
@@ -639,13 +623,9 @@ export const seedPhysicsModulesAndQuestions = async (
   );
 
   if (!numberSystemsTranslation) {
-    numberSystemsTranslation = await tx.translation.create({
-      data: {
-        id: getTranslationId('Number Systems'),
-        en_text: 'Number Systems',
-        he_text: 'מערכות מספרים',
-      },
-    });
+    throw new Error(
+      'Translation not found for module "Number Systems". Ensure translations are seeded first.',
+    );
   }
 
   let numberSystemsModule = await tx.module.findFirst({
@@ -869,13 +849,9 @@ const seedAdditionalCoursesAndRelationships = async (
     let translation = await cache.getTranslation(tx, courseData.en_name);
 
     if (!translation) {
-      translation = await tx.translation.create({
-        data: {
-          id: getTranslationId(courseData.en_name),
-          en_text: courseData.en_name,
-          he_text: courseData.en_name, // Using English name as Hebrew for now
-        },
-      });
+      throw new Error(
+        `Translation not found for course '${courseData.en_name}'. Ensure translations are seeded first.`,
+      );
     }
 
     // Check if course already exists

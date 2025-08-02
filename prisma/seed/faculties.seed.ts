@@ -47,35 +47,22 @@ export async function seedFaculties(
       }
 
       const existingName = await cache.getTranslation(prisma, facultyEnText);
-      const nameTranslation = existingName
-        ? await prisma.translation.update({
-            where: { id: existingName.id },
-            data: { he_text: facultyData.he_text },
-          })
-        : await prisma.translation.create({
-            data: {
-              id: facultyData.id,
-              en_text: facultyEnText,
-              he_text: facultyData.he_text,
-            },
-          });
+      const nameTranslation = existingName;
+      if (!nameTranslation) {
+        throw new Error(
+          `Translation not found for faculty '${facultyEnText}'. Ensure translations are seeded first.`,
+        );
+      }
 
-      const existingDescription = await cache.getTranslation(
-        prisma,
-        facultyData.description.en_text,
-      );
-      const descriptionTranslation = existingDescription
-        ? await prisma.translation.update({
-            where: { id: existingDescription.id },
-            data: { he_text: facultyData.description.he_text },
-          })
-        : await prisma.translation.create({
-            data: {
-              id: facultyData.description.id,
-              en_text: facultyData.description.en_text,
-              he_text: facultyData.description.he_text,
-            },
-          });
+      // Use direct ID lookup instead of text matching for faculty descriptions
+      const descriptionTranslation = await prisma.translation.findFirst({
+        where: { id: facultyData.description.id },
+      });
+      if (!descriptionTranslation) {
+        throw new Error(
+          `Translation not found for faculty description with ID '${facultyData.description.id}'. Ensure translations are seeded first.`,
+        );
+      }
 
       await prisma.faculty.upsert({
         where: {

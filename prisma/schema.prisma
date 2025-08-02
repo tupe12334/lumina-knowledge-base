@@ -138,6 +138,8 @@ model Translation {
   FacultyName        Faculty[]      @relation("FacultyName")
   FacultyDescription Faculty[]      @relation("FacultyDescription")
   SelectAnswer       SelectAnswer[]
+
+  @@unique([en_text, he_text])
 }
 
 enum QuestionType {

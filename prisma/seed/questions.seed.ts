@@ -4,6 +4,7 @@ import {
   QuestionValidationStatus,
 } from '../../generated/client';
 import { QUESTIONS } from './questions.consts';
+import { SeedCache } from './cache';
 
 export type QuestionSeedData = {
   id: string;
@@ -51,41 +52,33 @@ export type QuestionSeedData = {
   }[];
 };
 
-export async function seedQuestions(tx: Prisma.TransactionClient) {
+export async function seedQuestions(
+  tx: Prisma.TransactionClient,
+  cache: SeedCache,
+) {
   for (const questionData of QUESTIONS) {
-    const {
-      id,
-      translationId,
-      text,
-      type,
-      validationStatus,
-      moduleId,
-      answers,
-      parts,
-    } = questionData;
+    const { id, text, type, validationStatus, moduleId, answers, parts } =
+      questionData;
 
-    const translation = await tx.translation.upsert({
-      where: { id: translationId },
-      update: { en_text: text.en_text, he_text: text.he_text },
-      create: {
-        id: translationId,
-        en_text: text.en_text,
-        he_text: text.he_text,
-      },
-    });
+    const questionTranslationId = await cache.getTranslation(tx, text.en_text);
+    if (!questionTranslationId) {
+      throw new Error(
+        `Translation not found for question: "${text.en_text}" / "${text.he_text}"`,
+      );
+    }
 
     // Use upsert to avoid transaction errors
     const question = await tx.question.upsert({
       where: { id },
       update: {
-        text: { connect: { id: translation.id } },
+        text: { connect: { id: questionTranslationId.id } },
         type: type,
         validationStatus: validationStatus,
         Modules: { set: [{ id: moduleId }] },
       },
       create: {
         id,
-        text: { connect: { id: translation.id } },
+        text: { connect: { id: questionTranslationId.id } },
         type: type,
         validationStatus: validationStatus,
         Modules: { connect: [{ id: moduleId }] },
@@ -100,18 +93,15 @@ export async function seedQuestions(tx: Prisma.TransactionClient) {
     if (parts && parts.length > 0) {
       for (const partData of parts) {
         // First create the part question
-        const partTranslation = await tx.translation.upsert({
-          where: { id: partData.partQuestion.translationId },
-          update: {
-            en_text: partData.partQuestion.text.en_text,
-            he_text: partData.partQuestion.text.he_text,
-          },
-          create: {
-            id: partData.partQuestion.translationId,
-            en_text: partData.partQuestion.text.en_text,
-            he_text: partData.partQuestion.text.he_text,
-          },
-        });
+        const partTranslation = await cache.getTranslation(
+          tx,
+          partData.partQuestion.text.en_text,
+        );
+        if (!partTranslation) {
+          throw new Error(
+            `Translation not found for part question: "${partData.partQuestion.text.en_text}"`,
+          );
+        }
 
         const partQuestion = await tx.question.upsert({
           where: { id: partData.partQuestion.id },
@@ -151,18 +141,15 @@ export async function seedQuestions(tx: Prisma.TransactionClient) {
           if (selectAnswers) {
             for (const selectAnswerData of selectAnswers) {
               // Create translation for the select answer
-              const selectAnswerTranslation = await tx.translation.upsert({
-                where: { id: selectAnswerData.translationId },
-                update: {
-                  en_text: selectAnswerData.text.en_text,
-                  he_text: selectAnswerData.text.he_text,
-                },
-                create: {
-                  id: selectAnswerData.translationId,
-                  en_text: selectAnswerData.text.en_text,
-                  he_text: selectAnswerData.text.he_text,
-                },
-              });
+              const selectAnswerTranslation = await cache.getTranslation(
+                tx,
+                selectAnswerData.text.en_text,
+              );
+              if (!selectAnswerTranslation) {
+                throw new Error(
+                  `Translation not found for select answer: "${selectAnswerData.text.en_text}"`,
+                );
+              }
 
               await tx.selectAnswer.upsert({
                 where: { id: selectAnswerData.id },
@@ -251,18 +238,15 @@ export async function seedQuestions(tx: Prisma.TransactionClient) {
       if (selectAnswers) {
         for (const selectAnswerData of selectAnswers) {
           // Create translation for the select answer
-          const selectAnswerTranslation = await tx.translation.upsert({
-            where: { id: selectAnswerData.translationId },
-            update: {
-              en_text: selectAnswerData.text.en_text,
-              he_text: selectAnswerData.text.he_text,
-            },
-            create: {
-              id: selectAnswerData.translationId,
-              en_text: selectAnswerData.text.en_text,
-              he_text: selectAnswerData.text.he_text,
-            },
-          });
+          const selectAnswerTranslation = await cache.getTranslation(
+            tx,
+            selectAnswerData.text.en_text,
+          );
+          if (!selectAnswerTranslation) {
+            throw new Error(
+              `Translation not found for select answer: "${selectAnswerData.text.en_text}"`,
+            );
+          }
 
           await tx.selectAnswer.upsert({
             where: { id: selectAnswerData.id },
