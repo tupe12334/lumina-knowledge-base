@@ -230,6 +230,7 @@ export const seedModules = async (
     {
       en_text: 'How to Formalize',
       he_text: 'איך מפרמלים',
+      parent: 'Introduction to Logic',
       course: 'Discrete Mathematics',
     },
     {
