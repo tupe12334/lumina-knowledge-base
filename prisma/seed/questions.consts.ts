@@ -492,6 +492,446 @@ export const QUESTIONS: QuestionSeedData[] = [
     ],
   },
   {
+    id: 'ae430c5c-32e2-4cd5-9b0b-155d8256cfbf',
+    translationId: 'b0faab8f-eb6b-4cb2-ad14-30254ef179fc',
+    text: {
+      en_text:
+        'A bookstore sells 5 fiction and 7 non-fiction titles. How many choices are there if you select one book from either category?',
+      he_text:
+        'חנות ספרים מוכרת 5 ספרי סיפורת ו-7 ספרי עיון. כמה אפשרויות יש אם בוחרים ספר אחד מאחת הקטגוריות?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '78123942-6F56-4C66-8881-B49BC26E107D',
+    answers: [
+      {
+        id: 'c833f84e-dc56-4ab0-8a59-5bfd378b7c6c',
+        numberAnswer: {
+          id: '303f021b-9c38-4d1b-b496-c737a1c2d7b1',
+          value: 12,
+        },
+      },
+    ],
+  },
+  {
+    id: '9d3da146-016e-4583-bc89-3aa8f113fedc',
+    translationId: 'cdeaf3e0-d9db-44c7-9aad-0d974e6ea546',
+    text: {
+      en_text:
+        'A clothing store offers 4 shirts and 6 pants. How many items can you choose from if selecting either a shirt or pants?',
+      he_text:
+        'חנות בגדים מציעה 4 חולצות ו-6 מכנסיים. כמה פריטים ניתן לבחור אם בוחרים חולצה או מכנסיים?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '78123942-6F56-4C66-8881-B49BC26E107D',
+    answers: [
+      {
+        id: 'e24ab3be-ceb1-436a-969c-d59eddeb12a0',
+        numberAnswer: {
+          id: '4bef0219-c99e-43c0-a6cf-aa3ec5506274',
+          value: 10,
+        },
+      },
+    ],
+  },
+  {
+    id: '3d352abc-6d69-4f7b-9708-d015fabe3426',
+    translationId: '65b9fa9f-8a10-4a5a-9400-6f910708ced2',
+    text: {
+      en_text:
+        'A library has 8 English magazines and 5 Hebrew magazines. How many magazines could you borrow if choosing one language?',
+      he_text:
+        'בספרייה יש 8 מגזינים באנגלית ו-5 בעברית. כמה מגזינים ניתן להשאיל אם בוחרים בשפה אחת?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '78123942-6F56-4C66-8881-B49BC26E107D',
+    answers: [
+      {
+        id: '91831553-056d-4d17-8bce-194394ea898a',
+        numberAnswer: {
+          id: '5b8edfd8-9ea2-415b-b684-43875dbb45ee',
+          value: 13,
+        },
+      },
+    ],
+  },
+  {
+    id: 'fe111498-245b-458d-b7f0-6ba74eaf4f93',
+    translationId: '96f33cd2-c9a5-4c60-8ffe-0d21c4fa04c4',
+    text: {
+      en_text:
+        'A cafe menu lists 6 hot drinks and 3 cold drinks. How many options exist if you pick one drink of any temperature?',
+      he_text:
+        'בתפריט בית הקפה יש 6 משקאות חמים ו-3 משקאות קרים. כמה אפשרויות יש אם ניתן לבחור משקה אחד מאחת הקטגוריות?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '78123942-6F56-4C66-8881-B49BC26E107D',
+    answers: [
+      {
+        id: '8b2b575c-201a-42d1-8621-5f9ae45f7ddc',
+        numberAnswer: {
+          id: 'c1950214-af73-494a-a630-0395dc44f0e1',
+          value: 9,
+        },
+      },
+    ],
+  },
+  {
+    id: '35abb4b5-e856-4905-bbd0-24f94025ca75',
+    translationId: '602fdc46-93dd-416e-bb3c-fc8badd26251',
+    text: {
+      en_text:
+        'A university offers 5 morning classes and 4 evening classes. How many classes can a student choose from if limited to one time slot?',
+      he_text:
+        'אוניברסיטה מציעה 5 שיעורי בוקר ו-4 שיעורי ערב. כמה שיעורים ניתן לבחור אם מוגבלים למועד אחד?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '78123942-6F56-4C66-8881-B49BC26E107D',
+    answers: [
+      {
+        id: 'af7417a4-5c63-4c25-bd17-292b08ac529e',
+        numberAnswer: {
+          id: '68103994-172c-40a9-aa6f-72f8917a7f67',
+          value: 9,
+        },
+      },
+    ],
+  },
+  {
+    id: '668b8fa6-da30-4859-89ba-15404f0c634e',
+    translationId: '5201f907-d004-4932-98a3-3ecd2ef71ad9',
+    text: {
+      en_text:
+        'A tech conference has 7 workshops on day one and 5 workshops on day two. How many workshops can you attend if you attend only one day?',
+      he_text:
+        'בכנס טכנולוגיה יש 7 סדנאות ביום הראשון ו-5 ביום השני. כמה סדנאות ניתן להשתתף אם מגיעים ליום אחד בלבד?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '78123942-6F56-4C66-8881-B49BC26E107D',
+    answers: [
+      {
+        id: 'b673ed54-1c24-4a29-a2b9-cdcc88d504c5',
+        numberAnswer: {
+          id: 'ab9cec1f-a673-4ed3-ab48-ee309a1e1acc',
+          value: 12,
+        },
+      },
+    ],
+  },
+  {
+    id: '4eb7f037-d3cc-4553-b1f2-04f79c8485f2',
+    translationId: '28ac3388-d73e-414e-83d9-d92aa9d82a61',
+    text: {
+      en_text:
+        'A theater shows 3 comedies and 5 dramas. How many films could you watch if you choose from either genre?',
+      he_text:
+        'תיאטרון מקרין 3 קומדיות ו-5 דרמות. כמה סרטים ניתן לצפות אם בוחרים מז׳אנר אחד?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '78123942-6F56-4C66-8881-B49BC26E107D',
+    answers: [
+      {
+        id: '6e66e7cc-d8ef-4fb8-af25-8635cd5301e6',
+        numberAnswer: {
+          id: 'f6de0bfa-c6f3-46e2-9037-faf535991f21',
+          value: 8,
+        },
+      },
+    ],
+  },
+  {
+    id: '0b72f452-1826-4414-a1e0-3bcb83e5dbc8',
+    translationId: '275e3588-98b0-424a-b6f3-ef2958150009',
+    text: {
+      en_text:
+        'A travel agency has 4 domestic packages and 6 international packages. How many packages are available if you choose only one?',
+      he_text:
+        'סוכנות נסיעות מציעה 4 חבילות בארץ ו-6 חבילות לחו״ל. כמה חבילות זמינות אם בוחרים רק אחת?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '78123942-6F56-4C66-8881-B49BC26E107D',
+    answers: [
+      {
+        id: 'c69fee9d-a3b3-450c-a384-d3d723f24db6',
+        numberAnswer: {
+          id: '84331a19-ccd3-49e9-8f23-4368e4827f59',
+          value: 10,
+        },
+      },
+    ],
+  },
+  {
+    id: '3351a0f5-c051-4f85-a93d-c83bcbdfbe20',
+    translationId: '65165ce6-c6cd-438e-8660-dcf2105f9c59',
+    text: {
+      en_text:
+        'A sports club offers 5 indoor activities and 4 outdoor activities. How many activities can you select if participating in only one?',
+      he_text:
+        'מועדון ספורט מציע 5 פעילויות בתוך מבנה ו-4 פעילויות חוץ. כמה פעילויות ניתן לבחור אם משתתפים רק באחת?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '78123942-6F56-4C66-8881-B49BC26E107D',
+    answers: [
+      {
+        id: '2d9f28e8-7f1c-4f1d-ae0d-ce1904f512a7',
+        numberAnswer: {
+          id: '1f582281-68cb-40bb-8836-b1320e3e9132',
+          value: 9,
+        },
+      },
+    ],
+  },
+  {
+    id: '5d986983-6188-4616-a220-78c15c724a72',
+    translationId: '1a4f5e63-7e43-4ee6-b07a-be5c15cd7366',
+    text: {
+      en_text:
+        'A music festival features 6 rock bands and 2 jazz bands. How many bands can a fan watch if they pick a single genre?',
+      he_text:
+        'פסטיבל מוזיקה מציג 6 להקות רוק ו-2 להקות ג׳אז. כמה להקות ניתן לראות אם בוחרים ז׳אנר אחד?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '78123942-6F56-4C66-8881-B49BC26E107D',
+    answers: [
+      {
+        id: 'fd6f60cb-c267-4da1-82f5-ff2935b6c063',
+        numberAnswer: {
+          id: '2b1c2e9f-b3ab-4f28-b7b5-de3b8aca4e44',
+          value: 8,
+        },
+      },
+    ],
+  },
+  {
+    id: 'a84e1e98-161e-4215-a3ab-296720e6fa12',
+    translationId: '23122bf9-a9b8-413e-a332-892d419017c4',
+    text: {
+      en_text:
+        'A grocery store sells 7 kinds of fruit and 4 kinds of vegetables. How many choices are there if buying one item from either group?',
+      he_text:
+        'חנות מכולת מוכרת 7 סוגי פירות ו-4 סוגי ירקות. כמה אפשרויות יש אם קונים פריט אחד מאחת הקבוצות?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '78123942-6F56-4C66-8881-B49BC26E107D',
+    answers: [
+      {
+        id: '5ca02096-a94f-4961-9a29-21504db8b67f',
+        numberAnswer: {
+          id: '76519284-a8d3-410a-86d9-42ea74e350a5',
+          value: 11,
+        },
+      },
+    ],
+  },
+  {
+    id: '8bb9fcb0-c90a-430e-a5f5-9df0c92b9f3a',
+    translationId: '2b6cba5a-27dc-4e02-8e90-7a3ca6490515',
+    text: {
+      en_text:
+        'A museum offers 2 guided tours in English and 3 in Spanish. How many tours could a visitor take if choosing one language?',
+      he_text:
+        'מוזיאון מציע 2 סיורים מודרכים באנגלית ו-3 בספרדית. כמה סיורים יכול מבקר לקחת אם הוא בוחר שפה אחת?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '78123942-6F56-4C66-8881-B49BC26E107D',
+    answers: [
+      {
+        id: 'e1dd2d8c-503c-478d-b87c-060b6d5dab83',
+        numberAnswer: {
+          id: '88ecc074-c15d-4deb-9cfe-328b23d3d250',
+          value: 5,
+        },
+      },
+    ],
+  },
+  {
+    id: '4931fa06-ee0e-4bcb-8e9d-5869294d6ae3',
+    translationId: 'efc49f76-65ac-4f41-8329-17b055ff654f',
+    text: {
+      en_text:
+        'A park has 5 picnic areas and 3 playgrounds. How many locations can a family choose if visiting just one?',
+      he_text:
+        'בפארק יש 5 אזורי פיקניק ו-3 מגרשי משחקים. כמה מקומות יכולה משפחה לבחור אם מבקרת רק באחד?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '78123942-6F56-4C66-8881-B49BC26E107D',
+    answers: [
+      {
+        id: '81ca5465-4f20-4076-a466-7fe68cffb5a6',
+        numberAnswer: {
+          id: '9ebb2d41-b302-415a-8c44-3ab00b44db01',
+          value: 8,
+        },
+      },
+    ],
+  },
+  {
+    id: 'bb119d9c-4363-4fb4-b18f-8b673fe2e9cf',
+    translationId: 'e68b7607-efea-4b4c-a677-4a63db960f7a',
+    text: {
+      en_text:
+        'An online course platform has 4 math courses and 5 science courses. How many courses can a student enroll in if choosing one subject?',
+      he_text:
+        'בפלטפורמת קורסים מקוונת יש 4 קורסי מתמטיקה ו-5 קורסי מדע. כמה קורסים יכול סטודנט להירשם אם בוחר מקצוע אחד?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '78123942-6F56-4C66-8881-B49BC26E107D',
+    answers: [
+      {
+        id: '4136ad83-d76f-41fb-8504-e1a4cf00e5e5',
+        numberAnswer: {
+          id: 'e3fee53a-557e-4028-b977-d33fa62bb331',
+          value: 9,
+        },
+      },
+    ],
+  },
+  {
+    id: '51210ae1-d445-4a43-b98a-d084f8a64a1b',
+    translationId: 'e6690c2e-0fc7-404d-a71d-d77845910b54',
+    text: {
+      en_text:
+        'A bookstore sells 6 hardcover and 3 paperback journals. How many journals can be selected if choosing either type?',
+      he_text:
+        'חנות ספרים מוכרת 6 יומנים בכריכה קשה ו-3 בכריכה רכה. כמה יומנים ניתן לבחור אם בוחרים סוג אחד?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '78123942-6F56-4C66-8881-B49BC26E107D',
+    answers: [
+      {
+        id: 'b656d13e-fdce-4d48-b4fc-dbff10c64735',
+        numberAnswer: {
+          id: 'b64a6f25-f996-40bd-9f1a-259b98127598',
+          value: 9,
+        },
+      },
+    ],
+  },
+  {
+    id: '24879301-1e9c-4148-8ca6-f8a68ba8b245',
+    translationId: '30da94db-17de-4218-b041-f4caf651f7be',
+    text: {
+      en_text:
+        'A gym schedules 3 morning and 4 evening yoga classes. How many classes are available if attending only one session?',
+      he_text:
+        'חדר כושר מקיים 3 שיעורי יוגה בבוקר ו-4 בערב. כמה שיעורים זמינים אם משתתפים רק באחד?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '78123942-6F56-4C66-8881-B49BC26E107D',
+    answers: [
+      {
+        id: 'c8e2c069-1c26-424c-9fcf-62ec55de6866',
+        numberAnswer: {
+          id: '26577f54-238a-4ccd-8fc6-2473cd0aea65',
+          value: 7,
+        },
+      },
+    ],
+  },
+  {
+    id: '0daa3b86-2ac2-42f6-9a40-a8be67345094',
+    translationId: '0dec8af3-f8d6-4e8b-ba1e-a7059b78174e',
+    text: {
+      en_text:
+        'A pet shop has 5 breeds of dogs and 2 breeds of cats. How many animal choices are available if adopting one pet?',
+      he_text:
+        'חנות חיות מחזיקה 5 גזעי כלבים ו-2 גזעי חתולים. כמה אפשרויות חיות זמינות אם מאמצים חיה אחת?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '78123942-6F56-4C66-8881-B49BC26E107D',
+    answers: [
+      {
+        id: 'f88ddc14-2ba6-4273-b789-3e966943c908',
+        numberAnswer: {
+          id: '04496fee-c54e-4879-9381-21fdf8ff1678',
+          value: 7,
+        },
+      },
+    ],
+  },
+  {
+    id: 'a1033614-522f-475f-9ca5-c59625f875df',
+    translationId: 'fa2a7e90-3615-498c-8d8f-e958ffde4c51',
+    text: {
+      en_text:
+        'A science fair displays 4 physics projects and 5 chemistry projects. How many projects can a visitor view if focusing on one subject?',
+      he_text:
+        'ביריד מדע מוצגים 4 פרויקטים בפיזיקה ו-5 בכימיה. כמה פרויקטים יכול מבקר לראות אם מתמקד בנושא אחד?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '78123942-6F56-4C66-8881-B49BC26E107D',
+    answers: [
+      {
+        id: 'efc43465-2936-4dce-a5f4-ba4b13fc4abe',
+        numberAnswer: {
+          id: '3c57adbe-4f3f-429a-9a51-8feb27dc2e93',
+          value: 9,
+        },
+      },
+    ],
+  },
+  {
+    id: '465f3938-6beb-40cd-9fa2-6be426439bf6',
+    translationId: '6b8fcbdf-b0a2-42eb-a9b1-161f7f92f7ac',
+    text: {
+      en_text:
+        'A store offers 6 types of lamps and 4 types of chairs. How many items can a customer choose from if buying just one?',
+      he_text:
+        'חנות מציעה 6 סוגי מנורות ו-4 סוגי כיסאות. כמה פריטים יכול לקוח לבחור אם קונה רק אחד?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '78123942-6F56-4C66-8881-B49BC26E107D',
+    answers: [
+      {
+        id: '00c0234c-328f-492b-bdb1-6572a5dfa44f',
+        numberAnswer: {
+          id: 'b4099679-9aeb-447f-a80f-03cfc28f4ca5',
+          value: 10,
+        },
+      },
+    ],
+  },
+  {
+    id: 'e3dadd54-cb2d-4856-8f04-988afcff2212',
+    translationId: '1f8f28f2-7d5d-4598-a447-930ef4c2147b',
+    text: {
+      en_text:
+        'A restaurant provides 3 vegan dishes and 6 non-vegan dishes. How many meal options exist if ordering a single dish?',
+      he_text:
+        'מסעדה מציעה 3 מנות טבעוניות ו-6 מנות שאינן טבעוניות. כמה אפשרויות ארוחה קיימות אם מזמינים מנה אחת?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '78123942-6F56-4C66-8881-B49BC26E107D',
+    answers: [
+      {
+        id: '79959a55-6ee3-431f-bf42-de64d822dd0b',
+        numberAnswer: {
+          id: '9e314539-d0ae-4342-86db-43c3cb5e050b',
+          value: 9,
+        },
+      },
+    ],
+  },
+  {
     id: '4603f4bc-8fb5-42a8-8ebc-672085f10104',
     translationId: 'b81240ad-ed98-4a7e-9dea-7e922e884d19',
     text: {
@@ -758,8 +1198,7 @@ export const QUESTIONS: QuestionSeedData[] = [
     text: {
       en_text:
         'In how many ways can 10 identical candies be distributed among 3 children?',
-      he_text:
-        'בכמה דרכים ניתן לחלק 10 ממתקים זהים בין 3 ילדים?',
+      he_text: 'בכמה דרכים ניתן לחלק 10 ממתקים זהים בין 3 ילדים?',
     },
     type: QuestionType.value,
     validationStatus: QuestionValidationStatus.ai_generated,
@@ -824,8 +1263,7 @@ export const QUESTIONS: QuestionSeedData[] = [
     text: {
       en_text:
         'In how many ways can 15 identical balls be placed into 5 distinct boxes?',
-      he_text:
-        'בכמה דרכים ניתן לשים 15 כדורים זהים ב־5 תיבות שונות?',
+      he_text: 'בכמה דרכים ניתן לשים 15 כדורים זהים ב־5 תיבות שונות?',
     },
     type: QuestionType.value,
     validationStatus: QuestionValidationStatus.ai_generated,
@@ -956,8 +1394,7 @@ export const QUESTIONS: QuestionSeedData[] = [
     text: {
       en_text:
         'In how many ways can 7 identical marbles be distributed into 2 boxes?',
-      he_text:
-        'בכמה דרכים ניתן לחלק 7 גולות זהות לשתי תיבות?',
+      he_text: 'בכמה דרכים ניתן לחלק 7 גולות זהות לשתי תיבות?',
     },
     type: QuestionType.value,
     validationStatus: QuestionValidationStatus.ai_generated,
@@ -1044,8 +1481,7 @@ export const QUESTIONS: QuestionSeedData[] = [
     text: {
       en_text:
         'In how many ways can 11 identical pencils be distributed among 4 students?',
-      he_text:
-        'בכמה דרכים ניתן לחלק 11 עפרונות זהים בין 4 תלמידים?',
+      he_text: 'בכמה דרכים ניתן לחלק 11 עפרונות זהים בין 4 תלמידים?',
     },
     type: QuestionType.value,
     validationStatus: QuestionValidationStatus.ai_generated,
@@ -2049,14 +2485,14 @@ export const QUESTIONS: QuestionSeedData[] = [
     validationStatus: QuestionValidationStatus.ai_generated,
     moduleId: '5a6b7c8d-9e0f-4123-b567-89abcd234eff',
     answers: [
-  {
-    id: '1b2d2de5-ddd5-4963-9339-05d3acad7fcd',
-    numberAnswer: {
-      id: '98ab700a-37af-4326-aa60-e5198ae708b0',
-      value: 18,
-    },
-  },
-  ],
+      {
+        id: '1b2d2de5-ddd5-4963-9339-05d3acad7fcd',
+        numberAnswer: {
+          id: '98ab700a-37af-4326-aa60-e5198ae708b0',
+          value: 18,
+        },
+      },
+    ],
   },
   {
     id: 'f1f1199b-8535-40a8-a24e-85f90d4f79f5',
@@ -2064,8 +2500,7 @@ export const QUESTIONS: QuestionSeedData[] = [
     text: {
       en_text:
         "What is the value of the binomial coefficient C(5, 2) found in Pascal's Triangle?",
-      he_text:
-        'מהו הערך של המקדם הבינומי C(5, 2) במשולש פסקל?',
+      he_text: 'מהו הערך של המקדם הבינומי C(5, 2) במשולש פסקל?',
     },
     type: QuestionType.value,
     validationStatus: QuestionValidationStatus.ai_generated,
@@ -2086,8 +2521,7 @@ export const QUESTIONS: QuestionSeedData[] = [
     text: {
       en_text:
         "What is the value of the binomial coefficient C(6, 3) found in Pascal's Triangle?",
-      he_text:
-        'מהו הערך של המקדם הבינומי C(6, 3) במשולש פסקל?',
+      he_text: 'מהו הערך של המקדם הבינומי C(6, 3) במשולש פסקל?',
     },
     type: QuestionType.value,
     validationStatus: QuestionValidationStatus.ai_generated,
@@ -2108,8 +2542,7 @@ export const QUESTIONS: QuestionSeedData[] = [
     text: {
       en_text:
         "What is the value of the binomial coefficient C(7, 4) found in Pascal's Triangle?",
-      he_text:
-        'מהו הערך של המקדם הבינומי C(7, 4) במשולש פסקל?',
+      he_text: 'מהו הערך של המקדם הבינומי C(7, 4) במשולש פסקל?',
     },
     type: QuestionType.value,
     validationStatus: QuestionValidationStatus.ai_generated,
@@ -2130,8 +2563,7 @@ export const QUESTIONS: QuestionSeedData[] = [
     text: {
       en_text:
         "What is the value of the binomial coefficient C(8, 2) found in Pascal's Triangle?",
-      he_text:
-        'מהו הערך של המקדם הבינומי C(8, 2) במשולש פסקל?',
+      he_text: 'מהו הערך של המקדם הבינומי C(8, 2) במשולש פסקל?',
     },
     type: QuestionType.value,
     validationStatus: QuestionValidationStatus.ai_generated,
@@ -2152,8 +2584,7 @@ export const QUESTIONS: QuestionSeedData[] = [
     text: {
       en_text:
         "What is the value of the binomial coefficient C(9, 5) found in Pascal's Triangle?",
-      he_text:
-        'מהו הערך של המקדם הבינומי C(9, 5) במשולש פסקל?',
+      he_text: 'מהו הערך של המקדם הבינומי C(9, 5) במשולש פסקל?',
     },
     type: QuestionType.value,
     validationStatus: QuestionValidationStatus.ai_generated,
@@ -2174,8 +2605,7 @@ export const QUESTIONS: QuestionSeedData[] = [
     text: {
       en_text:
         "What is the value of the binomial coefficient C(10, 3) found in Pascal's Triangle?",
-      he_text:
-        'מהו הערך של המקדם הבינומי C(10, 3) במשולש פסקל?',
+      he_text: 'מהו הערך של המקדם הבינומי C(10, 3) במשולש פסקל?',
     },
     type: QuestionType.value,
     validationStatus: QuestionValidationStatus.ai_generated,
@@ -2196,8 +2626,7 @@ export const QUESTIONS: QuestionSeedData[] = [
     text: {
       en_text:
         "What is the value of the binomial coefficient C(11, 6) found in Pascal's Triangle?",
-      he_text:
-        'מהו הערך של המקדם הבינומי C(11, 6) במשולש פסקל?',
+      he_text: 'מהו הערך של המקדם הבינומי C(11, 6) במשולש פסקל?',
     },
     type: QuestionType.value,
     validationStatus: QuestionValidationStatus.ai_generated,
@@ -2218,8 +2647,7 @@ export const QUESTIONS: QuestionSeedData[] = [
     text: {
       en_text:
         "What is the value of the binomial coefficient C(12, 4) found in Pascal's Triangle?",
-      he_text:
-        'מהו הערך של המקדם הבינומי C(12, 4) במשולש פסקל?',
+      he_text: 'מהו הערך של המקדם הבינומי C(12, 4) במשולש פסקל?',
     },
     type: QuestionType.value,
     validationStatus: QuestionValidationStatus.ai_generated,
@@ -2240,8 +2668,7 @@ export const QUESTIONS: QuestionSeedData[] = [
     text: {
       en_text:
         "What is the value of the binomial coefficient C(13, 7) found in Pascal's Triangle?",
-      he_text:
-        'מהו הערך של המקדם הבינומי C(13, 7) במשולש פסקל?',
+      he_text: 'מהו הערך של המקדם הבינומי C(13, 7) במשולש פסקל?',
     },
     type: QuestionType.value,
     validationStatus: QuestionValidationStatus.ai_generated,
@@ -2262,8 +2689,7 @@ export const QUESTIONS: QuestionSeedData[] = [
     text: {
       en_text:
         "What is the value of the binomial coefficient C(14, 2) found in Pascal's Triangle?",
-      he_text:
-        'מהו הערך של המקדם הבינומי C(14, 2) במשולש פסקל?',
+      he_text: 'מהו הערך של המקדם הבינומי C(14, 2) במשולש פסקל?',
     },
     type: QuestionType.value,
     validationStatus: QuestionValidationStatus.ai_generated,
@@ -2284,8 +2710,7 @@ export const QUESTIONS: QuestionSeedData[] = [
     text: {
       en_text:
         "What is the value of the binomial coefficient C(15, 5) found in Pascal's Triangle?",
-      he_text:
-        'מהו הערך של המקדם הבינומי C(15, 5) במשולש פסקל?',
+      he_text: 'מהו הערך של המקדם הבינומי C(15, 5) במשולש פסקל?',
     },
     type: QuestionType.value,
     validationStatus: QuestionValidationStatus.ai_generated,
@@ -2306,8 +2731,7 @@ export const QUESTIONS: QuestionSeedData[] = [
     text: {
       en_text:
         "What is the value of the binomial coefficient C(16, 8) found in Pascal's Triangle?",
-      he_text:
-        'מהו הערך של המקדם הבינומי C(16, 8) במשולש פסקל?',
+      he_text: 'מהו הערך של המקדם הבינומי C(16, 8) במשולש פסקל?',
     },
     type: QuestionType.value,
     validationStatus: QuestionValidationStatus.ai_generated,
@@ -2328,8 +2752,7 @@ export const QUESTIONS: QuestionSeedData[] = [
     text: {
       en_text:
         "What is the value of the binomial coefficient C(17, 3) found in Pascal's Triangle?",
-      he_text:
-        'מהו הערך של המקדם הבינומי C(17, 3) במשולש פסקל?',
+      he_text: 'מהו הערך של המקדם הבינומי C(17, 3) במשולש פסקל?',
     },
     type: QuestionType.value,
     validationStatus: QuestionValidationStatus.ai_generated,
@@ -2350,8 +2773,7 @@ export const QUESTIONS: QuestionSeedData[] = [
     text: {
       en_text:
         "What is the value of the binomial coefficient C(18, 9) found in Pascal's Triangle?",
-      he_text:
-        'מהו הערך של המקדם הבינומי C(18, 9) במשולש פסקל?',
+      he_text: 'מהו הערך של המקדם הבינומי C(18, 9) במשולש פסקל?',
     },
     type: QuestionType.value,
     validationStatus: QuestionValidationStatus.ai_generated,
@@ -2372,8 +2794,7 @@ export const QUESTIONS: QuestionSeedData[] = [
     text: {
       en_text:
         "What is the value of the binomial coefficient C(19, 4) found in Pascal's Triangle?",
-      he_text:
-        'מהו הערך של המקדם הבינומי C(19, 4) במשולש פסקל?',
+      he_text: 'מהו הערך של המקדם הבינומי C(19, 4) במשולש פסקל?',
     },
     type: QuestionType.value,
     validationStatus: QuestionValidationStatus.ai_generated,
@@ -2394,8 +2815,7 @@ export const QUESTIONS: QuestionSeedData[] = [
     text: {
       en_text:
         "What is the value of the binomial coefficient C(20, 10) found in Pascal's Triangle?",
-      he_text:
-        'מהו הערך של המקדם הבינומי C(20, 10) במשולש פסקל?',
+      he_text: 'מהו הערך של המקדם הבינומי C(20, 10) במשולש פסקל?',
     },
     type: QuestionType.value,
     validationStatus: QuestionValidationStatus.ai_generated,
@@ -2416,8 +2836,7 @@ export const QUESTIONS: QuestionSeedData[] = [
     text: {
       en_text:
         "What is the value of the binomial coefficient C(21, 7) found in Pascal's Triangle?",
-      he_text:
-        'מהו הערך של המקדם הבינומי C(21, 7) במשולש פסקל?',
+      he_text: 'מהו הערך של המקדם הבינומי C(21, 7) במשולש פסקל?',
     },
     type: QuestionType.value,
     validationStatus: QuestionValidationStatus.ai_generated,
@@ -2438,8 +2857,7 @@ export const QUESTIONS: QuestionSeedData[] = [
     text: {
       en_text:
         "What is the value of the binomial coefficient C(22, 11) found in Pascal's Triangle?",
-      he_text:
-        'מהו הערך של המקדם הבינומי C(22, 11) במשולש פסקל?',
+      he_text: 'מהו הערך של המקדם הבינומי C(22, 11) במשולש פסקל?',
     },
     type: QuestionType.value,
     validationStatus: QuestionValidationStatus.ai_generated,
@@ -2460,8 +2878,7 @@ export const QUESTIONS: QuestionSeedData[] = [
     text: {
       en_text:
         "What is the value of the binomial coefficient C(23, 5) found in Pascal's Triangle?",
-      he_text:
-        'מהו הערך של המקדם הבינומי C(23, 5) במשולש פסקל?',
+      he_text: 'מהו הערך של המקדם הבינומי C(23, 5) במשולש פסקל?',
     },
     type: QuestionType.value,
     validationStatus: QuestionValidationStatus.ai_generated,
@@ -2482,8 +2899,7 @@ export const QUESTIONS: QuestionSeedData[] = [
     text: {
       en_text:
         "What is the value of the binomial coefficient C(24, 12) found in Pascal's Triangle?",
-      he_text:
-        'מהו הערך של המקדם הבינומי C(24, 12) במשולש פסקל?',
+      he_text: 'מהו הערך של המקדם הבינומי C(24, 12) במשולש פסקל?',
     },
     type: QuestionType.value,
     validationStatus: QuestionValidationStatus.ai_generated,
