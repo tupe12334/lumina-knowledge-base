@@ -19,7 +19,10 @@ describe('DegreesService', () => {
       id: 'deg1',
       name: { en_text: 'Computer Science', he_text: 'מדעי המחשב' },
       university: {
-        name: { en_text: 'University of Technology', he_text: 'האוניברסיטה הטכנולוגית' },
+        name: {
+          en_text: 'University of Technology',
+          he_text: 'האוניברסיטה הטכנולוגית',
+        },
       },
     };
     mockPrismaService.degree.findMany.mockResolvedValue([degree]);

@@ -17,7 +17,9 @@ describe('QuestionsService', () => {
   };
 
   beforeEach(() => {
-    service = new QuestionsService(mockPrismaService as unknown as PrismaService);
+    service = new QuestionsService(
+      mockPrismaService as unknown as PrismaService,
+    );
   });
 
   it('returns questions from prisma', async () => {

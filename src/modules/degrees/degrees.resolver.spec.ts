@@ -10,7 +10,9 @@ describe('DegreesResolver', () => {
   };
 
   beforeEach(() => {
-    resolver = new DegreesResolver(mockDegreesService as unknown as DegreesService);
+    resolver = new DegreesResolver(
+      mockDegreesService as unknown as DegreesService,
+    );
   });
 
   it('should be defined', () => {

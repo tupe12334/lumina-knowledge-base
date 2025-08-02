@@ -57,7 +57,9 @@ describe('UniversitiesResolver', () => {
       const result = await resolver.getUniversity('non-existent');
 
       expect(result).toBeNull();
-      expect(mockUniversitiesService.findUnique).toHaveBeenCalledWith('non-existent');
+      expect(mockUniversitiesService.findUnique).toHaveBeenCalledWith(
+        'non-existent',
+      );
     });
   });
 });
