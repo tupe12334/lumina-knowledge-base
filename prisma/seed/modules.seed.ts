@@ -26,6 +26,8 @@ export const seedModules = async (
         '27d30775-72bb-41a2-b974-3d9883e6bb12',
       'Sum Principle_Multiplication Principle':
         '6a70e70d-a1e0-486e-9c55-b22090cede3f',
+      'Multiplication Principle_Permutations':
+        '9b81c7e2-4f6a-4d8b-b123-4c5d6e7f8a90',
       'Basic Logic Concepts_Logical Operators':
         '4a5b6c7d-8e9f-4412-a456-789abc123def',
       'Basic Logic Concepts_Truth Values':
@@ -58,6 +60,8 @@ export const seedModules = async (
         '3a2e73e6-3274-484e-af07-6fe40cd22ef9',
       '6a70e70d-a1e0-486e-9c55-b22090cede3f':
         'c5681550-91a0-47ae-83b2-efaaf361ca6b',
+      '9b81c7e2-4f6a-4d8b-b123-4c5d6e7f8a90':
+        'e6792661-02b1-48bf-94c3-f0bbf472db7c',
       '4a5b6c7d-8e9f-4412-a456-789abc123def':
         '9f0e1d2c-3b4a-4968-a7dc-ba1234567890',
       '5b6c7d8e-9f01-4123-b567-89abcd234eff':
