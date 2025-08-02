@@ -1205,4 +1205,417 @@ export const QUESTIONS: QuestionSeedData[] = [
       },
     ],
   },
+  {
+    id: 'd197e3c8-3d75-4351-9f9a-64c19a7b4f74',
+    translationId: 'ef7e1d80-c1bf-4daf-a630-bb17cd366073',
+    text: {
+      en_text: 'How many 8-bit strings contain at least one 0',
+      he_text: 'כמה מחרוזות באורך 8 מכילות לפחות אפס אחד',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '5a6b7c8d-9e0f-4123-b567-89abcd234eff',
+    answers: [
+      {
+        id: '9adeaabb-69f1-46d4-bdb1-1e15b54bd091',
+        numberAnswer: {
+          id: '0f84e309-482d-41ee-a8a2-efdd21168c6f',
+          value: 255,
+        },
+      },
+    ],
+  },
+  {
+    id: '34d9cdd1-9e6f-48df-be32-fabcfd1ab5a0',
+    translationId: 'bd4445f4-6a67-4cbe-890c-2df27269c47d',
+    text: {
+      en_text: 'How many four digit numbers contain at least one digit 7',
+      he_text: 'כמה מספרים בני ארבע ספרות מכילים לפחות ספרה אחת 7',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '5a6b7c8d-9e0f-4123-b567-89abcd234eff',
+    answers: [
+      {
+        id: '158295eb-68dd-4fba-9bea-e2708d6a9410',
+        numberAnswer: {
+          id: 'affa5b6e-d4ca-4767-9cdb-e862ea5d5d71',
+          value: 3168,
+        },
+      },
+    ],
+  },
+  {
+    id: 'ba270cb5-d635-41bf-8bc0-e02f794e1fb1',
+    translationId: '19f79c58-69ed-418c-8ff5-0fd9a506437f',
+    text: {
+      en_text:
+        'How many 6-letter strings from {A,B,C,D} contain at least one A',
+      he_text: 'כמה מחרוזות באורך 6 מתוך {A,B,C,D} מכילות לפחות A אחת',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '5a6b7c8d-9e0f-4123-b567-89abcd234eff',
+    answers: [
+      {
+        id: 'a4b5cd8b-3262-4dac-9252-c884fd2f4fc2',
+        numberAnswer: {
+          id: '22a1a436-f9f3-4ffe-aae9-98863108dc22',
+          value: 3367,
+        },
+      },
+    ],
+  },
+  {
+    id: '14da5f4c-c1ab-42a5-a6c8-ceda73f5d986',
+    translationId: 'b7dbccce-a488-4a77-874c-c9d4f555d19d',
+    text: {
+      en_text:
+        'How many four person committees from 10 students include at least one of two specific students',
+      he_text:
+        'כמה ועדות של ארבעה מתוך עשרה סטודנטים כוללות לפחות אחד משני סטודנטים מסוימים',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '5a6b7c8d-9e0f-4123-b567-89abcd234eff',
+    answers: [
+      {
+        id: '40f0150d-8bfd-4f9a-88ef-02711eb52e31',
+        numberAnswer: {
+          id: '039b1b69-97da-422f-9770-d0cd45e5e8b3',
+          value: 140,
+        },
+      },
+    ],
+  },
+  {
+    id: '31b9fc47-e768-47e5-9851-1e9a7b3c631e',
+    translationId: '9e2473e6-161c-406f-9b55-dbf7d40e5dea',
+    text: {
+      en_text: 'How many permutations of ABCDE begin with a vowel',
+      he_text: 'כמה סידורים של האותיות ABCDE מתחילים בתנועה',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '5a6b7c8d-9e0f-4123-b567-89abcd234eff',
+    answers: [
+      {
+        id: '781982c2-4b33-49ae-a303-b02d55c27e42',
+        numberAnswer: {
+          id: 'db0f9be8-e92b-4054-9131-3b6b171c82eb',
+          value: 48,
+        },
+      },
+    ],
+  },
+  {
+    id: '01eb567b-c978-409b-a7a1-ce0074384d49',
+    translationId: '32c59695-81d3-4235-b701-277e19bcf732',
+    text: {
+      en_text: 'How many seven digit numbers have at least one digit 5',
+      he_text: 'כמה מספרים בני שבע ספרות מכילים לפחות ספרה אחת 5',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '5a6b7c8d-9e0f-4123-b567-89abcd234eff',
+    answers: [
+      {
+        id: '0183b574-1a56-4b0f-ab21-65ff304c4151',
+        numberAnswer: {
+          id: 'c1a0c98e-8f82-4585-aa2c-4b99d4c5fe70',
+          value: 4748472,
+        },
+      },
+    ],
+  },
+  {
+    id: '142f8b3e-b45d-447b-8f62-eed97f162e2a',
+    translationId: '5f557092-8bdc-443c-82dd-173197064bb7',
+    text: {
+      en_text:
+        'How many colorings of 4 balls with 3 colors are not monochromatic',
+      he_text: 'כמה צביעות של ארבעה כדורים בשלושה צבעים שאינן חד צבעוניות',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '5a6b7c8d-9e0f-4123-b567-89abcd234eff',
+    answers: [
+      {
+        id: '8f7f6d39-46bf-4dc3-a4d6-40e0eb57ec22',
+        numberAnswer: {
+          id: 'c7f3ee67-1479-4b97-aba7-5c36d9b7672e',
+          value: 78,
+        },
+      },
+    ],
+  },
+  {
+    id: '81360e39-00c4-457c-b830-89834c8fdfe8',
+    translationId: '740f7595-295c-4e51-8250-6754eb18f8ea',
+    text: {
+      en_text:
+        'How many 5-letter words from {A,B,C,D,E} have at least one repeated letter',
+      he_text: 'כמה מילים באורך 5 מתוך {A,B,C,D,E} מכילות לפחות אות אחת שחוזרת',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '5a6b7c8d-9e0f-4123-b567-89abcd234eff',
+    answers: [
+      {
+        id: '5286375e-b9de-40f5-9408-16431c118453',
+        numberAnswer: {
+          id: '91f10654-8733-4059-9161-cd18f44feead',
+          value: 3005,
+        },
+      },
+    ],
+  },
+  {
+    id: 'b727573b-e1b5-4382-989d-bcc450db06cf',
+    translationId: '3e5a2992-04db-463f-a8b1-8b9ff57426a0',
+    text: {
+      en_text: 'How many 5-digit strings contain at least one 0',
+      he_text: 'כמה מחרוזות בנות חמש ספרות מכילות לפחות אפס אחד',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '5a6b7c8d-9e0f-4123-b567-89abcd234eff',
+    answers: [
+      {
+        id: '394f3b35-a28f-4f15-80e2-0e1e82bf2159',
+        numberAnswer: {
+          id: '90a9666f-ac10-4950-92a2-4a7dc72ec7ab',
+          value: 40951,
+        },
+      },
+    ],
+  },
+  {
+    id: 'f156e0a4-ce55-43b4-aa22-c740a684aae6',
+    translationId: '6425ae2e-55ba-4fb0-ba94-63896bb5a549',
+    text: {
+      en_text:
+        'How many permutations of four distinct digits include the digit 0',
+      he_text: 'כמה סידורים בני ארבע ספרות שונות כוללים את הספרה 0',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '5a6b7c8d-9e0f-4123-b567-89abcd234eff',
+    answers: [
+      {
+        id: 'bb0525cb-b62a-4d11-8178-12b5dbf94811',
+        numberAnswer: {
+          id: 'c815c22d-c027-483b-89ae-aeb6fb4efc83',
+          value: 2016,
+        },
+      },
+    ],
+  },
+  {
+    id: 'fa6c1642-52f4-488f-986b-c7af0b31efee',
+    translationId: '2ffad47c-642b-4c62-acd0-06cbdcc794fd',
+    text: {
+      en_text:
+        'How many 8-letter passwords over the lowercase English alphabet contain at least one vowel',
+      he_text:
+        'כמה סיסמאות באורך 8 מאותיות לועזיות קטנות מכילות לפחות תנועה אחת',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '5a6b7c8d-9e0f-4123-b567-89abcd234eff',
+    answers: [
+      {
+        id: '0aea3000-072a-453d-8220-337cda42de6d',
+        numberAnswer: {
+          id: 'e62290c0-85bd-49e2-a2c1-fc820f3edb30',
+          value: 171004205215,
+        },
+      },
+    ],
+  },
+  {
+    id: '947b2af5-5bb8-48e4-b6e3-b124a38a87ee',
+    translationId: 'c184c555-8fe5-425f-aa46-06d67385cedf',
+    text: {
+      en_text:
+        'How many 4-letter strings from {A,B,C,D,E,F} contain at least one vowel',
+      he_text: 'כמה מחרוזות באורך 4 מתוך {A,B,C,D,E,F} מכילות לפחות תנועה אחת',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '5a6b7c8d-9e0f-4123-b567-89abcd234eff',
+    answers: [
+      {
+        id: '22522021-4f00-496e-8871-ed2a46bebb38',
+        numberAnswer: {
+          id: '459c5752-f4dd-498f-8f01-3e4a75a1c605',
+          value: 1040,
+        },
+      },
+    ],
+  },
+  {
+    id: 'bede7c3d-a729-4519-a5f7-4180955d1adf',
+    translationId: '5f73cded-f705-4cb1-9c83-bbe4edb5aa8f',
+    text: {
+      en_text: 'How many three digit numbers have at least one repeated digit',
+      he_text: 'כמה מספרים בני שלוש ספרות מכילים לפחות ספרה חוזרת אחת',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '5a6b7c8d-9e0f-4123-b567-89abcd234eff',
+    answers: [
+      {
+        id: '093ec8e3-f24d-49b6-813b-13efd3aadcab',
+        numberAnswer: {
+          id: 'c5739f88-2482-4b2b-b418-19c8bf0331f3',
+          value: 252,
+        },
+      },
+    ],
+  },
+  {
+    id: 'eb010669-7f22-4122-aefd-bb3241a4d391',
+    translationId: 'babef5a8-53fd-42d7-b502-d7d5083439e5',
+    text: {
+      en_text:
+        'How many 5-card hands from a standard deck contain at least one ace',
+      he_text: 'כמה ידיים של חמש קלפים מחבילה רגילה מכילות לפחות אס אחד',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '5a6b7c8d-9e0f-4123-b567-89abcd234eff',
+    answers: [
+      {
+        id: 'c85d86ed-8f0e-4ed9-bc15-7100752b3070',
+        numberAnswer: {
+          id: 'efb7c932-695c-4dbd-ab2a-a0f5e8af45c6',
+          value: 886656,
+        },
+      },
+    ],
+  },
+  {
+    id: 'e9c7cc22-e039-406a-bde5-de4d1d9809de',
+    translationId: 'be678452-e71c-4c28-932b-592b751b559c',
+    text: {
+      en_text: 'How many 7-bit strings contain at least one 1',
+      he_text: 'כמה מחרוזות באורך 7 ביטים מכילות לפחות ספרה אחת 1',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '5a6b7c8d-9e0f-4123-b567-89abcd234eff',
+    answers: [
+      {
+        id: 'ca568c7a-dd0b-4bc3-9c01-3f1d1db1f97b',
+        numberAnswer: {
+          id: 'b7f5c63d-a83b-42ae-b3eb-d2dd9966bd65',
+          value: 127,
+        },
+      },
+    ],
+  },
+  {
+    id: 'c70bafe7-7d48-4916-84c2-d85bda658367',
+    translationId: '7c17f31e-c1f9-4035-869f-e0b929e0122f',
+    text: {
+      en_text: 'How many subsets of {1,...,10} contain at least one of 1 or 2',
+      he_text: 'כמה תתי קבוצות של {1,...,10} מכילות לפחות את 1 או 2',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '5a6b7c8d-9e0f-4123-b567-89abcd234eff',
+    answers: [
+      {
+        id: 'ebfc2260-7df1-40ce-8c80-535c1cae7371',
+        numberAnswer: {
+          id: '48d03b57-7086-4b37-9d5d-b61d773a9d39',
+          value: 768,
+        },
+      },
+    ],
+  },
+  {
+    id: '0dcd28d3-543b-4767-b4bf-c6e69381291f',
+    translationId: '464013a2-9067-44f6-9423-f8b7ae0763ad',
+    text: {
+      en_text:
+        'How many permutations of numbers 1 through 5 have at least one fixed point',
+      he_text: 'כמה תמורות של המספרים 1 עד 5 כוללות לפחות נקודת קיבוע אחת',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '5a6b7c8d-9e0f-4123-b567-89abcd234eff',
+    answers: [
+      {
+        id: '190bbe1a-7a4a-4a38-951d-51f4c9a22982',
+        numberAnswer: {
+          id: '32f30d9b-43c0-475a-ba34-47c9240311ba',
+          value: 76,
+        },
+      },
+    ],
+  },
+  {
+    id: '57e72e6e-f794-49f7-912a-a89e14d60250',
+    translationId: '12388bcd-e3f3-4ee6-8447-d7c73adcc067',
+    text: {
+      en_text: 'How many four digit numbers contain at least one even digit',
+      he_text: 'כמה מספרים בני ארבע ספרות מכילים לפחות ספרה זוגית אחת',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '5a6b7c8d-9e0f-4123-b567-89abcd234eff',
+    answers: [
+      {
+        id: '01e2339f-5436-4c11-9b65-da19327e9aa4',
+        numberAnswer: {
+          id: 'dc590405-af8f-4855-91a1-bb08a05752c1',
+          value: 8375,
+        },
+      },
+    ],
+  },
+  {
+    id: 'f5160286-1312-4b1e-89ef-6a5e9b5ecd05',
+    translationId: '62478899-7c30-4628-ae5a-2c39e5d78bc2',
+    text: {
+      en_text: 'How many ternary strings of length 5 contain at least one 2',
+      he_text: 'כמה מחרוזות באורך 5 בבסיס שלוש מכילות לפחות ספרה אחת 2',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '5a6b7c8d-9e0f-4123-b567-89abcd234eff',
+    answers: [
+      {
+        id: 'ba0fb684-2ade-4e38-a4ca-465575f9521a',
+        numberAnswer: {
+          id: '1d9fe301-a0db-4a4c-9aa8-5bad8f01bb39',
+          value: 211,
+        },
+      },
+    ],
+  },
+  {
+    id: '2ef37e93-03e8-44cf-8d46-f9e959bb6370',
+    translationId: 'b391d164-beba-42e6-ac33-c39059bbee3b',
+    text: {
+      en_text:
+        'How many arrangements of three red and three blue balls in a row have at least one pair of adjacent balls of the same color',
+      he_text:
+        'כמה סידורים של שלושה כדורים אדומים ושלושה כחולים בשורה מכילים לפחות זוג סמוך של כדורים באותו צבע',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '5a6b7c8d-9e0f-4123-b567-89abcd234eff',
+    answers: [
+      {
+        id: '1b2d2de5-ddd5-4963-9339-05d3acad7fcd',
+        numberAnswer: {
+          id: '98ab700a-37af-4326-aa60-e5198ae708b0',
+          value: 18,
+        },
+      },
+    ],
+  },
 ] satisfies QuestionSeedData[];
