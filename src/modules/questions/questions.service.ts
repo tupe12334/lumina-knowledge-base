@@ -9,28 +9,30 @@ export class QuestionsService {
 
   async findAll(filters?: QuestionsQueryDto): Promise<Question[]> {
     // Build where clause based on filters
-
     const where: any = {};
 
-    if (filters?.moduleId) {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-      where.Modules = { some: { id: filters.moduleId } };
+    // Handle both array and single module filtering
+    const moduleIds = filters?.moduleIds || (filters?.moduleId ? [filters.moduleId] : []);
+    if (moduleIds.length > 0) {
+      where.Modules = { some: { id: { in: moduleIds } } };
     }
 
-    if (filters?.courseId) {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    // Handle both array and single course filtering
+    const courseIds = filters?.courseIds || (filters?.courseId ? [filters.courseId] : []);
+    if (courseIds.length > 0) {
       where.Modules = {
         some: {
           Course: {
-            some: { id: filters.courseId },
+            some: { id: { in: courseIds } },
           },
         },
       };
     }
 
-    if (filters?.questionType) {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-      where.type = filters.questionType;
+    // Handle both array and single question type filtering
+    const questionTypes = filters?.questionTypes || (filters?.questionType ? [filters.questionType] : []);
+    if (questionTypes.length > 0) {
+      where.type = { in: questionTypes };
     }
 
     // If excludePartQuestions is true, exclude questions that are part of other questions

@@ -119,17 +119,26 @@ enum QuestionType {
 }
 
 input QuestionsQueryInput {
-  """Filter questions by course ID"""
+  """Filter questions by course ID (deprecated, use courseIds)"""
   courseId: String
+
+  """Filter questions by course IDs"""
+  courseIds: [String!]
 
   """Exclude questions that are part of other questions"""
   excludePartQuestions: Boolean
 
-  """Filter questions by module ID"""
+  """Filter questions by module ID (deprecated, use moduleIds)"""
   moduleId: String
 
-  """Filter questions by question type"""
+  """Filter questions by module IDs"""
+  moduleIds: [String!]
+
+  """Filter questions by question type (deprecated, use questionTypes)"""
   questionType: QuestionType
+
+  """Filter questions by question types"""
+  questionTypes: [QuestionType!]
 }
 
 type RelationshipMetadata {
