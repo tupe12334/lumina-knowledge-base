@@ -89,6 +89,7 @@ export const seedModules = async (
       Permutations: 'b046c3a7-4e8f-4571-a015-0a7cc33daca2',
       'Combinations with Repetitions': 'e289a3c2-6d14-479d-89e6-a83b56e08287',
       'Permutations with Repetitions': 'e7c5b81e-5aad-4715-ab5d-c08122c05ef1',
+      Derangements: '4c031bcd-19fb-46d0-9f62-d7d8612c052f',
       'Pascal Triangle': '453489f6-61fa-4699-b275-26d6165dbc89',
       'Binomial Formula': 'ee3583e5-7114-4a42-8a78-c1cb689276c9',
       'Inclusion Principle': '4f5a6b7c-8d9e-4012-a456-789abc123def',
@@ -152,6 +153,7 @@ export const seedModules = async (
     Permutations: 'c6dd59ac-1802-4bc9-b91e-ca77bb32620e',
     'Combinations with Repetitions': '87a1da94-793c-4565-8706-8fd073a50cf6',
     'Permutations with Repetitions': 'f2866b62-f4f6-4e22-8fcc-f4bd8bbdb275',
+    Derangements: 'd55d4871-f7c6-47f8-94d7-ee4ada6bf45f',
     'Pascal Triangle': '82da973e-a84a-44f4-b33f-bcf907961eb3',
     'Binomial Formula': 'e1367766-2b1a-42f9-a725-58d092bbc080',
     'Inclusion Principle': '4f5a6b7c-8d9e-4012-a456-789abc123def',
@@ -228,6 +230,7 @@ export const seedModules = async (
     {
       en_text: 'How to Formalize',
       he_text: 'איך מפרמלים',
+      parent: 'Introduction to Logic',
       course: 'Discrete Mathematics',
     },
     {
@@ -351,6 +354,12 @@ export const seedModules = async (
       he_text: 'צירופים עם חזרות',
       parent: 'Combinatorics',
       prerequisite: 'Permutations',
+      course: 'Discrete Mathematics',
+    },
+    {
+      en_text: 'Derangements',
+      he_text: 'אי סדר מלא',
+      parent: 'Combinatorics',
       course: 'Discrete Mathematics',
     },
     {

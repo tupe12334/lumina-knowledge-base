@@ -1512,6 +1512,11 @@ export const TRANSLATIONS: TranslationSeed[] = [
     en_text: 'Permutations',
     he_text: 'צירופים',
   },
+  {
+    id: '4c031bcd-19fb-46d0-9f62-d7d8612c052f',
+    en_text: 'Derangements',
+    he_text: 'אי סדר מלא',
+  },
   // Faculty descriptions
   {
     id: '39ae54f0-57f9-473d-82c9-785dce83f328',
