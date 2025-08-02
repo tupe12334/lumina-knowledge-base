@@ -588,10 +588,7 @@ export const seedModules = async (
         );
         const blockRelationship = await tx.blockRelationship.upsert({
           where: {
-            prerequisiteId_postrequisiteId: {
-              prerequisiteId: prerequisiteModule.blockId,
-              postrequisiteId: postrequisiteModule.blockId,
-            },
+            id: relationshipId,
           },
           update: {},
           create: {
@@ -603,10 +600,7 @@ export const seedModules = async (
         const metadataId = getRelationshipMetadataId(blockRelationship.id);
         await tx.relationshipMetadata.upsert({
           where: {
-            key_blockRelationshipId: {
-              key: 'TYPE',
-              blockRelationshipId: blockRelationship.id,
-            },
+            id: metadataId,
           },
           update: {
             value: 'hard',
