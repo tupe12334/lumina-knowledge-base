@@ -22,6 +22,10 @@ export class LearningResource {
 
   @Field()
   @ApiProperty()
+  language!: string;
+
+  @Field()
+  @ApiProperty()
   url!: string;
 
   @Field(() => $Enums.LearningResourceType)

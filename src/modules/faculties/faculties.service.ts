@@ -22,6 +22,7 @@ export class FacultiesService {
       where: { id },
       include: {
         name: true,
+        description: true,
       },
     });
   }

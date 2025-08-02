@@ -55,9 +55,16 @@ input DegreesQueryDto {
   name: String
 }
 
+type Faculty {
+  description: Translation!
+  id: ID!
+  name: Translation!
+}
+
 type LearningResource {
   createdAt: DateTime!
   id: ID!
+  language: String!
   moduleId: String!
   relevance: Int!
   suggestedBy: String
@@ -79,6 +86,17 @@ type Module {
   subModules: [Module!]
 }
 
+input ModulesQueryInput {
+  """Filter modules by exact number of questions"""
+  exactQuestions: Int
+
+  """Filter modules by maximum number of questions"""
+  maxQuestions: Int
+
+  """Filter modules by minimum number of questions"""
+  minQuestions: Int
+}
+
 type NumberAnswer {
   answerId: String!
   id: ID!
@@ -86,9 +104,80 @@ type NumberAnswer {
 }
 
 type Query {
+  """Get a specific block by ID"""
+  block(
+    """Block ID"""
+    id: ID!
+  ): Block
+
+  """Get a specific course by ID"""
+  course(
+    """Course ID"""
+    id: ID!
+  ): Course
+
+  """Get all courses"""
+  courses: [Course!]!
+
+  """Get a specific degree by ID"""
+  degree(
+    """Degree ID"""
+    id: ID!
+  ): Degree
+
+  """Get all degrees with optional filtering"""
   degrees(query: DegreesQueryDto): [Degree!]!
+
+  """Get degrees by university ID"""
+  degreesByUniversity(
+    """University ID"""
+    universityId: ID!
+  ): [Degree!]!
+
+  """Get faculties by university ID"""
+  facultiesByUniversity(
+    """University ID"""
+    universityId: ID!
+  ): [Faculty!]!
+
+  """Get a specific faculty by ID"""
+  faculty(
+    """Faculty ID"""
+    id: ID!
+  ): Faculty
   hello: String!
-  question(id: ID!): Question
+
+  """Get a specific learning resource by ID"""
+  learningResource(
+    """Learning Resource ID"""
+    id: ID!
+  ): LearningResource
+
+  """Get all learning resources"""
+  learningResources: [LearningResource!]!
+
+  """Get learning resources by module ID"""
+  learningResourcesByModule(
+    """Module ID"""
+    moduleId: ID!
+  ): [LearningResource!]!
+
+  """Get a specific module by ID"""
+  module(
+    """Module ID"""
+    id: ID!
+  ): Module
+
+  """Get all modules with optional filtering"""
+  modules(input: ModulesQueryInput): [Module!]!
+
+  """Get a specific question by ID"""
+  question(
+    """Question ID"""
+    id: ID!
+  ): Question
+
+  """Get all questions with optional filtering"""
   questions(input: QuestionsQueryInput): [Question!]!
   universities: [University!]!
   university(id: ID!): University

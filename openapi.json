@@ -1113,6 +1113,9 @@
             "format": "date-time",
             "type": "string"
           },
+          "language": {
+            "type": "string"
+          },
           "url": {
             "type": "string"
           },
@@ -1136,6 +1139,7 @@
           "id",
           "createdAt",
           "updatedAt",
+          "language",
           "url",
           "type",
           "moduleId",
