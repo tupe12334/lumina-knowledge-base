@@ -1,7 +1,7 @@
+import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { DegreesResolver } from './degrees.resolver';
 import { DegreesService } from './degrees.service';
 import { DegreesQueryDto } from './dto/degrees-query.dto';
-import { vi } from 'vitest';
 
 describe('DegreesResolver', () => {
   let resolver: DegreesResolver;
@@ -19,10 +19,10 @@ describe('DegreesResolver', () => {
     expect(resolver).toBeDefined();
   });
 
-  describe('degrees', () => {
+  describe('getDegrees', () => {
     it('should call the service findAll method with the correct query', async () => {
       const query: DegreesQueryDto = { name: 'test' };
-      await resolver.degrees(query);
+      await resolver.getDegrees(query);
       expect(mockDegreesService.findAll).toHaveBeenCalledWith(query);
     });
   });
