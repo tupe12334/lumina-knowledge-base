@@ -2,6 +2,14 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type Answer {
+  NumberAnswer: NumberAnswer
+  SelectAnswer: [SelectAnswer!]
+  UnitAnswer: UnitAnswer
+  id: ID!
+  questionId: String!
+}
+
 type Block {
   id: ID!
   modules: [Module!]
@@ -75,10 +83,53 @@ type Module {
   subModules: [Module!]
 }
 
+type NumberAnswer {
+  answerId: String!
+  id: ID!
+  value: Float!
+}
+
 type Query {
   hello: String!
+  question(id: ID!): Question
+  questions(input: QuestionsQueryInput): [Question!]!
   universities: [University!]!
   university(id: ID!): University
+}
+
+type Question {
+  answers: [Answer!]
+  id: ID!
+  modules: [Module!]
+  parts: [QuestionPart!]
+  text: Translation!
+}
+
+type QuestionPart {
+  id: ID!
+  order: Int!
+  partQuestion: Question!
+}
+
+"""The type of question"""
+enum QuestionType {
+  SELECTION
+  VALUE
+  VOID
+}
+
+input QuestionsQueryInput {
+  """Filter questions by course ID"""
+  courseId: String
+
+  """Exclude questions that are part of other questions"""
+  excludePartQuestions: Boolean
+
+  """Filter questions by module ID"""
+  moduleId: String
+
+  """Filter questions by question type"""
+  questionType: QuestionType
 }
 
 type RelationshipMetadata {
@@ -94,9 +145,24 @@ enum RelationshipMetadataKey {
   TYPE
 }
 
+type SelectAnswer {
+  answerId: String!
+  id: ID!
+  isCorrect: Boolean!
+  text: Translation!
+  translationId: String!
+}
+
 type Translation {
   en_text: String!
   he_text: String!
+}
+
+type UnitAnswer {
+  answerId: String!
+  id: ID!
+  unit: String!
+  value: Float!
 }
 
 type University {
