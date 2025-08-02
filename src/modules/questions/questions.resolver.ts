@@ -12,29 +12,7 @@ export class QuestionsResolver {
   async getQuestions(
     @Args('input', { nullable: true }) input?: QuestionsQueryInput,
   ): Promise<Question[]> {
-    // Convert GraphQL input to the existing DTO format, handling both array and single values
-    const query = input
-      ? {
-          // Use new array fields if provided, otherwise fallback to single values
-          moduleIds:
-            input.moduleIds || (input.moduleId ? [input.moduleId] : undefined),
-          courseIds:
-            input.courseIds || (input.courseId ? [input.courseId] : undefined),
-          questionTypes:
-            input.questionTypes ||
-            (input.questionType ? [input.questionType] : undefined),
-          // Keep single values for backward compatibility
-          moduleId: input.moduleId,
-          courseId: input.courseId,
-          questionType: input.questionType as
-            | 'selection'
-            | 'value'
-            | 'void'
-            | undefined,
-        }
-      : undefined;
-
-    return this.questionsService.findAll(query);
+    return this.questionsService.findAll(input);
   }
 
   @Query(() => Question, { name: 'question', nullable: true })

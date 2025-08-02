@@ -53,6 +53,10 @@ type Degree {
   updatedAt: DateTime!
 }
 
+input DegreesQueryDto {
+  name: String
+}
+
 type Discipline {
   courses: [Course!]
   id: ID!
@@ -90,6 +94,7 @@ type NumberAnswer {
 }
 
 type Query {
+  degrees(query: DegreesQueryDto): [Degree!]!
   hello: String!
   question(id: ID!): Question
   questions(input: QuestionsQueryInput): [Question!]!
@@ -124,9 +129,6 @@ input QuestionsQueryInput {
 
   """Filter questions by course IDs"""
   courseIds: [String!]
-
-  """Exclude questions that are part of other questions"""
-  excludePartQuestions: Boolean
 
   """Filter questions by module ID (deprecated, use moduleIds)"""
   moduleId: String
