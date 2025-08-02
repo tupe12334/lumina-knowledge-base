@@ -1622,4 +1622,145 @@ In the Faculty of Arts, you're not just learning about the world — you're lear
       "How many distinct permutations can be made from the letters of the word 'STATISTICS'?",
     he_text: "כמה תמורות שונות אפשר ליצור מהאותיות במילה 'STATISTICS'?",
   },
+  // questions.consts.ts
+  {
+    id: 'e3d93d41-3050-493a-8ad6-19105b04613f',
+    en_text:
+      "What is the value of the binomial coefficient C(5, 2) found in Pascal's Triangle?",
+    he_text:
+      'מהו הערך של המקדם הבינומי C(5, 2) במשולש פסקל?',
+  },
+  {
+    id: 'a4e3c1a8-e257-4fe8-be97-f2c3cd035b13',
+    en_text:
+      "What is the value of the binomial coefficient C(6, 3) found in Pascal's Triangle?",
+    he_text:
+      'מהו הערך של המקדם הבינומי C(6, 3) במשולש פסקל?',
+  },
+  {
+    id: 'dcbdede0-9014-4c63-9981-cd22e7d1ec4f',
+    en_text:
+      "What is the value of the binomial coefficient C(7, 4) found in Pascal's Triangle?",
+    he_text:
+      'מהו הערך של המקדם הבינומי C(7, 4) במשולש פסקל?',
+  },
+  {
+    id: 'b12833a0-1b09-464a-ad7c-e148c216bccb',
+    en_text:
+      "What is the value of the binomial coefficient C(8, 2) found in Pascal's Triangle?",
+    he_text:
+      'מהו הערך של המקדם הבינומי C(8, 2) במשולש פסקל?',
+  },
+  {
+    id: 'c532bcb3-323a-4fea-9a98-3a60be8b2db8',
+    en_text:
+      "What is the value of the binomial coefficient C(9, 5) found in Pascal's Triangle?",
+    he_text:
+      'מהו הערך של המקדם הבינומי C(9, 5) במשולש פסקל?',
+  },
+  {
+    id: '4999aece-1387-4622-8f15-298daa82042f',
+    en_text:
+      "What is the value of the binomial coefficient C(10, 3) found in Pascal's Triangle?",
+    he_text:
+      'מהו הערך של המקדם הבינומי C(10, 3) במשולש פסקל?',
+  },
+  {
+    id: 'c4633ba3-7b62-43f4-b3ab-1bd1a6cf5376',
+    en_text:
+      "What is the value of the binomial coefficient C(11, 6) found in Pascal's Triangle?",
+    he_text:
+      'מהו הערך של המקדם הבינומי C(11, 6) במשולש פסקל?',
+  },
+  {
+    id: '7826ef3c-e828-425d-a27a-378ad632403b',
+    en_text:
+      "What is the value of the binomial coefficient C(12, 4) found in Pascal's Triangle?",
+    he_text:
+      'מהו הערך של המקדם הבינומי C(12, 4) במשולש פסקל?',
+  },
+  {
+    id: 'f43412c8-10de-4891-af23-2b01dd9926ec',
+    en_text:
+      "What is the value of the binomial coefficient C(13, 7) found in Pascal's Triangle?",
+    he_text:
+      'מהו הערך של המקדם הבינומי C(13, 7) במשולש פסקל?',
+  },
+  {
+    id: '76d2408f-653b-49ae-b9af-745ecfb4cd73',
+    en_text:
+      "What is the value of the binomial coefficient C(14, 2) found in Pascal's Triangle?",
+    he_text:
+      'מהו הערך של המקדם הבינומי C(14, 2) במשולש פסקל?',
+  },
+  {
+    id: 'adf4012f-0b43-4416-91a2-74e10faac950',
+    en_text:
+      "What is the value of the binomial coefficient C(15, 5) found in Pascal's Triangle?",
+    he_text:
+      'מהו הערך של המקדם הבינומי C(15, 5) במשולש פסקל?',
+  },
+  {
+    id: '39c8fd20-7b0c-43db-a87f-a54e0f27d0ed',
+    en_text:
+      "What is the value of the binomial coefficient C(16, 8) found in Pascal's Triangle?",
+    he_text:
+      'מהו הערך של המקדם הבינומי C(16, 8) במשולש פסקל?',
+  },
+  {
+    id: 'cd4f8d35-467c-47d4-9f9f-7a7677aea4e5',
+    en_text:
+      "What is the value of the binomial coefficient C(17, 3) found in Pascal's Triangle?",
+    he_text:
+      'מהו הערך של המקדם הבינומי C(17, 3) במשולש פסקל?',
+  },
+  {
+    id: '9aadd258-78f3-42a8-bc22-1fa381a4a773',
+    en_text:
+      "What is the value of the binomial coefficient C(18, 9) found in Pascal's Triangle?",
+    he_text:
+      'מהו הערך של המקדם הבינומי C(18, 9) במשולש פסקל?',
+  },
+  {
+    id: '17d9e6b4-0346-4b44-8e41-9ee32e401f08',
+    en_text:
+      "What is the value of the binomial coefficient C(19, 4) found in Pascal's Triangle?",
+    he_text:
+      'מהו הערך של המקדם הבינומי C(19, 4) במשולש פסקל?',
+  },
+  {
+    id: 'ae1945da-835a-4a0d-bac9-ee97eb818b7e',
+    en_text:
+      "What is the value of the binomial coefficient C(20, 10) found in Pascal's Triangle?",
+    he_text:
+      'מהו הערך של המקדם הבינומי C(20, 10) במשולש פסקל?',
+  },
+  {
+    id: 'ad136e05-f9ee-4a20-91fc-a4b411bd1506',
+    en_text:
+      "What is the value of the binomial coefficient C(21, 7) found in Pascal's Triangle?",
+    he_text:
+      'מהו הערך של המקדם הבינומי C(21, 7) במשולש פסקל?',
+  },
+  {
+    id: '1cd52c38-19eb-430a-8ac6-404cbb9c14b6',
+    en_text:
+      "What is the value of the binomial coefficient C(22, 11) found in Pascal's Triangle?",
+    he_text:
+      'מהו הערך של המקדם הבינומי C(22, 11) במשולש פסקל?',
+  },
+  {
+    id: '70c7622b-23c5-4de7-9bcd-198748654be4',
+    en_text:
+      "What is the value of the binomial coefficient C(23, 5) found in Pascal's Triangle?",
+    he_text:
+      'מהו הערך של המקדם הבינומי C(23, 5) במשולש פסקל?',
+  },
+  {
+    id: '26d7aa85-f8ad-4484-b9dc-5a3dc992c4db',
+    en_text:
+      "What is the value of the binomial coefficient C(24, 12) found in Pascal's Triangle?",
+    he_text:
+      'מהו הערך של המקדם הבינומי C(24, 12) במשולש פסקל?',
+  },
 ];
