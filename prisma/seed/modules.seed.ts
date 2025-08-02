@@ -325,6 +325,7 @@ export const seedModules = async (
       en_text: 'Combinations',
       he_text: 'חליפות',
       parent: 'Combinatorics',
+      prerequisite: 'Multiplication Principle',
       course: 'Discrete Mathematics',
     },
     {
@@ -338,6 +339,7 @@ export const seedModules = async (
       en_text: 'Permutations',
       he_text: 'צירופים',
       parent: 'Combinatorics',
+      prerequisite: 'Multiplication Principle',
       course: 'Discrete Mathematics',
     },
     {
