@@ -1,9 +1,9 @@
 import { IsOptional, IsString, IsUUID, IsBoolean, IsIn } from 'class-validator';
 import { ApiPropertyOptional } from '@nestjs/swagger';
 import { Transform } from 'class-transformer';
+import { QuestionType } from '../models/question-type.enum';
 
 const QUESTION_TYPES = ['selection', 'value', 'void'] as const;
-type QuestionType = (typeof QUESTION_TYPES)[number];
 
 export class QuestionsQueryDto {
   @ApiPropertyOptional({
@@ -30,7 +30,7 @@ export class QuestionsQueryDto {
     enum: QUESTION_TYPES,
   })
   @IsOptional()
-  @IsIn(QUESTION_TYPES)
+  @IsIn(Object.values(QuestionType))
   questionType?: QuestionType;
 
   @ApiPropertyOptional({

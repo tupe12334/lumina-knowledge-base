@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from '../../prisma/prisma.service';
 import { Degree } from './models/Degree.entity';
+import { DegreesQueryDto } from './dto/degrees-query.dto';
 
 /**
  * Service for managing degree operations.
@@ -16,8 +17,16 @@ export class DegreesService {
    * Includes related university and course information.
    * @returns Promise<Degree[]> Array of all degrees
    */
-  async findAll(): Promise<Degree[]> {
+  async findAll(query?: DegreesQueryDto): Promise<Degree[]> {
     const degrees = await this.prisma.degree.findMany({
+      where: {
+        name: {
+          en_text: {
+            contains: query?.name,
+            mode: 'insensitive',
+          },
+        },
+      },
       include: {
         name: true,
         university: {

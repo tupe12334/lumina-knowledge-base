@@ -23,7 +23,6 @@ export class QuestionsResolver {
           questionTypes:
             input.questionTypes ||
             (input.questionType ? [input.questionType] : undefined),
-          excludePartQuestions: input.excludePartQuestions,
           // Keep single values for backward compatibility
           moduleId: input.moduleId,
           courseId: input.courseId,
