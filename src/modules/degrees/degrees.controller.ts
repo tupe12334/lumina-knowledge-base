@@ -56,35 +56,4 @@ export class DegreesController {
   ): Promise<Degree[]> {
     return this.degreesService.findByUniversityId(universityId);
   }
-
-  /**
-   * Retrieves all degrees for a specific university and discipline.
-   * @param universityId - The unique identifier of the university
-   * @param disciplineId - The unique identifier of the discipline
-   * @returns Promise<Degree[]> Array of degrees for the specified university and discipline
-   */
-  @Get('university/:universityId/discipline/:disciplineId')
-  @ApiParam({
-    name: 'universityId',
-    description: 'University ID',
-    type: 'string',
-  })
-  @ApiParam({
-    name: 'disciplineId',
-    description: 'Discipline ID',
-    type: 'string',
-  })
-  @ApiOkResponse({
-    type: [Degree],
-    description: 'List of degrees for the university and discipline',
-  })
-  async getDegreesByUniversityAndDiscipline(
-    @Param('universityId', new ParseUUIDPipe()) universityId: string,
-    @Param('disciplineId', new ParseUUIDPipe()) disciplineId: string,
-  ): Promise<Degree[]> {
-    return this.degreesService.findByUniversityIdAndDisciplineId(
-      universityId,
-      disciplineId,
-    );
-  }
 }

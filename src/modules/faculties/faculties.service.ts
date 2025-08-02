@@ -22,16 +22,6 @@ export class FacultiesService {
       where: { id },
       include: {
         name: true,
-        Discipline: {
-          include: {
-            name: true,
-            courses: {
-              include: {
-                name: true,
-              },
-            },
-          },
-        },
       },
     });
   }

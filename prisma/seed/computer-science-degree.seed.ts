@@ -1,10 +1,9 @@
-
 import { Prisma } from '../../generated/client';
-import {
-  THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME,
-} from './universities.consts';
+import { THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME } from './universities.consts';
 
-export async function seedComputerScienceDegree(prisma: Prisma.TransactionClient) {
+export async function seedComputerScienceDegree(
+  prisma: Prisma.TransactionClient,
+) {
   // Find the Computer Science degree translation
   const degreeTranslation = await prisma.translation.findFirst({
     where: { en_text: 'Computer Science' },
@@ -29,23 +28,6 @@ export async function seedComputerScienceDegree(prisma: Prisma.TransactionClient
     );
   }
 
-  // Find the Computer Science discipline
-  const discipline = await prisma.discipline.findFirst({
-    where: {
-      name: {
-        en_text: 'Computer Science',
-      },
-      faculty: {
-        universityId: university.id,
-      },
-    },
-  });
-  if (!discipline) {
-    throw new Error(
-      `Discipline 'Computer Science' not found for university '${THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME}'. Seed disciplines first.`,
-    );
-  }
-
   // Create the Computer Science degree if it doesn't exist
   let degree = await prisma.degree.findFirst({
     where: {
@@ -60,10 +42,11 @@ export async function seedComputerScienceDegree(prisma: Prisma.TransactionClient
         id: '3067B4C1-2388-4402-9ABD-70A34CF916F2',
         translationId: degreeTranslation.id,
         universityId: university.id,
-        disciplineId: discipline.id,
       },
     });
-    console.log(`Seeded degree 'Computer Science' at '${THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME}'.`);
+    console.log(
+      `Seeded degree 'Computer Science' at '${THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME}'.`,
+    );
   }
 
   // Link courses to the Computer Science degree
@@ -98,7 +81,9 @@ export async function seedComputerScienceDegree(prisma: Prisma.TransactionClient
             Degree: { connect: { id: degree.id } },
           },
         });
-        console.log(`Connected course '${courseName}' to degree 'Computer Science'.`);
+        console.log(
+          `Connected course '${courseName}' to degree 'Computer Science'.`,
+        );
       }
     } else {
       console.warn(

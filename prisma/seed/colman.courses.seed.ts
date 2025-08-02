@@ -76,27 +76,16 @@ export const seedColmanCourses = async (
     throw new Error('Colman university not found.');
   }
 
-  // Use Mathematics discipline for all courses
-  const mathTranslation = await cache.getTranslation(prisma, 'Mathematics');
-  if (!mathTranslation) {
-    throw new Error('Mathematics translation not found.');
-  }
-  const mathDiscipline = await prisma.discipline.findFirst({
-    where: { translationId: mathTranslation.id },
-  });
-  if (!mathDiscipline) {
-    throw new Error('Mathematics discipline not found.');
-  }
-
   for (const course of colmanMathCourses) {
     // Ensure translation exists
     let translation = await cache.getTranslation(prisma, course.en_text);
     if (!translation) {
       translation = await prisma.translation.create({
         data: {
-          id: course.id,
           en_text: course.en_text,
           he_text: course.he_text,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
       });
     }
@@ -106,7 +95,6 @@ export const seedColmanCourses = async (
       where: {
         translationId: translation.id,
         universityId: colmanUniversity.id,
-        disciplineId: mathDiscipline.id,
       },
     });
     if (!existingCourse) {
@@ -120,7 +108,6 @@ export const seedColmanCourses = async (
           id: course.id,
           translationId: translation.id,
           universityId: colmanUniversity.id,
-          disciplineId: mathDiscipline.id,
           blockId: course.blockId,
           createdAt: new Date(),
           updatedAt: new Date(),
@@ -129,27 +116,17 @@ export const seedColmanCourses = async (
     }
   }
 
-  // Use Computer Science discipline for all courses
-  const csTranslation = await cache.getTranslation(prisma, 'Computer Science');
-  if (!csTranslation) {
-    throw new Error('Computer Science translation not found.');
-  }
-  const csDiscipline = await prisma.discipline.findFirst({
-    where: { translationId: csTranslation.id },
-  });
-  if (!csDiscipline) {
-    throw new Error('Computer Science discipline not found.');
-  }
-
+  // Use existing translations for all courses
   for (const course of colmanCsCourses) {
     // Ensure translation exists
     let translation = await cache.getTranslation(prisma, course.en_text);
     if (!translation) {
       translation = await prisma.translation.create({
         data: {
-          id: course.id,
           en_text: course.en_text,
           he_text: course.he_text,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
       });
     }
@@ -159,7 +136,6 @@ export const seedColmanCourses = async (
       where: {
         translationId: translation.id,
         universityId: colmanUniversity.id,
-        disciplineId: csDiscipline.id,
       },
     });
     if (!existingCourse) {
@@ -173,7 +149,6 @@ export const seedColmanCourses = async (
           id: course.id,
           translationId: translation.id,
           universityId: colmanUniversity.id,
-          disciplineId: csDiscipline.id,
           blockId: course.blockId,
           createdAt: new Date(),
           updatedAt: new Date(),

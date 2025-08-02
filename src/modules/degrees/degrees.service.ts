@@ -37,11 +37,6 @@ export class DegreesService {
         courses: {
           include: {
             name: true,
-            discipline: {
-              include: {
-                name: true,
-              },
-            },
           },
         },
       },
@@ -73,11 +68,6 @@ export class DegreesService {
               include: {
                 postrequisiteOf: true,
                 prerequisiteFor: true,
-              },
-            },
-            discipline: {
-              include: {
-                name: true,
               },
             },
           },
@@ -114,55 +104,6 @@ export class DegreesService {
               include: {
                 postrequisiteOf: true,
                 prerequisiteFor: true,
-              },
-            },
-            discipline: {
-              include: {
-                name: true,
-              },
-            },
-          },
-        },
-      },
-    });
-
-    return degrees;
-  }
-
-  /**
-   * Retrieves all degrees for a specific university and discipline.
-   * @param universityId - The unique identifier of the university
-   * @param disciplineId - The unique identifier of the discipline
-   * @returns Promise<Degree[]> Array of degrees for the specified university and discipline
-   */
-  async findByUniversityIdAndDisciplineId(
-    universityId: string,
-    disciplineId: string,
-  ): Promise<Degree[]> {
-    const degrees = await this.prisma.degree.findMany({
-      where: {
-        universityId,
-        disciplineId,
-      },
-      include: {
-        name: true,
-        university: {
-          include: {
-            name: true,
-          },
-        },
-        courses: {
-          include: {
-            name: true,
-            Block: {
-              include: {
-                postrequisiteOf: true,
-                prerequisiteFor: true,
-              },
-            },
-            discipline: {
-              include: {
-                name: true,
               },
             },
           },

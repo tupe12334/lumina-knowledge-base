@@ -29,20 +29,12 @@ describe('seedDegrees', () => {
         data: { id: `u-${seed.id}`, translationId: uniTranslation.id },
       });
 
-      const discTranslation = await prisma.translation.create({
-        data: { en_text: seed.discipline, he_text: seed.discipline },
-      });
-      await prisma.discipline.create({
-        data: { id: `d-${seed.id}`, translationId: discTranslation.id },
-      });
-
       const degreeTranslation = await prisma.translation.create({
         data: { en_text: seed.enText, he_text: seed.enText },
       });
 
-      
-
-      const degreeCourseNames = degreeCourses[seed.university]?.[seed.enText] || [];
+      const degreeCourseNames =
+        degreeCourses[seed.university]?.[seed.enText] || [];
 
       for (const courseName of degreeCourseNames) {
         const courseTranslation = await prisma.translation.create({
@@ -55,7 +47,6 @@ describe('seedDegrees', () => {
           data: {
             translationId: courseTranslation.id,
             universityId: `u-${seed.id}`,
-            disciplineId: `d-${seed.id}`,
             blockId: block.id,
             createdAt: new Date(),
             updatedAt: new Date(),

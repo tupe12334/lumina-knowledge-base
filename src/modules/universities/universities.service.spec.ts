@@ -11,7 +11,9 @@ describe('UniversitiesService', () => {
   };
 
   beforeEach(() => {
-    service = new UniversitiesService(mockPrismaService as unknown as PrismaService);
+    service = new UniversitiesService(
+      mockPrismaService as unknown as PrismaService,
+    );
   });
 
   it('returns universities from prisma', async () => {
@@ -23,12 +25,7 @@ describe('UniversitiesService', () => {
           id: 'c1',
           name: { en_text: 'course', he_text: 'קורס' },
           universityId: '1',
-          disciplineId: 'd1',
           publishedAt: new Date(),
-          discipline: {
-            id: 'd1',
-            name: { en_text: 'dis', he_text: 'תחום' },
-          },
         },
       ],
     };

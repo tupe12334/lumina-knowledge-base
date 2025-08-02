@@ -15,7 +15,7 @@ export class FacultiesController {
   @Get(':id')
   @ApiOkResponse({
     type: Faculty,
-    description: 'Faculty details with disciplines',
+    description: 'Faculty details',
   })
   getFacultyById(@Param('id', new ParseUUIDPipe()) id: string) {
     return this.facultiesService.getFacultyById(id);

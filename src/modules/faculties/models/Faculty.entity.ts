@@ -1,5 +1,4 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { Discipline } from '../../disciplines/models/Discipline.entity';
 import { Translation } from '../../translations/models/Translation.entity';
 
 export class Faculty {
@@ -11,7 +10,4 @@ export class Faculty {
 
   @ApiProperty({ type: () => Translation })
   description: Translation;
-
-  @ApiProperty({ type: () => [Discipline], required: false })
-  Discipline?: Discipline[];
 }

@@ -26,19 +26,11 @@ export const seedComputerScienceCourses = async (
 
   // Then create the courses
   for (const courseData of courses) {
-    if (!courseData.disciplineId) {
-      console.warn(
-        `Course ${courseData.en_name} has no discipline ID, skipping...`,
-      );
-      continue;
-    }
-
     await tx.course.upsert({
       where: {
         id: courseData.id,
       },
       update: {
-        disciplineId: courseData.disciplineId,
         blockId: courseData.blockId,
       },
       create: {
@@ -48,9 +40,6 @@ export const seedComputerScienceCourses = async (
         },
         university: {
           connect: { id: courseData.universityId },
-        },
-        discipline: {
-          connect: { id: courseData.disciplineId },
         },
         Block: {
           connect: { id: courseData.blockId },

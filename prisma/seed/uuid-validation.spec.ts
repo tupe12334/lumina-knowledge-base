@@ -77,27 +77,6 @@ describe('UUID Validation', () => {
     console.log(`✓ Validated ${faculties.length} faculty IDs`);
   });
 
-  it('should validate that all discipline IDs are valid UUIDs', async () => {
-    const disciplines = await prisma.discipline.findMany();
-
-    for (const discipline of disciplines) {
-      expect(
-        uuidValidate(discipline.id),
-        `Discipline ID ${discipline.id} is not a valid UUID`,
-      ).toBe(true);
-      expect(
-        uuidValidate(discipline.translationId),
-        `Discipline translationId ${discipline.translationId} is not a valid UUID`,
-      ).toBe(true);
-      expect(
-        uuidValidate(discipline.facultyId),
-        `Discipline facultyId ${discipline.facultyId} is not a valid UUID`,
-      ).toBe(true);
-    }
-
-    console.log(`✓ Validated ${disciplines.length} discipline IDs`);
-  });
-
   it('should validate that all degree IDs are valid UUIDs', async () => {
     const degrees = await prisma.degree.findMany();
 
@@ -113,10 +92,6 @@ describe('UUID Validation', () => {
       expect(
         uuidValidate(degree.universityId),
         `Degree universityId ${degree.universityId} is not a valid UUID`,
-      ).toBe(true);
-      expect(
-        uuidValidate(degree.disciplineId),
-        `Degree disciplineId ${degree.disciplineId} is not a valid UUID`,
       ).toBe(true);
     }
 
@@ -134,10 +109,6 @@ describe('UUID Validation', () => {
       expect(
         uuidValidate(course.translationId),
         `Course translationId ${course.translationId} is not a valid UUID`,
-      ).toBe(true);
-      expect(
-        uuidValidate(course.disciplineId),
-        `Course disciplineId ${course.disciplineId} is not a valid UUID`,
       ).toBe(true);
       expect(
         uuidValidate(course.blockId),
@@ -232,7 +203,6 @@ describe('UUID Validation', () => {
       translations,
       universities,
       faculties,
-      disciplines,
       degrees,
       courses,
       blocks,
@@ -242,7 +212,6 @@ describe('UUID Validation', () => {
       prisma.translation.findMany(),
       prisma.university.findMany(),
       prisma.faculty.findMany(),
-      prisma.discipline.findMany(),
       prisma.degree.findMany(),
       prisma.course.findMany(),
       prisma.block.findMany(),
@@ -266,9 +235,8 @@ describe('UUID Validation', () => {
       translations.length + // translation IDs
       universities.length * 2 + // university ID + translationId
       faculties.length * 3 + // faculty ID + translationId + universityId
-      disciplines.length * 3 + // discipline ID + translationId + facultyId
-      degrees.length * 4 + // degree ID + translationId + universityId + disciplineId
-      courses.length * 4 + // course ID + translationId + disciplineId + blockId
+      degrees.length * 3 + // degree ID + translationId + universityId
+      courses.length * 3 + // course ID + translationId + blockId
       blocks.length + // block IDs
       modules.length * 3 + // module ID + translationId + courseId
       questions.length * 2 + // question ID + moduleId
@@ -278,9 +246,8 @@ describe('UUID Validation', () => {
     console.log(`  • Translations: ${translations.length} IDs`);
     console.log(`  • Universities: ${universities.length * 2} IDs`);
     console.log(`  • Faculties: ${faculties.length * 3} IDs`);
-    console.log(`  • Disciplines: ${disciplines.length * 3} IDs`);
-    console.log(`  • Degrees: ${degrees.length * 4} IDs`);
-    console.log(`  • Courses: ${courses.length * 4} IDs`);
+    console.log(`  • Degrees: ${degrees.length * 3} IDs`);
+    console.log(`  • Courses: ${courses.length * 3} IDs`);
     console.log(`  • Blocks: ${blocks.length} IDs`);
     console.log(`  • Modules: ${modules.length * 3} IDs`);
     console.log(`  • Questions: ${questions.length * 2} IDs`);

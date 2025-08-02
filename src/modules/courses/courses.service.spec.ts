@@ -19,15 +19,10 @@ describe('CoursesService', () => {
       id: '1',
       name: { en_text: 'course', he_text: 'קורס' },
       universityId: 'u1',
-      disciplineId: 'd1',
       publishedAt: new Date(),
       university: {
         id: 'u1',
         name: { en_text: 'uni', he_text: 'אוני' },
-      },
-      discipline: {
-        id: 'd1',
-        name: { en_text: 'dis', he_text: 'תחום' },
       },
     };
     mockPrismaService.course.findMany.mockResolvedValue([course]);
@@ -37,6 +32,5 @@ describe('CoursesService', () => {
     expect(result).toHaveLength(1);
     expect(result[0].name.en_text).toBe('course');
     expect(result[0].university.name.en_text).toBe('uni');
-    expect(result[0].discipline.name.en_text).toBe('dis');
   });
 });

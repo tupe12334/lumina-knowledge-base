@@ -839,51 +839,32 @@ const seedAdditionalCoursesAndRelationships = async (
     return;
   }
 
-  // Course data with discipline mapping
+  // Course data without discipline mapping
   const coursesData = [
-    { en_name: 'Microeconomics A', discipline: 'Economics' },
-    { en_name: 'Microeconomics B', discipline: 'Economics' },
-    { en_name: 'Microeconomics C', discipline: 'Economics' },
+    { en_name: 'Microeconomics A' },
+    { en_name: 'Microeconomics B' },
+    { en_name: 'Microeconomics C' },
     {
       en_name: 'Introduction to Computer Science and Java',
-      discipline: 'Computer Science',
     },
-    { en_name: 'Foundations of Physics B', discipline: 'Physics' },
+    { en_name: 'Foundations of Physics B' },
     {
       en_name: 'Logic for Computer Science Students',
-      discipline: 'Mathematics',
       id: '7f07e5e6-f959-406d-9f93-3ff46d2bc146',
       publishedAt: new Date('2025-06-22'),
     },
-    { en_name: 'Labor Economics', discipline: 'Economics' },
+    { en_name: 'Labor Economics' },
     {
       en_name: 'Monetary Economics',
-      discipline: 'Economics',
       publishedAt: new Date('2025-07-10'),
     },
-    { en_name: 'Algorithms', discipline: 'Computer Science' },
-    { en_name: 'Database Systems', discipline: 'Computer Science' },
+    { en_name: 'Algorithms' },
+    { en_name: 'Database Systems' },
   ];
 
   // Create courses
   const createdCourses: Record<string, Course> = {};
   for (const courseData of coursesData) {
-    // Get discipline
-    const discipline = await tx.discipline.findFirst({
-      where: {
-        name: {
-          en_text: courseData.discipline,
-        },
-      },
-    });
-
-    if (!discipline) {
-      console.log(
-        `Discipline ${courseData.discipline} not found, skipping course ${courseData.en_name}`,
-      );
-      continue;
-    }
-
     // Check if translation exists
     let translation = await cache.getTranslation(tx, courseData.en_name);
 
@@ -918,7 +899,6 @@ const seedAdditionalCoursesAndRelationships = async (
             : { id: getCourseId(courseData.en_name) }),
           translationId: translation.id,
           universityId: openUniversity.id,
-          disciplineId: discipline.id,
           blockId: block.id,
           ...(courseData.publishedAt
             ? { publishedAt: courseData.publishedAt }

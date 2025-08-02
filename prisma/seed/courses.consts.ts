@@ -1,4 +1,3 @@
-import { disciplineIdMap } from './disciplines.seed';
 import {
   THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME,
   UNIVERSITIES,
@@ -11,7 +10,6 @@ export const courses = [
     translationId: '8b9cde61-4a1d-4e8d-800b-f41449623a07',
     en_name: 'Data Mining',
     he_name: 'כריית נתונים',
-    disciplineId: disciplineIdMap['Computer Science'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -20,7 +18,6 @@ export const courses = [
     translationId: '33040305-1b03-4b94-b168-c1c2b07170a4',
     en_name: 'Defensive Systems Programming',
     he_name: 'תכנות מערכות הגנתיות',
-    disciplineId: disciplineIdMap['Computer Science'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -29,7 +26,6 @@ export const courses = [
     translationId: '851db662-4933-444c-9a54-a5795074a8a4',
     en_name: 'Computer Graphics',
     he_name: 'גרפיקה ממוחשבת',
-    disciplineId: disciplineIdMap['Computer Science'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -38,7 +34,6 @@ export const courses = [
     translationId: '4b42c9f4-436a-4008-9291-5ca24df618fe',
     en_name: 'Discrete Mathematics',
     he_name: 'מתמטיקה בדידה',
-    disciplineId: disciplineIdMap['Mathematics'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -47,7 +42,6 @@ export const courses = [
     translationId: 'be355b4a-6a11-49b9-ac5b-c3b66d52212b',
     en_name: 'Logic for Computer Science Students',
     he_name: 'לוגיקה לסטודנטים למדעי המחשב',
-    disciplineId: disciplineIdMap['Computer Science'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -56,7 +50,6 @@ export const courses = [
     translationId: '6b3dd279-082e-47d6-a5cf-e795d5f07986',
     en_name: 'Auctions and Electronic Markets: Mechanism Design and Algorithms',
     he_name: 'מכרזים ושוקיים אלקטרוניים: תכנון מכניזמים ואלגוריתמים',
-    disciplineId: disciplineIdMap['Economics'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -65,7 +58,6 @@ export const courses = [
     translationId: 'fb83c421-6e77-4571-9640-f0865e4c0ce9',
     en_name: 'Calculus A',
     he_name: 'חדו״א א',
-    disciplineId: disciplineIdMap['Mathematics'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -74,7 +66,6 @@ export const courses = [
     translationId: 'd191be2f-56ed-4cf6-880b-18c749786af9',
     en_name: 'Database Systems',
     he_name: 'מערכות בסיסי נתונים',
-    disciplineId: disciplineIdMap['Computer Science'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -83,7 +74,6 @@ export const courses = [
     translationId: 'e6a95799-ced3-42d4-9e48-8bf68553044a',
     en_name: 'Introduction to Java',
     he_name: 'מבוא לשפת Java',
-    disciplineId: disciplineIdMap['Computer Science'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -92,7 +82,6 @@ export const courses = [
     translationId: 'c7e930db-5b2a-43ba-a6e9-567bf5883053',
     en_name: 'Introduction to Psychology',
     he_name: 'מבוא לפסיכולוגיה',
-    disciplineId: disciplineIdMap['Psychology'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -101,7 +90,6 @@ export const courses = [
     translationId: '45268d5a-6c0d-4760-ab4f-828be0a86d88',
     en_name: 'Introduction to Microeconomics',
     he_name: 'מבוא למיקרוכלכלה',
-    disciplineId: disciplineIdMap['Economics'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -110,7 +98,6 @@ export const courses = [
     translationId: 'd3b11a88-d9c2-4397-b6e4-2d2b0976a83a',
     en_name: 'Basic Concepts in Econometrics',
     he_name: 'מושגי יסוד באקונומטריקה',
-    disciplineId: disciplineIdMap['Economics'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -119,7 +106,6 @@ export const courses = [
     translationId: 'ef61ce16-2b50-4316-91dd-16913271687b',
     en_name: 'Chapters in Physical Chemistry',
     he_name: 'פרקים בכימיה פיסיקלית',
-    disciplineId: disciplineIdMap['Chemistry'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -128,7 +114,6 @@ export const courses = [
     translationId: '2d97a756-9661-4ff2-929f-66a368b704cc',
     en_name: 'Complementary Integral Calculus',
     he_name: 'השלמות בחשבון אינטגרלי',
-    disciplineId: disciplineIdMap['Mathematics'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -137,7 +122,6 @@ export const courses = [
     translationId: 'f7e34ceb-36a4-4321-bf3f-be4b967a8f84',
     en_name: 'Computer Organization',
     he_name: 'ארגון המחשב',
-    disciplineId: disciplineIdMap['Computer Science'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -146,7 +130,6 @@ export const courses = [
     translationId: '18dee43c-2d42-4740-8fcd-700038824deb',
     en_name: 'Differential Calculus for Economics and Management Students',
     he_name: 'חשבון דיפרנציאלי לתלמידי כלכלה וניהול',
-    disciplineId: disciplineIdMap['Mathematics'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -155,7 +138,6 @@ export const courses = [
     translationId: 'bcb61756-0297-4deb-a66f-d182600e0179',
     en_name: 'Ecology',
     he_name: 'אקולוגיה',
-    disciplineId: disciplineIdMap['Biology'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -164,7 +146,6 @@ export const courses = [
     translationId: '1c48257b-684a-4ccb-89c5-78e344de5c4a',
     en_name: 'Electricity and Magnetism',
     he_name: 'חשמל ומגנטיות',
-    disciplineId: disciplineIdMap['Physics'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -173,7 +154,6 @@ export const courses = [
     translationId: 'd0498c23-075c-4a53-8093-66b8982f940f',
     en_name: 'Foundations of Physics A',
     he_name: 'יסודות הפיסיקה א',
-    disciplineId: disciplineIdMap['Physics'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -182,7 +162,6 @@ export const courses = [
     translationId: 'f4bd0465-66ed-4a94-9021-e37700974c03',
     en_name: 'Foundations of Physics B',
     he_name: 'יסודות הפיסיקה ב',
-    disciplineId: disciplineIdMap['Physics'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -191,7 +170,6 @@ export const courses = [
     translationId: '76223a65-8be7-4d0b-8f7f-76591882255f',
     en_name: 'Foundations of Physics for Biologists A',
     he_name: 'יסודות הפיסיקה לביולוגים א',
-    disciplineId: disciplineIdMap['Physics'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -200,7 +178,6 @@ export const courses = [
     translationId: '33debec6-42c7-4984-a19a-04ab6ad88272',
     en_name: 'General Biology A',
     he_name: 'ביולוגיה כללית א',
-    disciplineId: disciplineIdMap['Biology'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -209,7 +186,6 @@ export const courses = [
     translationId: 'e1b58f24-a1f7-4ccc-b09b-2e95ab840f57',
     en_name: 'General Biology B',
     he_name: 'ביולוגיה כללית ב',
-    disciplineId: disciplineIdMap['Biology'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -218,7 +194,6 @@ export const courses = [
     translationId: '188799c1-cb5f-4908-9f74-474f5fa96d36',
     en_name: 'General Chemistry',
     he_name: 'כימיה כללית',
-    disciplineId: disciplineIdMap['Chemistry'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -227,7 +202,6 @@ export const courses = [
     translationId: '66ababae-045e-4406-b616-00f44e8acd21',
     en_name: 'General Chemistry A',
     he_name: 'כימיה כללית א',
-    disciplineId: disciplineIdMap['Chemistry'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -236,7 +210,6 @@ export const courses = [
     translationId: '9b00bf4a-1b10-48d7-bead-19a202108e8b',
     en_name: 'General Chemistry B',
     he_name: 'כימיה כללית ב',
-    disciplineId: disciplineIdMap['Chemistry'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -245,7 +218,6 @@ export const courses = [
     translationId: '43f262a6-2545-43fb-8a5d-90d69072fddf',
     en_name: 'Infinitesimal Calculus 1',
     he_name: 'חשבון אינפיניטסימלי 1',
-    disciplineId: disciplineIdMap['Mathematics'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -254,7 +226,6 @@ export const courses = [
     translationId: '29fff600-3511-4311-bc67-c7f61504513a',
     en_name: 'Introduction to Macroeconomics',
     he_name: 'מבוא למקרוכלכלה',
-    disciplineId: disciplineIdMap['Economics'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -263,7 +234,6 @@ export const courses = [
     translationId: 'd82fe5b4-1676-41e3-ace2-6b0ee92a1833',
     en_name: 'Introduction to Statistics for Social Sciences A',
     he_name: 'מבוא לסטטיסטיקה לתלמידי מדעי החברה א',
-    disciplineId: disciplineIdMap['Economics'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -272,7 +242,6 @@ export const courses = [
     translationId: '3292ae0f-3ba5-4526-99a8-10e7aa6238b0',
     en_name: 'Labor Economics',
     he_name: 'כלכלת עבודה',
-    disciplineId: disciplineIdMap['Economics'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -281,7 +250,6 @@ export const courses = [
     translationId: '37771716-f5eb-444c-942d-901751914f80',
     en_name: 'Probability and Introduction to Statistics for Computer Science',
     he_name: 'הסתברות ומבוא לסטטיסטיקה למדעי המחשב',
-    disciplineId: disciplineIdMap['Mathematics'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -290,7 +258,6 @@ export const courses = [
     translationId: '40e51728-2ccd-47bb-bc71-6d39499ed577',
     en_name: 'Foundations of Physics for Biologists B',
     he_name: 'יסודות הפיסיקה לביולוגים ב',
-    disciplineId: disciplineIdMap['Physics'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -299,7 +266,6 @@ export const courses = [
     translationId: '7c9224fb-793d-48c1-8475-1285ed9da02d',
     en_name: 'General Chemistry for Biologists B',
     he_name: 'כימיה כללית לביולוגים ב',
-    disciplineId: disciplineIdMap['Chemistry'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -308,7 +274,6 @@ export const courses = [
     translationId: '43fb0be2-16ac-4052-a44f-689d4af82440',
     en_name: 'Infinitesimal Calculus 2',
     he_name: 'חשבון אינפיניטסימלי 2',
-    disciplineId: disciplineIdMap['Mathematics'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -317,7 +282,6 @@ export const courses = [
     translationId: '11d4ed91-e7d3-4eb5-ae96-5933d7de4951',
     en_name: 'Infinitesimal Calculus 3',
     he_name: 'חשבון אינפיניטסימלי 3',
-    disciplineId: disciplineIdMap['Mathematics'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -326,7 +290,6 @@ export const courses = [
     translationId: '9ccbc3cc-2abf-4120-9377-f5a8beaaa10c',
     en_name: 'Intergenerational Economics',
     he_name: 'כלכלה בין-דורית',
-    disciplineId: disciplineIdMap['Economics'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -335,7 +298,6 @@ export const courses = [
     translationId: '818a894b-ef5a-4ef6-8f6c-363e8eae93fb',
     en_name: 'International Real Economics',
     he_name: 'כלכלה בין-לאומית ריאלית',
-    disciplineId: disciplineIdMap['Economics'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -344,7 +306,6 @@ export const courses = [
     translationId: '0f9fce5f-6089-4661-93cc-72e6aa2e57cd',
     en_name: 'Computational Models',
     he_name: 'מודלים חישוביים',
-    disciplineId: disciplineIdMap['Computer Science'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -353,7 +314,6 @@ export const courses = [
     translationId: '72f86c11-f987-48fd-975a-6627b0019940',
     en_name: 'Algorithms',
     he_name: 'אלגוריתמים',
-    disciplineId: disciplineIdMap['Computer Science'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -362,7 +322,6 @@ export const courses = [
     translationId: 'd4c501df-eb02-4125-9f97-573813b664fb',
     en_name: 'Thermodynamics for Physicists',
     he_name: 'תרמודינמיקה לפיזיקאים',
-    disciplineId: disciplineIdMap['Physics'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -371,7 +330,6 @@ export const courses = [
     translationId: '5b076629-77e3-41b1-b18b-b1ddef2cb6ef',
     en_name: 'Introduction to Statistics for Social Sciences B',
     he_name: 'מבוא לסטטיסטיקה לתלמידי מדעי החברה ב',
-    disciplineId: disciplineIdMap['Mathematics'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -380,7 +338,6 @@ export const courses = [
     translationId: '8d81b8f4-b107-4ecd-9584-d7f8c9f26be7',
     en_name: 'Introduction to Computer Science and Java',
     he_name: 'מבוא למדעי המחשב ושפת Java',
-    disciplineId: disciplineIdMap['Computer Science'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -389,7 +346,6 @@ export const courses = [
     translationId: '22a25557-6bef-4097-81a4-3b71bd84efb9',
     en_name: 'Introduction to Differential Equations',
     he_name: 'מבוא למשוואות דיפרנציאליות',
-    disciplineId: disciplineIdMap['Mathematics'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -398,7 +354,6 @@ export const courses = [
     translationId: 'cad57e56-af9a-4bd8-b849-94bdbaf5efca',
     en_name: 'Introduction to Statistics and Probability for Science Students',
     he_name: 'מבוא לסטטיסטיקה ולהסתברות לתלמידי מדעים',
-    disciplineId: disciplineIdMap['Mathematics'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -407,7 +362,6 @@ export const courses = [
     translationId: 'f0ae6d1b-c1c6-4d2f-ba0d-5eade0cb623b',
     en_name: 'Linear Algebra 1',
     he_name: 'אלגברה ליניארית 1',
-    disciplineId: disciplineIdMap['Mathematics'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -416,7 +370,6 @@ export const courses = [
     translationId: '68453935-7832-405a-b42a-e41d10099093',
     en_name: 'Linear Algebra 2',
     he_name: 'אלגברה ליניארית 2',
-    disciplineId: disciplineIdMap['Mathematics'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -425,7 +378,6 @@ export const courses = [
     translationId: 'f25c3425-8a0b-4d9d-baea-fb78fc675490',
     en_name: 'Linear Algebra for Science',
     he_name: 'אלגברה לינארית למדעים',
-    disciplineId: disciplineIdMap['Mathematics'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -434,7 +386,6 @@ export const courses = [
     translationId: '2bd06a32-de31-423e-be91-cd72dbab4cb8',
     en_name: 'Macroeconomics A',
     he_name: 'מקרו כלכלה א',
-    disciplineId: disciplineIdMap['Economics'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -443,7 +394,6 @@ export const courses = [
     translationId: '2befe762-2d92-40b2-a970-83f9a08db26e',
     en_name: 'Macroeconomics B',
     he_name: 'מקרו כלכלה ב',
-    disciplineId: disciplineIdMap['Economics'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -452,7 +402,6 @@ export const courses = [
     translationId: '56467e4f-9a52-4a30-9e83-8e69f88be7ea',
     en_name: 'Mechanics',
     he_name: 'מכניקה',
-    disciplineId: disciplineIdMap['Physics'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -461,7 +410,6 @@ export const courses = [
     translationId: '3682e794-c6db-48af-9086-8bcdf3ba1361',
     en_name: 'Microeconomics A',
     he_name: 'מיקרו כלכלה א',
-    disciplineId: disciplineIdMap['Economics'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -470,7 +418,6 @@ export const courses = [
     translationId: '42b0726e-77ec-49e8-96a3-1081de8ed902',
     en_name: 'Microeconomics B',
     he_name: 'מיקרו כלכלה ב',
-    disciplineId: disciplineIdMap['Economics'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -479,7 +426,6 @@ export const courses = [
     translationId: '4ee3dc1d-68c8-4d49-8de5-d68b44dbf30d',
     en_name: 'Microeconomics C',
     he_name: 'מיקרו כלכלה ג',
-    disciplineId: disciplineIdMap['Economics'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -488,7 +434,6 @@ export const courses = [
     translationId: '7a1911a3-4472-4823-b0a4-ec9acede05c3',
     en_name: 'Monetary Economics',
     he_name: 'כלכלת כספים',
-    disciplineId: disciplineIdMap['Economics'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -497,7 +442,6 @@ export const courses = [
     translationId: '90b094e5-7008-4d15-8760-4e5a0004e833',
     en_name: 'Organic Chemistry',
     he_name: 'כימיה אורגנית',
-    disciplineId: disciplineIdMap['Chemistry'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -506,7 +450,6 @@ export const courses = [
     translationId: '6086c503-3b98-40e1-a628-10f08a49cc7a',
     en_name: 'Organic Chemistry for Biologists',
     he_name: 'כימיה אורגנית לביולוגים',
-    disciplineId: disciplineIdMap['Chemistry'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -515,7 +458,6 @@ export const courses = [
     translationId: '06ab4809-b5a7-4a63-bf64-11b2137e158c',
     en_name: 'Political Economy',
     he_name: 'כלכלה פוליטית',
-    disciplineId: disciplineIdMap['Economics'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -524,7 +466,6 @@ export const courses = [
     translationId: '43c27b29-25c0-48bd-b464-9a89b0fbbaaf',
     en_name: 'Public Economics',
     he_name: 'כלכלת ציבור',
-    disciplineId: disciplineIdMap['Economics'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -533,7 +474,6 @@ export const courses = [
     translationId: 'e29d162e-1a63-4875-b34c-67349bcdfb33',
     en_name: 'Semiconductor Devices',
     he_name: 'התקני מוליכים למחצה',
-    disciplineId: disciplineIdMap['Physics'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -542,7 +482,6 @@ export const courses = [
     translationId: 'e45aa0ec-3d93-402d-be14-83c7e35bfed6',
     en_name: 'Semiconductors',
     he_name: 'מוליכים למחצה',
-    disciplineId: disciplineIdMap['Physics'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -551,7 +490,6 @@ export const courses = [
     translationId: '85c94e9d-d658-47e1-8792-649c597b4d2a',
     en_name: 'Social Preference and Choice',
     he_name: 'העדפה חברתית ובחירה',
-    disciplineId: disciplineIdMap['Economics'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -561,7 +499,6 @@ export const courses = [
     en_name:
       'Strategic Thinking: Game Theory and its Applications in Economics and Management',
     he_name: 'חשיבה אסטרטגית: תורת המשחקים ויישומיה בכלכלה ובניהול',
-    disciplineId: disciplineIdMap['Economics'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -570,7 +507,6 @@ export const courses = [
     translationId: 'e3bf3cfa-6ce6-4c18-8acc-112cbfe2ec65',
     en_name: 'System Programming Laboratory',
     he_name: 'מעבדת תכנות מערכות',
-    disciplineId: disciplineIdMap['Computer Science'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -579,7 +515,6 @@ export const courses = [
     translationId: '474a614d-806d-4b79-8430-6242b799b7f6',
     en_name: 'The Economics of Israel',
     he_name: 'כלכלת ישראל',
-    disciplineId: disciplineIdMap['Economics'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -588,7 +523,6 @@ export const courses = [
     translationId: '37874beb-e35c-4a13-bb04-51eac3fa3b65',
     en_name: 'Thermodynamics',
     he_name: 'תרמודינמיקה',
-    disciplineId: disciplineIdMap['Physics'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -597,7 +531,6 @@ export const courses = [
     translationId: '6316c2a7-f4e8-4e32-8fb5-e0e2611bde66',
     en_name: 'Topics in Mathematics for Social Sciences Students',
     he_name: 'נושאים במתמטיקה לסטודנטים למדעי החברה',
-    disciplineId: disciplineIdMap['Mathematics'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -606,7 +539,6 @@ export const courses = [
     translationId: '529780e7-32c7-4685-b54d-df934d032de6',
     en_name: 'Statistical Inference',
     he_name: 'הסקה סטטיסטית',
-    disciplineId: disciplineIdMap['Mathematics'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -615,7 +547,6 @@ export const courses = [
     translationId: '47191873-af34-406e-b66b-8f90c065057e',
     en_name: 'Data Structures and Introduction to Algorithms',
     he_name: 'מבני נתונים ומבוא לאלגוריתמים',
-    disciplineId: disciplineIdMap['Computer Science'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
@@ -624,7 +555,6 @@ export const courses = [
     translationId: 'b5b8e1fb-02be-4c0f-b0dd-d0cf037f887c',
     en_name: 'Artificial Intelligence',
     he_name: 'בינה מלכותית',
-    disciplineId: disciplineIdMap['Computer Science'],
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
 ];

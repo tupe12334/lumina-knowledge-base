@@ -28,8 +28,6 @@ type BlockRelationship {
 
 type Course {
   Block: Block
-  discipline: Discipline
-  disciplineId: String!
   id: ID!
   modules: [Module!]
   name: Translation!
@@ -55,12 +53,6 @@ type Degree {
 
 input DegreesQueryDto {
   name: String
-}
-
-type Discipline {
-  courses: [Course!]
-  id: ID!
-  name: Translation!
 }
 
 type LearningResource {

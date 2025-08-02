@@ -10,7 +10,6 @@ export class CoursesService {
     const courses = await this.prisma.course.findMany({
       include: {
         university: { include: { name: true } },
-        discipline: { include: { name: true } },
         name: true,
         Block: {
           include: {
@@ -29,7 +28,6 @@ export class CoursesService {
       where: { id },
       include: {
         university: { include: { name: true } },
-        discipline: { include: { name: true } },
         name: true,
         Block: {
           include: {

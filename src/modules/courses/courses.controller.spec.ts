@@ -10,13 +10,11 @@ describe('CoursesController', () => {
           id: '1',
           name: { en_text: 'course', he_text: 'קורס' },
           universityId: 'u1',
-          disciplineId: 'd1',
           university: {
             id: 'u1',
             name: { en_text: 'uni', he_text: 'אוני' },
             courses: [],
           },
-          discipline: { id: 'd1', enName: 'dis', heName: 'תחום', courses: [] },
         },
       ]),
     } as unknown as CoursesService;
@@ -29,13 +27,11 @@ describe('CoursesController', () => {
         id: '1',
         name: { en_text: 'course', he_text: 'קורס' },
         universityId: 'u1',
-        disciplineId: 'd1',
         university: {
           id: 'u1',
           name: { en_text: 'uni', he_text: 'אוני' },
           courses: [],
         },
-        discipline: { id: 'd1', enName: 'dis', heName: 'תחום', courses: [] },
       },
     ]);
   });
@@ -46,13 +42,11 @@ describe('CoursesController', () => {
         id: '1',
         name: { en_text: 'course', he_text: 'קורס' },
         universityId: 'u1',
-        disciplineId: 'd1',
         university: {
           id: 'u1',
           name: { en_text: 'uni', he_text: 'אוני' },
           courses: [],
         },
-        discipline: { id: 'd1', enName: 'dis', heName: 'תחום', courses: [] },
       }),
     } as unknown as CoursesService;
 
@@ -63,13 +57,11 @@ describe('CoursesController', () => {
       id: '1',
       name: { en_text: 'course', he_text: 'קורס' },
       universityId: 'u1',
-      disciplineId: 'd1',
       university: {
         id: 'u1',
         name: { en_text: 'uni', he_text: 'אוני' },
         courses: [],
       },
-      discipline: { id: 'd1', enName: 'dis', heName: 'תחום', courses: [] },
     });
   });
 });

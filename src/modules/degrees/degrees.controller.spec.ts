@@ -6,9 +6,7 @@ const mockDegreesService = {
   findAll: vi.fn(),
   findUnique: vi.fn(),
   findByUniversityId: vi.fn(),
-  findByUniversityIdAndDisciplineId: vi.fn(),
 };
-
 const mockDegree = {
   id: '123e4567-e89b-12d3-a456-426614174000',
   createdAt: new Date(),
@@ -98,44 +96,6 @@ describe('DegreesController', () => {
       expect(mockDegreesService.findByUniversityId).toHaveBeenCalledWith(
         universityId,
       );
-    });
-  });
-
-  describe('getDegreesByUniversityAndDiscipline', () => {
-    const universityId = '123e4567-e89b-12d3-a456-426614174001';
-    const disciplineId = '123e4567-e89b-12d3-a456-426614174002';
-    it('should return degrees for a specific university and discipline', async () => {
-      const expectedDegrees = [mockDegree];
-      mockDegreesService.findByUniversityIdAndDisciplineId = vi
-        .fn()
-        .mockResolvedValue(expectedDegrees);
-      const controller = new DegreesController(
-        mockDegreesService as unknown as DegreesService,
-      );
-      const result = await controller.getDegreesByUniversityAndDiscipline(
-        universityId,
-        disciplineId,
-      );
-      expect(result).toEqual(expectedDegrees);
-      expect(
-        mockDegreesService.findByUniversityIdAndDisciplineId,
-      ).toHaveBeenCalledWith(universityId, disciplineId);
-    });
-    it('should return empty array when no degrees found for university and discipline', async () => {
-      mockDegreesService.findByUniversityIdAndDisciplineId = vi
-        .fn()
-        .mockResolvedValue([]);
-      const controller = new DegreesController(
-        mockDegreesService as unknown as DegreesService,
-      );
-      const result = await controller.getDegreesByUniversityAndDiscipline(
-        universityId,
-        disciplineId,
-      );
-      expect(result).toEqual([]);
-      expect(
-        mockDegreesService.findByUniversityIdAndDisciplineId,
-      ).toHaveBeenCalledWith(universityId, disciplineId);
     });
   });
 });

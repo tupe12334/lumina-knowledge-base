@@ -10,7 +10,6 @@ interface DegreeSeed {
   id: string;
   enText: string;
   university: string;
-  discipline: string;
 }
 
 export const degreeSeeds: DegreeSeed[] = [
@@ -18,37 +17,31 @@ export const degreeSeeds: DegreeSeed[] = [
     id: '17004398-f4fe-4658-a023-f79283bf22de',
     enText: 'Economics',
     university: THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME,
-    discipline: 'Economics',
   },
   {
     id: '8c6a661a-a1f0-4922-82dd-45b4938b3887',
     enText: 'Psychology',
     university: THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME,
-    discipline: 'Psychology',
   },
   {
     id: 'fa8a5dc5-8368-4f13-97f7-83cd9f701013',
     enText: 'Cognitive Science',
     university: THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME,
-    discipline: 'Cognitive Science',
   },
   {
     id: '43eae81a-0c42-4e5c-894d-bd803334f0cd',
     enText: 'Mathematics',
     university: THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME,
-    discipline: 'Mathematics',
   },
   {
     id: '73ef0be5-bd20-4181-aa70-52cf19ac5a9c',
     enText: 'Computer Science',
     university: THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME,
-    discipline: 'Computer Science',
   },
   {
     id: 'c7a1e2b2-8e2d-4c1a-9e2a-1a2b3c4d5e6f',
     enText: 'Computer Science',
     university: THE_COLLEGE_OF_MANAGEMENT_ACADEMIC_STUDIES_EN_NAME,
-    discipline: 'Computer Science',
   },
 ];
 
@@ -90,27 +83,6 @@ export async function seedDegrees(
     }
     console.log(`✓ Found university: ${university.id}`);
 
-    const disciplineTranslation = await cache.getTranslation(
-      prisma,
-      seed.discipline,
-    );
-    if (!disciplineTranslation) {
-      throw new Error(
-        `Translation for discipline '${seed.discipline}' not found. Seed translations first.`,
-      );
-    }
-    console.log(`✓ Found discipline translation: ${disciplineTranslation.id}`);
-
-    const discipline = await prisma.discipline.findFirst({
-      where: { translationId: disciplineTranslation.id },
-    });
-    if (!discipline) {
-      throw new Error(
-        `Discipline '${seed.discipline}' not found. Seed disciplines first.`,
-      );
-    }
-    console.log(`✓ Found discipline: ${discipline.id}`);
-
     let degree = await prisma.degree.findFirst({
       where: {
         translationId: degreeTranslation.id,
@@ -124,7 +96,6 @@ export async function seedDegrees(
           id: seed.id,
           translationId: degreeTranslation.id,
           universityId: university.id,
-          disciplineId: discipline.id,
           createdAt: new Date(),
           updatedAt: new Date(),
         },

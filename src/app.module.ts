@@ -8,7 +8,6 @@ import { HelloResolver } from './graphql/hello.resolver';
 import { BlocksModule } from './modules/blocks/blocks.module';
 import { CoursesModule } from './modules/courses/courses.module';
 import { DegreesModule } from './modules/degrees/degrees.module';
-import { DisciplinesModule } from './modules/disciplines/disciplines.module';
 import { FacultiesModule } from './modules/faculties/faculties.module';
 import { HealthModule } from './modules/health/health.module';
 import { LearningResourcesModule } from './modules/learning-resources/learning-resources.module';
@@ -37,7 +36,6 @@ import { PrismaModule } from './prisma/prisma.module';
     HealthModule,
     UniversitiesModule,
     CoursesModule,
-    DisciplinesModule,
     DegreesModule,
     QuestionsModule,
     ModulesModule,

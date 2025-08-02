@@ -26,23 +26,6 @@ export async function seedEconomicsDegree(prisma: Prisma.TransactionClient) {
     );
   }
 
-  // Find the Economics discipline
-  const discipline = await prisma.discipline.findFirst({
-    where: {
-      name: {
-        en_text: 'Economics',
-      },
-      faculty: {
-        universityId: university.id,
-      },
-    },
-  });
-  if (!discipline) {
-    throw new Error(
-      `Discipline 'Economics' not found for university '${THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME}'. Seed disciplines first.`,
-    );
-  }
-
   // Create the Economics degree if it doesn't exist
   let degree = await prisma.degree.findFirst({
     where: {
@@ -57,7 +40,6 @@ export async function seedEconomicsDegree(prisma: Prisma.TransactionClient) {
         id: '17004398-f4fe-4658-a023-f79283bf22de',
         translationId: degreeTranslation.id,
         universityId: university.id,
-        disciplineId: discipline.id,
       },
     });
     console.log(

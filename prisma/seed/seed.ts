@@ -4,7 +4,6 @@ import { seedComputerScienceDegree } from './computer-science-degree.seed';
 import { seedComputerScienceCourses } from './computer-science.seed';
 import { courses } from './courses.consts';
 import { seedDegrees } from './degree.seed';
-import { seedDisciplines } from './disciplines.seed';
 import { seedEconomicsDegree } from './economics-degree.seed';
 import { seedFaculties } from './faculties.seed';
 import { seedModules } from './modules.seed';
@@ -39,7 +38,7 @@ const createBlocksForComputerScienceCourses = async (
 };
 
 export const seed = async (prisma: PrismaClient) => {
-  const cache = new SeedCache()
+  const cache = new SeedCache();
   await prisma.$transaction(
     async (tx) => {
       console.log(`Seeding database...`);
@@ -306,7 +305,10 @@ export const seed = async (prisma: PrismaClient) => {
       for (const translation of translations) {
         await tx.translation.upsert({
           where: { id: translation.id },
-          update: { en_text: translation.en_text, he_text: translation.he_text },
+          update: {
+            en_text: translation.en_text,
+            he_text: translation.he_text,
+          },
           create: {
             id: translation.id,
             en_text: translation.en_text,
@@ -319,7 +321,6 @@ export const seed = async (prisma: PrismaClient) => {
 
       await seedUniversities(tx, cache);
       await seedFaculties(tx, cache);
-      await seedDisciplines(tx, cache);
       await seedColmanCourses(tx, cache);
 
       // Create blocks for computer science courses before creating the courses

@@ -544,54 +544,6 @@
         }
       }
     },
-    "/disciplines": {
-      "get": {
-        "operationId": "DisciplinesController_getDisciplines",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Discipline"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/disciplines/{id}": {
-      "get": {
-        "operationId": "DisciplinesController_getDiscipline",
-        "parameters": [
-          {
-            "name": "id",
-            "required": true,
-            "in": "path",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Discipline"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/degrees": {
       "get": {
         "operationId": "DegreesController_getDegrees",
@@ -664,49 +616,6 @@
         "responses": {
           "200": {
             "description": "List of degrees for the university",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Degree"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "tags": [
-          "degrees"
-        ]
-      }
-    },
-    "/degrees/university/{universityId}/discipline/{disciplineId}": {
-      "get": {
-        "operationId": "DegreesController_getDegreesByUniversityAndDiscipline",
-        "parameters": [
-          {
-            "name": "universityId",
-            "required": true,
-            "in": "path",
-            "description": "University ID",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "disciplineId",
-            "required": true,
-            "in": "path",
-            "description": "Discipline ID",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "List of degrees for the university and discipline",
             "content": {
               "application/json": {
                 "schema": {
@@ -964,7 +873,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Faculty details with disciplines",
+            "description": "Faculty details",
             "content": {
               "application/json": {
                 "schema": {
@@ -1094,27 +1003,6 @@
         "required": [
           "en_text",
           "he_text"
-        ]
-      },
-      "Discipline": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "$ref": "#/components/schemas/Translation"
-          },
-          "courses": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Course"
-            }
-          }
-        },
-        "required": [
-          "id",
-          "name"
         ]
       },
       "RelationshipMetadataKey": {
@@ -1302,14 +1190,8 @@
           "universityId": {
             "type": "string"
           },
-          "disciplineId": {
-            "type": "string"
-          },
           "university": {
             "$ref": "#/components/schemas/University"
-          },
-          "discipline": {
-            "$ref": "#/components/schemas/Discipline"
           },
           "modules": {
             "type": "array",
@@ -1334,7 +1216,6 @@
           "id",
           "name",
           "universityId",
-          "disciplineId",
           "publishedAt",
           "Block"
         ]
@@ -1563,12 +1444,6 @@
           },
           "description": {
             "$ref": "#/components/schemas/Translation"
-          },
-          "Discipline": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Discipline"
-            }
           }
         },
         "required": [
