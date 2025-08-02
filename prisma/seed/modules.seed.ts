@@ -497,6 +497,10 @@ export const seedModules = async (
     },
   ];
 
+  // Batch preload all module translations for optimal performance
+  const moduleTexts = modules.map((module) => module.en_text);
+  await cache.preloadTranslations(tx, moduleTexts);
+
   for (const moduleData of modules) {
     // Note: Translations are now handled by bulk seedTranslations()
     // Find existing translation that should exist from bulk operation

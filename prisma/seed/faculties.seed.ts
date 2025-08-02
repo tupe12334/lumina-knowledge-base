@@ -22,6 +22,10 @@ export async function seedFaculties(
   prisma: Prisma.TransactionClient,
   cache: SeedCache,
 ) {
+  // Collect all faculty translation texts for batch preloading
+  const allFacultyTexts = Object.values(faculties).flat();
+  await cache.preloadTranslations(prisma, allFacultyTexts);
+
   for (const [universityEnText, facultyEnTexts] of Object.entries(faculties)) {
     const university = await cache.getUniversity(prisma, universityEnText);
 

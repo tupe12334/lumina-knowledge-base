@@ -56,6 +56,40 @@ export async function seedQuestions(
   tx: Prisma.TransactionClient,
   cache: SeedCache,
 ) {
+  // Collect all translation texts for batch preloading
+  const allTranslationTexts = new Set<string>();
+
+  for (const questionData of QUESTIONS) {
+    // Add main question text
+    allTranslationTexts.add(questionData.text.en_text);
+
+    // Add answer texts
+    for (const answer of questionData.answers) {
+      if (answer.selectAnswers) {
+        for (const selectAnswer of answer.selectAnswers) {
+          allTranslationTexts.add(selectAnswer.text.en_text);
+        }
+      }
+    }
+
+    // Add part question texts
+    if (questionData.parts) {
+      for (const part of questionData.parts) {
+        allTranslationTexts.add(part.partQuestion.text.en_text);
+        for (const answer of part.partQuestion.answers) {
+          if (answer.selectAnswers) {
+            for (const selectAnswer of answer.selectAnswers) {
+              allTranslationTexts.add(selectAnswer.text.en_text);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Batch preload all translations for optimal performance
+  await cache.preloadTranslations(tx, Array.from(allTranslationTexts));
+
   for (const questionData of QUESTIONS) {
     const { id, text, type, validationStatus, moduleId, answers, parts } =
       questionData;

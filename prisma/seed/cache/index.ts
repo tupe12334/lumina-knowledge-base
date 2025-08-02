@@ -1,4 +1,4 @@
-import { Prisma } from '../../generated/client'
+import { Prisma } from '../../generated/client';
 
 /**
  * Cache for seed lookups.
@@ -6,6 +6,50 @@ import { Prisma } from '../../generated/client'
 export class SeedCache {
   private readonly translations = new Map<string, Prisma.Translation>();
   private readonly universities = new Map<string, Prisma.University>();
+
+  /**
+   * Batch load translations to improve performance for multiple lookups.
+   * This should be called at the beginning of seed functions that need multiple translations.
+   *
+   * @param tx - Prisma transaction client
+   * @param enTexts - array of english texts to preload
+   */
+  async preloadTranslations(
+    tx: Prisma.TransactionClient,
+    enTexts: string[],
+  ): Promise<void> {
+    const missingTexts = enTexts.filter((text) => !this.translations.has(text));
+
+    if (missingTexts.length === 0) {
+      return; // All translations already cached
+    }
+
+    console.log(`🔄 Preloading ${missingTexts.length} translations...`);
+    const startTime = performance.now();
+
+    const translations = await tx.translation.findMany({
+      where: { en_text: { in: missingTexts } },
+    });
+
+    // Cache all found translations
+    translations.forEach((translation) => {
+      this.translations.set(translation.en_text, translation);
+    });
+
+    const duration = performance.now() - startTime;
+    console.log(
+      `✅ Preloaded ${translations.length} translations in ${Math.round(duration)}ms`,
+    );
+
+    // Log any missing translations for debugging
+    const foundTexts = new Set(translations.map((t) => t.en_text));
+    const stillMissing = missingTexts.filter((text) => !foundTexts.has(text));
+    if (stillMissing.length > 0) {
+      console.warn(
+        `⚠️  Missing translations for: ${stillMissing.slice(0, 3).join(', ')}${stillMissing.length > 3 ? ` and ${stillMissing.length - 3} more` : ''}`,
+      );
+    }
+  }
 
   /**
    * Retrieve a translation by english text. Caches result for future calls.
