@@ -4,7 +4,6 @@ import { ConfigModule } from '@nestjs/config';
 import { GraphQLModule } from '@nestjs/graphql';
 import { join } from 'path';
 import { serverEnvSchema } from './env/schema';
-import { HelloResolver } from './graphql/hello.resolver';
 import { BlocksModule } from './modules/blocks/blocks.module';
 import { CoursesModule } from './modules/courses/courses.module';
 import { DegreesModule } from './modules/degrees/degrees.module';
@@ -44,6 +43,6 @@ import { PrismaModule } from './prisma/prisma.module';
     LearningResourcesModule,
   ],
   controllers: [],
-  providers: [HelloResolver],
+  providers: [],
 })
 export class AppModule {}

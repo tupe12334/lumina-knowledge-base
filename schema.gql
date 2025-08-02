@@ -145,7 +145,6 @@ type Query {
     """Faculty ID"""
     id: ID!
   ): Faculty
-  hello: String!
 
   """Get a specific learning resource by ID"""
   learningResource(
