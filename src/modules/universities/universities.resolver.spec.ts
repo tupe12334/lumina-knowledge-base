@@ -1,33 +1,19 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { Test, TestingModule } from '@nestjs/testing';
 import { UniversitiesResolver } from './universities.resolver';
 import { UniversitiesService } from './universities.service';
 import { University } from './models/University.entity';
 
 describe('UniversitiesResolver', () => {
   let resolver: UniversitiesResolver;
-  let mockService: {
-    findAll: ReturnType<typeof vi.fn>;
-    findUnique: ReturnType<typeof vi.fn>;
+  const mockUniversitiesService = {
+    findAll: vi.fn(),
+    findUnique: vi.fn(),
   };
 
-  beforeEach(async () => {
-    mockService = {
-      findAll: vi.fn(),
-      findUnique: vi.fn(),
-    };
-
-    const module: TestingModule = await Test.createTestingModule({
-      providers: [
-        UniversitiesResolver,
-        {
-          provide: UniversitiesService,
-          useValue: mockService,
-        },
-      ],
-    }).compile();
-
-    resolver = module.get<UniversitiesResolver>(UniversitiesResolver);
+  beforeEach(() => {
+    resolver = new UniversitiesResolver(
+      mockUniversitiesService as unknown as UniversitiesService,
+    );
   });
 
   it('should be defined', () => {
@@ -42,12 +28,12 @@ describe('UniversitiesResolver', () => {
         },
       ] as University[];
 
-      mockService.findAll.mockResolvedValue(mockUniversities);
+      mockUniversitiesService.findAll.mockResolvedValue(mockUniversities);
 
       const result = await resolver.getUniversities();
 
       expect(result).toEqual(mockUniversities);
-      expect(mockService.findAll).toHaveBeenCalled();
+      expect(mockUniversitiesService.findAll).toHaveBeenCalled();
     });
   });
 
@@ -57,21 +43,21 @@ describe('UniversitiesResolver', () => {
         id: '1',
       } as University;
 
-      mockService.findUnique.mockResolvedValue(mockUniversity);
+      mockUniversitiesService.findUnique.mockResolvedValue(mockUniversity);
 
       const result = await resolver.getUniversity('1');
 
       expect(result).toEqual(mockUniversity);
-      expect(mockService.findUnique).toHaveBeenCalledWith('1');
+      expect(mockUniversitiesService.findUnique).toHaveBeenCalledWith('1');
     });
 
     it('should return null if university not found', async () => {
-      mockService.findUnique.mockResolvedValue(null);
+      mockUniversitiesService.findUnique.mockResolvedValue(null);
 
       const result = await resolver.getUniversity('non-existent');
 
       expect(result).toBeNull();
-      expect(mockService.findUnique).toHaveBeenCalledWith('non-existent');
+      expect(mockUniversitiesService.findUnique).toHaveBeenCalledWith('non-existent');
     });
   });
 });
