@@ -1748,4 +1748,164 @@ In the Faculty of Arts, you're not just learning about the world — you're lear
       "What is the value of the binomial coefficient C(24, 12) found in Pascal's Triangle?",
     he_text: 'מהו הערך של המקדם הבינומי C(24, 12) במשולש פסקל?',
   },
+  // questions.consts.ts
+  {
+    id: 'b0faab8f-eb6b-4cb2-ad14-30254ef179fc',
+    en_text:
+      'A bookstore sells 5 fiction and 7 non-fiction titles. How many choices are there if you select one book from either category?',
+    he_text:
+      'חנות ספרים מוכרת 5 ספרי סיפורת ו-7 ספרי עיון. כמה אפשרויות יש אם בוחרים ספר אחד מאחת הקטגוריות?',
+  },
+  // questions.consts.ts
+  {
+    id: 'cdeaf3e0-d9db-44c7-9aad-0d974e6ea546',
+    en_text:
+      'A clothing store offers 4 shirts and 6 pants. How many items can you choose from if selecting either a shirt or pants?',
+    he_text:
+      'חנות בגדים מציעה 4 חולצות ו-6 מכנסיים. כמה פריטים ניתן לבחור אם בוחרים חולצה או מכנסיים?',
+  },
+  // questions.consts.ts
+  {
+    id: '65b9fa9f-8a10-4a5a-9400-6f910708ced2',
+    en_text:
+      'A library has 8 English magazines and 5 Hebrew magazines. How many magazines could you borrow if choosing one language?',
+    he_text:
+      'בספרייה יש 8 מגזינים באנגלית ו-5 בעברית. כמה מגזינים ניתן להשאיל אם בוחרים בשפה אחת?',
+  },
+  // questions.consts.ts
+  {
+    id: '96f33cd2-c9a5-4c60-8ffe-0d21c4fa04c4',
+    en_text:
+      'A cafe menu lists 6 hot drinks and 3 cold drinks. How many options exist if you pick one drink of any temperature?',
+    he_text:
+      'בתפריט בית הקפה יש 6 משקאות חמים ו-3 משקאות קרים. כמה אפשרויות יש אם ניתן לבחור משקה אחד מאחת הקטגוריות?',
+  },
+  // questions.consts.ts
+  {
+    id: '602fdc46-93dd-416e-bb3c-fc8badd26251',
+    en_text:
+      'A university offers 5 morning classes and 4 evening classes. How many classes can a student choose from if limited to one time slot?',
+    he_text:
+      'אוניברסיטה מציעה 5 שיעורי בוקר ו-4 שיעורי ערב. כמה שיעורים ניתן לבחור אם מוגבלים למועד אחד?',
+  },
+  // questions.consts.ts
+  {
+    id: '5201f907-d004-4932-98a3-3ecd2ef71ad9',
+    en_text:
+      'A tech conference has 7 workshops on day one and 5 workshops on day two. How many workshops can you attend if you attend only one day?',
+    he_text:
+      'בכנס טכנולוגיה יש 7 סדנאות ביום הראשון ו-5 ביום השני. כמה סדנאות ניתן להשתתף אם מגיעים ליום אחד בלבד?',
+  },
+  // questions.consts.ts
+  {
+    id: '28ac3388-d73e-414e-83d9-d92aa9d82a61',
+    en_text:
+      'A theater shows 3 comedies and 5 dramas. How many films could you watch if you choose from either genre?',
+    he_text:
+      'תיאטרון מקרין 3 קומדיות ו-5 דרמות. כמה סרטים ניתן לצפות אם בוחרים מז׳אנר אחד?',
+  },
+  // questions.consts.ts
+  {
+    id: '275e3588-98b0-424a-b6f3-ef2958150009',
+    en_text:
+      'A travel agency has 4 domestic packages and 6 international packages. How many packages are available if you choose only one?',
+    he_text:
+      'סוכנות נסיעות מציעה 4 חבילות בארץ ו-6 חבילות לחו״ל. כמה חבילות זמינות אם בוחרים רק אחת?',
+  },
+  // questions.consts.ts
+  {
+    id: '65165ce6-c6cd-438e-8660-dcf2105f9c59',
+    en_text:
+      'A sports club offers 5 indoor activities and 4 outdoor activities. How many activities can you select if participating in only one?',
+    he_text:
+      'מועדון ספורט מציע 5 פעילויות בתוך מבנה ו-4 פעילויות חוץ. כמה פעילויות ניתן לבחור אם משתתפים רק באחת?',
+  },
+  // questions.consts.ts
+  {
+    id: '1a4f5e63-7e43-4ee6-b07a-be5c15cd7366',
+    en_text:
+      'A music festival features 6 rock bands and 2 jazz bands. How many bands can a fan watch if they pick a single genre?',
+    he_text:
+      'פסטיבל מוזיקה מציג 6 להקות רוק ו-2 להקות ג׳אז. כמה להקות ניתן לראות אם בוחרים ז׳אנר אחד?',
+  },
+  // questions.consts.ts
+  {
+    id: '23122bf9-a9b8-413e-a332-892d419017c4',
+    en_text:
+      'A grocery store sells 7 kinds of fruit and 4 kinds of vegetables. How many choices are there if buying one item from either group?',
+    he_text:
+      'חנות מכולת מוכרת 7 סוגי פירות ו-4 סוגי ירקות. כמה אפשרויות יש אם קונים פריט אחד מאחת הקבוצות?',
+  },
+  // questions.consts.ts
+  {
+    id: '2b6cba5a-27dc-4e02-8e90-7a3ca6490515',
+    en_text:
+      'A museum offers 2 guided tours in English and 3 in Spanish. How many tours could a visitor take if choosing one language?',
+    he_text:
+      'מוזיאון מציע 2 סיורים מודרכים באנגלית ו-3 בספרדית. כמה סיורים יכול מבקר לקחת אם הוא בוחר שפה אחת?',
+  },
+  // questions.consts.ts
+  {
+    id: 'efc49f76-65ac-4f41-8329-17b055ff654f',
+    en_text:
+      'A park has 5 picnic areas and 3 playgrounds. How many locations can a family choose if visiting just one?',
+    he_text:
+      'בפארק יש 5 אזורי פיקניק ו-3 מגרשי משחקים. כמה מקומות יכולה משפחה לבחור אם מבקרת רק באחד?',
+  },
+  // questions.consts.ts
+  {
+    id: 'e68b7607-efea-4b4c-a677-4a63db960f7a',
+    en_text:
+      'An online course platform has 4 math courses and 5 science courses. How many courses can a student enroll in if choosing one subject?',
+    he_text:
+      'בפלטפורמת קורסים מקוונת יש 4 קורסי מתמטיקה ו-5 קורסי מדע. כמה קורסים יכול סטודנט להירשם אם בוחר מקצוע אחד?',
+  },
+  // questions.consts.ts
+  {
+    id: 'e6690c2e-0fc7-404d-a71d-d77845910b54',
+    en_text:
+      'A bookstore sells 6 hardcover and 3 paperback journals. How many journals can be selected if choosing either type?',
+    he_text:
+      'חנות ספרים מוכרת 6 יומנים בכריכה קשה ו-3 בכריכה רכה. כמה יומנים ניתן לבחור אם בוחרים סוג אחד?',
+  },
+  // questions.consts.ts
+  {
+    id: '30da94db-17de-4218-b041-f4caf651f7be',
+    en_text:
+      'A gym schedules 3 morning and 4 evening yoga classes. How many classes are available if attending only one session?',
+    he_text:
+      'חדר כושר מקיים 3 שיעורי יוגה בבוקר ו-4 בערב. כמה שיעורים זמינים אם משתתפים רק באחד?',
+  },
+  // questions.consts.ts
+  {
+    id: '0dec8af3-f8d6-4e8b-ba1e-a7059b78174e',
+    en_text:
+      'A pet shop has 5 breeds of dogs and 2 breeds of cats. How many animal choices are available if adopting one pet?',
+    he_text:
+      'חנות חיות מחזיקה 5 גזעי כלבים ו-2 גזעי חתולים. כמה אפשרויות חיות זמינות אם מאמצים חיה אחת?',
+  },
+  // questions.consts.ts
+  {
+    id: 'fa2a7e90-3615-498c-8d8f-e958ffde4c51',
+    en_text:
+      'A science fair displays 4 physics projects and 5 chemistry projects. How many projects can a visitor view if focusing on one subject?',
+    he_text:
+      'ביריד מדע מוצגים 4 פרויקטים בפיזיקה ו-5 בכימיה. כמה פרויקטים יכול מבקר לראות אם מתמקד בנושא אחד?',
+  },
+  // questions.consts.ts
+  {
+    id: '6b8fcbdf-b0a2-42eb-a9b1-161f7f92f7ac',
+    en_text:
+      'A store offers 6 types of lamps and 4 types of chairs. How many items can a customer choose from if buying just one?',
+    he_text:
+      'חנות מציעה 6 סוגי מנורות ו-4 סוגי כיסאות. כמה פריטים יכול לקוח לבחור אם קונה רק אחד?',
+  },
+  // questions.consts.ts
+  {
+    id: '1f8f28f2-7d5d-4598-a447-930ef4c2147b',
+    en_text:
+      'A restaurant provides 3 vegan dishes and 6 non-vegan dishes. How many meal options exist if ordering a single dish?',
+    he_text:
+      'מסעדה מציעה 3 מנות טבעוניות ו-6 מנות שאינן טבעוניות. כמה אפשרויות ארוחה קיימות אם מזמינים מנה אחת?',
+  },
 ];
