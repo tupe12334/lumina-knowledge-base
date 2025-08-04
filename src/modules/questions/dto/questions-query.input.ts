@@ -1,5 +1,12 @@
 import { InputType, Field, registerEnumType } from '@nestjs/graphql';
-import { IsOptional, IsString, IsUUID, IsIn, IsArray } from 'class-validator';
+import {
+  IsOptional,
+  IsString,
+  IsUUID,
+  IsIn,
+  IsArray,
+  IsBoolean,
+} from 'class-validator';
 import { QuestionType } from '../models/question-type.enum';
 
 registerEnumType(QuestionType, {
@@ -37,6 +44,16 @@ export class QuestionsQueryInput {
   @IsArray()
   @IsIn(['selection', 'value', 'void'], { each: true })
   questionTypes?: QuestionType[];
+
+  @Field(() => Boolean, {
+    nullable: true,
+    description:
+      'Whether to include questions from submodules when filtering by module (default: true)',
+    defaultValue: true,
+  })
+  @IsOptional()
+  @IsBoolean()
+  includeSubmodules?: boolean;
 
   // Keep the old single-value fields for backward compatibility
   @Field({

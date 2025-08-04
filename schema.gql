@@ -210,6 +210,11 @@ input QuestionsQueryInput {
   """Filter questions by course IDs"""
   courseIds: [String!]
 
+  """
+  Whether to include questions from submodules when filtering by module (default: true)
+  """
+  includeSubmodules: Boolean = true
+
   """Filter questions by module ID (deprecated, use moduleIds)"""
   moduleId: String
 

@@ -7,13 +7,64 @@ import { QuestionsQueryInput } from './dto/questions-query.input';
 export class QuestionsService {
   constructor(private readonly prisma: PrismaService) {}
 
+  /**
+   * Recursively get all submodule IDs for a given module ID
+   */
+  private async getAllSubmoduleIds(moduleId: string): Promise<string[]> {
+    const submoduleIds = new Set<string>();
+
+    const getSubmodulesRecursive = async (currentModuleId: string) => {
+      const module = await this.prisma.module.findUnique({
+        where: { id: currentModuleId },
+        include: {
+          subModules: {
+            select: { id: true },
+          },
+        },
+      });
+
+      if (module?.subModules) {
+        for (const subModule of module.subModules) {
+          if (!submoduleIds.has(subModule.id)) {
+            submoduleIds.add(subModule.id);
+            await getSubmodulesRecursive(subModule.id);
+          }
+        }
+      }
+    };
+
+    await getSubmodulesRecursive(moduleId);
+    return Array.from(submoduleIds);
+  }
+
   async findAll(filters?: QuestionsQueryInput): Promise<Question[]> {
     // Build where clause based on filters
     const where: Record<string, any> = {};
 
     // Handle both array and single module filtering
-    const moduleIds =
+    let moduleIds =
       filters?.moduleIds || (filters?.moduleId ? [filters.moduleId] : []);
+
+    // If module filtering is requested and includeSubmodules is enabled (default: true), expand to include all submodules
+    const includeSubmodules = filters?.includeSubmodules !== false; // Default to true
+    if (moduleIds.length > 0 && includeSubmodules) {
+      const expandedModuleIds = new Set(moduleIds);
+
+      // For each module, get all its submodules recursively
+      for (const moduleId of moduleIds) {
+        const submoduleIds = await this.getAllSubmoduleIds(moduleId);
+        submoduleIds.forEach((id) => expandedModuleIds.add(id));
+      }
+
+      moduleIds = Array.from(expandedModuleIds);
+      console.log(
+        `🔍 Expanded module filtering: original ${filters?.moduleIds?.length || (filters?.moduleId ? 1 : 0)} modules to ${moduleIds.length} modules (including submodules)`,
+      );
+    } else if (moduleIds.length > 0) {
+      console.log(
+        `🔍 Module filtering: using ${moduleIds.length} modules (submodules excluded)`,
+      );
+    }
 
     // Handle both array and single course filtering
     const courseIds =
@@ -21,7 +72,7 @@ export class QuestionsService {
 
     // Debug: log the filters and where clause
     console.log('🔍 Service filters:', JSON.stringify(filters, null, 2));
-    console.log('🔍 Service moduleIds:', moduleIds);
+    console.log('🔍 Service moduleIds (final):', moduleIds);
 
     // Build Module filter combining both module and course filters
     if (moduleIds.length > 0 || courseIds.length > 0) {
