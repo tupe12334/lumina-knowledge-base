@@ -25,11 +25,6 @@ export class HealthController {
       () => this.prismaHealth.pingCheck('database', this.prisma),
       () => this.memoryHealth.checkHeap('memory_heap', 150 * 1024 * 1024),
       () => this.memoryHealth.checkRSS('memory_rss', 150 * 1024 * 1024),
-      () =>
-        this.diskHealth.checkStorage('storage', {
-          thresholdPercent: 0.9,
-          path: '/',
-        }),
     ]);
   }
 
