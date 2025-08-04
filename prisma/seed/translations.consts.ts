@@ -1918,4 +1918,105 @@ In the Faculty of Arts, you're not just learning about the world — you're lear
     he_text:
       'מסעדה מציעה 3 מנות טבעוניות ו-6 מנות שאינן טבעוניות. כמה אפשרויות ארוחה קיימות אם מזמינים מנה אחת?',
   },
+  // questions.consts.ts
+  {
+    id: '39ecb7d6-6f0c-4321-ad6b-1c1ef18b3821',
+    en_text: 'How many permutations does a set of 2 elements have?',
+    he_text: 'כמה תמורות יש לקבוצה בת 2 איברים?',
+  },
+  {
+    id: 'ece19f63-2445-42f6-b4c4-a78251d29ac8',
+    en_text: 'How many permutations does a set of 3 elements have?',
+    he_text: 'כמה תמורות יש לקבוצה בת 3 איברים?',
+  },
+  {
+    id: 'c8499c0e-d5d6-44be-9e05-c6e43478248d',
+    en_text: 'How many permutations does a set of 4 elements have?',
+    he_text: 'כמה תמורות יש לקבוצה בת 4 איברים?',
+  },
+  {
+    id: 'eb6142df-3a75-4961-9ab9-3364fb1b41d2',
+    en_text: 'How many permutations does a set of 5 elements have?',
+    he_text: 'כמה תמורות יש לקבוצה בת 5 איברים?',
+  },
+  {
+    id: '266f382e-7372-4ada-b9d5-1164f7cd1484',
+    en_text: 'How many permutations does a set of 6 elements have?',
+    he_text: 'כמה תמורות יש לקבוצה בת 6 איברים?',
+  },
+  {
+    id: '0fe128ef-3e35-43b8-8a07-e5f4dc59afb6',
+    en_text: 'How many permutations does a set of 7 elements have?',
+    he_text: 'כמה תמורות יש לקבוצה בת 7 איברים?',
+  },
+  {
+    id: 'd7f2ae10-ab6c-4b87-975f-72862d855d8b',
+    en_text: 'How many permutations does a set of 8 elements have?',
+    he_text: 'כמה תמורות יש לקבוצה בת 8 איברים?',
+  },
+  {
+    id: 'aecd18e8-c1c9-4d34-98da-acb7c6facca4',
+    en_text: 'How many permutations does a set of 9 elements have?',
+    he_text: 'כמה תמורות יש לקבוצה בת 9 איברים?',
+  },
+  {
+    id: 'ba37ff74-f80f-4d59-9eb9-f0d9be22afae',
+    en_text: 'How many permutations does a set of 10 elements have?',
+    he_text: 'כמה תמורות יש לקבוצה בת 10 איברים?',
+  },
+  {
+    id: '29c284c4-b029-4f69-9d98-a5387233276b',
+    en_text: 'How many permutations does a set of 11 elements have?',
+    he_text: 'כמה תמורות יש לקבוצה בת 11 איברים?',
+  },
+  {
+    id: '67bcd62c-95ae-4463-a2b3-5393b9138648',
+    en_text: "How many permutations of the word 'BOOK' are there?",
+    he_text: "כמה תמורות יש למילה 'BOOK'?",
+  },
+  {
+    id: 'fdfc9517-93a2-4fc7-8493-433f8fcf88aa',
+    en_text: "How many permutations of the word 'BALLOON' are there?",
+    he_text: "כמה תמורות יש למילה 'BALLOON'?",
+  },
+  {
+    id: '99a82160-6d62-4f1d-b4d6-b1f10a6e1fde',
+    en_text: "How many permutations of the word 'LETTER' are there?",
+    he_text: "כמה תמורות יש למילה 'LETTER'?",
+  },
+  {
+    id: 'b923289d-32d6-4317-8d69-92f86383da91',
+    en_text: "How many permutations of the word 'SUCCESS' are there?",
+    he_text: "כמה תמורות יש למילה 'SUCCESS'?",
+  },
+  {
+    id: '3fcb84fd-e40e-45b7-bc00-03aba624fd61',
+    en_text: "How many permutations of the word 'TATTOO' are there?",
+    he_text: "כמה תמורות יש למילה 'TATTOO'?",
+  },
+  {
+    id: '6a05e03c-53c0-4f48-8e59-2485823a5bae',
+    en_text: "How many permutations of the word 'PROGRAM' are there?",
+    he_text: "כמה תמורות יש למילה 'PROGRAM'?",
+  },
+  {
+    id: '9815dc92-b767-44a7-8267-a16aba509e68',
+    en_text: "How many permutations of the word 'BALANCE' are there?",
+    he_text: "כמה תמורות יש למילה 'BALANCE'?",
+  },
+  {
+    id: 'b2bc472c-b20e-45c7-a552-48ec8dc8234e',
+    en_text: "How many permutations of the word 'INDEPENDENT' are there?",
+    he_text: "כמה תמורות יש למילה 'INDEPENDENT'?",
+  },
+  {
+    id: 'a603c448-5491-4803-aa47-df00430b9526',
+    en_text: "How many permutations of the word 'MISSILE' are there?",
+    he_text: "כמה תמורות יש למילה 'MISSILE'?",
+  },
+  {
+    id: 'eeb787d9-7a15-47d5-8725-367aeabc47ea',
+    en_text: "How many permutations of the word 'PEPPER' are there?",
+    he_text: "כמה תמורות יש למילה 'PEPPER'?",
+  },
 ];

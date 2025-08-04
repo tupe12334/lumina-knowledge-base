@@ -1814,6 +1814,406 @@ export const QUESTIONS: QuestionSeedData[] = [
     ],
   },
   {
+    id: 'd6ec730d-e089-4bf7-a78c-51938e5abb1f',
+    translationId: '39ecb7d6-6f0c-4321-ad6b-1c1ef18b3821',
+    text: {
+      en_text: 'How many permutations does a set of 2 elements have?',
+      he_text: 'כמה תמורות יש לקבוצה בת 2 איברים?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '65acc4b0-c258-4bd0-8eb0-e686006d224d',
+    answers: [
+      {
+        id: 'fe7ac410-4860-4e22-adcc-a172b7a821a6',
+        numberAnswer: {
+          id: '750891b3-b13f-4412-b9a0-25089a77a209',
+          value: 2,
+        },
+      },
+    ],
+  },
+  {
+    id: '79f0217e-1e3b-48e2-ad81-647b48fe65b4',
+    translationId: 'ece19f63-2445-42f6-b4c4-a78251d29ac8',
+    text: {
+      en_text: 'How many permutations does a set of 3 elements have?',
+      he_text: 'כמה תמורות יש לקבוצה בת 3 איברים?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '65acc4b0-c258-4bd0-8eb0-e686006d224d',
+    answers: [
+      {
+        id: 'd3df96a8-0047-48d0-a258-490eeec98cff',
+        numberAnswer: {
+          id: '652ab9c3-9563-41e6-babb-91b3e89c6efb',
+          value: 6,
+        },
+      },
+    ],
+  },
+  {
+    id: 'c7e0573d-8af7-4e08-b43c-80e691c1a26f',
+    translationId: 'c8499c0e-d5d6-44be-9e05-c6e43478248d',
+    text: {
+      en_text: 'How many permutations does a set of 4 elements have?',
+      he_text: 'כמה תמורות יש לקבוצה בת 4 איברים?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '65acc4b0-c258-4bd0-8eb0-e686006d224d',
+    answers: [
+      {
+        id: 'b2e20c98-c203-4234-a8b0-492c043ea03a',
+        numberAnswer: {
+          id: '2cc5b6b8-bfa1-4c2a-8f21-4839080f9e5b',
+          value: 24,
+        },
+      },
+    ],
+  },
+  {
+    id: '00b88ebb-c6d5-4c84-bd37-35eeb6c8e87b',
+    translationId: 'eb6142df-3a75-4961-9ab9-3364fb1b41d2',
+    text: {
+      en_text: 'How many permutations does a set of 5 elements have?',
+      he_text: 'כמה תמורות יש לקבוצה בת 5 איברים?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '65acc4b0-c258-4bd0-8eb0-e686006d224d',
+    answers: [
+      {
+        id: 'c9411e8c-1133-4f0c-994c-a0677579c61f',
+        numberAnswer: {
+          id: '197bf824-e2d9-4f62-9c50-22512f4b1342',
+          value: 120,
+        },
+      },
+    ],
+  },
+  {
+    id: '327b9258-b0bf-4ad8-839d-e148be734c1b',
+    translationId: '266f382e-7372-4ada-b9d5-1164f7cd1484',
+    text: {
+      en_text: 'How many permutations does a set of 6 elements have?',
+      he_text: 'כמה תמורות יש לקבוצה בת 6 איברים?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '65acc4b0-c258-4bd0-8eb0-e686006d224d',
+    answers: [
+      {
+        id: '7d822bd0-1094-40ec-ad22-7f4cecb81186',
+        numberAnswer: {
+          id: '3bd0a7e7-5fca-4511-b117-759a2e229a09',
+          value: 720,
+        },
+      },
+    ],
+  },
+  {
+    id: '14df0e0f-61a8-4944-b6ec-f86b6ceb2895',
+    translationId: '0fe128ef-3e35-43b8-8a07-e5f4dc59afb6',
+    text: {
+      en_text: 'How many permutations does a set of 7 elements have?',
+      he_text: 'כמה תמורות יש לקבוצה בת 7 איברים?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '65acc4b0-c258-4bd0-8eb0-e686006d224d',
+    answers: [
+      {
+        id: '46236d07-deb4-4d59-ad78-14e19c9b7630',
+        numberAnswer: {
+          id: '960d5efd-4359-429c-9666-e5f87b993b75',
+          value: 5040,
+        },
+      },
+    ],
+  },
+  {
+    id: '2ea0d0f6-72ee-40c1-bee6-0e108e00518b',
+    translationId: 'd7f2ae10-ab6c-4b87-975f-72862d855d8b',
+    text: {
+      en_text: 'How many permutations does a set of 8 elements have?',
+      he_text: 'כמה תמורות יש לקבוצה בת 8 איברים?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '65acc4b0-c258-4bd0-8eb0-e686006d224d',
+    answers: [
+      {
+        id: '56990433-af03-4849-92b8-2c8661d86859',
+        numberAnswer: {
+          id: '6a0b48c3-690c-4607-961f-988ce3928b6a',
+          value: 40320,
+        },
+      },
+    ],
+  },
+  {
+    id: '3f76b61a-06a7-4cc5-aeee-3a746e296e7c',
+    translationId: 'aecd18e8-c1c9-4d34-98da-acb7c6facca4',
+    text: {
+      en_text: 'How many permutations does a set of 9 elements have?',
+      he_text: 'כמה תמורות יש לקבוצה בת 9 איברים?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '65acc4b0-c258-4bd0-8eb0-e686006d224d',
+    answers: [
+      {
+        id: 'bc4c5224-2599-42f4-9fae-34ac817eee24',
+        numberAnswer: {
+          id: 'fa4f3196-c247-4813-a3b5-6a3a040638f4',
+          value: 362880,
+        },
+      },
+    ],
+  },
+  {
+    id: 'd8f15c35-4501-4319-b023-9299b2f5d657',
+    translationId: 'ba37ff74-f80f-4d59-9eb9-f0d9be22afae',
+    text: {
+      en_text: 'How many permutations does a set of 10 elements have?',
+      he_text: 'כמה תמורות יש לקבוצה בת 10 איברים?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '65acc4b0-c258-4bd0-8eb0-e686006d224d',
+    answers: [
+      {
+        id: 'a608c05a-a6c1-489d-8274-010ab5cfd950',
+        numberAnswer: {
+          id: 'f3dc5563-858b-4e68-b119-a61fba6b49c3',
+          value: 3628800,
+        },
+      },
+    ],
+  },
+  {
+    id: '211aaec2-0f7e-4284-a9b8-10d6f2a3f5d7',
+    translationId: '29c284c4-b029-4f69-9d98-a5387233276b',
+    text: {
+      en_text: 'How many permutations does a set of 11 elements have?',
+      he_text: 'כמה תמורות יש לקבוצה בת 11 איברים?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '65acc4b0-c258-4bd0-8eb0-e686006d224d',
+    answers: [
+      {
+        id: '93b5fcff-e6ec-4153-a482-38d39122daad',
+        numberAnswer: {
+          id: 'b44ae229-2535-4682-87d0-aa5aa815777a',
+          value: 39916800,
+        },
+      },
+    ],
+  },
+  {
+    id: 'aa9e8157-b9cd-4c0a-b4bc-b38a1dd8711a',
+    translationId: '67bcd62c-95ae-4463-a2b3-5393b9138648',
+    text: {
+      en_text: "How many permutations of the word 'BOOK' are there?",
+      he_text: "כמה תמורות יש למילה 'BOOK'?",
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '65acc4b0-c258-4bd0-8eb0-e686006d224d',
+    answers: [
+      {
+        id: 'bcbacc9f-a431-439b-8b4a-6c64ca698e4e',
+        numberAnswer: {
+          id: '7eeb22b9-4ec5-4341-acf2-6b937d850eaf',
+          value: 12,
+        },
+      },
+    ],
+  },
+  {
+    id: '8814afbc-ed5c-4aab-9ef5-8f7c144666ad',
+    translationId: 'fdfc9517-93a2-4fc7-8493-433f8fcf88aa',
+    text: {
+      en_text: "How many permutations of the word 'BALLOON' are there?",
+      he_text: "כמה תמורות יש למילה 'BALLOON'?",
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '65acc4b0-c258-4bd0-8eb0-e686006d224d',
+    answers: [
+      {
+        id: '8c3c4d01-ae8c-4648-b4f9-a19dc13f0f54',
+        numberAnswer: {
+          id: '03fd6002-f614-4d62-a8c1-6020a734f983',
+          value: 1260,
+        },
+      },
+    ],
+  },
+  {
+    id: '55c37922-cb30-478b-b34d-a1a11b187694',
+    translationId: '99a82160-6d62-4f1d-b4d6-b1f10a6e1fde',
+    text: {
+      en_text: "How many permutations of the word 'LETTER' are there?",
+      he_text: "כמה תמורות יש למילה 'LETTER'?",
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '65acc4b0-c258-4bd0-8eb0-e686006d224d',
+    answers: [
+      {
+        id: '6c5f5979-659e-477a-aa86-f4c1a00b80bf',
+        numberAnswer: {
+          id: 'c0b79885-a81b-40ae-a890-c699ad79e608',
+          value: 180,
+        },
+      },
+    ],
+  },
+  {
+    id: '82995866-568b-4a32-a54e-843d4a86b1ad',
+    translationId: 'b923289d-32d6-4317-8d69-92f86383da91',
+    text: {
+      en_text: "How many permutations of the word 'SUCCESS' are there?",
+      he_text: "כמה תמורות יש למילה 'SUCCESS'?",
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '65acc4b0-c258-4bd0-8eb0-e686006d224d',
+    answers: [
+      {
+        id: '6360d3fb-9b1d-4869-8181-49df330ad520',
+        numberAnswer: {
+          id: '0ffed6c3-18d9-42de-b078-3ca4cbc884b6',
+          value: 420,
+        },
+      },
+    ],
+  },
+  {
+    id: '9668db04-68b7-4986-986a-2691006566fe',
+    translationId: '3fcb84fd-e40e-45b7-bc00-03aba624fd61',
+    text: {
+      en_text: "How many permutations of the word 'TATTOO' are there?",
+      he_text: "כמה תמורות יש למילה 'TATTOO'?",
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '65acc4b0-c258-4bd0-8eb0-e686006d224d',
+    answers: [
+      {
+        id: '5739463f-c2b0-492f-8eaf-2578260807e7',
+        numberAnswer: {
+          id: '896f521d-2255-4ee7-a273-e85c19fec37b',
+          value: 60,
+        },
+      },
+    ],
+  },
+  {
+    id: 'd9930c32-6a64-4229-abb2-9fc24a1b2d46',
+    translationId: '6a05e03c-53c0-4f48-8e59-2485823a5bae',
+    text: {
+      en_text: "How many permutations of the word 'PROGRAM' are there?",
+      he_text: "כמה תמורות יש למילה 'PROGRAM'?",
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '65acc4b0-c258-4bd0-8eb0-e686006d224d',
+    answers: [
+      {
+        id: 'f304ab74-083b-44f3-adb6-65b2b5e8f346',
+        numberAnswer: {
+          id: '3389d613-1718-4690-ab25-fe759968c1f5',
+          value: 2520,
+        },
+      },
+    ],
+  },
+  {
+    id: '4ee821ad-d40f-443a-a0fb-5226393ad622',
+    translationId: '9815dc92-b767-44a7-8267-a16aba509e68',
+    text: {
+      en_text: "How many permutations of the word 'BALANCE' are there?",
+      he_text: "כמה תמורות יש למילה 'BALANCE'?",
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '65acc4b0-c258-4bd0-8eb0-e686006d224d',
+    answers: [
+      {
+        id: '6cd49e9f-d177-4cc2-bfb4-32175142b061',
+        numberAnswer: {
+          id: '94b06170-3fa0-493d-8628-5351de7afb19',
+          value: 2520,
+        },
+      },
+    ],
+  },
+  {
+    id: 'd76a3f96-d6b8-4c71-b4e1-dd5c0e28193a',
+    translationId: 'b2bc472c-b20e-45c7-a552-48ec8dc8234e',
+    text: {
+      en_text: "How many permutations of the word 'INDEPENDENT' are there?",
+      he_text: "כמה תמורות יש למילה 'INDEPENDENT'?",
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '65acc4b0-c258-4bd0-8eb0-e686006d224d',
+    answers: [
+      {
+        id: '551c05be-9925-4921-9170-90c6f8b3ce91',
+        numberAnswer: {
+          id: '0cf94b6e-bb65-4c1e-b9d6-121ab335ba92',
+          value: 554400,
+        },
+      },
+    ],
+  },
+  {
+    id: '6ca9db44-2c32-42b4-a52e-8a109ed6cc6b',
+    translationId: 'a603c448-5491-4803-aa47-df00430b9526',
+    text: {
+      en_text: "How many permutations of the word 'MISSILE' are there?",
+      he_text: "כמה תמורות יש למילה 'MISSILE'?",
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '65acc4b0-c258-4bd0-8eb0-e686006d224d',
+    answers: [
+      {
+        id: '64376439-6aef-454b-82ea-511b82662959',
+        numberAnswer: {
+          id: 'ee6bcedf-0e7f-4544-ad01-08234dd5efc2',
+          value: 1260,
+        },
+      },
+    ],
+  },
+  {
+    id: 'ef4f87dd-0f82-4ed5-9231-60a95b80978c',
+    translationId: 'eeb787d9-7a15-47d5-8725-367aeabc47ea',
+    text: {
+      en_text: "How many permutations of the word 'PEPPER' are there?",
+      he_text: "כמה תמורות יש למילה 'PEPPER'?",
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '65acc4b0-c258-4bd0-8eb0-e686006d224d',
+    answers: [
+      {
+        id: '471c2400-20db-4d7e-ab32-ab95a81d5be3',
+        numberAnswer: {
+          id: '16787136-4a63-4ac1-a39a-f02bbd6512d2',
+          value: 60,
+        },
+      },
+    ],
+  },
+  {
     id: 'ddd90146-abb2-44a4-83c7-e2ca0194ede8',
     translationId: 'f0822445-f9c1-452d-8c3c-6de61098177b',
     text: {
