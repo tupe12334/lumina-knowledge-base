@@ -1027,7 +1027,7 @@ export const QUESTIONS: QuestionSeedData[] = [
     },
     type: QuestionType.value,
     validationStatus: QuestionValidationStatus.approved,
-    moduleId: '9c8e5d2a-4b7f-4c8d-9e0a-1b2c3d4e5f6a',
+    moduleId: 'c6dd59ac-1802-4bc9-b91e-ca77bb32620e',
     answers: [
       {
         id: 'ec73a468-679d-4997-a29e-99cf84d98e7a',
