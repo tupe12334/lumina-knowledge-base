@@ -49,6 +49,7 @@ export const seedModules = async (
         'd4e5f6a7-b8c9-4012-d345-efab78901234',
       'Sum Principle_Separation Principle':
         'e5f6a7b8-c9d0-4123-e456-fab890123456',
+      Permutation_Derangements: 'f1a2b3c4-d5e6-4789-a012-bcdef4567890',
     };
     return relationshipMap[`${prerequisite}_${postrequisite}`] || '';
   };
@@ -98,6 +99,8 @@ export const seedModules = async (
         'e5f6a7b8-c9d0-4123-e456-fab890123456',
       'e5f6a7b8-c9d0-4123-e456-fab890123456':
         'f6a7b8c9-d0e1-4234-f567-abc901234567',
+      'f1a2b3c4-d5e6-4789-a012-bcdef4567890':
+        'a2b3c4d5-e6f7-4890-a123-cdef67890123',
     };
     return metadataMap[blockRelationshipId] || '';
   };
@@ -391,6 +394,7 @@ export const seedModules = async (
       en_text: 'Derangements',
       he_text: 'אי סדר מלא',
       parent: 'Combinatorics',
+      prerequisite: 'Permutation',
       course: 'Discrete Mathematics',
     },
     {
