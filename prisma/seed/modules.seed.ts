@@ -45,6 +45,10 @@ export const seedModules = async (
       'Combinations_Pascal Triangle': 'c5d6e7f8-a9b0-4123-c456-def789012345',
       'Pascal Triangle_Binomial Formula':
         'b3c4d5e6-f7a8-4890-b123-cdef56789012',
+      'Multiplication Principle_Inclusion Principle':
+        'd4e5f6a7-b8c9-4012-d345-efab78901234',
+      'Sum Principle_Separation Principle':
+        'e5f6a7b8-c9d0-4123-e456-fab890123456',
     };
     return relationshipMap[`${prerequisite}_${postrequisite}`] || '';
   };
@@ -90,6 +94,10 @@ export const seedModules = async (
         'd6e7f8a9-b0c1-4234-d567-efa890123456',
       'b3c4d5e6-f7a8-4890-b123-cdef56789012':
         'c4d5e6f7-a8b9-4901-c234-def678901234',
+      'd4e5f6a7-b8c9-4012-d345-efab78901234':
+        'e5f6a7b8-c9d0-4123-e456-fab890123456',
+      'e5f6a7b8-c9d0-4123-e456-fab890123456':
+        'f6a7b8c9-d0e1-4234-f567-abc901234567',
     };
     return metadataMap[blockRelationshipId] || '';
   };
@@ -416,12 +424,14 @@ export const seedModules = async (
       en_text: 'Inclusion Principle',
       he_text: 'עקרון ההכלה',
       parent: 'Combinatorics',
+      prerequisite: 'Multiplication Principle',
       course: 'Discrete Mathematics',
     },
     {
       en_text: 'Separation Principle',
       he_text: 'עקרון ההפרדה',
       parent: 'Combinatorics',
+      prerequisite: 'Sum Principle',
       course: 'Discrete Mathematics',
     },
     {
