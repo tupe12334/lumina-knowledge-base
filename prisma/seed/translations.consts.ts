@@ -688,7 +688,7 @@ export const TRANSLATIONS: TranslationSeed[] = [
     en_text: 'Artificial Intelligence',
     he_text: 'בינה מלכותית',
   },
-  // questions.consts.ts
+
   {
     id: '58503f66-af42-4992-bdc1-79fc62c4a61f',
     en_text:
@@ -696,55 +696,55 @@ export const TRANSLATIONS: TranslationSeed[] = [
     he_text:
       'איך לפרמל את הפסוק: "הריבוע של כל מספר ממשי ששונה מאפס הוא גדול מאפס"',
   },
-  // questions.consts.ts
+
   {
     id: '7ac8c2ed-1b4f-4e7a-9d5e-8f3b2c4a1e6d',
     en_text: '∀x ∈ ℝ, x ≠ 0 → x² > 0',
     he_text: '∀x ∈ ℝ, x ≠ 0 → x² > 0',
   },
-  // questions.consts.ts
+
   {
     id: '9e2f4a1c-3d5e-4b7f-8a9d-1c2e3f4a5b6c',
     en_text: '∃x ∈ ℝ, x ≠ 0 ∧ x² > 0',
     he_text: '∃x ∈ ℝ, x ≠ 0 ∧ x² > 0',
   },
-  // questions.consts.ts
+
   {
     id: '1f3e5a7c-4b6d-4e8f-9a1c-2d3e4f5a6b7c',
     en_text: '∀x ∈ ℝ, x² > 0 → x ≠ 0',
     he_text: '∀x ∈ ℝ, x² > 0 → x ≠ 0',
   },
-  // questions.consts.ts
+
   {
     id: '2a4c6e8f-5b7d-4f9a-8c1e-3d4e5f6a7b8c',
     en_text: '∀x ∈ ℝ, x ≠ 0 ∧ x² > 0',
     he_text: '∀x ∈ ℝ, x ≠ 0 ∧ x² > 0',
   },
-  // questions.consts.ts
+
   {
     id: '3b5d7f9a-6c8e-4a1c-9d2e-4e5f6a7b8c9d',
     en_text: '∃x ∈ ℝ, x ≠ 0 → x² > 0',
     he_text: '∃x ∈ ℝ, x ≠ 0 → x² > 0',
   },
-  // questions.consts.ts
+
   {
     id: '4c6e8a1c-7d9f-4b2d-8e1f-5f6a7b8c9d1e',
     en_text: '∀x ∈ ℝ, x² > 0 ∧ x ≠ 0',
     he_text: '∀x ∈ ℝ, x² > 0 ∧ x ≠ 0',
   },
-  // questions.consts.ts
+
   {
     id: '5d7f9b2e-8e1a-4c3e-9f2a-6a7b8c9d1e2f',
     en_text: '∀x ∈ ℝ, x = 0 → x² > 0',
     he_text: '∀x ∈ ℝ, x = 0 → x² > 0',
   },
-  // questions.consts.ts
+
   {
     id: '6e8a1c3f-9f2b-4d4f-8a3b-7b8c9d1e2f3a',
     en_text: '∃x ∈ ℝ, x² > 0 ∧ x ≠ 0',
     he_text: '∃x ∈ ℝ, x² > 0 ∧ x ≠ 0',
   },
-  // questions.consts.ts
+
   {
     id: 'd39c0ad3-92d1-4290-b604-0033444b6f03',
     en_text:
@@ -752,31 +752,31 @@ export const TRANSLATIONS: TranslationSeed[] = [
     he_text:
       'על מספר ממשי x, הפסוק "הריבוע של כל מספר ממשי שאינו אפס הוא חיובי" יכול להיות מבוטא כ',
   },
-  // questions.consts.ts
+
   {
     id: '8f9a1b2c-4d5e-4f6a-9b8c-7d8e9f1a2b3c',
     en_text: '∀x((x ≠ 0) ∧ (x² > 0))',
     he_text: '∀x((x ≠ 0) ∧ (x² > 0))',
   },
-  // questions.consts.ts
+
   {
     id: '9a1c2d3e-5f6a-4b7c-8d9e-8e9f1a2b3c4d',
     en_text: '∀x((x² ≤ 0) → (x = 0))',
     he_text: '∀x((x² ≤ 0) → (x = 0))',
   },
-  // questions.consts.ts
+
   {
     id: '1b2d3f4a-6c7e-4d8f-9a1b-9f1a2b3c4d5e',
     en_text: '∀x((x > 0) ∨ (x < 0) ∨ (x² > 0))',
     he_text: '∀x((x > 0) ∨ (x < 0) ∨ (x² > 0))',
   },
-  // questions.consts.ts
+
   {
     id: '338bee00-49e8-47f1-afd7-ab19015bdf2a',
     en_text: 'All previous statements are equivalent',
     he_text: 'כל ההצהרות הקודמות שוות',
   },
-  // questions.consts.ts
+
   {
     id: 'b0500946-9885-4afa-b80d-72969aefbe82',
     en_text:
@@ -784,60 +784,52 @@ export const TRANSLATIONS: TranslationSeed[] = [
     he_text:
       'בשאלה זו רווחים פתוחים מתייחסים ל-(a,b) כלומר a < b. בהינתן קבוצה אינסופית וחסומה A של מספרים ממשיים',
   },
-  // questions.consts.ts
+
   {
     id: 'd18996b8-4006-460d-a20c-720e7f830eb1',
     en_text:
       'There exists a small open interval (a,b) such that A ∩ (a,b) = ℵ₀',
     he_text: 'קיים רווח פתוח קטן (a,b) כך ש A ∩ (a,b) = ℵ₀',
   },
-  // questions.consts.ts
+
   {
     id: '85854db4-bde9-4adf-b574-20fb84bd9d8e',
     en_text:
       'There exists a small open interval (a,b) such that A ∩ (a,b) ≠ ℵ₀',
     he_text: 'קיים רווח פתוח קטן (a,b) כך ש A ∩ (a,b) ≠ ℵ₀',
   },
-  // questions.consts.ts
+
   {
     id: 'ed575596-a4f8-4dad-a044-1cd48d755c80',
     en_text:
       'There exists a small open interval (a,b) such that (ℝ \\ A) ∩ (a,b) = ℵ₀',
     he_text: 'קיים רווח פתוח קטן (a,b) כך ש (ℝ \\ A) ∩ (a,b) = ℵ₀',
   },
-  // questions.consts.ts
+
   {
     id: 'ec50e39c-ef19-4e91-8f5a-7ed39f14f334',
     en_text: 'If G is a directed graph with 6 vertices, then',
     he_text: 'אם G הוא גרף מכוון עם 6 קודקודים, אז',
   },
-  // questions.consts.ts
+
   {
     id: 'e625868b-df75-4b35-ba75-50c73a5759ef',
     en_text: 'G is not planar',
     he_text: 'G אינו מישורי',
   },
-  // questions.consts.ts
+
   {
     id: '8e8e35ce-8ff5-442d-803f-c3086f0abc74',
     en_text: 'G is not Hamiltonian',
     he_text: 'G אינו המילטוני',
   },
-  // questions.consts.ts
+
   {
     id: '9d1f2c3d-5e6f-4a7b-8c9d-8b9c1d2e3f4a',
     en_text: 'Either G is planar or G is Eulerian',
     he_text: 'או ש-G מישורי או ש-G אוילריאני',
   },
-  // questions.consts.ts
-  {
-    id: 'd5f0c74e-7fa6-442d-9339-635eafd81a40',
-    en_text:
-      'The question involves sequences denoted by aₙ with letters A, B, C, D, E where:\n- A and also B must contain exactly one letter from C or D\n- For example: C,D,E,AC,BC,BDAA are valid, but AB,AEC,ABC,BDCAC are not valid\nThe question has multiple parts worth 7, 7, and 13 points',
-    he_text:
-      'השאלה כוללת רצפות המסומנות בaₙ עם אותיות A, B, C, D, E כאשר:\n- A וגם B חייבים להכיל בדיוק אות אחת מ-C או D\n- לדוגמה: C,D,E,AC,BC,BDAA תקפות, אך AB,AEC,ABC,BDCAC אינן תקפות\nהשאלה כוללת מספר חלקים בשווי 7, 7, ו-13 נקודות',
-  },
-  // questions.consts.ts
+
   {
     id: 'ca3b16e0-f0f9-4fc3-b9d8-e14590eb2d8e',
     en_text:
@@ -845,19 +837,19 @@ export const TRANSLATIONS: TranslationSeed[] = [
     he_text:
       'בהינתן קבוצת קודקודים V = {1,2,3,4,5,6,7,8} וסדרת קשתות (6,7,8,1,1,1), כאשר G הוא הגרף הפשוט המתקבל על ידי הוספת קשתות בין זוגות קודקודים ב-T (ואולי קשתות אחרות)',
   },
-  // questions.consts.ts
+
   {
     id: 'c0b633ef-31cd-4ebf-b389-61970605931e',
     en_text: 'Whether G is an Euler graph',
     he_text: 'האם G הוא גרף אוילריאני',
   },
-  // questions.consts.ts
+
   {
     id: '49b5c46b-89cf-4e3a-888d-df23b817f557',
     en_text: 'Finding the number of vertices of G (with explanation)',
     he_text: 'מציאת מספר הקודקודים של G (עם הסבר)',
   },
-  // questions.consts.ts
+
   {
     id: 'ba098000-4b8e-488c-bafb-0416198ab5ca',
     en_text:
@@ -865,20 +857,20 @@ export const TRANSLATIONS: TranslationSeed[] = [
     he_text:
       'מפזרים 4 כדורים מסוג A, 4 כדורים מסוג B, 4 כדורים מסוג C ו־4 כדורים מסוג D ב־4 תאים שונים. (כדורים מאותו סוג נחשבים זהים).',
   },
-  // questions.consts.ts
+
   {
     id: '00703a76-5fca-4f2f-82b2-5afd86fd0283',
     en_text: 'Calculate the number of all possible distributions.',
     he_text: 'חשבו את מספר כל הפיזורים האפשריים.',
   },
-  // questions.consts.ts
+
   {
     id: '57975cc8-efa9-4174-ac5e-fd003913c63d',
     en_text:
       'Calculate the number of distributions where no cell contains balls of all types.',
     he_text: 'חשבו את מספר הפיזורים שבהם אין תא המכיל כדורים מכל הסוגים.',
   },
-  // questions.consts.ts
+
   {
     id: '7750cecd-29cb-4eb1-b513-328284bf9866',
     en_text:
@@ -886,7 +878,7 @@ export const TRANSLATIONS: TranslationSeed[] = [
     he_text:
       'במסעדה מוצעים 3 מתאבנים ו־4 קינוחים. כמה אפשרויות בחירה יש אם ניתן לבחור פריט אחד מאחת הקטגוריות?',
   },
-  // questions.consts.ts
+
   {
     id: 'b81240ad-ed98-4a7e-9dea-7e922e884d19',
     en_text:
@@ -894,7 +886,7 @@ export const TRANSLATIONS: TranslationSeed[] = [
     he_text:
       'בית קפה מוכר 3 סוגי קפה ו־4 סוגי מאפה. כמה שילובים שונים של קפה ומאפה ניתן להזמין?',
   },
-  // questions.consts.ts
+
   {
     id: 'f4e15a03-0822-47ca-ab99-522416a28365',
     en_text:
@@ -902,14 +894,14 @@ export const TRANSLATIONS: TranslationSeed[] = [
     he_text:
       'נניח A ו־B הן קבוצות סופיות שמספר איבריהן הוא |A| = 3 ו־|B| = 4. כמה איברים מכילה המכפלה הקרטזית A × B?',
   },
-  // questions.consts.ts
+
   {
     id: 'E07E39B7-1EDE-4F5F-B988-01D92FED7BE3',
     en_text:
       'How many ways can you choose 3 students from a class of 10 students?',
     he_text: 'בכמה דרכים ניתן לבחור 3 תלמידים מתוך כיתה של 10 תלמידים?',
   },
-  // questions.consts.ts
+
   {
     id: '87bf2c16-3e44-4a93-b2c4-abead40c51f5',
     en_text:
@@ -917,7 +909,7 @@ export const TRANSLATIONS: TranslationSeed[] = [
     he_text:
       'בכמה דרכים ניתן לבחור 5 קלפים מחבילת קלפים רגילה כך שבדיוק 3 מתוכם יהיו לבבות?',
   },
-  // questions.consts.ts
+
   {
     id: '5f9313d3-6258-4fe1-87f6-21a39af92d29',
     en_text:
@@ -925,7 +917,7 @@ export const TRANSLATIONS: TranslationSeed[] = [
     he_text:
       'מתוך קבוצה של 7 גברים ו־5 נשים, כמה ועדות של 4 אפשר להרכיב שבהן יש לפחות 2 נשים?',
   },
-  // questions.consts.ts
+
   {
     id: '21885747-9432-4370-8901-0e0cf137297c',
     en_text:
@@ -933,7 +925,7 @@ export const TRANSLATIONS: TranslationSeed[] = [
     he_text:
       'בכמה דרכים ניתן לחלק 8 כדורים זהים ל־4 תיבות שונות כך שבכל תיבה יהיה לפחות כדור אחד?',
   },
-  // questions.consts.ts
+
   {
     id: 'f39a03e3-8807-462b-bb79-0a8f5d3afbc7',
     en_text:
@@ -941,7 +933,7 @@ export const TRANSLATIONS: TranslationSeed[] = [
     he_text:
       'כמה פתרונות במספרים שלמים אי‐שליליים קיימים למשוואה x₁ + x₂ + x₃ + x₄ = 15 כאשר כל xᵢ אינו עולה על 6?',
   },
-  // questions.consts.ts
+
   {
     id: '1631553c-3065-403d-a3aa-8e11f02c2120',
     en_text:
@@ -949,7 +941,7 @@ export const TRANSLATIONS: TranslationSeed[] = [
     he_text:
       'בכמה דרכים ניתן לבחור 4 דונאטס מתוך 6 סוגים אם מותר לבחור אותו סוג יותר מפעם אחת?',
   },
-  // questions.consts.ts
+
   {
     id: 'fb76aff9-70f7-42ef-9bc7-08bb69cf85e4',
     en_text:
@@ -957,7 +949,7 @@ export const TRANSLATIONS: TranslationSeed[] = [
     he_text:
       'כמה פתרונות במספרים שלמים אי־שליליים קיימים למשוואה x₁ + x₂ + x₃ = 7?',
   },
-  // questions.consts.ts
+
   {
     id: 'fcd1ca85-90f7-49ec-99ff-24f8cd89ec49',
     en_text:
@@ -965,14 +957,14 @@ export const TRANSLATIONS: TranslationSeed[] = [
     he_text:
       'בכמה דרכים ניתן לבחור 5 פירות מתוך תפוחים, בננות, תפוזים ואגסים כאשר מותר בחירה חוזרת?',
   },
-  // questions.consts.ts
+
   {
     id: 'd79898d6-6f3e-4611-ae25-41a96c2f706e',
     en_text:
       'In how many ways can 10 identical candies be distributed among 3 children?',
     he_text: 'בכמה דרכים ניתן לחלק 10 ממתקים זהים בין 3 ילדים?',
   },
-  // questions.consts.ts
+
   {
     id: 'c0ce7106-b885-4996-b313-55ab834c2dfe',
     en_text:
@@ -980,7 +972,7 @@ export const TRANSLATIONS: TranslationSeed[] = [
     he_text:
       'בכמה דרכים ניתן לבחור 8 כדורי גלידה מתוך 5 טעמים אם ניתן לבחור טעם יותר מפעם אחת?',
   },
-  // questions.consts.ts
+
   {
     id: '6d7e2c23-ba10-41e4-81bd-b4d586ef924e',
     en_text:
@@ -988,14 +980,14 @@ export const TRANSLATIONS: TranslationSeed[] = [
     he_text:
       'כמה פתרונות במספרים שלמים אי־שליליים קיימים למשוואה x₁ + x₂ + x₃ + x₄ = 6?',
   },
-  // questions.consts.ts
+
   {
     id: '962e9824-2aad-41eb-93f7-356629f205a3',
     en_text:
       'In how many ways can 15 identical balls be placed into 5 distinct boxes?',
     he_text: 'בכמה דרכים ניתן לשים 15 כדורים זהים ב־5 תיבות שונות?',
   },
-  // questions.consts.ts
+
   {
     id: '62f1128e-aa5b-440c-b989-5c8e21cc5c7a',
     en_text:
@@ -1003,7 +995,7 @@ export const TRANSLATIONS: TranslationSeed[] = [
     he_text:
       'בכמה דרכים ניתן לבחור 7 קאפקייקס מתוך 3 טעמים כאשר מותר בחירה חוזרת?',
   },
-  // questions.consts.ts
+
   {
     id: 'a65d4ab9-cf19-449c-8aac-8086634bd4f2',
     en_text:
@@ -1011,7 +1003,7 @@ export const TRANSLATIONS: TranslationSeed[] = [
     he_text:
       'בכמה דרכים ניתן לבחור 6 ממתקים מתוך 4 סוגים אם מותר לבחור אותו סוג יותר מפעם אחת?',
   },
-  // questions.consts.ts
+
   {
     id: '23087717-eaed-4612-b5ee-43e88794c30d',
     en_text:
@@ -1019,7 +1011,7 @@ export const TRANSLATIONS: TranslationSeed[] = [
     he_text:
       'כמה פתרונות במספרים שלמים אי־שליליים קיימים למשוואה x₁ + x₂ + x₃ = 12?',
   },
-  // questions.consts.ts
+
   {
     id: 'd8f724e9-9e1f-4656-ad77-4ade25848835',
     en_text:
@@ -1027,7 +1019,7 @@ export const TRANSLATIONS: TranslationSeed[] = [
     he_text:
       'כמה פתרונות במספרים שלמים אי־שליליים קיימים למשוואה x₁ + x₂ + x₃ + x₄ = 9?',
   },
-  // questions.consts.ts
+
   {
     id: '3f1cb82d-592e-4df9-a2bf-fcccdec55a6f',
     en_text:
@@ -1035,14 +1027,14 @@ export const TRANSLATIONS: TranslationSeed[] = [
     he_text:
       'בכמה דרכים ניתן לבחור 5 מטבעות מתוך 8 סוגים כאשר מותר בחירה חוזרת?',
   },
-  // questions.consts.ts
+
   {
     id: '48508123-6f76-4945-aa1c-1412d894f809',
     en_text:
       'In how many ways can 7 identical marbles be distributed into 2 boxes?',
     he_text: 'בכמה דרכים ניתן לחלק 7 גולות זהות לשתי תיבות?',
   },
-  // questions.consts.ts
+
   {
     id: 'c1c272c4-b2af-46fd-b5f8-8b291193c02b',
     en_text:
@@ -1050,7 +1042,7 @@ export const TRANSLATIONS: TranslationSeed[] = [
     he_text:
       'בכמה דרכים ניתן לבחור 3 כדורי גלידה מתוך 10 טעמים כאשר מותר בחירה חוזרת?',
   },
-  // questions.consts.ts
+
   {
     id: '9bba34bf-e461-44be-b76f-f398155a3911',
     en_text:
@@ -1058,7 +1050,7 @@ export const TRANSLATIONS: TranslationSeed[] = [
     he_text:
       'כמה פתרונות במספרים שלמים אי־שליליים קיימים למשוואה x₁ + x₂ + x₃ + x₄ + x₅ = 8?',
   },
-  // questions.consts.ts
+
   {
     id: '9fe79279-2cc8-4531-b892-2c5a4daebb23',
     en_text:
@@ -1066,14 +1058,14 @@ export const TRANSLATIONS: TranslationSeed[] = [
     he_text:
       'בכמה דרכים ניתן לבחור 9 שירים מתוך 5 סגנונות אם ניתן לבחור אותו סגנון יותר מפעם אחת?',
   },
-  // questions.consts.ts
+
   {
     id: '23979268-a195-4e17-b8bf-3b071c664206',
     en_text:
       'In how many ways can 11 identical pencils be distributed among 4 students?',
     he_text: 'בכמה דרכים ניתן לחלק 11 עפרונות זהים בין 4 תלמידים?',
   },
-  // questions.consts.ts
+
   {
     id: '913e8191-9320-4b00-8087-c77b84d16012',
     en_text:
@@ -1081,7 +1073,7 @@ export const TRANSLATIONS: TranslationSeed[] = [
     he_text:
       'בכמה דרכים ניתן לבחור 4 אותיות מתוך 7 אותיות שונות כאשר מותר בחירה חוזרת?',
   },
-  // questions.consts.ts
+
   {
     id: '32d50646-3dde-4762-961b-d1d1b15a4c1a',
     en_text:
@@ -1089,7 +1081,7 @@ export const TRANSLATIONS: TranslationSeed[] = [
     he_text:
       'כמה פתרונות במספרים שלמים אי־שליליים קיימים למשוואה x₁ + x₂ + x₃ + x₄ + x₅ + x₆ = 5?',
   },
-  // questions.consts.ts
+
   {
     id: '190e3057-0c8f-4d44-a387-b216e8632ede',
     en_text:
@@ -1097,7 +1089,7 @@ export const TRANSLATIONS: TranslationSeed[] = [
     he_text:
       'בכמה דרכים ניתן לבחור 2 פריטים מתוך 6 סוגים כאשר מותר בחירה חוזרת?',
   },
-  // questions.consts.ts
+
   {
     id: 'D9B273B8-4F71-4C1D-994F-DDA7292001BD',
     en_text:
@@ -1105,33 +1097,33 @@ export const TRANSLATIONS: TranslationSeed[] = [
     he_text:
       'בכמה דרכים ניתן להושיב 5 בנים ו-5 בנות בשורה כך שאף שתי בנות לא תשבנה יחד?',
   },
-  // questions.consts.ts
+
   {
     id: 'd4d867eb-48cc-45f6-970a-e8d54bdb39e9',
     en_text: 'How many ways can 5 distinct objects be arranged in a row?',
     he_text: 'כמה אפשרויות לסדר 5 עצמים שונים בשורה?',
   },
-  // questions.consts.ts
+
   {
     id: 'eaaa76b5-0c41-44e0-8d6f-c2f03b7fe196',
     en_text:
       'How many 3-letter arrangements can be formed from A, B, C, D without repetition?',
     he_text: 'כמה סידורים בני 3 אותיות ניתן ליצור מהאותיות A,B,C,D ללא חזרה?',
   },
-  // questions.consts.ts
+
   {
     id: 'e272682c-6a21-4761-9309-72fad15c33b3',
     en_text: 'How many ways can 4 books be arranged on a shelf?',
     he_text: 'כמה דרכים קיימות לסדר 4 ספרים על מדף?',
   },
-  // questions.consts.ts
+
   {
     id: '9e876f30-59e2-4b8e-81ab-5186dc4d1211',
     en_text:
       'In how many distinct ways can 5 people sit around a circular table?',
     he_text: 'בכמה דרכים שונות יכולים 5 אנשים לשבת סביב שולחן עגול?',
   },
-  // questions.consts.ts
+
   {
     id: '1b406d77-ef11-4bdd-bf00-86171c667d7c',
     en_text:
@@ -1139,14 +1131,14 @@ export const TRANSLATIONS: TranslationSeed[] = [
     he_text:
       'כמה מספרים זוגיים בני 4 ספרות ניתן להרכיב מהספרות 1,2,3,4 ללא חזרות?',
   },
-  // questions.consts.ts
+
   {
     id: '07e38cca-7219-46ee-b9c0-ff5f56afd1d6',
     en_text:
       'In how many ways can 8 runners finish a race if ties are not allowed?',
     he_text: 'בכמה אופנים יכולים 8 רצים לסיים מרוץ ללא תיקו?',
   },
-  // questions.consts.ts
+
   {
     id: 'dde375a5-44af-433d-be3c-1c0a8aeb6570',
     en_text:
@@ -1154,43 +1146,43 @@ export const TRANSLATIONS: TranslationSeed[] = [
     he_text:
       'כמה מספרים בני 5 ספרות הגדולים מ-30000 ניתן ליצור מהספרות 1-5 ללא חזרות?',
   },
-  // questions.consts.ts
+
   {
     id: 'ab92366c-e66f-457a-9619-62439a063060',
     en_text: 'Is zero an even number',
     he_text: 'האם אפס הוא מספר זוגי',
   },
-  // questions.consts.ts
+
   {
     id: '3774b231-66e2-42b5-964b-a7ca3cffd565',
     en_text: 'What is the square root of 144',
     he_text: 'מהו השורש הריבועי של 144',
   },
-  // questions.consts.ts
+
   {
     id: '627d6bc0-5764-4b99-bdca-abdbacd5a82c',
     en_text: 'Describe your favorite study technique',
     he_text: 'תאר את שיטת הלמידה המועדפת עליך',
   },
-  // questions.consts.ts
+
   {
     id: '3eed2bf4-2068-4492-b0a1-d6230df46d99',
     en_text: 'How many integers from 1 to 100 are divisible by 2 or 5?',
     he_text: 'כמה מספרים שלמים בין 1 ל-100 מתחלקים ב-2 או ב-5?',
   },
-  // questions.consts.ts
+
   {
     id: '67cb3992-ad01-4a69-9738-1eacf9bd0985',
     en_text: 'How many integers from 1 to 100 are divisible by 3 or 7?',
     he_text: 'כמה מספרים שלמים בין 1 ל-100 מתחלקים ב-3 או ב-7?',
   },
-  // questions.consts.ts
+
   {
     id: '5f85faa1-6351-413d-805b-4791490e802c',
     en_text: 'How many integers from 1 to 200 are divisible by 3 or 5 or 7?',
     he_text: 'כמה מספרים שלמים בין 1 ל-200 מתחלקים ב-3 או ב-5 או ב-7?',
   },
-  // questions.consts.ts
+
   {
     id: 'e5bcbc7d-dbc1-4e25-aff7-742ad9c64cb2',
     en_text:
@@ -1198,19 +1190,19 @@ export const TRANSLATIONS: TranslationSeed[] = [
     he_text:
       '40 לומדים מתמטיקה 50 פיזיקה 60 מדעי המחשב 20 לומדים מתמטיקה ופיזיקה 25 מתמטיקה ומדעי המחשב 30 פיזיקה ומדעי המחשב ו-5 לומדים את שלושת המקצועות כמה סטודנטים לומדים לפחות מקצוע אחד?',
   },
-  // questions.consts.ts
+
   {
     id: '201abf55-c8fb-4b41-ab80-b373c958a084',
     en_text: 'How many integers from 1 to 1000 are divisible by 3 or 4?',
     he_text: 'כמה מספרים שלמים בין 1 ל-1000 מתחלקים ב-3 או ב-4?',
   },
-  // questions.consts.ts
+
   {
     id: '74700c15-53ae-4a51-b554-ecafeb5b6840',
     en_text: 'How many three digit numbers are multiples of 2 or 5?',
     he_text: 'כמה מספרים בני שלוש ספרות הם כפולות של 2 או 5?',
   },
-  // questions.consts.ts
+
   {
     id: 'b7c0aefb-a927-4452-bc73-65d772e3da25',
     en_text:
@@ -1218,44 +1210,44 @@ export const TRANSLATIONS: TranslationSeed[] = [
     he_text:
       '100 אוהבים קפה 80 תה 60 מיץ 30 אוהבים קפה ותה 25 קפה ומיץ 20 תה ומיץ ו-10 אוהבים את כל שלושת המשקאות כמה אנשים אוהבים לפחות משקה אחד?',
   },
-  // questions.consts.ts
+
   {
     id: 'bdf204a0-0e77-46e1-b6e5-5002f7957a94',
     en_text: 'How many integers from 1 to 100 are divisible by 2 or 3 or 5?',
     he_text: 'כמה מספרים שלמים בין 1 ל-100 מתחלקים ב-2 או ב-3 או ב-5?',
   },
-  // questions.consts.ts
+
   {
     id: 'ef83ce26-fcfc-481d-a35a-96267fc5c3ea',
     en_text:
       'How many permutations of the word APPLE start with A or end with E?',
     he_text: 'כמה סידורים של המילה APPLE מתחילים באות A או מסתיימים באות E?',
   },
-  // questions.consts.ts
+
   {
     id: '80ecc9bb-afba-4377-8a64-cb95495ef4b8',
     en_text: 'How many integers from 1 to 60 are not divisible by 2 or 3?',
     he_text: 'כמה מספרים שלמים בין 1 ל-60 אינם מתחלקים ב-2 או ב-3?',
   },
-  // questions.consts.ts
+
   {
     id: 'ef7e1d80-c1bf-4daf-a630-bb17cd366073',
     en_text: 'How many 8-bit strings contain at least one 0',
     he_text: 'כמה מחרוזות באורך 8 מכילות לפחות אפס אחד',
   },
-  // questions.consts.ts
+
   {
     id: 'bd4445f4-6a67-4cbe-890c-2df27269c47d',
     en_text: 'How many four digit numbers contain at least one digit 7',
     he_text: 'כמה מספרים בני ארבע ספרות מכילים לפחות ספרה אחת 7',
   },
-  // questions.consts.ts
+
   {
     id: '19f79c58-69ed-418c-8ff5-0fd9a506437f',
     en_text: 'How many 6-letter strings from {A,B,C,D} contain at least one A',
     he_text: 'כמה מחרוזות באורך 6 מתוך {A,B,C,D} מכילות לפחות A אחת',
   },
-  // questions.consts.ts
+
   {
     id: 'b7dbccce-a488-4a77-874c-c9d4f555d19d',
     en_text:
@@ -1263,104 +1255,104 @@ export const TRANSLATIONS: TranslationSeed[] = [
     he_text:
       'כמה ועדות של ארבעה מתוך עשרה סטודנטים כוללות לפחות אחד משני סטודנטים מסוימים',
   },
-  // questions.consts.ts
+
   {
     id: '9e2473e6-161c-406f-9b55-dbf7d40e5dea',
     en_text: 'How many permutations of ABCDE begin with a vowel',
     he_text: 'כמה סידורים של האותיות ABCDE מתחילים בתנועה',
   },
-  // questions.consts.ts
+
   {
     id: '32c59695-81d3-4235-b701-277e19bcf732',
     en_text: 'How many seven digit numbers have at least one digit 5',
     he_text: 'כמה מספרים בני שבע ספרות מכילים לפחות ספרה אחת 5',
   },
-  // questions.consts.ts
+
   {
     id: '5f557092-8bdc-443c-82dd-173197064bb7',
     en_text:
       'How many colorings of 4 balls with 3 colors are not monochromatic',
     he_text: 'כמה צביעות של ארבעה כדורים בשלושה צבעים שאינן חד צבעוניות',
   },
-  // questions.consts.ts
+
   {
     id: '740f7595-295c-4e51-8250-6754eb18f8ea',
     en_text:
       'How many 5-letter words from {A,B,C,D,E} have at least one repeated letter',
     he_text: 'כמה מילים באורך 5 מתוך {A,B,C,D,E} מכילות לפחות אות אחת שחוזרת',
   },
-  // questions.consts.ts
+
   {
     id: '3e5a2992-04db-463f-a8b1-8b9ff57426a0',
     en_text: 'How many 5-digit strings contain at least one 0',
     he_text: 'כמה מחרוזות בנות חמש ספרות מכילות לפחות אפס אחד',
   },
-  // questions.consts.ts
+
   {
     id: '6425ae2e-55ba-4fb0-ba94-63896bb5a549',
     en_text:
       'How many permutations of four distinct digits include the digit 0',
     he_text: 'כמה סידורים בני ארבע ספרות שונות כוללים את הספרה 0',
   },
-  // questions.consts.ts
+
   {
     id: '2ffad47c-642b-4c62-acd0-06cbdcc794fd',
     en_text:
       'How many 8-letter passwords over the lowercase English alphabet contain at least one vowel',
     he_text: 'כמה סיסמאות באורך 8 מאותיות לועזיות קטנות מכילות לפחות תנועה אחת',
   },
-  // questions.consts.ts
+
   {
     id: 'c184c555-8fe5-425f-aa46-06d67385cedf',
     en_text:
       'How many 4-letter strings from {A,B,C,D,E,F} contain at least one vowel',
     he_text: 'כמה מחרוזות באורך 4 מתוך {A,B,C,D,E,F} מכילות לפחות תנועה אחת',
   },
-  // questions.consts.ts
+
   {
     id: '5f73cded-f705-4cb1-9c83-bbe4edb5aa8f',
     en_text: 'How many three digit numbers have at least one repeated digit',
     he_text: 'כמה מספרים בני שלוש ספרות מכילים לפחות ספרה חוזרת אחת',
   },
-  // questions.consts.ts
+
   {
     id: 'babef5a8-53fd-42d7-b502-d7d5083439e5',
     en_text:
       'How many 5-card hands from a standard deck contain at least one ace',
     he_text: 'כמה ידיים של חמש קלפים מחבילה רגילה מכילות לפחות אס אחד',
   },
-  // questions.consts.ts
+
   {
     id: 'be678452-e71c-4c28-932b-592b751b559c',
     en_text: 'How many 7-bit strings contain at least one 1',
     he_text: 'כמה מחרוזות באורך 7 ביטים מכילות לפחות ספרה אחת 1',
   },
-  // questions.consts.ts
+
   {
     id: '7c17f31e-c1f9-4035-869f-e0b929e0122f',
     en_text: 'How many subsets of {1,...,10} contain at least one of 1 or 2',
     he_text: 'כמה תתי קבוצות של {1,...,10} מכילות לפחות את 1 או 2',
   },
-  // questions.consts.ts
+
   {
     id: '464013a2-9067-44f6-9423-f8b7ae0763ad',
     en_text:
       'How many permutations of numbers 1 through 5 have at least one fixed point',
     he_text: 'כמה תמורות של המספרים 1 עד 5 כוללות לפחות נקודת קיבוע אחת',
   },
-  // questions.consts.ts
+
   {
     id: '12388bcd-e3f3-4ee6-8447-d7c73adcc067',
     en_text: 'How many four digit numbers contain at least one even digit',
     he_text: 'כמה מספרים בני ארבע ספרות מכילים לפחות ספרה זוגית אחת',
   },
-  // questions.consts.ts
+
   {
     id: '62478899-7c30-4628-ae5a-2c39e5d78bc2',
     en_text: 'How many ternary strings of length 5 contain at least one 2',
     he_text: 'כמה מחרוזות באורך 5 בבסיס שלוש מכילות לפחות ספרה אחת 2',
   },
-  // questions.consts.ts
+
   {
     id: 'b391d164-beba-42e6-ac33-c39059bbee3b',
     en_text:
@@ -1368,13 +1360,13 @@ export const TRANSLATIONS: TranslationSeed[] = [
     he_text:
       'כמה סידורים של שלושה כדורים אדומים ושלושה כחולים בשורה מכילים לפחות זוג סמוך של כדורים באותו צבע',
   },
-  // questions.consts.ts
+
   {
     id: 'c1d6bbad-b174-4f06-8dbd-89aaac420be5',
     en_text: 'Yes',
     he_text: 'כן',
   },
-  // questions.consts.ts
+
   {
     id: '5ad96b46-8670-4368-858b-453472383bd2',
     en_text: 'No',
@@ -1637,7 +1629,7 @@ In the Faculty of Arts, you're not just learning about the world — you're lear
       "How many distinct permutations can be made from the letters of the word 'STATISTICS'?",
     he_text: "כמה תמורות שונות אפשר ליצור מהאותיות במילה 'STATISTICS'?",
   },
-  // questions.consts.ts
+
   {
     id: 'e3d93d41-3050-493a-8ad6-19105b04613f',
     en_text:
@@ -1758,7 +1750,7 @@ In the Faculty of Arts, you're not just learning about the world — you're lear
       "What is the value of the binomial coefficient C(24, 12) found in Pascal's Triangle?",
     he_text: 'מהו הערך של המקדם הבינומי C(24, 12) במשולש פסקל?',
   },
-  // questions.consts.ts
+
   {
     id: 'b0faab8f-eb6b-4cb2-ad14-30254ef179fc',
     en_text:
@@ -1766,7 +1758,7 @@ In the Faculty of Arts, you're not just learning about the world — you're lear
     he_text:
       'חנות ספרים מוכרת 5 ספרי סיפורת ו-7 ספרי עיון. כמה אפשרויות יש אם בוחרים ספר אחד מאחת הקטגוריות?',
   },
-  // questions.consts.ts
+
   {
     id: 'cdeaf3e0-d9db-44c7-9aad-0d974e6ea546',
     en_text:
@@ -1774,7 +1766,7 @@ In the Faculty of Arts, you're not just learning about the world — you're lear
     he_text:
       'חנות בגדים מציעה 4 חולצות ו-6 מכנסיים. כמה פריטים ניתן לבחור אם בוחרים חולצה או מכנסיים?',
   },
-  // questions.consts.ts
+
   {
     id: '65b9fa9f-8a10-4a5a-9400-6f910708ced2',
     en_text:
@@ -1782,7 +1774,7 @@ In the Faculty of Arts, you're not just learning about the world — you're lear
     he_text:
       'בספרייה יש 8 מגזינים באנגלית ו-5 בעברית. כמה מגזינים ניתן להשאיל אם בוחרים בשפה אחת?',
   },
-  // questions.consts.ts
+
   {
     id: '96f33cd2-c9a5-4c60-8ffe-0d21c4fa04c4',
     en_text:
@@ -1790,7 +1782,7 @@ In the Faculty of Arts, you're not just learning about the world — you're lear
     he_text:
       'בתפריט בית הקפה יש 6 משקאות חמים ו-3 משקאות קרים. כמה אפשרויות יש אם ניתן לבחור משקה אחד מאחת הקטגוריות?',
   },
-  // questions.consts.ts
+
   {
     id: '602fdc46-93dd-416e-bb3c-fc8badd26251',
     en_text:
@@ -1798,7 +1790,7 @@ In the Faculty of Arts, you're not just learning about the world — you're lear
     he_text:
       'אוניברסיטה מציעה 5 שיעורי בוקר ו-4 שיעורי ערב. כמה שיעורים ניתן לבחור אם מוגבלים למועד אחד?',
   },
-  // questions.consts.ts
+
   {
     id: '5201f907-d004-4932-98a3-3ecd2ef71ad9',
     en_text:
@@ -1806,7 +1798,7 @@ In the Faculty of Arts, you're not just learning about the world — you're lear
     he_text:
       'בכנס טכנולוגיה יש 7 סדנאות ביום הראשון ו-5 ביום השני. כמה סדנאות ניתן להשתתף אם מגיעים ליום אחד בלבד?',
   },
-  // questions.consts.ts
+
   {
     id: '28ac3388-d73e-414e-83d9-d92aa9d82a61',
     en_text:
@@ -1814,7 +1806,7 @@ In the Faculty of Arts, you're not just learning about the world — you're lear
     he_text:
       'תיאטרון מקרין 3 קומדיות ו-5 דרמות. כמה סרטים ניתן לצפות אם בוחרים מז׳אנר אחד?',
   },
-  // questions.consts.ts
+
   {
     id: '275e3588-98b0-424a-b6f3-ef2958150009',
     en_text:
@@ -1822,7 +1814,7 @@ In the Faculty of Arts, you're not just learning about the world — you're lear
     he_text:
       'סוכנות נסיעות מציעה 4 חבילות בארץ ו-6 חבילות לחו״ל. כמה חבילות זמינות אם בוחרים רק אחת?',
   },
-  // questions.consts.ts
+
   {
     id: '65165ce6-c6cd-438e-8660-dcf2105f9c59',
     en_text:
@@ -1830,7 +1822,7 @@ In the Faculty of Arts, you're not just learning about the world — you're lear
     he_text:
       'מועדון ספורט מציע 5 פעילויות בתוך מבנה ו-4 פעילויות חוץ. כמה פעילויות ניתן לבחור אם משתתפים רק באחת?',
   },
-  // questions.consts.ts
+
   {
     id: '1a4f5e63-7e43-4ee6-b07a-be5c15cd7366',
     en_text:
@@ -1838,7 +1830,7 @@ In the Faculty of Arts, you're not just learning about the world — you're lear
     he_text:
       'פסטיבל מוזיקה מציג 6 להקות רוק ו-2 להקות ג׳אז. כמה להקות ניתן לראות אם בוחרים ז׳אנר אחד?',
   },
-  // questions.consts.ts
+
   {
     id: '23122bf9-a9b8-413e-a332-892d419017c4',
     en_text:
@@ -1846,7 +1838,7 @@ In the Faculty of Arts, you're not just learning about the world — you're lear
     he_text:
       'חנות מכולת מוכרת 7 סוגי פירות ו-4 סוגי ירקות. כמה אפשרויות יש אם קונים פריט אחד מאחת הקבוצות?',
   },
-  // questions.consts.ts
+
   {
     id: '2b6cba5a-27dc-4e02-8e90-7a3ca6490515',
     en_text:
@@ -1854,7 +1846,7 @@ In the Faculty of Arts, you're not just learning about the world — you're lear
     he_text:
       'מוזיאון מציע 2 סיורים מודרכים באנגלית ו-3 בספרדית. כמה סיורים יכול מבקר לקחת אם הוא בוחר שפה אחת?',
   },
-  // questions.consts.ts
+
   {
     id: 'efc49f76-65ac-4f41-8329-17b055ff654f',
     en_text:
@@ -1862,7 +1854,7 @@ In the Faculty of Arts, you're not just learning about the world — you're lear
     he_text:
       'בפארק יש 5 אזורי פיקניק ו-3 מגרשי משחקים. כמה מקומות יכולה משפחה לבחור אם מבקרת רק באחד?',
   },
-  // questions.consts.ts
+
   {
     id: 'e68b7607-efea-4b4c-a677-4a63db960f7a',
     en_text:
@@ -1870,7 +1862,7 @@ In the Faculty of Arts, you're not just learning about the world — you're lear
     he_text:
       'בפלטפורמת קורסים מקוונת יש 4 קורסי מתמטיקה ו-5 קורסי מדע. כמה קורסים יכול סטודנט להירשם אם בוחר מקצוע אחד?',
   },
-  // questions.consts.ts
+
   {
     id: 'e6690c2e-0fc7-404d-a71d-d77845910b54',
     en_text:
@@ -1878,7 +1870,7 @@ In the Faculty of Arts, you're not just learning about the world — you're lear
     he_text:
       'חנות ספרים מוכרת 6 יומנים בכריכה קשה ו-3 בכריכה רכה. כמה יומנים ניתן לבחור אם בוחרים סוג אחד?',
   },
-  // questions.consts.ts
+
   {
     id: '30da94db-17de-4218-b041-f4caf651f7be',
     en_text:
@@ -1886,7 +1878,7 @@ In the Faculty of Arts, you're not just learning about the world — you're lear
     he_text:
       'חדר כושר מקיים 3 שיעורי יוגה בבוקר ו-4 בערב. כמה שיעורים זמינים אם משתתפים רק באחד?',
   },
-  // questions.consts.ts
+
   {
     id: '0dec8af3-f8d6-4e8b-ba1e-a7059b78174e',
     en_text:
@@ -1894,7 +1886,7 @@ In the Faculty of Arts, you're not just learning about the world — you're lear
     he_text:
       'חנות חיות מחזיקה 5 גזעי כלבים ו-2 גזעי חתולים. כמה אפשרויות חיות זמינות אם מאמצים חיה אחת?',
   },
-  // questions.consts.ts
+
   {
     id: 'fa2a7e90-3615-498c-8d8f-e958ffde4c51',
     en_text:
@@ -1902,7 +1894,7 @@ In the Faculty of Arts, you're not just learning about the world — you're lear
     he_text:
       'ביריד מדע מוצגים 4 פרויקטים בפיזיקה ו-5 בכימיה. כמה פרויקטים יכול מבקר לראות אם מתמקד בנושא אחד?',
   },
-  // questions.consts.ts
+
   {
     id: '6b8fcbdf-b0a2-42eb-a9b1-161f7f92f7ac',
     en_text:
@@ -1910,7 +1902,7 @@ In the Faculty of Arts, you're not just learning about the world — you're lear
     he_text:
       'חנות מציעה 6 סוגי מנורות ו-4 סוגי כיסאות. כמה פריטים יכול לקוח לבחור אם קונה רק אחד?',
   },
-  // questions.consts.ts
+
   {
     id: '1f8f28f2-7d5d-4598-a447-930ef4c2147b',
     en_text:
@@ -1918,124 +1910,144 @@ In the Faculty of Arts, you're not just learning about the world — you're lear
     he_text:
       'מסעדה מציעה 3 מנות טבעוניות ו-6 מנות שאינן טבעוניות. כמה אפשרויות ארוחה קיימות אם מזמינים מנה אחת?',
   },
-  // questions.consts.ts
+
   {
     id: 'aabf8758-d93e-4e54-a49c-1d515976a64d',
-    en_text: 'How many distinct permutations can be formed from the letters of "LEVEL"?',
+    en_text:
+      'How many distinct permutations can be formed from the letters of "LEVEL"?',
     he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "LEVEL"?',
   },
-  // questions.consts.ts
+
   {
     id: 'ba29646f-67d7-4c09-92b2-d64eaff717b5',
-    en_text: 'How many distinct permutations can be formed from the letters of "BALLOON"?',
+    en_text:
+      'How many distinct permutations can be formed from the letters of "BALLOON"?',
     he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "BALLOON"?',
   },
-  // questions.consts.ts
+
   {
     id: 'fe4b0bac-e929-4a78-90e1-34b51de33c21',
-    en_text: 'How many distinct permutations can be formed from the letters of "SUCCESS"?',
+    en_text:
+      'How many distinct permutations can be formed from the letters of "SUCCESS"?',
     he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "SUCCESS"?',
   },
-  // questions.consts.ts
+
   {
     id: 'ab17462a-7c93-493b-b7a2-51c30c382d64',
-    en_text: 'How many distinct permutations can be formed from the letters of "BOOKKEEPER"?',
+    en_text:
+      'How many distinct permutations can be formed from the letters of "BOOKKEEPER"?',
     he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "BOOKKEEPER"?',
   },
-  // questions.consts.ts
+
   {
     id: '237d697b-3b2e-4516-98e2-3270133d2f85',
-    en_text: 'How many distinct permutations can be formed from the letters of "BANANA"?',
+    en_text:
+      'How many distinct permutations can be formed from the letters of "BANANA"?',
     he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "BANANA"?',
   },
-  // questions.consts.ts
+
   {
     id: '9a1548f9-a17d-487b-8a43-8fd45f7680d4',
-    en_text: 'How many distinct permutations can be formed from the letters of "MISSISSIPPI"?',
+    en_text:
+      'How many distinct permutations can be formed from the letters of "MISSISSIPPI"?',
     he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "MISSISSIPPI"?',
   },
-  // questions.consts.ts
+
   {
     id: 'd87423c1-f864-436a-ab0b-9f0c2d918acb',
-    en_text: 'How many distinct permutations can be formed from the letters of "ABRACADABRA"?',
+    en_text:
+      'How many distinct permutations can be formed from the letters of "ABRACADABRA"?',
     he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "ABRACADABRA"?',
   },
-  // questions.consts.ts
+
   {
     id: 'c3362060-fd2b-48c4-9706-0483203804e3',
-    en_text: 'How many distinct permutations can be formed from the letters of "COMMITTEE"?',
+    en_text:
+      'How many distinct permutations can be formed from the letters of "COMMITTEE"?',
     he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "COMMITTEE"?',
   },
-  // questions.consts.ts
+
   {
     id: 'b56d8c45-8bf1-4c60-bcbb-356f9f510219',
-    en_text: 'How many distinct permutations can be formed from the letters of "TOMATO"?',
+    en_text:
+      'How many distinct permutations can be formed from the letters of "TOMATO"?',
     he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "TOMATO"?',
   },
-  // questions.consts.ts
+
   {
     id: '5adc6247-9b27-4a3d-b129-3120f4ea11ef',
-    en_text: 'How many distinct permutations can be formed from the letters of "STATISTICS"?',
+    en_text:
+      'How many distinct permutations can be formed from the letters of "STATISTICS"?',
     he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "STATISTICS"?',
   },
-  // questions.consts.ts
+
   {
     id: '6efa549c-7c42-4b96-92df-9838aafc0055',
-    en_text: 'How many distinct permutations can be formed from the letters of "LETTER"?',
+    en_text:
+      'How many distinct permutations can be formed from the letters of "LETTER"?',
     he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "LETTER"?',
   },
-  // questions.consts.ts
+
   {
     id: '18886c3a-c65a-4cc1-9f9e-8860ab46b41c',
-    en_text: 'How many distinct permutations can be formed from the letters of "PEPPER"?',
+    en_text:
+      'How many distinct permutations can be formed from the letters of "PEPPER"?',
     he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "PEPPER"?',
   },
-  // questions.consts.ts
+
   {
     id: 'f27e83c6-1ba1-49a1-affd-2b3e495a6810',
-    en_text: 'How many distinct permutations can be formed from the letters of "REPETITION"?',
+    en_text:
+      'How many distinct permutations can be formed from the letters of "REPETITION"?',
     he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "REPETITION"?',
   },
-  // questions.consts.ts
+
   {
     id: '75bb7259-3ace-4718-81c1-4998a65dab65',
-    en_text: 'How many distinct permutations can be formed from the letters of "INDIVISIBILITY"?',
+    en_text:
+      'How many distinct permutations can be formed from the letters of "INDIVISIBILITY"?',
     he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "INDIVISIBILITY"?',
   },
-  // questions.consts.ts
+
   {
     id: '53ea50b1-c820-429b-a13e-e3f83d7e9e80',
-    en_text: 'How many distinct permutations can be formed from the letters of "BASEBALL"?',
+    en_text:
+      'How many distinct permutations can be formed from the letters of "BASEBALL"?',
     he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "BASEBALL"?',
   },
-  // questions.consts.ts
+
   {
     id: '9342dba7-cf94-406b-b65c-4b91e60ecf48',
-    en_text: 'How many distinct permutations can be formed from the letters of "HALLELUJAH"?',
+    en_text:
+      'How many distinct permutations can be formed from the letters of "HALLELUJAH"?',
     he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "HALLELUJAH"?',
   },
-  // questions.consts.ts
+
   {
     id: '827ab7b0-b8a5-41f3-ac67-1d58e95b382d',
-    en_text: 'How many distinct permutations can be formed from the letters of "PROGRAMMER"?',
+    en_text:
+      'How many distinct permutations can be formed from the letters of "PROGRAMMER"?',
     he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "PROGRAMMER"?',
   },
-  // questions.consts.ts
+
   {
     id: '76057411-8100-4138-83d6-3b4fa0b90c59',
-    en_text: 'How many distinct permutations can be formed from the letters of "ASSESSMENT"?',
+    en_text:
+      'How many distinct permutations can be formed from the letters of "ASSESSMENT"?',
     he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "ASSESSMENT"?',
   },
-  // questions.consts.ts
+
   {
     id: '8a12359c-9d82-4860-bec1-a536fe2732b7',
-    en_text: 'How many distinct permutations can be formed from the letters of "PARALLEL"?',
+    en_text:
+      'How many distinct permutations can be formed from the letters of "PARALLEL"?',
     he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "PARALLEL"?',
   },
-  // questions.consts.ts
+
   {
     id: '9f5d1a71-17dc-4a2c-9f9e-72436d37fe87',
-    en_text: 'How many distinct permutations can be formed from the letters of "CANNON"?',
+    en_text:
+      'How many distinct permutations can be formed from the letters of "CANNON"?',
     he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "CANNON"?',
   },
 ];

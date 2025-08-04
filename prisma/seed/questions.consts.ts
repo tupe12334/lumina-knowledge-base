@@ -269,23 +269,7 @@ export const QUESTIONS: QuestionSeedData[] = [
       },
     ],
   },
-  {
-    id: '6a8b4690-6daf-44f4-b58d-23ff1ff8d51d',
-    translationId: 'd5f0c74e-7fa6-442d-9339-635eafd81a40',
-    text: {
-      en_text:
-        'The question involves sequences denoted by aₙ with letters A, B, C, D, E where:\n- A and also B must contain exactly one letter from C or D\n- For example: C,D,E,AC,BC,BDAA are valid, but AB,AEC,ABC,BDCAC are not valid\nThe question has multiple parts worth 7, 7, and 13 points',
-      he_text:
-        'השאלה כוללת רצפות המסומנות בaₙ עם אותיות A, B, C, D, E כאשר:\n- A וגם B חייבים להכיל בדיוק אות אחת מ-C או D\n- לדוגמה: C,D,E,AC,BC,BDAA תקפות, אך AB,AEC,ABC,BDCAC אינן תקפות\nהשאלה כוללת מספר חלקים בשווי 7, 7, ו-13 נקודות',
-    },
-    type: QuestionType.void,
-    moduleId: '2b8d7f9c-3a4e-4b5f-8c9d-1e2f3a4b5c6d',
-    answers: [
-      {
-        id: 'A4-2024-EXAM-SEQUENCES-LETTERS',
-      },
-    ],
-  },
+
   {
     id: '31d7aac7-1e5d-42c1-bcf8-f08fc0858fc9',
     translationId: 'ca3b16e0-f0f9-4fc3-b9d8-e14590eb2d8e',
@@ -2905,20 +2889,21 @@ export const QUESTIONS: QuestionSeedData[] = [
     validationStatus: QuestionValidationStatus.ai_generated,
     moduleId: '82da973e-a84a-44f4-b33f-bcf907961eb3',
     answers: [
-  {
-    id: '4a61612b-9fe1-45d0-8526-3c7703858700',
-    numberAnswer: {
-      id: 'b2eb2cc0-88dd-431c-903c-65a283d65d64',
-      value: 2704156,
-    },
+      {
+        id: '4a61612b-9fe1-45d0-8526-3c7703858700',
+        numberAnswer: {
+          id: 'b2eb2cc0-88dd-431c-903c-65a283d65d64',
+          value: 2704156,
+        },
+      },
+    ],
   },
-],
-},
   {
     id: 'e2a99c54-dce2-4abf-b873-ce05a23d6904',
     translationId: 'aabf8758-d93e-4e54-a49c-1d515976a64d',
     text: {
-      en_text: 'How many distinct permutations can be formed from the letters of "LEVEL"?',
+      en_text:
+        'How many distinct permutations can be formed from the letters of "LEVEL"?',
       he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "LEVEL"?',
     },
     type: QuestionType.value,
@@ -2938,7 +2923,8 @@ export const QUESTIONS: QuestionSeedData[] = [
     id: '6be2c824-0394-4e7b-a885-e9f101bc9429',
     translationId: 'ba29646f-67d7-4c09-92b2-d64eaff717b5',
     text: {
-      en_text: 'How many distinct permutations can be formed from the letters of "BALLOON"?',
+      en_text:
+        'How many distinct permutations can be formed from the letters of "BALLOON"?',
       he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "BALLOON"?',
     },
     type: QuestionType.value,
@@ -2958,7 +2944,8 @@ export const QUESTIONS: QuestionSeedData[] = [
     id: '721b116a-8c30-40f6-8d0b-800c6c971c74',
     translationId: 'fe4b0bac-e929-4a78-90e1-34b51de33c21',
     text: {
-      en_text: 'How many distinct permutations can be formed from the letters of "SUCCESS"?',
+      en_text:
+        'How many distinct permutations can be formed from the letters of "SUCCESS"?',
       he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "SUCCESS"?',
     },
     type: QuestionType.value,
@@ -2978,7 +2965,8 @@ export const QUESTIONS: QuestionSeedData[] = [
     id: '830c9066-5f82-4e11-b1f6-5b372c9bad51',
     translationId: 'ab17462a-7c93-493b-b7a2-51c30c382d64',
     text: {
-      en_text: 'How many distinct permutations can be formed from the letters of "BOOKKEEPER"?',
+      en_text:
+        'How many distinct permutations can be formed from the letters of "BOOKKEEPER"?',
       he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "BOOKKEEPER"?',
     },
     type: QuestionType.value,
@@ -2998,7 +2986,8 @@ export const QUESTIONS: QuestionSeedData[] = [
     id: '57bb3d11-c0ed-42b7-8a47-a506e747b8b0',
     translationId: '237d697b-3b2e-4516-98e2-3270133d2f85',
     text: {
-      en_text: 'How many distinct permutations can be formed from the letters of "BANANA"?',
+      en_text:
+        'How many distinct permutations can be formed from the letters of "BANANA"?',
       he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "BANANA"?',
     },
     type: QuestionType.value,
@@ -3018,7 +3007,8 @@ export const QUESTIONS: QuestionSeedData[] = [
     id: '70f236db-e064-47c1-8932-1addccc2cf90',
     translationId: '9a1548f9-a17d-487b-8a43-8fd45f7680d4',
     text: {
-      en_text: 'How many distinct permutations can be formed from the letters of "MISSISSIPPI"?',
+      en_text:
+        'How many distinct permutations can be formed from the letters of "MISSISSIPPI"?',
       he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "MISSISSIPPI"?',
     },
     type: QuestionType.value,
@@ -3038,7 +3028,8 @@ export const QUESTIONS: QuestionSeedData[] = [
     id: '503986fa-775c-42ca-9f1e-d16bc0ec043a',
     translationId: 'd87423c1-f864-436a-ab0b-9f0c2d918acb',
     text: {
-      en_text: 'How many distinct permutations can be formed from the letters of "ABRACADABRA"?',
+      en_text:
+        'How many distinct permutations can be formed from the letters of "ABRACADABRA"?',
       he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "ABRACADABRA"?',
     },
     type: QuestionType.value,
@@ -3058,7 +3049,8 @@ export const QUESTIONS: QuestionSeedData[] = [
     id: '13958006-433b-4362-8a14-68f721e0af63',
     translationId: 'c3362060-fd2b-48c4-9706-0483203804e3',
     text: {
-      en_text: 'How many distinct permutations can be formed from the letters of "COMMITTEE"?',
+      en_text:
+        'How many distinct permutations can be formed from the letters of "COMMITTEE"?',
       he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "COMMITTEE"?',
     },
     type: QuestionType.value,
@@ -3078,7 +3070,8 @@ export const QUESTIONS: QuestionSeedData[] = [
     id: '646a17e1-ff64-44ea-8058-f4989d4b93cf',
     translationId: 'b56d8c45-8bf1-4c60-bcbb-356f9f510219',
     text: {
-      en_text: 'How many distinct permutations can be formed from the letters of "TOMATO"?',
+      en_text:
+        'How many distinct permutations can be formed from the letters of "TOMATO"?',
       he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "TOMATO"?',
     },
     type: QuestionType.value,
@@ -3098,7 +3091,8 @@ export const QUESTIONS: QuestionSeedData[] = [
     id: 'e21ee86d-3073-400d-9bd3-872fd1883740',
     translationId: '5adc6247-9b27-4a3d-b129-3120f4ea11ef',
     text: {
-      en_text: 'How many distinct permutations can be formed from the letters of "STATISTICS"?',
+      en_text:
+        'How many distinct permutations can be formed from the letters of "STATISTICS"?',
       he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "STATISTICS"?',
     },
     type: QuestionType.value,
@@ -3118,7 +3112,8 @@ export const QUESTIONS: QuestionSeedData[] = [
     id: '916a44ad-414a-4cb0-bb1a-3ac2dec17764',
     translationId: '6efa549c-7c42-4b96-92df-9838aafc0055',
     text: {
-      en_text: 'How many distinct permutations can be formed from the letters of "LETTER"?',
+      en_text:
+        'How many distinct permutations can be formed from the letters of "LETTER"?',
       he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "LETTER"?',
     },
     type: QuestionType.value,
@@ -3138,7 +3133,8 @@ export const QUESTIONS: QuestionSeedData[] = [
     id: '3eb245c5-c5c6-4bdf-959e-23f2dc91e5ef',
     translationId: '18886c3a-c65a-4cc1-9f9e-8860ab46b41c',
     text: {
-      en_text: 'How many distinct permutations can be formed from the letters of "PEPPER"?',
+      en_text:
+        'How many distinct permutations can be formed from the letters of "PEPPER"?',
       he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "PEPPER"?',
     },
     type: QuestionType.value,
@@ -3158,7 +3154,8 @@ export const QUESTIONS: QuestionSeedData[] = [
     id: 'a9008c59-3857-423e-ae40-875950cb2372',
     translationId: 'f27e83c6-1ba1-49a1-affd-2b3e495a6810',
     text: {
-      en_text: 'How many distinct permutations can be formed from the letters of "REPETITION"?',
+      en_text:
+        'How many distinct permutations can be formed from the letters of "REPETITION"?',
       he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "REPETITION"?',
     },
     type: QuestionType.value,
@@ -3178,7 +3175,8 @@ export const QUESTIONS: QuestionSeedData[] = [
     id: '8989e12a-1358-425a-b370-27e734b161de',
     translationId: '75bb7259-3ace-4718-81c1-4998a65dab65',
     text: {
-      en_text: 'How many distinct permutations can be formed from the letters of "INDIVISIBILITY"?',
+      en_text:
+        'How many distinct permutations can be formed from the letters of "INDIVISIBILITY"?',
       he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "INDIVISIBILITY"?',
     },
     type: QuestionType.value,
@@ -3198,7 +3196,8 @@ export const QUESTIONS: QuestionSeedData[] = [
     id: 'd28cdc03-a801-4ab8-bb2d-171814ebce17',
     translationId: '53ea50b1-c820-429b-a13e-e3f83d7e9e80',
     text: {
-      en_text: 'How many distinct permutations can be formed from the letters of "BASEBALL"?',
+      en_text:
+        'How many distinct permutations can be formed from the letters of "BASEBALL"?',
       he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "BASEBALL"?',
     },
     type: QuestionType.value,
@@ -3218,7 +3217,8 @@ export const QUESTIONS: QuestionSeedData[] = [
     id: '38847c2a-6b25-4c8e-8457-3242f316ce8a',
     translationId: '9342dba7-cf94-406b-b65c-4b91e60ecf48',
     text: {
-      en_text: 'How many distinct permutations can be formed from the letters of "HALLELUJAH"?',
+      en_text:
+        'How many distinct permutations can be formed from the letters of "HALLELUJAH"?',
       he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "HALLELUJAH"?',
     },
     type: QuestionType.value,
@@ -3238,7 +3238,8 @@ export const QUESTIONS: QuestionSeedData[] = [
     id: '388939fb-97cd-4a18-8f37-7f40cec42792',
     translationId: '827ab7b0-b8a5-41f3-ac67-1d58e95b382d',
     text: {
-      en_text: 'How many distinct permutations can be formed from the letters of "PROGRAMMER"?',
+      en_text:
+        'How many distinct permutations can be formed from the letters of "PROGRAMMER"?',
       he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "PROGRAMMER"?',
     },
     type: QuestionType.value,
@@ -3258,7 +3259,8 @@ export const QUESTIONS: QuestionSeedData[] = [
     id: '187163a2-a449-4581-afc0-c48f5edf8fe6',
     translationId: '76057411-8100-4138-83d6-3b4fa0b90c59',
     text: {
-      en_text: 'How many distinct permutations can be formed from the letters of "ASSESSMENT"?',
+      en_text:
+        'How many distinct permutations can be formed from the letters of "ASSESSMENT"?',
       he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "ASSESSMENT"?',
     },
     type: QuestionType.value,
@@ -3278,7 +3280,8 @@ export const QUESTIONS: QuestionSeedData[] = [
     id: '519d8b74-57a3-4307-9ecf-d1e13b4bcb3a',
     translationId: '8a12359c-9d82-4860-bec1-a536fe2732b7',
     text: {
-      en_text: 'How many distinct permutations can be formed from the letters of "PARALLEL"?',
+      en_text:
+        'How many distinct permutations can be formed from the letters of "PARALLEL"?',
       he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "PARALLEL"?',
     },
     type: QuestionType.value,
@@ -3298,7 +3301,8 @@ export const QUESTIONS: QuestionSeedData[] = [
     id: 'cb840bda-23ce-49ac-9127-9646ac0086cb',
     translationId: '9f5d1a71-17dc-4a2c-9f9e-72436d37fe87',
     text: {
-      en_text: 'How many distinct permutations can be formed from the letters of "CANNON"?',
+      en_text:
+        'How many distinct permutations can be formed from the letters of "CANNON"?',
       he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "CANNON"?',
     },
     type: QuestionType.value,
