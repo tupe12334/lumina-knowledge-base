@@ -1366,6 +1366,11 @@ exports[`seed snapshot > saves seeded data snapshot 1`] = `
     },
     {
       "createdAt": 1970-01-01T00:00:00.000Z,
+      "id": "a4d6a459-7406-40d6-bae8-2b27b26adb28",
+      "updatedAt": null,
+    },
+    {
+      "createdAt": 1970-01-01T00:00:00.000Z,
       "id": "96faa327-fae1-479a-907c-2e96ab8ee7cf",
       "updatedAt": null,
     },
@@ -2702,6 +2707,13 @@ exports[`seed snapshot > saves seeded data snapshot 1`] = `
       "createdAt": 1970-01-01T00:00:00.000Z,
       "id": "bd8947e7-bd42-4ea0-976b-639ec22fe2ea",
       "translationId": "7cd0a3cf-23ee-44fc-ab71-aa6493eb4219",
+      "updatedAt": null,
+    },
+    {
+      "blockId": "a4d6a459-7406-40d6-bae8-2b27b26adb28",
+      "createdAt": 1970-01-01T00:00:00.000Z,
+      "id": "a4d6a459-7406-40d6-bae8-2b27b26adb28",
+      "translationId": "eb656561-a030-482a-99d2-d648d7a4b6b1",
       "updatedAt": null,
     },
     {
@@ -7028,6 +7040,13 @@ The question has multiple parts worth 7, 7, and 13 points",
       "en_text": "Derangements",
       "he_text": "אי סדר מלא",
       "id": "4c031bcd-19fb-46d0-9f62-d7d8612c052f",
+      "updatedAt": null,
+    },
+    {
+      "createdAt": 1970-01-01T00:00:00.000Z,
+      "en_text": "Generating Functions",
+      "he_text": "פונקציות יוצרות",
+      "id": "eb656561-a030-482a-99d2-d648d7a4b6b1",
       "updatedAt": null,
     },
     {
