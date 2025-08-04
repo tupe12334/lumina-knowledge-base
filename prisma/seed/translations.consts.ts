@@ -1456,6 +1456,11 @@ export const TRANSLATIONS: TranslationSeed[] = [
     he_text: 'רקורסיה מטמטית',
   },
   {
+    id: '7cd0a3cf-23ee-44fc-ab71-aa6493eb4219',
+    en_text: 'Pigeonhole Principle',
+    he_text: 'עקרון שובך היונים',
+  },
+  {
     id: '1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d',
     en_text: 'Introduction to Logic',
     he_text: 'מבוא ללוגיקה',
