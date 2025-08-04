@@ -2905,11 +2905,411 @@ export const QUESTIONS: QuestionSeedData[] = [
     validationStatus: QuestionValidationStatus.ai_generated,
     moduleId: '82da973e-a84a-44f4-b33f-bcf907961eb3',
     answers: [
+  {
+    id: '4a61612b-9fe1-45d0-8526-3c7703858700',
+    numberAnswer: {
+      id: 'b2eb2cc0-88dd-431c-903c-65a283d65d64',
+      value: 2704156,
+    },
+  },
+],
+},
+  {
+    id: 'e2a99c54-dce2-4abf-b873-ce05a23d6904',
+    translationId: 'aabf8758-d93e-4e54-a49c-1d515976a64d',
+    text: {
+      en_text: 'How many distinct permutations can be formed from the letters of "LEVEL"?',
+      he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "LEVEL"?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: 'f2866b62-f4f6-4e22-8fcc-f4bd8bbdb275',
+    answers: [
       {
-        id: '4a61612b-9fe1-45d0-8526-3c7703858700',
+        id: 'c1880b46-588c-4b70-9312-0f5f6eb8120c',
         numberAnswer: {
-          id: 'b2eb2cc0-88dd-431c-903c-65a283d65d64',
-          value: 2704156,
+          id: 'd9e46f44-6022-46e7-8321-e839013ac784',
+          value: 30,
+        },
+      },
+    ],
+  },
+  {
+    id: '6be2c824-0394-4e7b-a885-e9f101bc9429',
+    translationId: 'ba29646f-67d7-4c09-92b2-d64eaff717b5',
+    text: {
+      en_text: 'How many distinct permutations can be formed from the letters of "BALLOON"?',
+      he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "BALLOON"?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: 'f2866b62-f4f6-4e22-8fcc-f4bd8bbdb275',
+    answers: [
+      {
+        id: '03d23b7a-9bdb-4729-bed8-9ea4290b4442',
+        numberAnswer: {
+          id: '008de857-f0c6-41b2-9da4-084debf0af36',
+          value: 1260,
+        },
+      },
+    ],
+  },
+  {
+    id: '721b116a-8c30-40f6-8d0b-800c6c971c74',
+    translationId: 'fe4b0bac-e929-4a78-90e1-34b51de33c21',
+    text: {
+      en_text: 'How many distinct permutations can be formed from the letters of "SUCCESS"?',
+      he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "SUCCESS"?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: 'f2866b62-f4f6-4e22-8fcc-f4bd8bbdb275',
+    answers: [
+      {
+        id: 'aa641226-96af-4d0f-82c7-046a3c471d20',
+        numberAnswer: {
+          id: '157a12bf-6771-49b2-ae85-c50f0ec65ef7',
+          value: 420,
+        },
+      },
+    ],
+  },
+  {
+    id: '830c9066-5f82-4e11-b1f6-5b372c9bad51',
+    translationId: 'ab17462a-7c93-493b-b7a2-51c30c382d64',
+    text: {
+      en_text: 'How many distinct permutations can be formed from the letters of "BOOKKEEPER"?',
+      he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "BOOKKEEPER"?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: 'f2866b62-f4f6-4e22-8fcc-f4bd8bbdb275',
+    answers: [
+      {
+        id: 'af15e5f9-1fc7-4ca4-bb1a-4b62b6a6de12',
+        numberAnswer: {
+          id: 'f8f0ad04-af65-410a-a4f8-13d547e608bd',
+          value: 151200,
+        },
+      },
+    ],
+  },
+  {
+    id: '57bb3d11-c0ed-42b7-8a47-a506e747b8b0',
+    translationId: '237d697b-3b2e-4516-98e2-3270133d2f85',
+    text: {
+      en_text: 'How many distinct permutations can be formed from the letters of "BANANA"?',
+      he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "BANANA"?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: 'f2866b62-f4f6-4e22-8fcc-f4bd8bbdb275',
+    answers: [
+      {
+        id: '6b609c9b-733a-4dfc-9496-f417f4121514',
+        numberAnswer: {
+          id: '49b2a257-ecb0-49e0-b44d-4feaeb2ae98a',
+          value: 60,
+        },
+      },
+    ],
+  },
+  {
+    id: '70f236db-e064-47c1-8932-1addccc2cf90',
+    translationId: '9a1548f9-a17d-487b-8a43-8fd45f7680d4',
+    text: {
+      en_text: 'How many distinct permutations can be formed from the letters of "MISSISSIPPI"?',
+      he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "MISSISSIPPI"?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: 'f2866b62-f4f6-4e22-8fcc-f4bd8bbdb275',
+    answers: [
+      {
+        id: '44c6aa88-dcd8-459b-a5d4-512a8de0c6f2',
+        numberAnswer: {
+          id: '367e7661-fe04-47c0-b68b-36690f51e162',
+          value: 34650,
+        },
+      },
+    ],
+  },
+  {
+    id: '503986fa-775c-42ca-9f1e-d16bc0ec043a',
+    translationId: 'd87423c1-f864-436a-ab0b-9f0c2d918acb',
+    text: {
+      en_text: 'How many distinct permutations can be formed from the letters of "ABRACADABRA"?',
+      he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "ABRACADABRA"?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: 'f2866b62-f4f6-4e22-8fcc-f4bd8bbdb275',
+    answers: [
+      {
+        id: 'c260309e-25b0-4227-b98f-657f106dde6c',
+        numberAnswer: {
+          id: '7933587b-8288-43a8-87c9-173da841f3a7',
+          value: 83160,
+        },
+      },
+    ],
+  },
+  {
+    id: '13958006-433b-4362-8a14-68f721e0af63',
+    translationId: 'c3362060-fd2b-48c4-9706-0483203804e3',
+    text: {
+      en_text: 'How many distinct permutations can be formed from the letters of "COMMITTEE"?',
+      he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "COMMITTEE"?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: 'f2866b62-f4f6-4e22-8fcc-f4bd8bbdb275',
+    answers: [
+      {
+        id: '4ea0cfb1-8a41-4b9f-af91-1dc46d86d717',
+        numberAnswer: {
+          id: 'abf15889-4f7e-4826-a098-5b112527ef80',
+          value: 45360,
+        },
+      },
+    ],
+  },
+  {
+    id: '646a17e1-ff64-44ea-8058-f4989d4b93cf',
+    translationId: 'b56d8c45-8bf1-4c60-bcbb-356f9f510219',
+    text: {
+      en_text: 'How many distinct permutations can be formed from the letters of "TOMATO"?',
+      he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "TOMATO"?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: 'f2866b62-f4f6-4e22-8fcc-f4bd8bbdb275',
+    answers: [
+      {
+        id: 'fdf646b2-397e-4fa6-bc7d-c2e3040274b1',
+        numberAnswer: {
+          id: '4865ae9f-0819-4d6b-929a-9fabd6cfd51e',
+          value: 180,
+        },
+      },
+    ],
+  },
+  {
+    id: 'e21ee86d-3073-400d-9bd3-872fd1883740',
+    translationId: '5adc6247-9b27-4a3d-b129-3120f4ea11ef',
+    text: {
+      en_text: 'How many distinct permutations can be formed from the letters of "STATISTICS"?',
+      he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "STATISTICS"?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: 'f2866b62-f4f6-4e22-8fcc-f4bd8bbdb275',
+    answers: [
+      {
+        id: '13dcec1f-eae9-4cc9-926a-de2b2a1722ff',
+        numberAnswer: {
+          id: 'f9d76d7e-d34b-4efd-9f77-661d714cb930',
+          value: 50400,
+        },
+      },
+    ],
+  },
+  {
+    id: '916a44ad-414a-4cb0-bb1a-3ac2dec17764',
+    translationId: '6efa549c-7c42-4b96-92df-9838aafc0055',
+    text: {
+      en_text: 'How many distinct permutations can be formed from the letters of "LETTER"?',
+      he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "LETTER"?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: 'f2866b62-f4f6-4e22-8fcc-f4bd8bbdb275',
+    answers: [
+      {
+        id: 'a9bcaab2-94eb-4a47-9050-6e5d3e55512e',
+        numberAnswer: {
+          id: '89c50544-5720-4b36-8c34-eb60406c9386',
+          value: 180,
+        },
+      },
+    ],
+  },
+  {
+    id: '3eb245c5-c5c6-4bdf-959e-23f2dc91e5ef',
+    translationId: '18886c3a-c65a-4cc1-9f9e-8860ab46b41c',
+    text: {
+      en_text: 'How many distinct permutations can be formed from the letters of "PEPPER"?',
+      he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "PEPPER"?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: 'f2866b62-f4f6-4e22-8fcc-f4bd8bbdb275',
+    answers: [
+      {
+        id: '5e5ae224-d748-44ae-bd52-60250f5074b1',
+        numberAnswer: {
+          id: '736bff57-5d85-4460-b625-0794b3b771ca',
+          value: 60,
+        },
+      },
+    ],
+  },
+  {
+    id: 'a9008c59-3857-423e-ae40-875950cb2372',
+    translationId: 'f27e83c6-1ba1-49a1-affd-2b3e495a6810',
+    text: {
+      en_text: 'How many distinct permutations can be formed from the letters of "REPETITION"?',
+      he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "REPETITION"?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: 'f2866b62-f4f6-4e22-8fcc-f4bd8bbdb275',
+    answers: [
+      {
+        id: '1dd53455-34d0-4d6a-8578-f5280d8bdb99',
+        numberAnswer: {
+          id: 'ed147009-23ac-4bac-ab34-9cacdfeb172a',
+          value: 453600,
+        },
+      },
+    ],
+  },
+  {
+    id: '8989e12a-1358-425a-b370-27e734b161de',
+    translationId: '75bb7259-3ace-4718-81c1-4998a65dab65',
+    text: {
+      en_text: 'How many distinct permutations can be formed from the letters of "INDIVISIBILITY"?',
+      he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "INDIVISIBILITY"?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: 'f2866b62-f4f6-4e22-8fcc-f4bd8bbdb275',
+    answers: [
+      {
+        id: '5cb21c69-f170-47fe-b51d-140e68d24608',
+        numberAnswer: {
+          id: '54c0abc4-4ba0-44ae-a425-f14d9e3da6be',
+          value: 121080960,
+        },
+      },
+    ],
+  },
+  {
+    id: 'd28cdc03-a801-4ab8-bb2d-171814ebce17',
+    translationId: '53ea50b1-c820-429b-a13e-e3f83d7e9e80',
+    text: {
+      en_text: 'How many distinct permutations can be formed from the letters of "BASEBALL"?',
+      he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "BASEBALL"?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: 'f2866b62-f4f6-4e22-8fcc-f4bd8bbdb275',
+    answers: [
+      {
+        id: '0a1d8b16-2e0b-4b90-b1c2-fe007a3d8a7d',
+        numberAnswer: {
+          id: '7577b8fe-1b21-4662-b460-ba881eef7241',
+          value: 5040,
+        },
+      },
+    ],
+  },
+  {
+    id: '38847c2a-6b25-4c8e-8457-3242f316ce8a',
+    translationId: '9342dba7-cf94-406b-b65c-4b91e60ecf48',
+    text: {
+      en_text: 'How many distinct permutations can be formed from the letters of "HALLELUJAH"?',
+      he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "HALLELUJAH"?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: 'f2866b62-f4f6-4e22-8fcc-f4bd8bbdb275',
+    answers: [
+      {
+        id: '0c2c0da3-f8e1-4256-b8a8-a95823b02691',
+        numberAnswer: {
+          id: '3fa22d64-0bbc-4a96-9327-ac6ec0d735c1',
+          value: 151200,
+        },
+      },
+    ],
+  },
+  {
+    id: '388939fb-97cd-4a18-8f37-7f40cec42792',
+    translationId: '827ab7b0-b8a5-41f3-ac67-1d58e95b382d',
+    text: {
+      en_text: 'How many distinct permutations can be formed from the letters of "PROGRAMMER"?',
+      he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "PROGRAMMER"?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: 'f2866b62-f4f6-4e22-8fcc-f4bd8bbdb275',
+    answers: [
+      {
+        id: 'a5b2c4b6-1473-4201-acac-2facb6ae9452',
+        numberAnswer: {
+          id: '823b23b8-1cb0-4c5a-8e56-e716ee221119',
+          value: 302400,
+        },
+      },
+    ],
+  },
+  {
+    id: '187163a2-a449-4581-afc0-c48f5edf8fe6',
+    translationId: '76057411-8100-4138-83d6-3b4fa0b90c59',
+    text: {
+      en_text: 'How many distinct permutations can be formed from the letters of "ASSESSMENT"?',
+      he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "ASSESSMENT"?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: 'f2866b62-f4f6-4e22-8fcc-f4bd8bbdb275',
+    answers: [
+      {
+        id: 'a919f7d3-9878-461e-b9ae-8f0bf9cabd8d',
+        numberAnswer: {
+          id: 'c180fff0-fe06-480c-8204-eb2aff8c6451',
+          value: 75600,
+        },
+      },
+    ],
+  },
+  {
+    id: '519d8b74-57a3-4307-9ecf-d1e13b4bcb3a',
+    translationId: '8a12359c-9d82-4860-bec1-a536fe2732b7',
+    text: {
+      en_text: 'How many distinct permutations can be formed from the letters of "PARALLEL"?',
+      he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "PARALLEL"?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: 'f2866b62-f4f6-4e22-8fcc-f4bd8bbdb275',
+    answers: [
+      {
+        id: '79c1c93a-0985-471a-bedd-7b58d4e5c435',
+        numberAnswer: {
+          id: 'bae8cf7c-ca8f-4fcd-9be9-61dc9a2d2fa9',
+          value: 3360,
+        },
+      },
+    ],
+  },
+  {
+    id: 'cb840bda-23ce-49ac-9127-9646ac0086cb',
+    translationId: '9f5d1a71-17dc-4a2c-9f9e-72436d37fe87',
+    text: {
+      en_text: 'How many distinct permutations can be formed from the letters of "CANNON"?',
+      he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "CANNON"?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: 'f2866b62-f4f6-4e22-8fcc-f4bd8bbdb275',
+    answers: [
+      {
+        id: '7103b82b-100d-4e6f-b227-d9c1e4a5a062',
+        numberAnswer: {
+          id: '6ed75797-f3a1-4241-81e3-f4ea14a1e045',
+          value: 120,
         },
       },
     ],
