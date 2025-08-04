@@ -40,6 +40,8 @@ export const seedModules = async (
         '7d8e9f01-1234-4345-a789-abcdef456012',
       'Logical Operators_Logical Equivalence':
         '8e9f0123-2345-4456-a89a-bcdef0567123',
+      'Multiplication Principle_Pigeonhole Principle':
+        'a1b2c3d4-e5f6-4789-a012-bcdef3456789',
     };
     return relationshipMap[`${prerequisite}_${postrequisite}`] || '';
   };
@@ -79,6 +81,8 @@ export const seedModules = async (
         'c2314a5f-6e7d-4c9b-a123-ed4567890123',
       '8e9f0123-2345-4456-a89a-bcdef0567123':
         'd342b516-7f8e-4d0c-b234-fe5678901234',
+      'a1b2c3d4-e5f6-4789-a012-bcdef3456789':
+        'b2c3d4e5-f6a7-4890-b123-cdef45678901',
     };
     return metadataMap[blockRelationshipId] || '';
   };
@@ -421,6 +425,7 @@ export const seedModules = async (
       en_text: 'Pigeonhole Principle',
       he_text: 'עקרון שובך היונים',
       parent: 'Combinatorics',
+      prerequisite: 'Multiplication Principle',
       course: 'Discrete Mathematics',
     },
     {
