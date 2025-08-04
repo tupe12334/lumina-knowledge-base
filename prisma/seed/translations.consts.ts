@@ -1918,4 +1918,124 @@ In the Faculty of Arts, you're not just learning about the world — you're lear
     he_text:
       'מסעדה מציעה 3 מנות טבעוניות ו-6 מנות שאינן טבעוניות. כמה אפשרויות ארוחה קיימות אם מזמינים מנה אחת?',
   },
+  // questions.consts.ts
+  {
+    id: 'aabf8758-d93e-4e54-a49c-1d515976a64d',
+    en_text: 'How many distinct permutations can be formed from the letters of "LEVEL"?',
+    he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "LEVEL"?',
+  },
+  // questions.consts.ts
+  {
+    id: 'ba29646f-67d7-4c09-92b2-d64eaff717b5',
+    en_text: 'How many distinct permutations can be formed from the letters of "BALLOON"?',
+    he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "BALLOON"?',
+  },
+  // questions.consts.ts
+  {
+    id: 'fe4b0bac-e929-4a78-90e1-34b51de33c21',
+    en_text: 'How many distinct permutations can be formed from the letters of "SUCCESS"?',
+    he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "SUCCESS"?',
+  },
+  // questions.consts.ts
+  {
+    id: 'ab17462a-7c93-493b-b7a2-51c30c382d64',
+    en_text: 'How many distinct permutations can be formed from the letters of "BOOKKEEPER"?',
+    he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "BOOKKEEPER"?',
+  },
+  // questions.consts.ts
+  {
+    id: '237d697b-3b2e-4516-98e2-3270133d2f85',
+    en_text: 'How many distinct permutations can be formed from the letters of "BANANA"?',
+    he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "BANANA"?',
+  },
+  // questions.consts.ts
+  {
+    id: '9a1548f9-a17d-487b-8a43-8fd45f7680d4',
+    en_text: 'How many distinct permutations can be formed from the letters of "MISSISSIPPI"?',
+    he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "MISSISSIPPI"?',
+  },
+  // questions.consts.ts
+  {
+    id: 'd87423c1-f864-436a-ab0b-9f0c2d918acb',
+    en_text: 'How many distinct permutations can be formed from the letters of "ABRACADABRA"?',
+    he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "ABRACADABRA"?',
+  },
+  // questions.consts.ts
+  {
+    id: 'c3362060-fd2b-48c4-9706-0483203804e3',
+    en_text: 'How many distinct permutations can be formed from the letters of "COMMITTEE"?',
+    he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "COMMITTEE"?',
+  },
+  // questions.consts.ts
+  {
+    id: 'b56d8c45-8bf1-4c60-bcbb-356f9f510219',
+    en_text: 'How many distinct permutations can be formed from the letters of "TOMATO"?',
+    he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "TOMATO"?',
+  },
+  // questions.consts.ts
+  {
+    id: '5adc6247-9b27-4a3d-b129-3120f4ea11ef',
+    en_text: 'How many distinct permutations can be formed from the letters of "STATISTICS"?',
+    he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "STATISTICS"?',
+  },
+  // questions.consts.ts
+  {
+    id: '6efa549c-7c42-4b96-92df-9838aafc0055',
+    en_text: 'How many distinct permutations can be formed from the letters of "LETTER"?',
+    he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "LETTER"?',
+  },
+  // questions.consts.ts
+  {
+    id: '18886c3a-c65a-4cc1-9f9e-8860ab46b41c',
+    en_text: 'How many distinct permutations can be formed from the letters of "PEPPER"?',
+    he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "PEPPER"?',
+  },
+  // questions.consts.ts
+  {
+    id: 'f27e83c6-1ba1-49a1-affd-2b3e495a6810',
+    en_text: 'How many distinct permutations can be formed from the letters of "REPETITION"?',
+    he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "REPETITION"?',
+  },
+  // questions.consts.ts
+  {
+    id: '75bb7259-3ace-4718-81c1-4998a65dab65',
+    en_text: 'How many distinct permutations can be formed from the letters of "INDIVISIBILITY"?',
+    he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "INDIVISIBILITY"?',
+  },
+  // questions.consts.ts
+  {
+    id: '53ea50b1-c820-429b-a13e-e3f83d7e9e80',
+    en_text: 'How many distinct permutations can be formed from the letters of "BASEBALL"?',
+    he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "BASEBALL"?',
+  },
+  // questions.consts.ts
+  {
+    id: '9342dba7-cf94-406b-b65c-4b91e60ecf48',
+    en_text: 'How many distinct permutations can be formed from the letters of "HALLELUJAH"?',
+    he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "HALLELUJAH"?',
+  },
+  // questions.consts.ts
+  {
+    id: '827ab7b0-b8a5-41f3-ac67-1d58e95b382d',
+    en_text: 'How many distinct permutations can be formed from the letters of "PROGRAMMER"?',
+    he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "PROGRAMMER"?',
+  },
+  // questions.consts.ts
+  {
+    id: '76057411-8100-4138-83d6-3b4fa0b90c59',
+    en_text: 'How many distinct permutations can be formed from the letters of "ASSESSMENT"?',
+    he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "ASSESSMENT"?',
+  },
+  // questions.consts.ts
+  {
+    id: '8a12359c-9d82-4860-bec1-a536fe2732b7',
+    en_text: 'How many distinct permutations can be formed from the letters of "PARALLEL"?',
+    he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "PARALLEL"?',
+  },
+  // questions.consts.ts
+  {
+    id: '9f5d1a71-17dc-4a2c-9f9e-72436d37fe87',
+    en_text: 'How many distinct permutations can be formed from the letters of "CANNON"?',
+    he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "CANNON"?',
+  },
 ];
