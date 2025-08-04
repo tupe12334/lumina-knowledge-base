@@ -96,6 +96,7 @@ export const seedModules = async (
       'Separation Principle': '5a6b7c8d-9e0f-4123-b567-89abcd234eff',
       'Mathematical Recursion': '31b7ef41-3b67-4181-ba4d-c6170399a6d9',
       'Pigeonhole Principle': '7cd0a3cf-23ee-44fc-ab71-aa6493eb4219',
+      'Generating Functions': 'eb656561-a030-482a-99d2-d648d7a4b6b1',
       'Introduction to Logic': '1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d',
       'Basic Logic Concepts': '2b3c4d5e-6f7a-4b8c-9d0e-1f2a3b4c5d6e',
       'Logical Operators': '3c4d5e6f-7a8b-4c9d-a0ef-2a3b4c5d6e7f',
@@ -161,6 +162,7 @@ export const seedModules = async (
     'Separation Principle': '5a6b7c8d-9e0f-4123-b567-89abcd234eff',
     'Mathematical Recursion': '37d15e78-fcf2-49a0-bbde-b4dbffd904a7',
     'Pigeonhole Principle': 'bd8947e7-bd42-4ea0-976b-639ec22fe2ea',
+    'Generating Functions': 'a4d6a459-7406-40d6-bae8-2b27b26adb28',
     'Introduction to Logic': '3f2e1d4c-5b6a-4789-8c0d-1e2f3a4b5c6d',
     'Basic Logic Concepts': '8b9c0d1e-2f3a-4b5c-86de-8f9a0b1c2d3e',
     'Logical Operators': '9c0d1e2f-3a4b-4c6d-87ef-9a0b1c2d3e4f',
@@ -410,6 +412,12 @@ export const seedModules = async (
     {
       en_text: 'Pigeonhole Principle',
       he_text: 'עקרון שובך היונים',
+      parent: 'Combinatorics',
+      course: 'Discrete Mathematics',
+    },
+    {
+      en_text: 'Generating Functions',
+      he_text: 'פונקציות יוצרות',
       parent: 'Combinatorics',
       course: 'Discrete Mathematics',
     },
