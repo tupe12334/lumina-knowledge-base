@@ -42,13 +42,13 @@ export const seedModules = async (
         '8e9f0123-2345-4456-a89a-bcdef0567123',
       'Multiplication Principle_Pigeonhole Principle':
         'a1b2c3d4-e5f6-4789-a012-bcdef3456789',
-      'Combinations_Pascal Triangle': 'c5d6e7f8-a9b0-4123-c456-def789012345',
+      'Combinations_Pascal Triangle': 'c908742e-aee1-48fd-a4e9-a106d8c35202',
       'Pascal Triangle_Binomial Formula':
         'b3c4d5e6-f7a8-4890-b123-cdef56789012',
       'Multiplication Principle_Inclusion Principle':
-        'd4e5f6a7-b8c9-4012-d345-efab78901234',
+        '2a72095d-41a6-472b-b5ad-c6e01c726885',
       'Sum Principle_Separation Principle':
-        'e5f6a7b8-c9d0-4123-e456-fab890123456',
+        '27a0eab8-6102-4020-a147-b5cfee9a2d76',
       Permutation_Derangements: 'f1a2b3c4-d5e6-4789-a012-bcdef4567890',
     };
     return relationshipMap[`${prerequisite}_${postrequisite}`] || '';
@@ -58,49 +58,23 @@ export const seedModules = async (
   const getRelationshipMetadataId = (blockRelationshipId: string): string => {
     const metadataMap: Record<string, string> = {
       '504a8133-8c3f-40b9-a874-11ebdeb76917':
-        '11dba38f-d605-419c-af84-6485643d9745',
-      'c28b0006-13a2-422d-ae56-b75ddc686087':
-        '172b5a52-3d1b-4b4f-a2ad-860a5ec1799c',
-      'bba994cb-72e3-465e-b4fa-47d2189870b1':
-        '37e31f31-553a-4962-bdea-b5f86807aade',
-      '06cf92b7-1e0e-4f7a-964b-1527f3f2246a':
-        'b91b3590-cd7a-41ec-89ef-021017f4d93d',
-      'dada74b5-207c-48f3-8d2e-b8f6b806a801':
-        '8586bfd9-3c66-49e5-8658-4aa3f248ec25',
-      'fcfd331c-bd37-4a51-b638-866fa5df19fe':
-        '60158639-40cb-43b6-b89e-57fe34cd9800',
-      '27d30775-72bb-41a2-b974-3d9883e6bb12':
-        '3a2e73e6-3274-484e-af07-6fe40cd22ef9',
-      '6a70e70d-a1e0-486e-9c55-b22090cede3f':
-        'c5681550-91a0-47ae-83b2-efaaf361ca6b',
-      '1744d33d-8c25-421f-9104-6fb50ea30ccb':
-        '6ba2852e-5cd5-41a2-80f8-ff46cbf1e276',
-      '9b81c7e2-4f6a-4d8b-b123-4c5d6e7f8a90':
-        'e6792661-02b1-48bf-94c3-f0bbf472db7c',
-      'bdd3d870-4672-4df4-8e78-a40199a4ff04':
-        '863659a4-5aa8-46aa-a34d-568551d09247',
-      '4a5b6c7d-8e9f-4412-a456-789abc123def':
-        '9f0e1d2c-3b4a-4968-a7dc-ba1234567890',
-      '5b6c7d8e-9f01-4123-b567-89abcd234eff':
-        'a01f2e3d-4c5b-4a79-a8ed-cb2345678901',
-      '6c7d8e9f-0123-4234-a678-9abcde345f01':
-        'b120394e-5d6c-4b8a-9012-dc3456789012',
+        'dcfacec9-32f8-4001-b1a9-ed2270e26df1',
       '7d8e9f01-1234-4345-a789-abcdef456012':
-        'c2314a5f-6e7d-4c9b-a123-ed4567890123',
+        '7af77c38-a123-420c-a7f1-b685b54d64bd',
       '8e9f0123-2345-4456-a89a-bcdef0567123':
-        'd342b516-7f8e-4d0c-b234-fe5678901234',
+        '9aa0cc26-2d07-4ec7-b3b7-a10440362909',
       'a1b2c3d4-e5f6-4789-a012-bcdef3456789':
-        'b2c3d4e5-f6a7-4890-b123-cdef45678901',
-      'c5d6e7f8-a9b0-4123-c456-def789012345':
-        'd6e7f8a9-b0c1-4234-d567-efa890123456',
+        'f11617c8-b281-4865-870d-a22b782d32a0',
+      'c908742e-aee1-48fd-a4e9-a106d8c35202':
+        'b6e9106b-958c-4d55-8ec6-fab45bec916e',
       'b3c4d5e6-f7a8-4890-b123-cdef56789012':
-        'c4d5e6f7-a8b9-4901-c234-def678901234',
-      'd4e5f6a7-b8c9-4012-d345-efab78901234':
-        'e5f6a7b8-c9d0-4123-e456-fab890123456',
-      'e5f6a7b8-c9d0-4123-e456-fab890123456':
-        'f6a7b8c9-d0e1-4234-f567-abc901234567',
+        '25033be0-357b-4a87-9b5c-71e8048fb8e3',
+      '2a72095d-41a6-472b-b5ad-c6e01c726885':
+        'c3a727e3-d6d4-4548-ab18-92fab885a673',
+      '27a0eab8-6102-4020-a147-b5cfee9a2d76':
+        'cadb461d-ba7c-42e4-9abb-607047d2d4da',
       'f1a2b3c4-d5e6-4789-a012-bcdef4567890':
-        'a2b3c4d5-e6f7-4890-a123-cdef67890123',
+        'f438751a-ed5d-4ed6-a090-cd9dc508b844',
     };
     return metadataMap[blockRelationshipId] || '';
   };

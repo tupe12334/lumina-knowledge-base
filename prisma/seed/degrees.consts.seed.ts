@@ -77,7 +77,6 @@ export const degreeCourses = {
       'Data Structures and Introduction to Algorithms',
       'Algorithms',
       'Computational Models',
-      'Infinitesimal Calculus 2',
       'Calculus B',
     ],
   },
