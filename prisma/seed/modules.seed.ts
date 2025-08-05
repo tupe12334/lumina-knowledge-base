@@ -109,6 +109,7 @@ export const seedModules = async (
       'Logical Equivalence': '7a8b9c0d-1e2f-403b-a4cd-6e7f8a9b0c1d',
       'The Definite Integral': '2f9e8a7b-c123-4def-9876-543210fedcba',
       'The Enclosed Area Problem': '3a1f9c8e-2d4b-5c6a-9e7f-4b8c9d0e1f2a',
+      'Bounded Functions': 'a8f3c6d1-2e4b-4c8a-9f7e-1b5d8c3a6e9f',
     };
     return translationMap[moduleText] || '';
   };
@@ -152,6 +153,7 @@ export const seedModules = async (
     'Properties of the Absolute Value': '04479133-a106-4341-82cd-c19240a87ed9',
     'The Definite Integral': '7d8e9f01-2345-4567-890a-bcdef0123456',
     'The Enclosed Area Problem': '4e5f6a8b-9c0d-4f5e-a2ab-5c6d7e8f9a0b',
+    'Bounded Functions': 'c1f4a8e2-5d7b-4c9a-8f3e-2b6d9c1a4e7f',
     'Graph Theory': '8f4e9a3b-2c1d-4f5e-9a8b-7c3d6e5f8a9b',
     Combinatorics: '2b8d7f9c-3a4e-4b5f-8c9d-1e2f3a4b5c6d',
     Permutation: '65acc4b0-c258-4bd0-8eb0-e686006d224d',
@@ -539,6 +541,16 @@ export const seedModules = async (
         'Calculus B',
         'Infinitesimal Calculus 2',
         'Complementary Integral Calculus',
+      ],
+    },
+    {
+      en_text: 'Bounded Functions',
+      he_text: 'פונקציות חסומות',
+      courses: [
+        'Calculus A',
+        'Calculus B',
+        'Infinitesimal Calculus 1',
+        'Infinitesimal Calculus 2',
       ],
     },
     {

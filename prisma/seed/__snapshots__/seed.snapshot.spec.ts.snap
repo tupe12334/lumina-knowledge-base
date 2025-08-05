@@ -1585,6 +1585,11 @@ exports[`seed snapshot > saves seeded data snapshot 1`] = `
     },
     {
       "createdAt": 1970-01-01T00:00:00.000Z,
+      "id": "c1f4a8e2-5d7b-4c9a-8f3e-2b6d9c1a4e7f",
+      "updatedAt": null,
+    },
+    {
+      "createdAt": 1970-01-01T00:00:00.000Z,
       "id": "70bf7dc6-cbb8-4f2e-b2e3-1736586c7d9d",
       "updatedAt": null,
     },
@@ -3041,6 +3046,13 @@ exports[`seed snapshot > saves seeded data snapshot 1`] = `
       "createdAt": 1970-01-01T00:00:00.000Z,
       "id": "4e5f6a8b-9c0d-4f5e-a2ab-5c6d7e8f9a0b",
       "translationId": "3a1f9c8e-2d4b-5c6a-9e7f-4b8c9d0e1f2a",
+      "updatedAt": null,
+    },
+    {
+      "blockId": "c1f4a8e2-5d7b-4c9a-8f3e-2b6d9c1a4e7f",
+      "createdAt": 1970-01-01T00:00:00.000Z,
+      "id": "c1f4a8e2-5d7b-4c9a-8f3e-2b6d9c1a4e7f",
+      "translationId": "a8f3c6d1-2e4b-4c8a-9f7e-1b5d8c3a6e9f",
       "updatedAt": null,
     },
     {
@@ -8030,6 +8042,13 @@ In the Faculty of Arts, you're not just learning about the world — you're lear
       "en_text": "The Enclosed Area Problem",
       "he_text": "בעיית השטח הכלוא",
       "id": "3a1f9c8e-2d4b-5c6a-9e7f-4b8c9d0e1f2a",
+      "updatedAt": null,
+    },
+    {
+      "createdAt": 1970-01-01T00:00:00.000Z,
+      "en_text": "Bounded Functions",
+      "he_text": "פונקציות חסומות",
+      "id": "a8f3c6d1-2e4b-4c8a-9f7e-1b5d8c3a6e9f",
       "updatedAt": null,
     },
     {

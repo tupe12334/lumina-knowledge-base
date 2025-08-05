@@ -1913,6 +1913,11 @@ In the Faculty of Arts, you're not just learning about the world — you're lear
     en_text: 'The Enclosed Area Problem',
     he_text: 'בעיית השטח הכלוא',
   },
+  {
+    id: 'a8f3c6d1-2e4b-4c8a-9f7e-1b5d8c3a6e9f',
+    en_text: 'Bounded Functions',
+    he_text: 'פונקציות חסומות',
+  },
 
   {
     id: 'f27e83c6-1ba1-49a1-affd-2b3e495a6810',
