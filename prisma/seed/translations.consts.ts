@@ -1974,4 +1974,254 @@ In the Faculty of Arts, you're not just learning about the world — you're lear
       'How many distinct permutations can be formed from the letters of "CANNON"?',
     he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "CANNON"?',
   },
+  // The Fundamental Formula of the Definite Integral module
+  {
+    id: '4b6c8d1e-3f5a-4d7b-af8c-5e9f1a2b3c4d',
+    en_text: 'The Fundamental Formula of the Definite Integral',
+    he_text: 'הנוסחה היסודית של האינטגרל המסוים',
+  },
+  // Questions for The Fundamental Formula of the Definite Integral
+  {
+    id: 'f1a2b3c4-1111-4567-890a-bcdef0123456',
+    en_text: 'What is the Fundamental Formula of the Definite Integral?',
+    he_text: 'מהי הנוסחה היסודית של האינטגרל המסוים?',
+  },
+  {
+    id: 'f1a2b3c4-1111-4567-890a-bcdef0123458',
+    en_text: "∫[a,b] f(x)dx = F(b) - F(a), where F'(x) = f(x)",
+    he_text: "∫[a,b] f(x)dx = F(b) - F(a), כאשר F'(x) = f(x)",
+  },
+  {
+    id: 'f1a2b3c4-1111-4567-890a-bcdef0123459',
+    en_text: "∫[a,b] f(x)dx = F(a) - F(b), where F'(x) = f(x)",
+    he_text: "∫[a,b] f(x)dx = F(a) - F(b), כאשר F'(x) = f(x)",
+  },
+  {
+    id: 'f1a2b3c4-1111-4567-890a-bcdef012345a',
+    en_text: "∫[a,b] f(x)dx = F(b) + F(a), where F'(x) = f(x)",
+    he_text: "∫[a,b] f(x)dx = F(b) + F(a), כאשר F'(x) = f(x)",
+  },
+  {
+    id: 'f1a2b3c4-1111-4567-890a-bcdef012345b',
+    en_text: "∫[a,b] f(x)dx = F'(b) - F'(a), where F(x) is any function",
+    he_text: "∫[a,b] f(x)dx = F'(b) - F'(a), כאשר F(x) פונקציה כלשהי",
+  },
+  {
+    id: 'f2a2b3c4-2222-4567-890a-bcdef0123456',
+    en_text: 'Calculate ∫[0,2] x dx using the Fundamental Formula',
+    he_text: 'חשב ∫[0,2] x dx באמצעות הנוסחה היסודית',
+  },
+  {
+    id: 'f3a2b3c4-3333-4567-890a-bcdef0123456',
+    en_text: 'Calculate ∫[1,3] x² dx using the Fundamental Formula',
+    he_text: 'חשב ∫[1,3] x² dx באמצעות הנוסחה היסודית',
+  },
+  {
+    id: 'f4a2b3c4-4444-4567-890a-bcdef0123456',
+    en_text: 'If F(x) = x³/3, what is ∫[0,2] x² dx?',
+    he_text: 'אם F(x) = x³/3, מה הוא ∫[0,2] x² dx?',
+  },
+  {
+    id: 'f5a2b3c4-5555-4567-890a-bcdef0123456',
+    en_text: 'Calculate ∫[-1,1] 2x dx',
+    he_text: 'חשב ∫[-1,1] 2x dx',
+  },
+  {
+    id: 'f6a2b3c4-6666-4567-890a-bcdef0123456',
+    en_text: 'What is the antiderivative of sin(x)?',
+    he_text: 'מהו הפונקציה הקדומה של sin(x)?',
+  },
+  {
+    id: 'f6a2b3c4-6666-4567-890a-bcdef0123458',
+    en_text: '-cos(x) + C',
+    he_text: '-cos(x) + C',
+  },
+  {
+    id: 'f6a2b3c4-6666-4567-890a-bcdef0123459',
+    en_text: 'cos(x) + C',
+    he_text: 'cos(x) + C',
+  },
+  {
+    id: 'f6a2b3c4-6666-4567-890a-bcdef012345a',
+    en_text: '-sin(x) + C',
+    he_text: '-sin(x) + C',
+  },
+  {
+    id: 'f6a2b3c4-6666-4567-890a-bcdef012345b',
+    en_text: 'tan(x) + C',
+    he_text: 'tan(x) + C',
+  },
+  {
+    id: 'f7a2b3c4-7777-4567-890a-bcdef0123456',
+    en_text: 'Calculate ∫[0,π] sin(x) dx',
+    he_text: 'חשב ∫[0,π] sin(x) dx',
+  },
+  {
+    id: 'f8a2b3c4-8888-4567-890a-bcdef0123456',
+    en_text: 'If f(x) = 3x² + 2x, calculate ∫[0,1] f(x) dx',
+    he_text: 'אם f(x) = 3x² + 2x, חשב ∫[0,1] f(x) dx',
+  },
+  {
+    id: 'f9a2b3c4-9999-4567-890a-bcdef0123456',
+    en_text: 'What is ∫[1,e] (1/x) dx?',
+    he_text: 'מה הוא ∫[1,e] (1/x) dx?',
+  },
+  {
+    id: 'faa2b3c4-aaaa-4567-890a-bcdef0123456',
+    en_text:
+      'The Fundamental Formula states that if F is an antiderivative of f, then which statement is true?',
+    he_text:
+      'הנוסחה היסודית קובעת שאם F היא פונקציה קדומה של f, אז איזה מהטענות נכונה?',
+  },
+  {
+    id: 'faa2b3c4-aaaa-4567-890a-bcdef0123458',
+    en_text:
+      'The definite integral equals the difference of antiderivative values at the bounds',
+    he_text: 'האינטגרל המסוים שווה להפרש ערכי הפונקציה הקדומה בקצוות',
+  },
+  {
+    id: 'faa2b3c4-aaaa-4567-890a-bcdef0123459',
+    en_text:
+      'The definite integral equals the sum of antiderivative values at the bounds',
+    he_text: 'האינטגרל המסוים שווה לסכום ערכי הפונקציה הקדומה בקצוות',
+  },
+  {
+    id: 'faa2b3c4-aaaa-4567-890a-bcdef012345a',
+    en_text:
+      'The definite integral equals the product of antiderivative values at the bounds',
+    he_text: 'האינטגרל המסוים שווה למכפלה של ערכי הפונקציה הקדומה בקצוות',
+  },
+  {
+    id: 'faa2b3c4-aaaa-4567-890a-bcdef012345b',
+    en_text: 'The definite integral equals the derivative of F at the bounds',
+    he_text: 'האינטגרל המסוים שווה לנגזרת של F בקצוות',
+  },
+  {
+    id: 'fba2b3c4-bbbb-4567-890a-bcdef0123456',
+    en_text: 'Calculate ∫[0,4] √x dx',
+    he_text: 'חשב ∫[0,4] √x dx',
+  },
+  {
+    id: 'fca2b3c4-cccc-4567-890a-bcdef0123456',
+    en_text:
+      'If ∫[a,b] f(x) dx = 0, what can we conclude about the function f on [a,b]?',
+    he_text: 'אם ∫[a,b] f(x) dx = 0, מה ניתן להסיק על הפונקציה f ב-[a,b]?',
+  },
+  {
+    id: 'fca2b3c4-cccc-4567-890a-bcdef0123458',
+    en_text: 'The net area between f and the x-axis is zero',
+    he_text: 'השטח נטו בין f לציר x הוא אפס',
+  },
+  {
+    id: 'fca2b3c4-cccc-4567-890a-bcdef0123459',
+    en_text: 'f(x) = 0 for all x in [a,b]',
+    he_text: 'f(x) = 0 לכל x ב-[a,b]',
+  },
+  {
+    id: 'fca2b3c4-cccc-4567-890a-bcdef012345a',
+    en_text: 'f is constant on [a,b]',
+    he_text: 'f קבועה ב-[a,b]',
+  },
+  {
+    id: 'fca2b3c4-cccc-4567-890a-bcdef012345b',
+    en_text: 'f is not integrable on [a,b]',
+    he_text: 'f לא אינטגרבילית ב-[a,b]',
+  },
+  {
+    id: 'fda2b3c4-dddd-4567-890a-bcdef0123456',
+    en_text: 'Calculate ∫[0,π/2] cos(x) dx',
+    he_text: 'חשב ∫[0,π/2] cos(x) dx',
+  },
+  {
+    id: 'fea2b3c4-eeee-4567-890a-bcdef0123456',
+    en_text: 'What is the antiderivative of e^x?',
+    he_text: 'מהו הפונקציה הקדומה של e^x?',
+  },
+  {
+    id: 'fea2b3c4-eeee-4567-890a-bcdef0123458',
+    en_text: 'e^x + C',
+    he_text: 'e^x + C',
+  },
+  {
+    id: 'fea2b3c4-eeee-4567-890a-bcdef0123459',
+    en_text: 'xe^x + C',
+    he_text: 'xe^x + C',
+  },
+  {
+    id: 'fea2b3c4-eeee-4567-890a-bcdef012345a',
+    en_text: 'e^x/x + C',
+    he_text: 'e^x/x + C',
+  },
+  {
+    id: 'fea2b3c4-eeee-4567-890a-bcdef012345b',
+    en_text: 'ln(e^x) + C',
+    he_text: 'ln(e^x) + C',
+  },
+  {
+    id: 'ffa2b3c4-ffff-4567-890a-bcdef0123456',
+    en_text: 'Calculate ∫[1,2] (x³ - x) dx',
+    he_text: 'חשב ∫[1,2] (x³ - x) dx',
+  },
+  {
+    id: 'f0a2b3c4-0000-4567-890a-bcdef0123456',
+    en_text:
+      'Which condition is necessary for the Fundamental Formula to apply?',
+    he_text: 'איזה תנאי נחוץ כדי שהנוסחה היסודית תחול?',
+  },
+  {
+    id: 'f0a2b3c4-0000-4567-890a-bcdef0123458',
+    en_text: 'f must be continuous on [a,b]',
+    he_text: 'f חייבת להיות רציפה ב-[a,b]',
+  },
+  {
+    id: 'f0a2b3c4-0000-4567-890a-bcdef0123459',
+    en_text: 'f must be differentiable on [a,b]',
+    he_text: 'f חייבת להיות גזירה ב-[a,b]',
+  },
+  {
+    id: 'f0a2b3c4-0000-4567-890a-bcdef012345a',
+    en_text: 'f must be positive on [a,b]',
+    he_text: 'f חייבת להיות חיובית ב-[a,b]',
+  },
+  {
+    id: 'f0a2b3c4-0000-4567-890a-bcdef012345b',
+    en_text: 'f must be bounded on [a,b]',
+    he_text: 'f חייבת להיות חסומה ב-[a,b]',
+  },
+  {
+    id: 'f1b2c3d4-1111-5678-901a-bcdef0123456',
+    en_text: "If F'(x) = x² and F(0) = 5, what is F(2)?",
+    he_text: "אם F'(x) = x² ו-F(0) = 5, מה הוא F(2)?",
+  },
+  {
+    id: 'f2b2c3d4-2222-5678-901a-bcdef0123456',
+    en_text: 'Calculate ∫[0,1] (2x + 3) dx',
+    he_text: 'חשב ∫[0,1] (2x + 3) dx',
+  },
+  {
+    id: 'f3b2c3d4-3333-5678-901a-bcdef0123456',
+    en_text:
+      'What is the relationship between differentiation and integration according to the Fundamental Formula?',
+    he_text: 'מה הקשר בין גזירה לאינטגרציה לפי הנוסחה היסודית?',
+  },
+  {
+    id: 'f3b2c3d4-3333-5678-901a-bcdef0123458',
+    en_text: 'They are inverse operations',
+    he_text: 'הן פעולות הפוכות',
+  },
+  {
+    id: 'f3b2c3d4-3333-5678-901a-bcdef0123459',
+    en_text: 'They are identical operations',
+    he_text: 'הן פעולות זהות',
+  },
+  {
+    id: 'f3b2c3d4-3333-5678-901a-bcdef012345a',
+    en_text: 'They are unrelated operations',
+    he_text: 'הן פעולות לא קשורות',
+  },
+  {
+    id: 'f3b2c3d4-3333-5678-901a-bcdef012345b',
+    en_text: 'They can only be used together',
+    he_text: 'ניתן להשתמש בהן רק יחד',
+  },
 ];

@@ -3318,4 +3318,633 @@ export const QUESTIONS: QuestionSeedData[] = [
       },
     ],
   },
+  {
+    id: 'f1a2b3c4-1111-4567-890a-bcdef0123456',
+    translationId: 'f1a2b3c4-1111-4567-890a-bcdef0123456',
+    text: {
+      en_text: 'What is the Fundamental Formula of the Definite Integral?',
+      he_text: 'מהי הנוסחה היסודית של האינטגרל המסוים?',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '1d2e3f4a-5b6c-4d7e-8f9a-0b1c2d3e4f5a',
+    answers: [
+      {
+        id: 'f1a2b3c4-1111-4567-890a-bcdef0123457',
+        selectAnswers: [
+          {
+            id: 'f1a2b3c4-1111-4567-890a-bcdef0123458',
+            translationId: 'f1a2b3c4-1111-4567-890a-bcdef0123458',
+            text: {
+              en_text: "∫[a,b] f(x)dx = F(b) - F(a), where F'(x) = f(x)",
+              he_text: "∫[a,b] f(x)dx = F(b) - F(a), כאשר F'(x) = f(x)",
+            },
+            isCorrect: true,
+          },
+          {
+            id: 'f1a2b3c4-1111-4567-890a-bcdef0123459',
+            translationId: 'f1a2b3c4-1111-4567-890a-bcdef0123459',
+            text: {
+              en_text: "∫[a,b] f(x)dx = F(a) - F(b), where F'(x) = f(x)",
+              he_text: "∫[a,b] f(x)dx = F(a) - F(b), כאשר F'(x) = f(x)",
+            },
+            isCorrect: false,
+          },
+          {
+            id: 'f1a2b3c4-1111-4567-890a-bcdef012345a',
+            translationId: 'f1a2b3c4-1111-4567-890a-bcdef012345a',
+            text: {
+              en_text: "∫[a,b] f(x)dx = F(b) + F(a), where F'(x) = f(x)",
+              he_text: "∫[a,b] f(x)dx = F(b) + F(a), כאשר F'(x) = f(x)",
+            },
+            isCorrect: false,
+          },
+          {
+            id: 'f1a2b3c4-1111-4567-890a-bcdef012345b',
+            translationId: 'f1a2b3c4-1111-4567-890a-bcdef012345b',
+            text: {
+              en_text:
+                "∫[a,b] f(x)dx = F'(b) - F'(a), where F(x) is any function",
+              he_text: "∫[a,b] f(x)dx = F'(b) - F'(a), כאשר F(x) פונקציה כלשהי",
+            },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'f2a2b3c4-2222-4567-890a-bcdef0123456',
+    translationId: 'f2a2b3c4-2222-4567-890a-bcdef0123456',
+    text: {
+      en_text: 'Calculate ∫[0,2] x dx using the Fundamental Formula',
+      he_text: 'חשב ∫[0,2] x dx באמצעות הנוסחה היסודית',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '1d2e3f4a-5b6c-4d7e-8f9a-0b1c2d3e4f5a',
+    answers: [
+      {
+        id: 'f2a2b3c4-2222-4567-890a-bcdef0123457',
+        numberAnswer: {
+          id: 'f2a2b3c4-2222-4567-890a-bcdef0123458',
+          value: 2,
+        },
+      },
+    ],
+  },
+  {
+    id: 'f3a2b3c4-3333-4567-890a-bcdef0123456',
+    translationId: 'f3a2b3c4-3333-4567-890a-bcdef0123456',
+    text: {
+      en_text: 'Calculate ∫[1,3] x² dx using the Fundamental Formula',
+      he_text: 'חשב ∫[1,3] x² dx באמצעות הנוסחה היסודית',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '1d2e3f4a-5b6c-4d7e-8f9a-0b1c2d3e4f5a',
+    answers: [
+      {
+        id: 'f3a2b3c4-3333-4567-890a-bcdef0123457',
+        numberAnswer: {
+          id: 'f3a2b3c4-3333-4567-890a-bcdef0123458',
+          value: 8.667,
+        },
+      },
+    ],
+  },
+  {
+    id: 'f4a2b3c4-4444-4567-890a-bcdef0123456',
+    translationId: 'f4a2b3c4-4444-4567-890a-bcdef0123456',
+    text: {
+      en_text: 'If F(x) = x³/3, what is ∫[0,2] x² dx?',
+      he_text: 'אם F(x) = x³/3, מה הוא ∫[0,2] x² dx?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '1d2e3f4a-5b6c-4d7e-8f9a-0b1c2d3e4f5a',
+    answers: [
+      {
+        id: 'f4a2b3c4-4444-4567-890a-bcdef0123457',
+        numberAnswer: {
+          id: 'f4a2b3c4-4444-4567-890a-bcdef0123458',
+          value: 2.667,
+        },
+      },
+    ],
+  },
+  {
+    id: 'f5a2b3c4-5555-4567-890a-bcdef0123456',
+    translationId: 'f5a2b3c4-5555-4567-890a-bcdef0123456',
+    text: {
+      en_text: 'Calculate ∫[-1,1] 2x dx',
+      he_text: 'חשב ∫[-1,1] 2x dx',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '1d2e3f4a-5b6c-4d7e-8f9a-0b1c2d3e4f5a',
+    answers: [
+      {
+        id: 'f5a2b3c4-5555-4567-890a-bcdef0123457',
+        numberAnswer: {
+          id: 'f5a2b3c4-5555-4567-890a-bcdef0123458',
+          value: 0,
+        },
+      },
+    ],
+  },
+  {
+    id: 'f6a2b3c4-6666-4567-890a-bcdef0123456',
+    translationId: 'f6a2b3c4-6666-4567-890a-bcdef0123456',
+    text: {
+      en_text: 'What is the antiderivative of sin(x)?',
+      he_text: 'מהו הפונקציה הקדומה של sin(x)?',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '1d2e3f4a-5b6c-4d7e-8f9a-0b1c2d3e4f5a',
+    answers: [
+      {
+        id: 'f6a2b3c4-6666-4567-890a-bcdef0123457',
+        selectAnswers: [
+          {
+            id: 'f6a2b3c4-6666-4567-890a-bcdef0123458',
+            translationId: 'f6a2b3c4-6666-4567-890a-bcdef0123458',
+            text: {
+              en_text: '-cos(x) + C',
+              he_text: '-cos(x) + C',
+            },
+            isCorrect: true,
+          },
+          {
+            id: 'f6a2b3c4-6666-4567-890a-bcdef0123459',
+            translationId: 'f6a2b3c4-6666-4567-890a-bcdef0123459',
+            text: {
+              en_text: 'cos(x) + C',
+              he_text: 'cos(x) + C',
+            },
+            isCorrect: false,
+          },
+          {
+            id: 'f6a2b3c4-6666-4567-890a-bcdef012345a',
+            translationId: 'f6a2b3c4-6666-4567-890a-bcdef012345a',
+            text: {
+              en_text: '-sin(x) + C',
+              he_text: '-sin(x) + C',
+            },
+            isCorrect: false,
+          },
+          {
+            id: 'f6a2b3c4-6666-4567-890a-bcdef012345b',
+            translationId: 'f6a2b3c4-6666-4567-890a-bcdef012345b',
+            text: {
+              en_text: 'tan(x) + C',
+              he_text: 'tan(x) + C',
+            },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'f7a2b3c4-7777-4567-890a-bcdef0123456',
+    translationId: 'f7a2b3c4-7777-4567-890a-bcdef0123456',
+    text: {
+      en_text: 'Calculate ∫[0,π] sin(x) dx',
+      he_text: 'חשב ∫[0,π] sin(x) dx',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '1d2e3f4a-5b6c-4d7e-8f9a-0b1c2d3e4f5a',
+    answers: [
+      {
+        id: 'f7a2b3c4-7777-4567-890a-bcdef0123457',
+        numberAnswer: {
+          id: 'f7a2b3c4-7777-4567-890a-bcdef0123458',
+          value: 2,
+        },
+      },
+    ],
+  },
+  {
+    id: 'f8a2b3c4-8888-4567-890a-bcdef0123456',
+    translationId: 'f8a2b3c4-8888-4567-890a-bcdef0123456',
+    text: {
+      en_text: 'If f(x) = 3x² + 2x, calculate ∫[0,1] f(x) dx',
+      he_text: 'אם f(x) = 3x² + 2x, חשב ∫[0,1] f(x) dx',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '1d2e3f4a-5b6c-4d7e-8f9a-0b1c2d3e4f5a',
+    answers: [
+      {
+        id: 'f8a2b3c4-8888-4567-890a-bcdef0123457',
+        numberAnswer: {
+          id: 'f8a2b3c4-8888-4567-890a-bcdef0123458',
+          value: 2,
+        },
+      },
+    ],
+  },
+  {
+    id: 'f9a2b3c4-9999-4567-890a-bcdef0123456',
+    translationId: 'f9a2b3c4-9999-4567-890a-bcdef0123456',
+    text: {
+      en_text: 'What is ∫[1,e] (1/x) dx?',
+      he_text: 'מה הוא ∫[1,e] (1/x) dx?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '1d2e3f4a-5b6c-4d7e-8f9a-0b1c2d3e4f5a',
+    answers: [
+      {
+        id: 'f9a2b3c4-9999-4567-890a-bcdef0123457',
+        numberAnswer: {
+          id: 'f9a2b3c4-9999-4567-890a-bcdef0123458',
+          value: 1,
+        },
+      },
+    ],
+  },
+  {
+    id: 'faa2b3c4-aaaa-4567-890a-bcdef0123456',
+    translationId: 'faa2b3c4-aaaa-4567-890a-bcdef0123456',
+    text: {
+      en_text:
+        'The Fundamental Formula states that if F is an antiderivative of f, then which statement is true?',
+      he_text:
+        'הנוסחה היסודית קובעת שאם F היא פונקציה קדומה של f, אז איזה מהטענות נכונה?',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '1d2e3f4a-5b6c-4d7e-8f9a-0b1c2d3e4f5a',
+    answers: [
+      {
+        id: 'faa2b3c4-aaaa-4567-890a-bcdef0123457',
+        selectAnswers: [
+          {
+            id: 'faa2b3c4-aaaa-4567-890a-bcdef0123458',
+            translationId: 'faa2b3c4-aaaa-4567-890a-bcdef0123458',
+            text: {
+              en_text:
+                'The definite integral equals the difference of antiderivative values at the bounds',
+              he_text: 'האינטגרל המסוים שווה להפרש ערכי הפונקציה הקדומה בקצוות',
+            },
+            isCorrect: true,
+          },
+          {
+            id: 'faa2b3c4-aaaa-4567-890a-bcdef0123459',
+            translationId: 'faa2b3c4-aaaa-4567-890a-bcdef0123459',
+            text: {
+              en_text:
+                'The definite integral equals the sum of antiderivative values at the bounds',
+              he_text: 'האינטגרל המסוים שווה לסכום ערכי הפונקציה הקדומה בקצוות',
+            },
+            isCorrect: false,
+          },
+          {
+            id: 'faa2b3c4-aaaa-4567-890a-bcdef012345a',
+            translationId: 'faa2b3c4-aaaa-4567-890a-bcdef012345a',
+            text: {
+              en_text:
+                'The definite integral equals the product of antiderivative values at the bounds',
+              he_text:
+                'האינטגרל המסוים שווה למכפלה של ערכי הפונקציה הקדומה בקצוות',
+            },
+            isCorrect: false,
+          },
+          {
+            id: 'faa2b3c4-aaaa-4567-890a-bcdef012345b',
+            translationId: 'faa2b3c4-aaaa-4567-890a-bcdef012345b',
+            text: {
+              en_text:
+                'The definite integral equals the derivative of F at the bounds',
+              he_text: 'האינטגרל המסוים שווה לנגזרת של F בקצוות',
+            },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'fba2b3c4-bbbb-4567-890a-bcdef0123456',
+    translationId: 'fba2b3c4-bbbb-4567-890a-bcdef0123456',
+    text: {
+      en_text: 'Calculate ∫[0,4] √x dx',
+      he_text: 'חשב ∫[0,4] √x dx',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '1d2e3f4a-5b6c-4d7e-8f9a-0b1c2d3e4f5a',
+    answers: [
+      {
+        id: 'fba2b3c4-bbbb-4567-890a-bcdef0123457',
+        numberAnswer: {
+          id: 'fba2b3c4-bbbb-4567-890a-bcdef0123458',
+          value: 5.333,
+        },
+      },
+    ],
+  },
+  {
+    id: 'fca2b3c4-cccc-4567-890a-bcdef0123456',
+    translationId: 'fca2b3c4-cccc-4567-890a-bcdef0123456',
+    text: {
+      en_text:
+        'If ∫[a,b] f(x) dx = 0, what can we conclude about the function f on [a,b]?',
+      he_text: 'אם ∫[a,b] f(x) dx = 0, מה ניתן להסיק על הפונקציה f ב-[a,b]?',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '1d2e3f4a-5b6c-4d7e-8f9a-0b1c2d3e4f5a',
+    answers: [
+      {
+        id: 'fca2b3c4-cccc-4567-890a-bcdef0123457',
+        selectAnswers: [
+          {
+            id: 'fca2b3c4-cccc-4567-890a-bcdef0123458',
+            translationId: 'fca2b3c4-cccc-4567-890a-bcdef0123458',
+            text: {
+              en_text: 'The net area between f and the x-axis is zero',
+              he_text: 'השטח נטו בין f לציר x הוא אפס',
+            },
+            isCorrect: true,
+          },
+          {
+            id: 'fca2b3c4-cccc-4567-890a-bcdef0123459',
+            translationId: 'fca2b3c4-cccc-4567-890a-bcdef0123459',
+            text: {
+              en_text: 'f(x) = 0 for all x in [a,b]',
+              he_text: 'f(x) = 0 לכל x ב-[a,b]',
+            },
+            isCorrect: false,
+          },
+          {
+            id: 'fca2b3c4-cccc-4567-890a-bcdef012345a',
+            translationId: 'fca2b3c4-cccc-4567-890a-bcdef012345a',
+            text: {
+              en_text: 'f is constant on [a,b]',
+              he_text: 'f קבועה ב-[a,b]',
+            },
+            isCorrect: false,
+          },
+          {
+            id: 'fca2b3c4-cccc-4567-890a-bcdef012345b',
+            translationId: 'fca2b3c4-cccc-4567-890a-bcdef012345b',
+            text: {
+              en_text: 'f is not integrable on [a,b]',
+              he_text: 'f לא אינטגרבילית ב-[a,b]',
+            },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'fda2b3c4-dddd-4567-890a-bcdef0123456',
+    translationId: 'fda2b3c4-dddd-4567-890a-bcdef0123456',
+    text: {
+      en_text: 'Calculate ∫[0,π/2] cos(x) dx',
+      he_text: 'חשב ∫[0,π/2] cos(x) dx',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '1d2e3f4a-5b6c-4d7e-8f9a-0b1c2d3e4f5a',
+    answers: [
+      {
+        id: 'fda2b3c4-dddd-4567-890a-bcdef0123457',
+        numberAnswer: {
+          id: 'fda2b3c4-dddd-4567-890a-bcdef0123458',
+          value: 1,
+        },
+      },
+    ],
+  },
+  {
+    id: 'fea2b3c4-eeee-4567-890a-bcdef0123456',
+    translationId: 'fea2b3c4-eeee-4567-890a-bcdef0123456',
+    text: {
+      en_text: 'What is the antiderivative of e^x?',
+      he_text: 'מהו הפונקציה הקדומה של e^x?',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '1d2e3f4a-5b6c-4d7e-8f9a-0b1c2d3e4f5a',
+    answers: [
+      {
+        id: 'fea2b3c4-eeee-4567-890a-bcdef0123457',
+        selectAnswers: [
+          {
+            id: 'fea2b3c4-eeee-4567-890a-bcdef0123458',
+            translationId: 'fea2b3c4-eeee-4567-890a-bcdef0123458',
+            text: {
+              en_text: 'e^x + C',
+              he_text: 'e^x + C',
+            },
+            isCorrect: true,
+          },
+          {
+            id: 'fea2b3c4-eeee-4567-890a-bcdef0123459',
+            translationId: 'fea2b3c4-eeee-4567-890a-bcdef0123459',
+            text: {
+              en_text: 'xe^x + C',
+              he_text: 'xe^x + C',
+            },
+            isCorrect: false,
+          },
+          {
+            id: 'fea2b3c4-eeee-4567-890a-bcdef012345a',
+            translationId: 'fea2b3c4-eeee-4567-890a-bcdef012345a',
+            text: {
+              en_text: 'e^x/x + C',
+              he_text: 'e^x/x + C',
+            },
+            isCorrect: false,
+          },
+          {
+            id: 'fea2b3c4-eeee-4567-890a-bcdef012345b',
+            translationId: 'fea2b3c4-eeee-4567-890a-bcdef012345b',
+            text: {
+              en_text: 'ln(e^x) + C',
+              he_text: 'ln(e^x) + C',
+            },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'ffa2b3c4-ffff-4567-890a-bcdef0123456',
+    translationId: 'ffa2b3c4-ffff-4567-890a-bcdef0123456',
+    text: {
+      en_text: 'Calculate ∫[1,2] (x³ - x) dx',
+      he_text: 'חשב ∫[1,2] (x³ - x) dx',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '1d2e3f4a-5b6c-4d7e-8f9a-0b1c2d3e4f5a',
+    answers: [
+      {
+        id: 'ffa2b3c4-ffff-4567-890a-bcdef0123457',
+        numberAnswer: {
+          id: 'ffa2b3c4-ffff-4567-890a-bcdef0123458',
+          value: 2.25,
+        },
+      },
+    ],
+  },
+  {
+    id: 'f0a2b3c4-0000-4567-890a-bcdef0123456',
+    translationId: 'f0a2b3c4-0000-4567-890a-bcdef0123456',
+    text: {
+      en_text:
+        'Which condition is necessary for the Fundamental Formula to apply?',
+      he_text: 'איזה תנאי נחוץ כדי שהנוסחה היסודית תחול?',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '1d2e3f4a-5b6c-4d7e-8f9a-0b1c2d3e4f5a',
+    answers: [
+      {
+        id: 'f0a2b3c4-0000-4567-890a-bcdef0123457',
+        selectAnswers: [
+          {
+            id: 'f0a2b3c4-0000-4567-890a-bcdef0123458',
+            translationId: 'f0a2b3c4-0000-4567-890a-bcdef0123458',
+            text: {
+              en_text: 'f must be continuous on [a,b]',
+              he_text: 'f חייבת להיות רציפה ב-[a,b]',
+            },
+            isCorrect: true,
+          },
+          {
+            id: 'f0a2b3c4-0000-4567-890a-bcdef0123459',
+            translationId: 'f0a2b3c4-0000-4567-890a-bcdef0123459',
+            text: {
+              en_text: 'f must be differentiable on [a,b]',
+              he_text: 'f חייבת להיות גזירה ב-[a,b]',
+            },
+            isCorrect: false,
+          },
+          {
+            id: 'f0a2b3c4-0000-4567-890a-bcdef012345a',
+            translationId: 'f0a2b3c4-0000-4567-890a-bcdef012345a',
+            text: {
+              en_text: 'f must be positive on [a,b]',
+              he_text: 'f חייבת להיות חיובית ב-[a,b]',
+            },
+            isCorrect: false,
+          },
+          {
+            id: 'f0a2b3c4-0000-4567-890a-bcdef012345b',
+            translationId: 'f0a2b3c4-0000-4567-890a-bcdef012345b',
+            text: {
+              en_text: 'f must be bounded on [a,b]',
+              he_text: 'f חייבת להיות חסומה ב-[a,b]',
+            },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'f1b2c3d4-1111-5678-901a-bcdef0123456',
+    translationId: 'f1b2c3d4-1111-5678-901a-bcdef0123456',
+    text: {
+      en_text: "If F'(x) = x² and F(0) = 5, what is F(2)?",
+      he_text: "אם F'(x) = x² ו-F(0) = 5, מה הוא F(2)?",
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '1d2e3f4a-5b6c-4d7e-8f9a-0b1c2d3e4f5a',
+    answers: [
+      {
+        id: 'f1b2c3d4-1111-5678-901a-bcdef0123457',
+        numberAnswer: {
+          id: 'f1b2c3d4-1111-5678-901a-bcdef0123458',
+          value: 7.667,
+        },
+      },
+    ],
+  },
+  {
+    id: 'f2b2c3d4-2222-5678-901a-bcdef0123456',
+    translationId: 'f2b2c3d4-2222-5678-901a-bcdef0123456',
+    text: {
+      en_text: 'Calculate ∫[0,1] (2x + 3) dx',
+      he_text: 'חשב ∫[0,1] (2x + 3) dx',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '1d2e3f4a-5b6c-4d7e-8f9a-0b1c2d3e4f5a',
+    answers: [
+      {
+        id: 'f2b2c3d4-2222-5678-901a-bcdef0123457',
+        numberAnswer: {
+          id: 'f2b2c3d4-2222-5678-901a-bcdef0123458',
+          value: 4,
+        },
+      },
+    ],
+  },
+  {
+    id: 'f3b2c3d4-3333-5678-901a-bcdef0123456',
+    translationId: 'f3b2c3d4-3333-5678-901a-bcdef0123456',
+    text: {
+      en_text:
+        'What is the relationship between differentiation and integration according to the Fundamental Formula?',
+      he_text: 'מה הקשר בין גזירה לאינטגרציה לפי הנוסחה היסודית?',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '1d2e3f4a-5b6c-4d7e-8f9a-0b1c2d3e4f5a',
+    answers: [
+      {
+        id: 'f3b2c3d4-3333-5678-901a-bcdef0123457',
+        selectAnswers: [
+          {
+            id: 'f3b2c3d4-3333-5678-901a-bcdef0123458',
+            translationId: 'f3b2c3d4-3333-5678-901a-bcdef0123458',
+            text: {
+              en_text: 'They are inverse operations',
+              he_text: 'הן פעולות הפוכות',
+            },
+            isCorrect: true,
+          },
+          {
+            id: 'f3b2c3d4-3333-5678-901a-bcdef0123459',
+            translationId: 'f3b2c3d4-3333-5678-901a-bcdef0123459',
+            text: {
+              en_text: 'They are identical operations',
+              he_text: 'הן פעולות זהות',
+            },
+            isCorrect: false,
+          },
+          {
+            id: 'f3b2c3d4-3333-5678-901a-bcdef012345a',
+            translationId: 'f3b2c3d4-3333-5678-901a-bcdef012345a',
+            text: {
+              en_text: 'They are unrelated operations',
+              he_text: 'הן פעולות לא קשורות',
+            },
+            isCorrect: false,
+          },
+          {
+            id: 'f3b2c3d4-3333-5678-901a-bcdef012345b',
+            translationId: 'f3b2c3d4-3333-5678-901a-bcdef012345b',
+            text: {
+              en_text: 'They can only be used together',
+              he_text: 'ניתן להשתמש בהן רק יחד',
+            },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
 ] satisfies QuestionSeedData[];
