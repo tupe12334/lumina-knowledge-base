@@ -78,6 +78,7 @@ export const degreeCourses = {
       'Algorithms',
       'Computational Models',
       'Infinitesimal Calculus 2',
+      'Calculus B',
     ],
   },
 };

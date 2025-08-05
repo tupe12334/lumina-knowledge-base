@@ -317,6 +317,12 @@ export const TRANSLATIONS: TranslationSeed[] = [
   },
   // courses.consts.ts
   {
+    id: 'C44DBE0A-CFF5-4259-9064-163E3ED72F32',
+    en_text: 'Calculus B',
+    he_text: 'חדו״א ב',
+  },
+  // courses.consts.ts
+  {
     id: 'd191be2f-56ed-4cf6-880b-18c749786af9',
     en_text: 'Database Systems',
     he_text: 'מערכות בסיסי נתונים',

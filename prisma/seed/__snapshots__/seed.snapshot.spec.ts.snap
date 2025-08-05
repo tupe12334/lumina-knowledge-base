@@ -915,6 +915,11 @@ exports[`seed snapshot > saves seeded data snapshot 1`] = `
     },
     {
       "createdAt": 1970-01-01T00:00:00.000Z,
+      "id": "EDE16E3C-66B1-4240-86B0-67B2A8B92973",
+      "updatedAt": null,
+    },
+    {
+      "createdAt": 1970-01-01T00:00:00.000Z,
       "id": "baed1685-70b6-4316-8598-693ddb29836a",
       "updatedAt": null,
     },
@@ -966,6 +971,11 @@ exports[`seed snapshot > saves seeded data snapshot 1`] = `
     {
       "createdAt": 1970-01-01T00:00:00.000Z,
       "id": "3a8c4066-52cc-4ed9-94ae-206a853e614d",
+      "updatedAt": null,
+    },
+    {
+      "createdAt": 1970-01-01T00:00:00.000Z,
+      "id": "31E0F17C-392F-4CF7-BA4D-B188EF7E767F",
       "updatedAt": null,
     },
     {
@@ -1847,6 +1857,15 @@ exports[`seed snapshot > saves seeded data snapshot 1`] = `
       "updatedAt": 1970-01-01T00:00:00.000Z,
     },
     {
+      "blockId": "EDE16E3C-66B1-4240-86B0-67B2A8B92973",
+      "createdAt": 1970-01-01T00:00:00.000Z,
+      "id": "3B714857-64FC-45B4-872F-079CAF47718A",
+      "publishedAt": null,
+      "translationId": "C44DBE0A-CFF5-4259-9064-163E3ED72F32",
+      "universityId": "92e73fb7-96de-45e4-aff3-4ca7b89be16c",
+      "updatedAt": 1970-01-01T00:00:00.000Z,
+    },
+    {
       "blockId": "baed1685-70b6-4316-8598-693ddb29836a",
       "createdAt": 1970-01-01T00:00:00.000Z,
       "id": "c5147e60-4ad0-40cb-a93a-6de6983b3c7c",
@@ -1942,6 +1961,15 @@ exports[`seed snapshot > saves seeded data snapshot 1`] = `
       "id": "19304114-b136-4f2f-ac2b-945b046542cd",
       "publishedAt": null,
       "translationId": "fb83c421-6e77-4571-9640-f0865e4c0ce9",
+      "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
+      "updatedAt": null,
+    },
+    {
+      "blockId": "31E0F17C-392F-4CF7-BA4D-B188EF7E767F",
+      "createdAt": 1970-01-01T00:00:00.000Z,
+      "id": "3F315C7D-0CF4-43BB-B8A1-FF03717E1EF8",
+      "publishedAt": null,
+      "translationId": "C44DBE0A-CFF5-4259-9064-163E3ED72F32",
       "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
       "updatedAt": null,
     },
@@ -6241,6 +6269,13 @@ exports[`seed snapshot > saves seeded data snapshot 1`] = `
       "en_text": "Calculus A",
       "he_text": "חדו״א א",
       "id": "fb83c421-6e77-4571-9640-f0865e4c0ce9",
+      "updatedAt": null,
+    },
+    {
+      "createdAt": 1970-01-01T00:00:00.000Z,
+      "en_text": "Calculus B",
+      "he_text": "חדו״א ב",
+      "id": "C44DBE0A-CFF5-4259-9064-163E3ED72F32",
       "updatedAt": null,
     },
     {

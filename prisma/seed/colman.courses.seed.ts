@@ -35,6 +35,13 @@ export const seedColmanCourses = async (
       blockId: '9c26aa0e-9b49-405e-b1c4-090ce2d16d29',
       translationId: '3ea42901-eb41-485e-a4d9-2f3727abd9ae',
     },
+    {
+      en_text: 'Calculus B',
+      he_text: 'חדו״א ב',
+      id: '3B714857-64FC-45B4-872F-079CAF47718A',
+      blockId: 'EDE16E3C-66B1-4240-86B0-67B2A8B92973',
+      translationId: 'C44DBE0A-CFF5-4259-9064-163E3ED72F32',
+    },
   ];
 
   const colmanCsCourses = [

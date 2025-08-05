@@ -61,6 +61,14 @@ export const courses = [
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
+    id: '3F315C7D-0CF4-43BB-B8A1-FF03717E1EF8',
+    blockId: '31E0F17C-392F-4CF7-BA4D-B188EF7E767F',
+    translationId: 'C44DBE0A-CFF5-4259-9064-163E3ED72F32',
+    en_name: 'Calculus B',
+    he_name: 'חדו״א ב',
+    universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
+  },
+  {
     id: '7ba4a982-3b9a-4bf5-a587-c3e6152732d3',
     blockId: 'a4bcc89e-7c87-425f-8f5b-7a05fab2cd40',
     translationId: 'd191be2f-56ed-4cf6-880b-18c749786af9',
