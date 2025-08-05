@@ -1,11 +1,3 @@
-/**
- * Translation constants for database seeding
- * Extracted from seed.ts for better organization and performance optimization
- *
- * IMPORTANT: This file contains ALL translations used in seeding to enable
- * bulk operations instead of individual upserts for optimal performance.
- */
-
 import {
   THE_COLLEGE_OF_MANAGEMENT_ACADEMIC_STUDIES_EN_NAME,
   THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME,
@@ -279,404 +271,337 @@ export const TRANSLATIONS: TranslationSeed[] = [
     en_text: 'Computer Graphics',
     he_text: 'גרפיקה ממוחשבת',
   },
-  // courses.consts.ts
   {
     id: '4b42c9f4-436a-4008-9291-5ca24df618fe',
     en_text: 'Discrete Mathematics',
     he_text: 'מתמטיקה בדידה',
   },
-  // courses.consts.ts
   {
     id: 'be355b4a-6a11-49b9-ac5b-c3b66d52212b',
     en_text: 'Logic for Computer Science Students',
     he_text: 'לוגיקה לסטודנטים למדעי המחשב',
   },
-  // courses.consts.ts
   {
     id: '6b3dd279-082e-47d6-a5cf-e795d5f07986',
     en_text: 'Auctions and Electronic Markets: Mechanism Design and Algorithms',
     he_text: 'מכרזים ושוקיים אלקטרוניים: תכנון מכניזמים ואלגוריתמים',
   },
-  // courses.consts.ts
   {
     id: 'fb83c421-6e77-4571-9640-f0865e4c0ce9',
     en_text: 'Calculus A',
     he_text: 'חדו״א א',
   },
-  // courses.consts.ts
   {
     id: 'C44DBE0A-CFF5-4259-9064-163E3ED72F32',
     en_text: 'Calculus B',
     he_text: 'חדו״א ב',
   },
-  // courses.consts.ts
   {
     id: 'd191be2f-56ed-4cf6-880b-18c749786af9',
     en_text: 'Database Systems',
     he_text: 'מערכות בסיסי נתונים',
   },
-  // courses.consts.ts
   {
     id: 'e6a95799-ced3-42d4-9e48-8bf68553044a',
     en_text: 'Introduction to Java',
     he_text: 'מבוא לשפת Java',
   },
-  // courses.consts.ts
   {
     id: 'c7e930db-5b2a-43ba-a6e9-567bf5883053',
     en_text: 'Introduction to Psychology',
     he_text: 'מבוא לפסיכולוגיה',
   },
-  // courses.consts.ts
   {
     id: '45268d5a-6c0d-4760-ab4f-828be0a86d88',
     en_text: 'Introduction to Microeconomics',
     he_text: 'מבוא למיקרוכלכלה',
   },
-  // courses.consts.ts
   {
     id: 'd3b11a88-d9c2-4397-b6e4-2d2b0976a83a',
     en_text: 'Basic Concepts in Econometrics',
     he_text: 'מושגי יסוד באקונומטריקה',
   },
-  // courses.consts.ts
   {
     id: 'ef61ce16-2b50-4316-91dd-16913271687b',
     en_text: 'Chapters in Physical Chemistry',
     he_text: 'פרקים בכימיה פיסיקלית',
   },
-  // courses.consts.ts
   {
     id: '2d97a756-9661-4ff2-929f-66a368b704cc',
     en_text: 'Complementary Integral Calculus',
     he_text: 'השלמות בחשבון אינטגרלי',
   },
-  // courses.consts.ts
   {
     id: 'f7e34ceb-36a4-4321-bf3f-be4b967a8f84',
     en_text: 'Computer Organization',
     he_text: 'ארגון המחשב',
   },
-  // courses.consts.ts
   {
     id: '18dee43c-2d42-4740-8fcd-700038824deb',
     en_text: 'Differential Calculus for Economics and Management Students',
     he_text: 'חשבון דיפרנציאלי לתלמידי כלכלה וניהול',
   },
-  // courses.consts.ts
   {
     id: 'bcb61756-0297-4deb-a66f-d182600e0179',
     en_text: 'Ecology',
     he_text: 'אקולוגיה',
   },
-  // courses.consts.ts
   {
     id: '1c48257b-684a-4ccb-89c5-78e344de5c4a',
     en_text: 'Electricity and Magnetism',
     he_text: 'חשמל ומגנטיות',
   },
-  // courses.consts.ts
   {
     id: 'd0498c23-075c-4a53-8093-66b8982f940f',
     en_text: 'Foundations of Physics A',
     he_text: 'יסודות הפיסיקה א',
   },
-  // courses.consts.ts
   {
     id: 'f4bd0465-66ed-4a94-9021-e37700974c03',
     en_text: 'Foundations of Physics B',
     he_text: 'יסודות הפיסיקה ב',
   },
-  // courses.consts.ts
   {
     id: '76223a65-8be7-4d0b-8f7f-76591882255f',
     en_text: 'Foundations of Physics for Biologists A',
     he_text: 'יסודות הפיסיקה לביולוגים א',
   },
-  // courses.consts.ts
   {
     id: '33debec6-42c7-4984-a19a-04ab6ad88272',
     en_text: 'General Biology A',
     he_text: 'ביולוגיה כללית א',
   },
-  // courses.consts.ts
   {
     id: 'e1b58f24-a1f7-4ccc-b09b-2e95ab840f57',
     en_text: 'General Biology B',
     he_text: 'ביולוגיה כללית ב',
   },
-  // courses.consts.ts
   {
     id: '188799c1-cb5f-4908-9f74-474f5fa96d36',
     en_text: 'General Chemistry',
     he_text: 'כימיה כללית',
   },
-  // courses.consts.ts
   {
     id: '66ababae-045e-4406-b616-00f44e8acd21',
     en_text: 'General Chemistry A',
     he_text: 'כימיה כללית א',
   },
-  // courses.consts.ts
   {
     id: '9b00bf4a-1b10-48d7-bead-19a202108e8b',
     en_text: 'General Chemistry B',
     he_text: 'כימיה כללית ב',
   },
-  // courses.consts.ts
   {
     id: '43f262a6-2545-43fb-8a5d-90d69072fddf',
     en_text: 'Infinitesimal Calculus 1',
     he_text: 'חשבון אינפיניטסימלי 1',
   },
-  // courses.consts.ts
   {
     id: '29fff600-3511-4311-bc67-c7f61504513a',
     en_text: 'Introduction to Macroeconomics',
     he_text: 'מבוא למקרוכלכלה',
   },
-  // courses.consts.ts
   {
     id: 'd82fe5b4-1676-41e3-ace2-6b0ee92a1833',
     en_text: 'Introduction to Statistics for Social Sciences A',
     he_text: 'מבוא לסטטיסטיקה לתלמידי מדעי החברה א',
   },
-  // courses.consts.ts
   {
     id: '3292ae0f-3ba5-4526-99a8-10e7aa6238b0',
     en_text: 'Labor Economics',
     he_text: 'כלכלת עבודה',
   },
-  // courses.consts.ts
   {
     id: '37771716-f5eb-444c-942d-901751914f80',
     en_text: 'Probability and Introduction to Statistics for Computer Science',
     he_text: 'הסתברות ומבוא לסטטיסטיקה למדעי המחשב',
   },
-  // courses.consts.ts
   {
     id: '40e51728-2ccd-47bb-bc71-6d39499ed577',
     en_text: 'Foundations of Physics for Biologists B',
     he_text: 'יסודות הפיסיקה לביולוגים ב',
   },
-  // courses.consts.ts
   {
     id: '7c9224fb-793d-48c1-8475-1285ed9da02d',
     en_text: 'General Chemistry for Biologists B',
     he_text: 'כימיה כללית לביולוגים ב',
   },
-  // courses.consts.ts
   {
     id: '43fb0be2-16ac-4052-a44f-689d4af82440',
     en_text: 'Infinitesimal Calculus 2',
     he_text: 'חשבון אינפיניטסימלי 2',
   },
-  // courses.consts.ts
   {
     id: '11d4ed91-e7d3-4eb5-ae96-5933d7de4951',
     en_text: 'Infinitesimal Calculus 3',
     he_text: 'חשבון אינפיניטסימלי 3',
   },
-  // courses.consts.ts
   {
     id: '9ccbc3cc-2abf-4120-9377-f5a8beaaa10c',
     en_text: 'Intergenerational Economics',
     he_text: 'כלכלה בין-דורית',
   },
-  // courses.consts.ts
   {
     id: '818a894b-ef5a-4ef6-8f6c-363e8eae93fb',
     en_text: 'International Real Economics',
     he_text: 'כלכלה בין-לאומית ריאלית',
   },
-  // courses.consts.ts
   {
     id: '0f9fce5f-6089-4661-93cc-72e6aa2e57cd',
     en_text: 'Computational Models',
     he_text: 'מודלים חישוביים',
   },
-  // courses.consts.ts
   {
     id: '72f86c11-f987-48fd-975a-6627b0019940',
     en_text: 'Algorithms',
     he_text: 'אלגוריתמים',
   },
-  // courses.consts.ts
   {
     id: 'd4c501df-eb02-4125-9f97-573813b664fb',
     en_text: 'Thermodynamics for Physicists',
     he_text: 'תרמודינמיקה לפיזיקאים',
   },
-  // courses.consts.ts
   {
     id: '5b076629-77e3-41b1-b18b-b1ddef2cb6ef',
     en_text: 'Introduction to Statistics for Social Sciences B',
     he_text: 'מבוא לסטטיסטיקה לתלמידי מדעי החברה ב',
   },
-  // courses.consts.ts
   {
     id: '8d81b8f4-b107-4ecd-9584-d7f8c9f26be7',
     en_text: 'Introduction to Computer Science and Java',
     he_text: 'מבוא למדעי המחשב ושפת Java',
   },
-  // courses.consts.ts
   {
     id: '22a25557-6bef-4097-81a4-3b71bd84efb9',
     en_text: 'Introduction to Differential Equations',
     he_text: 'מבוא למשוואות דיפרנציאליות',
   },
-  // courses.consts.ts
   {
     id: 'cad57e56-af9a-4bd8-b849-94bdbaf5efca',
     en_text: 'Introduction to Statistics and Probability for Science Students',
     he_text: 'מבוא לסטטיסטיקה ולהסתברות לתלמידי מדעים',
   },
-  // courses.consts.ts
   {
     id: 'f0ae6d1b-c1c6-4d2f-ba0d-5eade0cb623b',
     en_text: 'Linear Algebra 1',
     he_text: 'אלגברה ליניארית 1',
   },
-  // courses.consts.ts
   {
     id: '68453935-7832-405a-b42a-e41d10099093',
     en_text: 'Linear Algebra 2',
     he_text: 'אלגברה ליניארית 2',
   },
-  // courses.consts.ts
   {
     id: 'f25c3425-8a0b-4d9d-baea-fb78fc675490',
     en_text: 'Linear Algebra for Science',
     he_text: 'אלגברה לינארית למדעים',
   },
-  // courses.consts.ts
   {
     id: '2bd06a32-de31-423e-be91-cd72dbab4cb8',
     en_text: 'Macroeconomics A',
     he_text: 'מקרו כלכלה א',
   },
-  // courses.consts.ts
   {
     id: '2befe762-2d92-40b2-a970-83f9a08db26e',
     en_text: 'Macroeconomics B',
     he_text: 'מקרו כלכלה ב',
   },
-  // courses.consts.ts
   {
     id: '56467e4f-9a52-4a30-9e83-8e69f88be7ea',
     en_text: 'Mechanics',
     he_text: 'מכניקה',
   },
-  // courses.consts.ts
   {
     id: '3682e794-c6db-48af-9086-8bcdf3ba1361',
     en_text: 'Microeconomics A',
     he_text: 'מיקרו כלכלה א',
   },
-  // courses.consts.ts
   {
     id: '42b0726e-77ec-49e8-96a3-1081de8ed902',
     en_text: 'Microeconomics B',
     he_text: 'מיקרו כלכלה ב',
   },
-  // courses.consts.ts
   {
     id: '4ee3dc1d-68c8-4d49-8de5-d68b44dbf30d',
     en_text: 'Microeconomics C',
     he_text: 'מיקרו כלכלה ג',
   },
-  // courses.consts.ts
   {
     id: '7a1911a3-4472-4823-b0a4-ec9acede05c3',
     en_text: 'Monetary Economics',
     he_text: 'כלכלת כספים',
   },
-  // courses.consts.ts
   {
     id: '90b094e5-7008-4d15-8760-4e5a0004e833',
     en_text: 'Organic Chemistry',
     he_text: 'כימיה אורגנית',
   },
-  // courses.consts.ts
   {
     id: '6086c503-3b98-40e1-a628-10f08a49cc7a',
     en_text: 'Organic Chemistry for Biologists',
     he_text: 'כימיה אורגנית לביולוגים',
   },
-  // courses.consts.ts
   {
     id: '06ab4809-b5a7-4a63-bf64-11b2137e158c',
     en_text: 'Political Economy',
     he_text: 'כלכלה פוליטית',
   },
-  // courses.consts.ts
   {
     id: '43c27b29-25c0-48bd-b464-9a89b0fbbaaf',
     en_text: 'Public Economics',
     he_text: 'כלכלת ציבור',
   },
-  // courses.consts.ts
   {
     id: 'e29d162e-1a63-4875-b34c-67349bcdfb33',
     en_text: 'Semiconductor Devices',
     he_text: 'התקני מוליכים למחצה',
   },
-  // courses.consts.ts
   {
     id: 'e45aa0ec-3d93-402d-be14-83c7e35bfed6',
     en_text: 'Semiconductors',
     he_text: 'מוליכים למחצה',
   },
-  // courses.consts.ts
   {
     id: '85c94e9d-d658-47e1-8792-649c597b4d2a',
     en_text: 'Social Preference and Choice',
     he_text: 'העדפה חברתית ובחירה',
   },
-  // courses.consts.ts
   {
     id: '0fca4bf4-a204-4cc8-9911-8485516ff5a0',
     en_text:
       'Strategic Thinking: Game Theory and its Applications in Economics and Management',
     he_text: 'חשיבה אסטרטגית: תורת המשחקים ויישומיה בכלכלה ובניהול',
   },
-  // courses.consts.ts
   {
     id: 'e3bf3cfa-6ce6-4c18-8acc-112cbfe2ec65',
     en_text: 'System Programming Laboratory',
     he_text: 'מעבדת תכנות מערכות',
   },
-  // courses.consts.ts
   {
     id: '474a614d-806d-4b79-8430-6242b799b7f6',
     en_text: 'The Economics of Israel',
     he_text: 'כלכלת ישראל',
   },
-  // courses.consts.ts
   {
     id: '37874beb-e35c-4a13-bb04-51eac3fa3b65',
     en_text: 'Thermodynamics',
     he_text: 'תרמודינמיקה',
   },
-  // courses.consts.ts
   {
     id: '6316c2a7-f4e8-4e32-8fb5-e0e2611bde66',
     en_text: 'Topics in Mathematics for Social Sciences Students',
     he_text: 'נושאים במתמטיקה לסטודנטים למדעי החברה',
   },
-  // courses.consts.ts
   {
     id: '529780e7-32c7-4685-b54d-df934d032de6',
     en_text: 'Statistical Inference',
     he_text: 'הסקה סטטיסטית',
   },
-  // courses.consts.ts
   {
     id: '47191873-af34-406e-b66b-8f90c065057e',
     en_text: 'Data Structures and Introduction to Algorithms',
     he_text: 'מבני נתונים ומבוא לאלגוריתמים',
   },
-  // courses.consts.ts
   {
     id: 'b5b8e1fb-02be-4c0f-b0dd-d0cf037f887c',
     en_text: 'Artificial Intelligence',
@@ -1366,13 +1291,11 @@ export const TRANSLATIONS: TranslationSeed[] = [
     en_text: 'No',
     he_text: 'לא',
   },
-  // physics-modules-questions.seed.ts
   {
     id: 'a34d7a4b-9f41-4739-becb-a920ec24f13c',
     en_text: '0.7 km',
     he_text: '0.7 ק״מ',
   },
-  // physics-modules-questions.seed.ts
   {
     id: 'AF770977-4B29-4444-B907-F819EF5D0BEA',
     en_text: '7,100 cm',
