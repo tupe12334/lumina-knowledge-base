@@ -2001,6 +2001,13 @@ In the Faculty of Arts, you're not just learning about the world — you're lear
     he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "PEPPER"?',
   },
 
+  // Module translation for The Definite Integral
+  {
+    id: '2f9e8a7b-c123-4def-9876-543210fedcba',
+    en_text: 'The Definite Integral',
+    he_text: 'האינטגרל המסוים',
+  },
+
   {
     id: 'f27e83c6-1ba1-49a1-affd-2b3e495a6810',
     en_text:
