@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import { Prisma } from '../../../generated/client';
 import { PrismaService } from '../../prisma/prisma.service';
 import { Question } from './models/Question.entity';
 import { QuestionsQueryInput } from './dto/questions-query.input';
@@ -39,7 +40,7 @@ export class QuestionsService {
 
   async findAll(filters?: QuestionsQueryInput): Promise<Question[]> {
     // Build where clause based on filters
-    const where: Record<string, any> = {};
+    const where: Prisma.QuestionWhereInput = {};
 
     // Handle both array and single module filtering
     let moduleIds =
@@ -76,7 +77,7 @@ export class QuestionsService {
 
     // Build Module filter combining both module and course filters
     if (moduleIds.length > 0 || courseIds.length > 0) {
-      const moduleConditions: any[] = [];
+      const moduleConditions: Prisma.ModuleWhereInput[] = [];
 
       if (moduleIds.length > 0) {
         moduleConditions.push({ id: { in: moduleIds } });

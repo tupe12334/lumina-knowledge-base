@@ -142,15 +142,6 @@ await Promise.all([
 - [ ] Improve error handling patterns across modules
 - [ ] Standardize validation approaches
 
-### TypeScript Best Practices
-
-- ✅ Use interfaces over types unless needed
-- ✅ Avoid plain TypeScript enums
-- ✅ Use `const` over `let` unless reassignment needed
-- ✅ Use `===` over `==` for strict equality
-- [ ] Eliminate any remaining `any` types (use `unknown` instead)
-- [ ] Add comprehensive JSDoc documentation
-
 ### Testing Strategy
 
 - ✅ Unit tests in same folder as code with `.spec.ts` suffix

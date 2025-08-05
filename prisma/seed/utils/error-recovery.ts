@@ -10,10 +10,10 @@ export interface RetryConfig {
   retryableErrors: Array<string | RegExp>;
 }
 
-export interface RecoveryOptions {
+export interface RecoveryOptions<T = unknown> {
   skipOnError: boolean;
   continueOnError: boolean;
-  fallbackValue?: any;
+  fallbackValue?: T;
   logErrors: boolean;
   saveErrorsToFile?: string;
 }
@@ -66,9 +66,9 @@ export class ErrorRecovery {
     operation: () => Promise<T>,
     operationName: string,
     itemId?: string,
-    recoveryOptions: Partial<RecoveryOptions> = {},
+    recoveryOptions: Partial<RecoveryOptions<T>> = {},
   ): Promise<T | null> {
-    const options: RecoveryOptions = {
+    const options: RecoveryOptions<T> = {
       skipOnError: false,
       continueOnError: true,
       logErrors: true,
@@ -147,7 +147,7 @@ export class ErrorRecovery {
       name: string;
       id?: string;
     }>,
-    recoveryOptions: Partial<RecoveryOptions> = {},
+    recoveryOptions: Partial<RecoveryOptions<T>> = {},
   ): Promise<Array<T | null>> {
     const results: Array<T | null> = [];
 
@@ -324,7 +324,7 @@ export async function withErrorRecovery<T>(
   operation: () => Promise<T>,
   operationName: string,
   itemId?: string,
-  options?: Partial<RecoveryOptions>,
+  options?: Partial<RecoveryOptions<T>>,
 ): Promise<T | null> {
   return seedErrorRecovery.executeWithRecovery(
     operation,
