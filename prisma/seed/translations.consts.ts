@@ -18,7 +18,6 @@ export interface TranslationSeed {
 }
 
 export const TRANSLATIONS: TranslationSeed[] = [
-  // University Translations
   {
     id: 'fa6eb564-ad2c-480c-9086-82a4fd474b0a',
     en_text: THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME,
@@ -34,8 +33,6 @@ export const TRANSLATIONS: TranslationSeed[] = [
     en_text: 'Ben-Gurion University of the Negev',
     he_text: 'אוניברסיטת בן-גוריון בנגב',
   },
-
-  // Discipline Translations
   {
     id: 'e8b9f640-68b9-4d90-a56b-9ab8dfade0af',
     en_text: 'Mathematics',
@@ -81,8 +78,6 @@ export const TRANSLATIONS: TranslationSeed[] = [
     en_text: 'Cognitive Science',
     he_text: 'מדעי הקוגניציה',
   },
-
-  // Faculty Translations
   {
     id: '067fc944-3d78-4675-a759-804e22b179a9',
     en_text: 'Social Sciences',
@@ -103,8 +98,6 @@ export const TRANSLATIONS: TranslationSeed[] = [
     en_text: 'Arts',
     he_text: 'אמנויות',
   },
-
-  // Module Translations (original ones from previous file)
   {
     id: '21d803d9-2816-4a0b-a1b4-deafc757ca7b',
     en_text: 'SI System',
@@ -271,21 +264,16 @@ export const TRANSLATIONS: TranslationSeed[] = [
     en_text: 'Convergent Subsequences',
     he_text: 'סדרת הוכחה',
   },
-
-  // ALL EXTRACTED TRANSLATIONS FROM SEED FILES
-  // courses.consts.ts
   {
     id: '8b9cde61-4a1d-4e8d-800b-f41449623a07',
     en_text: 'Data Mining',
     he_text: 'כריית נתונים',
   },
-  // courses.consts.ts
   {
     id: '33040305-1b03-4b94-b168-c1c2b07170a4',
     en_text: 'Defensive Systems Programming',
     he_text: 'תכנות מערכות הגנתיות',
   },
-  // courses.consts.ts
   {
     id: '851db662-4933-444c-9a54-a5795074a8a4',
     en_text: 'Computer Graphics',
@@ -1390,14 +1378,11 @@ export const TRANSLATIONS: TranslationSeed[] = [
     en_text: '7,100 cm',
     he_text: '7,100 ס״מ',
   },
-  // physics-modules-questions.seed.ts
   {
     id: 'EE38E69B-F2B3-477E-A06A-70EBB3E5F87D',
     en_text: '6.9*10^6 millimeters',
     he_text: '6.9*10^6 מילימטרים',
   },
-
-  // MISSING MODULE TRANSLATIONS FROM modules.seed.ts
   {
     id: '09d74ad2-a8eb-4120-90df-81190243d3cf',
     en_text: 'Graph Theory',
@@ -1493,8 +1478,6 @@ export const TRANSLATIONS: TranslationSeed[] = [
     en_text: 'Logical Equivalence',
     he_text: 'שקילות לוגית',
   },
-
-  // MORE MISSING MODULE TRANSLATIONS
   {
     id: 'afb0c4a6-d7ce-4a3b-a1ee-28c783f4be8a',
     en_text: 'Combinatorics',
@@ -1525,7 +1508,6 @@ export const TRANSLATIONS: TranslationSeed[] = [
     en_text: 'Generating Functions',
     he_text: 'פונקציות יוצרות',
   },
-  // Faculty descriptions
   {
     id: '39ae54f0-57f9-473d-82c9-785dce83f328',
     en_text: `Welcome to the Faculty of Exact Sciences, where curiosity meets precision and imagination is guided by logic. Here, you are not just a student — you are an explorer charting the fundamental laws that govern our universe. Whether you're drawn to the elegance of mathematics, the mysteries of physics, or the power of computer science, this faculty invites you to think deeply, question boldly, and solve the unsolvable.
@@ -1580,7 +1562,6 @@ In the Faculty of Arts, you're not just learning about the world — you're lear
 
 בפקולטה לאמנויות אתם לא רק לומדים על העולם — אתם לומדים כיצד לשקף אותו, לאתגר אותו ולדמיין אותו מחדש דרך העדשה הייחודית שלכם. כאן הקול שלכם מוצא עומק, והזווית שלכם מקבלת עוצמה.`,
   },
-  // Physics questions
   {
     id: 'cb8ad153-c31b-4e22-91f6-c5e9e6f4637a',
     en_text:
@@ -1594,7 +1575,6 @@ In the Faculty of Arts, you're not just learning about the world — you're lear
     he_text:
       'חשב את השטח, במטרים רבועים (m²), של מלבן באורך 80 ס"מ וברוחב 120 ס"מ.',
   },
-  // Missing question translations
   {
     id: 'f254ae75-8818-47a2-840f-c2987ee53692',
     en_text: 'Whether G is not a bipartite graph',
@@ -2000,12 +1980,15 @@ In the Faculty of Arts, you're not just learning about the world — you're lear
       'How many distinct permutations can be formed from the letters of "PEPPER"?',
     he_text: 'כמה סידורים שונים ניתן ליצור מהמילה "PEPPER"?',
   },
-
-  // Module translation for The Definite Integral
   {
     id: '2f9e8a7b-c123-4def-9876-543210fedcba',
     en_text: 'The Definite Integral',
     he_text: 'האינטגרל המסוים',
+  },
+  {
+    id: '3a1f9c8e-2d4b-5c6a-9e7f-4b8c9d0e1f2a',
+    en_text: 'The Enclosed Area Problem',
+    he_text: 'בעיית השטח הכלוא',
   },
 
   {
