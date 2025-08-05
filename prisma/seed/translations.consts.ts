@@ -1980,6 +1980,158 @@ In the Faculty of Arts, you're not just learning about the world — you're lear
     en_text: 'The Fundamental Formula of the Definite Integral',
     he_text: 'הנוסחה היסודית של האינטגרל המסוים',
   },
+  // Upper and Lower Sums modules
+  {
+    id: 'f8a1e3d5-6b9c-4f2a-8e1f-3a5c7d9e2b4f',
+    en_text: 'Upper Sums',
+    he_text: 'סכומים עליונים',
+  },
+  {
+    id: '2c4e6a8f-1d3f-4a7c-9e2a-5f8a1c3e6d9f',
+    en_text: 'Lower Sums',
+    he_text: 'סכומים תחתונים',
+  },
+  // Upper Sums questions and answers
+  {
+    id: 'a1b2c3d4-4444-5678-901a-bcdef0123456',
+    en_text: 'What is an upper sum in the context of Riemann integration?',
+    he_text: 'מהו סכום עליון בהקשר של אינטגרל רימן?',
+  },
+  {
+    id: 'a1b2c3d4-4444-5678-901a-bcdef0123458',
+    en_text:
+      'The sum using the maximum value of the function in each subinterval',
+    he_text: 'הסכום באמצעות הערך המקסימלי של הפונקציה בכל תת-רווח',
+  },
+  {
+    id: 'a1b2c3d4-4444-5678-901a-bcdef0123459',
+    en_text:
+      'The sum using the minimum value of the function in each subinterval',
+    he_text: 'הסכום באמצעות הערך המינימלי של הפונקציה בכל תת-רווח',
+  },
+  {
+    id: 'a1b2c3d4-4444-5678-901a-bcdef012345a',
+    en_text:
+      'The sum using the average value of the function in each subinterval',
+    he_text: 'הסכום באמצעות הערך הממוצע של הפונקציה בכל תת-רווח',
+  },
+  {
+    id: 'a1b2c3d4-4444-5678-901a-bcdef012345b',
+    en_text:
+      'The sum using the midpoint value of the function in each subinterval',
+    he_text: 'הסכום באמצעות ערך נקודת האמצע של הפונקציה בכל תת-רווח',
+  },
+  {
+    id: 'a1b2c3d4-5555-5678-901a-bcdef0123456',
+    en_text: 'How do upper sums relate to the definite integral?',
+    he_text: 'איך סכומים עליונים קשורים לאינטגרל המסוים?',
+  },
+  {
+    id: 'a1b2c3d4-5555-5678-901a-bcdef0123458',
+    en_text: 'Upper sums provide an upper bound for the definite integral',
+    he_text: 'סכומים עליונים מספקים חסם עליון לאינטגרל המסוים',
+  },
+  {
+    id: 'a1b2c3d4-5555-5678-901a-bcdef0123459',
+    en_text: 'Upper sums provide a lower bound for the definite integral',
+    he_text: 'סכומים עליונים מספקים חסם תחתון לאינטגרל המסוים',
+  },
+  {
+    id: 'a1b2c3d4-5555-5678-901a-bcdef012345a',
+    en_text: 'Upper sums equal the definite integral exactly',
+    he_text: 'סכומים עליונים שווים לאינטגרל המסוים בדיוק',
+  },
+  {
+    id: 'a1b2c3d4-5555-5678-901a-bcdef012345b',
+    en_text: 'Upper sums are unrelated to the definite integral',
+    he_text: 'סכומים עליונים לא קשורים לאינטגרל המסוים',
+  },
+  // Lower Sums questions and answers
+  {
+    id: 'b2c3d4e5-6666-5678-901a-bcdef0123456',
+    en_text: 'What is a lower sum in the context of Riemann integration?',
+    he_text: 'מהו סכום תחתון בהקשר של אינטגרל רימן?',
+  },
+  {
+    id: 'd3e4f5a6-7777-5678-901a-bcdef0123458',
+    en_text:
+      'The sum using the minimum value of the function in each subinterval for lower sums',
+    he_text:
+      'הסכום באמצעות הערך המינימלי של הפונקציה בכל תת-רווח עבור סכומים תחתונים',
+  },
+  {
+    id: 'd3e4f5a6-7777-5678-901a-bcdef0123459',
+    en_text:
+      'The sum using the maximum value of the function in each subinterval for lower sums',
+    he_text:
+      'הסכום באמצעות הערך המקסימלי של הפונקציה בכל תת-רווח עבור סכומים תחתונים',
+  },
+  {
+    id: 'd3e4f5a6-7777-5678-901a-bcdef012345a',
+    en_text:
+      'The sum using the average value of the function in each subinterval for lower sums',
+    he_text:
+      'הסכום באמצעות הערך הממוצע של הפונקציה בכל תת-רווח עבור סכומים תחתונים',
+  },
+  {
+    id: 'd3e4f5a6-7777-5678-901a-bcdef012345b',
+    en_text:
+      'The sum using the midpoint value of the function in each subinterval for lower sums',
+    he_text:
+      'הסכום באמצעות ערך נקודת האמצע של הפונקציה בכל תת-רווח עבור סכומים תחתונים',
+  },
+  {
+    id: 'b2c3d4e5-7777-5678-901a-bcdef0123456',
+    en_text: 'How do lower sums relate to the definite integral?',
+    he_text: 'איך סכומים תחתונים קשורים לאינטגרל המסוים?',
+  },
+  {
+    id: 'b2c3d4e5-7777-5678-901a-bcdef0123458',
+    en_text: 'Lower sums provide a lower bound for the definite integral',
+    he_text: 'סכומים תחתונים מספקים חסם תחתון לאינטגרל המסוים',
+  },
+  {
+    id: 'b2c3d4e5-7777-5678-901a-bcdef0123459',
+    en_text: 'Lower sums provide an upper bound for the definite integral',
+    he_text: 'סכומים תחתונים מספקים חסם עליון לאינטגרל המסוים',
+  },
+  {
+    id: 'b2c3d4e5-7777-5678-901a-bcdef012345a',
+    en_text: 'Lower sums equal the definite integral exactly',
+    he_text: 'סכומים תחתונים שווים לאינטגרל המסוים בדיוק',
+  },
+  {
+    id: 'b2c3d4e5-7777-5678-901a-bcdef012345b',
+    en_text: 'Lower sums are unrelated to the definite integral',
+    he_text: 'סכומים תחתונים לא קשורים לאינטגרל המסוים',
+  },
+  {
+    id: 'c3d4e5f6-8888-5678-901a-bcdef0123456',
+    en_text:
+      'What happens when the number of subintervals approaches infinity in upper and lower sums?',
+    he_text:
+      'מה קורה כאשר מספר תת-הרווחים שואף לאינסוף בסכומים עליונים ותחתונים?',
+  },
+  {
+    id: 'c3d4e5f6-8888-5678-901a-bcdef0123458',
+    en_text: 'Both upper and lower sums converge to the definite integral',
+    he_text: 'גם סכומים עליונים וגם תחתונים מתכנסים לאינטגרל המסוים',
+  },
+  {
+    id: 'c3d4e5f6-8888-5678-901a-bcdef0123459',
+    en_text: 'Only upper sums converge to the definite integral',
+    he_text: 'רק סכומים עליונים מתכנסים לאינטגרל המסוים',
+  },
+  {
+    id: 'c3d4e5f6-8888-5678-901a-bcdef012345a',
+    en_text: 'Only lower sums converge to the definite integral',
+    he_text: 'רק סכומים תחתונים מתכנסים לאינטגרל המסוים',
+  },
+  {
+    id: 'c3d4e5f6-8888-5678-901a-bcdef012345b',
+    en_text: 'Neither upper nor lower sums converge',
+    he_text: 'לא סכומים עליונים ולא תחתונים מתכנסים',
+  },
   // Questions for The Fundamental Formula of the Definite Integral
   {
     id: 'f1a2b3c4-1111-4567-890a-bcdef0123456',

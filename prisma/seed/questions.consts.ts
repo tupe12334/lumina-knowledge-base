@@ -3947,4 +3947,295 @@ export const QUESTIONS: QuestionSeedData[] = [
       },
     ],
   },
+  // Upper Sums questions
+  {
+    id: 'a1b2c3d4-4444-5678-901a-bcdef0123456',
+    translationId: 'a1b2c3d4-4444-5678-901a-bcdef0123456',
+    text: {
+      en_text: 'What is an upper sum in the context of Riemann integration?',
+      he_text: 'מהו סכום עליון בהקשר של אינטגרל רימן?',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'a1b2c3d4-5e6f-4a8b-9c0d-2e3f4a5b6c7d',
+    answers: [
+      {
+        id: 'a1b2c3d4-4444-5678-901a-bcdef0123457',
+        selectAnswers: [
+          {
+            id: 'a1b2c3d4-4444-5678-901a-bcdef0123458',
+            translationId: 'a1b2c3d4-4444-5678-901a-bcdef0123458',
+            text: {
+              en_text:
+                'The sum using the maximum value of the function in each subinterval',
+              he_text: 'הסכום באמצעות הערך המקסימלי של הפונקציה בכל תת-רווח',
+            },
+            isCorrect: true,
+          },
+          {
+            id: 'a1b2c3d4-4444-5678-901a-bcdef0123459',
+            translationId: 'a1b2c3d4-4444-5678-901a-bcdef0123459',
+            text: {
+              en_text:
+                'The sum using the minimum value of the function in each subinterval',
+              he_text: 'הסכום באמצעות הערך המינימלי של הפונקציה בכל תת-רווח',
+            },
+            isCorrect: false,
+          },
+          {
+            id: 'a1b2c3d4-4444-5678-901a-bcdef012345a',
+            translationId: 'a1b2c3d4-4444-5678-901a-bcdef012345a',
+            text: {
+              en_text:
+                'The sum using the average value of the function in each subinterval',
+              he_text: 'הסכום באמצעות הערך הממוצע של הפונקציה בכל תת-רווח',
+            },
+            isCorrect: false,
+          },
+          {
+            id: 'a1b2c3d4-4444-5678-901a-bcdef012345b',
+            translationId: 'a1b2c3d4-4444-5678-901a-bcdef012345b',
+            text: {
+              en_text:
+                'The sum using the midpoint value of the function in each subinterval',
+              he_text: 'הסכום באמצעות ערך נקודת האמצע של הפונקציה בכל תת-רווח',
+            },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'a1b2c3d4-5555-5678-901a-bcdef0123456',
+    translationId: 'a1b2c3d4-5555-5678-901a-bcdef0123456',
+    text: {
+      en_text: 'How do upper sums relate to the definite integral?',
+      he_text: 'איך סכומים עליונים קשורים לאינטגרל המסוים?',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'a1b2c3d4-5e6f-4a8b-9c0d-2e3f4a5b6c7d',
+    answers: [
+      {
+        id: 'a1b2c3d4-5555-5678-901a-bcdef0123457',
+        selectAnswers: [
+          {
+            id: 'a1b2c3d4-5555-5678-901a-bcdef0123458',
+            translationId: 'a1b2c3d4-5555-5678-901a-bcdef0123458',
+            text: {
+              en_text:
+                'Upper sums provide an upper bound for the definite integral',
+              he_text: 'סכומים עליונים מספקים חסם עליון לאינטגרל המסוים',
+            },
+            isCorrect: true,
+          },
+          {
+            id: 'a1b2c3d4-5555-5678-901a-bcdef0123459',
+            translationId: 'a1b2c3d4-5555-5678-901a-bcdef0123459',
+            text: {
+              en_text:
+                'Upper sums provide a lower bound for the definite integral',
+              he_text: 'סכומים עליונים מספקים חסם תחתון לאינטגרל המסוים',
+            },
+            isCorrect: false,
+          },
+          {
+            id: 'a1b2c3d4-5555-5678-901a-bcdef012345a',
+            translationId: 'a1b2c3d4-5555-5678-901a-bcdef012345a',
+            text: {
+              en_text: 'Upper sums equal the definite integral exactly',
+              he_text: 'סכומים עליונים שווים לאינטגרל המסוים בדיוק',
+            },
+            isCorrect: false,
+          },
+          {
+            id: 'a1b2c3d4-5555-5678-901a-bcdef012345b',
+            translationId: 'a1b2c3d4-5555-5678-901a-bcdef012345b',
+            text: {
+              en_text: 'Upper sums are unrelated to the definite integral',
+              he_text: 'סכומים עליונים לא קשורים לאינטגרל המסוים',
+            },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  // Lower Sums questions
+  {
+    id: 'b2c3d4e5-6666-5678-901a-bcdef0123456',
+    translationId: 'b2c3d4e5-6666-5678-901a-bcdef0123456',
+    text: {
+      en_text: 'What is a lower sum in the context of Riemann integration?',
+      he_text: 'מהו סכום תחתון בהקשר של אינטגרל רימן?',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '28a65ee2-09c0-4a86-a920-34c5f2a0f0d7',
+    answers: [
+      {
+        id: 'b2c3d4e5-6666-5678-901a-bcdef0123457',
+        selectAnswers: [
+          {
+            id: 'd3e4f5a6-7777-5678-901a-bcdef0123458',
+            translationId: 'd3e4f5a6-7777-5678-901a-bcdef0123458',
+            text: {
+              en_text:
+                'The sum using the minimum value of the function in each subinterval for lower sums',
+              he_text:
+                'הסכום באמצעות הערך המינימלי של הפונקציה בכל תת-רווח עבור סכומים תחתונים',
+            },
+            isCorrect: true,
+          },
+          {
+            id: 'd3e4f5a6-7777-5678-901a-bcdef0123459',
+            translationId: 'd3e4f5a6-7777-5678-901a-bcdef0123459',
+            text: {
+              en_text:
+                'The sum using the maximum value of the function in each subinterval for lower sums',
+              he_text:
+                'הסכום באמצעות הערך המקסימלי של הפונקציה בכל תת-רווח עבור סכומים תחתונים',
+            },
+            isCorrect: false,
+          },
+          {
+            id: 'd3e4f5a6-7777-5678-901a-bcdef012345a',
+            translationId: 'd3e4f5a6-7777-5678-901a-bcdef012345a',
+            text: {
+              en_text:
+                'The sum using the average value of the function in each subinterval for lower sums',
+              he_text:
+                'הסכום באמצעות הערך הממוצע של הפונקציה בכל תת-רווח עבור סכומים תחתונים',
+            },
+            isCorrect: false,
+          },
+          {
+            id: 'd3e4f5a6-7777-5678-901a-bcdef012345b',
+            translationId: 'd3e4f5a6-7777-5678-901a-bcdef012345b',
+            text: {
+              en_text:
+                'The sum using the midpoint value of the function in each subinterval for lower sums',
+              he_text:
+                'הסכום באמצעות ערך נקודת האמצע של הפונקציה בכל תת-רווח עבור סכומים תחתונים',
+            },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'b2c3d4e5-7777-5678-901a-bcdef0123456',
+    translationId: 'b2c3d4e5-7777-5678-901a-bcdef0123456',
+    text: {
+      en_text: 'How do lower sums relate to the definite integral?',
+      he_text: 'איך סכומים תחתונים קשורים לאינטגרל המסוים?',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '28a65ee2-09c0-4a86-a920-34c5f2a0f0d7',
+    answers: [
+      {
+        id: 'b2c3d4e5-7777-5678-901a-bcdef0123457',
+        selectAnswers: [
+          {
+            id: 'b2c3d4e5-7777-5678-901a-bcdef0123458',
+            translationId: 'b2c3d4e5-7777-5678-901a-bcdef0123458',
+            text: {
+              en_text:
+                'Lower sums provide a lower bound for the definite integral',
+              he_text: 'סכומים תחתונים מספקים חסם תחתון לאינטגרל המסוים',
+            },
+            isCorrect: true,
+          },
+          {
+            id: 'b2c3d4e5-7777-5678-901a-bcdef0123459',
+            translationId: 'b2c3d4e5-7777-5678-901a-bcdef0123459',
+            text: {
+              en_text:
+                'Lower sums provide an upper bound for the definite integral',
+              he_text: 'סכומים תחתונים מספקים חסם עליון לאינטגרל המסוים',
+            },
+            isCorrect: false,
+          },
+          {
+            id: 'b2c3d4e5-7777-5678-901a-bcdef012345a',
+            translationId: 'b2c3d4e5-7777-5678-901a-bcdef012345a',
+            text: {
+              en_text: 'Lower sums equal the definite integral exactly',
+              he_text: 'סכומים תחתונים שווים לאינטגרל המסוים בדיוק',
+            },
+            isCorrect: false,
+          },
+          {
+            id: 'b2c3d4e5-7777-5678-901a-bcdef012345b',
+            translationId: 'b2c3d4e5-7777-5678-901a-bcdef012345b',
+            text: {
+              en_text: 'Lower sums are unrelated to the definite integral',
+              he_text: 'סכומים תחתונים לא קשורים לאינטגרל המסוים',
+            },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'c3d4e5f6-8888-5678-901a-bcdef0123456',
+    translationId: 'c3d4e5f6-8888-5678-901a-bcdef0123456',
+    text: {
+      en_text:
+        'What happens when the number of subintervals approaches infinity in upper and lower sums?',
+      he_text:
+        'מה קורה כאשר מספר תת-הרווחים שואף לאינסוף בסכומים עליונים ותחתונים?',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'a1b2c3d4-5e6f-4a8b-9c0d-2e3f4a5b6c7d',
+    answers: [
+      {
+        id: 'c3d4e5f6-8888-5678-901a-bcdef0123457',
+        selectAnswers: [
+          {
+            id: 'c3d4e5f6-8888-5678-901a-bcdef0123458',
+            translationId: 'c3d4e5f6-8888-5678-901a-bcdef0123458',
+            text: {
+              en_text:
+                'Both upper and lower sums converge to the definite integral',
+              he_text: 'גם סכומים עליונים וגם תחתונים מתכנסים לאינטגרל המסוים',
+            },
+            isCorrect: true,
+          },
+          {
+            id: 'c3d4e5f6-8888-5678-901a-bcdef0123459',
+            translationId: 'c3d4e5f6-8888-5678-901a-bcdef0123459',
+            text: {
+              en_text: 'Only upper sums converge to the definite integral',
+              he_text: 'רק סכומים עליונים מתכנסים לאינטגרל המסוים',
+            },
+            isCorrect: false,
+          },
+          {
+            id: 'c3d4e5f6-8888-5678-901a-bcdef012345a',
+            translationId: 'c3d4e5f6-8888-5678-901a-bcdef012345a',
+            text: {
+              en_text: 'Only lower sums converge to the definite integral',
+              he_text: 'רק סכומים תחתונים מתכנסים לאינטגרל המסוים',
+            },
+            isCorrect: false,
+          },
+          {
+            id: 'c3d4e5f6-8888-5678-901a-bcdef012345b',
+            translationId: 'c3d4e5f6-8888-5678-901a-bcdef012345b',
+            text: {
+              en_text: 'Neither upper nor lower sums converge',
+              he_text: 'לא סכומים עליונים ולא תחתונים מתכנסים',
+            },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
 ] satisfies QuestionSeedData[];
