@@ -1,8 +1,8 @@
-# Lightweight migration container with only Prisma dependencies
+# Lightweight migration container with only Prisma dependencies for SQLite
 FROM node:lts-alpine AS migration
 
 # Install essential packages
-RUN apk add --no-cache bash netcat-openbsd postgresql-client
+RUN apk add --no-cache bash
 RUN corepack enable && corepack prepare pnpm --activate
 
 # Set working directory
