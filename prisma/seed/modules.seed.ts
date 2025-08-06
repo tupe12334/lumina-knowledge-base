@@ -119,6 +119,11 @@ export const seedModules = async (
       'Integration by Parts': '7cb38204-869c-47a9-a2a2-a72020e7bdee',
       'Graph Traversal Algorithms': 'dd9aa8c9-b413-42f9-b26a-194a2ef2f4d0',
       'Neural Networks Fundamentals': '1bf61cb6-9d5f-4fa8-9565-27fbdf4a1a18',
+      Arrays: '0f789fba-c19e-44c8-83cc-e53a930c2cb2',
+      'Linked Lists': '67d2cb08-0782-408c-87e9-76241203503e',
+      Stacks: '01ac9600-940d-4f8b-ac3d-4f1c5b8d9272',
+      Queues: '9c67cf86-b57c-4da2-b0fb-fe5a11d8bab0',
+      'Hash Tables': 'b2db4907-ef15-4d56-8b33-8f61c5b9567d',
     };
     return translationMap[moduleText] || '';
   };
@@ -197,6 +202,11 @@ export const seedModules = async (
     'Integration by Parts': '97128d23-40d6-4045-a57d-ec1b08c3723e',
     'Graph Traversal Algorithms': 'f27c282a-0396-432d-8c9f-472233089edd',
     'Neural Networks Fundamentals': '9a45204a-d855-4558-b187-bb136002a9bb',
+    Arrays: '62a63596-9c68-44e0-a85d-169f2e96ce49',
+    'Linked Lists': 'fae56388-e1d2-4f5e-a537-8ff28803871f',
+    Stacks: 'c0c04721-11f0-4668-9e91-2fa94217663f',
+    Queues: 'b68ae937-37a8-4d10-95a6-89a7017694bc',
+    'Hash Tables': 'c2781ae5-9358-4297-8db9-e6651f6f5cd8',
   };
 
   const modules = [
@@ -627,6 +637,31 @@ export const seedModules = async (
     {
       en_text: 'Graph Traversal Algorithms',
       he_text: 'אלגוריתמים למעבר על גרפים',
+      course: 'Data Structures and Introduction to Algorithms',
+    },
+    {
+      en_text: 'Arrays',
+      he_text: 'מערכים',
+      course: 'Data Structures and Introduction to Algorithms',
+    },
+    {
+      en_text: 'Linked Lists',
+      he_text: 'רשימות מקושרות',
+      course: 'Data Structures and Introduction to Algorithms',
+    },
+    {
+      en_text: 'Stacks',
+      he_text: 'מחסניות',
+      course: 'Data Structures and Introduction to Algorithms',
+    },
+    {
+      en_text: 'Queues',
+      he_text: 'תורים',
+      course: 'Data Structures and Introduction to Algorithms',
+    },
+    {
+      en_text: 'Hash Tables',
+      he_text: 'טבלאות גיבוב',
       course: 'Data Structures and Introduction to Algorithms',
     },
     {

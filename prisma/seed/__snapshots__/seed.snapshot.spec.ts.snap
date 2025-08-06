@@ -1131,6 +1131,21 @@ exports[`seed snapshot > saves seeded data snapshot 1`] = `
       "id": "f27c282a-0396-432d-8c9f-472233089edd",
     },
     {
+      "id": "62a63596-9c68-44e0-a85d-169f2e96ce49",
+    },
+    {
+      "id": "fae56388-e1d2-4f5e-a537-8ff28803871f",
+    },
+    {
+      "id": "c0c04721-11f0-4668-9e91-2fa94217663f",
+    },
+    {
+      "id": "b68ae937-37a8-4d10-95a6-89a7017694bc",
+    },
+    {
+      "id": "c2781ae5-9358-4297-8db9-e6651f6f5cd8",
+    },
+    {
       "id": "9a45204a-d855-4558-b187-bb136002a9bb",
     },
   ],
@@ -2266,6 +2281,31 @@ exports[`seed snapshot > saves seeded data snapshot 1`] = `
       "blockId": "f27c282a-0396-432d-8c9f-472233089edd",
       "id": "f27c282a-0396-432d-8c9f-472233089edd",
       "translationId": "dd9aa8c9-b413-42f9-b26a-194a2ef2f4d0",
+    },
+    {
+      "blockId": "62a63596-9c68-44e0-a85d-169f2e96ce49",
+      "id": "62a63596-9c68-44e0-a85d-169f2e96ce49",
+      "translationId": "0f789fba-c19e-44c8-83cc-e53a930c2cb2",
+    },
+    {
+      "blockId": "fae56388-e1d2-4f5e-a537-8ff28803871f",
+      "id": "fae56388-e1d2-4f5e-a537-8ff28803871f",
+      "translationId": "67d2cb08-0782-408c-87e9-76241203503e",
+    },
+    {
+      "blockId": "c0c04721-11f0-4668-9e91-2fa94217663f",
+      "id": "c0c04721-11f0-4668-9e91-2fa94217663f",
+      "translationId": "01ac9600-940d-4f8b-ac3d-4f1c5b8d9272",
+    },
+    {
+      "blockId": "b68ae937-37a8-4d10-95a6-89a7017694bc",
+      "id": "b68ae937-37a8-4d10-95a6-89a7017694bc",
+      "translationId": "9c67cf86-b57c-4da2-b0fb-fe5a11d8bab0",
+    },
+    {
+      "blockId": "c2781ae5-9358-4297-8db9-e6651f6f5cd8",
+      "id": "c2781ae5-9358-4297-8db9-e6651f6f5cd8",
+      "translationId": "b2db4907-ef15-4d56-8b33-8f61c5b9567d",
     },
     {
       "blockId": "9a45204a-d855-4558-b187-bb136002a9bb",
@@ -5818,6 +5858,31 @@ exports[`seed snapshot > saves seeded data snapshot 1`] = `
       "en_text": "Neural Networks Fundamentals",
       "he_text": "יסודות רשתות נוירונים",
       "id": "1bf61cb6-9d5f-4fa8-9565-27fbdf4a1a18",
+    },
+    {
+      "en_text": "Arrays",
+      "he_text": "מערכים",
+      "id": "0f789fba-c19e-44c8-83cc-e53a930c2cb2",
+    },
+    {
+      "en_text": "Linked Lists",
+      "he_text": "רשימות מקושרות",
+      "id": "67d2cb08-0782-408c-87e9-76241203503e",
+    },
+    {
+      "en_text": "Stacks",
+      "he_text": "מחסניות",
+      "id": "01ac9600-940d-4f8b-ac3d-4f1c5b8d9272",
+    },
+    {
+      "en_text": "Queues",
+      "he_text": "תורים",
+      "id": "9c67cf86-b57c-4da2-b0fb-fe5a11d8bab0",
+    },
+    {
+      "en_text": "Hash Tables",
+      "he_text": "טבלאות גיבוב",
+      "id": "b2db4907-ef15-4d56-8b33-8f61c5b9567d",
     },
     {
       "en_text": "Combinations with Repetitions",
