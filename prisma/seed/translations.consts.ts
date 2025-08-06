@@ -1345,6 +1345,31 @@ export const TRANSLATIONS: TranslationSeed[] = [
     he_text: 'יסודות רשתות נוירונים',
   },
   {
+    id: '0f789fba-c19e-44c8-83cc-e53a930c2cb2',
+    en_text: 'Arrays',
+    he_text: 'מערכים',
+  },
+  {
+    id: '67d2cb08-0782-408c-87e9-76241203503e',
+    en_text: 'Linked Lists',
+    he_text: 'רשימות מקושרות',
+  },
+  {
+    id: '01ac9600-940d-4f8b-ac3d-4f1c5b8d9272',
+    en_text: 'Stacks',
+    he_text: 'מחסניות',
+  },
+  {
+    id: '9c67cf86-b57c-4da2-b0fb-fe5a11d8bab0',
+    en_text: 'Queues',
+    he_text: 'תורים',
+  },
+  {
+    id: 'b2db4907-ef15-4d56-8b33-8f61c5b9567d',
+    en_text: 'Hash Tables',
+    he_text: 'טבלאות גיבוב',
+  },
+  {
     id: 'e289a3c2-6d14-479d-89e6-a83b56e08287',
     en_text: 'Combinations with Repetitions',
     he_text: 'חליפות עם חזרות',
