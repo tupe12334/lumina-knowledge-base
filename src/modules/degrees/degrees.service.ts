@@ -23,7 +23,6 @@ export class DegreesService {
         name: {
           en_text: {
             contains: query?.name,
-            mode: 'insensitive',
           },
         },
       },

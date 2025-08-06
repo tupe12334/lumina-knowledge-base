@@ -5,16 +5,8 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # Get the prisma directory (parent of seed directory)
 PRISMA_DIR="$(dirname "$SCRIPT_DIR")"
 
-# Wait for database to be ready
-echo "Waiting for database to be ready..."
-until nc -z postgres 5432 2>/dev/null || nc -z localhost 5432 2>/dev/null; do
-  echo "Waiting for database..."
-  sleep 2
-done
-
-# Additional wait to ensure database is fully initialized
-echo "Waiting for database to be fully initialized..."
-sleep 5
+# SQLite doesn't need connection waiting like PostgreSQL
+echo "Using SQLite database..."
 
 # Run migrations first
 echo "Running migrations..."
