@@ -96,8 +96,6 @@ export async function seedDegrees(
           id: seed.id,
           translationId: degreeTranslation.id,
           universityId: university.id,
-          createdAt: new Date(),
-          updatedAt: new Date(),
         },
       });
       console.log(`✓ Created degree '${seed.enText}' with ID: ${degree.id}`);
@@ -206,8 +204,6 @@ export async function seedDegrees(
           block = await prisma.block.create({
             data: {
               id: course.blockId,
-              createdAt: new Date(),
-              updatedAt: new Date(),
             },
           });
         }

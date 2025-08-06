@@ -41,15 +41,13 @@ describe('seedDegrees', () => {
           data: { en_text: courseName, he_text: courseName },
         });
         const block = await prisma.block.create({
-          data: { createdAt: new Date(), updatedAt: new Date() },
+          data: {},
         });
         await prisma.course.create({
           data: {
             translationId: courseTranslation.id,
             universityId: `u-${seed.id}`,
             blockId: block.id,
-            createdAt: new Date(),
-            updatedAt: new Date(),
           },
         });
       }

@@ -22,8 +22,6 @@ export async function seedUniversities(
       data: {
         id: uni.id,
         translationId: translation.id,
-        createdAt: new Date(),
-        updatedAt: new Date(),
       },
     });
   }

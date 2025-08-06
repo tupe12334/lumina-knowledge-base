@@ -40,8 +40,6 @@ describe('SeedCache', () => {
       data: {
         id: 'u1',
         translationId: translation.id,
-        createdAt: new Date(),
-        updatedAt: new Date(),
       },
     });
 

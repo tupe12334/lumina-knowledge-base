@@ -119,8 +119,6 @@ export const seedColmanCourses = async (
           translationId: translation.id,
           universityId: colmanUniversity.id,
           blockId: course.blockId,
-          createdAt: new Date(),
-          updatedAt: new Date(),
         },
       });
     }
