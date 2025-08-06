@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach } from 'vitest';
+import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { createPrismock } from 'prismock';
 import * as client from '../../../generated/client';
 import { PrismaService } from '../../../src/prisma/prisma.service';
