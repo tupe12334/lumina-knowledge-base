@@ -10,8 +10,6 @@ datasource db {
 
 model University {
   id            String      @id @default(uuid())
-  createdAt     DateTime    @default(now())
-  updatedAt     DateTime    @updatedAt
   name          Translation @relation(fields: [translationId], references: [id])
   courses       Course[]
   translationId String
@@ -21,8 +19,6 @@ model University {
 
 model Faculty {
   id            String      @id @default(uuid())
-  createdAt     DateTime    @default(now())
-  updatedAt     DateTime    @updatedAt
   name          Translation @relation("FacultyName", fields: [translationId], references: [id])
   description   Translation @relation("FacultyDescription", fields: [descriptionId], references: [id])
   descriptionId String
@@ -35,8 +31,6 @@ model Faculty {
 
 model Degree {
   id            String      @id @default(uuid())
-  createdAt     DateTime    @default(now())
-  updatedAt     DateTime    @updatedAt
   name          Translation @relation(fields: [translationId], references: [id])
   translationId String
   universityId  String
@@ -46,8 +40,6 @@ model Degree {
 
 model Course {
   id            String      @id @default(uuid())
-  createdAt     DateTime    @default(now())
-  updatedAt     DateTime    @updatedAt
   name          Translation @relation(fields: [translationId], references: [id])
   translationId String
   universityId  String
@@ -63,8 +55,6 @@ model Course {
 
 model Block {
   id              String              @id @default(uuid())
-  createdAt       DateTime            @default(now())
-  updatedAt       DateTime            @updatedAt
   prerequisiteFor BlockRelationship[] @relation("Prerequisites")
   postrequisiteOf BlockRelationship[] @relation("Postquisites")
   // Relations
@@ -74,8 +64,6 @@ model Block {
 
 model BlockRelationship {
   id              String                 @id @default(uuid())
-  createdAt       DateTime               @default(now())
-  updatedAt       DateTime               @updatedAt
   prerequisiteId  String
   postrequisiteId String
   prerequisite    Block                  @relation("Prerequisites", fields: [prerequisiteId], references: [id])
@@ -96,8 +84,6 @@ enum RelationshipMetadataKey {
 
 model RelationshipMetadata {
   id                  String                  @id @default(uuid())
-  createdAt           DateTime                @default(now())
-  updatedAt           DateTime                @updatedAt
   key                 RelationshipMetadataKey
   value               String
   blockRelationshipId String
@@ -108,8 +94,6 @@ model RelationshipMetadata {
 
 model Module {
   id               String             @id @default(uuid())
-  createdAt        DateTime           @default(now())
-  updatedAt        DateTime           @updatedAt
   name             Translation        @relation(fields: [translationId], references: [id])
   translationId    String
   subModules       Module[]           @relation("ModuleHierarchy")
@@ -122,12 +106,10 @@ model Module {
 }
 
 model Translation {
-  id        String   @id @default(uuid())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id      String @id @default(uuid())
   // By ISO 639-1 standard
-  en_text   String
-  he_text   String
+  en_text String
+  he_text String
 
   // Relations
   University         University[]
@@ -158,9 +140,6 @@ enum QuestionValidationStatus {
 
 model Question {
   id               String                   @id @default(uuid())
-  createdAt        DateTime                 @default(now())
-  updatedAt        DateTime                 @updatedAt
-  deletedAt        DateTime?
   validationStatus QuestionValidationStatus @default(ai_generated)
   // Math will be represented in LaTeX format
   text             Translation              @relation(fields: [translationId], references: [id])
@@ -174,8 +153,6 @@ model Question {
 
 model QuestionPart {
   id             String   @id @default(uuid())
-  createdAt      DateTime @default(now())
-  updatedAt      DateTime @updatedAt
   questionId     String
   question       Question @relation(fields: [questionId], references: [id])
   partQuestionId String
@@ -187,8 +164,6 @@ model QuestionPart {
 
 model Answer {
   id           String         @id @default(uuid())
-  createdAt    DateTime       @default(now())
-  updatedAt    DateTime       @updatedAt
   questionId   String
   question     Question       @relation(fields: [questionId], references: [id])
   SelectAnswer SelectAnswer[]
@@ -198,8 +173,6 @@ model Answer {
 
 model SelectAnswer {
   id            String      @id @default(uuid())
-  createdAt     DateTime    @default(now())
-  updatedAt     DateTime    @updatedAt
   isCorrect     Boolean
   text          Translation @relation(fields: [translationId], references: [id])
   translationId String
@@ -208,22 +181,18 @@ model SelectAnswer {
 }
 
 model UnitAnswer {
-  id        String   @id @default(uuid())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  value     Float
-  unit      Units
-  answerId  String   @unique
-  answer    Answer   @relation(fields: [answerId], references: [id])
+  id       String @id @default(uuid())
+  value    Float
+  unit     Units
+  answerId String @unique
+  answer   Answer @relation(fields: [answerId], references: [id])
 }
 
 model NumberAnswer {
-  id        String   @id @default(uuid())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  value     Float
-  answerId  String   @unique
-  answer    Answer   @relation(fields: [answerId], references: [id])
+  id       String @id @default(uuid())
+  value    Float
+  answerId String @unique
+  answer   Answer @relation(fields: [answerId], references: [id])
 }
 
 // SI units 
@@ -243,8 +212,6 @@ enum LearningResourceType {
 
 model LearningResource {
   id          String               @id @default(uuid())
-  createdAt   DateTime             @default(now())
-  updatedAt   DateTime             @updatedAt
   // ISO 639-1 language code
   language    String
   url         String
