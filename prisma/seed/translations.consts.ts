@@ -1065,13 +1065,6 @@ export const TRANSLATIONS: TranslationSeed[] = [
     he_text:
       'כמה מספרים בני 5 ספרות הגדולים מ-30000 ניתן ליצור מהספרות 1-5 ללא חזרות?',
   },
-
-  {
-    id: 'ab92366c-e66f-457a-9619-62439a063060',
-    en_text: 'Is zero an even number',
-    he_text: 'האם אפס הוא מספר זוגי',
-  },
-
   {
     id: '3774b231-66e2-42b5-964b-a7ca3cffd565',
     en_text: 'What is the square root of 144',
