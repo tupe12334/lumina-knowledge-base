@@ -31,6 +31,7 @@ describe('CoursesService', () => {
 
     expect(result).toHaveLength(1);
     expect(result[0].name.en_text).toBe('course');
-    expect(result[0].university.name.en_text).toBe('uni');
+    expect(result[0].university).toBeDefined();
+    expect(result[0].university!.name.en_text).toBe('uni');
   });
 });

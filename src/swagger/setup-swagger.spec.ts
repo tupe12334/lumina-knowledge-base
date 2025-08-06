@@ -28,7 +28,9 @@ describe('setupSwagger', () => {
     const createDocumentSpy = vi
       .spyOn(SwaggerModule, 'createDocument')
       .mockReturnValue(document);
-    const setupSpy = vi.spyOn(SwaggerModule, 'setup').mockImplementation();
+    const setupSpy = vi
+      .spyOn(SwaggerModule, 'setup')
+      .mockImplementation(() => {});
     const authSpy = vi.spyOn(DocumentBuilder.prototype, 'addBearerAuth');
 
     setupSwagger(app);

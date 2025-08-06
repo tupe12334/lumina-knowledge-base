@@ -59,16 +59,13 @@ describe('ProgressTracker', () => {
   });
 
   it('should track memory usage when enabled', () => {
-    global.process = {
-      ...process,
-      memoryUsage: vi.fn().mockReturnValue({
-        rss: 1024 * 1024,
-        heapUsed: 1024 * 1024, // 1MB
-        heapTotal: 2048 * 1024,
-        external: 0,
-        arrayBuffers: 0,
-      }),
-    };
+    vi.spyOn(process, 'memoryUsage').mockReturnValue({
+      rss: 1024 * 1024,
+      heapUsed: 1024 * 1024, // 1MB
+      heapTotal: 2048 * 1024,
+      external: 0,
+      arrayBuffers: 0,
+    });
 
     const tracker = new ProgressTracker('Test Operation', 100, {
       showMemoryUsage: true,

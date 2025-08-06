@@ -1,6 +1,7 @@
 import { describe, it, expect, vi } from 'vitest';
 import { QuestionsController } from './questions.controller';
 import { QuestionsService } from './questions.service';
+import { QuestionType } from './models/question-type.enum';
 
 describe('QuestionsController', () => {
   it('gets questions from service', async () => {
@@ -199,11 +200,11 @@ describe('QuestionsController', () => {
 
     const controller = new QuestionsController(service);
     const result = await controller.getQuestions({
-      questionType: 'selection',
+      questionType: QuestionType.SELECTION,
     });
 
     expect(findAllMock).toHaveBeenCalledWith({
-      questionType: 'selection',
+      questionType: QuestionType.SELECTION,
     });
     expect(result).toEqual([
       {

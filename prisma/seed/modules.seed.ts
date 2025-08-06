@@ -622,7 +622,7 @@ export const seedModules = async (
           `Translation for module "${moduleData.en_text}" not found. Expected ID: ${translationId}`,
         );
       }
-      
+
       translation = foundTranslation;
     }
 
