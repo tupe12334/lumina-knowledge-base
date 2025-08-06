@@ -1105,14 +1105,6 @@
           "id": {
             "type": "string"
           },
-          "createdAt": {
-            "format": "date-time",
-            "type": "string"
-          },
-          "updatedAt": {
-            "format": "date-time",
-            "type": "string"
-          },
           "language": {
             "type": "string"
           },
@@ -1137,8 +1129,6 @@
         },
         "required": [
           "id",
-          "createdAt",
-          "updatedAt",
           "language",
           "url",
           "type",
@@ -1230,14 +1220,6 @@
           "id": {
             "type": "string"
           },
-          "createdAt": {
-            "format": "date-time",
-            "type": "string"
-          },
-          "updatedAt": {
-            "format": "date-time",
-            "type": "string"
-          },
           "name": {
             "$ref": "#/components/schemas/Translation"
           },
@@ -1256,8 +1238,6 @@
         },
         "required": [
           "id",
-          "createdAt",
-          "updatedAt",
           "name",
           "universityId"
         ]
