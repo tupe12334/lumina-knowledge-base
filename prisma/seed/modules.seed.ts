@@ -613,15 +613,17 @@ export const seedModules = async (
     if (!translation) {
       // Get the pre-determined translation ID that should exist from bulk seeding
       const translationId = getModuleTranslationId(moduleData.en_text);
-      translation = await tx.translation.findUnique({
+      const foundTranslation = await tx.translation.findUnique({
         where: { id: translationId },
       });
 
-      if (!translation) {
+      if (!foundTranslation) {
         throw new Error(
           `Translation for module "${moduleData.en_text}" not found. Expected ID: ${translationId}`,
         );
       }
+      
+      translation = foundTranslation;
     }
 
     const moduleId = moduleIds[moduleData.en_text];

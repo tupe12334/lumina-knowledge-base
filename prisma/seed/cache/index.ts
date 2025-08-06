@@ -1,11 +1,11 @@
-import { Prisma } from '../../generated/client';
+import { Prisma, Translation, University } from '../../../generated/client';
 
 /**
  * Cache for seed lookups.
  */
 export class SeedCache {
-  private readonly translations = new Map<string, Prisma.Translation>();
-  private readonly universities = new Map<string, Prisma.University>();
+  private readonly translations = new Map<string, Translation>();
+  private readonly universities = new Map<string, University>();
 
   /**
    * Batch load translations to improve performance for multiple lookups.
@@ -61,7 +61,7 @@ export class SeedCache {
   async getTranslation(
     tx: Prisma.TransactionClient,
     enText: string,
-  ): Promise<Prisma.Translation | undefined> {
+  ): Promise<Translation | undefined> {
     if (!this.translations.has(enText)) {
       const translation = await tx.translation.findFirst({
         where: { en_text: enText },
@@ -84,7 +84,7 @@ export class SeedCache {
   async getUniversity(
     tx: Prisma.TransactionClient,
     enText: string,
-  ): Promise<Prisma.University | undefined> {
+  ): Promise<University | undefined> {
     if (!this.universities.has(enText)) {
       const translation = await this.getTranslation(tx, enText);
       if (!translation) return undefined;
