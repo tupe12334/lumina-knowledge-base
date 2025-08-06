@@ -114,6 +114,11 @@ export const seedModules = async (
         '4b6c8d1e-3f5a-4d7b-af8c-5e9f1a2b3c4d',
       'Upper Sums': 'f8a1e3d5-6b9c-4f2a-8e1f-3a5c7d9e2b4f',
       'Lower Sums': '2c4e6a8f-1d3f-4a7c-9e2a-5f8a1c3e6d9f',
+      'Limits and Continuity': 'f0557643-39f1-41d8-b4bd-14d5242e7102',
+      'Differentiation Techniques': '593afff3-cf87-4c67-b80d-ae06ffd4c829',
+      'Integration by Parts': '7cb38204-869c-47a9-a2a2-a72020e7bdee',
+      'Graph Traversal Algorithms': 'dd9aa8c9-b413-42f9-b26a-194a2ef2f4d0',
+      'Neural Networks Fundamentals': '1bf61cb6-9d5f-4fa8-9565-27fbdf4a1a18',
     };
     return translationMap[moduleText] || '';
   };
@@ -187,6 +192,11 @@ export const seedModules = async (
     'Logic Gates': '1e2f3a4b-5c6d-4e8f-a9ab-1c2d3e4f5a6b',
     'Conditional Statements': '2f3a4b5c-6d7e-4f9a-a0bc-2d3e4f5a6b7c',
     'Logical Equivalence': '3a4b5c6d-7e8f-409b-a1cd-3e4f5a6b7c8d',
+    'Limits and Continuity': '4a360125-e963-4c2b-88a8-d86aee59d8bc',
+    'Differentiation Techniques': 'b4de3329-f3af-4ae9-b67d-bf1c5d1a30fb',
+    'Integration by Parts': '97128d23-40d6-4045-a57d-ec1b08c3723e',
+    'Graph Traversal Algorithms': 'f27c282a-0396-432d-8c9f-472233089edd',
+    'Neural Networks Fundamentals': '9a45204a-d855-4558-b187-bb136002a9bb',
   };
 
   const modules = [
@@ -597,6 +607,31 @@ export const seedModules = async (
     {
       en_text: 'Min Max Algorithm',
       he_text: 'אלגוריתם מינ-מקס',
+      course: 'Artificial Intelligence',
+    },
+    {
+      en_text: 'Limits and Continuity',
+      he_text: 'גבולות ורציפות',
+      courses: ['Calculus A', 'Infinitesimal Calculus 1'],
+    },
+    {
+      en_text: 'Differentiation Techniques',
+      he_text: 'שיטות גזירה',
+      courses: ['Calculus A', 'Calculus B'],
+    },
+    {
+      en_text: 'Integration by Parts',
+      he_text: 'אינטגרציה בחלקים',
+      course: 'Calculus B',
+    },
+    {
+      en_text: 'Graph Traversal Algorithms',
+      he_text: 'אלגוריתמים למעבר על גרפים',
+      course: 'Data Structures and Introduction to Algorithms',
+    },
+    {
+      en_text: 'Neural Networks Fundamentals',
+      he_text: 'יסודות רשתות נוירונים',
       course: 'Artificial Intelligence',
     },
   ];
