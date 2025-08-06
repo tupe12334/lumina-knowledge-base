@@ -11,14 +11,6 @@ export class Degree {
   @ApiProperty()
   id!: string;
 
-  @Field()
-  @ApiProperty()
-  createdAt!: Date;
-
-  @Field()
-  @ApiProperty()
-  updatedAt!: Date;
-
   @Field(() => Translation)
   @Type(() => Translation)
   @ApiProperty({ type: () => Translation })

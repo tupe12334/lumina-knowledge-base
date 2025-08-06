@@ -14,14 +14,6 @@ export class LearningResource {
 
   @Field()
   @ApiProperty()
-  createdAt!: Date;
-
-  @Field()
-  @ApiProperty()
-  updatedAt!: Date;
-
-  @Field()
-  @ApiProperty()
   language!: string;
 
   @Field()
