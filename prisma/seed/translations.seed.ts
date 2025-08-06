@@ -10,7 +10,7 @@ import { withProgress } from './utils/progress-tracker';
 export const seedTranslations = async (
   tx: Prisma.TransactionClient,
 ): Promise<void> => {
-  const { result, metrics } = await withProgress(
+  const { metrics } = await withProgress(
     'Translation Seeding',
     TRANSLATIONS.length,
     async (tracker) => {
@@ -55,10 +55,9 @@ export const seedTranslations = async (
           'info',
         );
 
-        // Use bulk createMany with skipDuplicates for remaining translations
+        // Use bulk createMany for remaining translations
         const result = await tx.translation.createMany({
           data: translationsToCreate,
-          skipDuplicates: true,
         });
 
         tracker.updateBatch(
@@ -87,7 +86,6 @@ export const seedTranslations = async (
         // No existing translations, create all
         const result = await tx.translation.createMany({
           data: TRANSLATIONS,
-          skipDuplicates: true,
         });
 
         tracker.updateBatch(TRANSLATIONS.length, result.count, 0, 0, 0);
