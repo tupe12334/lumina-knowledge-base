@@ -1,8 +1,6 @@
 -- CreateTable
 CREATE TABLE "University" (
     "id" TEXT NOT NULL PRIMARY KEY,
-    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" DATETIME NOT NULL,
     "translationId" TEXT NOT NULL,
     CONSTRAINT "University_translationId_fkey" FOREIGN KEY ("translationId") REFERENCES "Translation" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
 );
@@ -10,8 +8,6 @@ CREATE TABLE "University" (
 -- CreateTable
 CREATE TABLE "Faculty" (
     "id" TEXT NOT NULL PRIMARY KEY,
-    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" DATETIME NOT NULL,
     "descriptionId" TEXT NOT NULL,
     "translationId" TEXT NOT NULL,
     "universityId" TEXT NOT NULL,
@@ -23,8 +19,6 @@ CREATE TABLE "Faculty" (
 -- CreateTable
 CREATE TABLE "Degree" (
     "id" TEXT NOT NULL PRIMARY KEY,
-    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" DATETIME NOT NULL,
     "translationId" TEXT NOT NULL,
     "universityId" TEXT NOT NULL,
     CONSTRAINT "Degree_translationId_fkey" FOREIGN KEY ("translationId") REFERENCES "Translation" ("id") ON DELETE RESTRICT ON UPDATE CASCADE,
@@ -34,8 +28,6 @@ CREATE TABLE "Degree" (
 -- CreateTable
 CREATE TABLE "Course" (
     "id" TEXT NOT NULL PRIMARY KEY,
-    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" DATETIME NOT NULL,
     "translationId" TEXT NOT NULL,
     "universityId" TEXT NOT NULL,
     "publishedAt" DATETIME,
@@ -47,16 +39,12 @@ CREATE TABLE "Course" (
 
 -- CreateTable
 CREATE TABLE "Block" (
-    "id" TEXT NOT NULL PRIMARY KEY,
-    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" DATETIME NOT NULL
+    "id" TEXT NOT NULL PRIMARY KEY
 );
 
 -- CreateTable
 CREATE TABLE "BlockRelationship" (
     "id" TEXT NOT NULL PRIMARY KEY,
-    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" DATETIME NOT NULL,
     "prerequisiteId" TEXT NOT NULL,
     "postrequisiteId" TEXT NOT NULL,
     CONSTRAINT "BlockRelationship_prerequisiteId_fkey" FOREIGN KEY ("prerequisiteId") REFERENCES "Block" ("id") ON DELETE RESTRICT ON UPDATE CASCADE,
@@ -66,8 +54,6 @@ CREATE TABLE "BlockRelationship" (
 -- CreateTable
 CREATE TABLE "RelationshipMetadata" (
     "id" TEXT NOT NULL PRIMARY KEY,
-    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" DATETIME NOT NULL,
     "key" TEXT NOT NULL,
     "value" TEXT NOT NULL,
     "blockRelationshipId" TEXT NOT NULL,
@@ -77,8 +63,6 @@ CREATE TABLE "RelationshipMetadata" (
 -- CreateTable
 CREATE TABLE "Module" (
     "id" TEXT NOT NULL PRIMARY KEY,
-    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" DATETIME NOT NULL,
     "translationId" TEXT NOT NULL,
     "blockId" TEXT NOT NULL,
     CONSTRAINT "Module_translationId_fkey" FOREIGN KEY ("translationId") REFERENCES "Translation" ("id") ON DELETE RESTRICT ON UPDATE CASCADE,
@@ -88,8 +72,6 @@ CREATE TABLE "Module" (
 -- CreateTable
 CREATE TABLE "Translation" (
     "id" TEXT NOT NULL PRIMARY KEY,
-    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" DATETIME NOT NULL,
     "en_text" TEXT NOT NULL,
     "he_text" TEXT NOT NULL
 );
@@ -97,9 +79,6 @@ CREATE TABLE "Translation" (
 -- CreateTable
 CREATE TABLE "Question" (
     "id" TEXT NOT NULL PRIMARY KEY,
-    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" DATETIME NOT NULL,
-    "deletedAt" DATETIME,
     "validationStatus" TEXT NOT NULL DEFAULT 'ai_generated',
     "translationId" TEXT NOT NULL,
     "type" TEXT NOT NULL,
@@ -109,8 +88,6 @@ CREATE TABLE "Question" (
 -- CreateTable
 CREATE TABLE "QuestionPart" (
     "id" TEXT NOT NULL PRIMARY KEY,
-    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" DATETIME NOT NULL,
     "questionId" TEXT NOT NULL,
     "partQuestionId" TEXT NOT NULL,
     "order" INTEGER NOT NULL,
@@ -121,8 +98,6 @@ CREATE TABLE "QuestionPart" (
 -- CreateTable
 CREATE TABLE "Answer" (
     "id" TEXT NOT NULL PRIMARY KEY,
-    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" DATETIME NOT NULL,
     "questionId" TEXT NOT NULL,
     CONSTRAINT "Answer_questionId_fkey" FOREIGN KEY ("questionId") REFERENCES "Question" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
 );
@@ -130,8 +105,6 @@ CREATE TABLE "Answer" (
 -- CreateTable
 CREATE TABLE "SelectAnswer" (
     "id" TEXT NOT NULL PRIMARY KEY,
-    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" DATETIME NOT NULL,
     "isCorrect" BOOLEAN NOT NULL,
     "translationId" TEXT NOT NULL,
     "answerId" TEXT NOT NULL,
@@ -142,8 +115,6 @@ CREATE TABLE "SelectAnswer" (
 -- CreateTable
 CREATE TABLE "UnitAnswer" (
     "id" TEXT NOT NULL PRIMARY KEY,
-    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" DATETIME NOT NULL,
     "value" REAL NOT NULL,
     "unit" TEXT NOT NULL,
     "answerId" TEXT NOT NULL,
@@ -153,8 +124,6 @@ CREATE TABLE "UnitAnswer" (
 -- CreateTable
 CREATE TABLE "NumberAnswer" (
     "id" TEXT NOT NULL PRIMARY KEY,
-    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" DATETIME NOT NULL,
     "value" REAL NOT NULL,
     "answerId" TEXT NOT NULL,
     CONSTRAINT "NumberAnswer_answerId_fkey" FOREIGN KEY ("answerId") REFERENCES "Answer" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
@@ -163,8 +132,6 @@ CREATE TABLE "NumberAnswer" (
 -- CreateTable
 CREATE TABLE "LearningResource" (
     "id" TEXT NOT NULL PRIMARY KEY,
-    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" DATETIME NOT NULL,
     "language" TEXT NOT NULL,
     "url" TEXT NOT NULL,
     "type" TEXT NOT NULL,
