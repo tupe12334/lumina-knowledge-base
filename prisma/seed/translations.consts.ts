@@ -1320,6 +1320,31 @@ export const TRANSLATIONS: TranslationSeed[] = [
     he_text: 'אלגוריתם מינ-מקס',
   },
   {
+    id: 'f0557643-39f1-41d8-b4bd-14d5242e7102',
+    en_text: 'Limits and Continuity',
+    he_text: 'גבולות ורציפות',
+  },
+  {
+    id: '593afff3-cf87-4c67-b80d-ae06ffd4c829',
+    en_text: 'Differentiation Techniques',
+    he_text: 'שיטות גזירה',
+  },
+  {
+    id: '7cb38204-869c-47a9-a2a2-a72020e7bdee',
+    en_text: 'Integration by Parts',
+    he_text: 'אינטגרציה בחלקים',
+  },
+  {
+    id: 'dd9aa8c9-b413-42f9-b26a-194a2ef2f4d0',
+    en_text: 'Graph Traversal Algorithms',
+    he_text: 'אלגוריתמים למעבר על גרפים',
+  },
+  {
+    id: '1bf61cb6-9d5f-4fa8-9565-27fbdf4a1a18',
+    en_text: 'Neural Networks Fundamentals',
+    he_text: 'יסודות רשתות נוירונים',
+  },
+  {
     id: 'e289a3c2-6d14-479d-89e6-a83b56e08287',
     en_text: 'Combinations with Repetitions',
     he_text: 'חליפות עם חזרות',
