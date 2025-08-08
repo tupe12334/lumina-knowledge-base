@@ -26,6 +26,8 @@
     "test:ui": "vitest --ui",
     "test:update": "vitest --run --update",
     "test:seed": "vitest run prisma/seed",
+    "test:db": "vitest run prisma/db.snapshot.spec.ts",
+    "test:db:update": "vitest run prisma/db.snapshot.spec.ts --update",
     "generate": "prisma generate",
     "prisma:migrate:dev": "prisma migrate dev",
     "prisma:migrate": "prisma migrate deploy",
