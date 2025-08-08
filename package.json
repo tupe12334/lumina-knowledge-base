@@ -36,7 +36,7 @@
     "prisma:studio": "prisma studio",
     "db:drop": "prisma migrate reset --force",
     "db:reset": "prisma migrate reset --force --skip-generate",
-    "add-data": "gemini --yolo --model='gemini-2.5-flash' --include-directories ./prisma -p='Please create for me an sql script that add a new module and 30 questions relevant to this module in various difficulty levels, make sure the new module is relevant to the existing knowledge base by reading the existing modules, dont forget to update and create the relevant relationships, This is only one prompt conversion so make sure to finish my task in and dont ask for my responses.' "
+    "add-data": "gemini --yolo --model='gemini-2.5-flash' --include-directories ./prisma -p='Please create for me an sql script that adds a new module and 30 questions relevant to this module in various difficulty levels, make sure the new module is relevant to the existing knowledge base by reading the existing modules, dont forget to update and create the relevant relationships and to make sure the script is working as expected, This is only one prompt conversion so make sure to finish my task in and dont ask for my responses.' "
   },
   "dependencies": {
     "@apollo/server": "^4.12.2",
