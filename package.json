@@ -33,7 +33,8 @@
     "seed": "prisma db seed",
     "prisma:studio": "prisma studio",
     "db:drop": "prisma migrate reset --force",
-    "db:reset": "prisma migrate reset --force --skip-generate"
+    "db:reset": "prisma migrate reset --force --skip-generate",
+    "add-data": "gemini --yolo --checkpointing  -p='Add a new module and 30 questions relevant to this module in various difficulty levels, dont forge to update and create the relevant relationships' "
   },
   "dependencies": {
     "@apollo/server": "^4.12.2",
