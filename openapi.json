@@ -993,6 +993,9 @@
       "Translation": {
         "type": "object",
         "properties": {
+          "id": {
+            "type": "string"
+          },
           "en_text": {
             "type": "string"
           },
@@ -1001,6 +1004,7 @@
           }
         },
         "required": [
+          "id",
           "en_text",
           "he_text"
         ]

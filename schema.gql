@@ -248,6 +248,7 @@ type SelectAnswer {
 type Translation {
   en_text: String!
   he_text: String!
+  id: String!
 }
 
 type UnitAnswer {

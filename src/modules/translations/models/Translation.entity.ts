@@ -5,6 +5,10 @@ import { ObjectType, Field } from '@nestjs/graphql';
 export class Translation {
   @Field()
   @ApiProperty()
+  id!: string;
+
+  @Field()
+  @ApiProperty()
   en_text!: string;
 
   @Field()
