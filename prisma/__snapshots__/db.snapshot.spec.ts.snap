@@ -36,10 +36,6 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "questionId": "bede7c3d-a729-4519-a5f7-4180955d1adf",
     },
     {
-      "id": "0a1b2c3d-4e5f-4921-0678-123456789012",
-      "questionId": "f5a6b7c8-d9e0-4920-f123-678901234567",
-    },
-    {
       "id": "0a1d8b16-2e0b-4b90-b1c2-fe007a3d8a7d",
       "questionId": "d28cdc03-a801-4ab8-bb2d-171814ebce17",
     },
@@ -144,10 +140,6 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "questionId": "55366ebc-51d1-412a-b0a4-33cab00f8c5a",
     },
     {
-      "id": "3d4e5f6a-7b8c-4956-3901-456789012345",
-      "questionId": "2c3d4e5f-6a7b-4955-2890-345678901234",
-    },
-    {
       "id": "40f0150d-8bfd-4f9a-88ef-02711eb52e31",
       "questionId": "14da5f4c-c1ab-42a5-a6c8-ceda73f5d986",
     },
@@ -232,10 +224,6 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "questionId": "3eb245c5-c5c6-4bdf-959e-23f2dc91e5ef",
     },
     {
-      "id": "5f6a7b8c-9d0e-4942-5123-678901234567",
-      "questionId": "4e5f6a7b-8c9d-4941-4012-567890123456",
-    },
-    {
       "id": "611f5e86-ca84-4208-9f31-b8902cf9ee9d",
       "questionId": "42977405-31b2-44b9-9a50-a39caf11e7df",
     },
@@ -300,10 +288,6 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "questionId": "519d8b74-57a3-4307-9ecf-d1e13b4bcb3a",
     },
     {
-      "id": "7b8c9d0e-1f2a-4928-7345-890123456789",
-      "questionId": "6a7b8c9d-0e1f-4927-6234-789012345678",
-    },
-    {
       "id": "7efcc177-115f-4a5e-be93-f7e6c79979f8",
       "questionId": "b63dc0f8-0951-44dd-93ca-e3cb1dbd63d0",
     },
@@ -358,10 +342,6 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
     {
       "id": "9be9e6ba-c7d5-4a16-a582-c4f895550e53",
       "questionId": "863a44be-8e03-47f1-88e2-69009ef72a55",
-    },
-    {
-      "id": "9d0e1f2a-3b4c-4914-9567-012345678901",
-      "questionId": "8c9d0e1f-2a3b-4913-8456-901234567890",
     },
     {
       "id": "9e4d3ade-b3ac-4ec6-bacf-6f8a73643b7c",
@@ -520,10 +500,6 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "questionId": "748f47e6-26ba-4b71-b63a-c0a87dafb3ca",
     },
     {
-      "id": "c2d3e4f5-a6b7-4949-c890-345678901234",
-      "questionId": "b1c2d3e4-f5a6-4948-b789-234567890123",
-    },
-    {
       "id": "c3d4e5f6-8888-5678-901a-bcdef0123457",
       "questionId": "c3d4e5f6-8888-5678-901a-bcdef0123456",
     },
@@ -582,10 +558,6 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
     {
       "id": "e26f0543-475c-4636-951e-23c273e8aa62",
       "questionId": "3ca98efb-fadd-43c7-b769-54eaf0af0f8d",
-    },
-    {
-      "id": "e4f5a6b7-c8d9-4935-e012-567890123456",
-      "questionId": "d3e4f5a6-b7c8-4934-d901-456789012345",
     },
     {
       "id": "eb5c8ad1-775a-45b1-a90e-fb8d2f137c45",
@@ -781,9 +753,6 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "id": "2b8d7f9c-3a4e-4b5f-8c9d-1e2f3a4b5c6d",
     },
     {
-      "id": "2c3d4e5f-6a7b-4907-2890-345678901234",
-    },
-    {
       "id": "2ca3350d-2870-47c4-b9b4-a397b8bbe7b9",
     },
     {
@@ -847,6 +816,9 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "id": "4812c1ad-4c64-4df0-af58-55abf897861f",
     },
     {
+      "id": "4a360125-e963-4c2b-88a8-d86aee59d8bc",
+    },
+    {
       "id": "4a40f86d-4d11-42c9-b311-f9c8a0f56769",
     },
     {
@@ -884,6 +856,9 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
     },
     {
       "id": "5f6c93a2-02aa-4b7a-8637-9406a5a5386f",
+    },
+    {
+      "id": "62a63596-9c68-44e0-a85d-169f2e96ce49",
     },
     {
       "id": "62e38ada-eb92-4a9c-bd52-943f6ed49b17",
@@ -988,10 +963,16 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "id": "96faa327-fae1-479a-907c-2e96ab8ee7cf",
     },
     {
+      "id": "97128d23-40d6-4045-a57d-ec1b08c3723e",
+    },
+    {
       "id": "98c59241-27f0-4aec-9e33-84404d014b73",
     },
     {
       "id": "993a6a59-7fc7-4d96-ada6-5858d742496a",
+    },
+    {
+      "id": "9a45204a-d855-4558-b187-bb136002a9bb",
     },
     {
       "id": "9c0d1e2f-3a4b-4c6d-87ef-9a0b1c2d3e4f",
@@ -1039,13 +1020,16 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "id": "af0bd650-5f32-4dad-ba38-cea69f616692",
     },
     {
-      "id": "b2c3d4e5-f6a7-4890-b123-cdef01234567",
-    },
-    {
       "id": "b31e0114-be5e-4f4d-9c94-258a89a1b4ba",
     },
     {
+      "id": "b4de3329-f3af-4ae9-b67d-bf1c5d1a30fb",
+    },
+    {
       "id": "b53b792f-0cdc-4e89-bcd2-d23ad7f39db9",
+    },
+    {
+      "id": "b68ae937-37a8-4d10-95a6-89a7017694bc",
     },
     {
       "id": "b7c6e8ad-8460-458e-91ac-1da7a84179c9",
@@ -1072,7 +1056,13 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "id": "bfe2af79-849c-43f2-a033-832974204715",
     },
     {
+      "id": "c0c04721-11f0-4668-9e91-2fa94217663f",
+    },
+    {
       "id": "c1f4a8e2-5d7b-4c9a-8f3e-2b6d9c1a4e7f",
+    },
+    {
+      "id": "c2781ae5-9358-4297-8db9-e6651f6f5cd8",
     },
     {
       "id": "c331fa88-e9f3-4341-9b8a-4fe05b428f1f",
@@ -1094,9 +1084,6 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
     },
     {
       "id": "cd51ecf0-6899-4cae-aec8-1e28c293fee9",
-    },
-    {
-      "id": "d4e5f6a7-b8c9-4902-d345-ef0123456789",
     },
     {
       "id": "d55d4871-f7c6-47f8-94d7-ee4ada6bf45f",
@@ -1135,10 +1122,16 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "id": "f2663296-2bcc-4e50-b079-8986d078bbbf",
     },
     {
+      "id": "f27c282a-0396-432d-8c9f-472233089edd",
+    },
+    {
       "id": "f2866b62-f4f6-4e22-8fcc-f4bd8bbdb275",
     },
     {
       "id": "f49316c3-f7e0-44c0-b316-3e4be99913f1",
+    },
+    {
+      "id": "fae56388-e1d2-4f5e-a537-8ff28803871f",
     },
     {
       "id": "fb797046-22db-45bc-8663-75421e1fdf84",
@@ -1166,11 +1159,6 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "id": "06cf92b7-1e0e-4f7a-964b-1527f3f2246a",
       "postrequisiteId": "8f4e9a3b-2c1d-4f5e-9a8b-7c3d6e5f8a9b",
       "prerequisiteId": "6e19169a-959d-4f5d-a475-de09ca9ba8cd",
-    },
-    {
-      "id": "0a1b2c3d-4e5f-4905-0678-123456789012",
-      "postrequisiteId": "b2c3d4e5-f6a7-4890-b123-cdef01234567",
-      "prerequisiteId": "d4e5f6a7-b8c9-4902-d345-ef0123456789",
     },
     {
       "id": "1744d33d-8c25-421f-9104-6fb50ea30ccb",
@@ -1221,11 +1209,6 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "id": "5b6c7d8e-9f01-4123-b567-89abcd234eff",
       "postrequisiteId": "0d1e2f3a-4b5c-4d7e-a8fa-0b1c2d3e4f5a",
       "prerequisiteId": "8b9c0d1e-2f3a-4b5c-86de-8f9a0b1c2d3e",
-    },
-    {
-      "id": "5f6a7b8c-9d0e-4910-5123-678901234567",
-      "postrequisiteId": "b2c3d4e5-f6a7-4890-b123-cdef01234567",
-      "prerequisiteId": "2c3d4e5f-6a7b-4907-2890-345678901234",
     },
     {
       "id": "633b68fd-4e69-4729-bb25-59d2c804360e",
@@ -2040,6 +2023,11 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "translationId": "d6a6d4dc-56c9-479d-8477-0b49dd5d19d7",
     },
     {
+      "blockId": "4a360125-e963-4c2b-88a8-d86aee59d8bc",
+      "id": "4a360125-e963-4c2b-88a8-d86aee59d8bc",
+      "translationId": "f0557643-39f1-41d8-b4bd-14d5242e7102",
+    },
+    {
       "blockId": "4a40f86d-4d11-42c9-b311-f9c8a0f56769",
       "id": "4a40f86d-4d11-42c9-b311-f9c8a0f56769",
       "translationId": "3d7cda6d-f861-425f-b26b-b946d1b6d6cc",
@@ -2083,6 +2071,11 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "blockId": "5a6b7c8d-9e0f-4123-b567-89abcd234eff",
       "id": "5a6b7c8d-9e0f-4123-b567-89abcd234eff",
       "translationId": "5a6b7c8d-9e0f-4123-b567-89abcd234eff",
+    },
+    {
+      "blockId": "62a63596-9c68-44e0-a85d-169f2e96ce49",
+      "id": "62a63596-9c68-44e0-a85d-169f2e96ce49",
+      "translationId": "0f789fba-c19e-44c8-83cc-e53a930c2cb2",
     },
     {
       "blockId": "62e38ada-eb92-4a9c-bd52-943f6ed49b17",
@@ -2170,9 +2163,19 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "translationId": "1c66ed81-b549-40b4-9b90-567da80eaf42",
     },
     {
+      "blockId": "97128d23-40d6-4045-a57d-ec1b08c3723e",
+      "id": "97128d23-40d6-4045-a57d-ec1b08c3723e",
+      "translationId": "7cb38204-869c-47a9-a2a2-a72020e7bdee",
+    },
+    {
       "blockId": "98c59241-27f0-4aec-9e33-84404d014b73",
       "id": "98c59241-27f0-4aec-9e33-84404d014b73",
       "translationId": "7a2defc6-8d92-4547-bf19-520c79cf2c7d",
+    },
+    {
+      "blockId": "9a45204a-d855-4558-b187-bb136002a9bb",
+      "id": "9a45204a-d855-4558-b187-bb136002a9bb",
+      "translationId": "1bf61cb6-9d5f-4fa8-9565-27fbdf4a1a18",
     },
     {
       "blockId": "9c0d1e2f-3a4b-4c6d-87ef-9a0b1c2d3e4f",
@@ -2205,6 +2208,16 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "translationId": "21d803d9-2816-4a0b-a1b4-deafc757ca7b",
     },
     {
+      "blockId": "b4de3329-f3af-4ae9-b67d-bf1c5d1a30fb",
+      "id": "b4de3329-f3af-4ae9-b67d-bf1c5d1a30fb",
+      "translationId": "593afff3-cf87-4c67-b80d-ae06ffd4c829",
+    },
+    {
+      "blockId": "b68ae937-37a8-4d10-95a6-89a7017694bc",
+      "id": "b68ae937-37a8-4d10-95a6-89a7017694bc",
+      "translationId": "9c67cf86-b57c-4da2-b0fb-fe5a11d8bab0",
+    },
+    {
       "blockId": "bd422960-2e1e-4fb2-8acb-effd3bcb9b96",
       "id": "bd422960-2e1e-4fb2-8acb-effd3bcb9b96",
       "translationId": "5f580686-9cf6-492a-b23a-267646c3788d",
@@ -2225,9 +2238,19 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "translationId": "afd3da10-9427-4c78-a3a6-1d4b7ee801a5",
     },
     {
+      "blockId": "c0c04721-11f0-4668-9e91-2fa94217663f",
+      "id": "c0c04721-11f0-4668-9e91-2fa94217663f",
+      "translationId": "01ac9600-940d-4f8b-ac3d-4f1c5b8d9272",
+    },
+    {
       "blockId": "c1f4a8e2-5d7b-4c9a-8f3e-2b6d9c1a4e7f",
       "id": "c1f4a8e2-5d7b-4c9a-8f3e-2b6d9c1a4e7f",
       "translationId": "a8f3c6d1-2e4b-4c8a-9f7e-1b5d8c3a6e9f",
+    },
+    {
+      "blockId": "c2781ae5-9358-4297-8db9-e6651f6f5cd8",
+      "id": "c2781ae5-9358-4297-8db9-e6651f6f5cd8",
+      "translationId": "b2db4907-ef15-4d56-8b33-8f61c5b9567d",
     },
     {
       "blockId": "c6dd59ac-1802-4bc9-b91e-ca77bb32620e",
@@ -2260,9 +2283,19 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "translationId": "3d63669a-d904-4918-8782-6922f19a202b",
     },
     {
+      "blockId": "f27c282a-0396-432d-8c9f-472233089edd",
+      "id": "f27c282a-0396-432d-8c9f-472233089edd",
+      "translationId": "dd9aa8c9-b413-42f9-b26a-194a2ef2f4d0",
+    },
+    {
       "blockId": "f2866b62-f4f6-4e22-8fcc-f4bd8bbdb275",
       "id": "f2866b62-f4f6-4e22-8fcc-f4bd8bbdb275",
       "translationId": "e7c5b81e-5aad-4715-ab5d-c08122c05ef1",
+    },
+    {
+      "blockId": "fae56388-e1d2-4f5e-a537-8ff28803871f",
+      "id": "fae56388-e1d2-4f5e-a537-8ff28803871f",
+      "translationId": "67d2cb08-0782-408c-87e9-76241203503e",
     },
     {
       "blockId": "fbda2932-3737-49a6-aaa4-77be8d0ca6a9",
@@ -4097,12 +4130,6 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "value": "Foundational knowledge in linear algebra is required.",
     },
     {
-      "blockRelationshipId": "0a1b2c3d-4e5f-4905-0678-123456789012",
-      "id": "1b2c3d4e-5f6a-4906-1789-234567890123",
-      "key": "TYPE",
-      "value": "hard",
-    },
-    {
       "blockRelationshipId": "b3c4d5e6-f7a8-4890-b123-cdef56789012",
       "id": "25033be0-357b-4a87-9b5c-71e8048fb8e3",
       "key": "TYPE",
@@ -4147,12 +4174,6 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
     {
       "blockRelationshipId": "ea241395-98bd-415a-939a-53d3c9ec4275",
       "id": "671a9817-b041-4598-a52d-6bebe6d71e57",
-      "key": "TYPE",
-      "value": "hard",
-    },
-    {
-      "blockRelationshipId": "5f6a7b8c-9d0e-4910-5123-678901234567",
-      "id": "6a7b8c9d-0e1f-4911-6234-789012345678",
       "key": "TYPE",
       "value": "hard",
     },
@@ -4694,6 +4715,11 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "id": "00703a76-5fca-4f2f-82b2-5afd86fd0283",
     },
     {
+      "en_text": "Stacks",
+      "he_text": "מחסניות",
+      "id": "01ac9600-940d-4f8b-ac3d-4f1c5b8d9272",
+    },
+    {
       "en_text": "Social Sciences",
       "he_text": "מדעי החברה",
       "id": "067fc944-3d78-4675-a759-804e22b179a9",
@@ -4732,6 +4758,11 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "en_text": "Structural Induction",
       "he_text": "אינדוקציה מבנית",
       "id": "0e3f282b-ff36-4beb-af8b-a7be8efe14c9",
+    },
+    {
+      "en_text": "Arrays",
+      "he_text": "מערכים",
+      "id": "0f789fba-c19e-44c8-83cc-e53a930c2cb2",
     },
     {
       "en_text": "Computational Models",
@@ -4819,21 +4850,6 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "id": "1b1daa8c-4cc3-4715-b876-908c29dba6a4",
     },
     {
-      "en_text": "The ability of a quantum system to be in multiple states at once.",
-      "he_text": "היכולת של מערכת קוונטית להיות במספר מצבים בו זמנית.",
-      "id": "1b2c3d4e-5f6a-4922-1789-234567890123",
-    },
-    {
-      "en_text": "AND gate",
-      "he_text": "שער AND",
-      "id": "1b2c3d4e-5f6a-4938-1789-234567890123",
-    },
-    {
-      "en_text": "What is the primary advantage of quantum computers over classical computers?",
-      "he_text": "מהו היתרון העיקרי של מחשבים קוונטיים על פני מחשבים קלאסיים?",
-      "id": "1b2c3d4e-5f6a-4954-1789-234567890123",
-    },
-    {
       "en_text": "∀x((x > 0) ∨ (x < 0) ∨ (x² > 0))",
       "he_text": "∀x((x > 0) ∨ (x < 0) ∨ (x² > 0))",
       "id": "1b2d3f4a-6c7e-4d8f-9a1b-9f1a2b3c4d5e",
@@ -4842,6 +4858,11 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "en_text": "How many 4-digit even numbers can be formed using digits 1,2,3,4 without repetition?",
       "he_text": "כמה מספרים זוגיים בני 4 ספרות ניתן להרכיב מהספרות 1,2,3,4 ללא חזרות?",
       "id": "1b406d77-ef11-4bdd-bf00-86171c667d7c",
+    },
+    {
+      "en_text": "Neural Networks Fundamentals",
+      "he_text": "יסודות רשתות נוירונים",
+      "id": "1bf61cb6-9d5f-4fa8-9565-27fbdf4a1a18",
     },
     {
       "en_text": "Electricity and Magnetism",
@@ -5099,21 +5120,6 @@ This is where your journey begins — in the exact sciences, where precision dri
       "id": "3d0c1164-d8fb-46b0-ac93-ec4a6a28ad70",
     },
     {
-      "en_text": "Discrete Mathematics",
-      "he_text": "מתמטיקה דיסקרטית",
-      "id": "3d4e5f6a-7b8c-4908-3901-456789012345",
-    },
-    {
-      "en_text": "The ability of a classical system to be in multiple states at once.",
-      "he_text": "היכולת של מערכת קלאסית להיות במספר מצבים בו זמנית.",
-      "id": "3d4e5f6a-7b8c-4924-3901-456789012345",
-    },
-    {
-      "en_text": "What is quantum decoherence?",
-      "he_text": "מהי דקוהרנטיות קוונטית?",
-      "id": "3d4e5f6a-7b8c-4940-3901-456789012345",
-    },
-    {
       "en_text": "Convergent Subsequences",
       "he_text": "סדרת הוכחה",
       "id": "3d63669a-d904-4918-8782-6922f19a202b",
@@ -5265,11 +5271,6 @@ In the Faculty of Engineering, you're more than a student — you're an inventor
       "id": "4d5e6f7a-8b9c-4d0e-a1fa-3b4c5d6e7f8a",
     },
     {
-      "en_text": "Ability to solve certain problems exponentially faster.",
-      "he_text": "יכולת לפתור בעיות מסוימות מהר יותר באופן אקספוננציאלי.",
-      "id": "4e5f6a7b-8c9d-4957-4012-567890123456",
-    },
-    {
       "en_text": "Microeconomics C",
       "he_text": "מיקרו כלכלה ג",
       "id": "4ee3dc1d-68c8-4d49-8de5-d68b44dbf30d",
@@ -5320,6 +5321,11 @@ In the Faculty of Engineering, you're more than a student — you're an inventor
       "id": "58503f66-af42-4992-bdc1-79fc62c4a61f",
     },
     {
+      "en_text": "Differentiation Techniques",
+      "he_text": "שיטות גזירה",
+      "id": "593afff3-cf87-4c67-b80d-ae06ffd4c829",
+    },
+    {
       "en_text": "Separation Principle",
       "he_text": "עקרון ההפרדה",
       "id": "5a6b7c8d-9e0f-4123-b567-89abcd234eff",
@@ -5363,11 +5369,6 @@ In the Faculty of Engineering, you're more than a student — you're an inventor
       "en_text": "Axioms",
       "he_text": "אקסיומות",
       "id": "5f580686-9cf6-492a-b23a-267646c3788d",
-    },
-    {
-      "en_text": "What is entanglement?",
-      "he_text": "מהי שזירה קוונטית?",
-      "id": "5f6a7b8c-9d0e-4926-5123-678901234567",
     },
     {
       "en_text": "How many three digit numbers have at least one repeated digit",
@@ -5455,19 +5456,14 @@ In the Faculty of Engineering, you're more than a student — you're an inventor
       "id": "67cb3992-ad01-4a69-9738-1eacf9bd0985",
     },
     {
+      "en_text": "Linked Lists",
+      "he_text": "רשימות מקושרות",
+      "id": "67d2cb08-0782-408c-87e9-76241203503e",
+    },
+    {
       "en_text": "Linear Algebra 2",
       "he_text": "אלגברה ליניארית 2",
       "id": "68453935-7832-405a-b42a-e41d10099093",
-    },
-    {
-      "en_text": "The loss of quantum coherence.",
-      "he_text": "אובדן קוהרנטיות קוונטית.",
-      "id": "6a7b8c9d-0e1f-4943-6234-789012345678",
-    },
-    {
-      "en_text": "Lower power consumption.",
-      "he_text": "צריכת חשמל נמוכה יותר.",
-      "id": "6a7b8c9d-0e1f-4959-6234-789012345678",
     },
     {
       "en_text": "How many distinct permutations can be made from the letters of the word 'MATHEMATICS'?",
@@ -5598,11 +5594,6 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "id": "7ac8c2ed-1b4f-4e7a-9d5e-8f3b2c4a1e6d",
     },
     {
-      "en_text": "What is a qubit?",
-      "he_text": "מהו קיוביט?",
-      "id": "7b8c9d0e-1f2a-4912-7345-890123456789",
-    },
-    {
       "en_text": "How many subsets of {1,...,10} contain at least one of 1 or 2",
       "he_text": "כמה תתי קבוצות של {1,...,10} מכילות לפחות את 1 או 2",
       "id": "7c17f31e-c1f9-4035-869f-e0b929e0122f",
@@ -5611,6 +5602,11 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "en_text": "General Chemistry for Biologists B",
       "he_text": "כימיה כללית לביולוגים ב",
       "id": "7c9224fb-793d-48c1-8475-1285ed9da02d",
+    },
+    {
+      "en_text": "Integration by Parts",
+      "he_text": "אינטגרציה בחלקים",
+      "id": "7cb38204-869c-47a9-a2a2-a72020e7bdee",
     },
     {
       "en_text": "Pigeonhole Principle",
@@ -5671,16 +5667,6 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "en_text": "Data Mining",
       "he_text": "כריית נתונים",
       "id": "8b9cde61-4a1d-4e8d-800b-f41449623a07",
-    },
-    {
-      "en_text": "A phenomenon where two or more quantum particles become linked.",
-      "he_text": "תופעה שבה שני חלקיקים קוונטיים או יותר נקשרים.",
-      "id": "8c9d0e1f-2a3b-4929-8456-901234567890",
-    },
-    {
-      "en_text": "The gain of quantum coherence.",
-      "he_text": "השגת קוהרנטיות קוונטית.",
-      "id": "8c9d0e1f-2a3b-4945-8456-901234567890",
     },
     {
       "en_text": "Introduction to Computer Science and Java",
@@ -5763,6 +5749,11 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "id": "9bba34bf-e461-44be-b76f-f398155a3911",
     },
     {
+      "en_text": "Queues",
+      "he_text": "תורים",
+      "id": "9c67cf86-b57c-4da2-b0fb-fe5a11d8bab0",
+    },
+    {
       "en_text": "Intergenerational Economics",
       "he_text": "כלכלה בין-דורית",
       "id": "9ccbc3cc-2abf-4120-9377-f5a8beaaa10c",
@@ -5833,21 +5824,6 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "id": "EE38E69B-F2B3-477E-A06A-70EBB3E5F87D",
     },
     {
-      "en_text": "A quantum bit, which can be 0, 1, or both simultaneously.",
-      "he_text": "ביט קוונטי, שיכול להיות 0, 1, או שניהם בו זמנית.",
-      "id": "a0b1c2d3-e4f5-4915-a678-123456789012",
-    },
-    {
-      "en_text": "A phenomenon where two or more classical particles become linked.",
-      "he_text": "תופעה שבה שני חלקיקים קלאסיים או יותר נקשרים.",
-      "id": "a0b1c2d3-e4f5-4931-a678-123456789012",
-    },
-    {
-      "en_text": "Which algorithm is known for factoring large numbers on a quantum computer?",
-      "he_text": "איזה אלגוריתם ידוע בפירוק לגורמים של מספרים גדולים במחשב קוונטי?",
-      "id": "a0b1c2d3-e4f5-4947-a678-123456789012",
-    },
-    {
       "en_text": "What is an upper sum in the context of Riemann integration?",
       "he_text": "מהו סכום עליון בהקשר של אינטגרל רימן?",
       "id": "a1b2c3d4-4444-5678-901a-bcdef0123456",
@@ -5896,11 +5872,6 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "en_text": "Upper sums are unrelated to the definite integral",
       "he_text": "סכומים עליונים לא קשורים לאינטגרל המסוים",
       "id": "a1b2c3d4-5555-5678-901a-bcdef012345b",
-    },
-    {
-      "en_text": "Introduction to Quantum Computing",
-      "he_text": "מבוא למחשוב קוונטי",
-      "id": "a1b2c3d4-e5f6-4789-a012-bcdef0123456",
     },
     {
       "en_text": "0.7 km",
@@ -6006,6 +5977,11 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "en_text": "Lower sums are unrelated to the definite integral",
       "he_text": "סכומים תחתונים לא קשורים לאינטגרל המסוים",
       "id": "b2c3d4e5-7777-5678-901a-bcdef012345b",
+    },
+    {
+      "en_text": "Hash Tables",
+      "he_text": "טבלאות גיבוב",
+      "id": "b2db4907-ef15-4d56-8b33-8f61c5b9567d",
     },
     {
       "en_text": "How many arrangements of three red and three blue balls in a row have at least one pair of adjacent balls of the same color",
@@ -6126,16 +6102,6 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "en_text": "Biology",
       "he_text": "ביולוגיה",
       "id": "c2471542-a206-4e5d-9bc5-7b5fd76f2c70",
-    },
-    {
-      "en_text": "A classical bit, which can be 0 or 1.",
-      "he_text": "ביט קלאסי, שיכול להיות 0 או 1.",
-      "id": "c2d3e4f5-a6b7-4917-c890-345678901234",
-    },
-    {
-      "en_text": "Which of the following is a basic quantum gate?",
-      "he_text": "איזו מהבאות היא שער קוונטי בסיסי?",
-      "id": "c2d3e4f5-a6b7-4933-c890-345678901234",
     },
     {
       "en_text": "How many distinct permutations can be formed from the letters of "COMMITTEE"?",
@@ -6278,11 +6244,6 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "id": "d3e4f5a6-7777-5678-901a-bcdef012345b",
     },
     {
-      "en_text": "Shor's algorithm",
-      "he_text": "אלגוריתם שור",
-      "id": "d3e4f5a6-b7c8-4950-d901-456789012345",
-    },
-    {
       "en_text": "Thermodynamics for Physicists",
       "he_text": "תרמודינמיקה לפיזיקאים",
       "id": "d4c501df-eb02-4125-9f97-573813b664fb",
@@ -6328,6 +6289,11 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "id": "dd8d69f7-9959-43a2-a227-233d003fb709",
     },
     {
+      "en_text": "Graph Traversal Algorithms",
+      "he_text": "אלגוריתמים למעבר על גרפים",
+      "id": "dd9aa8c9-b413-42f9-b26a-194a2ef2f4d0",
+    },
+    {
       "en_text": "How many 5-digit numbers greater than 30000 can be formed using digits 1-5 without repetition?",
       "he_text": "כמה מספרים בני 5 ספרות הגדולים מ-30000 ניתן ליצור מהספרות 1-5 ללא חזרות?",
       "id": "dde375a5-44af-433d-be3c-1c0a8aeb6570",
@@ -6368,11 +6334,6 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "id": "e45aa0ec-3d93-402d-be14-83c7e35bfed6",
     },
     {
-      "en_text": "What is superposition?",
-      "he_text": "מהי סופרפוזיציה?",
-      "id": "e4f5a6b7-c8d9-4919-e012-567890123456",
-    },
-    {
       "en_text": "Logic Satisfiability & Consistency",
       "he_text": "ספיקות ועקביות לוגית",
       "id": "e5a9ecea-2a60-46ff-93c5-a7882ee287ab",
@@ -6381,11 +6342,6 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "en_text": "40 study math 50 physics 60 computer science 20 study math and physics 25 math and computer science 30 physics and computer science and 5 study all three How many students study at least one subject?",
       "he_text": "40 לומדים מתמטיקה 50 פיזיקה 60 מדעי המחשב 20 לומדים מתמטיקה ופיזיקה 25 מתמטיקה ומדעי המחשב 30 פיזיקה ומדעי המחשב ו-5 לומדים את שלושת המקצועות כמה סטודנטים לומדים לפחות מקצוע אחד?",
       "id": "e5bcbc7d-dbc1-4e25-aff7-742ad9c64cb2",
-    },
-    {
-      "en_text": "Linear Algebra",
-      "he_text": "אלגברה לינארית",
-      "id": "e5f6a7b8-c9d0-4903-e456-f01234567890",
     },
     {
       "en_text": "G is not planar",
@@ -6466,6 +6422,11 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "en_text": "A park has 5 picnic areas and 3 playgrounds. How many locations can a family choose if visiting just one?",
       "he_text": "בפארק יש 5 אזורי פיקניק ו-3 מגרשי משחקים. כמה מקומות יכולה משפחה לבחור אם מבקרת רק באחד?",
       "id": "efc49f76-65ac-4f41-8329-17b055ff654f",
+    },
+    {
+      "en_text": "Limits and Continuity",
+      "he_text": "גבולות ורציפות",
+      "id": "f0557643-39f1-41d8-b4bd-14d5242e7102",
     },
     {
       "en_text": "Which condition is necessary for the Fundamental Formula to apply?",
@@ -6621,16 +6582,6 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "en_text": "Calculate ∫[-1,1] 2x dx",
       "he_text": "חשב ∫[-1,1] 2x dx",
       "id": "f5a2b3c4-5555-4567-890a-bcdef0123456",
-    },
-    {
-      "en_text": "Hadamard gate",
-      "he_text": "שער אדמר",
-      "id": "f5a6b7c8-d9e0-4936-f123-678901234567",
-    },
-    {
-      "en_text": "Grover's algorithm",
-      "he_text": "אלגוריתם גרובר",
-      "id": "f5a6b7c8-d9e0-4952-f123-678901234567",
     },
     {
       "en_text": "Min Max Algorithm",
