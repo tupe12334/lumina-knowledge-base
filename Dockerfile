@@ -1,7 +1,10 @@
 # Stage 1: Base image with Node.js and pnpm
 FROM node:lts-alpine AS base
 RUN corepack enable && corepack prepare pnpm --activate
-ENV PNPM_HOME=/usr/local/bin
+# Configure pnpm home and store for better Docker layer caching
+ENV PNPM_HOME=/pnpm
+ENV PATH=$PNPM_HOME:$PATH
+RUN pnpm config set store-dir /pnpm/store
 
 # Stage 2: Dependencies installation
 FROM base AS deps
@@ -13,7 +16,7 @@ WORKDIR /app
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 
 # Install dependencies with cache mount
-RUN --mount=type=cache,target=/root/.local/share/pnpm/store \
+RUN --mount=type=cache,id=pnpm-store,target=/pnpm/store,sharing=locked \
   pnpm install --frozen-lockfile
 
 # Stage 3: Builder stage
