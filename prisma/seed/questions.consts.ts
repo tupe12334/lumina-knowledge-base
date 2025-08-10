@@ -4659,4 +4659,624 @@ export const QUESTIONS: QuestionSeedData[] = [
       },
     ],
   },
+  {
+    id: '52c4d70d-5b41-40eb-841a-d655bee0ded0',
+    translationId: '52c4d70d-5b41-40eb-841a-d655bee0ded0',
+    text: {
+      en_text: 'What is the determinant of the matrix [[1,2],[3,4]]?',
+      he_text: 'מהו הדטרמיננטה של המטריצה [[1,2],[3,4]]?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: '5a95b965-7626-4c7d-98db-4c45bf72083a',
+    answers: [
+      {
+        id: 'f29268fd-8d42-4d79-8a57-495558a888b6',
+        numberAnswer: {
+          id: 'e6b9a892-9048-4421-a5c5-0121ccb2840c',
+          value: -2,
+        },
+      },
+    ],
+  },
+  {
+    id: 'e52169d0-cba2-4889-b327-3a2f610df34f',
+    translationId: 'e52169d0-cba2-4889-b327-3a2f610df34f',
+    text: {
+      en_text: 'What is the determinant of the matrix [[2,3],[1,5]]?',
+      he_text: 'מהו הדטרמיננטה של המטריצה [[2,3],[1,5]]?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: '5a95b965-7626-4c7d-98db-4c45bf72083a',
+    answers: [
+      {
+        id: 'b241bfc1-748f-4775-b4a9-fa10d2eccac2',
+        numberAnswer: {
+          id: 'a905d6da-c995-44bd-98ad-b4c763612c37',
+          value: 7,
+        },
+      },
+    ],
+  },
+  {
+    id: '4817954c-91ff-460d-a69b-a50507781d48',
+    translationId: '4817954c-91ff-460d-a69b-a50507781d48',
+    text: {
+      en_text: 'What is the determinant of the matrix [[0,1],[-1,3]]?',
+      he_text: 'מהו הדטרמיננטה של המטריצה [[0,1],[-1,3]]?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: '5a95b965-7626-4c7d-98db-4c45bf72083a',
+    answers: [
+      {
+        id: '63556833-7bac-4e95-871d-bf8e144f4884',
+        numberAnswer: {
+          id: '13d3d69e-99cd-4597-8f17-408a43e54b9e',
+          value: 1,
+        },
+      },
+    ],
+  },
+  {
+    id: '3ed9edf5-6783-4a6c-8421-5b6e39f4416e',
+    translationId: '3ed9edf5-6783-4a6c-8421-5b6e39f4416e',
+    text: {
+      en_text: 'What is the determinant of the matrix [[4,7],[2,6]]?',
+      he_text: 'מהו הדטרמיננטה של המטריצה [[4,7],[2,6]]?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: '5a95b965-7626-4c7d-98db-4c45bf72083a',
+    answers: [
+      {
+        id: 'e3e85d47-8d35-4521-b507-c81d5bb579e9',
+        numberAnswer: {
+          id: 'd6f354ae-a80f-4914-a90a-81d18678c831',
+          value: 10,
+        },
+      },
+    ],
+  },
+  {
+    id: '9da9bb06-7c47-49e0-8e5f-2d705b8e0c65',
+    translationId: '9da9bb06-7c47-49e0-8e5f-2d705b8e0c65',
+    text: {
+      en_text: 'What is the determinant of the matrix [[5,2],[7,3]]?',
+      he_text: 'מהו הדטרמיננטה של המטריצה [[5,2],[7,3]]?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: '5a95b965-7626-4c7d-98db-4c45bf72083a',
+    answers: [
+      {
+        id: '4f6ca6ae-c225-4f08-bc06-5ada7cf659b5',
+        numberAnswer: {
+          id: 'b6b2d040-a25b-4648-a289-415f75323d34',
+          value: 1,
+        },
+      },
+    ],
+  },
+  {
+    id: '96d606d2-95d4-42bf-b6bd-40e20deea584',
+    translationId: '96d606d2-95d4-42bf-b6bd-40e20deea584',
+    text: {
+      en_text: 'What is the determinant of the matrix [[3,8],[4,6]]?',
+      he_text: 'מהו הדטרמיננטה של המטריצה [[3,8],[4,6]]?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: '5a95b965-7626-4c7d-98db-4c45bf72083a',
+    answers: [
+      {
+        id: 'e5142250-326f-4d55-b8e4-86dcdc45af64',
+        numberAnswer: {
+          id: '7630e911-4885-4981-805e-3a9efc325a5a',
+          value: -14,
+        },
+      },
+    ],
+  },
+  {
+    id: '055356ae-1862-4150-8b82-2f53f3abd864',
+    translationId: '055356ae-1862-4150-8b82-2f53f3abd864',
+    text: {
+      en_text: 'What is the determinant of the matrix [[2,0],[5,-1]]?',
+      he_text: 'מהו הדטרמיננטה של המטריצה [[2,0],[5,-1]]?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: '5a95b965-7626-4c7d-98db-4c45bf72083a',
+    answers: [
+      {
+        id: '194dbc1b-0029-42b3-9423-1e48c4da3a67',
+        numberAnswer: {
+          id: '9ab2e8ec-5256-4784-8d75-70d1b73f5dec',
+          value: -2,
+        },
+      },
+    ],
+  },
+  {
+    id: 'fb6d6ef9-dd8e-4e77-969d-bbe4b2c65a8a',
+    translationId: 'fb6d6ef9-dd8e-4e77-969d-bbe4b2c65a8a',
+    text: {
+      en_text: 'What is the determinant of the matrix [[-1,4],[2,-3]]?',
+      he_text: 'מהו הדטרמיננטה של המטריצה [[-1,4],[2,-3]]?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: '5a95b965-7626-4c7d-98db-4c45bf72083a',
+    answers: [
+      {
+        id: '011ab3ff-8455-417c-89e7-98b5253ea4c6',
+        numberAnswer: {
+          id: 'b91aa194-f9f6-4245-91d8-0902704fac0f',
+          value: -5,
+        },
+      },
+    ],
+  },
+  {
+    id: '8ddfb44e-b729-4d52-946b-ccef0fdc7639',
+    translationId: '8ddfb44e-b729-4d52-946b-ccef0fdc7639',
+    text: {
+      en_text: 'What is the determinant of the matrix [[6,1],[4,2]]?',
+      he_text: 'מהו הדטרמיננטה של המטריצה [[6,1],[4,2]]?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: '5a95b965-7626-4c7d-98db-4c45bf72083a',
+    answers: [
+      {
+        id: '1f0b8cd6-881b-4448-b5cb-880a85d88006',
+        numberAnswer: {
+          id: '58c1ce2a-17dc-4c42-ad9c-396027edcd15',
+          value: 8,
+        },
+      },
+    ],
+  },
+  {
+    id: '08eb3b54-0990-4767-a1bc-f06af3845a4b',
+    translationId: '08eb3b54-0990-4767-a1bc-f06af3845a4b',
+    text: {
+      en_text: 'What is the determinant of the matrix [[3,5],[7,1]]?',
+      he_text: 'מהו הדטרמיננטה של המטריצה [[3,5],[7,1]]?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: '5a95b965-7626-4c7d-98db-4c45bf72083a',
+    answers: [
+      {
+        id: '2b17eb29-dca2-4d32-8459-b5df2b60a24f',
+        numberAnswer: {
+          id: 'a701896a-2605-4458-a46b-cfd4067873f6',
+          value: -32,
+        },
+      },
+    ],
+  },
+  {
+    id: 'abebb16a-625f-46bc-86f7-8d62b26a0068',
+    translationId: 'abebb16a-625f-46bc-86f7-8d62b26a0068',
+    text: {
+      en_text:
+        'What is the determinant of the matrix [[1,0,2],[-1,3,1],[3,1,0]]?',
+      he_text: 'מהו הדטרמיננטה של המטריצה [[1,0,2],[-1,3,1],[3,1,0]]?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: '5a95b965-7626-4c7d-98db-4c45bf72083a',
+    answers: [
+      {
+        id: 'db579826-aa94-49ac-ade8-f6ec932b5cb6',
+        numberAnswer: {
+          id: '0f541498-9f7f-4349-a817-f7a79b246884',
+          value: -21,
+        },
+      },
+    ],
+  },
+  {
+    id: '6418770c-9dc3-46fe-a975-c9cf96a1e6e1',
+    translationId: '6418770c-9dc3-46fe-a975-c9cf96a1e6e1',
+    text: {
+      en_text:
+        'What is the determinant of the matrix [[2,-1,0],[1,3,4],[5,2,1]]?',
+      he_text: 'מהו הדטרמיננטה של המטריצה [[2,-1,0],[1,3,4],[5,2,1]]?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: '5a95b965-7626-4c7d-98db-4c45bf72083a',
+    answers: [
+      {
+        id: 'b257b4b2-1f59-4928-8672-42c8c71ca6d3',
+        numberAnswer: {
+          id: '0b9d4862-fa44-4f3d-ab77-159c4dfacc61',
+          value: -29,
+        },
+      },
+    ],
+  },
+  {
+    id: '0f2a875a-76ae-4d97-af58-6ad023ca5097',
+    translationId: '0f2a875a-76ae-4d97-af58-6ad023ca5097',
+    text: {
+      en_text:
+        'What is the determinant of the matrix [[1,2,3],[0,1,4],[5,6,0]]?',
+      he_text: 'מהו הדטרמיננטה של המטריצה [[1,2,3],[0,1,4],[5,6,0]]?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: '5a95b965-7626-4c7d-98db-4c45bf72083a',
+    answers: [
+      {
+        id: '08fe5e6c-4385-4bea-8b5d-ef579b879823',
+        numberAnswer: {
+          id: '48ba0242-d0ba-43d8-91a8-cf63528878a6',
+          value: 1,
+        },
+      },
+    ],
+  },
+  {
+    id: 'ce287b90-6484-4619-b3e0-96c3a9a246c0',
+    translationId: 'ce287b90-6484-4619-b3e0-96c3a9a246c0',
+    text: {
+      en_text:
+        'What is the determinant of the matrix [[2,1,3],[0,4,5],[6,7,8]]?',
+      he_text: 'מהו הדטרמיננטה של המטריצה [[2,1,3],[0,4,5],[6,7,8]]?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: '5a95b965-7626-4c7d-98db-4c45bf72083a',
+    answers: [
+      {
+        id: '0dfe6ced-c9d8-48a7-bd07-62b5ae1a05ba',
+        numberAnswer: {
+          id: 'a9009ba2-0123-44d8-99fa-63b2b9aeffe7',
+          value: -48,
+        },
+      },
+    ],
+  },
+  {
+    id: '2343d8a5-264f-4cfd-a3d1-fbe415d5ce54',
+    translationId: '2343d8a5-264f-4cfd-a3d1-fbe415d5ce54',
+    text: {
+      en_text:
+        'What is the determinant of the matrix [[1,4,7],[2,5,8],[3,6,9]]?',
+      he_text: 'מהו הדטרמיננטה של המטריצה [[1,4,7],[2,5,8],[3,6,9]]?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: '5a95b965-7626-4c7d-98db-4c45bf72083a',
+    answers: [
+      {
+        id: '450c2f52-703a-488e-b0a1-b162d1e765c6',
+        numberAnswer: {
+          id: '440d6993-091f-45c3-89f7-150119b79788',
+          value: 0,
+        },
+      },
+    ],
+  },
+  {
+    id: 'f70a4043-8eea-48ce-80cb-9dd68f0075c8',
+    translationId: 'f70a4043-8eea-48ce-80cb-9dd68f0075c8',
+    text: {
+      en_text:
+        'What is the determinant of the matrix [[3,0,2],[2,0,-2],[0,1,1]]?',
+      he_text: 'מהו הדטרמיננטה של המטריצה [[3,0,2],[2,0,-2],[0,1,1]]?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: '5a95b965-7626-4c7d-98db-4c45bf72083a',
+    answers: [
+      {
+        id: 'c41e0573-8875-4a4e-856e-1f6e420d39f2',
+        numberAnswer: {
+          id: '3d010e01-7bf0-4499-b42a-f9756241eb7a',
+          value: 10,
+        },
+      },
+    ],
+  },
+  {
+    id: '06575de9-99ef-407f-ab59-8046e2467450',
+    translationId: '06575de9-99ef-407f-ab59-8046e2467450',
+    text: {
+      en_text:
+        'What is the determinant of the matrix [[1,2,0],[0,3,4],[5,6,0]]?',
+      he_text: 'מהו הדטרמיננטה של המטריצה [[1,2,0],[0,3,4],[5,6,0]]?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: '5a95b965-7626-4c7d-98db-4c45bf72083a',
+    answers: [
+      {
+        id: '01060db7-47b3-487c-8589-cd8125b32f30',
+        numberAnswer: {
+          id: 'fe4f8853-bbc6-45e7-8ee6-2182a411c7d4',
+          value: 16,
+        },
+      },
+    ],
+  },
+  {
+    id: '6d8f2416-61eb-4d7c-9499-af265f0e2bbf',
+    translationId: '6d8f2416-61eb-4d7c-9499-af265f0e2bbf',
+    text: {
+      en_text:
+        'What is the determinant of the matrix [[2,5,3],[1,-2,0],[3,4,1]]?',
+      he_text: 'מהו הדטרמיננטה של המטריצה [[2,5,3],[1,-2,0],[3,4,1]]?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: '5a95b965-7626-4c7d-98db-4c45bf72083a',
+    answers: [
+      {
+        id: '9009ab37-6230-4f76-bc4e-4c5389ae5d18',
+        numberAnswer: {
+          id: '885d4c4e-64ff-4c98-8607-ad648c612ede',
+          value: 21,
+        },
+      },
+    ],
+  },
+  {
+    id: '428ea415-923a-4fb6-be7d-510a569bcb3b',
+    translationId: '428ea415-923a-4fb6-be7d-510a569bcb3b',
+    text: {
+      en_text:
+        'What is the determinant of the matrix [[1,2,1],[0,1,0],[2,3,4]]?',
+      he_text: 'מהו הדטרמיננטה של המטריצה [[1,2,1],[0,1,0],[2,3,4]]?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: '5a95b965-7626-4c7d-98db-4c45bf72083a',
+    answers: [
+      {
+        id: 'f6d6446a-f3fc-402e-a033-fca2e422612e',
+        numberAnswer: {
+          id: '8410d7b8-b184-4c84-aa64-1abb9d10f24d',
+          value: 2,
+        },
+      },
+    ],
+  },
+  {
+    id: 'b70fe21c-11f4-4122-98bf-8594a2412f68',
+    translationId: 'b70fe21c-11f4-4122-98bf-8594a2412f68',
+    text: {
+      en_text:
+        'What is the determinant of the matrix [[4,1,2],[0,3,1],[2,0,5]]?',
+      he_text: 'מהו הדטרמיננטה של המטריצה [[4,1,2],[0,3,1],[2,0,5]]?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: '5a95b965-7626-4c7d-98db-4c45bf72083a',
+    answers: [
+      {
+        id: 'd840187a-1be5-444a-8d4f-f7ff2cf01382',
+        numberAnswer: {
+          id: 'b5d746d0-8bbd-4ca2-97c2-249f466fc1ce',
+          value: 50,
+        },
+      },
+    ],
+  },
+  {
+    id: 'f0e6f719-8309-4215-af93-273ddb0a0a4b',
+    translationId: 'f0e6f719-8309-4215-af93-273ddb0a0a4b',
+    text: {
+      en_text:
+        'What is the determinant of the matrix [[2,-1,3],[0,4,-2],[1,5,0]]?',
+      he_text: 'מהו הדטרמיננטה של המטריצה [[2,-1,3],[0,4,-2],[1,5,0]]?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: '5a95b965-7626-4c7d-98db-4c45bf72083a',
+    answers: [
+      {
+        id: 'fe45ce78-87db-4f5f-84e5-4a95ccd3714f',
+        numberAnswer: {
+          id: '0a07733e-37cd-4595-87cf-bfda70b3ff80',
+          value: 10,
+        },
+      },
+    ],
+  },
+  {
+    id: 'edefe330-a9bc-4eda-94e9-9fd172313023',
+    translationId: 'edefe330-a9bc-4eda-94e9-9fd172313023',
+    text: {
+      en_text:
+        'What is the determinant of the matrix [[3,2,1],[1,0,4],[2,5,6]]?',
+      he_text: 'מהו הדטרמיננטה של המטריצה [[3,2,1],[1,0,4],[2,5,6]]?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: '5a95b965-7626-4c7d-98db-4c45bf72083a',
+    answers: [
+      {
+        id: 'a4ad887d-e779-40a4-8dc4-da8cfe9ddb41',
+        numberAnswer: {
+          id: '7520a2ab-b869-47c7-a780-e447b98589d0',
+          value: -51,
+        },
+      },
+    ],
+  },
+  {
+    id: 'acad4524-e5c5-418e-9049-f4cc51e3fbd9',
+    translationId: 'acad4524-e5c5-418e-9049-f4cc51e3fbd9',
+    text: {
+      en_text:
+        'What is the determinant of the matrix [[0,2,1],[3,1,4],[5,-2,0]]?',
+      he_text: 'מהו הדטרמיננטה של המטריצה [[0,2,1],[3,1,4],[5,-2,0]]?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: '5a95b965-7626-4c7d-98db-4c45bf72083a',
+    answers: [
+      {
+        id: '23ada08f-c975-4caa-a22f-6c84e0f091ab',
+        numberAnswer: {
+          id: 'a9f5eef4-2862-4094-b5ca-e9a152ed02ed',
+          value: 29,
+        },
+      },
+    ],
+  },
+  {
+    id: '2d1da962-4d25-4cde-8a06-9d338b07fe3c',
+    translationId: '2d1da962-4d25-4cde-8a06-9d338b07fe3c',
+    text: {
+      en_text:
+        'What is the determinant of the matrix [[1,4,2],[2,1,3],[3,5,6]]?',
+      he_text: 'מהו הדטרמיננטה של המטריצה [[1,4,2],[2,1,3],[3,5,6]]?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: '5a95b965-7626-4c7d-98db-4c45bf72083a',
+    answers: [
+      {
+        id: '8a4100a0-5418-417c-a497-44b2e7c32aaf',
+        numberAnswer: {
+          id: '44db7595-099a-490a-a411-a51c2bb09aed',
+          value: -7,
+        },
+      },
+    ],
+  },
+  {
+    id: 'cfca8708-73de-4f07-be3d-7ab69a4e3725',
+    translationId: 'cfca8708-73de-4f07-be3d-7ab69a4e3725',
+    text: {
+      en_text:
+        'What is the determinant of the matrix [[2,3,1],[4,1,5],[6,2,0]]?',
+      he_text: 'מהו הדטרמיננטה של המטריצה [[2,3,1],[4,1,5],[6,2,0]]?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: '5a95b965-7626-4c7d-98db-4c45bf72083a',
+    answers: [
+      {
+        id: '9c010677-b76d-4f59-ac43-d781a6f4e74c',
+        numberAnswer: {
+          id: '8226bed7-d907-40e7-be0d-8413b51d7a35',
+          value: 72,
+        },
+      },
+    ],
+  },
+  {
+    id: 'e7c0b8ce-e03c-40ba-8c89-53bff74528e2',
+    translationId: 'e7c0b8ce-e03c-40ba-8c89-53bff74528e2',
+    text: {
+      en_text:
+        'What is the determinant of the matrix [[4,2,-1],[3,5,2],[1,0,6]]?',
+      he_text: 'מהו הדטרמיננטה של המטריצה [[4,2,-1],[3,5,2],[1,0,6]]?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: '5a95b965-7626-4c7d-98db-4c45bf72083a',
+    answers: [
+      {
+        id: '6ab8bb6e-3e52-47f0-a947-f0b0c3860203',
+        numberAnswer: {
+          id: '93485c0a-472d-4d98-89ba-7e9a93517f13',
+          value: 93,
+        },
+      },
+    ],
+  },
+  {
+    id: '690c8cae-2262-42be-8451-e858a386a2a7',
+    translationId: '690c8cae-2262-42be-8451-e858a386a2a7',
+    text: {
+      en_text:
+        'What is the determinant of the matrix [[1,3,5],[2,4,6],[7,8,9]]?',
+      he_text: 'מהו הדטרמיננטה של המטריצה [[1,3,5],[2,4,6],[7,8,9]]?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: '5a95b965-7626-4c7d-98db-4c45bf72083a',
+    answers: [
+      {
+        id: 'ab952f3a-0e25-4ba3-9269-1981ff56d96a',
+        numberAnswer: {
+          id: '2a354966-d47e-440a-9898-68d7618856b2',
+          value: 0,
+        },
+      },
+    ],
+  },
+  {
+    id: '87681174-9ddf-4cb4-b79d-dade47e59670',
+    translationId: '87681174-9ddf-4cb4-b79d-dade47e59670',
+    text: {
+      en_text:
+        'What is the determinant of the matrix [[2,4,6],[1,-1,0],[3,5,7]]?',
+      he_text: 'מהו הדטרמיננטה של המטריצה [[2,4,6],[1,-1,0],[3,5,7]]?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: '5a95b965-7626-4c7d-98db-4c45bf72083a',
+    answers: [
+      {
+        id: '0f71ce99-a90d-48ca-946d-c62708cf80f6',
+        numberAnswer: {
+          id: '96042ca2-8396-4f48-a4b3-460b4d8a3fc6',
+          value: 6,
+        },
+      },
+    ],
+  },
+  {
+    id: 'd983d39d-c906-4e43-a213-e25317ca85ad',
+    translationId: 'd983d39d-c906-4e43-a213-e25317ca85ad',
+    text: {
+      en_text:
+        'What is the determinant of the matrix [[3,1,2],[4,2,3],[5,0,1]]?',
+      he_text: 'מהו הדטרמיננטה של המטריצה [[3,1,2],[4,2,3],[5,0,1]]?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: '5a95b965-7626-4c7d-98db-4c45bf72083a',
+    answers: [
+      {
+        id: 'd217eb00-074c-4ab2-86cd-1ecafcb97757',
+        numberAnswer: {
+          id: '57c6160e-d3f9-4099-af99-7f745cce66f1',
+          value: -3,
+        },
+      },
+    ],
+  },
+  {
+    id: '7bd38a61-eae0-4790-818d-98bdda27f2fe',
+    translationId: '7bd38a61-eae0-4790-818d-98bdda27f2fe',
+    text: {
+      en_text:
+        'What is the determinant of the matrix [[5,2,1],[0,3,4],[2,1,0]]?',
+      he_text: 'מהו הדטרמיננטה של המטריצה [[5,2,1],[0,3,4],[2,1,0]]?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.approved,
+    moduleId: '5a95b965-7626-4c7d-98db-4c45bf72083a',
+    answers: [
+      {
+        id: '56af6c05-db48-499c-b32d-174dcafe76a8',
+        numberAnswer: {
+          id: 'b1579129-af23-4151-8a98-6ad102763cdf',
+          value: -10,
+        },
+      },
+    ],
+  },
 ] satisfies QuestionSeedData[];
