@@ -584,10 +584,6 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "questionId": "f7f54fbc-c140-4fb0-9654-11b39c406563",
     },
     {
-      "id": "f0c73e13-7562-437c-8e1d-4c4c61fed8b2",
-      "questionId": "8d08ab89-2e8f-4d5d-8a1d-9283e84f2973",
-    },
-    {
       "id": "f1a2b3c4-1111-4567-890a-bcdef0123457",
       "questionId": "f1a2b3c4-1111-4567-890a-bcdef0123456",
     },
@@ -2920,11 +2916,6 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "value": 680,
     },
     {
-      "answerId": "f0c73e13-7562-437c-8e1d-4c4c61fed8b2",
-      "id": "e01906b1-305c-44cb-b452-bc71fd0c4568",
-      "value": 12,
-    },
-    {
       "answerId": "4136ad83-d76f-41fb-8504-e1a4cf00e5e5",
       "id": "e3fee53a-557e-4028-b977-d33fa62bb331",
       "value": 9,
@@ -3588,12 +3579,6 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
     {
       "id": "8c9fbf32-317c-48de-a1d0-3409ad149a3c",
       "translationId": "67cb3992-ad01-4a69-9738-1eacf9bd0985",
-      "type": "value",
-      "validationStatus": "ai_generated",
-    },
-    {
-      "id": "8d08ab89-2e8f-4d5d-8a1d-9283e84f2973",
-      "translationId": "3774b231-66e2-42b5-964b-a7ca3cffd565",
       "type": "value",
       "validationStatus": "ai_generated",
     },
@@ -5063,11 +5048,6 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "en_text": "Engineering",
       "he_text": "הנדסה",
       "id": "369f5ce8-05f1-4d30-820e-baeb8bfb4e93",
-    },
-    {
-      "en_text": "What is the square root of 144",
-      "he_text": "מהו השורש הריבועי של 144",
-      "id": "3774b231-66e2-42b5-964b-a7ca3cffd565",
     },
     {
       "en_text": "Probability and Introduction to Statistics for Computer Science",
