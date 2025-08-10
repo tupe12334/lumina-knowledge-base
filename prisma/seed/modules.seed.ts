@@ -450,6 +450,7 @@ export const seedModules = async (
       en_text: 'Mathematical Recursion',
       he_text: 'רקורסיה מטמטית',
       parent: 'Combinatorics',
+      prerequisite: 'Multiplication Principle',
       course: 'Discrete Mathematics',
     },
     {
