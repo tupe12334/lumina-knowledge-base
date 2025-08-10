@@ -1066,12 +1066,6 @@ export const TRANSLATIONS: TranslationSeed[] = [
       'כמה מספרים בני 5 ספרות הגדולים מ-30000 ניתן ליצור מהספרות 1-5 ללא חזרות?',
   },
   {
-    id: '3774b231-66e2-42b5-964b-a7ca3cffd565',
-    en_text: 'What is the square root of 144',
-    he_text: 'מהו השורש הריבועי של 144',
-  },
-
-  {
     id: '627d6bc0-5764-4b99-bdca-abdbacd5a82c',
     en_text: 'Describe your favorite study technique',
     he_text: 'תאר את שיטת הלמידה המועדפת עליך',

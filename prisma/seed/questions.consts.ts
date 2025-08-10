@@ -1798,25 +1798,6 @@ export const QUESTIONS: QuestionSeedData[] = [
     ],
   },
   {
-    id: '8d08ab89-2e8f-4d5d-8a1d-9283e84f2973',
-    translationId: '3774b231-66e2-42b5-964b-a7ca3cffd565',
-    text: {
-      en_text: 'What is the square root of 144',
-      he_text: 'מהו השורש הריבועי של 144',
-    },
-    type: QuestionType.value,
-    moduleId: '6e19169a-959d-4f5d-a475-de09ca9ba8cd',
-    answers: [
-      {
-        id: 'f0c73e13-7562-437c-8e1d-4c4c61fed8b2',
-        numberAnswer: {
-          id: 'e01906b1-305c-44cb-b452-bc71fd0c4568',
-          value: 12,
-        },
-      },
-    ],
-  },
-  {
     id: '0cca7095-d2b5-402c-8895-c028c791c3b3',
     translationId: '627d6bc0-5764-4b99-bdca-abdbacd5a82c',
     text: {
