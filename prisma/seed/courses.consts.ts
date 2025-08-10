@@ -29,7 +29,7 @@ export const courses = [
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
-    id: 'a8b2c3d4-e5f6-7890-abcd-ef1234567890',
+    id: 'cc8fe111-8b1b-41d2-9299-6a68f2cca395',
     blockId: '7b4f3a21-89d5-4c3e-a8f7-1e3d2c9b8a5f',
     translationId: '4b42c9f4-436a-4008-9291-5ca24df618fe',
     en_name: 'Discrete Mathematics',

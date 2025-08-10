@@ -244,6 +244,10 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "questionId": "604ff1b4-1b80-485f-a7a1-be1b1fb43dc2",
     },
     {
+      "id": "6c116e48-5b1b-412e-a8d6-247e8baad789",
+      "questionId": "de8d4330-0e4f-440c-874a-58a63441b07d",
+    },
+    {
       "id": "6ccf46c4-361c-4c8b-b8b4-52905614831a",
       "questionId": "053fef57-b721-4fc0-a182-661e79593209",
     },
@@ -288,6 +292,10 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "questionId": "519d8b74-57a3-4307-9ecf-d1e13b4bcb3a",
     },
     {
+      "id": "7d88e065-5a8b-4e81-b34e-50e69479251b",
+      "questionId": "65f191e3-41fe-4dc7-9f1d-3ace05dec094",
+    },
+    {
       "id": "7efcc177-115f-4a5e-be93-f7e6c79979f8",
       "questionId": "b63dc0f8-0951-44dd-93ca-e3cb1dbd63d0",
     },
@@ -320,8 +328,16 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "questionId": "3d352abc-6d69-4f7b-9708-d015fabe3426",
     },
     {
+      "id": "92ee7f0b-c860-4d44-bb49-bab1a0d8219a",
+      "questionId": "ed852db8-47b4-4632-9032-b8ad4447f6de",
+    },
+    {
       "id": "94fbc3d6-b524-4418-96e0-3f50be464088",
       "questionId": "e3281abd-5909-4fec-880e-68f8da4bbdc6",
+    },
+    {
+      "id": "955a60fa-9454-403e-a018-1b9ad4519996",
+      "questionId": "2906e9e4-8565-4096-9a7b-516366f991a3",
     },
     {
       "id": "9799cdce-08a0-45a4-9ddc-63a2d3490948",
@@ -388,14 +404,6 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "questionId": "0CB337D9-F5CA-43B4-8945-531CF4C57BC2",
     },
     {
-      "id": "a1b2c3d4-4444-5678-901a-bcdef0123457",
-      "questionId": "a1b2c3d4-4444-5678-901a-bcdef0123456",
-    },
-    {
-      "id": "a1b2c3d4-5555-5678-901a-bcdef0123457",
-      "questionId": "a1b2c3d4-5555-5678-901a-bcdef0123456",
-    },
-    {
       "id": "a4b5cd8b-3262-4dac-9252-c884fd2f4fc2",
       "questionId": "ba270cb5-d635-41bf-8bc0-e02f794e1fb1",
     },
@@ -414,6 +422,10 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
     {
       "id": "a73521cc-1565-4d86-8719-c26456aaeb9d",
       "questionId": "75397d4b-9e65-4d97-a31f-4db89a56c64f",
+    },
+    {
+      "id": "a7b8c9da-1e2f-4a3b-4c5d-answer5555555",
+      "questionId": "a7b8c9da-1e2f-4a3b-ac5d-7e8f9aab1c2d",
     },
     {
       "id": "a919f7d3-9878-461e-b9ae-8f0bf9cabd8d",
@@ -448,14 +460,6 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "questionId": "1812c17a-631d-412c-9b53-0bbe8616865b",
     },
     {
-      "id": "b2c3d4e5-6666-5678-901a-bcdef0123457",
-      "questionId": "b2c3d4e5-6666-5678-901a-bcdef0123456",
-    },
-    {
-      "id": "b2c3d4e5-7777-5678-901a-bcdef0123457",
-      "questionId": "b2c3d4e5-7777-5678-901a-bcdef0123456",
-    },
-    {
       "id": "b58f4b4d-d333-44f1-8039-e035eef5393d",
       "questionId": "8024ece5-d316-4f14-8095-02448b7319b4",
     },
@@ -466,6 +470,14 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
     {
       "id": "b673ed54-1c24-4a29-a2b9-cdcc88d504c5",
       "questionId": "668b8fa6-da30-4859-89ba-15404f0c634e",
+    },
+    {
+      "id": "b8498467-eac2-4528-816b-13ffb71d66eb",
+      "questionId": "5dedb416-8cfb-4a84-b1e3-4305e10689fd",
+    },
+    {
+      "id": "b8c9daeb-2f3a-4b5c-6d7e-answer6666666",
+      "questionId": "b8c9daeb-2f3a-4b5c-ad7e-8f9aab1c2d3e",
     },
     {
       "id": "ba0fb684-2ade-4e38-a4ca-465575f9521a",
@@ -500,8 +512,12 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "questionId": "748f47e6-26ba-4b71-b63a-c0a87dafb3ca",
     },
     {
-      "id": "c3d4e5f6-8888-5678-901a-bcdef0123457",
-      "questionId": "c3d4e5f6-8888-5678-901a-bcdef0123456",
+      "id": "c371ef3f-1be2-46c3-8f7a-338fd983601e",
+      "questionId": "1c01fb9c-eedf-4792-9c4e-7868098f0254",
+    },
+    {
+      "id": "c3d4e5f6-7a8b-4c9d-ae1f-answer1111111",
+      "questionId": "c3d4e5f6-7a8b-4c9d-ae1f-3a4b5c6d7e8f",
     },
     {
       "id": "c69fee9d-a3b3-450c-a384-d3d723f24db6",
@@ -518,6 +534,10 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
     {
       "id": "c8e2c069-1c26-424c-9fcf-62ec55de6866",
       "questionId": "24879301-1e9c-4148-8ca6-f8a68ba8b245",
+    },
+    {
+      "id": "c9dae1f2-3a4b-5c6d-7e8f-answer7777777",
+      "questionId": "c9dae1f2-3a4b-4c6d-ae8f-9aab1c2d3e4f",
     },
     {
       "id": "ca568c7a-dd0b-4bc3-9c01-3f1d1db1f97b",
@@ -540,6 +560,14 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "questionId": "0078b5b8-2eef-4856-962a-67fb9441fe24",
     },
     {
+      "id": "d4e5f6a7-8b9c-4dae-1f2a-answer2222222",
+      "questionId": "d4e5f6a7-8b9c-4dae-af2a-4b5c6d7e8f90",
+    },
+    {
+      "id": "dae1f2a3-4b5c-6d7e-8f9a-answer8888888",
+      "questionId": "818ae7ae-9f27-48eb-b896-00f09e7910ca",
+    },
+    {
       "id": "df5c4ed7-7109-4c20-88dd-87e05833d16f",
       "questionId": "3868f16c-c4e5-4df1-9c2e-eeafe926473d",
     },
@@ -552,12 +580,28 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "questionId": "8bb9fcb0-c90a-430e-a5f5-9df0c92b9f3a",
     },
     {
+      "id": "e1f2a3b4-5c6d-7e8f-9aab-answer9999999",
+      "questionId": "d87215a6-e296-4bdc-acae-f444cf963ae2",
+    },
+    {
       "id": "e24ab3be-ceb1-436a-969c-d59eddeb12a0",
       "questionId": "9d3da146-016e-4583-bc89-3aa8f113fedc",
     },
     {
       "id": "e26f0543-475c-4636-951e-23c273e8aa62",
       "questionId": "3ca98efb-fadd-43c7-b769-54eaf0af0f8d",
+    },
+    {
+      "id": "e33dddc3-3efc-4230-91c4-ecac91ecb4eb",
+      "questionId": "a2de90e6-8816-4185-b876-0e0408f53d1b",
+    },
+    {
+      "id": "e5f6a7b8-9cad-4e1f-2a3b-answer3333333",
+      "questionId": "e5f6a7b8-9cad-4e1f-aa3b-5c6d7e8f9aab",
+    },
+    {
+      "id": "e7774c7f-a4d0-4cba-bc64-dc13e3e48449",
+      "questionId": "1e96dd52-45d6-43eb-8c3a-2b8bd80cb11d",
     },
     {
       "id": "eb5c8ad1-775a-45b1-a90e-fb8d2f137c45",
@@ -588,16 +632,12 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "questionId": "f1a2b3c4-1111-4567-890a-bcdef0123456",
     },
     {
-      "id": "f1b2c3d4-1111-5678-901a-bcdef0123457",
-      "questionId": "f1b2c3d4-1111-5678-901a-bcdef0123456",
-    },
-    {
       "id": "f2a2b3c4-2222-4567-890a-bcdef0123457",
       "questionId": "f2a2b3c4-2222-4567-890a-bcdef0123456",
     },
     {
-      "id": "f2b2c3d4-2222-5678-901a-bcdef0123457",
-      "questionId": "f2b2c3d4-2222-5678-901a-bcdef0123456",
+      "id": "f2a3b4c5-6d7e-8f9a-aab1-answer0000000",
+      "questionId": "c9dd092b-057e-4449-a68a-8109a96ccccb",
     },
     {
       "id": "f32d2330-e058-4404-964d-77ddfa628897",
@@ -612,10 +652,6 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "questionId": "f3a2b3c4-3333-4567-890a-bcdef0123456",
     },
     {
-      "id": "f3b2c3d4-3333-5678-901a-bcdef0123457",
-      "questionId": "f3b2c3d4-3333-5678-901a-bcdef0123456",
-    },
-    {
       "id": "f4a2b3c4-4444-4567-890a-bcdef0123457",
       "questionId": "f4a2b3c4-4444-4567-890a-bcdef0123456",
     },
@@ -626,6 +662,10 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
     {
       "id": "f6a2b3c4-6666-4567-890a-bcdef0123457",
       "questionId": "f6a2b3c4-6666-4567-890a-bcdef0123456",
+    },
+    {
+      "id": "f6a7b8c9-ad1e-4f2a-3b4c-answer4444444",
+      "questionId": "f6a7b8c9-ad1e-4f2a-ab4c-6d7e8f9aab1c",
     },
     {
       "id": "f7a2b3c4-7777-4567-890a-bcdef0123457",
@@ -1127,6 +1167,9 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "id": "f49316c3-f7e0-44c0-b316-3e4be99913f1",
     },
     {
+      "id": "f8c9d5e1-2a3b-4c6d-8e9f-1a2b3c4d5e6f",
+    },
+    {
       "id": "fae56388-e1d2-4f5e-a537-8ff28803871f",
     },
     {
@@ -1146,6 +1189,11 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
     },
   ],
   "blockRelationship": [
+    {
+      "id": "",
+      "postrequisiteId": "37d15e78-fcf2-49a0-bbde-b4dbffd904a7",
+      "prerequisiteId": "81BE3915-2C63-470E-85FE-55C1062DEFF3",
+    },
     {
       "id": "0453e0f1-4917-4334-86e1-e8c2e76603e7",
       "postrequisiteId": "a5666d02-3086-44ba-97ab-2261915b21ff",
@@ -1711,13 +1759,6 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
     },
     {
-      "blockId": "7b4f3a21-89d5-4c3e-a8f7-1e3d2c9b8a5f",
-      "id": "a8b2c3d4-e5f6-7890-abcd-ef1234567890",
-      "publishedAt": null,
-      "translationId": "4b42c9f4-436a-4008-9291-5ca24df618fe",
-      "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
-    },
-    {
       "blockId": "7477a6fc-e0d3-4272-8c98-aa989c63c87a",
       "id": "bd18f3fe-1314-4c7f-ad13-edab78e24db9",
       "publishedAt": null,
@@ -1758,6 +1799,13 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "publishedAt": null,
       "translationId": "72f86c11-f987-48fd-975a-6627b0019940",
       "universityId": "92e73fb7-96de-45e4-aff3-4ca7b89be16c",
+    },
+    {
+      "blockId": "7b4f3a21-89d5-4c3e-a8f7-1e3d2c9b8a5f",
+      "id": "cc8fe111-8b1b-41d2-9299-6a68f2cca395",
+      "publishedAt": null,
+      "translationId": "4b42c9f4-436a-4008-9291-5ca24df618fe",
+      "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
     },
     {
       "blockId": "6a66ccb6-e93a-48f4-84dd-44ea808813f3",
@@ -2011,7 +2059,7 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
     {
       "blockId": "3f2e1d4c-5b6a-4789-8c0d-1e2f3a4b5c6d",
       "id": "3f2e1d4c-5b6a-4789-8c0d-1e2f3a4b5c6d",
-      "translationId": "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+      "translationId": "730785ee-5d3a-4160-93bd-24aad42be048",
     },
     {
       "blockId": "435bd8ba-3c4c-474d-9d04-3d55cbab9d6f",
@@ -2036,7 +2084,7 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
     {
       "blockId": "4e5f6a8b-9c0d-4f5e-a2ab-5c6d7e8f9a0b",
       "id": "4e5f6a8b-9c0d-4f5e-a2ab-5c6d7e8f9a0b",
-      "translationId": "3a1f9c8e-2d4b-5c6a-9e7f-4b8c9d0e1f2a",
+      "translationId": "35e00288-a280-4158-b03a-0b008a3de1eb",
     },
     {
       "blockId": "4f5a6b7c-8d9e-4012-a456-789abc123def",
@@ -2287,6 +2335,11 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "blockId": "f2866b62-f4f6-4e22-8fcc-f4bd8bbdb275",
       "id": "f2866b62-f4f6-4e22-8fcc-f4bd8bbdb275",
       "translationId": "e7c5b81e-5aad-4715-ab5d-c08122c05ef1",
+    },
+    {
+      "blockId": "f8c9d5e1-2a3b-4c6d-8e9f-1a2b3c4d5e6f",
+      "id": "f8c9d5e1-2a3b-4c6d-8e9f-1a2b3c4d5e6f",
+      "translationId": "b2c3d4e5-6f7a-4b8c-9d0e-2f3a4b5c6d7e",
     },
     {
       "blockId": "fae56388-e1d2-4f5e-a537-8ff28803871f",
@@ -2571,6 +2624,11 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "value": 12870,
     },
     {
+      "answerId": "c371ef3f-1be2-46c3-8f7a-338fd983601e",
+      "id": "65b76340-412e-42df-a5c0-1435ef273f1b",
+      "value": 7.667,
+    },
+    {
       "answerId": "fee9014e-d481-4681-a241-ebf6862048bc",
       "id": "67e88df2-785f-47e8-affa-596909fe3899",
       "value": 210,
@@ -2761,6 +2819,11 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "value": 3876,
     },
     {
+      "answerId": "a7b8c9da-1e2f-4a3b-4c5d-answer5555555",
+      "id": "a7b8c9da-1e2f-4a3b-4c5d-number5555555",
+      "value": 0,
+    },
+    {
       "answerId": "b673ed54-1c24-4a29-a2b9-cdcc88d504c5",
       "id": "ab9cec1f-a673-4ed3-ab48-ee309a1e1acc",
       "value": 12,
@@ -2799,6 +2862,11 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "answerId": "00c0234c-328f-492b-bdb1-6572a5dfa44f",
       "id": "b4099679-9aeb-447f-a80f-03cfc28f4ca5",
       "value": 10,
+    },
+    {
+      "answerId": "92ee7f0b-c860-4d44-bb49-bab1a0d8219a",
+      "id": "b5440b1c-d752-4bdd-9a2c-a06d45c16360",
+      "value": 4,
     },
     {
       "answerId": "b656d13e-fdce-4d48-b4fc-dbff10c64735",
@@ -2956,19 +3024,9 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "value": 886656,
     },
     {
-      "answerId": "f1b2c3d4-1111-5678-901a-bcdef0123457",
-      "id": "f1b2c3d4-1111-5678-901a-bcdef0123458",
-      "value": 7.667,
-    },
-    {
       "answerId": "f2a2b3c4-2222-4567-890a-bcdef0123457",
       "id": "f2a2b3c4-2222-4567-890a-bcdef0123458",
       "value": 2,
-    },
-    {
-      "answerId": "f2b2c3d4-2222-5678-901a-bcdef0123457",
-      "id": "f2b2c3d4-2222-5678-901a-bcdef0123458",
-      "value": 4,
     },
     {
       "answerId": "f3a2b3c4-3333-4567-890a-bcdef0123457",
@@ -2989,6 +3047,11 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "answerId": "f5a2b3c4-5555-4567-890a-bcdef0123457",
       "id": "f5a2b3c4-5555-4567-890a-bcdef0123458",
       "value": 0,
+    },
+    {
+      "answerId": "f6a7b8c9-ad1e-4f2a-3b4c-answer4444444",
+      "id": "f6a7b8c9-ad1e-4f2a-3b4c-number4444444",
+      "value": 2,
     },
     {
       "answerId": "6e66e7cc-d8ef-4fb8-af25-8635cd5301e6",
@@ -3139,9 +3202,21 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "validationStatus": "approved",
     },
     {
+      "id": "1c01fb9c-eedf-4792-9c4e-7868098f0254",
+      "translationId": "156dd85f-06f1-4f57-a607-e039b36a0430",
+      "type": "value",
+      "validationStatus": "ai_generated",
+    },
+    {
       "id": "1dac838b-24d1-42c1-a4fa-c39cfa911020",
       "translationId": "76d2408f-653b-49ae-b9af-745ecfb4cd73",
       "type": "value",
+      "validationStatus": "ai_generated",
+    },
+    {
+      "id": "1e96dd52-45d6-43eb-8c3a-2b8bd80cb11d",
+      "translationId": "482223b5-7343-4270-bff1-a9c3d934fa28",
+      "type": "selection",
       "validationStatus": "ai_generated",
     },
     {
@@ -3172,6 +3247,12 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "id": "2836a9da-1042-40ab-a686-44300695758a",
       "translationId": "fb76aff9-70f7-42ef-9bc7-08bb69cf85e4",
       "type": "value",
+      "validationStatus": "ai_generated",
+    },
+    {
+      "id": "2906e9e4-8565-4096-9a7b-516366f991a3",
+      "translationId": "eb64b28c-dd31-4e71-89c7-f19821d872be",
+      "type": "selection",
       "validationStatus": "ai_generated",
     },
     {
@@ -3403,6 +3484,12 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "validationStatus": "ai_generated",
     },
     {
+      "id": "5dedb416-8cfb-4a84-b1e3-4305e10689fd",
+      "translationId": "ab1f213f-f85b-4a48-a59c-06fd93019eaf",
+      "type": "selection",
+      "validationStatus": "ai_generated",
+    },
+    {
       "id": "5f6fe70f-7417-4f0c-86b6-5703dc3b9fa7",
       "translationId": "23979268-a195-4e17-b8bf-3b071c664206",
       "type": "value",
@@ -3436,6 +3523,12 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "id": "64cbc8a7-9e95-4999-a73d-628713b527ef",
       "translationId": "d79898d6-6f3e-4611-ae25-41a96c2f706e",
       "type": "value",
+      "validationStatus": "ai_generated",
+    },
+    {
+      "id": "65f191e3-41fe-4dc7-9f1d-3ace05dec094",
+      "translationId": "44a0d45b-2963-4836-94d7-90006e95caca",
+      "type": "selection",
       "validationStatus": "ai_generated",
     },
     {
@@ -3547,6 +3640,12 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "validationStatus": "ai_generated",
     },
     {
+      "id": "818ae7ae-9f27-48eb-b896-00f09e7910ca",
+      "translationId": "9e5399fe-0617-4bf6-9c39-037987c4a092",
+      "type": "selection",
+      "validationStatus": "ai_generated",
+    },
+    {
       "id": "82715303-8361-47ef-930e-6979947b741e",
       "translationId": "58503f66-af42-4992-bdc1-79fc62c4a61f",
       "type": "selection",
@@ -3637,20 +3736,20 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "validationStatus": "ai_generated",
     },
     {
-      "id": "a1b2c3d4-4444-5678-901a-bcdef0123456",
-      "translationId": "a1b2c3d4-4444-5678-901a-bcdef0123456",
-      "type": "selection",
-      "validationStatus": "ai_generated",
-    },
-    {
-      "id": "a1b2c3d4-5555-5678-901a-bcdef0123456",
-      "translationId": "a1b2c3d4-5555-5678-901a-bcdef0123456",
+      "id": "a2de90e6-8816-4185-b876-0e0408f53d1b",
+      "translationId": "6f0fbbb9-0794-41bd-aa92-0b98d3e2fdf2",
       "type": "selection",
       "validationStatus": "ai_generated",
     },
     {
       "id": "a69f2e8c-0a35-4a51-8ba3-f74890ea0b64",
       "translationId": "913e8191-9320-4b00-8087-c77b84d16012",
+      "type": "value",
+      "validationStatus": "ai_generated",
+    },
+    {
+      "id": "a7b8c9da-1e2f-4a3b-ac5d-7e8f9aab1c2d",
+      "translationId": "a7b8c9da-1e2f-4a3b-ac5d-7e8f9aab1c2d",
       "type": "value",
       "validationStatus": "ai_generated",
     },
@@ -3703,18 +3802,6 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "validationStatus": "ai_generated",
     },
     {
-      "id": "b2c3d4e5-6666-5678-901a-bcdef0123456",
-      "translationId": "b2c3d4e5-6666-5678-901a-bcdef0123456",
-      "type": "selection",
-      "validationStatus": "ai_generated",
-    },
-    {
-      "id": "b2c3d4e5-7777-5678-901a-bcdef0123456",
-      "translationId": "b2c3d4e5-7777-5678-901a-bcdef0123456",
-      "type": "selection",
-      "validationStatus": "ai_generated",
-    },
-    {
       "id": "b63dc0f8-0951-44dd-93ca-e3cb1dbd63d0",
       "translationId": "6d7e2c23-ba10-41e4-81bd-b4d586ef924e",
       "type": "value",
@@ -3730,6 +3817,12 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "id": "b727573b-e1b5-4382-989d-bcc450db06cf",
       "translationId": "3e5a2992-04db-463f-a8b1-8b9ff57426a0",
       "type": "value",
+      "validationStatus": "ai_generated",
+    },
+    {
+      "id": "b8c9daeb-2f3a-4b5c-ad7e-8f9aab1c2d3e",
+      "translationId": "b8c9daeb-2f3a-4b5c-ad7e-8f9aab1c2d3e",
+      "type": "selection",
       "validationStatus": "ai_generated",
     },
     {
@@ -3763,8 +3856,8 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "validationStatus": "approved",
     },
     {
-      "id": "c3d4e5f6-8888-5678-901a-bcdef0123456",
-      "translationId": "c3d4e5f6-8888-5678-901a-bcdef0123456",
+      "id": "c3d4e5f6-7a8b-4c9d-ae1f-3a4b5c6d7e8f",
+      "translationId": "c3d4e5f6-7a8b-4c9d-ae1f-3a4b5c6d7e8f",
       "type": "selection",
       "validationStatus": "ai_generated",
     },
@@ -3799,6 +3892,18 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "validationStatus": "ai_generated",
     },
     {
+      "id": "c9dae1f2-3a4b-4c6d-ae8f-9aab1c2d3e4f",
+      "translationId": "c9dae1f2-3a4b-4c6d-ae8f-9aab1c2d3e4f",
+      "type": "selection",
+      "validationStatus": "ai_generated",
+    },
+    {
+      "id": "c9dd092b-057e-4449-a68a-8109a96ccccb",
+      "translationId": "90c1e7a5-1ccd-43ad-80ab-966fc1075ede",
+      "type": "selection",
+      "validationStatus": "ai_generated",
+    },
+    {
       "id": "cb840bda-23ce-49ac-9127-9646ac0086cb",
       "translationId": "9f5d1a71-17dc-4a2c-9f9e-72436d37fe87",
       "type": "value",
@@ -3829,15 +3934,33 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "validationStatus": "approved",
     },
     {
+      "id": "d4e5f6a7-8b9c-4dae-af2a-4b5c6d7e8f90",
+      "translationId": "d4e5f6a7-8b9c-4dae-af2a-4b5c6d7e8f90",
+      "type": "selection",
+      "validationStatus": "ai_generated",
+    },
+    {
       "id": "d554a693-d532-42c2-bff3-ad79462494f5",
       "translationId": "3f1cb82d-592e-4df9-a2bf-fcccdec55a6f",
       "type": "value",
       "validationStatus": "ai_generated",
     },
     {
+      "id": "d87215a6-e296-4bdc-acae-f444cf963ae2",
+      "translationId": "a35ba03a-aedc-49c0-9b01-81826ec66d1a",
+      "type": "selection",
+      "validationStatus": "ai_generated",
+    },
+    {
       "id": "da5384d3-36b9-439d-81c7-4468b53d09bf",
       "translationId": "80ecc9bb-afba-4377-8a64-cb95495ef4b8",
       "type": "value",
+      "validationStatus": "ai_generated",
+    },
+    {
+      "id": "de8d4330-0e4f-440c-874a-58a63441b07d",
+      "translationId": "a8acbde6-b69c-4dfb-a02b-b86fab5ce020",
+      "type": "selection",
       "validationStatus": "ai_generated",
     },
     {
@@ -3871,6 +3994,12 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "validationStatus": "ai_generated",
     },
     {
+      "id": "e5f6a7b8-9cad-4e1f-aa3b-5c6d7e8f9aab",
+      "translationId": "e5f6a7b8-9cad-4e1f-aa3b-5c6d7e8f9aab",
+      "type": "selection",
+      "validationStatus": "ai_generated",
+    },
+    {
       "id": "e9c7cc22-e039-406a-bde5-de4d1d9809de",
       "translationId": "be678452-e71c-4c28-932b-592b751b559c",
       "type": "value",
@@ -3891,6 +4020,12 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
     {
       "id": "ed24fe0e-e03b-487e-bc4e-024185cc1eed",
       "translationId": "17d9e6b4-0346-4b44-8e41-9ee32e401f08",
+      "type": "value",
+      "validationStatus": "ai_generated",
+    },
+    {
+      "id": "ed852db8-47b4-4632-9032-b8ad4447f6de",
+      "translationId": "bdfd1e42-cc07-4ab0-9364-d31e5de52c85",
       "type": "value",
       "validationStatus": "ai_generated",
     },
@@ -3919,12 +4054,6 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "validationStatus": "ai_generated",
     },
     {
-      "id": "f1b2c3d4-1111-5678-901a-bcdef0123456",
-      "translationId": "f1b2c3d4-1111-5678-901a-bcdef0123456",
-      "type": "value",
-      "validationStatus": "ai_generated",
-    },
-    {
       "id": "f1f1199b-8535-40a8-a24e-85f90d4f79f5",
       "translationId": "e3d93d41-3050-493a-8ad6-19105b04613f",
       "type": "value",
@@ -3943,21 +4072,9 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "validationStatus": "ai_generated",
     },
     {
-      "id": "f2b2c3d4-2222-5678-901a-bcdef0123456",
-      "translationId": "f2b2c3d4-2222-5678-901a-bcdef0123456",
-      "type": "value",
-      "validationStatus": "ai_generated",
-    },
-    {
       "id": "f3a2b3c4-3333-4567-890a-bcdef0123456",
       "translationId": "f3a2b3c4-3333-4567-890a-bcdef0123456",
       "type": "value",
-      "validationStatus": "ai_generated",
-    },
-    {
-      "id": "f3b2c3d4-3333-5678-901a-bcdef0123456",
-      "translationId": "f3b2c3d4-3333-5678-901a-bcdef0123456",
-      "type": "selection",
       "validationStatus": "ai_generated",
     },
     {
@@ -3982,6 +4099,12 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "id": "f6a2b3c4-6666-4567-890a-bcdef0123456",
       "translationId": "f6a2b3c4-6666-4567-890a-bcdef0123456",
       "type": "selection",
+      "validationStatus": "ai_generated",
+    },
+    {
+      "id": "f6a7b8c9-ad1e-4f2a-ab4c-6d7e8f9aab1c",
+      "translationId": "f6a7b8c9-ad1e-4f2a-ab4c-6d7e8f9aab1c",
+      "type": "value",
       "validationStatus": "ai_generated",
     },
     {
@@ -4243,6 +4366,18 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
   ],
   "selectAnswer": [
     {
+      "answerId": "7d88e065-5a8b-4e81-b34e-50e69479251b",
+      "id": "13bb76f3-2f6c-4c32-a48a-b56e3136b3ba",
+      "isCorrect": true,
+      "translationId": "7b75b3a0-465f-4fdf-94e5-eb292e32bf9f",
+    },
+    {
+      "answerId": "e1f2a3b4-5c6d-7e8f-9aab-answer9999999",
+      "id": "16d3edf5-a034-49da-8b73-d749a8141c9f",
+      "isCorrect": true,
+      "translationId": "3a1fcd00-cd75-4323-8d58-963090db7050",
+    },
+    {
       "answerId": "7765796d-aea0-4158-8108-9a8f3b468761",
       "id": "2c9fa43e-8251-4e91-9282-906f6e42f89b",
       "isCorrect": false,
@@ -4255,10 +4390,70 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "translationId": "AF770977-4B29-4444-B907-F819EF5D0BEA",
     },
     {
+      "answerId": "7d88e065-5a8b-4e81-b34e-50e69479251b",
+      "id": "349b2d53-8876-4757-8da3-f44e98f29efb",
+      "isCorrect": false,
+      "translationId": "6a76c035-9130-414a-8f3b-625e3c65c3c2",
+    },
+    {
       "answerId": "7765796d-aea0-4158-8108-9a8f3b468761",
       "id": "3b1ab701-ddbf-4964-8b89-b094a4f39c74",
       "isCorrect": true,
       "translationId": "7ac8c2ed-1b4f-4e7a-9d5e-8f3b2c4a1e6d",
+    },
+    {
+      "answerId": "f2a3b4c5-6d7e-8f9a-aab1-answer0000000",
+      "id": "3eb0cf38-c442-4479-862f-a0219d307336",
+      "isCorrect": false,
+      "translationId": "9d1f3b5d-2e4b-49de-8b3c-af1a2b3c4d5e",
+    },
+    {
+      "answerId": "6c116e48-5b1b-412e-a8d6-247e8baad789",
+      "id": "41265572-8ec8-4eed-936d-e7af8b0a3ba0",
+      "isCorrect": false,
+      "translationId": "49bfcb08-75db-4d6f-a9f2-5ec0839466a6",
+    },
+    {
+      "answerId": "f2a3b4c5-6d7e-8f9a-aab1-answer0000000",
+      "id": "4439e39d-0fdb-4721-9cab-243bbec5e289",
+      "isCorrect": true,
+      "translationId": "6c5b287b-818c-489d-abaa-aff849761944",
+    },
+    {
+      "answerId": "6c116e48-5b1b-412e-a8d6-247e8baad789",
+      "id": "47377013-0153-460c-8ef4-9ecf306495e4",
+      "isCorrect": false,
+      "translationId": "c90dfde3-0732-42af-a85f-7843ded1b8a2",
+    },
+    {
+      "answerId": "b8498467-eac2-4528-816b-13ffb71d66eb",
+      "id": "4b3aabfb-f391-4f3d-b198-cf6d59336084",
+      "isCorrect": false,
+      "translationId": "3d6f492d-b7fa-4f17-b431-1fed4b1a7b2b",
+    },
+    {
+      "answerId": "955a60fa-9454-403e-a018-1b9ad4519996",
+      "id": "55516141-95ba-48da-a0c6-781de549b30d",
+      "isCorrect": false,
+      "translationId": "3d5966d9-6655-4639-b902-2de703c3da38",
+    },
+    {
+      "answerId": "6c116e48-5b1b-412e-a8d6-247e8baad789",
+      "id": "5707832c-93aa-466a-914e-2b359ae685a5",
+      "isCorrect": false,
+      "translationId": "6675796c-f296-4c91-b9e4-f1e316e1e40d",
+    },
+    {
+      "answerId": "dae1f2a3-4b5c-6d7e-8f9a-answer8888888",
+      "id": "5e2f2b08-26ca-4fc4-a4c6-e6c55eb7254b",
+      "isCorrect": false,
+      "translationId": "75f031c8-3a7d-4f09-8e5d-d71144e158b4",
+    },
+    {
+      "answerId": "955a60fa-9454-403e-a018-1b9ad4519996",
+      "id": "64eaf0b2-e475-493f-af30-18b2d35709bb",
+      "isCorrect": false,
+      "translationId": "d55a2d19-8c0f-4430-a3e1-f5873389a00e",
     },
     {
       "answerId": "7765796d-aea0-4158-8108-9a8f3b468761",
@@ -4267,16 +4462,64 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "translationId": "6e8a1c3f-9f2b-4d4f-8a3b-7b8c9d1e2f3a",
     },
     {
+      "answerId": "e33dddc3-3efc-4230-91c4-ecac91ecb4eb",
+      "id": "67e73858-c218-4a89-b46b-116fa5ddb392",
+      "isCorrect": false,
+      "translationId": "9e2d6857-e550-4160-bb86-239c017767b2",
+    },
+    {
+      "answerId": "e1f2a3b4-5c6d-7e8f-9aab-answer9999999",
+      "id": "6d8a3be7-1c36-4efb-9829-76470e9fea3e",
+      "isCorrect": false,
+      "translationId": "9425e428-80a9-42f2-b37d-be8d6bb3b2ef",
+    },
+    {
+      "answerId": "e7774c7f-a4d0-4cba-bc64-dc13e3e48449",
+      "id": "7697e4c5-4925-4ba8-aefd-5ba38944bcbc",
+      "isCorrect": false,
+      "translationId": "8a0e3cad-d137-4af7-9431-21a742678f01",
+    },
+    {
       "answerId": "7765796d-aea0-4158-8108-9a8f3b468761",
       "id": "7b4f58ce-80ba-4afa-85f3-aa2d3afb2afe",
       "isCorrect": false,
       "translationId": "3b5d7f9a-6c8e-4a1c-9d2e-4e5f6a7b8c9d",
     },
     {
+      "answerId": "f2a3b4c5-6d7e-8f9a-aab1-answer0000000",
+      "id": "7dd68e2f-2919-449e-a4fb-3d551516c1d8",
+      "isCorrect": false,
+      "translationId": "ae2a4c6e-3f5c-4aef-9c4d-1a2b3c4d5e6f",
+    },
+    {
+      "answerId": "7d88e065-5a8b-4e81-b34e-50e69479251b",
+      "id": "7df75f89-f3d9-4f86-8902-89ac9378c1fe",
+      "isCorrect": false,
+      "translationId": "de34861c-e147-46b8-a745-d7ed612c73ae",
+    },
+    {
+      "answerId": "e7774c7f-a4d0-4cba-bc64-dc13e3e48449",
+      "id": "7fa40845-f4e8-40ec-97dc-5d06cbbc2ee7",
+      "isCorrect": false,
+      "translationId": "c5905fc5-f356-4f54-be05-cfd3bb39d08d",
+    },
+    {
+      "answerId": "e33dddc3-3efc-4230-91c4-ecac91ecb4eb",
+      "id": "80882bef-8026-41c1-ae66-d627c58539a6",
+      "isCorrect": true,
+      "translationId": "cf2d673d-eff4-4b8f-aa69-914975c8a1b1",
+    },
+    {
       "answerId": "7765796d-aea0-4158-8108-9a8f3b468761",
       "id": "86d3b1f2-edad-426d-bc3d-ed8a00cb5e6f",
       "isCorrect": false,
       "translationId": "9e2f4a1c-3d5e-4b7f-8a9d-1c2e3f4a5b6c",
+    },
+    {
+      "answerId": "b8498467-eac2-4528-816b-13ffb71d66eb",
+      "id": "8aa8914b-bc50-4e67-8cf4-542eb7424e23",
+      "isCorrect": false,
+      "translationId": "3c74abda-7c59-41de-8c17-cfcb2305fb56",
     },
     {
       "answerId": "7765796d-aea0-4158-8108-9a8f3b468761",
@@ -4381,52 +4624,10 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "translationId": "338bee00-49e8-47f1-afd7-ab19015bdf2a",
     },
     {
-      "answerId": "a1b2c3d4-4444-5678-901a-bcdef0123457",
-      "id": "a1b2c3d4-4444-5678-901a-bcdef0123458",
-      "isCorrect": true,
-      "translationId": "a1b2c3d4-4444-5678-901a-bcdef0123458",
-    },
-    {
-      "answerId": "a1b2c3d4-4444-5678-901a-bcdef0123457",
-      "id": "a1b2c3d4-4444-5678-901a-bcdef0123459",
+      "answerId": "b8498467-eac2-4528-816b-13ffb71d66eb",
+      "id": "a3427f9a-3774-4be3-867f-b2092fb199f6",
       "isCorrect": false,
-      "translationId": "a1b2c3d4-4444-5678-901a-bcdef0123459",
-    },
-    {
-      "answerId": "a1b2c3d4-4444-5678-901a-bcdef0123457",
-      "id": "a1b2c3d4-4444-5678-901a-bcdef012345a",
-      "isCorrect": false,
-      "translationId": "a1b2c3d4-4444-5678-901a-bcdef012345a",
-    },
-    {
-      "answerId": "a1b2c3d4-4444-5678-901a-bcdef0123457",
-      "id": "a1b2c3d4-4444-5678-901a-bcdef012345b",
-      "isCorrect": false,
-      "translationId": "a1b2c3d4-4444-5678-901a-bcdef012345b",
-    },
-    {
-      "answerId": "a1b2c3d4-5555-5678-901a-bcdef0123457",
-      "id": "a1b2c3d4-5555-5678-901a-bcdef0123458",
-      "isCorrect": true,
-      "translationId": "a1b2c3d4-5555-5678-901a-bcdef0123458",
-    },
-    {
-      "answerId": "a1b2c3d4-5555-5678-901a-bcdef0123457",
-      "id": "a1b2c3d4-5555-5678-901a-bcdef0123459",
-      "isCorrect": false,
-      "translationId": "a1b2c3d4-5555-5678-901a-bcdef0123459",
-    },
-    {
-      "answerId": "a1b2c3d4-5555-5678-901a-bcdef0123457",
-      "id": "a1b2c3d4-5555-5678-901a-bcdef012345a",
-      "isCorrect": false,
-      "translationId": "a1b2c3d4-5555-5678-901a-bcdef012345a",
-    },
-    {
-      "answerId": "a1b2c3d4-5555-5678-901a-bcdef0123457",
-      "id": "a1b2c3d4-5555-5678-901a-bcdef012345b",
-      "isCorrect": false,
-      "translationId": "a1b2c3d4-5555-5678-901a-bcdef012345b",
+      "translationId": "346813c9-f3cf-4827-9bb9-1e2d4da7b70f",
     },
     {
       "answerId": "df5c4ed7-7109-4c20-88dd-87e05833d16f",
@@ -4441,28 +4642,28 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "translationId": "EE38E69B-F2B3-477E-A06A-70EBB3E5F87D",
     },
     {
-      "answerId": "b2c3d4e5-7777-5678-901a-bcdef0123457",
-      "id": "b2c3d4e5-7777-5678-901a-bcdef0123458",
+      "answerId": "d4e5f6a7-8b9c-4dae-1f2a-answer2222222",
+      "id": "af3ff0aa-3771-4b9f-9d20-78df8938cd44",
+      "isCorrect": false,
+      "translationId": "b8bd7fdc-2702-4573-b59e-6be89c72326f",
+    },
+    {
+      "answerId": "dae1f2a3-4b5c-6d7e-8f9a-answer8888888",
+      "id": "afa01335-05ff-4667-a03d-9072933236a0",
       "isCorrect": true,
-      "translationId": "b2c3d4e5-7777-5678-901a-bcdef0123458",
+      "translationId": "9f1b3d5f-2a4d-49fa-8d3e-aab1c2d3e4f5",
     },
     {
-      "answerId": "b2c3d4e5-7777-5678-901a-bcdef0123457",
-      "id": "b2c3d4e5-7777-5678-901a-bcdef0123459",
+      "answerId": "e1f2a3b4-5c6d-7e8f-9aab-answer9999999",
+      "id": "b0ffc126-fc14-4fe6-b84a-3c89c5b908b8",
       "isCorrect": false,
-      "translationId": "b2c3d4e5-7777-5678-901a-bcdef0123459",
+      "translationId": "e8d66329-b02d-492a-bdf5-d9bc846a33bc",
     },
     {
-      "answerId": "b2c3d4e5-7777-5678-901a-bcdef0123457",
-      "id": "b2c3d4e5-7777-5678-901a-bcdef012345a",
+      "answerId": "c9dae1f2-3a4b-5c6d-7e8f-answer7777777",
+      "id": "b2d457cd-aa4b-43e2-b737-9462fa052d90",
       "isCorrect": false,
-      "translationId": "b2c3d4e5-7777-5678-901a-bcdef012345a",
-    },
-    {
-      "answerId": "b2c3d4e5-7777-5678-901a-bcdef0123457",
-      "id": "b2c3d4e5-7777-5678-901a-bcdef012345b",
-      "isCorrect": false,
-      "translationId": "b2c3d4e5-7777-5678-901a-bcdef012345b",
+      "translationId": "744e652c-6228-42ea-bbaf-6d3b65eac599",
     },
     {
       "answerId": "7765796d-aea0-4158-8108-9a8f3b468761",
@@ -4471,58 +4672,178 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "translationId": "4c6e8a1c-7d9f-4b2d-8e1f-5f6a7b8c9d1e",
     },
     {
-      "answerId": "c3d4e5f6-8888-5678-901a-bcdef0123457",
-      "id": "c3d4e5f6-8888-5678-901a-bcdef0123458",
+      "answerId": "b8c9daeb-2f3a-4b5c-6d7e-answer6666666",
+      "id": "b8c9daeb-2f3a-4b5c-ad7e-8f9aab1c2d30",
       "isCorrect": true,
-      "translationId": "c3d4e5f6-8888-5678-901a-bcdef0123458",
+      "translationId": "1d3f5a7c-4e6b-417e-ab5c-2f3a4b5c6d7e",
     },
     {
-      "answerId": "c3d4e5f6-8888-5678-901a-bcdef0123457",
-      "id": "c3d4e5f6-8888-5678-901a-bcdef0123459",
+      "answerId": "b8c9daeb-2f3a-4b5c-6d7e-answer6666666",
+      "id": "b8c9daeb-2f3a-4b5c-ad7e-8f9aab1c2d31",
       "isCorrect": false,
-      "translationId": "c3d4e5f6-8888-5678-901a-bcdef0123459",
+      "translationId": "2e4a6b8d-5f7c-428f-ac6d-3a4b5c6d7e8f",
     },
     {
-      "answerId": "c3d4e5f6-8888-5678-901a-bcdef0123457",
-      "id": "c3d4e5f6-8888-5678-901a-bcdef012345a",
+      "answerId": "b8c9daeb-2f3a-4b5c-6d7e-answer6666666",
+      "id": "b8c9daeb-2f3a-4b5c-ad7e-8f9aab1c2d32",
       "isCorrect": false,
-      "translationId": "c3d4e5f6-8888-5678-901a-bcdef012345a",
+      "translationId": "3f5b7c9e-6a8d-439a-ad7e-4b5c6d7e8f9a",
     },
     {
-      "answerId": "c3d4e5f6-8888-5678-901a-bcdef0123457",
-      "id": "c3d4e5f6-8888-5678-901a-bcdef012345b",
+      "answerId": "b8c9daeb-2f3a-4b5c-6d7e-answer6666666",
+      "id": "b8c9daeb-2f3a-4b5c-ad7e-8f9aab1c2d33",
       "isCorrect": false,
-      "translationId": "c3d4e5f6-8888-5678-901a-bcdef012345b",
+      "translationId": "4a6c8eaa-7b9e-44ab-ae8f-5c6d7e8f9aab",
     },
     {
-      "answerId": "b2c3d4e5-6666-5678-901a-bcdef0123457",
-      "id": "d3e4f5a6-7777-5678-901a-bcdef0123458",
+      "answerId": "dae1f2a3-4b5c-6d7e-8f9a-answer8888888",
+      "id": "c09c84b7-fcc8-43df-9f61-d4a15a1999b8",
+      "isCorrect": false,
+      "translationId": "1b3d5f7b-4c6f-41bc-af5a-2d3e4f5a6b7c",
+    },
+    {
+      "answerId": "c3d4e5f6-7a8b-4c9d-ae1f-answer1111111",
+      "id": "c3d4e5f6-7a8b-4c9d-ae1f-3a4b5c6d7e80",
       "isCorrect": true,
-      "translationId": "d3e4f5a6-7777-5678-901a-bcdef0123458",
+      "translationId": "125ce73c-d805-4b59-964f-803622af970f",
     },
     {
-      "answerId": "b2c3d4e5-6666-5678-901a-bcdef0123457",
-      "id": "d3e4f5a6-7777-5678-901a-bcdef0123459",
+      "answerId": "c3d4e5f6-7a8b-4c9d-ae1f-answer1111111",
+      "id": "c3d4e5f6-7a8b-4c9d-ae1f-3a4b5c6d7e81",
       "isCorrect": false,
-      "translationId": "d3e4f5a6-7777-5678-901a-bcdef0123459",
+      "translationId": "9ee2bfb0-d61f-4868-9043-fda35f4ac4a0",
     },
     {
-      "answerId": "b2c3d4e5-6666-5678-901a-bcdef0123457",
-      "id": "d3e4f5a6-7777-5678-901a-bcdef012345a",
+      "answerId": "c3d4e5f6-7a8b-4c9d-ae1f-answer1111111",
+      "id": "c3d4e5f6-7a8b-4c9d-ae1f-3a4b5c6d7e82",
       "isCorrect": false,
-      "translationId": "d3e4f5a6-7777-5678-901a-bcdef012345a",
+      "translationId": "cbaa37dd-3e2a-4f98-bbf3-f7d222f51941",
     },
     {
-      "answerId": "b2c3d4e5-6666-5678-901a-bcdef0123457",
-      "id": "d3e4f5a6-7777-5678-901a-bcdef012345b",
+      "answerId": "c3d4e5f6-7a8b-4c9d-ae1f-answer1111111",
+      "id": "c3d4e5f6-7a8b-4c9d-ae1f-3a4b5c6d7e83",
       "isCorrect": false,
-      "translationId": "d3e4f5a6-7777-5678-901a-bcdef012345b",
+      "translationId": "eb7ecfd5-e0f6-4015-a11a-e95ecdf10111",
+    },
+    {
+      "answerId": "e33dddc3-3efc-4230-91c4-ecac91ecb4eb",
+      "id": "c623041d-44f4-41f6-9864-2eec030d32cc",
+      "isCorrect": false,
+      "translationId": "46d4b18f-70a7-439b-b13f-d770b86e1932",
+    },
+    {
+      "answerId": "dae1f2a3-4b5c-6d7e-8f9a-answer8888888",
+      "id": "c77ee7ae-b794-4fca-b02f-fff66a3c0e2f",
+      "isCorrect": false,
+      "translationId": "aa2c4e6a-3b5e-4aab-9e4f-1c2d3e4f5a6b",
+    },
+    {
+      "answerId": "955a60fa-9454-403e-a018-1b9ad4519996",
+      "id": "c8191d7f-484b-49b7-9f8e-55c59da544d5",
+      "isCorrect": false,
+      "translationId": "dea72d18-13ad-41c6-b4bd-dafac603f133",
+    },
+    {
+      "answerId": "c9dae1f2-3a4b-5c6d-7e8f-answer7777777",
+      "id": "c9dae1f2-3a4b-4c6d-ae8f-9aab1c2d3e40",
+      "isCorrect": true,
+      "translationId": "5b7d9f1b-8caf-45bc-af9a-8d7e8f9aab1c",
+    },
+    {
+      "answerId": "c9dae1f2-3a4b-5c6d-7e8f-answer7777777",
+      "id": "c9dae1f2-3a4b-4c6d-ae8f-9aab1c2d3e41",
+      "isCorrect": false,
+      "translationId": "6c8eaa2c-9d1a-46cd-aaab-8e8f9aab1c2d",
+    },
+    {
+      "answerId": "c9dae1f2-3a4b-5c6d-7e8f-answer7777777",
+      "id": "c9dae1f2-3a4b-4c6d-ae8f-9aab1c2d3e42",
+      "isCorrect": false,
+      "translationId": "7d9f1b3d-ae2b-47de-ab1c-8f9aab1c2d3e",
+    },
+    {
+      "answerId": "e33dddc3-3efc-4230-91c4-ecac91ecb4eb",
+      "id": "d47874ee-917b-435b-aff5-61b0b556fe00",
+      "isCorrect": false,
+      "translationId": "4ed499f6-0427-40c1-85a6-7ed9c70ec41a",
+    },
+    {
+      "answerId": "d4e5f6a7-8b9c-4dae-1f2a-answer2222222",
+      "id": "d4e5f6a7-8b9c-4dae-af2a-4b5c6d7e8f90",
+      "isCorrect": true,
+      "translationId": "5df906fb-8847-4838-abea-4e3938520485",
+    },
+    {
+      "answerId": "e1f2a3b4-5c6d-7e8f-9aab-answer9999999",
+      "id": "d83ea3fb-b5bc-4175-9f11-7caa84e1f345",
+      "isCorrect": false,
+      "translationId": "8914a2f1-3f3d-484c-8c79-4d4d2982f6f3",
+    },
+    {
+      "answerId": "b8498467-eac2-4528-816b-13ffb71d66eb",
+      "id": "d87aa945-912f-48f6-b71f-c6c650972646",
+      "isCorrect": true,
+      "translationId": "9531b9c1-1f3d-49e6-bfb4-c0d8384caf9e",
+    },
+    {
+      "answerId": "e7774c7f-a4d0-4cba-bc64-dc13e3e48449",
+      "id": "dc55f4f8-aab4-4990-a449-eebbf122f2f5",
+      "isCorrect": false,
+      "translationId": "2351c70a-3dea-4239-8bd5-2f61e2959bee",
     },
     {
       "answerId": "7765796d-aea0-4158-8108-9a8f3b468761",
       "id": "dfb0bdcc-b665-4346-9c3e-4c8363abfa82",
       "isCorrect": false,
       "translationId": "1f3e5a7c-4b6d-4e8f-9a1c-2d3e4f5a6b7c",
+    },
+    {
+      "answerId": "7d88e065-5a8b-4e81-b34e-50e69479251b",
+      "id": "e2e039ca-62a8-42f6-a002-0335db0069d5",
+      "isCorrect": false,
+      "translationId": "ae05ff78-bb6e-4b63-ac36-bd2efb9edf11",
+    },
+    {
+      "answerId": "d4e5f6a7-8b9c-4dae-1f2a-answer2222222",
+      "id": "e5df651e-9140-4ae7-87b8-1505f2537c98",
+      "isCorrect": false,
+      "translationId": "60f64bba-18b7-461b-9df3-f9e090199550",
+    },
+    {
+      "answerId": "e5f6a7b8-9cad-4e1f-2a3b-answer3333333",
+      "id": "e5f6a7b8-9cad-4e1f-aa3b-5c6d7e8f9aa0",
+      "isCorrect": true,
+      "translationId": "7f9c1e3a-ad2f-4e5a-9b4c-8c9d1e2f3a4b",
+    },
+    {
+      "answerId": "e5f6a7b8-9cad-4e1f-2a3b-answer3333333",
+      "id": "e5f6a7b8-9cad-4e1f-aa3b-5c6d7e8f9aa1",
+      "isCorrect": false,
+      "translationId": "8aad2f3b-1e4c-4f6b-ac5d-9d1e2f3a4b5c",
+    },
+    {
+      "answerId": "e5f6a7b8-9cad-4e1f-2a3b-answer3333333",
+      "id": "e5f6a7b8-9cad-4e1f-aa3b-5c6d7e8f9aa2",
+      "isCorrect": false,
+      "translationId": "9b1e3c4d-2f5e-4a7c-ad6e-ae2f3a4b5c6d",
+    },
+    {
+      "answerId": "e5f6a7b8-9cad-4e1f-2a3b-answer3333333",
+      "id": "e5f6a7b8-9cad-4e1f-aa3b-5c6d7e8f9aa3",
+      "isCorrect": false,
+      "translationId": "ac2f4d5e-3a6f-418d-ae7f-1f3a4b5c6d7e",
+    },
+    {
+      "answerId": "f2a3b4c5-6d7e-8f9a-aab1-answer0000000",
+      "id": "e87b7187-3bfd-414f-ab8b-b022eea89c5e",
+      "isCorrect": false,
+      "translationId": "0850dc51-9785-4211-833e-ad4ee9090774",
+    },
+    {
+      "answerId": "6c116e48-5b1b-412e-a8d6-247e8baad789",
+      "id": "ebb209e2-7c91-4aa4-a2e5-cca8c7bd57c6",
+      "isCorrect": true,
+      "translationId": "67b2e3fe-bfbb-40bb-99a7-270fac6841bf",
     },
     {
       "answerId": "f0a2b3c4-0000-4567-890a-bcdef0123457",
@@ -4573,30 +4894,6 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "translationId": "f1a2b3c4-1111-4567-890a-bcdef012345b",
     },
     {
-      "answerId": "f3b2c3d4-3333-5678-901a-bcdef0123457",
-      "id": "f3b2c3d4-3333-5678-901a-bcdef0123458",
-      "isCorrect": true,
-      "translationId": "f3b2c3d4-3333-5678-901a-bcdef0123458",
-    },
-    {
-      "answerId": "f3b2c3d4-3333-5678-901a-bcdef0123457",
-      "id": "f3b2c3d4-3333-5678-901a-bcdef0123459",
-      "isCorrect": false,
-      "translationId": "f3b2c3d4-3333-5678-901a-bcdef0123459",
-    },
-    {
-      "answerId": "f3b2c3d4-3333-5678-901a-bcdef0123457",
-      "id": "f3b2c3d4-3333-5678-901a-bcdef012345a",
-      "isCorrect": false,
-      "translationId": "f3b2c3d4-3333-5678-901a-bcdef012345a",
-    },
-    {
-      "answerId": "f3b2c3d4-3333-5678-901a-bcdef0123457",
-      "id": "f3b2c3d4-3333-5678-901a-bcdef012345b",
-      "isCorrect": false,
-      "translationId": "f3b2c3d4-3333-5678-901a-bcdef012345b",
-    },
-    {
       "answerId": "f6a2b3c4-6666-4567-890a-bcdef0123457",
       "id": "f6a2b3c4-6666-4567-890a-bcdef0123458",
       "isCorrect": true,
@@ -4619,6 +4916,18 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "id": "f6a2b3c4-6666-4567-890a-bcdef012345b",
       "isCorrect": false,
       "translationId": "f6a2b3c4-6666-4567-890a-bcdef012345b",
+    },
+    {
+      "answerId": "955a60fa-9454-403e-a018-1b9ad4519996",
+      "id": "f8953019-63b2-4375-b86f-48ab5fd11d56",
+      "isCorrect": true,
+      "translationId": "8c7227a4-ae19-4eb3-94b9-9e1f92a94f63",
+    },
+    {
+      "answerId": "e7774c7f-a4d0-4cba-bc64-dc13e3e48449",
+      "id": "f93a4e1b-dc4c-41df-9ce4-8d0f2da578bd",
+      "isCorrect": true,
+      "translationId": "2206522e-c241-4745-92aa-cdc9530b1e92",
     },
     {
       "answerId": "faa2b3c4-aaaa-4567-890a-bcdef0123457",
@@ -4692,6 +5001,12 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "isCorrect": false,
       "translationId": "fea2b3c4-eeee-4567-890a-bcdef012345b",
     },
+    {
+      "answerId": "d4e5f6a7-8b9c-4dae-1f2a-answer2222222",
+      "id": "fed14392-b87b-4978-b3dc-f84a6db7dc5c",
+      "isCorrect": false,
+      "translationId": "4d24ab4e-0ff2-49aa-bfbc-67f3b3a4ac05",
+    },
   ],
   "translation": [
     {
@@ -4723,6 +5038,16 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "en_text": "In how many ways can 8 runners finish a race if ties are not allowed?",
       "he_text": "בכמה אופנים יכולים 8 רצים לסיים מרוץ ללא תיקו?",
       "id": "07e38cca-7219-46ee-b9c0-ff5f56afd1d6",
+    },
+    {
+      "en_text": "log n",
+      "he_text": "log n",
+      "id": "0850dc51-9785-4211-833e-ad4ee9090774",
+    },
+    {
+      "en_text": "Pre-order traversal",
+      "he_text": "מעבר pre-order",
+      "id": "08810a27-f508-4cfe-8c65-c228495ea447",
     },
     {
       "en_text": "Graph Theory",
@@ -4775,9 +5100,29 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "id": "12388bcd-e3f3-4ee6-8447-d7c73adcc067",
     },
     {
+      "en_text": "A tree where each node has at most two children",
+      "he_text": "עץ בו לכל צומת יש לכל היותר שני ילדים",
+      "id": "125ce73c-d805-4b59-964f-803622af970f",
+    },
+    {
+      "en_text": "What is pre-order traversal of a binary tree",
+      "he_text": "מה זה מעבר pre-order בעץ בינארי",
+      "id": "12b9d127-9307-443c-9e78-4815e95ea37c",
+    },
+    {
+      "en_text": "If F'(x) = x² and F(0) = 5, what is F(2)?",
+      "he_text": "אם F'(x) = x² ו-F(0) = 5, מה הוא F(2)?",
+      "id": "156dd85f-06f1-4f57-a607-e039b36a0430",
+    },
+    {
       "en_text": "How many ways can you select 4 donuts from 6 types if repetitions are allowed?",
       "he_text": "בכמה דרכים ניתן לבחור 4 דונאטס מתוך 6 סוגים אם מותר לבחור אותו סוג יותר מפעם אחת?",
       "id": "1631553c-3065-403d-a3aa-8e11f02c2120",
+    },
+    {
+      "en_text": "What is the purpose of balancing a binary search tree",
+      "he_text": "מה המטרה של איזון עץ חיפוש בינארי",
+      "id": "173380f3-cb2d-4153-855b-cd24f508fcc9",
     },
     {
       "en_text": "What is the value of the binomial coefficient C(19, 4) found in Pascal's Triangle?",
@@ -4820,9 +5165,9 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "id": "1a23ed2e-0d39-4956-adc4-a0e0185cb226",
     },
     {
-      "en_text": "Introduction to Logic",
-      "he_text": "מבוא ללוגיקה",
-      "id": "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+      "en_text": "O(h) where h is the height of the tree",
+      "he_text": "O(h) כאשר h הוא הגובה של העץ",
+      "id": "1a2b3c4d-ab2c-4dae-bfca-dbecfdaebfca",
     },
     {
       "en_text": "A music festival features 6 rock bands and 2 jazz bands. How many bands can a fan watch if they pick a single genre?",
@@ -4838,6 +5183,11 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "en_text": "∀x((x > 0) ∨ (x < 0) ∨ (x² > 0))",
       "he_text": "∀x((x > 0) ∨ (x < 0) ∨ (x² > 0))",
       "id": "1b2d3f4a-6c7e-4d8f-9a1b-9f1a2b3c4d5e",
+    },
+    {
+      "en_text": "All leaves are at the same level",
+      "he_text": "כל העלים באותה רמה",
+      "id": "1b3d5f7b-4c6f-41bc-af5a-2d3e4f5a6b7c",
     },
     {
       "en_text": "How many 4-digit even numbers can be formed using digits 1,2,3,4 without repetition?",
@@ -4865,9 +5215,19 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "id": "1cd52c38-19eb-430a-8ac6-404cbb9c14b6",
     },
     {
+      "en_text": "Left subtree, Root, Right subtree",
+      "he_text": "תת-עץ שמאלי, שורש, תת-עץ ימני",
+      "id": "1d3f5a7c-4e6b-417e-ab5c-2f3a4b5c6d7e",
+    },
+    {
       "en_text": "∀x ∈ ℝ, x² > 0 → x ≠ 0",
       "he_text": "∀x ∈ ℝ, x² > 0 → x ≠ 0",
       "id": "1f3e5a7c-4b6d-4e8f-9a1c-2d3e4f5a6b7c",
+    },
+    {
+      "en_text": "Post-order traversal",
+      "he_text": "מעבר post-order",
+      "id": "1f55501d-8482-43b8-9d49-dfc3f6a98212",
     },
     {
       "en_text": "A restaurant provides 3 vegan dishes and 6 non-vegan dishes. How many meal options exist if ordering a single dish?",
@@ -4890,6 +5250,11 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "id": "21d803d9-2816-4a0b-a1b4-deafc757ca7b",
     },
     {
+      "en_text": "The sum using the maximum value of the function in each subinterval",
+      "he_text": "הסכום באמצעות הערך המקסימלי של הפונקציה בכל תת-רווח",
+      "id": "2206522e-c241-4745-92aa-cdc9530b1e92",
+    },
+    {
       "en_text": "Introduction to Differential Equations",
       "he_text": "מבוא למשוואות דיפרנציאליות",
       "id": "22a25557-6bef-4097-81a4-3b71bd84efb9",
@@ -4903,6 +5268,11 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "en_text": "A grocery store sells 7 kinds of fruit and 4 kinds of vegetables. How many choices are there if buying one item from either group?",
       "he_text": "חנות מכולת מוכרת 7 סוגי פירות ו-4 סוגי ירקות. כמה אפשרויות יש אם קונים פריט אחד מאחת הקבוצות?",
       "id": "23122bf9-a9b8-413e-a332-892d419017c4",
+    },
+    {
+      "en_text": "The sum using the minimum value of the function in each subinterval",
+      "he_text": "הסכום באמצעות הערך המינימלי של הפונקציה בכל תת-רווח",
+      "id": "2351c70a-3dea-4239-8bd5-2f61e2959bee",
     },
     {
       "en_text": "How many distinct permutations can be formed from the letters of "BANANA"?",
@@ -4980,6 +5350,11 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "id": "2d97a756-9661-4ff2-929f-66a368b704cc",
     },
     {
+      "en_text": "Root, Left subtree, Right subtree",
+      "he_text": "שורש, תת-עץ שמאלי, תת-עץ ימני",
+      "id": "2e4a6b8d-5f7c-428f-ac6d-3a4b5c6d7e8f",
+    },
+    {
       "en_text": "The Definite Integral",
       "he_text": "האינטגרל המסוים",
       "id": "2f9e8a7b-c123-4def-9876-543210fedcba",
@@ -5025,6 +5400,11 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "id": "32d50646-3dde-4762-961b-d1d1b15a4c1a",
     },
     {
+      "en_text": "When the tree has only one node",
+      "he_text": "כאשר לעץ יש רק צומת אחד",
+      "id": "32ecd65a-9b64-4f7f-8fb3-0d8d4c39f137",
+    },
+    {
       "en_text": "Defensive Systems Programming",
       "he_text": "תכנות מערכות הגנתיות",
       "id": "33040305-1b03-4b94-b168-c1c2b07170a4",
@@ -5035,9 +5415,24 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "id": "338bee00-49e8-47f1-afd7-ab19015bdf2a",
     },
     {
+      "en_text": "What is a perfect binary tree",
+      "he_text": "מה זה עץ בינארי מושלם",
+      "id": "33de9608-c021-4dec-920e-37d262ee045e",
+    },
+    {
       "en_text": "General Biology A",
       "he_text": "ביולוגיה כללית א",
       "id": "33debec6-42c7-4984-a19a-04ab6ad88272",
+    },
+    {
+      "en_text": "Lower sums equal the definite integral exactly",
+      "he_text": "סכומים תחתונים שווים לאינטגרל המסוים בדיוק",
+      "id": "346813c9-f3cf-4827-9bb9-1e2d4da7b70f",
+    },
+    {
+      "en_text": "The Enclosed Area Problem",
+      "he_text": "בעיית השטח הכלוא",
+      "id": "35e00288-a280-4158-b03a-0b008a3de1eb",
     },
     {
       "en_text": "Microeconomics A",
@@ -5080,9 +5475,9 @@ This is where your journey begins — in the exact sciences, where precision dri
       "id": "39c8fd20-7b0c-43db-a87f-a54e0f27d0ed",
     },
     {
-      "en_text": "The Enclosed Area Problem",
-      "he_text": "בעיית השטח הכלוא",
-      "id": "3a1f9c8e-2d4b-5c6a-9e7f-4b8c9d0e1f2a",
+      "en_text": "Less than the root",
+      "he_text": "קטנים מהשורש",
+      "id": "3a1fcd00-cd75-4323-8d58-963090db7050",
     },
     {
       "en_text": "∃x ∈ ℝ, x ≠ 0 → x² > 0",
@@ -5095,14 +5490,29 @@ This is where your journey begins — in the exact sciences, where precision dri
       "id": "3c4d5e6f-7a8b-4c9d-a0ef-2a3b4c5d6e7f",
     },
     {
+      "en_text": "Lower sums are unrelated to the definite integral",
+      "he_text": "סכומים תחתונים לא קשורים לאינטגרל המסוים",
+      "id": "3c74abda-7c59-41de-8c17-cfcb2305fb56",
+    },
+    {
       "en_text": "Properties of the Absolute Value",
       "he_text": "תכונות הערך המוחלט",
       "id": "3d0c1164-d8fb-46b0-ac93-ec4a6a28ad70",
     },
     {
+      "en_text": "The sum using the midpoint value of the function in each subinterval for lower sums",
+      "he_text": "הסכום באמצעות ערך נקודת האמצע של הפונקציה בכל תת-רווח עבור סכומים תחתונים",
+      "id": "3d5966d9-6655-4639-b902-2de703c3da38",
+    },
+    {
       "en_text": "Convergent Subsequences",
       "he_text": "סדרת הוכחה",
       "id": "3d63669a-d904-4918-8782-6922f19a202b",
+    },
+    {
+      "en_text": "Lower sums provide an upper bound for the definite integral",
+      "he_text": "סכומים תחתונים מספקים חסם עליון לאינטגרל המסוים",
+      "id": "3d6f492d-b7fa-4f17-b431-1fed4b1a7b2b",
     },
     {
       "en_text": "Cartesian Coordinate System",
@@ -5123,6 +5533,11 @@ This is where your journey begins — in the exact sciences, where precision dri
       "en_text": "How many ways can you choose 5 coins from 8 types if repetitions are allowed?",
       "he_text": "בכמה דרכים ניתן לבחור 5 מטבעות מתוך 8 סוגים כאשר מותר בחירה חוזרת?",
       "id": "3f1cb82d-592e-4df9-a2bf-fcccdec55a6f",
+    },
+    {
+      "en_text": "Left subtree, Right subtree, Root",
+      "he_text": "תת-עץ שמאלי, תת-עץ ימני, שורש",
+      "id": "3f5b7c9e-6a8d-439a-ad7e-4b5c6d7e8f9a",
     },
     {
       "en_text": "Welcome to the Faculty of Arts, where expression becomes exploration and creativity shapes understanding. As a student here, you're invited to see the world not just as it is — but as it could be.
@@ -5163,6 +5578,11 @@ In the Faculty of Arts, you're not just learning about the world — you're lear
       "id": "43fb0be2-16ac-4052-a44f-689d4af82440",
     },
     {
+      "en_text": "How do upper sums relate to the definite integral?",
+      "he_text": "איך סכומים עליונים קשורים לאינטגרל המסוים?",
+      "id": "44a0d45b-2963-4836-94d7-90006e95caca",
+    },
+    {
       "en_text": "Introduction to Microeconomics",
       "he_text": "מבוא למיקרוכלכלה",
       "id": "45268d5a-6c0d-4760-ab4f-828be0a86d88",
@@ -5191,6 +5611,16 @@ In the Faculty of Engineering, you're more than a student — you're an inventor
       "id": "464013a2-9067-44f6-9423-f8b7ae0763ad",
     },
     {
+      "en_text": "O(log n) time complexity",
+      "he_text": "O(log n) מורכבות זמן",
+      "id": "46c5a609-d0bf-4603-9295-86e2c1fc4e22",
+    },
+    {
+      "en_text": "They can only be used together",
+      "he_text": "ניתן להשתמש בהן רק יחד",
+      "id": "46d4b18f-70a7-439b-b13f-d770b86e1932",
+    },
+    {
       "en_text": "Data Structures and Introduction to Algorithms",
       "he_text": "מבני נתונים ומבוא לאלגוריתמים",
       "id": "47191873-af34-406e-b66b-8f90c065057e",
@@ -5204,6 +5634,16 @@ In the Faculty of Engineering, you're more than a student — you're an inventor
       "en_text": "Calculate the area, in square meters (m²), of a rectangle with a length of 80 cm and a width of 120 cm.",
       "he_text": "חשב את השטח, במטרים רבועים (m²), של מלבן באורך 80 ס"מ וברוחב 120 ס"מ.",
       "id": "480ca700-a7ce-43a5-a81f-19ff3461f4b9",
+    },
+    {
+      "en_text": "Preorder traversal: Root, Left subtree, Right subtree",
+      "he_text": "מעבר קדם-סדר: שורש, תת-עץ שמאלי, תת-עץ ימני",
+      "id": "481abb64-299e-4f31-8b90-567152d1207d",
+    },
+    {
+      "en_text": "What is an upper sum in the context of Riemann integration?",
+      "he_text": "מהו סכום עליון בהקשר של אינטגרל רימן?",
+      "id": "482223b5-7343-4270-bff1-a9c3d934fa28",
     },
     {
       "en_text": "In how many ways can 7 identical marbles be distributed into 2 boxes?",
@@ -5226,6 +5666,16 @@ In the Faculty of Engineering, you're more than a student — you're an inventor
       "id": "49b5c46b-89cf-4e3a-888d-df23b817f557",
     },
     {
+      "en_text": "Only upper sums converge to the definite integral",
+      "he_text": "רק סכומים עליונים מתכנסים לאינטגרל המסוים",
+      "id": "49bfcb08-75db-4d6f-a9f2-5ec0839466a6",
+    },
+    {
+      "en_text": "Right subtree, Root, Left subtree",
+      "he_text": "תת-עץ ימני, שורש, תת-עץ שמאלי",
+      "id": "4a6c8eaa-7b9e-44ab-ae8f-5c6d7e8f9aab",
+    },
+    {
       "en_text": "Discrete Mathematics",
       "he_text": "מתמטיקה בדידה",
       "id": "4b42c9f4-436a-4008-9291-5ca24df618fe",
@@ -5234,6 +5684,11 @@ In the Faculty of Engineering, you're more than a student — you're an inventor
       "en_text": "The Fundamental Formula of the Definite Integral",
       "he_text": "הנוסחה היסודית של האינטגרל המסוים",
       "id": "4b6c8d1e-3f5a-4d7b-af8c-5e9f1a2b3c4d",
+    },
+    {
+      "en_text": "h",
+      "he_text": "h",
+      "id": "4b846021-f845-495d-a89f-e035b2aeb29c",
     },
     {
       "en_text": "Derangements",
@@ -5246,9 +5701,19 @@ In the Faculty of Engineering, you're more than a student — you're an inventor
       "id": "4c6e8a1c-7d9f-4b2d-8e1f-5f6a7b8c9d1e",
     },
     {
+      "en_text": "A node with no parent and no children",
+      "he_text": "צומת ללא הורה וללא ילדים",
+      "id": "4d24ab4e-0ff2-49aa-bfbc-67f3b3a4ac05",
+    },
+    {
       "en_text": "Truth Values",
       "he_text": "ערכי אמת",
       "id": "4d5e6f7a-8b9c-4d0e-a1fa-3b4c5d6e7f8a",
+    },
+    {
+      "en_text": "They are identical operations",
+      "he_text": "הן פעולות זהות",
+      "id": "4ed499f6-0427-40c1-85a6-7ed9c70ec41a",
     },
     {
       "en_text": "Microeconomics C",
@@ -5331,9 +5796,19 @@ In the Faculty of Engineering, you're more than a student — you're an inventor
       "id": "5b51d5e2-608f-4ceb-8184-efc63ce643cd",
     },
     {
+      "en_text": "O(log n)",
+      "he_text": "O(log n)",
+      "id": "5b7d9f1b-8caf-45bc-af9a-8d7e8f9aab1c",
+    },
+    {
       "en_text": "∀x ∈ ℝ, x = 0 → x² > 0",
       "he_text": "∀x ∈ ℝ, x = 0 → x² > 0",
       "id": "5d7f9b2e-8e1a-4c3e-9f2a-6a7b8c9d1e2f",
+    },
+    {
+      "en_text": "The topmost node in the tree",
+      "he_text": "הצומת העליון ביותר בעץ",
+      "id": "5df906fb-8847-4838-abea-4e3938520485",
     },
     {
       "en_text": "Logic Gates",
@@ -5374,6 +5849,11 @@ In the Faculty of Engineering, you're more than a student — you're an inventor
       "en_text": "Organic Chemistry for Biologists",
       "he_text": "כימיה אורגנית לביולוגים",
       "id": "6086c503-3b98-40e1-a628-10f08a49cc7a",
+    },
+    {
+      "en_text": "Any node with two children",
+      "he_text": "כל צומת עם שני ילדים",
+      "id": "60f64bba-18b7-461b-9df3-f9e090199550",
     },
     {
       "en_text": "How many permutations are there of the word 'BANANA'?",
@@ -5421,6 +5901,11 @@ In the Faculty of Engineering, you're more than a student — you're an inventor
       "id": "65b9fa9f-8a10-4a5a-9400-6f910708ced2",
     },
     {
+      "en_text": "Only lower sums converge to the definite integral",
+      "he_text": "רק סכומים תחתונים מתכנסים לאינטגרל המסוים",
+      "id": "6675796c-f296-4c91-b9e4-f1e316e1e40d",
+    },
+    {
       "en_text": "Basic Units",
       "he_text": "יחידות בסיסיות",
       "id": "66a766a9-3dd6-4882-aa66-cc197baf0d75",
@@ -5429,6 +5914,11 @@ In the Faculty of Engineering, you're more than a student — you're an inventor
       "en_text": "General Chemistry A",
       "he_text": "כימיה כללית א",
       "id": "66ababae-045e-4406-b616-00f44e8acd21",
+    },
+    {
+      "en_text": "Both upper and lower sums converge to the definite integral",
+      "he_text": "גם סכומים עליונים וגם תחתונים מתכנסים לאינטגרל המסוים",
+      "id": "67b2e3fe-bfbb-40bb-99a7-270fac6841bf",
     },
     {
       "en_text": "How many integers from 1 to 100 are divisible by 3 or 7?",
@@ -5446,6 +5936,11 @@ In the Faculty of Engineering, you're more than a student — you're an inventor
       "id": "68453935-7832-405a-b42a-e41d10099093",
     },
     {
+      "en_text": "Upper sums are unrelated to the definite integral",
+      "he_text": "סכומים עליונים לא קשורים לאינטגרל המסוים",
+      "id": "6a76c035-9130-414a-8f3b-625e3c65c3c2",
+    },
+    {
       "en_text": "How many distinct permutations can be made from the letters of the word 'MATHEMATICS'?",
       "he_text": "כמה תמורות שונות ניתן ליצור מהאותיות במילה 'MATHEMATICS'?",
       "id": "6b1c635c-ddf3-427b-b3f1-20b34c0d5f91",
@@ -5459,6 +5954,16 @@ In the Faculty of Engineering, you're more than a student — you're an inventor
       "en_text": "A store offers 6 types of lamps and 4 types of chairs. How many items can a customer choose from if buying just one?",
       "he_text": "חנות מציעה 6 סוגי מנורות ו-4 סוגי כיסאות. כמה פריטים יכול לקוח לבחור אם קונה רק אחד?",
       "id": "6b8fcbdf-b0a2-42eb-a9b1-161f7f92f7ac",
+    },
+    {
+      "en_text": "n - 1",
+      "he_text": "n - 1",
+      "id": "6c5b287b-818c-489d-abaa-aff849761944",
+    },
+    {
+      "en_text": "O(n)",
+      "he_text": "O(n)",
+      "id": "6c8eaa2c-9d1a-46cd-aaab-8e8f9aab1c2d",
     },
     {
       "en_text": "How many non-negative integer solutions exist for x₁ + x₂ + x₃ + x₄ = 6?",
@@ -5481,9 +5986,19 @@ In the Faculty of Engineering, you're more than a student — you're an inventor
       "id": "6efa549c-7c42-4b96-92df-9838aafc0055",
     },
     {
+      "en_text": "What is the relationship between differentiation and integration according to the Fundamental Formula?",
+      "he_text": "מה הקשר בין גזירה לאינטגרציה לפי הנוסחה היסודית?",
+      "id": "6f0fbbb9-0794-41bd-aa92-0b98d3e2fdf2",
+    },
+    {
       "en_text": "Conditional Statements",
       "he_text": "טענות תנאיות",
       "id": "6f7a8b9c-0d1e-4f2a-a3bc-5d6e7f8a9b0c",
+    },
+    {
+      "en_text": "When the tree is balanced",
+      "he_text": "כאשר העץ מאוזן",
+      "id": "6f7a8b9c-fa7b-4cfd-aebf-cadbecfdaebf",
     },
     {
       "en_text": "What is the value of the binomial coefficient C(23, 5) found in Pascal's Triangle?",
@@ -5501,9 +6016,24 @@ In the Faculty of Engineering, you're more than a student — you're an inventor
       "id": "72f86c11-f987-48fd-975a-6627b0019940",
     },
     {
+      "en_text": "Introduction to Logic",
+      "he_text": "מבוא ללוגיקה",
+      "id": "730785ee-5d3a-4160-93bd-24aad42be048",
+    },
+    {
       "en_text": "How many 5-letter words from {A,B,C,D,E} have at least one repeated letter",
       "he_text": "כמה מילים באורך 5 מתוך {A,B,C,D,E} מכילות לפחות אות אחת שחוזרת",
       "id": "740f7595-295c-4e51-8250-6754eb18f8ea",
+    },
+    {
+      "en_text": "O(1) time complexity",
+      "he_text": "O(1) מורכבות זמן",
+      "id": "7425368c-4518-4ca2-8048-421d59256250",
+    },
+    {
+      "en_text": "O(n²)",
+      "he_text": "O(n²)",
+      "id": "744e652c-6228-42ea-bbaf-6d3b65eac599",
     },
     {
       "en_text": "How many three digit numbers are multiples of 2 or 5?",
@@ -5529,6 +6059,11 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "id": "75bb7259-3ace-4718-81c1-4998a65dab65",
     },
     {
+      "en_text": "The tree has exactly 2^n - 1 nodes",
+      "he_text": "לעץ יש בדיוק 2^n - 1 צמתים",
+      "id": "75f031c8-3a7d-4f09-8e5d-d71144e158b4",
+    },
+    {
       "en_text": "How many distinct permutations can be formed from the letters of "ASSESSMENT"?",
       "he_text": "כמה סידורים שונים ניתן ליצור מהמילה "ASSESSMENT"?",
       "id": "76057411-8100-4138-83d6-3b4fa0b90c59",
@@ -5537,6 +6072,11 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "en_text": "Foundations of Physics for Biologists A",
       "he_text": "יסודות הפיסיקה לביולוגים א",
       "id": "76223a65-8be7-4d0b-8f7f-76591882255f",
+    },
+    {
+      "en_text": "NLR traversal: Root, Left subtree, Right subtree",
+      "he_text": "מעבר NLR: שורש, תת-עץ שמאלי, תת-עץ ימני",
+      "id": "7662d518-d21e-4276-8583-e296a833e0fb",
     },
     {
       "en_text": "What is the value of the binomial coefficient C(14, 2) found in Pascal's Triangle?",
@@ -5569,9 +6109,19 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "id": "7a8b9c0d-1e2f-403b-a4cd-6e7f8a9b0c1d",
     },
     {
+      "en_text": "When the tree is skewed",
+      "he_text": "כאשר העץ עקום",
+      "id": "7a8b9cad-ab8c-4dae-bfca-dbecfdaebfca",
+    },
+    {
       "en_text": "∀x ∈ ℝ, x ≠ 0 → x² > 0",
       "he_text": "∀x ∈ ℝ, x ≠ 0 → x² > 0",
       "id": "7ac8c2ed-1b4f-4e7a-9d5e-8f3b2c4a1e6d",
+    },
+    {
+      "en_text": "Upper sums provide an upper bound for the definite integral",
+      "he_text": "סכומים עליונים מספקים חסם עליון לאינטגרל המסוים",
+      "id": "7b75b3a0-465f-4fdf-94e5-eb292e32bf9f",
     },
     {
       "en_text": "How many subsets of {1,...,10} contain at least one of 1 or 2",
@@ -5597,6 +6147,16 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "en_text": "Proof Theory",
       "he_text": "תורת ההוכחה",
       "id": "7d8c9e06-4c21-492e-8456-34ca44d54239",
+    },
+    {
+      "en_text": "O(1)",
+      "he_text": "O(1)",
+      "id": "7d9f1b3d-ae2b-47de-ab1c-8f9aab1c2d3e",
+    },
+    {
+      "en_text": "A node with no children",
+      "he_text": "צומת ללא ילדים",
+      "id": "7f9c1e3a-ad2f-4e5a-9b4c-8c9d1e2f3a4b",
     },
     {
       "en_text": "How many integers from 1 to 60 are not divisible by 2 or 3?",
@@ -5639,9 +6199,29 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "id": "88127e0b-b188-43b8-9ab4-e5a20fc801c6",
     },
     {
+      "en_text": "Greater than the root",
+      "he_text": "גדולים מהשורש",
+      "id": "8914a2f1-3f3d-484c-8c79-4d4d2982f6f3",
+    },
+    {
+      "en_text": "The sum using the midpoint value of the function in each subinterval",
+      "he_text": "הסכום באמצעות ערך נקודת האמצע של הפונקציה בכל תת-רווח",
+      "id": "8a0e3cad-d137-4af7-9431-21a742678f01",
+    },
+    {
       "en_text": "How many distinct permutations can be formed from the letters of "PARALLEL"?",
       "he_text": "כמה סידורים שונים ניתן ליצור מהמילה "PARALLEL"?",
       "id": "8a12359c-9d82-4860-bec1-a536fe2732b7",
+    },
+    {
+      "en_text": "Which traversal method would you use to copy a binary tree",
+      "he_text": "באיזו שיטת מעבר תשתמש כדי להעתיק עץ בינארי",
+      "id": "8a1f5b74-e1c7-4502-9b9f-6975050900f2",
+    },
+    {
+      "en_text": "A node with two children",
+      "he_text": "צומת עם שני ילדים",
+      "id": "8aad2f3b-1e4c-4f6b-ac5d-9d1e2f3a4b5c",
     },
     {
       "en_text": "Data Mining",
@@ -5649,9 +6229,24 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "id": "8b9cde61-4a1d-4e8d-800b-f41449623a07",
     },
     {
+      "en_text": "The sum using the minimum value of the function in each subinterval for lower sums",
+      "he_text": "הסכום באמצעות הערך המינימלי של הפונקציה בכל תת-רווח עבור סכומים תחתונים",
+      "id": "8c7227a4-ae19-4eb3-94b9-9e1f92a94f63",
+    },
+    {
       "en_text": "Introduction to Computer Science and Java",
       "he_text": "מבוא למדעי המחשב ושפת Java",
       "id": "8d81b8f4-b107-4ecd-9584-d7f8c9f26be7",
+    },
+    {
+      "en_text": "O(n) time complexity",
+      "he_text": "O(n) מורכבות זמן",
+      "id": "8e04d693-f706-42ac-8579-8b3942c7d1ad",
+    },
+    {
+      "en_text": "h + 1",
+      "he_text": "h + 1",
+      "id": "8e4d4c7e-b1e7-4f7b-8aee-c4672c39b627",
     },
     {
       "en_text": "G is not Hamiltonian",
@@ -5667,6 +6262,11 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "en_text": "Organic Chemistry",
       "he_text": "כימיה אורגנית",
       "id": "90b094e5-7008-4d15-8760-4e5a0004e833",
+    },
+    {
+      "en_text": "What is the maximum height of a binary tree with n nodes",
+      "he_text": "מה הגובה המקסימלי של עץ בינארי עם n צמתים",
+      "id": "90c1e7a5-1ccd-43ad-80ab-966fc1075ede",
     },
     {
       "en_text": "How many ways can you choose 4 letters from 7 distinct letters if repetitions are allowed?",
@@ -5687,6 +6287,16 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "en_text": "Quantifiers (∀, ∃) and their effect on formula complexity (rank/degree)",
       "he_text": "כמתים (∀, ∃) והשפעתם על מורכבות נוסחאות (דרגה/רנק)",
       "id": "93d0e96c-f2ae-4120-87f9-5392f5911f85",
+    },
+    {
+      "en_text": "Equal to the root",
+      "he_text": "שווים לשורש",
+      "id": "9425e428-80a9-42f2-b37d-be8d6bb3b2ef",
+    },
+    {
+      "en_text": "Lower sums provide a lower bound for the definite integral",
+      "he_text": "סכומים תחתונים מספקים חסם תחתון לאינטגרל המסוים",
+      "id": "9531b9c1-1f3d-49e6-bfb4-c0d8384caf9e",
     },
     {
       "en_text": "In how many ways can 15 identical balls be placed into 5 distinct boxes?",
@@ -5724,6 +6334,11 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "id": "9b00bf4a-1b10-48d7-bead-19a202108e8b",
     },
     {
+      "en_text": "The root node",
+      "he_text": "צומת השורש",
+      "id": "9b1e3c4d-2f5e-4a7c-ad6e-ae2f3a4b5c6d",
+    },
+    {
       "en_text": "How many non-negative integer solutions exist for x₁ + x₂ + x₃ + x₄ + x₅ = 8?",
       "he_text": "כמה פתרונות במספרים שלמים אי־שליליים קיימים למשוואה x₁ + x₂ + x₃ + x₄ + x₅ = 8?",
       "id": "9bba34bf-e461-44be-b76f-f398155a3911",
@@ -5749,9 +6364,29 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "id": "9d1f2c3d-5e6f-4a7b-8c9d-8b9c1d2e3f4a",
     },
     {
+      "en_text": "n",
+      "he_text": "n",
+      "id": "9d1f3b5d-2e4b-49de-8b3c-af1a2b3c4d5e",
+    },
+    {
+      "en_text": "In-order traversal",
+      "he_text": "מעבר in-order",
+      "id": "9d407a36-5e79-44f2-b10a-1f59a89231a2",
+    },
+    {
+      "en_text": "LRN traversal: Left subtree, Right subtree, Root",
+      "he_text": "מעבר LRN: תת-עץ שמאלי, תת-עץ ימני, שורש",
+      "id": "9d6a7d6a-1580-49b2-acaf-dbbf910d224a",
+    },
+    {
       "en_text": "How many permutations of ABCDE begin with a vowel",
       "he_text": "כמה סידורים של האותיות ABCDE מתחילים בתנועה",
       "id": "9e2473e6-161c-406f-9b55-dbf7d40e5dea",
+    },
+    {
+      "en_text": "They are unrelated operations",
+      "he_text": "הן פעולות לא קשורות",
+      "id": "9e2d6857-e550-4160-bb86-239c017767b2",
     },
     {
       "en_text": "∃x ∈ ℝ, x ≠ 0 ∧ x² > 0",
@@ -5759,9 +6394,24 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "id": "9e2f4a1c-3d5e-4b7f-8a9d-1c2e3f4a5b6c",
     },
     {
+      "en_text": "What is a complete binary tree",
+      "he_text": "מה זה עץ בינארי שלם",
+      "id": "9e5399fe-0617-4bf6-9c39-037987c4a092",
+    },
+    {
       "en_text": "In how many distinct ways can 5 people sit around a circular table?",
       "he_text": "בכמה דרכים שונות יכולים 5 אנשים לשבת סביב שולחן עגול?",
       "id": "9e876f30-59e2-4b8e-81ab-5186dc4d1211",
+    },
+    {
+      "en_text": "A tree where each node has exactly two children",
+      "he_text": "עץ בו לכל צומת יש בדיוק שני ילדים",
+      "id": "9ee2bfb0-d61f-4868-9043-fda35f4ac4a0",
+    },
+    {
+      "en_text": "All levels are filled except possibly the last level which is filled from left to right",
+      "he_text": "כל הרמות מלאות פרט אולי לרמה האחרונה שמלאה משמאל לימין",
+      "id": "9f1b3d5f-2a4d-49fa-8d3e-aab1c2d3e4f5",
     },
     {
       "en_text": "How many distinct permutations can be formed from the letters of "CANNON"?",
@@ -5804,59 +6454,14 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "id": "EE38E69B-F2B3-477E-A06A-70EBB3E5F87D",
     },
     {
-      "en_text": "What is an upper sum in the context of Riemann integration?",
-      "he_text": "מהו סכום עליון בהקשר של אינטגרל רימן?",
-      "id": "a1b2c3d4-4444-5678-901a-bcdef0123456",
-    },
-    {
-      "en_text": "The sum using the maximum value of the function in each subinterval",
-      "he_text": "הסכום באמצעות הערך המקסימלי של הפונקציה בכל תת-רווח",
-      "id": "a1b2c3d4-4444-5678-901a-bcdef0123458",
-    },
-    {
-      "en_text": "The sum using the minimum value of the function in each subinterval",
-      "he_text": "הסכום באמצעות הערך המינימלי של הפונקציה בכל תת-רווח",
-      "id": "a1b2c3d4-4444-5678-901a-bcdef0123459",
-    },
-    {
-      "en_text": "The sum using the average value of the function in each subinterval",
-      "he_text": "הסכום באמצעות הערך הממוצע של הפונקציה בכל תת-רווח",
-      "id": "a1b2c3d4-4444-5678-901a-bcdef012345a",
-    },
-    {
-      "en_text": "The sum using the midpoint value of the function in each subinterval",
-      "he_text": "הסכום באמצעות ערך נקודת האמצע של הפונקציה בכל תת-רווח",
-      "id": "a1b2c3d4-4444-5678-901a-bcdef012345b",
-    },
-    {
-      "en_text": "How do upper sums relate to the definite integral?",
-      "he_text": "איך סכומים עליונים קשורים לאינטגרל המסוים?",
-      "id": "a1b2c3d4-5555-5678-901a-bcdef0123456",
-    },
-    {
-      "en_text": "Upper sums provide an upper bound for the definite integral",
-      "he_text": "סכומים עליונים מספקים חסם עליון לאינטגרל המסוים",
-      "id": "a1b2c3d4-5555-5678-901a-bcdef0123458",
-    },
-    {
-      "en_text": "Upper sums provide a lower bound for the definite integral",
-      "he_text": "סכומים עליונים מספקים חסם תחתון לאינטגרל המסוים",
-      "id": "a1b2c3d4-5555-5678-901a-bcdef0123459",
-    },
-    {
-      "en_text": "Upper sums equal the definite integral exactly",
-      "he_text": "סכומים עליונים שווים לאינטגרל המסוים בדיוק",
-      "id": "a1b2c3d4-5555-5678-901a-bcdef012345a",
-    },
-    {
-      "en_text": "Upper sums are unrelated to the definite integral",
-      "he_text": "סכומים עליונים לא קשורים לאינטגרל המסוים",
-      "id": "a1b2c3d4-5555-5678-901a-bcdef012345b",
-    },
-    {
       "en_text": "0.7 km",
       "he_text": "0.7 ק״מ",
       "id": "a34d7a4b-9f41-4739-becb-a920ec24f13c",
+    },
+    {
+      "en_text": "In a binary search tree, all values in the left subtree are",
+      "he_text": "בעץ חיפוש בינארי, כל הערכים בתת-העץ השמאלי הם",
+      "id": "a35ba03a-aedc-49c0-9b01-81826ec66d1a",
     },
     {
       "en_text": "What is the value of the binomial coefficient C(6, 3) found in Pascal's Triangle?",
@@ -5864,14 +6469,39 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "id": "a4e3c1a8-e257-4fe8-be97-f2c3cd035b13",
     },
     {
+      "en_text": "2^(h+1) - 1",
+      "he_text": "2^(h+1) - 1",
+      "id": "a5f72239-5ac1-4f96-9d0e-c437cb989844",
+    },
+    {
       "en_text": "How many ways can you choose 6 candies from 4 types if repetitions are allowed?",
       "he_text": "בכמה דרכים ניתן לבחור 6 ממתקים מתוך 4 סוגים אם מותר לבחור אותו סוג יותר מפעם אחת?",
       "id": "a65d4ab9-cf19-449c-8aac-8086634bd4f2",
     },
     {
+      "en_text": "What is the height of a binary tree with only one node (the root)",
+      "he_text": "מה הגובה של עץ בינארי עם צומת אחד בלבד (השורש)",
+      "id": "a7b8c9da-1e2f-4a3b-ac5d-7e8f9aab1c2d",
+    },
+    {
+      "en_text": "Right subtree, Left subtree, Root",
+      "he_text": "תת-עץ ימני, תת-עץ שמאלי, שורש",
+      "id": "a7ee5bb5-5955-4860-9d3b-4daf4cb6d311",
+    },
+    {
+      "en_text": "What happens when the number of subintervals approaches infinity in upper and lower sums?",
+      "he_text": "מה קורה כאשר מספר תת-הרווחים שואף לאינסוף בסכומים עליונים ותחתונים?",
+      "id": "a8acbde6-b69c-4dfb-a02b-b86fab5ce020",
+    },
+    {
       "en_text": "Bounded Functions",
       "he_text": "פונקציות חסומות",
       "id": "a8f3c6d1-2e4b-4c8a-9f7e-1b5d8c3a6e9f",
+    },
+    {
+      "en_text": "All internal nodes have exactly two children",
+      "he_text": "לכל הצמתים הפנימיים יש בדיוק שני ילדים",
+      "id": "aa2c4e6a-3b5e-4aab-9e4f-1c2d3e4f5a6b",
     },
     {
       "en_text": "How many distinct permutations can be formed from the letters of "LEVEL"?",
@@ -5884,6 +6514,16 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "id": "ab17462a-7c93-493b-b7a2-51c30c382d64",
     },
     {
+      "en_text": "How do lower sums relate to the definite integral?",
+      "he_text": "איך סכומים תחתונים קשורים לאינטגרל המסוים?",
+      "id": "ab1f213f-f85b-4a48-a59c-06fd93019eaf",
+    },
+    {
+      "en_text": "A node with one child",
+      "he_text": "צומת עם ילד אחד",
+      "id": "ac2f4d5e-3a6f-418d-ae7f-1f3a4b5c6d7e",
+    },
+    {
       "en_text": "What is the value of the binomial coefficient C(21, 7) found in Pascal's Triangle?",
       "he_text": "מהו הערך של המקדם הבינומי C(21, 7) במשולש פסקל?",
       "id": "ad136e05-f9ee-4a20-91fc-a4b411bd1506",
@@ -5894,9 +6534,34 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "id": "adf4012f-0b43-4416-91a2-74e10faac950",
     },
     {
+      "en_text": "Upper sums equal the definite integral exactly",
+      "he_text": "סכומים עליונים שווים לאינטגרל המסוים בדיוק",
+      "id": "ae05ff78-bb6e-4b63-ac36-bd2efb9edf11",
+    },
+    {
       "en_text": "What is the value of the binomial coefficient C(20, 10) found in Pascal's Triangle?",
       "he_text": "מהו הערך של המקדם הבינומי C(20, 10) במשולש פסקל?",
       "id": "ae1945da-835a-4a0d-bac9-ee97eb818b7e",
+    },
+    {
+      "en_text": "2^n - 1",
+      "he_text": "2^n - 1",
+      "id": "ae2a4c6e-3f5c-4aef-9c4d-1a2b3c4d5e6f",
+    },
+    {
+      "en_text": "To minimize memory usage",
+      "he_text": "כדי למזער את השימוש בזיכרון",
+      "id": "ae934e7c-e3c9-4077-a22d-a1e595e9ee8d",
+    },
+    {
+      "en_text": "O(log n) complexity",
+      "he_text": "O(log n) מורכבות",
+      "id": "aebfcadb-fa4b-4cfd-aebf-cadbecfdaebf",
+    },
+    {
+      "en_text": "Level-order traversal",
+      "he_text": "מעבר level-order",
+      "id": "aebfcadb-fa7b-4cfd-aebf-cadbecfdaebf",
     },
     {
       "en_text": "Combinatorics",
@@ -5929,34 +6594,9 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "id": "b12833a0-1b09-464a-ad7c-e148c216bccb",
     },
     {
-      "en_text": "What is a lower sum in the context of Riemann integration?",
-      "he_text": "מהו סכום תחתון בהקשר של אינטגרל רימן?",
-      "id": "b2c3d4e5-6666-5678-901a-bcdef0123456",
-    },
-    {
-      "en_text": "How do lower sums relate to the definite integral?",
-      "he_text": "איך סכומים תחתונים קשורים לאינטגרל המסוים?",
-      "id": "b2c3d4e5-7777-5678-901a-bcdef0123456",
-    },
-    {
-      "en_text": "Lower sums provide a lower bound for the definite integral",
-      "he_text": "סכומים תחתונים מספקים חסם תחתון לאינטגרל המסוים",
-      "id": "b2c3d4e5-7777-5678-901a-bcdef0123458",
-    },
-    {
-      "en_text": "Lower sums provide an upper bound for the definite integral",
-      "he_text": "סכומים תחתונים מספקים חסם עליון לאינטגרל המסוים",
-      "id": "b2c3d4e5-7777-5678-901a-bcdef0123459",
-    },
-    {
-      "en_text": "Lower sums equal the definite integral exactly",
-      "he_text": "סכומים תחתונים שווים לאינטגרל המסוים בדיוק",
-      "id": "b2c3d4e5-7777-5678-901a-bcdef012345a",
-    },
-    {
-      "en_text": "Lower sums are unrelated to the definite integral",
-      "he_text": "סכומים תחתונים לא קשורים לאינטגרל המסוים",
-      "id": "b2c3d4e5-7777-5678-901a-bcdef012345b",
+      "en_text": "Binary Trees",
+      "he_text": "עצים בינאריים",
+      "id": "b2c3d4e5-6f7a-4b8c-9d0e-2f3a4b5c6d7e",
     },
     {
       "en_text": "Hash Tables",
@@ -5999,9 +6639,29 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "id": "b81240ad-ed98-4a7e-9dea-7e922e884d19",
     },
     {
+      "en_text": "What is the minimum number of nodes in a binary tree of height h",
+      "he_text": "מה המספר המינימלי של צמתים בעץ בינארי בגובה h",
+      "id": "b8355891-bf40-4cab-bb18-9c984162adaa",
+    },
+    {
       "en_text": "Combinations",
       "he_text": "חליפות",
       "id": "b8a9c2d3-4e5f-4567-8901-2a3b4c5d6e7f",
+    },
+    {
+      "en_text": "The bottommost node in the tree",
+      "he_text": "הצומת התחתון ביותר בעץ",
+      "id": "b8bd7fdc-2702-4573-b59e-6be89c72326f",
+    },
+    {
+      "en_text": "In-order traversal of a binary tree visits nodes in which order",
+      "he_text": "מעבר in-order בעץ בינארי מבקר בצמתים באיזה סדר",
+      "id": "b8c9daeb-2f3a-4b5c-ad7e-8f9aab1c2d3e",
+    },
+    {
+      "en_text": "When all nodes have the same value",
+      "he_text": "כאשר לכל הצמתים יש אותו ערך",
+      "id": "b9d6f531-df8a-40b8-aa40-a1a352f9a83e",
     },
     {
       "en_text": "Distribute 4 balls of type A, 4 balls of type B, 4 balls of type C, and 4 balls of type D into 4 different cells. (Balls of the same type are considered identical).",
@@ -6012,6 +6672,11 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "en_text": "How many distinct permutations can be formed from the letters of "BALLOON"?",
       "he_text": "כמה סידורים שונים ניתן ליצור מהמילה "BALLOON"?",
       "id": "ba29646f-67d7-4c09-92b2-d64eaff717b5",
+    },
+    {
+      "en_text": "Inorder traversal: Left subtree, Root, Right subtree",
+      "he_text": "מעבר סדר: תת-עץ שמאלי, שורש, תת-עץ ימני",
+      "id": "babccdde-ef6a-4b7c-8d9e-af1a2b3c4d5e",
     },
     {
       "en_text": "How many 5-card hands from a standard deck contain at least one ace",
@@ -6034,6 +6699,11 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "id": "bcb61756-0297-4deb-a66f-d182600e0179",
     },
     {
+      "en_text": "Postorder traversal: Left subtree, Right subtree, Root",
+      "he_text": "מעבר אחר-סדר: תת-עץ שמאלי, תת-עץ ימני, שורש",
+      "id": "bccddeef-fa7b-4c8d-9eaf-1a2b3c4d5e6f",
+    },
+    {
       "en_text": "How many four digit numbers contain at least one digit 7",
       "he_text": "כמה מספרים בני ארבע ספרות מכילים לפחות ספרה אחת 7",
       "id": "bd4445f4-6a67-4cbe-890c-2df27269c47d",
@@ -6044,6 +6714,11 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "id": "bdf204a0-0e77-46e1-b6e5-5002f7957a94",
     },
     {
+      "en_text": "Calculate ∫[0,1] (2x + 3) dx",
+      "he_text": "חשב ∫[0,1] (2x + 3) dx",
+      "id": "bdfd1e42-cc07-4ab0-9364-d31e5de52c85",
+    },
+    {
       "en_text": "Logic for Computer Science Students",
       "he_text": "לוגיקה לסטודנטים למדעי המחשב",
       "id": "be355b4a-6a11-49b9-ac5b-c3b66d52212b",
@@ -6052,6 +6727,11 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "en_text": "How many 7-bit strings contain at least one 1",
       "he_text": "כמה מחרוזות באורך 7 ביטים מכילות לפחות ספרה אחת 1",
       "id": "be678452-e71c-4c28-932b-592b751b559c",
+    },
+    {
+      "en_text": "To allow duplicate values",
+      "he_text": "כדי לאפשר ערכים כפולים",
+      "id": "becfdaeb-ab2c-4dae-bfca-dbecfdaebfca",
     },
     {
       "en_text": "Whether G is an Euler graph",
@@ -6089,29 +6769,9 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "id": "c3362060-fd2b-48c4-9706-0483203804e3",
     },
     {
-      "en_text": "What happens when the number of subintervals approaches infinity in upper and lower sums?",
-      "he_text": "מה קורה כאשר מספר תת-הרווחים שואף לאינסוף בסכומים עליונים ותחתונים?",
-      "id": "c3d4e5f6-8888-5678-901a-bcdef0123456",
-    },
-    {
-      "en_text": "Both upper and lower sums converge to the definite integral",
-      "he_text": "גם סכומים עליונים וגם תחתונים מתכנסים לאינטגרל המסוים",
-      "id": "c3d4e5f6-8888-5678-901a-bcdef0123458",
-    },
-    {
-      "en_text": "Only upper sums converge to the definite integral",
-      "he_text": "רק סכומים עליונים מתכנסים לאינטגרל המסוים",
-      "id": "c3d4e5f6-8888-5678-901a-bcdef0123459",
-    },
-    {
-      "en_text": "Only lower sums converge to the definite integral",
-      "he_text": "רק סכומים תחתונים מתכנסים לאינטגרל המסוים",
-      "id": "c3d4e5f6-8888-5678-901a-bcdef012345a",
-    },
-    {
-      "en_text": "Neither upper nor lower sums converge",
-      "he_text": "לא סכומים עליונים ולא תחתונים מתכנסים",
-      "id": "c3d4e5f6-8888-5678-901a-bcdef012345b",
+      "en_text": "What is a binary tree",
+      "he_text": "מה זה עץ בינארי",
+      "id": "c3d4e5f6-7a8b-4c9d-ae1f-3a4b5c6d7e8f",
     },
     {
       "en_text": "Propositional Logic",
@@ -6129,6 +6789,11 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "id": "c532bcb3-323a-4fea-9a98-3a60be8b2db8",
     },
     {
+      "en_text": "The sum using the average value of the function in each subinterval",
+      "he_text": "הסכום באמצעות הערך הממוצע של הפונקציה בכל תת-רווח",
+      "id": "c5905fc5-f356-4f54-be05-cfd3bb39d08d",
+    },
+    {
       "en_text": "Reading Rules of Inference",
       "he_text": "קריאת כללי היסק",
       "id": "c5c99931-3520-4a2a-a19a-4ae15c0416a0",
@@ -6137,6 +6802,16 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "en_text": "Introduction to Psychology",
       "he_text": "מבוא לפסיכולוגיה",
       "id": "c7e930db-5b2a-43ba-a6e9-567bf5883053",
+    },
+    {
+      "en_text": "Neither upper nor lower sums converge",
+      "he_text": "לא סכומים עליונים ולא תחתונים מתכנסים",
+      "id": "c90dfde3-0732-42af-a85f-7843ded1b8a2",
+    },
+    {
+      "en_text": "What is the time complexity of searching in a balanced binary search tree",
+      "he_text": "מה המורכבות הזמנית של חיפוש בעץ חיפוש בינארי מאוזן",
+      "id": "c9dae1f2-3a4b-4c6d-ae8f-9aab1c2d3e4f",
     },
     {
       "en_text": "Exact Sciences",
@@ -6164,14 +6839,39 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "id": "cb8ad153-c31b-4e22-91f6-c5e9e6f4637a",
     },
     {
+      "en_text": "A tree with only binary data",
+      "he_text": "עץ עם נתונים בינאריים בלבד",
+      "id": "cbaa37dd-3e2a-4f98-bbf3-f7d222f51941",
+    },
+    {
+      "en_text": "All nodes have exactly two children",
+      "he_text": "לכל הצמתים יש בדיוק שני ילדים",
+      "id": "ccddeeef-cd7e-4f7a-8b9c-adaebfcadbec",
+    },
+    {
       "en_text": "What is the value of the binomial coefficient C(17, 3) found in Pascal's Triangle?",
       "he_text": "מהו הערך של המקדם הבינומי C(17, 3) במשולש פסקל?",
       "id": "cd4f8d35-467c-47d4-9f9f-7a7677aea4e5",
     },
     {
+      "en_text": "Right-first traversal: Right subtree, Root, Left subtree",
+      "he_text": "מעבר ימין-ראשון: תת-עץ ימני, שורש, תת-עץ שמאלי",
+      "id": "cddeeffe-ab8c-4d9e-af1a-2b3c4d5e6f7a",
+    },
+    {
       "en_text": "A clothing store offers 4 shirts and 6 pants. How many items can you choose from if selecting either a shirt or pants?",
       "he_text": "חנות בגדים מציעה 4 חולצות ו-6 מכנסיים. כמה פריטים ניתן לבחור אם בוחרים חולצה או מכנסיים?",
       "id": "cdeaf3e0-d9db-44c7-9aad-0d974e6ea546",
+    },
+    {
+      "en_text": "They are inverse operations",
+      "he_text": "הן פעולות הפוכות",
+      "id": "cf2d673d-eff4-4b8f-aa69-914975c8a1b1",
+    },
+    {
+      "en_text": "LNR traversal: Left subtree, Root, Right subtree",
+      "he_text": "מעבר LNR: תת-עץ שמאלי, שורש, תת-עץ ימני",
+      "id": "cf4d252d-6a18-4676-95d9-a0c6cc195f38",
     },
     {
       "en_text": "Foundations of Physics A",
@@ -6204,26 +6904,6 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "id": "d3b11a88-d9c2-4397-b6e4-2d2b0976a83a",
     },
     {
-      "en_text": "The sum using the minimum value of the function in each subinterval for lower sums",
-      "he_text": "הסכום באמצעות הערך המינימלי של הפונקציה בכל תת-רווח עבור סכומים תחתונים",
-      "id": "d3e4f5a6-7777-5678-901a-bcdef0123458",
-    },
-    {
-      "en_text": "The sum using the maximum value of the function in each subinterval for lower sums",
-      "he_text": "הסכום באמצעות הערך המקסימלי של הפונקציה בכל תת-רווח עבור סכומים תחתונים",
-      "id": "d3e4f5a6-7777-5678-901a-bcdef0123459",
-    },
-    {
-      "en_text": "The sum using the average value of the function in each subinterval for lower sums",
-      "he_text": "הסכום באמצעות הערך הממוצע של הפונקציה בכל תת-רווח עבור סכומים תחתונים",
-      "id": "d3e4f5a6-7777-5678-901a-bcdef012345a",
-    },
-    {
-      "en_text": "The sum using the midpoint value of the function in each subinterval for lower sums",
-      "he_text": "הסכום באמצעות ערך נקודת האמצע של הפונקציה בכל תת-רווח עבור סכומים תחתונים",
-      "id": "d3e4f5a6-7777-5678-901a-bcdef012345b",
-    },
-    {
       "en_text": "Thermodynamics for Physicists",
       "he_text": "תרמודינמיקה לפיזיקאים",
       "id": "d4c501df-eb02-4125-9f97-573813b664fb",
@@ -6232,6 +6912,21 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "en_text": "How many ways can 5 distinct objects be arranged in a row?",
       "he_text": "כמה אפשרויות לסדר 5 עצמים שונים בשורה?",
       "id": "d4d867eb-48cc-45f6-970a-e8d54bdb39e9",
+    },
+    {
+      "en_text": "What is the root of a binary tree",
+      "he_text": "מה זה השורש של עץ בינארי",
+      "id": "d4e5f6a7-8b9c-4dae-af2a-4b5c6d7e8f90",
+    },
+    {
+      "en_text": "What is the worst-case time complexity for insertion in a binary search tree",
+      "he_text": "מה המורכבות הזמנית הגרועה ביותר להכנסה בעץ חיפוש בינארי",
+      "id": "d539a47b-7159-46ac-8a7d-c503d0b9391e",
+    },
+    {
+      "en_text": "The sum using the average value of the function in each subinterval for lower sums",
+      "he_text": "הסכום באמצעות הערך הממוצע של הפונקציה בכל תת-רווח עבור סכומים תחתונים",
+      "id": "d55a2d19-8c0f-4430-a3e1-f5873389a00e",
     },
     {
       "en_text": "Two Dimensional Graph Reading",
@@ -6254,9 +6949,19 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "id": "d87423c1-f864-436a-ab0b-9f0c2d918acb",
     },
     {
+      "en_text": "O(n²) time complexity",
+      "he_text": "O(n²) מורכבות זמן",
+      "id": "d8c27541-cde9-4ba4-bc95-f5844490dafc",
+    },
+    {
       "en_text": "How many non-negative integer solutions exist for x₁ + x₂ + x₃ + x₄ = 9?",
       "he_text": "כמה פתרונות במספרים שלמים אי־שליליים קיימים למשוואה x₁ + x₂ + x₃ + x₄ = 9?",
       "id": "d8f724e9-9e1f-4656-ad77-4ade25848835",
+    },
+    {
+      "en_text": "To make the tree look symmetrical",
+      "he_text": "כדי שהעץ ייראה סימטרי",
+      "id": "dbecfdae-fa1b-4cfd-aebf-cadbecfdaebf",
     },
     {
       "en_text": "What is the value of the binomial coefficient C(7, 4) found in Pascal's Triangle?",
@@ -6279,6 +6984,21 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "id": "dde375a5-44af-433d-be3c-1c0a8aeb6570",
     },
     {
+      "en_text": "The tree is completely filled",
+      "he_text": "העץ מלא לחלוטין",
+      "id": "ddeeeff1-de8f-4a8b-9cad-aebfcadbecfd",
+    },
+    {
+      "en_text": "Upper sums provide a lower bound for the definite integral",
+      "he_text": "סכומים עליונים מספקים חסם תחתון לאינטגרל המסוים",
+      "id": "de34861c-e147-46b8-a745-d7ed612c73ae",
+    },
+    {
+      "en_text": "The sum using the maximum value of the function in each subinterval for lower sums",
+      "he_text": "הסכום באמצעות הערך המקסימלי של הפונקציה בכל תת-רווח עבור סכומים תחתונים",
+      "id": "dea72d18-13ad-41c6-b4bd-dafac603f133",
+    },
+    {
       "en_text": "General Biology B",
       "he_text": "ביולוגיה כללית ב",
       "id": "e1b58f24-a1f7-4ccc-b09b-2e95ab840f57",
@@ -6297,6 +7017,11 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "en_text": "Semiconductor Devices",
       "he_text": "התקני מוליכים למחצה",
       "id": "e29d162e-1a63-4875-b34c-67349bcdfb33",
+    },
+    {
+      "en_text": "In which case is a binary search tree most efficient",
+      "he_text": "באיזה מקרה עץ חיפוש בינארי הכי יעיל",
+      "id": "e3780ebf-3209-4106-a36a-a598c3d8f597",
     },
     {
       "en_text": "System Programming Laboratory",
@@ -6322,6 +7047,11 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "en_text": "40 study math 50 physics 60 computer science 20 study math and physics 25 math and computer science 30 physics and computer science and 5 study all three How many students study at least one subject?",
       "he_text": "40 לומדים מתמטיקה 50 פיזיקה 60 מדעי המחשב 20 לומדים מתמטיקה ופיזיקה 25 מתמטיקה ומדעי המחשב 30 פיזיקה ומדעי המחשב ו-5 לומדים את שלושת המקצועות כמה סטודנטים לומדים לפחות מקצוע אחד?",
       "id": "e5bcbc7d-dbc1-4e25-aff7-742ad9c64cb2",
+    },
+    {
+      "en_text": "What is a leaf node in a binary tree",
+      "he_text": "מה זה צומת עלה בעץ בינארי",
+      "id": "e5f6a7b8-9cad-4e1f-aa3b-5c6d7e8f9aab",
     },
     {
       "en_text": "G is not planar",
@@ -6354,14 +7084,39 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "id": "e8b9f640-68b9-4d90-a56b-9ab8dfade0af",
     },
     {
+      "en_text": "Either less than or equal to the root",
+      "he_text": "קטנים או שווים לשורש",
+      "id": "e8d66329-b02d-492a-bdf5-d9bc846a33bc",
+    },
+    {
       "en_text": "How many 3-letter arrangements can be formed from A, B, C, D without repetition?",
       "he_text": "כמה סידורים בני 3 אותיות ניתן ליצור מהאותיות A,B,C,D ללא חזרה?",
       "id": "eaaa76b5-0c41-44e0-8d6f-c2f03b7fe196",
     },
     {
+      "en_text": "What is a lower sum in the context of Riemann integration?",
+      "he_text": "מהו סכום תחתון בהקשר של אינטגרל רימן?",
+      "id": "eb64b28c-dd31-4e71-89c7-f19821d872be",
+    },
+    {
       "en_text": "Generating Functions",
       "he_text": "פונקציות יוצרות",
       "id": "eb656561-a030-482a-99d2-d648d7a4b6b1",
+    },
+    {
+      "en_text": "A tree with two root nodes",
+      "he_text": "עץ עם שני צמתי שורש",
+      "id": "eb7ecfd5-e0f6-4015-a11a-e95ecdf10111",
+    },
+    {
+      "en_text": "O(1) complexity",
+      "he_text": "O(1) מורכבות",
+      "id": "ebfcadbe-ab5c-4dae-bfca-dbecfdaebfca",
+    },
+    {
+      "en_text": "To ensure O(log n) time complexity for operations",
+      "he_text": "להבטיח מורכבות זמנית O(log n) לפעולות",
+      "id": "ec4e47a5-9fb3-4811-9586-9e6873b1b1e0",
     },
     {
       "en_text": "If G is a directed graph with 6 vertices, then",
@@ -6374,6 +7129,11 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "id": "ed575596-a4f8-4dad-a044-1cd48d755c80",
     },
     {
+      "en_text": "What is post-order traversal of a binary tree",
+      "he_text": "מה זה מעבר post-order בעץ בינארי",
+      "id": "edd08bc2-189d-4490-809f-f4d7a8fd8593",
+    },
+    {
       "en_text": "Binomial Formula",
       "he_text": "נוסחת הבינום",
       "id": "ee3583e5-7114-4a42-8a78-c1cb689276c9",
@@ -6382,6 +7142,11 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "en_text": "Psychology",
       "he_text": "פסיכולוגיה",
       "id": "ee53adf0-406c-43bc-9710-3a96cdcfb4c0",
+    },
+    {
+      "en_text": "All tree leaves are at the same level",
+      "he_text": "כל עלי העץ נמצאים באותה רמה",
+      "id": "eeff1a2b-ef9a-4b9c-adae-bfcadbecfdae",
     },
     {
       "en_text": "Chapters in Physical Chemistry",
@@ -6469,9 +7234,9 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "id": "f1a2b3c4-1111-4567-890a-bcdef012345b",
     },
     {
-      "en_text": "If F'(x) = x² and F(0) = 5, what is F(2)?",
-      "he_text": "אם F'(x) = x² ו-F(0) = 5, מה הוא F(2)?",
-      "id": "f1b2c3d4-1111-5678-901a-bcdef0123456",
+      "en_text": "2^h",
+      "he_text": "2^h",
+      "id": "f1d617a8-b1dc-4309-9244-5e0ea8ed7665",
     },
     {
       "en_text": "Whether G is not a bipartite graph",
@@ -6499,9 +7264,9 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "id": "f2a2b3c4-2222-4567-890a-bcdef0123456",
     },
     {
-      "en_text": "Calculate ∫[0,1] (2x + 3) dx",
-      "he_text": "חשב ∫[0,1] (2x + 3) dx",
-      "id": "f2b2c3d4-2222-5678-901a-bcdef0123456",
+      "en_text": "O(n) complexity",
+      "he_text": "O(n) מורכבות",
+      "id": "f30ba948-1f87-451a-b246-ca5159ceebc8",
     },
     {
       "en_text": "How many non‐negative integer solutions are there to x₁ + x₂ + x₃ + x₄ = 15 if each xᵢ is at most 6?",
@@ -6512,31 +7277,6 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "en_text": "Calculate ∫[1,3] x² dx using the Fundamental Formula",
       "he_text": "חשב ∫[1,3] x² dx באמצעות הנוסחה היסודית",
       "id": "f3a2b3c4-3333-4567-890a-bcdef0123456",
-    },
-    {
-      "en_text": "What is the relationship between differentiation and integration according to the Fundamental Formula?",
-      "he_text": "מה הקשר בין גזירה לאינטגרציה לפי הנוסחה היסודית?",
-      "id": "f3b2c3d4-3333-5678-901a-bcdef0123456",
-    },
-    {
-      "en_text": "They are inverse operations",
-      "he_text": "הן פעולות הפוכות",
-      "id": "f3b2c3d4-3333-5678-901a-bcdef0123458",
-    },
-    {
-      "en_text": "They are identical operations",
-      "he_text": "הן פעולות זהות",
-      "id": "f3b2c3d4-3333-5678-901a-bcdef0123459",
-    },
-    {
-      "en_text": "They are unrelated operations",
-      "he_text": "הן פעולות לא קשורות",
-      "id": "f3b2c3d4-3333-5678-901a-bcdef012345a",
-    },
-    {
-      "en_text": "They can only be used together",
-      "he_text": "ניתן להשתמש בהן רק יחד",
-      "id": "f3b2c3d4-3333-5678-901a-bcdef012345b",
     },
     {
       "en_text": "What is the value of the binomial coefficient C(13, 7) found in Pascal's Triangle?",
@@ -6592,6 +7332,11 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "en_text": "tan(x) + C",
       "he_text": "tan(x) + C",
       "id": "f6a2b3c4-6666-4567-890a-bcdef012345b",
+    },
+    {
+      "en_text": "What is the maximum number of children a node can have in a binary tree",
+      "he_text": "מה המספר המקסימלי של ילדים שיכול להיות לצומת בעץ בינארי",
+      "id": "f6a7b8c9-ad1e-4f2a-ab4c-6d7e8f9aab1c",
     },
     {
       "en_text": "Calculate ∫[0,π] sin(x) dx",
@@ -6674,6 +7419,11 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "id": "fba2b3c4-bbbb-4567-890a-bcdef0123456",
     },
     {
+      "en_text": "All internal nodes have exactly two children and all leaves are at the same level",
+      "he_text": "לכל הצמתים הפנימיים יש בדיוק שני ילדים וכל העלים באותה רמה",
+      "id": "fbb38d7e-d4a4-470b-9f75-6c0fe51d8908",
+    },
+    {
       "en_text": "If ∫[a,b] f(x) dx = 0, what can we conclude about the function f on [a,b]?",
       "he_text": "אם ∫[a,b] f(x) dx = 0, מה ניתן להסיק על הפונקציה f ב-[a,b]?",
       "id": "fca2b3c4-cccc-4567-890a-bcdef0123456",
@@ -6747,6 +7497,11 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "en_text": "ln(e^x) + C",
       "he_text": "ln(e^x) + C",
       "id": "fea2b3c4-eeee-4567-890a-bcdef012345b",
+    },
+    {
+      "en_text": "What is the space complexity of in-order traversal using recursion",
+      "he_text": "מה המורכבות המרחבית של מעבר in-order באמצעות רקורסיה",
+      "id": "ff1a2b3c-fa1b-4cad-aebf-cadbecfdaebf",
     },
     {
       "en_text": "Calculate ∫[1,2] (x³ - x) dx",

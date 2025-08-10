@@ -9,6 +9,7 @@ import { seedFaculties } from './faculties.seed';
 import { seedModules } from './modules.seed';
 import { seedPhysicsModulesAndQuestions } from './physics-modules-questions.seed';
 import { seedQuestions } from './questions.seed';
+import { seedBinaryTreesQuestions } from './binary-trees-module-questions.seed';
 import { seedBlockConnections } from './block-connections.seed';
 import { BLOCK_CONNECTIONS } from './block-connections.consts';
 import { seedUniversities } from './universities.seed';
@@ -155,6 +156,13 @@ export const seed = async (prisma: PrismaClient) => {
       await withErrorRecovery(
         () => seedPhysicsModulesAndQuestions(tx, cache),
         'Physics Modules & Questions Seeding',
+        undefined,
+        { continueOnError: true },
+      );
+
+      await withErrorRecovery(
+        () => seedBinaryTreesQuestions(tx, cache),
+        'Binary Trees Questions Seeding',
         undefined,
         { continueOnError: true },
       );

@@ -25,6 +25,12 @@ export const TRANSLATIONS: TranslationSeed[] = [
     en_text: 'Ben-Gurion University of the Negev',
     he_text: 'אוניברסיטת בן-גוריון בנגב',
   },
+  // Binary Trees Module Translation
+  {
+    id: 'b2c3d4e5-6f7a-4b8c-9d0e-2f3a4b5c6d7e',
+    en_text: 'Binary Trees',
+    he_text: 'עצים בינאריים',
+  },
   {
     id: 'e8b9f640-68b9-4d90-a56b-9ab8dfade0af',
     en_text: 'Mathematics',
@@ -1404,7 +1410,7 @@ export const TRANSLATIONS: TranslationSeed[] = [
     he_text: 'עקרון שובך היונים',
   },
   {
-    id: '1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d',
+    id: '730785ee-5d3a-4160-93bd-24aad42be048',
     en_text: 'Introduction to Logic',
     he_text: 'מבוא ללוגיקה',
   },
@@ -1946,7 +1952,7 @@ In the Faculty of Arts, you're not just learning about the world — you're lear
     he_text: 'האינטגרל המסוים',
   },
   {
-    id: '3a1f9c8e-2d4b-5c6a-9e7f-4b8c9d0e1f2a',
+    id: '35e00288-a280-4158-b03a-0b008a3de1eb',
     en_text: 'The Enclosed Area Problem',
     he_text: 'בעיית השטח הכלוא',
   },
@@ -2030,142 +2036,142 @@ In the Faculty of Arts, you're not just learning about the world — you're lear
   },
   // Upper Sums questions and answers
   {
-    id: 'a1b2c3d4-4444-5678-901a-bcdef0123456',
+    id: '482223b5-7343-4270-bff1-a9c3d934fa28',
     en_text: 'What is an upper sum in the context of Riemann integration?',
     he_text: 'מהו סכום עליון בהקשר של אינטגרל רימן?',
   },
   {
-    id: 'a1b2c3d4-4444-5678-901a-bcdef0123458',
+    id: '2206522e-c241-4745-92aa-cdc9530b1e92',
     en_text:
       'The sum using the maximum value of the function in each subinterval',
     he_text: 'הסכום באמצעות הערך המקסימלי של הפונקציה בכל תת-רווח',
   },
   {
-    id: 'a1b2c3d4-4444-5678-901a-bcdef0123459',
+    id: '2351c70a-3dea-4239-8bd5-2f61e2959bee',
     en_text:
       'The sum using the minimum value of the function in each subinterval',
     he_text: 'הסכום באמצעות הערך המינימלי של הפונקציה בכל תת-רווח',
   },
   {
-    id: 'a1b2c3d4-4444-5678-901a-bcdef012345a',
+    id: 'c5905fc5-f356-4f54-be05-cfd3bb39d08d',
     en_text:
       'The sum using the average value of the function in each subinterval',
     he_text: 'הסכום באמצעות הערך הממוצע של הפונקציה בכל תת-רווח',
   },
   {
-    id: 'a1b2c3d4-4444-5678-901a-bcdef012345b',
+    id: '8a0e3cad-d137-4af7-9431-21a742678f01',
     en_text:
       'The sum using the midpoint value of the function in each subinterval',
     he_text: 'הסכום באמצעות ערך נקודת האמצע של הפונקציה בכל תת-רווח',
   },
   {
-    id: 'a1b2c3d4-5555-5678-901a-bcdef0123456',
+    id: '44a0d45b-2963-4836-94d7-90006e95caca',
     en_text: 'How do upper sums relate to the definite integral?',
     he_text: 'איך סכומים עליונים קשורים לאינטגרל המסוים?',
   },
   {
-    id: 'a1b2c3d4-5555-5678-901a-bcdef0123458',
+    id: '7b75b3a0-465f-4fdf-94e5-eb292e32bf9f',
     en_text: 'Upper sums provide an upper bound for the definite integral',
     he_text: 'סכומים עליונים מספקים חסם עליון לאינטגרל המסוים',
   },
   {
-    id: 'a1b2c3d4-5555-5678-901a-bcdef0123459',
+    id: 'de34861c-e147-46b8-a745-d7ed612c73ae',
     en_text: 'Upper sums provide a lower bound for the definite integral',
     he_text: 'סכומים עליונים מספקים חסם תחתון לאינטגרל המסוים',
   },
   {
-    id: 'a1b2c3d4-5555-5678-901a-bcdef012345a',
+    id: 'ae05ff78-bb6e-4b63-ac36-bd2efb9edf11',
     en_text: 'Upper sums equal the definite integral exactly',
     he_text: 'סכומים עליונים שווים לאינטגרל המסוים בדיוק',
   },
   {
-    id: 'a1b2c3d4-5555-5678-901a-bcdef012345b',
+    id: '6a76c035-9130-414a-8f3b-625e3c65c3c2',
     en_text: 'Upper sums are unrelated to the definite integral',
     he_text: 'סכומים עליונים לא קשורים לאינטגרל המסוים',
   },
   // Lower Sums questions and answers
   {
-    id: 'b2c3d4e5-6666-5678-901a-bcdef0123456',
+    id: 'eb64b28c-dd31-4e71-89c7-f19821d872be',
     en_text: 'What is a lower sum in the context of Riemann integration?',
     he_text: 'מהו סכום תחתון בהקשר של אינטגרל רימן?',
   },
   {
-    id: 'd3e4f5a6-7777-5678-901a-bcdef0123458',
+    id: '8c7227a4-ae19-4eb3-94b9-9e1f92a94f63',
     en_text:
       'The sum using the minimum value of the function in each subinterval for lower sums',
     he_text:
       'הסכום באמצעות הערך המינימלי של הפונקציה בכל תת-רווח עבור סכומים תחתונים',
   },
   {
-    id: 'd3e4f5a6-7777-5678-901a-bcdef0123459',
+    id: 'dea72d18-13ad-41c6-b4bd-dafac603f133',
     en_text:
       'The sum using the maximum value of the function in each subinterval for lower sums',
     he_text:
       'הסכום באמצעות הערך המקסימלי של הפונקציה בכל תת-רווח עבור סכומים תחתונים',
   },
   {
-    id: 'd3e4f5a6-7777-5678-901a-bcdef012345a',
+    id: 'd55a2d19-8c0f-4430-a3e1-f5873389a00e',
     en_text:
       'The sum using the average value of the function in each subinterval for lower sums',
     he_text:
       'הסכום באמצעות הערך הממוצע של הפונקציה בכל תת-רווח עבור סכומים תחתונים',
   },
   {
-    id: 'd3e4f5a6-7777-5678-901a-bcdef012345b',
+    id: '3d5966d9-6655-4639-b902-2de703c3da38',
     en_text:
       'The sum using the midpoint value of the function in each subinterval for lower sums',
     he_text:
       'הסכום באמצעות ערך נקודת האמצע של הפונקציה בכל תת-רווח עבור סכומים תחתונים',
   },
   {
-    id: 'b2c3d4e5-7777-5678-901a-bcdef0123456',
+    id: 'ab1f213f-f85b-4a48-a59c-06fd93019eaf',
     en_text: 'How do lower sums relate to the definite integral?',
     he_text: 'איך סכומים תחתונים קשורים לאינטגרל המסוים?',
   },
   {
-    id: 'b2c3d4e5-7777-5678-901a-bcdef0123458',
+    id: '9531b9c1-1f3d-49e6-bfb4-c0d8384caf9e',
     en_text: 'Lower sums provide a lower bound for the definite integral',
     he_text: 'סכומים תחתונים מספקים חסם תחתון לאינטגרל המסוים',
   },
   {
-    id: 'b2c3d4e5-7777-5678-901a-bcdef0123459',
+    id: '3d6f492d-b7fa-4f17-b431-1fed4b1a7b2b',
     en_text: 'Lower sums provide an upper bound for the definite integral',
     he_text: 'סכומים תחתונים מספקים חסם עליון לאינטגרל המסוים',
   },
   {
-    id: 'b2c3d4e5-7777-5678-901a-bcdef012345a',
+    id: '346813c9-f3cf-4827-9bb9-1e2d4da7b70f',
     en_text: 'Lower sums equal the definite integral exactly',
     he_text: 'סכומים תחתונים שווים לאינטגרל המסוים בדיוק',
   },
   {
-    id: 'b2c3d4e5-7777-5678-901a-bcdef012345b',
+    id: '3c74abda-7c59-41de-8c17-cfcb2305fb56',
     en_text: 'Lower sums are unrelated to the definite integral',
     he_text: 'סכומים תחתונים לא קשורים לאינטגרל המסוים',
   },
   {
-    id: 'c3d4e5f6-8888-5678-901a-bcdef0123456',
+    id: 'a8acbde6-b69c-4dfb-a02b-b86fab5ce020',
     en_text:
       'What happens when the number of subintervals approaches infinity in upper and lower sums?',
     he_text:
       'מה קורה כאשר מספר תת-הרווחים שואף לאינסוף בסכומים עליונים ותחתונים?',
   },
   {
-    id: 'c3d4e5f6-8888-5678-901a-bcdef0123458',
+    id: '67b2e3fe-bfbb-40bb-99a7-270fac6841bf',
     en_text: 'Both upper and lower sums converge to the definite integral',
     he_text: 'גם סכומים עליונים וגם תחתונים מתכנסים לאינטגרל המסוים',
   },
   {
-    id: 'c3d4e5f6-8888-5678-901a-bcdef0123459',
+    id: '49bfcb08-75db-4d6f-a9f2-5ec0839466a6',
     en_text: 'Only upper sums converge to the definite integral',
     he_text: 'רק סכומים עליונים מתכנסים לאינטגרל המסוים',
   },
   {
-    id: 'c3d4e5f6-8888-5678-901a-bcdef012345a',
+    id: '6675796c-f296-4c91-b9e4-f1e316e1e40d',
     en_text: 'Only lower sums converge to the definite integral',
     he_text: 'רק סכומים תחתונים מתכנסים לאינטגרל המסוים',
   },
   {
-    id: 'c3d4e5f6-8888-5678-901a-bcdef012345b',
+    id: 'c90dfde3-0732-42af-a85f-7843ded1b8a2',
     en_text: 'Neither upper nor lower sums converge',
     he_text: 'לא סכומים עליונים ולא תחתונים מתכנסים',
   },
@@ -2378,39 +2384,483 @@ In the Faculty of Arts, you're not just learning about the world — you're lear
     he_text: 'f חייבת להיות חסומה ב-[a,b]',
   },
   {
-    id: 'f1b2c3d4-1111-5678-901a-bcdef0123456',
+    id: '156dd85f-06f1-4f57-a607-e039b36a0430',
     en_text: "If F'(x) = x² and F(0) = 5, what is F(2)?",
     he_text: "אם F'(x) = x² ו-F(0) = 5, מה הוא F(2)?",
   },
   {
-    id: 'f2b2c3d4-2222-5678-901a-bcdef0123456',
+    id: 'bdfd1e42-cc07-4ab0-9364-d31e5de52c85',
     en_text: 'Calculate ∫[0,1] (2x + 3) dx',
     he_text: 'חשב ∫[0,1] (2x + 3) dx',
   },
   {
-    id: 'f3b2c3d4-3333-5678-901a-bcdef0123456',
+    id: '6f0fbbb9-0794-41bd-aa92-0b98d3e2fdf2',
     en_text:
       'What is the relationship between differentiation and integration according to the Fundamental Formula?',
     he_text: 'מה הקשר בין גזירה לאינטגרציה לפי הנוסחה היסודית?',
   },
   {
-    id: 'f3b2c3d4-3333-5678-901a-bcdef0123458',
+    id: 'cf2d673d-eff4-4b8f-aa69-914975c8a1b1',
     en_text: 'They are inverse operations',
     he_text: 'הן פעולות הפוכות',
   },
   {
-    id: 'f3b2c3d4-3333-5678-901a-bcdef0123459',
+    id: '4ed499f6-0427-40c1-85a6-7ed9c70ec41a',
     en_text: 'They are identical operations',
     he_text: 'הן פעולות זהות',
   },
   {
-    id: 'f3b2c3d4-3333-5678-901a-bcdef012345a',
+    id: '9e2d6857-e550-4160-bb86-239c017767b2',
     en_text: 'They are unrelated operations',
     he_text: 'הן פעולות לא קשורות',
   },
   {
-    id: 'f3b2c3d4-3333-5678-901a-bcdef012345b',
+    id: '46d4b18f-70a7-439b-b13f-d770b86e1932',
     en_text: 'They can only be used together',
     he_text: 'ניתן להשתמש בהן רק יחד',
+  },
+  // Binary Trees Questions and Answers
+  {
+    id: 'c3d4e5f6-7a8b-4c9d-ae1f-3a4b5c6d7e8f',
+    en_text: 'What is a binary tree',
+    he_text: 'מה זה עץ בינארי',
+  },
+  {
+    id: '125ce73c-d805-4b59-964f-803622af970f',
+    en_text: 'A tree where each node has at most two children',
+    he_text: 'עץ בו לכל צומת יש לכל היותר שני ילדים',
+  },
+  {
+    id: '9ee2bfb0-d61f-4868-9043-fda35f4ac4a0',
+    en_text: 'A tree where each node has exactly two children',
+    he_text: 'עץ בו לכל צומת יש בדיוק שני ילדים',
+  },
+  {
+    id: 'cbaa37dd-3e2a-4f98-bbf3-f7d222f51941',
+    en_text: 'A tree with only binary data',
+    he_text: 'עץ עם נתונים בינאריים בלבד',
+  },
+  {
+    id: 'eb7ecfd5-e0f6-4015-a11a-e95ecdf10111',
+    en_text: 'A tree with two root nodes',
+    he_text: 'עץ עם שני צמתי שורש',
+  },
+  {
+    id: 'd4e5f6a7-8b9c-4dae-af2a-4b5c6d7e8f90',
+    en_text: 'What is the root of a binary tree',
+    he_text: 'מה זה השורש של עץ בינארי',
+  },
+  {
+    id: '5df906fb-8847-4838-abea-4e3938520485',
+    en_text: 'The topmost node in the tree',
+    he_text: 'הצומת העליון ביותר בעץ',
+  },
+  {
+    id: 'b8bd7fdc-2702-4573-b59e-6be89c72326f',
+    en_text: 'The bottommost node in the tree',
+    he_text: 'הצומת התחתון ביותר בעץ',
+  },
+  {
+    id: '60f64bba-18b7-461b-9df3-f9e090199550',
+    en_text: 'Any node with two children',
+    he_text: 'כל צומת עם שני ילדים',
+  },
+  {
+    id: '4d24ab4e-0ff2-49aa-bfbc-67f3b3a4ac05',
+    en_text: 'A node with no parent and no children',
+    he_text: 'צומת ללא הורה וללא ילדים',
+  },
+  {
+    id: 'e5f6a7b8-9cad-4e1f-aa3b-5c6d7e8f9aab',
+    en_text: 'What is a leaf node in a binary tree',
+    he_text: 'מה זה צומת עלה בעץ בינארי',
+  },
+  {
+    id: '7f9c1e3a-ad2f-4e5a-9b4c-8c9d1e2f3a4b',
+    en_text: 'A node with no children',
+    he_text: 'צומת ללא ילדים',
+  },
+  {
+    id: '8aad2f3b-1e4c-4f6b-ac5d-9d1e2f3a4b5c',
+    en_text: 'A node with two children',
+    he_text: 'צומת עם שני ילדים',
+  },
+  {
+    id: '9b1e3c4d-2f5e-4a7c-ad6e-ae2f3a4b5c6d',
+    en_text: 'The root node',
+    he_text: 'צומת השורש',
+  },
+  {
+    id: 'ac2f4d5e-3a6f-418d-ae7f-1f3a4b5c6d7e',
+    en_text: 'A node with one child',
+    he_text: 'צומת עם ילד אחד',
+  },
+  {
+    id: 'f6a7b8c9-ad1e-4f2a-ab4c-6d7e8f9aab1c',
+    en_text:
+      'What is the maximum number of children a node can have in a binary tree',
+    he_text: 'מה המספר המקסימלי של ילדים שיכול להיות לצומת בעץ בינארי',
+  },
+  {
+    id: 'a7b8c9da-1e2f-4a3b-ac5d-7e8f9aab1c2d',
+    en_text:
+      'What is the height of a binary tree with only one node (the root)',
+    he_text: 'מה הגובה של עץ בינארי עם צומת אחד בלבד (השורש)',
+  },
+  {
+    id: 'b8c9daeb-2f3a-4b5c-ad7e-8f9aab1c2d3e',
+    en_text: 'In-order traversal of a binary tree visits nodes in which order',
+    he_text: 'מעבר in-order בעץ בינארי מבקר בצמתים באיזה סדר',
+  },
+  {
+    id: '1d3f5a7c-4e6b-417e-ab5c-2f3a4b5c6d7e',
+    en_text: 'Left subtree, Root, Right subtree',
+    he_text: 'תת-עץ שמאלי, שורש, תת-עץ ימני',
+  },
+  {
+    id: '2e4a6b8d-5f7c-428f-ac6d-3a4b5c6d7e8f',
+    en_text: 'Root, Left subtree, Right subtree',
+    he_text: 'שורש, תת-עץ שמאלי, תת-עץ ימני',
+  },
+  {
+    id: '3f5b7c9e-6a8d-439a-ad7e-4b5c6d7e8f9a',
+    en_text: 'Left subtree, Right subtree, Root',
+    he_text: 'תת-עץ שמאלי, תת-עץ ימני, שורש',
+  },
+  {
+    id: '4a6c8eaa-7b9e-44ab-ae8f-5c6d7e8f9aab',
+    en_text: 'Right subtree, Root, Left subtree',
+    he_text: 'תת-עץ ימני, שורש, תת-עץ שמאלי',
+  },
+  {
+    id: 'c9dae1f2-3a4b-4c6d-ae8f-9aab1c2d3e4f',
+    en_text:
+      'What is the time complexity of searching in a balanced binary search tree',
+    he_text: 'מה המורכבות הזמנית של חיפוש בעץ חיפוש בינארי מאוזן',
+  },
+  {
+    id: '5b7d9f1b-8caf-45bc-af9a-8d7e8f9aab1c',
+    en_text: 'O(log n)',
+    he_text: 'O(log n)',
+  },
+  {
+    id: '6c8eaa2c-9d1a-46cd-aaab-8e8f9aab1c2d',
+    en_text: 'O(n)',
+    he_text: 'O(n)',
+  },
+  {
+    id: '7d9f1b3d-ae2b-47de-ab1c-8f9aab1c2d3e',
+    en_text: 'O(1)',
+    he_text: 'O(1)',
+  },
+  {
+    id: '744e652c-6228-42ea-bbaf-6d3b65eac599',
+    en_text: 'O(n²)',
+    he_text: 'O(n²)',
+  },
+  {
+    id: '9e5399fe-0617-4bf6-9c39-037987c4a092',
+    en_text: 'What is a complete binary tree',
+    he_text: 'מה זה עץ בינארי שלם',
+  },
+  {
+    id: '9f1b3d5f-2a4d-49fa-8d3e-aab1c2d3e4f5',
+    en_text:
+      'All levels are filled except possibly the last level which is filled from left to right',
+    he_text: 'כל הרמות מלאות פרט אולי לרמה האחרונה שמלאה משמאל לימין',
+  },
+  {
+    id: 'aa2c4e6a-3b5e-4aab-9e4f-1c2d3e4f5a6b',
+    en_text: 'All internal nodes have exactly two children',
+    he_text: 'לכל הצמתים הפנימיים יש בדיוק שני ילדים',
+  },
+  {
+    id: '1b3d5f7b-4c6f-41bc-af5a-2d3e4f5a6b7c',
+    en_text: 'All leaves are at the same level',
+    he_text: 'כל העלים באותה רמה',
+  },
+  {
+    id: '75f031c8-3a7d-4f09-8e5d-d71144e158b4',
+    en_text: 'The tree has exactly 2^n - 1 nodes',
+    he_text: 'לעץ יש בדיוק 2^n - 1 צמתים',
+  },
+  {
+    id: 'a35ba03a-aedc-49c0-9b01-81826ec66d1a',
+    en_text: 'In a binary search tree, all values in the left subtree are',
+    he_text: 'בעץ חיפוש בינארי, כל הערכים בתת-העץ השמאלי הם',
+  },
+  {
+    id: '3a1fcd00-cd75-4323-8d58-963090db7050',
+    en_text: 'Less than the root',
+    he_text: 'קטנים מהשורש',
+  },
+  {
+    id: '8914a2f1-3f3d-484c-8c79-4d4d2982f6f3',
+    en_text: 'Greater than the root',
+    he_text: 'גדולים מהשורש',
+  },
+  {
+    id: '9425e428-80a9-42f2-b37d-be8d6bb3b2ef',
+    en_text: 'Equal to the root',
+    he_text: 'שווים לשורש',
+  },
+  {
+    id: 'e8d66329-b02d-492a-bdf5-d9bc846a33bc',
+    en_text: 'Either less than or equal to the root',
+    he_text: 'קטנים או שווים לשורש',
+  },
+  {
+    id: '90c1e7a5-1ccd-43ad-80ab-966fc1075ede',
+    en_text: 'What is the maximum height of a binary tree with n nodes',
+    he_text: 'מה הגובה המקסימלי של עץ בינארי עם n צמתים',
+  },
+  {
+    id: '6c5b287b-818c-489d-abaa-aff849761944',
+    en_text: 'n - 1',
+    he_text: 'n - 1',
+  },
+  {
+    id: '0850dc51-9785-4211-833e-ad4ee9090774',
+    en_text: 'log n',
+    he_text: 'log n',
+  },
+  {
+    id: '9d1f3b5d-2e4b-49de-8b3c-af1a2b3c4d5e',
+    en_text: 'n',
+    he_text: 'n',
+  },
+  {
+    id: 'ae2a4c6e-3f5c-4aef-9c4d-1a2b3c4d5e6f',
+    en_text: '2^n - 1',
+    he_text: '2^n - 1',
+  },
+  // Additional Binary Trees Questions (11-30)
+  {
+    id: 'b8355891-bf40-4cab-bb18-9c984162adaa',
+    en_text: 'What is the minimum number of nodes in a binary tree of height h',
+    he_text: 'מה המספר המינימלי של צמתים בעץ בינארי בגובה h',
+  },
+  {
+    id: '8e4d4c7e-b1e7-4f7b-8aee-c4672c39b627',
+    en_text: 'h + 1',
+    he_text: 'h + 1',
+  },
+  {
+    id: 'f1d617a8-b1dc-4309-9244-5e0ea8ed7665',
+    en_text: '2^h',
+    he_text: '2^h',
+  },
+  {
+    id: 'a5f72239-5ac1-4f96-9d0e-c437cb989844',
+    en_text: '2^(h+1) - 1',
+    he_text: '2^(h+1) - 1',
+  },
+  {
+    id: '4b846021-f845-495d-a89f-e035b2aeb29c',
+    en_text: 'h',
+    he_text: 'h',
+  },
+  {
+    id: '12b9d127-9307-443c-9e78-4815e95ea37c',
+    en_text: 'What is pre-order traversal of a binary tree',
+    he_text: 'מה זה מעבר pre-order בעץ בינארי',
+  },
+  {
+    id: '481abb64-299e-4f31-8b90-567152d1207d',
+    en_text: 'Preorder traversal: Root, Left subtree, Right subtree',
+    he_text: 'מעבר קדם-סדר: שורש, תת-עץ שמאלי, תת-עץ ימני',
+  },
+  {
+    id: 'babccdde-ef6a-4b7c-8d9e-af1a2b3c4d5e',
+    en_text: 'Inorder traversal: Left subtree, Root, Right subtree',
+    he_text: 'מעבר סדר: תת-עץ שמאלי, שורש, תת-עץ ימני',
+  },
+  {
+    id: 'bccddeef-fa7b-4c8d-9eaf-1a2b3c4d5e6f',
+    en_text: 'Postorder traversal: Left subtree, Right subtree, Root',
+    he_text: 'מעבר אחר-סדר: תת-עץ שמאלי, תת-עץ ימני, שורש',
+  },
+  {
+    id: 'cddeeffe-ab8c-4d9e-af1a-2b3c4d5e6f7a',
+    en_text: 'Right-first traversal: Right subtree, Root, Left subtree',
+    he_text: 'מעבר ימין-ראשון: תת-עץ ימני, שורש, תת-עץ שמאלי',
+  },
+  {
+    id: 'edd08bc2-189d-4490-809f-f4d7a8fd8593',
+    en_text: 'What is post-order traversal of a binary tree',
+    he_text: 'מה זה מעבר post-order בעץ בינארי',
+  },
+  {
+    id: '9d6a7d6a-1580-49b2-acaf-dbbf910d224a',
+    en_text: 'LRN traversal: Left subtree, Right subtree, Root',
+    he_text: 'מעבר LRN: תת-עץ שמאלי, תת-עץ ימני, שורש',
+  },
+  {
+    id: '7662d518-d21e-4276-8583-e296a833e0fb',
+    en_text: 'NLR traversal: Root, Left subtree, Right subtree',
+    he_text: 'מעבר NLR: שורש, תת-עץ שמאלי, תת-עץ ימני',
+  },
+  {
+    id: 'cf4d252d-6a18-4676-95d9-a0c6cc195f38',
+    en_text: 'LNR traversal: Left subtree, Root, Right subtree',
+    he_text: 'מעבר LNR: תת-עץ שמאלי, שורש, תת-עץ ימני',
+  },
+  {
+    id: 'a7ee5bb5-5955-4860-9d3b-4daf4cb6d311',
+    en_text: 'Right subtree, Left subtree, Root',
+    he_text: 'תת-עץ ימני, תת-עץ שמאלי, שורש',
+  },
+  {
+    id: '33de9608-c021-4dec-920e-37d262ee045e',
+    en_text: 'What is a perfect binary tree',
+    he_text: 'מה זה עץ בינארי מושלם',
+  },
+  {
+    id: 'fbb38d7e-d4a4-470b-9f75-6c0fe51d8908',
+    en_text:
+      'All internal nodes have exactly two children and all leaves are at the same level',
+    he_text: 'לכל הצמתים הפנימיים יש בדיוק שני ילדים וכל העלים באותה רמה',
+  },
+  {
+    id: 'ccddeeef-cd7e-4f7a-8b9c-adaebfcadbec',
+    en_text: 'All nodes have exactly two children',
+    he_text: 'לכל הצמתים יש בדיוק שני ילדים',
+  },
+  {
+    id: 'ddeeeff1-de8f-4a8b-9cad-aebfcadbecfd',
+    en_text: 'The tree is completely filled',
+    he_text: 'העץ מלא לחלוטין',
+  },
+  {
+    id: 'eeff1a2b-ef9a-4b9c-adae-bfcadbecfdae',
+    en_text: 'All tree leaves are at the same level',
+    he_text: 'כל עלי העץ נמצאים באותה רמה',
+  },
+  {
+    id: 'ff1a2b3c-fa1b-4cad-aebf-cadbecfdaebf',
+    en_text:
+      'What is the space complexity of in-order traversal using recursion',
+    he_text: 'מה המורכבות המרחבית של מעבר in-order באמצעות רקורסיה',
+  },
+  {
+    id: '1a2b3c4d-ab2c-4dae-bfca-dbecfdaebfca',
+    en_text: 'O(h) where h is the height of the tree',
+    he_text: 'O(h) כאשר h הוא הגובה של העץ',
+  },
+  {
+    id: '8e04d693-f706-42ac-8579-8b3942c7d1ad',
+    en_text: 'O(n) time complexity',
+    he_text: 'O(n) מורכבות זמן',
+  },
+  {
+    id: '46c5a609-d0bf-4603-9295-86e2c1fc4e22',
+    en_text: 'O(log n) time complexity',
+    he_text: 'O(log n) מורכבות זמן',
+  },
+  {
+    id: '7425368c-4518-4ca2-8048-421d59256250',
+    en_text: 'O(1) time complexity',
+    he_text: 'O(1) מורכבות זמן',
+  },
+  {
+    id: 'e3780ebf-3209-4106-a36a-a598c3d8f597',
+    en_text: 'In which case is a binary search tree most efficient',
+    he_text: 'באיזה מקרה עץ חיפוש בינארי הכי יעיל',
+  },
+  {
+    id: '6f7a8b9c-fa7b-4cfd-aebf-cadbecfdaebf',
+    en_text: 'When the tree is balanced',
+    he_text: 'כאשר העץ מאוזן',
+  },
+  {
+    id: '7a8b9cad-ab8c-4dae-bfca-dbecfdaebfca',
+    en_text: 'When the tree is skewed',
+    he_text: 'כאשר העץ עקום',
+  },
+  {
+    id: '32ecd65a-9b64-4f7f-8fb3-0d8d4c39f137',
+    en_text: 'When the tree has only one node',
+    he_text: 'כאשר לעץ יש רק צומת אחד',
+  },
+  {
+    id: 'b9d6f531-df8a-40b8-aa40-a1a352f9a83e',
+    en_text: 'When all nodes have the same value',
+    he_text: 'כאשר לכל הצמתים יש אותו ערך',
+  },
+  {
+    id: 'd539a47b-7159-46ac-8a7d-c503d0b9391e',
+    en_text:
+      'What is the worst-case time complexity for insertion in a binary search tree',
+    he_text: 'מה המורכבות הזמנית הגרועה ביותר להכנסה בעץ חיפוש בינארי',
+  },
+  {
+    id: 'f30ba948-1f87-451a-b246-ca5159ceebc8',
+    en_text: 'O(n) complexity',
+    he_text: 'O(n) מורכבות',
+  },
+  {
+    id: 'aebfcadb-fa4b-4cfd-aebf-cadbecfdaebf',
+    en_text: 'O(log n) complexity',
+    he_text: 'O(log n) מורכבות',
+  },
+  {
+    id: 'ebfcadbe-ab5c-4dae-bfca-dbecfdaebfca',
+    en_text: 'O(1) complexity',
+    he_text: 'O(1) מורכבות',
+  },
+  {
+    id: 'd8c27541-cde9-4ba4-bc95-f5844490dafc',
+    en_text: 'O(n²) time complexity',
+    he_text: 'O(n²) מורכבות זמן',
+  },
+  {
+    id: '173380f3-cb2d-4153-855b-cd24f508fcc9',
+    en_text: 'What is the purpose of balancing a binary search tree',
+    he_text: 'מה המטרה של איזון עץ חיפוש בינארי',
+  },
+  {
+    id: 'ec4e47a5-9fb3-4811-9586-9e6873b1b1e0',
+    en_text: 'To ensure O(log n) time complexity for operations',
+    he_text: 'להבטיח מורכבות זמנית O(log n) לפעולות',
+  },
+  {
+    id: 'ae934e7c-e3c9-4077-a22d-a1e595e9ee8d',
+    en_text: 'To minimize memory usage',
+    he_text: 'כדי למזער את השימוש בזיכרון',
+  },
+  {
+    id: 'dbecfdae-fa1b-4cfd-aebf-cadbecfdaebf',
+    en_text: 'To make the tree look symmetrical',
+    he_text: 'כדי שהעץ ייראה סימטרי',
+  },
+  {
+    id: 'becfdaeb-ab2c-4dae-bfca-dbecfdaebfca',
+    en_text: 'To allow duplicate values',
+    he_text: 'כדי לאפשר ערכים כפולים',
+  },
+  {
+    id: '8a1f5b74-e1c7-4502-9b9f-6975050900f2',
+    en_text: 'Which traversal method would you use to copy a binary tree',
+    he_text: 'באיזו שיטת מעבר תשתמש כדי להעתיק עץ בינארי',
+  },
+  {
+    id: '08810a27-f508-4cfe-8c65-c228495ea447',
+    en_text: 'Pre-order traversal',
+    he_text: 'מעבר pre-order',
+  },
+  {
+    id: '9d407a36-5e79-44f2-b10a-1f59a89231a2',
+    en_text: 'In-order traversal',
+    he_text: 'מעבר in-order',
+  },
+  {
+    id: '1f55501d-8482-43b8-9d49-dfc3f6a98212',
+    en_text: 'Post-order traversal',
+    he_text: 'מעבר post-order',
+  },
+  {
+    id: 'aebfcadb-fa7b-4cfd-aebf-cadbecfdaebf',
+    en_text: 'Level-order traversal',
+    he_text: 'מעבר level-order',
   },
 ];

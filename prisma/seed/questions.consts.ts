@@ -103,6 +103,475 @@ export const QUESTIONS: QuestionSeedData[] = [
       },
     ],
   },
+  // Binary Trees Questions
+  {
+    id: 'c3d4e5f6-7a8b-4c9d-ae1f-3a4b5c6d7e8f',
+    translationId: 'c3d4e5f6-7a8b-4c9d-ae1f-3a4b5c6d7e8f',
+    text: {
+      en_text: 'What is a binary tree',
+      he_text: 'מה זה עץ בינארי',
+    },
+    type: QuestionType.selection,
+    moduleId: 'f8c9d5e1-2a3b-4c6d-8e9f-1a2b3c4d5e6f',
+    answers: [
+      {
+        id: 'c3d4e5f6-7a8b-4c9d-ae1f-answer1111111',
+        selectAnswers: [
+          {
+            id: 'c3d4e5f6-7a8b-4c9d-ae1f-3a4b5c6d7e80',
+            translationId: '7ac8c2ed-1b4f-4e7a-9d5e-8f3b2c4a1e6d',
+            text: {
+              en_text: 'A tree where each node has at most two children',
+              he_text: 'עץ בו לכל צומת יש לכל היותר שני ילדים',
+            },
+            isCorrect: true,
+          },
+          {
+            id: 'c3d4e5f6-7a8b-4c9d-ae1f-3a4b5c6d7e81',
+            translationId: '9e2f4a1c-3d5e-4b7f-8a9d-1c2e3f4a5b6c',
+            text: {
+              en_text: 'A tree where each node has exactly two children',
+              he_text: 'עץ בו לכל צומת יש בדיוק שני ילדים',
+            },
+            isCorrect: false,
+          },
+          {
+            id: 'c3d4e5f6-7a8b-4c9d-ae1f-3a4b5c6d7e82',
+            translationId: '1f3e5a7c-4b6d-4e8f-9a1c-2d3e4f5a6b7c',
+            text: {
+              en_text: 'A tree with only binary data',
+              he_text: 'עץ עם נתונים בינאריים בלבד',
+            },
+            isCorrect: false,
+          },
+          {
+            id: 'c3d4e5f6-7a8b-4c9d-ae1f-3a4b5c6d7e83',
+            translationId: '2a4c6e8f-5b7d-4f9a-8c1e-3d4e5f6a7b8c',
+            text: {
+              en_text: 'A tree with two root nodes',
+              he_text: 'עץ עם שני צמתי שורש',
+            },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'd4e5f6a7-8b9c-4dae-af2a-4b5c6d7e8f90',
+    translationId: 'd4e5f6a7-8b9c-4dae-af2a-4b5c6d7e8f90',
+    text: {
+      en_text: 'What is the root of a binary tree',
+      he_text: 'מה זה השורש של עץ בינארי',
+    },
+    type: QuestionType.selection,
+    moduleId: 'f8c9d5e1-2a3b-4c6d-8e9f-1a2b3c4d5e6f',
+    answers: [
+      {
+        id: 'd4e5f6a7-8b9c-4dae-1f2a-answer2222222',
+        selectAnswers: [
+          {
+            id: 'd4e5f6a7-8b9c-4dae-af2a-4b5c6d7e8f90',
+            translationId: '3b5d7f9a-6c8e-4a1c-9d2e-4e5f6a7b8c9d',
+            text: {
+              en_text: 'The topmost node in the tree',
+              he_text: 'הצומת העליון ביותר בעץ',
+            },
+            isCorrect: true,
+          },
+          {
+            id: 'af3ff0aa-3771-4b9f-9d20-78df8938cd44',
+            translationId: '4c6e8a1c-7d9f-4b2d-8e1f-5f6a7b8c9d1e',
+            text: {
+              en_text: 'The bottommost node in the tree',
+              he_text: 'הצומת התחתון ביותר בעץ',
+            },
+            isCorrect: false,
+          },
+          {
+            id: 'e5df651e-9140-4ae7-87b8-1505f2537c98',
+            translationId: '5d7f9b2e-8e1a-4c3e-9f2a-6a7b8c9d1e2f',
+            text: {
+              en_text: 'Any node with two children',
+              he_text: 'כל צומת עם שני ילדים',
+            },
+            isCorrect: false,
+          },
+          {
+            id: 'fed14392-b87b-4978-b3dc-f84a6db7dc5c',
+            translationId: '6e8a1c3f-9f2b-4d4f-8a3b-7b8c9d1e2f3a',
+            text: {
+              en_text: 'A node with no parent and no children',
+              he_text: 'צומת ללא הורה וללא ילדים',
+            },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'e5f6a7b8-9cad-4e1f-aa3b-5c6d7e8f9aab',
+    translationId: 'e5f6a7b8-9cad-4e1f-aa3b-5c6d7e8f9aab',
+    text: {
+      en_text: 'What is a leaf node in a binary tree',
+      he_text: 'מה זה צומת עלה בעץ בינארי',
+    },
+    type: QuestionType.selection,
+    moduleId: 'f8c9d5e1-2a3b-4c6d-8e9f-1a2b3c4d5e6f',
+    answers: [
+      {
+        id: 'e5f6a7b8-9cad-4e1f-2a3b-answer3333333',
+        selectAnswers: [
+          {
+            id: 'e5f6a7b8-9cad-4e1f-aa3b-5c6d7e8f9aa0',
+            translationId: '7f9c1e3a-ad2f-4e5a-9b4c-8c9d1e2f3a4b',
+            text: {
+              en_text: 'A node with no children',
+              he_text: 'צומת ללא ילדים',
+            },
+            isCorrect: true,
+          },
+          {
+            id: 'e5f6a7b8-9cad-4e1f-aa3b-5c6d7e8f9aa1',
+            translationId: '8aad2f3b-1e4c-4f6b-ac5d-9d1e2f3a4b5c',
+            text: {
+              en_text: 'A node with two children',
+              he_text: 'צומת עם שני ילדים',
+            },
+            isCorrect: false,
+          },
+          {
+            id: 'e5f6a7b8-9cad-4e1f-aa3b-5c6d7e8f9aa2',
+            translationId: '9b1e3c4d-2f5e-4a7c-ad6e-ae2f3a4b5c6d',
+            text: {
+              en_text: 'The root node',
+              he_text: 'צומת השורש',
+            },
+            isCorrect: false,
+          },
+          {
+            id: 'e5f6a7b8-9cad-4e1f-aa3b-5c6d7e8f9aa3',
+            translationId: 'ac2f4d5e-3a6f-418d-ae7f-1f3a4b5c6d7e',
+            text: {
+              en_text: 'A node with one child',
+              he_text: 'צומת עם ילד אחד',
+            },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'f6a7b8c9-ad1e-4f2a-ab4c-6d7e8f9aab1c',
+    translationId: 'f6a7b8c9-ad1e-4f2a-ab4c-6d7e8f9aab1c',
+    text: {
+      en_text:
+        'What is the maximum number of children a node can have in a binary tree',
+      he_text: 'מה המספר המקסימלי של ילדים שיכול להיות לצומת בעץ בינארי',
+    },
+    type: QuestionType.value,
+    moduleId: 'f8c9d5e1-2a3b-4c6d-8e9f-1a2b3c4d5e6f',
+    answers: [
+      {
+        id: 'f6a7b8c9-ad1e-4f2a-3b4c-answer4444444',
+        numberAnswer: {
+          id: 'f6a7b8c9-ad1e-4f2a-3b4c-number4444444',
+          value: 2,
+        },
+      },
+    ],
+  },
+  {
+    id: 'a7b8c9da-1e2f-4a3b-ac5d-7e8f9aab1c2d',
+    translationId: 'a7b8c9da-1e2f-4a3b-ac5d-7e8f9aab1c2d',
+    text: {
+      en_text:
+        'What is the height of a binary tree with only one node (the root)',
+      he_text: 'מה הגובה של עץ בינארי עם צומת אחד בלבד (השורש)',
+    },
+    type: QuestionType.value,
+    moduleId: 'f8c9d5e1-2a3b-4c6d-8e9f-1a2b3c4d5e6f',
+    answers: [
+      {
+        id: 'a7b8c9da-1e2f-4a3b-4c5d-answer5555555',
+        numberAnswer: {
+          id: 'a7b8c9da-1e2f-4a3b-4c5d-number5555555',
+          value: 0,
+        },
+      },
+    ],
+  },
+  // Additional Binary Trees Questions (6-30)
+  {
+    id: 'b8c9daeb-2f3a-4b5c-ad7e-8f9aab1c2d3e',
+    translationId: 'b8c9daeb-2f3a-4b5c-ad7e-8f9aab1c2d3e',
+    text: {
+      en_text:
+        'In-order traversal of a binary tree visits nodes in which order',
+      he_text: 'מעבר in-order בעץ בינארי מבקר בצמתים באיזה סדר',
+    },
+    type: QuestionType.selection,
+    moduleId: 'f8c9d5e1-2a3b-4c6d-8e9f-1a2b3c4d5e6f',
+    answers: [
+      {
+        id: 'b8c9daeb-2f3a-4b5c-6d7e-answer6666666',
+        selectAnswers: [
+          {
+            id: 'b8c9daeb-2f3a-4b5c-ad7e-8f9aab1c2d30',
+            translationId: '1d3f5a7c-4e6b-417e-ab5c-2f3a4b5c6d7e',
+            text: {
+              en_text: 'Left subtree, Root, Right subtree',
+              he_text: 'תת-עץ שמאלי, שורש, תת-עץ ימני',
+            },
+            isCorrect: true,
+          },
+          {
+            id: 'b8c9daeb-2f3a-4b5c-ad7e-8f9aab1c2d31',
+            translationId: '2e4a6b8d-5f7c-428f-ac6d-3a4b5c6d7e8f',
+            text: {
+              en_text: 'Root, Left subtree, Right subtree',
+              he_text: 'שורש, תת-עץ שמאלי, תת-עץ ימני',
+            },
+            isCorrect: false,
+          },
+          {
+            id: 'b8c9daeb-2f3a-4b5c-ad7e-8f9aab1c2d32',
+            translationId: '3f5b7c9e-6a8d-439a-ad7e-4b5c6d7e8f9a',
+            text: {
+              en_text: 'Left subtree, Right subtree, Root',
+              he_text: 'תת-עץ שמאלי, תת-עץ ימני, שורש',
+            },
+            isCorrect: false,
+          },
+          {
+            id: 'b8c9daeb-2f3a-4b5c-ad7e-8f9aab1c2d33',
+            translationId: '4a6c8eaa-7b9e-44ab-ae8f-5c6d7e8f9aab',
+            text: {
+              en_text: 'Right subtree, Root, Left subtree',
+              he_text: 'תת-עץ ימני, שורש, תת-עץ שמאלי',
+            },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'c9dae1f2-3a4b-4c6d-ae8f-9aab1c2d3e4f',
+    translationId: 'c9dae1f2-3a4b-4c6d-ae8f-9aab1c2d3e4f',
+    text: {
+      en_text:
+        'What is the time complexity of searching in a balanced binary search tree',
+      he_text: 'מה המורכבות הזמנית של חיפוש בעץ חיפוש בינארי מאוזן',
+    },
+    type: QuestionType.selection,
+    moduleId: 'f8c9d5e1-2a3b-4c6d-8e9f-1a2b3c4d5e6f',
+    answers: [
+      {
+        id: 'c9dae1f2-3a4b-5c6d-7e8f-answer7777777',
+        selectAnswers: [
+          {
+            id: 'c9dae1f2-3a4b-4c6d-ae8f-9aab1c2d3e40',
+            translationId: '5b7d9f1b-8caf-45bc-af9a-8d7e8f9aab1c',
+            text: {
+              en_text: 'O(log n)',
+              he_text: 'O(log n)',
+            },
+            isCorrect: true,
+          },
+          {
+            id: 'c9dae1f2-3a4b-4c6d-ae8f-9aab1c2d3e41',
+            translationId: '6c8eaa2c-9d1a-46cd-aaab-8e8f9aab1c2d',
+            text: {
+              en_text: 'O(n)',
+              he_text: 'O(n)',
+            },
+            isCorrect: false,
+          },
+          {
+            id: 'c9dae1f2-3a4b-4c6d-ae8f-9aab1c2d3e42',
+            translationId: '7d9f1b3d-ae2b-47de-ab1c-8f9aab1c2d3e',
+            text: {
+              en_text: 'O(1)',
+              he_text: 'O(1)',
+            },
+            isCorrect: false,
+          },
+          {
+            id: 'b2d457cd-aa4b-43e2-b737-9462fa052d90',
+            translationId: '744e652c-6228-42ea-bbaf-6d3b65eac599',
+            text: {
+              en_text: 'O(n²)',
+              he_text: 'O(n²)',
+            },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '818ae7ae-9f27-48eb-b896-00f09e7910ca',
+    translationId: '818ae7ae-9f27-48eb-b896-00f09e7910ca',
+    text: {
+      en_text: 'What is a complete binary tree',
+      he_text: 'מה זה עץ בינארי שלם',
+    },
+    type: QuestionType.selection,
+    moduleId: 'f8c9d5e1-2a3b-4c6d-8e9f-1a2b3c4d5e6f',
+    answers: [
+      {
+        id: 'dae1f2a3-4b5c-6d7e-8f9a-answer8888888',
+        selectAnswers: [
+          {
+            id: 'afa01335-05ff-4667-a03d-9072933236a0',
+            translationId: '9f1b3d5f-2a4d-49fa-8d3e-aab1c2d3e4f5',
+            text: {
+              en_text:
+                'All levels are filled except possibly the last level which is filled from left to right',
+              he_text: 'כל הרמות מלאות פרט אולי לרמה האחרונה שמלאה משמאל לימין',
+            },
+            isCorrect: true,
+          },
+          {
+            id: 'c77ee7ae-b794-4fca-b02f-fff66a3c0e2f',
+            translationId: 'aa2c4e6a-3b5e-4aab-9e4f-1c2d3e4f5a6b',
+            text: {
+              en_text: 'All internal nodes have exactly two children',
+              he_text: 'לכל הצמתים הפנימיים יש בדיוק שני ילדים',
+            },
+            isCorrect: false,
+          },
+          {
+            id: 'c09c84b7-fcc8-43df-9f61-d4a15a1999b8',
+            translationId: '1b3d5f7b-4c6f-41bc-af5a-2d3e4f5a6b7c',
+            text: {
+              en_text: 'All leaves are at the same level',
+              he_text: 'כל העלים באותה רמה',
+            },
+            isCorrect: false,
+          },
+          {
+            id: '5e2f2b08-26ca-4fc4-a4c6-e6c55eb7254b',
+            translationId: '75f031c8-3a7d-4f09-8e5d-d71144e158b4',
+            text: {
+              en_text: 'The tree has exactly 2^n - 1 nodes',
+              he_text: 'לעץ יש בדיוק 2^n - 1 צמתים',
+            },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'd87215a6-e296-4bdc-acae-f444cf963ae2',
+    translationId: 'd87215a6-e296-4bdc-acae-f444cf963ae2',
+    text: {
+      en_text: 'In a binary search tree, all values in the left subtree are',
+      he_text: 'בעץ חיפוש בינארי, כל הערכים בתת-העץ השמאלי הם',
+    },
+    type: QuestionType.selection,
+    moduleId: 'f8c9d5e1-2a3b-4c6d-8e9f-1a2b3c4d5e6f',
+    answers: [
+      {
+        id: 'e1f2a3b4-5c6d-7e8f-9aab-answer9999999',
+        selectAnswers: [
+          {
+            id: '16d3edf5-a034-49da-8b73-d749a8141c9f',
+            translationId: '3a1fcd00-cd75-4323-8d58-963090db7050',
+            text: {
+              en_text: 'Less than the root',
+              he_text: 'קטנים מהשורש',
+            },
+            isCorrect: true,
+          },
+          {
+            id: 'd83ea3fb-b5bc-4175-9f11-7caa84e1f345',
+            translationId: '8de9522d-9e71-45b5-8b72-60a853ca387f',
+            text: {
+              en_text: 'Greater than the root',
+              he_text: 'גדולים מהשורש',
+            },
+            isCorrect: false,
+          },
+          {
+            id: '6d8a3be7-1c36-4efb-9829-76470e9fea3e',
+            translationId: '78063f15-94d4-4265-9480-b9fc14eb7779',
+            text: {
+              en_text: 'Equal to the root',
+              he_text: 'שווים לשורש',
+            },
+            isCorrect: false,
+          },
+          {
+            id: 'b0ffc126-fc14-4fe6-b84a-3c89c5b908b8',
+            translationId: 'a42be639-5277-48d6-a230-f66eb474544d',
+            text: {
+              en_text: 'Either less than or equal to the root',
+              he_text: 'קטנים או שווים לשורש',
+            },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'c9dd092b-057e-4449-a68a-8109a96ccccb',
+    translationId: 'c9dd092b-057e-4449-a68a-8109a96ccccb',
+    text: {
+      en_text: 'What is the maximum height of a binary tree with n nodes',
+      he_text: 'מה הגובה המקסימלי של עץ בינארי עם n צמתים',
+    },
+    type: QuestionType.selection,
+    moduleId: 'f8c9d5e1-2a3b-4c6d-8e9f-1a2b3c4d5e6f',
+    answers: [
+      {
+        id: 'f2a3b4c5-6d7e-8f9a-aab1-answer0000000',
+        selectAnswers: [
+          {
+            id: '4439e39d-0fdb-4721-9cab-243bbec5e289',
+            translationId: '1f4871db-a3e5-4c58-886b-22e46e4a5dfe',
+            text: {
+              en_text: 'n - 1',
+              he_text: 'n - 1',
+            },
+            isCorrect: true,
+          },
+          {
+            id: 'e87b7187-3bfd-414f-ab8b-b022eea89c5e',
+            translationId: '85904df1-6d15-4ff9-b984-ff15af8c2807',
+            text: {
+              en_text: 'log n',
+              he_text: 'log n',
+            },
+            isCorrect: false,
+          },
+          {
+            id: '3eb0cf38-c442-4479-862f-a0219d307336',
+            translationId: '9d1f3b5d-2e4b-49de-8b3c-af1a2b3c4d5e',
+            text: {
+              en_text: 'n',
+              he_text: 'n',
+            },
+            isCorrect: false,
+          },
+          {
+            id: '7dd68e2f-2919-449e-a4fb-3d551516c1d8',
+            translationId: 'ae2a4c6e-3f5c-4aef-9c4d-1a2b3c4d5e6f',
+            text: {
+              en_text: '2^n - 1',
+              he_text: '2^n - 1',
+            },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
   {
     id: '4772edba-f192-4364-9abc-715040763696',
     translationId: 'd39c0ad3-92d1-4290-b604-0033444b6f03',
@@ -3805,8 +4274,8 @@ export const QUESTIONS: QuestionSeedData[] = [
     ],
   },
   {
-    id: 'f1b2c3d4-1111-5678-901a-bcdef0123456',
-    translationId: 'f1b2c3d4-1111-5678-901a-bcdef0123456',
+    id: '1c01fb9c-eedf-4792-9c4e-7868098f0254',
+    translationId: '1c01fb9c-eedf-4792-9c4e-7868098f0254',
     text: {
       en_text: "If F'(x) = x² and F(0) = 5, what is F(2)?",
       he_text: "אם F'(x) = x² ו-F(0) = 5, מה הוא F(2)?",
@@ -3816,17 +4285,17 @@ export const QUESTIONS: QuestionSeedData[] = [
     moduleId: '1d2e3f4a-5b6c-4d7e-8f9a-0b1c2d3e4f5a',
     answers: [
       {
-        id: 'f1b2c3d4-1111-5678-901a-bcdef0123457',
+        id: 'c371ef3f-1be2-46c3-8f7a-338fd983601e',
         numberAnswer: {
-          id: 'f1b2c3d4-1111-5678-901a-bcdef0123458',
+          id: '65b76340-412e-42df-a5c0-1435ef273f1b',
           value: 7.667,
         },
       },
     ],
   },
   {
-    id: 'f2b2c3d4-2222-5678-901a-bcdef0123456',
-    translationId: 'f2b2c3d4-2222-5678-901a-bcdef0123456',
+    id: 'ed852db8-47b4-4632-9032-b8ad4447f6de',
+    translationId: 'ed852db8-47b4-4632-9032-b8ad4447f6de',
     text: {
       en_text: 'Calculate ∫[0,1] (2x + 3) dx',
       he_text: 'חשב ∫[0,1] (2x + 3) dx',
@@ -3836,17 +4305,17 @@ export const QUESTIONS: QuestionSeedData[] = [
     moduleId: '1d2e3f4a-5b6c-4d7e-8f9a-0b1c2d3e4f5a',
     answers: [
       {
-        id: 'f2b2c3d4-2222-5678-901a-bcdef0123457',
+        id: '92ee7f0b-c860-4d44-bb49-bab1a0d8219a',
         numberAnswer: {
-          id: 'f2b2c3d4-2222-5678-901a-bcdef0123458',
+          id: 'b5440b1c-d752-4bdd-9a2c-a06d45c16360',
           value: 4,
         },
       },
     ],
   },
   {
-    id: 'f3b2c3d4-3333-5678-901a-bcdef0123456',
-    translationId: 'f3b2c3d4-3333-5678-901a-bcdef0123456',
+    id: 'a2de90e6-8816-4185-b876-0e0408f53d1b',
+    translationId: 'a2de90e6-8816-4185-b876-0e0408f53d1b',
     text: {
       en_text:
         'What is the relationship between differentiation and integration according to the Fundamental Formula?',
@@ -3857,11 +4326,11 @@ export const QUESTIONS: QuestionSeedData[] = [
     moduleId: '1d2e3f4a-5b6c-4d7e-8f9a-0b1c2d3e4f5a',
     answers: [
       {
-        id: 'f3b2c3d4-3333-5678-901a-bcdef0123457',
+        id: 'e33dddc3-3efc-4230-91c4-ecac91ecb4eb',
         selectAnswers: [
           {
-            id: 'f3b2c3d4-3333-5678-901a-bcdef0123458',
-            translationId: 'f3b2c3d4-3333-5678-901a-bcdef0123458',
+            id: '80882bef-8026-41c1-ae66-d627c58539a6',
+            translationId: '80882bef-8026-41c1-ae66-d627c58539a6',
             text: {
               en_text: 'They are inverse operations',
               he_text: 'הן פעולות הפוכות',
@@ -3869,8 +4338,8 @@ export const QUESTIONS: QuestionSeedData[] = [
             isCorrect: true,
           },
           {
-            id: 'f3b2c3d4-3333-5678-901a-bcdef0123459',
-            translationId: 'f3b2c3d4-3333-5678-901a-bcdef0123459',
+            id: 'd47874ee-917b-435b-aff5-61b0b556fe00',
+            translationId: 'd47874ee-917b-435b-aff5-61b0b556fe00',
             text: {
               en_text: 'They are identical operations',
               he_text: 'הן פעולות זהות',
@@ -3878,8 +4347,8 @@ export const QUESTIONS: QuestionSeedData[] = [
             isCorrect: false,
           },
           {
-            id: 'f3b2c3d4-3333-5678-901a-bcdef012345a',
-            translationId: 'f3b2c3d4-3333-5678-901a-bcdef012345a',
+            id: '67e73858-c218-4a89-b46b-116fa5ddb392',
+            translationId: '67e73858-c218-4a89-b46b-116fa5ddb392',
             text: {
               en_text: 'They are unrelated operations',
               he_text: 'הן פעולות לא קשורות',
@@ -3887,8 +4356,8 @@ export const QUESTIONS: QuestionSeedData[] = [
             isCorrect: false,
           },
           {
-            id: 'f3b2c3d4-3333-5678-901a-bcdef012345b',
-            translationId: 'f3b2c3d4-3333-5678-901a-bcdef012345b',
+            id: 'c623041d-44f4-41f6-9864-2eec030d32cc',
+            translationId: 'c623041d-44f4-41f6-9864-2eec030d32cc',
             text: {
               en_text: 'They can only be used together',
               he_text: 'ניתן להשתמש בהן רק יחד',
@@ -3901,8 +4370,8 @@ export const QUESTIONS: QuestionSeedData[] = [
   },
   // Upper Sums questions
   {
-    id: 'a1b2c3d4-4444-5678-901a-bcdef0123456',
-    translationId: 'a1b2c3d4-4444-5678-901a-bcdef0123456',
+    id: '1e96dd52-45d6-43eb-8c3a-2b8bd80cb11d',
+    translationId: '1e96dd52-45d6-43eb-8c3a-2b8bd80cb11d',
     text: {
       en_text: 'What is an upper sum in the context of Riemann integration?',
       he_text: 'מהו סכום עליון בהקשר של אינטגרל רימן?',
@@ -3912,11 +4381,11 @@ export const QUESTIONS: QuestionSeedData[] = [
     moduleId: 'a1b2c3d4-5e6f-4a8b-9c0d-2e3f4a5b6c7d',
     answers: [
       {
-        id: 'a1b2c3d4-4444-5678-901a-bcdef0123457',
+        id: 'e7774c7f-a4d0-4cba-bc64-dc13e3e48449',
         selectAnswers: [
           {
-            id: 'a1b2c3d4-4444-5678-901a-bcdef0123458',
-            translationId: 'a1b2c3d4-4444-5678-901a-bcdef0123458',
+            id: 'f93a4e1b-dc4c-41df-9ce4-8d0f2da578bd',
+            translationId: 'f93a4e1b-dc4c-41df-9ce4-8d0f2da578bd',
             text: {
               en_text:
                 'The sum using the maximum value of the function in each subinterval',
@@ -3925,8 +4394,8 @@ export const QUESTIONS: QuestionSeedData[] = [
             isCorrect: true,
           },
           {
-            id: 'a1b2c3d4-4444-5678-901a-bcdef0123459',
-            translationId: 'a1b2c3d4-4444-5678-901a-bcdef0123459',
+            id: 'dc55f4f8-aab4-4990-a449-eebbf122f2f5',
+            translationId: 'dc55f4f8-aab4-4990-a449-eebbf122f2f5',
             text: {
               en_text:
                 'The sum using the minimum value of the function in each subinterval',
@@ -3935,8 +4404,8 @@ export const QUESTIONS: QuestionSeedData[] = [
             isCorrect: false,
           },
           {
-            id: 'a1b2c3d4-4444-5678-901a-bcdef012345a',
-            translationId: 'a1b2c3d4-4444-5678-901a-bcdef012345a',
+            id: '7fa40845-f4e8-40ec-97dc-5d06cbbc2ee7',
+            translationId: '7fa40845-f4e8-40ec-97dc-5d06cbbc2ee7',
             text: {
               en_text:
                 'The sum using the average value of the function in each subinterval',
@@ -3945,8 +4414,8 @@ export const QUESTIONS: QuestionSeedData[] = [
             isCorrect: false,
           },
           {
-            id: 'a1b2c3d4-4444-5678-901a-bcdef012345b',
-            translationId: 'a1b2c3d4-4444-5678-901a-bcdef012345b',
+            id: '7697e4c5-4925-4ba8-aefd-5ba38944bcbc',
+            translationId: '7697e4c5-4925-4ba8-aefd-5ba38944bcbc',
             text: {
               en_text:
                 'The sum using the midpoint value of the function in each subinterval',
@@ -3959,8 +4428,8 @@ export const QUESTIONS: QuestionSeedData[] = [
     ],
   },
   {
-    id: 'a1b2c3d4-5555-5678-901a-bcdef0123456',
-    translationId: 'a1b2c3d4-5555-5678-901a-bcdef0123456',
+    id: '65f191e3-41fe-4dc7-9f1d-3ace05dec094',
+    translationId: '65f191e3-41fe-4dc7-9f1d-3ace05dec094',
     text: {
       en_text: 'How do upper sums relate to the definite integral?',
       he_text: 'איך סכומים עליונים קשורים לאינטגרל המסוים?',
@@ -3970,11 +4439,11 @@ export const QUESTIONS: QuestionSeedData[] = [
     moduleId: 'a1b2c3d4-5e6f-4a8b-9c0d-2e3f4a5b6c7d',
     answers: [
       {
-        id: 'a1b2c3d4-5555-5678-901a-bcdef0123457',
+        id: '7d88e065-5a8b-4e81-b34e-50e69479251b',
         selectAnswers: [
           {
-            id: 'a1b2c3d4-5555-5678-901a-bcdef0123458',
-            translationId: 'a1b2c3d4-5555-5678-901a-bcdef0123458',
+            id: '13bb76f3-2f6c-4c32-a48a-b56e3136b3ba',
+            translationId: '13bb76f3-2f6c-4c32-a48a-b56e3136b3ba',
             text: {
               en_text:
                 'Upper sums provide an upper bound for the definite integral',
@@ -3983,8 +4452,8 @@ export const QUESTIONS: QuestionSeedData[] = [
             isCorrect: true,
           },
           {
-            id: 'a1b2c3d4-5555-5678-901a-bcdef0123459',
-            translationId: 'a1b2c3d4-5555-5678-901a-bcdef0123459',
+            id: '7df75f89-f3d9-4f86-8902-89ac9378c1fe',
+            translationId: '7df75f89-f3d9-4f86-8902-89ac9378c1fe',
             text: {
               en_text:
                 'Upper sums provide a lower bound for the definite integral',
@@ -3993,8 +4462,8 @@ export const QUESTIONS: QuestionSeedData[] = [
             isCorrect: false,
           },
           {
-            id: 'a1b2c3d4-5555-5678-901a-bcdef012345a',
-            translationId: 'a1b2c3d4-5555-5678-901a-bcdef012345a',
+            id: 'e2e039ca-62a8-42f6-a002-0335db0069d5',
+            translationId: 'e2e039ca-62a8-42f6-a002-0335db0069d5',
             text: {
               en_text: 'Upper sums equal the definite integral exactly',
               he_text: 'סכומים עליונים שווים לאינטגרל המסוים בדיוק',
@@ -4002,8 +4471,8 @@ export const QUESTIONS: QuestionSeedData[] = [
             isCorrect: false,
           },
           {
-            id: 'a1b2c3d4-5555-5678-901a-bcdef012345b',
-            translationId: 'a1b2c3d4-5555-5678-901a-bcdef012345b',
+            id: '349b2d53-8876-4757-8da3-f44e98f29efb',
+            translationId: '349b2d53-8876-4757-8da3-f44e98f29efb',
             text: {
               en_text: 'Upper sums are unrelated to the definite integral',
               he_text: 'סכומים עליונים לא קשורים לאינטגרל המסוים',
@@ -4016,8 +4485,8 @@ export const QUESTIONS: QuestionSeedData[] = [
   },
   // Lower Sums questions
   {
-    id: 'b2c3d4e5-6666-5678-901a-bcdef0123456',
-    translationId: 'b2c3d4e5-6666-5678-901a-bcdef0123456',
+    id: '2906e9e4-8565-4096-9a7b-516366f991a3',
+    translationId: '2906e9e4-8565-4096-9a7b-516366f991a3',
     text: {
       en_text: 'What is a lower sum in the context of Riemann integration?',
       he_text: 'מהו סכום תחתון בהקשר של אינטגרל רימן?',
@@ -4027,11 +4496,11 @@ export const QUESTIONS: QuestionSeedData[] = [
     moduleId: '28a65ee2-09c0-4a86-a920-34c5f2a0f0d7',
     answers: [
       {
-        id: 'b2c3d4e5-6666-5678-901a-bcdef0123457',
+        id: '955a60fa-9454-403e-a018-1b9ad4519996',
         selectAnswers: [
           {
-            id: 'd3e4f5a6-7777-5678-901a-bcdef0123458',
-            translationId: 'd3e4f5a6-7777-5678-901a-bcdef0123458',
+            id: 'f8953019-63b2-4375-b86f-48ab5fd11d56',
+            translationId: 'f8953019-63b2-4375-b86f-48ab5fd11d56',
             text: {
               en_text:
                 'The sum using the minimum value of the function in each subinterval for lower sums',
@@ -4041,8 +4510,8 @@ export const QUESTIONS: QuestionSeedData[] = [
             isCorrect: true,
           },
           {
-            id: 'd3e4f5a6-7777-5678-901a-bcdef0123459',
-            translationId: 'd3e4f5a6-7777-5678-901a-bcdef0123459',
+            id: 'c8191d7f-484b-49b7-9f8e-55c59da544d5',
+            translationId: 'c8191d7f-484b-49b7-9f8e-55c59da544d5',
             text: {
               en_text:
                 'The sum using the maximum value of the function in each subinterval for lower sums',
@@ -4052,8 +4521,8 @@ export const QUESTIONS: QuestionSeedData[] = [
             isCorrect: false,
           },
           {
-            id: 'd3e4f5a6-7777-5678-901a-bcdef012345a',
-            translationId: 'd3e4f5a6-7777-5678-901a-bcdef012345a',
+            id: '64eaf0b2-e475-493f-af30-18b2d35709bb',
+            translationId: '64eaf0b2-e475-493f-af30-18b2d35709bb',
             text: {
               en_text:
                 'The sum using the average value of the function in each subinterval for lower sums',
@@ -4063,8 +4532,8 @@ export const QUESTIONS: QuestionSeedData[] = [
             isCorrect: false,
           },
           {
-            id: 'd3e4f5a6-7777-5678-901a-bcdef012345b',
-            translationId: 'd3e4f5a6-7777-5678-901a-bcdef012345b',
+            id: '55516141-95ba-48da-a0c6-781de549b30d',
+            translationId: '55516141-95ba-48da-a0c6-781de549b30d',
             text: {
               en_text:
                 'The sum using the midpoint value of the function in each subinterval for lower sums',
@@ -4078,8 +4547,8 @@ export const QUESTIONS: QuestionSeedData[] = [
     ],
   },
   {
-    id: 'b2c3d4e5-7777-5678-901a-bcdef0123456',
-    translationId: 'b2c3d4e5-7777-5678-901a-bcdef0123456',
+    id: '5dedb416-8cfb-4a84-b1e3-4305e10689fd',
+    translationId: '5dedb416-8cfb-4a84-b1e3-4305e10689fd',
     text: {
       en_text: 'How do lower sums relate to the definite integral?',
       he_text: 'איך סכומים תחתונים קשורים לאינטגרל המסוים?',
@@ -4089,11 +4558,11 @@ export const QUESTIONS: QuestionSeedData[] = [
     moduleId: '28a65ee2-09c0-4a86-a920-34c5f2a0f0d7',
     answers: [
       {
-        id: 'b2c3d4e5-7777-5678-901a-bcdef0123457',
+        id: 'b8498467-eac2-4528-816b-13ffb71d66eb',
         selectAnswers: [
           {
-            id: 'b2c3d4e5-7777-5678-901a-bcdef0123458',
-            translationId: 'b2c3d4e5-7777-5678-901a-bcdef0123458',
+            id: 'd87aa945-912f-48f6-b71f-c6c650972646',
+            translationId: 'd87aa945-912f-48f6-b71f-c6c650972646',
             text: {
               en_text:
                 'Lower sums provide a lower bound for the definite integral',
@@ -4102,8 +4571,8 @@ export const QUESTIONS: QuestionSeedData[] = [
             isCorrect: true,
           },
           {
-            id: 'b2c3d4e5-7777-5678-901a-bcdef0123459',
-            translationId: 'b2c3d4e5-7777-5678-901a-bcdef0123459',
+            id: '4b3aabfb-f391-4f3d-b198-cf6d59336084',
+            translationId: '4b3aabfb-f391-4f3d-b198-cf6d59336084',
             text: {
               en_text:
                 'Lower sums provide an upper bound for the definite integral',
@@ -4112,8 +4581,8 @@ export const QUESTIONS: QuestionSeedData[] = [
             isCorrect: false,
           },
           {
-            id: 'b2c3d4e5-7777-5678-901a-bcdef012345a',
-            translationId: 'b2c3d4e5-7777-5678-901a-bcdef012345a',
+            id: 'a3427f9a-3774-4be3-867f-b2092fb199f6',
+            translationId: 'a3427f9a-3774-4be3-867f-b2092fb199f6',
             text: {
               en_text: 'Lower sums equal the definite integral exactly',
               he_text: 'סכומים תחתונים שווים לאינטגרל המסוים בדיוק',
@@ -4121,8 +4590,8 @@ export const QUESTIONS: QuestionSeedData[] = [
             isCorrect: false,
           },
           {
-            id: 'b2c3d4e5-7777-5678-901a-bcdef012345b',
-            translationId: 'b2c3d4e5-7777-5678-901a-bcdef012345b',
+            id: '8aa8914b-bc50-4e67-8cf4-542eb7424e23',
+            translationId: '8aa8914b-bc50-4e67-8cf4-542eb7424e23',
             text: {
               en_text: 'Lower sums are unrelated to the definite integral',
               he_text: 'סכומים תחתונים לא קשורים לאינטגרל המסוים',
@@ -4134,8 +4603,8 @@ export const QUESTIONS: QuestionSeedData[] = [
     ],
   },
   {
-    id: 'c3d4e5f6-8888-5678-901a-bcdef0123456',
-    translationId: 'c3d4e5f6-8888-5678-901a-bcdef0123456',
+    id: 'de8d4330-0e4f-440c-874a-58a63441b07d',
+    translationId: 'de8d4330-0e4f-440c-874a-58a63441b07d',
     text: {
       en_text:
         'What happens when the number of subintervals approaches infinity in upper and lower sums?',
@@ -4147,11 +4616,11 @@ export const QUESTIONS: QuestionSeedData[] = [
     moduleId: 'a1b2c3d4-5e6f-4a8b-9c0d-2e3f4a5b6c7d',
     answers: [
       {
-        id: 'c3d4e5f6-8888-5678-901a-bcdef0123457',
+        id: '6c116e48-5b1b-412e-a8d6-247e8baad789',
         selectAnswers: [
           {
-            id: 'c3d4e5f6-8888-5678-901a-bcdef0123458',
-            translationId: 'c3d4e5f6-8888-5678-901a-bcdef0123458',
+            id: 'ebb209e2-7c91-4aa4-a2e5-cca8c7bd57c6',
+            translationId: 'ebb209e2-7c91-4aa4-a2e5-cca8c7bd57c6',
             text: {
               en_text:
                 'Both upper and lower sums converge to the definite integral',
@@ -4160,8 +4629,8 @@ export const QUESTIONS: QuestionSeedData[] = [
             isCorrect: true,
           },
           {
-            id: 'c3d4e5f6-8888-5678-901a-bcdef0123459',
-            translationId: 'c3d4e5f6-8888-5678-901a-bcdef0123459',
+            id: '41265572-8ec8-4eed-936d-e7af8b0a3ba0',
+            translationId: '41265572-8ec8-4eed-936d-e7af8b0a3ba0',
             text: {
               en_text: 'Only upper sums converge to the definite integral',
               he_text: 'רק סכומים עליונים מתכנסים לאינטגרל המסוים',
@@ -4169,8 +4638,8 @@ export const QUESTIONS: QuestionSeedData[] = [
             isCorrect: false,
           },
           {
-            id: 'c3d4e5f6-8888-5678-901a-bcdef012345a',
-            translationId: 'c3d4e5f6-8888-5678-901a-bcdef012345a',
+            id: '5707832c-93aa-466a-914e-2b359ae685a5',
+            translationId: '5707832c-93aa-466a-914e-2b359ae685a5',
             text: {
               en_text: 'Only lower sums converge to the definite integral',
               he_text: 'רק סכומים תחתונים מתכנסים לאינטגרל המסוים',
@@ -4178,8 +4647,8 @@ export const QUESTIONS: QuestionSeedData[] = [
             isCorrect: false,
           },
           {
-            id: 'c3d4e5f6-8888-5678-901a-bcdef012345b',
-            translationId: 'c3d4e5f6-8888-5678-901a-bcdef012345b',
+            id: '47377013-0153-460c-8ef4-9ecf306495e4',
+            translationId: '47377013-0153-460c-8ef4-9ecf306495e4',
             text: {
               en_text: 'Neither upper nor lower sums converge',
               he_text: 'לא סכומים עליונים ולא תחתונים מתכנסים',

@@ -100,7 +100,7 @@ export const seedModules = async (
       'Mathematical Recursion': '31b7ef41-3b67-4181-ba4d-c6170399a6d9',
       'Pigeonhole Principle': '7cd0a3cf-23ee-44fc-ab71-aa6493eb4219',
       'Generating Functions': 'eb656561-a030-482a-99d2-d648d7a4b6b1',
-      'Introduction to Logic': '1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d',
+      'Introduction to Logic': '15152e02-3216-4040-8ca3-1711f15ec4d2',
       'Basic Logic Concepts': '2b3c4d5e-6f7a-4b8c-9d0e-1f2a3b4c5d6e',
       'Logical Operators': '3c4d5e6f-7a8b-4c9d-a0ef-2a3b4c5d6e7f',
       'Truth Values': '4d5e6f7a-8b9c-4d0e-a1fa-3b4c5d6e7f8a',
@@ -108,7 +108,7 @@ export const seedModules = async (
       'Conditional Statements': '6f7a8b9c-0d1e-4f2a-a3bc-5d6e7f8a9b0c',
       'Logical Equivalence': '7a8b9c0d-1e2f-403b-a4cd-6e7f8a9b0c1d',
       'The Definite Integral': '2f9e8a7b-c123-4def-9876-543210fedcba',
-      'The Enclosed Area Problem': '3a1f9c8e-2d4b-5c6a-9e7f-4b8c9d0e1f2a',
+      'The Enclosed Area Problem': '23008653-90d5-4e57-b9db-020f37517077',
       'Bounded Functions': 'a8f3c6d1-2e4b-4c8a-9f7e-1b5d8c3a6e9f',
       'The Fundamental Formula of the Definite Integral':
         '4b6c8d1e-3f5a-4d7b-af8c-5e9f1a2b3c4d',
@@ -124,6 +124,7 @@ export const seedModules = async (
       Stacks: '01ac9600-940d-4f8b-ac3d-4f1c5b8d9272',
       Queues: '9c67cf86-b57c-4da2-b0fb-fe5a11d8bab0',
       'Hash Tables': 'b2db4907-ef15-4d56-8b33-8f61c5b9567d',
+      'Binary Trees': 'b2c3d4e5-6f7a-4b8c-9d0e-2f3a4b5c6d7e',
     };
     return translationMap[moduleText] || '';
   };
@@ -207,6 +208,7 @@ export const seedModules = async (
     Stacks: 'c0c04721-11f0-4668-9e91-2fa94217663f',
     Queues: 'b68ae937-37a8-4d10-95a6-89a7017694bc',
     'Hash Tables': 'c2781ae5-9358-4297-8db9-e6651f6f5cd8',
+    'Binary Trees': 'f8c9d5e1-2a3b-4c6d-8e9f-1a2b3c4d5e6f',
   };
 
   const modules = [
@@ -669,6 +671,12 @@ export const seedModules = async (
       en_text: 'Neural Networks Fundamentals',
       he_text: 'יסודות רשתות נוירונים',
       course: 'Artificial Intelligence',
+    },
+    {
+      en_text: 'Binary Trees',
+      he_text: 'עצים בינאריים',
+      course: 'Data Structures and Introduction to Algorithms',
+      prerequisite: 'Arrays',
     },
   ];
 
