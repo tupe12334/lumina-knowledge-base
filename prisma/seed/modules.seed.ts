@@ -50,6 +50,7 @@ export const seedModules = async (
       'Sum Principle_Separation Principle':
         '27a0eab8-6102-4020-a147-b5cfee9a2d76',
       Permutation_Derangements: 'f1a2b3c4-d5e6-4789-a012-bcdef4567890',
+      'Number Systems_Matrix Algebra': '7314520e-de66-4e11-a0b6-5c251f34de4a',
     };
     return relationshipMap[`${prerequisite}_${postrequisite}`] || '';
   };
@@ -75,6 +76,8 @@ export const seedModules = async (
         'cadb461d-ba7c-42e4-9abb-607047d2d4da',
       'f1a2b3c4-d5e6-4789-a012-bcdef4567890':
         'f438751a-ed5d-4ed6-a090-cd9dc508b844',
+      '7314520e-de66-4e11-a0b6-5c251f34de4a':
+        '5203fc27-3295-4d03-b405-ddc57c038289',
     };
     return metadataMap[blockRelationshipId] || '';
   };
@@ -107,6 +110,7 @@ export const seedModules = async (
       'Logic Gates': '5e6f7a8b-9c0d-4e1f-a2ab-4c5d6e7f8a9b',
       'Conditional Statements': '6f7a8b9c-0d1e-4f2a-a3bc-5d6e7f8a9b0c',
       'Logical Equivalence': '7a8b9c0d-1e2f-403b-a4cd-6e7f8a9b0c1d',
+      'Matrix Algebra': 'b665e731-2442-4bbe-8454-599af60e1454',
       'The Definite Integral': '2f9e8a7b-c123-4def-9876-543210fedcba',
       'The Enclosed Area Problem': '23008653-90d5-4e57-b9db-020f37517077',
       'Bounded Functions': 'a8f3c6d1-2e4b-4c8a-9f7e-1b5d8c3a6e9f',
@@ -138,6 +142,7 @@ export const seedModules = async (
     'Instantaneous Velocity': '4d32cda4-d5c6-4165-a987-a35b313e148e',
     'Two Dimensional Graph Reading': '435bd8ba-3c4c-474d-9d04-3d55cbab9d6f',
     'Number Systems': '3ad31ae2-3870-4d9d-8826-284bd8c34b12',
+    'Matrix Algebra': '5a95b965-7626-4c7d-98db-4c45bf72083a',
     'Propositional Logic': 'ec8270ca-1f32-4928-a2c6-2f998f6061b6',
     'First-order Logic': '016ddc51-9b0a-43d0-9ac5-8fe54d171b29',
     'How to Formalize': 'a56fb4f6-cd1f-42e2-83ce-16dafaf2f067',
@@ -258,6 +263,12 @@ export const seedModules = async (
       en_text: 'Number Systems',
       he_text: 'מערכות מספרים',
       courses: ['Calculus A', 'Infinitesimal Calculus 1'],
+    },
+    {
+      en_text: 'Matrix Algebra',
+      he_text: 'אלגברת מטריצות',
+      prerequisite: 'Number Systems',
+      course: 'Topics in Mathematics for Social Sciences Students',
     },
     {
       en_text: 'Propositional Logic',
