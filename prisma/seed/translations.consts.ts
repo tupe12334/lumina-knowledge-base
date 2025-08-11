@@ -3205,6 +3205,11 @@ In the Faculty of Arts, you're not just learning about the world — you're lear
     he_text: 'האם טור גאומטרי בעל מנה 2 מתכנס',
   },
   {
+    id: '5dc13d54-9817-451b-a07f-1155c8e3bc26',
+    en_text: 'Implicit Function',
+    he_text: 'פונקציה סמויה',
+  },
+  {
     id: '7a1446e4-14e7-4406-be95-3e291f8e3b6f',
     en_text: 'Implicit Function Theorem',
     he_text: 'משפט הפונקציה הסמויה',
