@@ -3026,4 +3026,470 @@ In the Faculty of Arts, you're not just learning about the world — you're lear
     en_text: 'What is the determinant of the matrix [[5,2,1],[0,3,4],[2,1,0]]?',
     he_text: 'מהו הדטרמיננטה של המטריצה [[5,2,1],[0,3,4],[2,1,0]]?',
   },
+  // New Math Modules
+  {
+    id: 'd27c85c1-fed4-4a07-b1bd-8d85934e071d',
+    en_text: 'Number Theory',
+    he_text: 'תורת המספרים',
+  },
+  {
+    id: 'a626238a-9cc6-4295-b74d-968619ef2d54',
+    en_text: 'Prime Numbers',
+    he_text: 'מספרים ראשוניים',
+  },
+  {
+    id: '079e5735-6651-41e7-a77c-b51db113db13',
+    en_text: 'Modular Arithmetic',
+    he_text: 'חשבון מודולרי',
+  },
+  {
+    id: 'fe4c1d1c-ce7e-4f32-b101-19de2604dbee',
+    en_text: 'What is gcd(12, 18)?',
+    he_text: 'What is gcd(12, 18)?',
+  },
+  {
+    id: 'd711a45d-9fb7-43b2-ab44-f1280e87d14e',
+    en_text: 'What is gcd(20, 30)?',
+    he_text: 'What is gcd(20, 30)?',
+  },
+  {
+    id: '4b8cf6ec-075a-4e7f-9c55-440131b64465',
+    en_text: 'What is gcd(45, 75)?',
+    he_text: 'What is gcd(45, 75)?',
+  },
+  {
+    id: '0aa64f91-e6b6-4f1f-8c2e-e1fef7b06e0f',
+    en_text: 'What is gcd(81, 27)?',
+    he_text: 'What is gcd(81, 27)?',
+  },
+  {
+    id: '97d03a0d-310a-41d6-8664-b339fd8d8d96',
+    en_text: 'What is gcd(84, 36)?',
+    he_text: 'What is gcd(84, 36)?',
+  },
+  {
+    id: '8c3509b0-8bfd-45e6-b882-b676e70e4cf8',
+    en_text: 'What is gcd(100, 10)?',
+    he_text: 'What is gcd(100, 10)?',
+  },
+  {
+    id: '407a574b-9b8c-4c89-b501-5318375fb858',
+    en_text: 'What is gcd(35, 49)?',
+    he_text: 'What is gcd(35, 49)?',
+  },
+  {
+    id: 'cde5bdf2-75ef-431a-9fc8-e865b8af4700',
+    en_text: 'What is gcd(64, 16)?',
+    he_text: 'What is gcd(64, 16)?',
+  },
+  {
+    id: 'f7cf87f0-5005-473f-8ff1-7c2d6623cd28',
+    en_text: 'What is gcd(121, 44)?',
+    he_text: 'What is gcd(121, 44)?',
+  },
+  {
+    id: 'bd331467-3a81-4356-9e14-43dbb0278f89',
+    en_text: 'What is gcd(70, 28)?',
+    he_text: 'What is gcd(70, 28)?',
+  },
+  {
+    id: '6bf27e8c-d6ee-4ee1-a091-065d53a9e41b',
+    en_text: 'What is lcm(4, 5)?',
+    he_text: 'What is lcm(4, 5)?',
+  },
+  {
+    id: 'd13e1bed-da74-4022-b48b-75072f5962df',
+    en_text: 'What is lcm(6, 8)?',
+    he_text: 'What is lcm(6, 8)?',
+  },
+  {
+    id: '633089d0-5265-49c8-8153-48e79796cd6f',
+    en_text: 'What is lcm(9, 12)?',
+    he_text: 'What is lcm(9, 12)?',
+  },
+  {
+    id: '62a88039-08d5-467a-b565-8d98296fc902',
+    en_text: 'What is lcm(15, 20)?',
+    he_text: 'What is lcm(15, 20)?',
+  },
+  {
+    id: '8294c625-5ff6-476f-b63c-0bd871e15225',
+    en_text: 'What is lcm(7, 3)?',
+    he_text: 'What is lcm(7, 3)?',
+  },
+  {
+    id: '25593775-23c8-4f1f-b4fd-964ae54e6ea0',
+    en_text: 'What is lcm(14, 9)?',
+    he_text: 'What is lcm(14, 9)?',
+  },
+  {
+    id: '731f9dc3-b308-4371-b1d3-193d9860dba1',
+    en_text: 'What is lcm(5, 18)?',
+    he_text: 'What is lcm(5, 18)?',
+  },
+  {
+    id: '5c026f87-df60-4cf9-83a5-bccf54b351fd',
+    en_text: 'What is lcm(8, 21)?',
+    he_text: 'What is lcm(8, 21)?',
+  },
+  {
+    id: '2f09fa49-4b76-4e98-b92b-c17eeaa3a581',
+    en_text: 'What is lcm(11, 13)?',
+    he_text: 'What is lcm(11, 13)?',
+  },
+  {
+    id: 'e401c45a-24a0-4040-b561-f9d152079d32',
+    en_text: 'What is lcm(16, 6)?',
+    he_text: 'What is lcm(16, 6)?',
+  },
+  {
+    id: 'a37535f2-00d7-4620-9bdc-b2506a00466d',
+    en_text: "What is Euler's totient function φ(5)?",
+    he_text: "What is Euler's totient function φ(5)?",
+  },
+  {
+    id: '52802a80-f838-427c-a533-cb6ae3487887',
+    en_text: "What is Euler's totient function φ(8)?",
+    he_text: "What is Euler's totient function φ(8)?",
+  },
+  {
+    id: 'd2dc9de8-a22a-4059-bb70-9246570af4fc',
+    en_text: "What is Euler's totient function φ(10)?",
+    he_text: "What is Euler's totient function φ(10)?",
+  },
+  {
+    id: '71c1c01d-bfb8-4e5b-8c71-5f56d37d55c5',
+    en_text: "What is Euler's totient function φ(12)?",
+    he_text: "What is Euler's totient function φ(12)?",
+  },
+  {
+    id: 'd2faccee-9d00-4389-9569-3fd7761968d6',
+    en_text: "What is Euler's totient function φ(15)?",
+    he_text: "What is Euler's totient function φ(15)?",
+  },
+  {
+    id: '2d18ae75-03ab-42d6-aa3b-8a2da89d68e3',
+    en_text: "What is Euler's totient function φ(16)?",
+    he_text: "What is Euler's totient function φ(16)?",
+  },
+  {
+    id: '27664426-fa7e-4ddc-929b-89e84ec6423f',
+    en_text: "What is Euler's totient function φ(20)?",
+    he_text: "What is Euler's totient function φ(20)?",
+  },
+  {
+    id: '41f1b4e1-5fb5-4653-8443-1f99151dbec1',
+    en_text: "What is Euler's totient function φ(25)?",
+    he_text: "What is Euler's totient function φ(25)?",
+  },
+  {
+    id: 'e1eecf92-d6ad-43df-8a89-d9fb890fc235',
+    en_text: "What is Euler's totient function φ(30)?",
+    he_text: "What is Euler's totient function φ(30)?",
+  },
+  {
+    id: '64ba3f33-b39e-46c9-92f9-8c14debf2023',
+    en_text: "What is Euler's totient function φ(36)?",
+    he_text: "What is Euler's totient function φ(36)?",
+  },
+  {
+    id: 'bb7de7df-02c3-4ff6-b174-8f92c54688dd',
+    en_text: 'Is 2 a prime number? 1 for yes, 0 for no.',
+    he_text: 'Is 2 a prime number? 1 for yes, 0 for no.',
+  },
+  {
+    id: 'e113efc6-4741-43ec-b1ac-c27b52710c35',
+    en_text: 'Is 4 a prime number? 1 for yes, 0 for no.',
+    he_text: 'Is 4 a prime number? 1 for yes, 0 for no.',
+  },
+  {
+    id: '6a01ed1f-7ad0-469a-ade5-5ddd12c708f7',
+    en_text: 'Is 7 a prime number? 1 for yes, 0 for no.',
+    he_text: 'Is 7 a prime number? 1 for yes, 0 for no.',
+  },
+  {
+    id: '66e8683b-a458-472b-8535-8996a62ff130',
+    en_text: 'Is 9 a prime number? 1 for yes, 0 for no.',
+    he_text: 'Is 9 a prime number? 1 for yes, 0 for no.',
+  },
+  {
+    id: '8e47dacd-8d75-41e5-a8f8-9f1611caa20e',
+    en_text: 'Is 11 a prime number? 1 for yes, 0 for no.',
+    he_text: 'Is 11 a prime number? 1 for yes, 0 for no.',
+  },
+  {
+    id: '5deb67f8-7230-44c0-9168-e427158e0c8c',
+    en_text: 'Is 15 a prime number? 1 for yes, 0 for no.',
+    he_text: 'Is 15 a prime number? 1 for yes, 0 for no.',
+  },
+  {
+    id: 'a473a81b-bc90-41ca-a4d9-2bd6c0bc5d37',
+    en_text: 'Is 17 a prime number? 1 for yes, 0 for no.',
+    he_text: 'Is 17 a prime number? 1 for yes, 0 for no.',
+  },
+  {
+    id: 'db8f79b1-42c0-4f01-a37d-f07412676dbe',
+    en_text: 'Is 19 a prime number? 1 for yes, 0 for no.',
+    he_text: 'Is 19 a prime number? 1 for yes, 0 for no.',
+  },
+  {
+    id: 'ee59758a-ebca-47fd-8daa-fc0123804470',
+    en_text: 'Is 21 a prime number? 1 for yes, 0 for no.',
+    he_text: 'Is 21 a prime number? 1 for yes, 0 for no.',
+  },
+  {
+    id: '02dc598a-98f2-4664-8dfa-465d9a43faab',
+    en_text: 'Is 23 a prime number? 1 for yes, 0 for no.',
+    he_text: 'Is 23 a prime number? 1 for yes, 0 for no.',
+  },
+  {
+    id: '51032f79-8527-4313-83e8-93df4e5393c8',
+    en_text: 'What is the 1st prime number?',
+    he_text: 'What is the 1st prime number?',
+  },
+  {
+    id: 'c063c402-65eb-485a-9f5d-a3bd2f6fda4d',
+    en_text: 'What is the 2nd prime number?',
+    he_text: 'What is the 2nd prime number?',
+  },
+  {
+    id: 'e31baaf3-576b-435a-9ca2-8c3452e7632a',
+    en_text: 'What is the 3rd prime number?',
+    he_text: 'What is the 3rd prime number?',
+  },
+  {
+    id: '435d9788-62a9-44fb-b10c-77c989338a4f',
+    en_text: 'What is the 4th prime number?',
+    he_text: 'What is the 4th prime number?',
+  },
+  {
+    id: '440b099a-55e0-43a9-8d42-e55ff49272d4',
+    en_text: 'What is the 5th prime number?',
+    he_text: 'What is the 5th prime number?',
+  },
+  {
+    id: '0125f50d-e082-4b67-8d72-1f668b3ebf81',
+    en_text: 'What is the 10th prime number?',
+    he_text: 'What is the 10th prime number?',
+  },
+  {
+    id: '186a85c4-af76-42c0-8116-a9d8a722213f',
+    en_text: 'What is the 15th prime number?',
+    he_text: 'What is the 15th prime number?',
+  },
+  {
+    id: '74314ef2-65d0-4a87-b15b-ce9439198d97',
+    en_text: 'What is the 20th prime number?',
+    he_text: 'What is the 20th prime number?',
+  },
+  {
+    id: 'e9dd42b2-84e0-4848-a180-6c63e8ce620c',
+    en_text: 'What is the 25th prime number?',
+    he_text: 'What is the 25th prime number?',
+  },
+  {
+    id: '0e52b5e6-ca90-4eba-b84a-591e5655cf54',
+    en_text: 'What is the 30th prime number?',
+    he_text: 'What is the 30th prime number?',
+  },
+  {
+    id: 'dbf10d09-e5a4-4d14-8f71-314f21f12573',
+    en_text: 'How many primes are less than 10?',
+    he_text: 'How many primes are less than 10?',
+  },
+  {
+    id: '97b623d1-0e1c-40e3-bf0f-e2eb74804963',
+    en_text: 'How many primes are less than 20?',
+    he_text: 'How many primes are less than 20?',
+  },
+  {
+    id: '470455ff-60b1-4a32-a50c-fdaa6c9277be',
+    en_text: 'How many primes are less than 30?',
+    he_text: 'How many primes are less than 30?',
+  },
+  {
+    id: '5c5de508-2f59-4836-80f0-df78ef1fc3f2',
+    en_text: 'How many primes are less than 40?',
+    he_text: 'How many primes are less than 40?',
+  },
+  {
+    id: '2de42cd8-f122-4d61-a87a-611700554f4b',
+    en_text: 'How many primes are less than 50?',
+    he_text: 'How many primes are less than 50?',
+  },
+  {
+    id: '0fe044bd-e55d-4817-9e7f-7ace4cb34c17',
+    en_text: 'How many primes are less than 60?',
+    he_text: 'How many primes are less than 60?',
+  },
+  {
+    id: 'b0831308-29df-41e9-bd1d-c0c6f48de7a7',
+    en_text: 'How many primes are less than 70?',
+    he_text: 'How many primes are less than 70?',
+  },
+  {
+    id: 'a63c37a3-0a60-43fb-a374-a219c8b72cab',
+    en_text: 'How many primes are less than 80?',
+    he_text: 'How many primes are less than 80?',
+  },
+  {
+    id: '81a7383a-2c38-4ae9-b385-46da67696478',
+    en_text: 'How many primes are less than 90?',
+    he_text: 'How many primes are less than 90?',
+  },
+  {
+    id: '2ac11ddd-fc1c-4010-a45a-50ee874b7f8d',
+    en_text: 'How many primes are less than 100?',
+    he_text: 'How many primes are less than 100?',
+  },
+  {
+    id: '5db76ec9-9166-4922-b738-4ee4512ad3f6',
+    en_text: 'What is 17 mod 5?',
+    he_text: 'What is 17 mod 5?',
+  },
+  {
+    id: '76dcb2ff-d334-467a-964c-d36d65dd0689',
+    en_text: 'What is 23 mod 7?',
+    he_text: 'What is 23 mod 7?',
+  },
+  {
+    id: 'f2cf9f5e-2c18-47cc-aba3-06da77cefdde',
+    en_text: 'What is 14 mod 3?',
+    he_text: 'What is 14 mod 3?',
+  },
+  {
+    id: 'ac75af65-3d8a-4a5f-a144-a0c3517e6d3f',
+    en_text: 'What is 19 mod 4?',
+    he_text: 'What is 19 mod 4?',
+  },
+  {
+    id: 'e671da7a-4a85-4790-88d6-5b995332b014',
+    en_text: 'What is 20 mod 6?',
+    he_text: 'What is 20 mod 6?',
+  },
+  {
+    id: 'eda3df8b-9e2d-4d2c-8f73-5e7ec7d18364',
+    en_text: 'What is 55 mod 10?',
+    he_text: 'What is 55 mod 10?',
+  },
+  {
+    id: '04b00246-5d5d-4446-bf68-1c1fcd99003d',
+    en_text: 'What is 99 mod 11?',
+    he_text: 'What is 99 mod 11?',
+  },
+  {
+    id: '72048826-70c4-4824-9aba-313bf2210d51',
+    en_text: 'What is 100 mod 13?',
+    he_text: 'What is 100 mod 13?',
+  },
+  {
+    id: '4f6fd3d7-ce7d-43aa-a44e-dc17a231f37d',
+    en_text: 'What is 45 mod 8?',
+    he_text: 'What is 45 mod 8?',
+  },
+  {
+    id: '743043b8-3ab2-4821-945e-353ce8e662a6',
+    en_text: 'What is 76 mod 9?',
+    he_text: 'What is 76 mod 9?',
+  },
+  {
+    id: '074ea2e8-617d-49bc-bb24-9b4d550e85a4',
+    en_text: 'What is (7 + 13) mod 5?',
+    he_text: 'What is (7 + 13) mod 5?',
+  },
+  {
+    id: 'ae38be43-b6de-49db-a9f4-f3c23b7614b6',
+    en_text: 'What is (9 + 14) mod 6?',
+    he_text: 'What is (9 + 14) mod 6?',
+  },
+  {
+    id: 'cc889223-da3b-45f4-9af5-3ed47815f2f1',
+    en_text: 'What is (12 + 18) mod 7?',
+    he_text: 'What is (12 + 18) mod 7?',
+  },
+  {
+    id: '3f8d7b5a-688a-4725-a0cc-f0e139c43f12',
+    en_text: 'What is (20 + 25) mod 9?',
+    he_text: 'What is (20 + 25) mod 9?',
+  },
+  {
+    id: '87e7e279-47fd-47bf-a07e-2d1b72698c48',
+    en_text: 'What is (30 + 15) mod 11?',
+    he_text: 'What is (30 + 15) mod 11?',
+  },
+  {
+    id: 'f7156245-471e-4718-946a-fad0c1798d61',
+    en_text: 'What is (40 + 22) mod 13?',
+    he_text: 'What is (40 + 22) mod 13?',
+  },
+  {
+    id: 'f10ac297-2a29-416a-969f-2a86e839e402',
+    en_text: 'What is (17 + 29) mod 8?',
+    he_text: 'What is (17 + 29) mod 8?',
+  },
+  {
+    id: 'e233653e-1f1c-4e54-949d-624df5d7c39c',
+    en_text: 'What is (25 + 37) mod 12?',
+    he_text: 'What is (25 + 37) mod 12?',
+  },
+  {
+    id: '3bb1bb01-0e85-4be8-b921-c93ede6dd319',
+    en_text: 'What is (31 + 42) mod 10?',
+    he_text: 'What is (31 + 42) mod 10?',
+  },
+  {
+    id: '3cbcecad-7006-43e2-a2df-7145b77c9658',
+    en_text: 'What is (50 + 60) mod 14?',
+    he_text: 'What is (50 + 60) mod 14?',
+  },
+  {
+    id: '94182b67-d7e4-412d-ac67-ef8dfca979e2',
+    en_text: 'What is (3^4) mod 5?',
+    he_text: 'What is (3^4) mod 5?',
+  },
+  {
+    id: '84c186de-f0af-473c-b93f-f6630047133e',
+    en_text: 'What is (2^5) mod 7?',
+    he_text: 'What is (2^5) mod 7?',
+  },
+  {
+    id: '9964c789-5f5d-4c7e-836a-0e8351ea60ad',
+    en_text: 'What is (4^3) mod 9?',
+    he_text: 'What is (4^3) mod 9?',
+  },
+  {
+    id: '7b9046ec-cc20-4d48-a364-ecbc9c8f301a',
+    en_text: 'What is (5^2) mod 11?',
+    he_text: 'What is (5^2) mod 11?',
+  },
+  {
+    id: 'd7b0095c-d060-46c7-bc69-f91bb57c08e2',
+    en_text: 'What is (6^3) mod 13?',
+    he_text: 'What is (6^3) mod 13?',
+  },
+  {
+    id: '740f8745-cf38-4d51-adfe-7cf119818f91',
+    en_text: 'What is (7^2) mod 15?',
+    he_text: 'What is (7^2) mod 15?',
+  },
+  {
+    id: '981d259d-79db-4c24-bfa6-1040b971ead9',
+    en_text: 'What is (8^2) mod 17?',
+    he_text: 'What is (8^2) mod 17?',
+  },
+  {
+    id: '582948dd-9b71-4119-93ee-027cf2195dc1',
+    en_text: 'What is (9^2) mod 19?',
+    he_text: 'What is (9^2) mod 19?',
+  },
+  {
+    id: 'bb47ea4f-883e-429a-b4ef-7dc4462b9c7b',
+    en_text: 'What is (10^2) mod 21?',
+    he_text: 'What is (10^2) mod 21?',
+  },
+  {
+    id: '67a4e9f6-524b-4357-9016-7a56b211297d',
+    en_text: 'What is (11^2) mod 23?',
+    he_text: 'What is (11^2) mod 23?',
+  },
 ];
