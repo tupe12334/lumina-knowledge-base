@@ -1533,6 +1533,9 @@ exports[`seed snapshot > saves seeded data snapshot 1`] = `
       "id": "b4de3329-f3af-4ae9-b67d-bf1c5d1a30fb",
     },
     {
+      "id": "c451b387-fc0d-4c4c-bf72-41817c1b2e45",
+    },
+    {
       "id": "e4e3361c-9c9f-4d12-a9d6-8de53f794295",
     },
     {
@@ -1700,9 +1703,14 @@ exports[`seed snapshot > saves seeded data snapshot 1`] = `
       "prerequisiteId": "4a360125-e963-4c2b-88a8-d86aee59d8bc",
     },
     {
-      "id": "0b44ef67-042a-430f-8b11-587e871b7dc9",
-      "postrequisiteId": "e4e3361c-9c9f-4d12-a9d6-8de53f794295",
+      "id": "49ade8d5-78a1-4d66-a62a-4a1cebb3d80d",
+      "postrequisiteId": "c451b387-fc0d-4c4c-bf72-41817c1b2e45",
       "prerequisiteId": "b4de3329-f3af-4ae9-b67d-bf1c5d1a30fb",
+    },
+    {
+      "id": "ceea03d8-cf5a-4297-a204-ee661c993ee2",
+      "postrequisiteId": "e4e3361c-9c9f-4d12-a9d6-8de53f794295",
+      "prerequisiteId": "c451b387-fc0d-4c4c-bf72-41817c1b2e45",
     },
     {
       "id": "4a400758-507b-4ff0-9799-026577878064",
@@ -2735,6 +2743,11 @@ exports[`seed snapshot > saves seeded data snapshot 1`] = `
       "blockId": "b4de3329-f3af-4ae9-b67d-bf1c5d1a30fb",
       "id": "b4de3329-f3af-4ae9-b67d-bf1c5d1a30fb",
       "translationId": "593afff3-cf87-4c67-b80d-ae06ffd4c829",
+    },
+    {
+      "blockId": "c451b387-fc0d-4c4c-bf72-41817c1b2e45",
+      "id": "c451b387-fc0d-4c4c-bf72-41817c1b2e45",
+      "translationId": "5dc13d54-9817-451b-a07f-1155c8e3bc26",
     },
     {
       "blockId": "e4e3361c-9c9f-4d12-a9d6-8de53f794295",
@@ -5418,8 +5431,14 @@ exports[`seed snapshot > saves seeded data snapshot 1`] = `
       "value": "hard",
     },
     {
-      "blockRelationshipId": "0b44ef67-042a-430f-8b11-587e871b7dc9",
-      "id": "dc21a976-a76a-490d-8ffc-7bbce3043217",
+      "blockRelationshipId": "49ade8d5-78a1-4d66-a62a-4a1cebb3d80d",
+      "id": "fd84a9ac-b963-43db-a8dc-7dd2e656c18a",
+      "key": "TYPE",
+      "value": "hard",
+    },
+    {
+      "blockRelationshipId": "ceea03d8-cf5a-4297-a204-ee661c993ee2",
+      "id": "e1a3f64b-6782-453a-9b38-aa36277e0fb5",
       "key": "TYPE",
       "value": "hard",
     },
@@ -9697,6 +9716,11 @@ In the Faculty of Arts, you're not just learning about the world — you're lear
       "en_text": "Does a geometric series with ratio 2 converge",
       "he_text": "האם טור גאומטרי בעל מנה 2 מתכנס",
       "id": "a98199ac-0f21-4702-bfd4-95fc2667313a",
+    },
+    {
+      "en_text": "Implicit Function",
+      "he_text": "פונקציה סמויה",
+      "id": "5dc13d54-9817-451b-a07f-1155c8e3bc26",
     },
     {
       "en_text": "Implicit Function Theorem",
