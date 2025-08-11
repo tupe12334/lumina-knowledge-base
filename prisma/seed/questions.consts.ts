@@ -5279,4 +5279,915 @@ export const QUESTIONS: QuestionSeedData[] = [
       },
     ],
   },
+  // Linear Equations module questions
+  {
+    id: 'e44492b0-ba38-425a-9b26-f6187cfac406',
+    translationId: '307b002b-ed58-4612-bd5e-9d189ff11db0',
+    text: {
+      en_text: 'Is x=2 a solution to 3x-6=0',
+      he_text: 'האם x=2 הוא פתרון למשוואה 3x-6=0',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'f91d2e2e-3fc8-45b5-ae64-e08a7d075e24',
+    answers: [
+      {
+        id: '5fad5fa4-366f-4cc4-8faf-0f41d8d6223c',
+        selectAnswers: [
+          {
+            id: '24dc16f4-a328-4305-a786-9f73171eed8d',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: 'a42f894e-9fe5-4c03-a419-41a7d959405e',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '44bcfec5-15f7-4e6b-93e6-c2d218a5d958',
+    translationId: 'b3a07885-f515-4a33-ac10-5c92695d0172',
+    text: {
+      en_text: 'Is x=4 a solution to 2x+1=9',
+      he_text: 'האם x=4 הוא פתרון למשוואה 2x+1=9',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'f91d2e2e-3fc8-45b5-ae64-e08a7d075e24',
+    answers: [
+      {
+        id: '8c3bc0e0-8a87-4de6-a786-186752f42cf9',
+        selectAnswers: [
+          {
+            id: 'c811f253-22a5-49cf-a306-6a7187e1268d',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: '57303f04-1655-4a3e-9273-0d4cc31b2d7a',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'c66f213d-d82d-4487-bd84-fcc16c42bc12',
+    translationId: 'b84aaec3-5374-460e-abc7-dd26801acc97',
+    text: {
+      en_text: 'Is x=1 a solution to 5x+2=12',
+      he_text: 'האם x=1 הוא פתרון למשוואה 5x+2=12',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'f91d2e2e-3fc8-45b5-ae64-e08a7d075e24',
+    answers: [
+      {
+        id: '4782ab64-8d89-4728-8869-9183fc7595bc',
+        selectAnswers: [
+          {
+            id: '42c56834-ab7d-4073-9e57-8c64c73b0f66',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: false,
+          },
+          {
+            id: 'e6d22fcd-467f-4f41-8cad-8b187a59833d',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: true,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '83ec1df6-61b0-4f0f-b1a0-85868f36504a',
+    translationId: '9ebf3fd4-4f97-42fb-aef5-a5c133c95c09',
+    text: {
+      en_text: 'Is x=3 a solution to x/2-3=1',
+      he_text: 'האם x=3 הוא פתרון למשוואה x/2-3=1',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'f91d2e2e-3fc8-45b5-ae64-e08a7d075e24',
+    answers: [
+      {
+        id: '7e089be2-446c-4b15-b47a-0d02300c757d',
+        selectAnswers: [
+          {
+            id: 'e6010ee7-aa76-4b8d-a2ee-5876bd24f4de',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: false,
+          },
+          {
+            id: '89e809d3-0ea1-44ff-bf80-52073f34a4ea',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: true,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'a3d0274f-e899-4cb9-8f51-dd8a70c3da11',
+    translationId: '4e5741bc-dbe6-4590-913f-9926f6adcfe7',
+    text: {
+      en_text: 'Is x=3 and y=2 a solution to system x+y=5 and x-y=1',
+      he_text: 'האם x=3 ו y=2 הם פתרון למערכת x+y=5 ו x-y=1',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'f91d2e2e-3fc8-45b5-ae64-e08a7d075e24',
+    answers: [
+      {
+        id: '5652948d-7d8b-44a8-bb1e-f38ac1277fe6',
+        selectAnswers: [
+          {
+            id: 'a8bb93d0-b1e5-4202-96db-c0c25279a755',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: '10772a06-459b-4542-b8b1-01a4b3041a62',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'f947f030-47fe-4fa2-8f8f-ac491e4870f9',
+    translationId: 'daaefdba-936f-43b0-8fca-e5a0000f7ef2',
+    text: {
+      en_text: 'Is x=1 and y=1 a solution to system 2x+3y=6 and x-y=0',
+      he_text: 'האם x=1 ו y=1 הם פתרון למערכת 2x+3y=6 ו x-y=0',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'f91d2e2e-3fc8-45b5-ae64-e08a7d075e24',
+    answers: [
+      {
+        id: '3a13ca7b-a014-4da2-8037-c76387872414',
+        selectAnswers: [
+          {
+            id: '71113790-1d76-4453-9fce-46033d3d4584',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: false,
+          },
+          {
+            id: '9b98199a-84f5-4b90-882f-ed5a0b811868',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: true,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'a6537faa-4599-471a-952b-6a6353678eca',
+    translationId: 'adb534c9-ed46-4cac-b3a2-3bb5bac43fda',
+    text: {
+      en_text: 'Is x=1 a solution to 7x-4=3',
+      he_text: 'האם x=1 הוא פתרון למשוואה 7x-4=3',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'f91d2e2e-3fc8-45b5-ae64-e08a7d075e24',
+    answers: [
+      {
+        id: 'f73fb1ad-460f-4e00-8952-977e77809cfb',
+        selectAnswers: [
+          {
+            id: '74880440-3546-43f7-8c59-93ddfd394e4a',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: '71774e2a-4d52-4f57-9fe7-7bbf6d7d528c',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '230b27d3-deb0-4205-a6ed-e4ee00245157',
+    translationId: '1e25b879-86db-44e8-a04a-00d9dabe0a43',
+    text: {
+      en_text: 'Is x=0 a solution to 4x+5=5',
+      he_text: 'האם x=0 הוא פתרון למשוואה 4x+5=5',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'f91d2e2e-3fc8-45b5-ae64-e08a7d075e24',
+    answers: [
+      {
+        id: '87719a18-8617-4c62-83c1-f6f5426ae9ea',
+        selectAnswers: [
+          {
+            id: '861aa05c-8a31-4999-9741-49abbfe518dc',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: 'fae7cdd1-68c2-4c11-9fcb-71cb321cb6a1',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '3c26a434-840a-4879-9d26-ffe43a40cbb9',
+    translationId: 'c517c697-0854-4307-931b-0d4d24e3f568',
+    text: {
+      en_text: 'Is x=1 and y=0 a solution to system x+y=1 and 2x+2y=2',
+      he_text: 'האם x=1 ו y=0 הם פתרון למערכת x+y=1 ו 2x+2y=2',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'f91d2e2e-3fc8-45b5-ae64-e08a7d075e24',
+    answers: [
+      {
+        id: 'd01d38a3-70a2-43c6-b504-9b362ee50a9f',
+        selectAnswers: [
+          {
+            id: 'b370c78d-4d5f-4e66-8abc-4f70256a10d7',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: '0004fa8d-c559-40b2-a0dc-dfce6e10951e',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '6a48d3d3-0b58-4852-a500-9eb907a8bb19',
+    translationId: 'c4547ab8-2327-48e1-86ca-ece2f0df0e8d',
+    text: {
+      en_text: 'Is x=1/3 a solution to 6x-2=1',
+      he_text: 'האם x=1/3 הוא פתרון למשוואה 6x-2=1',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'f91d2e2e-3fc8-45b5-ae64-e08a7d075e24',
+    answers: [
+      {
+        id: 'f35d4445-a478-4fa6-97d3-60f17a6190e8',
+        selectAnswers: [
+          {
+            id: '9a6be0f4-3c17-4730-8701-20740e1f9246',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: false,
+          },
+          {
+            id: 'f5ffc3b2-ad40-45c0-b9a2-2659d17558fb',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: true,
+          },
+        ],
+      },
+    ],
+  },
+
+  // Probability Basics module questions
+  {
+    id: '17b109bc-907c-407a-8f72-d66076911a70',
+    translationId: '8d3a08b5-5065-4cb7-8630-cc2f6cc13b53',
+    text: {
+      en_text: 'In a fair coin toss is probability of heads 0.5',
+      he_text: 'בהטלת מטבע הוגנת האם ההסתברות לצד עץ היא 0.5',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '7496bad2-981e-4ac5-b464-788c4fc0d118',
+    answers: [
+      {
+        id: '186d685c-6c3e-4447-b414-51f0bdbfe074',
+        selectAnswers: [
+          {
+            id: '6ffc1d31-f56c-4306-83ec-575a0c81561a',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: 'cf2b20d6-8dfa-4671-8944-35d1cf4a46f1',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '1d982e83-fe47-4a63-9cee-d981e4c4904d',
+    translationId: '9e6be0ca-8822-433b-9434-25faebe6ff2a',
+    text: {
+      en_text: 'Is probability of rolling a 7 on a six sided die 1/6',
+      he_text: 'האם ההסתברות לגלגל 7 בקובייה בעלת שש פאות היא 1/6',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '7496bad2-981e-4ac5-b464-788c4fc0d118',
+    answers: [
+      {
+        id: '8165efb7-2594-4108-a313-648c51f24974',
+        selectAnswers: [
+          {
+            id: '72054dce-01e8-4734-b93a-305fa5f133e6',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: false,
+          },
+          {
+            id: '679b7464-83db-4ebd-a1c2-2a9a2e3d9d91',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: true,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'f298ba0b-62c1-4b53-9a75-7945e2f029f6',
+    translationId: '7bcb583d-015a-48bd-974f-d7ad92258dca',
+    text: {
+      en_text:
+        'For two independent events each with probability 0.5 is probability that both occur 0.25',
+      he_text:
+        'עבור שני אירועים בלתי תלויים שכל אחד בעל הסתברות 0.5 האם ההסתברות ששניהם יקרו היא 0.25',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '7496bad2-981e-4ac5-b464-788c4fc0d118',
+    answers: [
+      {
+        id: '4b7ba131-4821-47e9-9f3d-512d6ca3eae2',
+        selectAnswers: [
+          {
+            id: '545c796b-4adf-4b2c-82e7-c2649d3e71fd',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: '0860ccbb-8185-4584-a436-4d91d829fd1c',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'a8441874-6a87-4499-ae41-c82e792136ba',
+    translationId: '742b4b5c-01c1-4429-9956-2cb32f0171f6',
+    text: {
+      en_text: 'Is probability of drawing an ace from a standard deck 1/13',
+      he_text: 'האם ההסתברות לשלוף אס מחפיסת קלפים רגילה היא 1/13',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '7496bad2-981e-4ac5-b464-788c4fc0d118',
+    answers: [
+      {
+        id: '43110d10-df5b-41ed-bde9-5ed222a9ef65',
+        selectAnswers: [
+          {
+            id: 'e303821c-ae24-4691-8cb9-b214a5e6a9bd',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: '7493a3b8-e2f1-44d1-8e3c-005f52e1186e',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'fdaa8909-b6be-46b8-a2e0-60cac2bf0eb8',
+    translationId: '55331a85-439b-4bd0-ac2e-81cb5bc530f2',
+    text: {
+      en_text:
+        'Are events with probabilities 0.3 and 0.8 always mutually exclusive',
+      he_text: 'האם אירועים בעלי הסתברויות 0.3 ו 0.8 תמיד זרים',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '7496bad2-981e-4ac5-b464-788c4fc0d118',
+    answers: [
+      {
+        id: '5ba2beda-b159-4672-bf66-50c9dbb4efea',
+        selectAnswers: [
+          {
+            id: '9748f334-6bec-406b-bd5b-c65ac78eaa32',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: false,
+          },
+          {
+            id: '1247e41b-359d-4310-b222-09cd08bf1753',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: true,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'c3f99998-cb6c-4b3d-ad3e-2bcf2f257069',
+    translationId: '8bae3b74-c8c6-45ae-8c81-1165321012e0',
+    text: {
+      en_text: 'Is expected value of a fair six sided die 3.5',
+      he_text: 'האם התוחלת של קובייה הוגנת בעלת שש פאות היא 3.5',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '7496bad2-981e-4ac5-b464-788c4fc0d118',
+    answers: [
+      {
+        id: 'c0907d7f-180a-4592-b68f-ed84ab599764',
+        selectAnswers: [
+          {
+            id: 'ad93ee2e-3e0a-4792-9d80-8c53ad3d8a42',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: '24fb651d-dd05-4fdd-ae8a-9e2eeb37ba22',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '2a2fe409-b5b6-4bc8-9c21-8248d9cd020b',
+    translationId: 'b3558a47-7c4b-42a7-a82e-872531ede471',
+    text: {
+      en_text: 'Is variance of a fair six sided die 35/12',
+      he_text: 'האם השונות של קובייה הוגנת בעלת שש פאות היא 35/12',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '7496bad2-981e-4ac5-b464-788c4fc0d118',
+    answers: [
+      {
+        id: '9a522513-e75a-4d26-ab9b-7fbb0b954f53',
+        selectAnswers: [
+          {
+            id: '81d8456f-416e-4e8b-a679-e5f6ac581e09',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: 'aa39cdb8-a09d-4fdb-9c07-c0bebf8110c2',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'ce3ae121-e61b-4c92-a9ea-02072a962772',
+    translationId: '30e153ce-be8a-4999-83db-08491ca78a16',
+    text: {
+      en_text:
+        'Is probability of at least one tail in two fair coin tosses 0.75',
+      he_text: 'האם ההסתברות לפחות פלי אחד בשתי הטלות מטבע הוגנות היא 0.75',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '7496bad2-981e-4ac5-b464-788c4fc0d118',
+    answers: [
+      {
+        id: '50c54597-21b9-4e8a-b6bb-65a2957d5d6d',
+        selectAnswers: [
+          {
+            id: '31096318-9abf-4793-9b59-dc1ad562dc66',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: '161c7349-896a-4481-9771-2334ee247227',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '0d4204af-0ad5-4448-8d97-ad3b023fe9ed',
+    translationId: 'f9aa190e-6d9e-4c57-aa90-f40c605d7863',
+    text: {
+      en_text:
+        'Is probability that a randomly chosen day of the week is weekend 2/7',
+      he_text: 'האם ההסתברות שיום בשבוע הנבחר באקראי הוא סוף שבוע היא 2/7',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '7496bad2-981e-4ac5-b464-788c4fc0d118',
+    answers: [
+      {
+        id: '59f4ca8f-034c-4a0c-ae07-e4789177ba4a',
+        selectAnswers: [
+          {
+            id: 'a87999c9-7cf6-48a1-b53e-040a19c373ab',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: '95ff00d1-1719-43eb-bc4a-4c467316b659',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '38c3828e-444f-4770-9f4c-4910bb54cc0a',
+    translationId: '98d14525-2829-493d-ba8b-7a3c3981deb9',
+    text: {
+      en_text:
+        'If event A has probability 0.4 is probability of its complement 0.7',
+      he_text: 'אם לאירוע A הסתברות 0.4 האם להשלמתו הסתברות 0.7',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '7496bad2-981e-4ac5-b464-788c4fc0d118',
+    answers: [
+      {
+        id: '71f7b18a-536e-468b-9522-526fa1940f37',
+        selectAnswers: [
+          {
+            id: 'f8d95ff4-7ab2-48d2-867d-8090ae357173',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: false,
+          },
+          {
+            id: 'ad0a06ed-81d1-47bd-bea9-bd7429602f0d',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: true,
+          },
+        ],
+      },
+    ],
+  },
+
+  // Sequences and Series module questions
+  {
+    id: '1c5b70f1-c7ef-4669-9cdc-97138ecba701',
+    translationId: '53ee56a0-ce58-498e-9eab-5d4b5979655b',
+    text: {
+      en_text: 'Does geometric series sum from n=0 of (1/2)^n converge to 2',
+      he_text: 'האם הטור הגאומטרי Σ(1/2)^n מ n=0 מתכנס ל 2',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'e82b0404-286d-42ee-89a9-e54776575d9f',
+    answers: [
+      {
+        id: '29ece213-9e2e-4dc1-a78b-b52959e63ca1',
+        selectAnswers: [
+          {
+            id: '9bec624b-6451-4256-8792-cff58f73bf09',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: '456bfa13-2fb4-4cd8-9b1e-2b961231b297',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '8ea1c704-ecae-4555-b5ed-a8e9fc6e99e5',
+    translationId: '4629eb56-9988-4784-9527-f01cc8b2b0a8',
+    text: {
+      en_text: 'Is the series Σ 1/n convergent',
+      he_text: 'האם הטור Σ 1/n מתכנס',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'e82b0404-286d-42ee-89a9-e54776575d9f',
+    answers: [
+      {
+        id: 'cbb0a466-8561-47f4-a045-3da90c50ff3e',
+        selectAnswers: [
+          {
+            id: 'dc6c4de3-7fd3-4a61-bf11-3d27ad498a9c',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: false,
+          },
+          {
+            id: '5eeebe56-0a33-4f87-9f69-7a02ef31370a',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: true,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '4a530557-7254-4fbd-96b7-770071376510',
+    translationId: 'c9848308-6852-4a3c-ab16-649fae324e55',
+    text: {
+      en_text: 'Does the sequence a_n=1/n converge to 0',
+      he_text: 'האם הסדרה a_n=1/n מתכנסת ל 0',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'e82b0404-286d-42ee-89a9-e54776575d9f',
+    answers: [
+      {
+        id: 'cdc6ebaf-cc52-46a7-a029-4f15c7ba28b6',
+        selectAnswers: [
+          {
+            id: 'e14e5f47-1629-4f25-969b-959379195adf',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: '34c203ca-c140-4b34-9ecc-4b125aba9999',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'c66df6bb-f651-4d90-9262-521d952b4d80',
+    translationId: 'fdeed27d-2ead-4743-b772-545a7585c2ab',
+    text: {
+      en_text: 'Is the series Σ(-1)^n convergent',
+      he_text: 'האם הטור Σ(-1)^n מתכנס',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'e82b0404-286d-42ee-89a9-e54776575d9f',
+    answers: [
+      {
+        id: '042d79cb-dd8d-49b4-8149-6f2bbc0decce',
+        selectAnswers: [
+          {
+            id: '33de3f3e-6bac-4ec7-aeec-2fdedf294c2b',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: false,
+          },
+          {
+            id: '6e6aee5d-dec7-4b81-838c-ac63991c7c73',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: true,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '059f0be9-0812-4ae8-8ae9-5789b1a45227',
+    translationId: 'af2d2a04-bf10-4cad-bbd1-8383ff2bd981',
+    text: {
+      en_text: 'Is the sequence a_n=n^2 bounded',
+      he_text: 'האם הסדרה a_n=n^2 חסומה',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'e82b0404-286d-42ee-89a9-e54776575d9f',
+    answers: [
+      {
+        id: '39aa6731-c5df-4b4e-ab6a-2fb4a047f24f',
+        selectAnswers: [
+          {
+            id: '3920f0a9-1fd3-4629-8759-7df269d9cb44',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: false,
+          },
+          {
+            id: 'bc57fc1f-52fa-43e5-aa96-5de80301cf60',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: true,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'ad3b3737-f005-421a-a007-bd113aa559bb',
+    translationId: 'bb6e2d5d-ed1e-46b5-a016-d1a1b21053eb',
+    text: {
+      en_text: 'Does the series Σ1/n^2 converge',
+      he_text: 'האם הטור Σ1/n^2 מתכנס',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'e82b0404-286d-42ee-89a9-e54776575d9f',
+    answers: [
+      {
+        id: '99bf073a-6207-456d-bc9f-4a23a37f03f3',
+        selectAnswers: [
+          {
+            id: '93d9a850-ac81-4bfd-8e18-361a64fa1bb3',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: '7f8245be-052d-4c7e-85be-bd0d5c4698ae',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '4a7a367e-3cfa-43a3-a851-94ba3116228e',
+    translationId: '8a8a4611-353d-4d9f-a19c-674dd54c68b8',
+    text: {
+      en_text: 'Is limit of sequence (1+1/n)^n equal to e',
+      he_text: 'האם הגבול של הסדרה (1+1/n)^n שווה ל e',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'e82b0404-286d-42ee-89a9-e54776575d9f',
+    answers: [
+      {
+        id: 'cb017d46-0391-4fd3-84af-5a6a65936098',
+        selectAnswers: [
+          {
+            id: '472d8f7b-d7b3-4bf9-a8f0-6bc8d23ea702',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: 'e8642c90-4928-460d-9c03-12c5f1bc633b',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '94282b4f-cb55-4199-ab72-c6ca765e601d',
+    translationId: 'f8318255-f2f3-4c00-b628-1ef1371a2376',
+    text: {
+      en_text: 'Does the series Σ(-1)^n/n converge',
+      he_text: 'האם הטור Σ(-1)^n/n מתכנס',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'e82b0404-286d-42ee-89a9-e54776575d9f',
+    answers: [
+      {
+        id: '9b3314a4-6a72-48b9-b9a6-af26f6e1659d',
+        selectAnswers: [
+          {
+            id: '4a77e6cb-8a6c-4013-be1d-727db847daca',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: '6fb0e471-3856-4a43-98a0-bba7b874a61e',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '209ebf99-ee8f-47cd-bf08-c98a252ea9bb',
+    translationId: 'd8014943-6a36-4908-9aca-2923cf28452e',
+    text: {
+      en_text: 'Is the sequence a_n=(-1)^n bounded',
+      he_text: 'האם הסדרה a_n=(-1)^n חסומה',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'e82b0404-286d-42ee-89a9-e54776575d9f',
+    answers: [
+      {
+        id: '04f341f3-de9a-46d1-9c5f-7f2d66f0dc6b',
+        selectAnswers: [
+          {
+            id: 'ac1dfdb9-80ea-42ae-891b-abfea2de6137',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: 'e819dc5b-a820-4b86-8f41-a3787bbfac84',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'f9e86b69-1eb2-4f55-b8d4-7fb7c69ebd45',
+    translationId: 'a98199ac-0f21-4702-bfd4-95fc2667313a',
+    text: {
+      en_text: 'Does a geometric series with ratio 2 converge',
+      he_text: 'האם טור גאומטרי בעל מנה 2 מתכנס',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'e82b0404-286d-42ee-89a9-e54776575d9f',
+    answers: [
+      {
+        id: '6cab652c-5754-43f8-a552-8a137d76e50f',
+        selectAnswers: [
+          {
+            id: 'a56c3d51-d506-4d2e-a100-7c3b1cdad86d',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: false,
+          },
+          {
+            id: '79e0e7b5-88d4-4720-841b-23b20c08b9b8',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: true,
+          },
+        ],
+      },
+    ],
+  },
 ] satisfies QuestionSeedData[];
