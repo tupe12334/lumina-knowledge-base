@@ -3384,4 +3384,186 @@ In the Faculty of Arts, you're not just learning about the world — you're lear
     he_text:
       'אם F(x,y)=0 מגדירה את y(x) האם dy/dx שווה ל־-F_x/F_y כאשר F_y ≠ 0',
   },
+  // New module translations
+  {
+    id: 'c6871315-ca77-4b15-b894-58a0b88e74e8',
+    en_text: 'Vector Spaces',
+    he_text: 'מרחבים וקטוריים',
+  },
+  {
+    id: '2f476947-15fa-4c9c-9f27-90a640ed9f21',
+    en_text: 'Eigenvalues and Eigenvectors',
+    he_text: 'ערכים עצמיים ווקטורים עצמיים',
+  },
+  {
+    id: 'fe824c71-d84b-4ffb-a721-510283887674',
+    en_text: 'Diagonalization',
+    he_text: 'דיאגונליזציה',
+  },
+  // Vector Spaces questions
+  {
+    id: 'e90a8ca3-1918-4cd3-a96f-6ef2896dc020',
+    en_text:
+      'Is the set of all linear combinations of given vectors called their span',
+    he_text:
+      'האם קבוצת כל הצירופים הלינאריים של וקטורים נתונים נקראת המרחב שהם פורשים',
+  },
+  {
+    id: '770c542e-e56e-4822-8c31-4fd1f1563355',
+    en_text: 'Does every vector space have a basis',
+    he_text: 'האם לכל מרחב וקטורי יש בסיס',
+  },
+  {
+    id: 'c97bb73c-5d05-407d-85a9-61994c46bcc3',
+    en_text: 'Is the zero vector required in every subspace',
+    he_text: 'האם הווקטור האפס נדרש בכל תת־מרחב',
+  },
+  {
+    id: '032b3716-0912-4800-b1b5-b9a8d08dbcf3',
+    en_text: 'Can linearly dependent vectors form a basis',
+    he_text: 'האם וקטורים תלויים לינארית יכולים ליצור בסיס',
+  },
+  {
+    id: 'fb793e45-1e34-499b-a568-ded5beb466dc',
+    en_text: 'Is the dimension of ℝ^3 equal to 3',
+    he_text: 'האם הממד של ℝ^3 שווה ל־3',
+  },
+  {
+    id: '58901428-472f-40e9-996b-ca45302894db',
+    en_text: 'Are the standard basis vectors in ℝ^2 linearly independent',
+    he_text: 'האם וקטורי הבסיס הסטנדרטיים ב־ℝ^2 הם בלתי תלויים לינארית',
+  },
+  {
+    id: 'c8ec3add-8f51-484c-b47b-f51323be523f',
+    en_text: 'Does adding a vector to a basis always keep it a basis',
+    he_text: 'האם הוספת וקטור לבסיס תמיד משאירה אותו בסיס',
+  },
+  {
+    id: 'a7db6a88-ff8d-4917-ace1-a376a8c97d42',
+    en_text: 'Is the empty set a basis of the zero vector space',
+    he_text: 'האם הקבוצה הריקה היא בסיס של מרחב הווקטורים האפסי',
+  },
+  {
+    id: '2b903c79-1786-451f-a5ad-52591230b567',
+    en_text:
+      'Are two different bases of a vector space always of the same size',
+    he_text: 'האם שני בסיסים שונים של מרחב וקטורי הם תמיד באותו גודל',
+  },
+  {
+    id: '565f4f02-22dc-49e8-8b55-9ecf7988d254',
+    en_text: 'Can a vector space over ℝ have an infinite basis',
+    he_text: 'האם למרחב וקטורי מעל ℝ יכול להיות בסיס אינסופי',
+  },
+  // Eigenvalues and Eigenvectors questions
+  {
+    id: 'b6935507-f538-48f9-95bd-830923a12cfd',
+    en_text:
+      'Is λ an eigenvalue if there exists a nonzero vector v such that Av = λv',
+    he_text: 'האם λ הוא ערך עצמי אם קיים וקטור שאינו אפס כך ש־Av = λv',
+  },
+  {
+    id: '709285d5-4d1e-48d8-bf2c-67b79f6ebd2e',
+    en_text: 'Can a matrix have more eigenvectors than eigenvalues',
+    he_text: 'האם למטריצה יכולים להיות יותר וקטורים עצמיים מאשר ערכים עצמיים',
+  },
+  {
+    id: '64604d61-a769-48ad-b6dc-2a720b0c8741',
+    en_text:
+      'Are eigenvectors corresponding to distinct eigenvalues always linearly independent',
+    he_text:
+      'האם וקטורים עצמיים השייכים לערכים עצמיים שונים תמיד בלתי תלויים לינארית',
+  },
+  {
+    id: '3e03bb09-da62-44cc-9e6d-9fd176b18a2c',
+    en_text: 'Is the determinant of A - λI equal to zero for an eigenvalue λ',
+    he_text: 'האם הדטרמיננטה של A - λI שווה לאפס עבור ערך עצמי λ',
+  },
+  {
+    id: '0c00cf37-667d-4b05-9ddd-82916562e13f',
+    en_text: 'Can a real matrix have complex eigenvalues',
+    he_text: 'האם למטריצה ממשית יכולים להיות ערכים עצמיים מרוכבים',
+  },
+  {
+    id: '13ae2623-d9e9-4bda-a8ac-527341720eee',
+    en_text: 'Is every eigenvector also an eigenvalue',
+    he_text: 'האם כל וקטור עצמי הוא גם ערך עצמי',
+  },
+  {
+    id: 'cf0ced9c-a271-40f8-a055-7b1ceafc3845',
+    en_text:
+      'Do eigenvectors corresponding to the same eigenvalue form a subspace',
+    he_text: 'האם וקטורים עצמיים השייכים לאותו ערך עצמי יוצרים תת־מרחב',
+  },
+  {
+    id: '551ea0aa-3ca8-42bf-8b9c-8aac63e8d68c',
+    en_text: 'Is the trace of a matrix the product of its eigenvalues',
+    he_text: 'האם עקבת המטריצה היא מכפלת הערכים העצמיים שלה',
+  },
+  {
+    id: '511b4088-781e-4f74-8d1a-49df93d20be7',
+    en_text: 'Can a defective matrix be diagonalizable',
+    he_text: 'האם מטריצה דפקטיבית יכולה להיות ניתנת לדיאגונליזציה',
+  },
+  {
+    id: '0c08bdf7-617e-4947-b38b-f1803cbdf08b',
+    en_text:
+      'Is an eigenvalue of A^2 equal to the square of an eigenvalue of A',
+    he_text: 'האם ערך עצמי של A^2 שווה לריבוע ערך עצמי של A',
+  },
+  // Diagonalization questions
+  {
+    id: '944c8356-0a34-4cf5-b343-36ec4f54f662',
+    en_text:
+      'Is a matrix diagonalizable if it has n linearly independent eigenvectors',
+    he_text:
+      'האם מטריצה ניתנת לדיאגונליזציה אם יש לה n וקטורים עצמיים בלתי תלויים לינארית',
+  },
+  {
+    id: 'e30be03f-cdbf-4682-a390-11dfcbb34b70',
+    en_text: 'Are all symmetric matrices diagonalizable over ℝ',
+    he_text: 'האם כל המטריצות הסימטריות ניתנות לדיאגונליזציה מעל ℝ',
+  },
+  {
+    id: '300a9d3c-d08f-4b8f-b20a-2b41a3873f8e',
+    en_text: 'Can a matrix with a repeated eigenvalue be non-diagonalizable',
+    he_text: 'האם מטריצה עם ערך עצמי חוזר יכולה להיות לא ניתנת לדיאגונליזציה',
+  },
+  {
+    id: 'a198c112-0a4a-48bf-9328-570015f9cb95',
+    en_text:
+      'Is diagonalization possible if the minimal polynomial has distinct linear factors',
+    he_text:
+      'האם דיאגונליזציה אפשרית אם הפולינום המינימלי מתפרק לגורמים לינאריים שונים',
+  },
+  {
+    id: '56539258-7920-4bff-8966-b11b25cb33fe',
+    en_text: 'Is every diagonalizable matrix invertible',
+    he_text: 'האם כל מטריצה הניתנת לדיאגונליזציה היא הפיכה',
+  },
+  {
+    id: '415f4e11-288e-4cf4-acd3-de241a2fc634',
+    en_text:
+      'Does a diagonalizable matrix necessarily commute with all matrices',
+    he_text: 'האם מטריצה שניתנת לדיאגונליזציה מתחלפת בהכרח עם כל המטריצות',
+  },
+  {
+    id: '9284f0bd-288f-43d4-8175-64d973b92d4a',
+    en_text: 'Can a matrix be diagonalized by a similarity transformation',
+    he_text: 'האם ניתן לדיאגונליזציה של מטריצה באמצעות טרנספורמציית דמיון',
+  },
+  {
+    id: 'ccb992bc-81f3-4678-87f7-764957fffc6d',
+    en_text: 'Are orthogonal matrices always diagonalizable over ℝ',
+    he_text: 'האם מטריצות אורתוגונליות תמיד ניתנות לדיאגונליזציה מעל ℝ',
+  },
+  {
+    id: 'ab4f4fff-6fde-4154-8cf7-cc009ced31d5',
+    en_text: 'Is a diagonal matrix already diagonalizable',
+    he_text: 'האם מטריצה אלכסונית היא כבר ניתנת לדיאגונליזציה',
+  },
+  {
+    id: 'dee66e0f-60b1-40aa-832a-1106870a039c',
+    en_text: 'Does diagonalization simplify computing matrix powers',
+    he_text: 'האם דיאגונליזציה מקלה על חישוב חזקה של מטריצה',
+  },
 ];
