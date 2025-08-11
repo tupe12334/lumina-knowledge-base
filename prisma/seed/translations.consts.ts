@@ -3026,4 +3026,182 @@ In the Faculty of Arts, you're not just learning about the world — you're lear
     en_text: 'What is the determinant of the matrix [[5,2,1],[0,3,4],[2,1,0]]?',
     he_text: 'מהו הדטרמיננטה של המטריצה [[5,2,1],[0,3,4],[2,1,0]]?',
   },
+
+  // New module translations
+  {
+    id: '6e8bdbda-dffc-43bf-ba78-28fc024ac8b9',
+    en_text: 'Linear Equations',
+    he_text: 'משוואות לינאריות',
+  },
+  {
+    id: '4c1dfb25-25a7-4d2c-9d97-a6df46feb3f4',
+    en_text: 'Probability Basics',
+    he_text: 'יסודות ההסתברות',
+  },
+  {
+    id: 'b2bfed06-5f13-4c27-9611-b4cd1bbd258b',
+    en_text: 'Sequences and Series',
+    he_text: 'סדרות וטורים',
+  },
+
+  // Linear Equations questions
+  {
+    id: '307b002b-ed58-4612-bd5e-9d189ff11db0',
+    en_text: 'Is x=2 a solution to 3x-6=0',
+    he_text: 'האם x=2 הוא פתרון למשוואה 3x-6=0',
+  },
+  {
+    id: 'b3a07885-f515-4a33-ac10-5c92695d0172',
+    en_text: 'Is x=4 a solution to 2x+1=9',
+    he_text: 'האם x=4 הוא פתרון למשוואה 2x+1=9',
+  },
+  {
+    id: 'b84aaec3-5374-460e-abc7-dd26801acc97',
+    en_text: 'Is x=1 a solution to 5x+2=12',
+    he_text: 'האם x=1 הוא פתרון למשוואה 5x+2=12',
+  },
+  {
+    id: '9ebf3fd4-4f97-42fb-aef5-a5c133c95c09',
+    en_text: 'Is x=3 a solution to x/2-3=1',
+    he_text: 'האם x=3 הוא פתרון למשוואה x/2-3=1',
+  },
+  {
+    id: '4e5741bc-dbe6-4590-913f-9926f6adcfe7',
+    en_text: 'Is x=3 and y=2 a solution to system x+y=5 and x-y=1',
+    he_text: 'האם x=3 ו y=2 הם פתרון למערכת x+y=5 ו x-y=1',
+  },
+  {
+    id: 'daaefdba-936f-43b0-8fca-e5a0000f7ef2',
+    en_text: 'Is x=1 and y=1 a solution to system 2x+3y=6 and x-y=0',
+    he_text: 'האם x=1 ו y=1 הם פתרון למערכת 2x+3y=6 ו x-y=0',
+  },
+  {
+    id: 'adb534c9-ed46-4cac-b3a2-3bb5bac43fda',
+    en_text: 'Is x=1 a solution to 7x-4=3',
+    he_text: 'האם x=1 הוא פתרון למשוואה 7x-4=3',
+  },
+  {
+    id: '1e25b879-86db-44e8-a04a-00d9dabe0a43',
+    en_text: 'Is x=0 a solution to 4x+5=5',
+    he_text: 'האם x=0 הוא פתרון למשוואה 4x+5=5',
+  },
+  {
+    id: 'c517c697-0854-4307-931b-0d4d24e3f568',
+    en_text: 'Is x=1 and y=0 a solution to system x+y=1 and 2x+2y=2',
+    he_text: 'האם x=1 ו y=0 הם פתרון למערכת x+y=1 ו 2x+2y=2',
+  },
+  {
+    id: 'c4547ab8-2327-48e1-86ca-ece2f0df0e8d',
+    en_text: 'Is x=1/3 a solution to 6x-2=1',
+    he_text: 'האם x=1/3 הוא פתרון למשוואה 6x-2=1',
+  },
+
+  // Probability Basics questions
+  {
+    id: '8d3a08b5-5065-4cb7-8630-cc2f6cc13b53',
+    en_text: 'In a fair coin toss is probability of heads 0.5',
+    he_text: 'בהטלת מטבע הוגנת האם ההסתברות לצד עץ היא 0.5',
+  },
+  {
+    id: '9e6be0ca-8822-433b-9434-25faebe6ff2a',
+    en_text: 'Is probability of rolling a 7 on a six sided die 1/6',
+    he_text: 'האם ההסתברות לגלגל 7 בקובייה בעלת שש פאות היא 1/6',
+  },
+  {
+    id: '7bcb583d-015a-48bd-974f-d7ad92258dca',
+    en_text:
+      'For two independent events each with probability 0.5 is probability that both occur 0.25',
+    he_text:
+      'עבור שני אירועים בלתי תלויים שכל אחד בעל הסתברות 0.5 האם ההסתברות ששניהם יקרו היא 0.25',
+  },
+  {
+    id: '742b4b5c-01c1-4429-9956-2cb32f0171f6',
+    en_text: 'Is probability of drawing an ace from a standard deck 1/13',
+    he_text: 'האם ההסתברות לשלוף אס מחפיסת קלפים רגילה היא 1/13',
+  },
+  {
+    id: '55331a85-439b-4bd0-ac2e-81cb5bc530f2',
+    en_text:
+      'Are events with probabilities 0.3 and 0.8 always mutually exclusive',
+    he_text: 'האם אירועים בעלי הסתברויות 0.3 ו 0.8 תמיד זרים',
+  },
+  {
+    id: '8bae3b74-c8c6-45ae-8c81-1165321012e0',
+    en_text: 'Is expected value of a fair six sided die 3.5',
+    he_text: 'האם התוחלת של קובייה הוגנת בעלת שש פאות היא 3.5',
+  },
+  {
+    id: 'b3558a47-7c4b-42a7-a82e-872531ede471',
+    en_text: 'Is variance of a fair six sided die 35/12',
+    he_text: 'האם השונות של קובייה הוגנת בעלת שש פאות היא 35/12',
+  },
+  {
+    id: '30e153ce-be8a-4999-83db-08491ca78a16',
+    en_text: 'Is probability of at least one tail in two fair coin tosses 0.75',
+    he_text: 'האם ההסתברות לפחות פלי אחד בשתי הטלות מטבע הוגנות היא 0.75',
+  },
+  {
+    id: 'f9aa190e-6d9e-4c57-aa90-f40c605d7863',
+    en_text:
+      'Is probability that a randomly chosen day of the week is weekend 2/7',
+    he_text: 'האם ההסתברות שיום בשבוע הנבחר באקראי הוא סוף שבוע היא 2/7',
+  },
+  {
+    id: '98d14525-2829-493d-ba8b-7a3c3981deb9',
+    en_text:
+      'If event A has probability 0.4 is probability of its complement 0.7',
+    he_text: 'אם לאירוע A הסתברות 0.4 האם להשלמתו הסתברות 0.7',
+  },
+
+  // Sequences and Series questions
+  {
+    id: '53ee56a0-ce58-498e-9eab-5d4b5979655b',
+    en_text: 'Does geometric series sum from n=0 of (1/2)^n converge to 2',
+    he_text: 'האם הטור הגאומטרי Σ(1/2)^n מ n=0 מתכנס ל 2',
+  },
+  {
+    id: '4629eb56-9988-4784-9527-f01cc8b2b0a8',
+    en_text: 'Is the series Σ 1/n convergent',
+    he_text: 'האם הטור Σ 1/n מתכנס',
+  },
+  {
+    id: 'c9848308-6852-4a3c-ab16-649fae324e55',
+    en_text: 'Does the sequence a_n=1/n converge to 0',
+    he_text: 'האם הסדרה a_n=1/n מתכנסת ל 0',
+  },
+  {
+    id: 'fdeed27d-2ead-4743-b772-545a7585c2ab',
+    en_text: 'Is the series Σ(-1)^n convergent',
+    he_text: 'האם הטור Σ(-1)^n מתכנס',
+  },
+  {
+    id: 'af2d2a04-bf10-4cad-bbd1-8383ff2bd981',
+    en_text: 'Is the sequence a_n=n^2 bounded',
+    he_text: 'האם הסדרה a_n=n^2 חסומה',
+  },
+  {
+    id: 'bb6e2d5d-ed1e-46b5-a016-d1a1b21053eb',
+    en_text: 'Does the series Σ1/n^2 converge',
+    he_text: 'האם הטור Σ1/n^2 מתכנס',
+  },
+  {
+    id: '8a8a4611-353d-4d9f-a19c-674dd54c68b8',
+    en_text: 'Is limit of sequence (1+1/n)^n equal to e',
+    he_text: 'האם הגבול של הסדרה (1+1/n)^n שווה ל e',
+  },
+  {
+    id: 'f8318255-f2f3-4c00-b628-1ef1371a2376',
+    en_text: 'Does the series Σ(-1)^n/n converge',
+    he_text: 'האם הטור Σ(-1)^n/n מתכנס',
+  },
+  {
+    id: 'd8014943-6a36-4908-9aca-2923cf28452e',
+    en_text: 'Is the sequence a_n=(-1)^n bounded',
+    he_text: 'האם הסדרה a_n=(-1)^n חסומה',
+  },
+  {
+    id: 'a98199ac-0f21-4702-bfd4-95fc2667313a',
+    en_text: 'Does a geometric series with ratio 2 converge',
+    he_text: 'האם טור גאומטרי בעל מנה 2 מתכנס',
+  },
 ];

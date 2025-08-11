@@ -50,7 +50,11 @@ export const seedModules = async (
       'Sum Principle_Separation Principle':
         '27a0eab8-6102-4020-a147-b5cfee9a2d76',
       Permutation_Derangements: 'f1a2b3c4-d5e6-4789-a012-bcdef4567890',
-      'Number Systems_Matrix Algebra': '7314520e-de66-4e11-a0b6-5c251f34de4a',
+      'Number Systems_Linear Equations': 'e08f5dfb-a229-4805-a343-aeefd3e449dd',
+      'Linear Equations_Matrix Algebra': 'b4a907e5-c49a-4368-9c50-fd625540285f',
+      'Combinations_Probability Basics': 'e110371c-44f6-4715-b394-fe9b21e18155',
+      'Limits and Continuity_Sequences and Series':
+        '9959f18b-ffd8-4940-858b-da4aa984e5fb',
     };
     return relationshipMap[`${prerequisite}_${postrequisite}`] || '';
   };
@@ -76,8 +80,14 @@ export const seedModules = async (
         'cadb461d-ba7c-42e4-9abb-607047d2d4da',
       'f1a2b3c4-d5e6-4789-a012-bcdef4567890':
         'f438751a-ed5d-4ed6-a090-cd9dc508b844',
-      '7314520e-de66-4e11-a0b6-5c251f34de4a':
-        '5203fc27-3295-4d03-b405-ddc57c038289',
+      'e08f5dfb-a229-4805-a343-aeefd3e449dd':
+        'f7445a44-2587-4ecd-b96c-0fa5382ca2a8',
+      'b4a907e5-c49a-4368-9c50-fd625540285f':
+        '68c57ee8-118a-4008-92d7-119c35cf1a87',
+      'e110371c-44f6-4715-b394-fe9b21e18155':
+        '05d2eb85-aa70-48c8-8e6d-4657417a7a5b',
+      '9959f18b-ffd8-4940-858b-da4aa984e5fb':
+        'efe8c558-a765-474f-a471-ed1beda8bbfe',
     };
     return metadataMap[blockRelationshipId] || '';
   };
@@ -214,6 +224,9 @@ export const seedModules = async (
     Queues: 'b68ae937-37a8-4d10-95a6-89a7017694bc',
     'Hash Tables': 'c2781ae5-9358-4297-8db9-e6651f6f5cd8',
     'Binary Trees': 'f8c9d5e1-2a3b-4c6d-8e9f-1a2b3c4d5e6f',
+    'Linear Equations': 'f91d2e2e-3fc8-45b5-ae64-e08a7d075e24',
+    'Probability Basics': '7496bad2-981e-4ac5-b464-788c4fc0d118',
+    'Sequences and Series': 'e82b0404-286d-42ee-89a9-e54776575d9f',
   };
 
   const modules = [
@@ -265,9 +278,15 @@ export const seedModules = async (
       courses: ['Calculus A', 'Infinitesimal Calculus 1'],
     },
     {
+      en_text: 'Linear Equations',
+      he_text: 'משוואות לינאריות',
+      prerequisite: 'Number Systems',
+      course: 'Topics in Mathematics for Social Sciences Students',
+    },
+    {
       en_text: 'Matrix Algebra',
       he_text: 'אלגברת מטריצות',
-      prerequisite: 'Number Systems',
+      prerequisite: 'Linear Equations',
       course: 'Topics in Mathematics for Social Sciences Students',
     },
     {
@@ -388,6 +407,13 @@ export const seedModules = async (
       he_text: 'חליפות',
       parent: 'Combinatorics',
       prerequisite: 'Multiplication Principle',
+      course: 'Discrete Mathematics',
+    },
+    {
+      en_text: 'Probability Basics',
+      he_text: 'יסודות ההסתברות',
+      parent: 'Combinatorics',
+      prerequisite: 'Combinations',
       course: 'Discrete Mathematics',
     },
     {
@@ -637,6 +663,12 @@ export const seedModules = async (
       en_text: 'Limits and Continuity',
       he_text: 'גבולות ורציפות',
       courses: ['Calculus A', 'Infinitesimal Calculus 1'],
+    },
+    {
+      en_text: 'Sequences and Series',
+      he_text: 'סדרות וטורים',
+      prerequisite: 'Limits and Continuity',
+      course: 'Infinitesimal Calculus 1',
     },
     {
       en_text: 'Differentiation Techniques',
