@@ -55,6 +55,8 @@ export const seedModules = async (
       'Combinations_Probability Basics': 'e110371c-44f6-4715-b394-fe9b21e18155',
       'Limits and Continuity_Sequences and Series':
         '9959f18b-ffd8-4940-858b-da4aa984e5fb',
+      'Differentiation Techniques_Implicit Function Theorem':
+        '0b44ef67-042a-430f-8b11-587e871b7dc9',
     };
     return relationshipMap[`${prerequisite}_${postrequisite}`] || '';
   };
@@ -88,6 +90,8 @@ export const seedModules = async (
         '05d2eb85-aa70-48c8-8e6d-4657417a7a5b',
       '9959f18b-ffd8-4940-858b-da4aa984e5fb':
         'efe8c558-a765-474f-a471-ed1beda8bbfe',
+      '0b44ef67-042a-430f-8b11-587e871b7dc9':
+        'dc21a976-a76a-490d-8ffc-7bbce3043217',
     };
     return metadataMap[blockRelationshipId] || '';
   };
@@ -130,6 +134,7 @@ export const seedModules = async (
       'Lower Sums': '2c4e6a8f-1d3f-4a7c-9e2a-5f8a1c3e6d9f',
       'Limits and Continuity': 'f0557643-39f1-41d8-b4bd-14d5242e7102',
       'Differentiation Techniques': '593afff3-cf87-4c67-b80d-ae06ffd4c829',
+      'Implicit Function Theorem': '7a1446e4-14e7-4406-be95-3e291f8e3b6f',
       'Integration by Parts': '7cb38204-869c-47a9-a2a2-a72020e7bdee',
       'Graph Traversal Algorithms': 'dd9aa8c9-b413-42f9-b26a-194a2ef2f4d0',
       'Neural Networks Fundamentals': '1bf61cb6-9d5f-4fa8-9565-27fbdf4a1a18',
@@ -215,6 +220,7 @@ export const seedModules = async (
     'Logical Equivalence': '3a4b5c6d-7e8f-409b-a1cd-3e4f5a6b7c8d',
     'Limits and Continuity': '4a360125-e963-4c2b-88a8-d86aee59d8bc',
     'Differentiation Techniques': 'b4de3329-f3af-4ae9-b67d-bf1c5d1a30fb',
+    'Implicit Function Theorem': 'e4e3361c-9c9f-4d12-a9d6-8de53f794295',
     'Integration by Parts': '97128d23-40d6-4045-a57d-ec1b08c3723e',
     'Graph Traversal Algorithms': 'f27c282a-0396-432d-8c9f-472233089edd',
     'Neural Networks Fundamentals': '9a45204a-d855-4558-b187-bb136002a9bb',
@@ -674,6 +680,12 @@ export const seedModules = async (
       en_text: 'Differentiation Techniques',
       he_text: 'שיטות גזירה',
       courses: ['Calculus A', 'Calculus B'],
+    },
+    {
+      en_text: 'Implicit Function Theorem',
+      he_text: 'משפט הפונקציה הסמויה',
+      prerequisite: 'Differentiation Techniques',
+      course: 'Calculus B',
     },
     {
       en_text: 'Integration by Parts',

@@ -6190,4 +6190,926 @@ export const QUESTIONS: QuestionSeedData[] = [
       },
     ],
   },
+  {
+    id: 'd27e5c2b-3992-4f6a-be46-8a0d969caf05',
+    translationId: '7bf24157-3dcb-404a-8a5c-f26112eed59b',
+    text: {
+      en_text:
+        'Does the equation x² + y² = 1 define y implicitly as a function of x near (0,1)',
+      he_text:
+        'האם המשוואה x² + y² = 1 מגדירה את y כפונקציה סמויה של x בסביבת (0,1)',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'e4e3361c-9c9f-4d12-a9d6-8de53f794295',
+    answers: [
+      {
+        id: '76f776f1-204c-4c6a-9920-5431de669f2e',
+        selectAnswers: [
+          {
+            id: 'de380570-8bcf-4a2c-9600-6a99f90ba140',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: 'c01d7ba1-ce39-4450-9798-fb9e4ce14c57',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '00ff0e8c-87ab-4ed5-b918-4ebab262ace4',
+    translationId: '2d72a787-0e33-4f8e-8f22-9f7b7b78c008',
+    text: {
+      en_text: 'Is the equation x² + y² = -1 solvable for real y near x=0',
+      he_text: 'האם המשוואה x² + y² = -1 ניתנת לפתרון עבור y ממשי בסביבת x=0',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'e4e3361c-9c9f-4d12-a9d6-8de53f794295',
+    answers: [
+      {
+        id: '263c39a9-c97a-4a09-a965-6bc03009e7ba',
+        selectAnswers: [
+          {
+            id: '2586894a-c4e8-457b-977f-96d375bc67ac',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: false,
+          },
+          {
+            id: '6a59644e-7fe8-4747-8539-74f9f3a8043e',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: true,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '7c2bad71-6b03-4791-a5ef-52807aec0aba',
+    translationId: '85ffb5f4-01ce-4f4a-b7d4-f24d5e4f331f',
+    text: {
+      en_text:
+        'Does the Implicit Function Theorem require ∂F/∂y ≠ 0 at the point',
+      he_text:
+        'האם משפט הפונקציה הסמויה דורש שהנגזרת החלקית ∂F/∂y תהיה שונה מאפס בנקודה',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'e4e3361c-9c9f-4d12-a9d6-8de53f794295',
+    answers: [
+      {
+        id: 'ea231715-01f6-4d65-b8e7-1c36444cc6f9',
+        selectAnswers: [
+          {
+            id: 'dc8506a2-bf0e-4a05-9341-b46b35224b40',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: '0516aac8-34a1-40c2-805a-36e3eb789d75',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'bec99b5f-f52c-4209-99c3-66d6165a9e7a',
+    translationId: '45f661e3-7c7f-4407-b41e-de05633e33f5',
+    text: {
+      en_text:
+        'For F(x,y)=xy, is y uniquely an implicit function of x near (0,0)',
+      he_text:
+        'האם עבור F(x,y)=xy מתקבל ש‑y היא פונקציה סמויה יחידה של x בסביבת (0,0)',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'e4e3361c-9c9f-4d12-a9d6-8de53f794295',
+    answers: [
+      {
+        id: '9b0d2897-23a1-414a-8350-dd0ab1d1785b',
+        selectAnswers: [
+          {
+            id: '10c7a53b-90de-42ae-ba4e-bcf170410c38',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: false,
+          },
+          {
+            id: '9f122bc3-f125-421d-b37a-a285c0a9f763',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: true,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '124add0f-b5ef-41ad-8939-32c8c373ac9e',
+    translationId: 'c8c4c26c-4963-430a-a3ce-5cfb8bb5175c',
+    text: {
+      en_text: 'Does y - x³ = 0 define a smooth implicit function y(x)',
+      he_text: 'האם y - x³ = 0 מגדירה פונקציה סמויה חלקה y(x)',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'e4e3361c-9c9f-4d12-a9d6-8de53f794295',
+    answers: [
+      {
+        id: 'cb1b2809-91cf-44d5-9725-c8a8cb42f98e',
+        selectAnswers: [
+          {
+            id: '8f3569e1-ab7f-4b1c-95a7-1ed09cfd5791',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: 'a338bb36-62c1-42b9-bb78-1ff7ba817b34',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '9da95bcd-f5a7-46e2-ad2f-938b4d48af1a',
+    translationId: 'f5c0953f-12fc-4a54-8c6f-9b585ee16089',
+    text: {
+      en_text: 'Is y implicitly differentiable from x² + y² - 1 = 0 near (0,1)',
+      he_text: 'האם y נגזרת בסתר מן המשוואה x² + y² - 1 = 0 בסביבת (0,1)',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'e4e3361c-9c9f-4d12-a9d6-8de53f794295',
+    answers: [
+      {
+        id: 'acca3ea9-cf0a-4a2a-a827-00d4a29a69bd',
+        selectAnswers: [
+          {
+            id: 'ae1c2491-b0a9-4e16-b446-08086d650b8f',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: 'cd4e762a-c4c7-4a5b-bea2-bfef7ea78abc',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '71f6d68b-59df-461c-9b4a-e62d7d69fcc7',
+    translationId: 'c8db2563-fc3b-424d-aee8-85dbf55c4870',
+    text: {
+      en_text: 'Can y² = x define a differentiable function near x=0',
+      he_text: 'האם y² = x יכולה להגדיר פונקציה נגזרת בסביבת x=0',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'e4e3361c-9c9f-4d12-a9d6-8de53f794295',
+    answers: [
+      {
+        id: 'c136fa61-5d65-4034-aa30-57daf96e4e08',
+        selectAnswers: [
+          {
+            id: '2e187229-c48c-4976-ad72-151800f64d6f',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: false,
+          },
+          {
+            id: 'f55410ec-b247-4f92-b4e8-31b292e43eaa',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: true,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '3a7032df-266b-41e8-8f45-097feddf6427',
+    translationId: '5f506319-fea0-4734-89df-3b38fde94097',
+    text: {
+      en_text:
+        'If ∂F/∂y = 0 at a point, can the Implicit Function Theorem still guarantee a solution',
+      he_text: 'אם ∂F/∂y = 0 בנקודה האם משפט הפונקציה הסמויה עדיין מבטיח פתרון',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'e4e3361c-9c9f-4d12-a9d6-8de53f794295',
+    answers: [
+      {
+        id: '7bd13881-8921-4ab8-9652-7fe203393d43',
+        selectAnswers: [
+          {
+            id: '74418c98-6f45-4ba8-84d3-6b9c1c98ce9a',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: false,
+          },
+          {
+            id: '393a5b68-7d58-4091-afea-4ace4d70ab60',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: true,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '67d78342-8c06-40db-b0a3-32ed84e9bddf',
+    translationId: '01ab283c-1c72-413c-bb51-fe35e72f770a',
+    text: {
+      en_text: 'Are implicit functions always defined on an entire domain',
+      he_text: 'האם פונקציות סמויות מוגדרות תמיד על כל התחום',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'e4e3361c-9c9f-4d12-a9d6-8de53f794295',
+    answers: [
+      {
+        id: '863493f5-569a-4360-8b93-90668bd72f08',
+        selectAnswers: [
+          {
+            id: 'da34c2b4-e0c1-4a7a-b28d-bb9fb8319675',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: false,
+          },
+          {
+            id: '63e4c683-61a1-445a-adda-94f313000b52',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: true,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'e22ba0c5-db91-48cc-86dc-d958263f2df7',
+    translationId: 'd4540e69-ff6a-4e8c-af32-70aaafdc6db7',
+    text: {
+      en_text: 'Does the theorem apply to F(x,y)=y - sin x at (0,0)',
+      he_text: 'האם המשפט חל על F(x,y)=y - sin x בנקודה (0,0)',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'e4e3361c-9c9f-4d12-a9d6-8de53f794295',
+    answers: [
+      {
+        id: '0f7c5864-c09d-4f4f-88e3-84e6f9e11dc1',
+        selectAnswers: [
+          {
+            id: 'e17eb0d0-382b-40a9-95b1-66ad3cc15fe7',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: 'cedee2b4-76d7-4e7c-9811-1db5921ee596',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '256982fd-bf39-417d-bfe3-daa794d29558',
+    translationId: '2f243a6e-e9b6-402c-9dc8-877329a4552c',
+    text: {
+      en_text: 'For eʸ + x = 0, is y an implicit function near x=-1',
+      he_text:
+        'האם מהמשוואה eʸ + x = 0 מתקבל ש‑y היא פונקציה סמויה בסביבת x=-1',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'e4e3361c-9c9f-4d12-a9d6-8de53f794295',
+    answers: [
+      {
+        id: '1a37f2a5-b997-4f57-9a3a-1326421f51b5',
+        selectAnswers: [
+          {
+            id: 'd70d78c2-6d2b-4093-8ab0-8a4ac76da849',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: 'dcfc5e1d-4512-4cf4-bf25-80e1ae90ab14',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '23befada-1f8c-458e-b7c2-3a7bb04754e6',
+    translationId: '99dca6c8-4110-4942-abb4-7ed9a90fc0f7',
+    text: {
+      en_text: 'Does y³ + y + x = 0 define y(x) implicitly near x=0',
+      he_text: 'האם y³ + y + x = 0 מגדירה את y(x) בסתר בסביבת x=0',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'e4e3361c-9c9f-4d12-a9d6-8de53f794295',
+    answers: [
+      {
+        id: '3f3e84c5-d3f9-41ca-a94d-8a18ed95e7ac',
+        selectAnswers: [
+          {
+            id: '572f4c48-342e-4dfe-8e5a-e9f3c82bfda7',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: '97d5164e-88cc-4f78-b9b0-771f369084ed',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '57527199-a218-437d-878a-256cc6f3cb29',
+    translationId: '70da8c16-ccea-4be6-a66f-2a2f20dfe11f',
+    text: {
+      en_text: 'In F(x,y)=y² + x², is ∂F/∂y at (0,0) nonzero',
+      he_text:
+        'האם ב‑F(x,y)=y² + x² הנגזרת החלקית ∂F/∂y בנקודה (0,0) שונה מאפס',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'e4e3361c-9c9f-4d12-a9d6-8de53f794295',
+    answers: [
+      {
+        id: 'cc91281f-899e-41f0-97f2-8872aff55d19',
+        selectAnswers: [
+          {
+            id: '4f60ac78-c0d9-4b6d-bb8c-325ad393870c',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: false,
+          },
+          {
+            id: 'a91c78c1-6d7e-47dd-b402-359f8d7f3ab6',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: true,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'efb91ef1-adbf-43a4-a274-5e678bdacb8c',
+    translationId: '5bfed97c-42a6-47f0-a227-d65c6ca820b8',
+    text: {
+      en_text: 'Can implicit differentiation find dy/dx from x² + y² = 4',
+      he_text:
+        'האם ניתן להשתמש בגזירה בסתר כדי למצוא dy/dx מן המשוואה x² + y² = 4',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'e4e3361c-9c9f-4d12-a9d6-8de53f794295',
+    answers: [
+      {
+        id: 'fa7e1299-8fae-49d5-be20-a79d44010dad',
+        selectAnswers: [
+          {
+            id: 'f36c892b-0197-456d-8b45-d835d6ef15c3',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: '0cb5e5f1-c2da-416a-902e-ced428d3096a',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '119e94e0-1f02-4b50-9f11-1c2b2e57a3a1',
+    translationId: '8bf1dbd5-ded2-4fd1-ae74-9dbc568bbeb8',
+    text: {
+      en_text: 'Is dy/dx for x² + y² = 4 equal to -x/y',
+      he_text: 'האם dy/dx עבור x² + y² = 4 שווה ל־-x/y',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'e4e3361c-9c9f-4d12-a9d6-8de53f794295',
+    answers: [
+      {
+        id: '34e9d0b2-b471-4995-bdce-caa070927f8a',
+        selectAnswers: [
+          {
+            id: 'e352dcb0-f2ec-4b34-9cf5-a25f30c05057',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: 'dd5b26e5-164f-4a54-b9cf-6e069ca3640d',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '66f09cf2-bdef-49d1-8efd-0ca68d6ee442',
+    translationId: '76359b63-9dff-4951-a709-1fa9f1da15cd',
+    text: {
+      en_text: 'For xy + y = 0, is dy/dx at (0,0) defined',
+      he_text: 'האם עבור xy + y = 0 מוגדר dy/dx בנקודה (0,0)',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'e4e3361c-9c9f-4d12-a9d6-8de53f794295',
+    answers: [
+      {
+        id: 'd47d6250-8fef-48d0-b741-60a6711cbc9b',
+        selectAnswers: [
+          {
+            id: '88f99805-ca35-470a-9e12-dbd414526b2c',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: false,
+          },
+          {
+            id: '74411224-89b7-4048-9ef9-92759940d683',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: true,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'c54dbe9e-651f-4ceb-bc86-dcb249399f1a',
+    translationId: 'f8dd7b41-e765-4642-a93e-3a6581f1e951',
+    text: {
+      en_text: 'Does y = cos x represent an implicit function',
+      he_text: 'האם y = cos x מייצגת פונקציה סמויה',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'e4e3361c-9c9f-4d12-a9d6-8de53f794295',
+    answers: [
+      {
+        id: '509f4a57-cb5b-4bfa-979f-b11dd0d40c87',
+        selectAnswers: [
+          {
+            id: 'b21761ed-f958-428c-bbda-7f6a31ce28dc',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: false,
+          },
+          {
+            id: '1b4bee4f-3928-4bb2-b334-060b5368aa32',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: true,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '77e9f393-4765-4110-b574-2b3820a4a9d9',
+    translationId: '42ab3dce-9ff9-48bf-b493-0a65134ddfe5',
+    text: {
+      en_text:
+        'Does every implicit function require solving a polynomial equation',
+      he_text: 'האם כל פונקציה סמויה דורשת פתרון של משוואה פולינומית',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'e4e3361c-9c9f-4d12-a9d6-8de53f794295',
+    answers: [
+      {
+        id: '75bcf1bb-08e0-4640-9d52-be5babaad954',
+        selectAnswers: [
+          {
+            id: '1fe3a595-41a7-460b-96af-5519be174102',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: false,
+          },
+          {
+            id: '00115609-f247-4c5f-9a3c-d63b9c5eeae7',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: true,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '870736ac-8f98-4d81-9e5f-7fe8be91ce84',
+    translationId: '0e7f7b9b-8cab-4777-af79-cd0631de5bdf',
+    text: {
+      en_text:
+        'Is the Implicit Function Theorem valid in ℝⁿ for n greater than 2',
+      he_text: 'האם משפט הפונקציה הסמויה תקף ב‑ℝⁿ עבור n גדול מ‑2',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'e4e3361c-9c9f-4d12-a9d6-8de53f794295',
+    answers: [
+      {
+        id: 'c5391820-1747-4e64-81ba-564513f33d01',
+        selectAnswers: [
+          {
+            id: '3bf18b65-100e-44b8-84f3-d7fe50552255',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: '468166b1-abc6-4cf1-9ed2-02a7e20756f2',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'f5c1b2bd-d36a-47c0-b1f5-f9079f507af2',
+    translationId: '91abfa9b-abcc-4d9d-83f5-a757b29d1dce',
+    text: {
+      en_text:
+        'Can the theorem be used to solve for multiple variables simultaneously',
+      he_text: 'האם ניתן להשתמש במשפט כדי לפתור עבור כמה משתנים בו‑זמנית',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'e4e3361c-9c9f-4d12-a9d6-8de53f794295',
+    answers: [
+      {
+        id: 'c8cc3cde-b5bf-4f59-a092-b88b06801d8d',
+        selectAnswers: [
+          {
+            id: '8877bc4a-63d5-4549-9955-f50922e35696',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: '191c592b-a9c2-464b-95b6-5ea74c496099',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '8e0ca9ae-1f52-4735-bf77-a950f308b82e',
+    translationId: '97ffc6c0-fea5-4331-94cd-20208fa3e1b3',
+    text: {
+      en_text:
+        'Is a nonzero Jacobian determinant required for the multivariable theorem',
+      he_text: 'האם דרוש דטרמיננטה לא אפסית של היעקוביאן עבור המשפט הרב משתני',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'e4e3361c-9c9f-4d12-a9d6-8de53f794295',
+    answers: [
+      {
+        id: '5498da32-bd27-44c3-96f6-9bfcbde11873',
+        selectAnswers: [
+          {
+            id: '2f1b95f3-5c2c-4fba-8f8c-069475bdb859',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: '65d68089-f1b0-45df-94f5-f1d26ac1399a',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '97b0af31-f20f-489b-9ffc-37eda98139b7',
+    translationId: '1a7c9510-7498-4c83-b135-be80383a9933',
+    text: {
+      en_text:
+        'Does F(x,y)=y² - x have a differentiable solution y(x) near (0,0)',
+      he_text: 'האם ל‑F(x,y)=y² - x יש פתרון y(x) נגזר בסביבת (0,0)',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'e4e3361c-9c9f-4d12-a9d6-8de53f794295',
+    answers: [
+      {
+        id: '3911b070-37f2-4460-8ecd-348967f49fbe',
+        selectAnswers: [
+          {
+            id: '1f57c518-786e-4e2a-bc2e-34307d6aae06',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: false,
+          },
+          {
+            id: 'c1561b71-5d0f-4107-94fc-1996c21bcc2e',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: true,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '56fd3334-00c8-4ebd-b8ae-e377982725ca',
+    translationId: '96c2ed26-f52c-4882-b069-f1cdd702351c',
+    text: {
+      en_text:
+        'Does ln(x) + y = 0 require implicit differentiation to find dy/dx',
+      he_text: 'האם ln(x) + y = 0 מחייב גזירה בסתר כדי למצוא dy/dx',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'e4e3361c-9c9f-4d12-a9d6-8de53f794295',
+    answers: [
+      {
+        id: 'f268190a-6a04-4ec3-8e1c-3363d5ebfeed',
+        selectAnswers: [
+          {
+            id: '1735aec4-e70c-4b37-ab68-f26a2afaa37f',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: false,
+          },
+          {
+            id: 'd30a8d96-3f2d-4630-bdc8-52cb40474865',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: true,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'bf3841af-391c-4ae1-9ea9-86254c11dbd4',
+    translationId: 'df699b8f-89e5-4120-b1b7-231194efda99',
+    text: {
+      en_text:
+        'Does the Implicit Function Theorem guarantee a unique implicit function',
+      he_text: 'האם משפט הפונקציה הסמויה מבטיח פונקציה סמויה יחידה',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'e4e3361c-9c9f-4d12-a9d6-8de53f794295',
+    answers: [
+      {
+        id: '573c49b7-479c-4a75-8a69-7ef07187e0e0',
+        selectAnswers: [
+          {
+            id: '22a86404-8fa9-4602-a222-700a007cb6a6',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: '905e853c-637a-4b49-95c9-49a96a3abb12',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'f2abaae8-7d7c-458e-81d6-cda7d93ae729',
+    translationId: '377643db-0732-4680-9d7f-9fcd3eb21049',
+    text: {
+      en_text:
+        'For x + y + z = 0, can z be written as an implicit function of x and y',
+      he_text:
+        'האם מן המשוואה x + y + z = 0 ניתן לכתוב את z כפונקציה סמויה של x ו‑y',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'e4e3361c-9c9f-4d12-a9d6-8de53f794295',
+    answers: [
+      {
+        id: 'c22be058-8a95-4870-9cf7-c2256e47c986',
+        selectAnswers: [
+          {
+            id: '2155e945-397c-4d92-ac1d-e85173b48a0f',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: 'f4170d8c-f560-4773-ba86-5c05fa195f1d',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'a83c08dc-697c-416b-9958-dfeda3f7095f',
+    translationId: '7fd20a5e-4ca6-4084-842d-d450283668b8',
+    text: {
+      en_text: 'Does x² + y² = 0 define y as a function of x near x=0',
+      he_text: 'האם x² + y² = 0 מגדירה את y כפונקציה של x בסביבת x=0',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'e4e3361c-9c9f-4d12-a9d6-8de53f794295',
+    answers: [
+      {
+        id: '6748dd15-0e6e-49f5-9f0c-61ff4ff3cd02',
+        selectAnswers: [
+          {
+            id: '93370f73-cc5e-41ad-95cc-5906c960644f',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: false,
+          },
+          {
+            id: '1628edc6-fd5e-403e-9db6-e707aca82601',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: true,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'd5ce3376-2009-4ed5-9043-26423e5587db',
+    translationId: 'f849a09a-d365-4d31-bc5f-a847a105bf0b',
+    text: {
+      en_text: 'In xy = 1, is dy/dx equal to -y/x',
+      he_text: 'האם ב‑xy = 1 מתקבל dy/dx = -y/x',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'e4e3361c-9c9f-4d12-a9d6-8de53f794295',
+    answers: [
+      {
+        id: 'fa4f0fc2-07cb-4268-89e7-6fd9246ef464',
+        selectAnswers: [
+          {
+            id: 'de2ecdc6-248a-4323-b478-2c01b8cdd419',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: 'abe1a03a-bc0f-4818-a2bd-eea0facb00fd',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '60966760-92b4-4649-9979-a992ddf2f7a0',
+    translationId: '6253f99d-4672-4816-960b-5013c7840a50',
+    text: {
+      en_text: 'For y² + x y + x² = 0, is dy/dx defined at (0,0)',
+      he_text: 'האם עבור y² + x y + x² = 0 מוגדר dy/dx בנקודה (0,0)',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'e4e3361c-9c9f-4d12-a9d6-8de53f794295',
+    answers: [
+      {
+        id: '57dee78f-e0f4-49be-80cc-2fe9d445e2b9',
+        selectAnswers: [
+          {
+            id: '503408bc-e9eb-4ce1-bbee-761a1232908c',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: false,
+          },
+          {
+            id: 'ee63dc40-6499-46fa-b24c-9f6106c64d39',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: true,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'd64cdb6d-80d1-483f-8868-617b84bf8227',
+    translationId: 'b8f34e32-e2fa-414e-9ec4-87f29b007839',
+    text: {
+      en_text:
+        'Does the theorem ensure existence of derivatives for implicit functions',
+      he_text: 'האם המשפט מבטיח קיום נגזרות לפונקציות סמויות',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'e4e3361c-9c9f-4d12-a9d6-8de53f794295',
+    answers: [
+      {
+        id: 'd48342bc-251e-4a92-a84f-56635669e8b0',
+        selectAnswers: [
+          {
+            id: '1f53c590-a175-4d72-9ce1-11dd9d5c4369',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: '9b937b77-5e92-4bbe-8365-ea7d9ab8466f',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'de0f5218-c34a-4370-9c38-6f9ae74fce81',
+    translationId: '4f6d44db-249e-48de-a23a-507f14b9d354',
+    text: {
+      en_text:
+        'If F(x,y)=0 defines y(x), is dy/dx equal to -F_x/F_y when F_y ≠ 0',
+      he_text:
+        'אם F(x,y)=0 מגדירה את y(x) האם dy/dx שווה ל־-F_x/F_y כאשר F_y ≠ 0',
+    },
+    type: QuestionType.selection,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: 'e4e3361c-9c9f-4d12-a9d6-8de53f794295',
+    answers: [
+      {
+        id: 'a5407a03-bcce-47d6-94df-ce584e7312db',
+        selectAnswers: [
+          {
+            id: '7e0b7bed-7634-489a-ae99-9240ebe7fb9d',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: '5ed5fdff-9f69-4cd4-9a06-7960ea4cfaf2',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
 ] satisfies QuestionSeedData[];
