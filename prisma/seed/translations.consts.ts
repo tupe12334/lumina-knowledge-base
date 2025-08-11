@@ -3204,4 +3204,179 @@ In the Faculty of Arts, you're not just learning about the world — you're lear
     en_text: 'Does a geometric series with ratio 2 converge',
     he_text: 'האם טור גאומטרי בעל מנה 2 מתכנס',
   },
+  {
+    id: '7a1446e4-14e7-4406-be95-3e291f8e3b6f',
+    en_text: 'Implicit Function Theorem',
+    he_text: 'משפט הפונקציה הסמויה',
+  },
+  {
+    id: '7bf24157-3dcb-404a-8a5c-f26112eed59b',
+    en_text:
+      'Does the equation x² + y² = 1 define y implicitly as a function of x near (0,1)',
+    he_text:
+      'האם המשוואה x² + y² = 1 מגדירה את y כפונקציה סמויה של x בסביבת (0,1)',
+  },
+  {
+    id: '2d72a787-0e33-4f8e-8f22-9f7b7b78c008',
+    en_text: 'Is the equation x² + y² = -1 solvable for real y near x=0',
+    he_text: 'האם המשוואה x² + y² = -1 ניתנת לפתרון עבור y ממשי בסביבת x=0',
+  },
+  {
+    id: '85ffb5f4-01ce-4f4a-b7d4-f24d5e4f331f',
+    en_text:
+      'Does the Implicit Function Theorem require ∂F/∂y ≠ 0 at the point',
+    he_text:
+      'האם משפט הפונקציה הסמויה דורש שהנגזרת החלקית ∂F/∂y תהיה שונה מאפס בנקודה',
+  },
+  {
+    id: '45f661e3-7c7f-4407-b41e-de05633e33f5',
+    en_text:
+      'For F(x,y)=xy, is y uniquely an implicit function of x near (0,0)',
+    he_text:
+      'האם עבור F(x,y)=xy מתקבל ש‑y היא פונקציה סמויה יחידה של x בסביבת (0,0)',
+  },
+  {
+    id: 'c8c4c26c-4963-430a-a3ce-5cfb8bb5175c',
+    en_text: 'Does y - x³ = 0 define a smooth implicit function y(x)',
+    he_text: 'האם y - x³ = 0 מגדירה פונקציה סמויה חלקה y(x)',
+  },
+  {
+    id: 'f5c0953f-12fc-4a54-8c6f-9b585ee16089',
+    en_text: 'Is y implicitly differentiable from x² + y² - 1 = 0 near (0,1)',
+    he_text: 'האם y נגזרת בסתר מן המשוואה x² + y² - 1 = 0 בסביבת (0,1)',
+  },
+  {
+    id: 'c8db2563-fc3b-424d-aee8-85dbf55c4870',
+    en_text: 'Can y² = x define a differentiable function near x=0',
+    he_text: 'האם y² = x יכולה להגדיר פונקציה נגזרת בסביבת x=0',
+  },
+  {
+    id: '5f506319-fea0-4734-89df-3b38fde94097',
+    en_text:
+      'If ∂F/∂y = 0 at a point, can the Implicit Function Theorem still guarantee a solution',
+    he_text: 'אם ∂F/∂y = 0 בנקודה האם משפט הפונקציה הסמויה עדיין מבטיח פתרון',
+  },
+  {
+    id: '01ab283c-1c72-413c-bb51-fe35e72f770a',
+    en_text: 'Are implicit functions always defined on an entire domain',
+    he_text: 'האם פונקציות סמויות מוגדרות תמיד על כל התחום',
+  },
+  {
+    id: 'd4540e69-ff6a-4e8c-af32-70aaafdc6db7',
+    en_text: 'Does the theorem apply to F(x,y)=y - sin x at (0,0)',
+    he_text: 'האם המשפט חל על F(x,y)=y - sin x בנקודה (0,0)',
+  },
+  {
+    id: '2f243a6e-e9b6-402c-9dc8-877329a4552c',
+    en_text: 'For eʸ + x = 0, is y an implicit function near x=-1',
+    he_text: 'האם מהמשוואה eʸ + x = 0 מתקבל ש‑y היא פונקציה סמויה בסביבת x=-1',
+  },
+  {
+    id: '99dca6c8-4110-4942-abb4-7ed9a90fc0f7',
+    en_text: 'Does y³ + y + x = 0 define y(x) implicitly near x=0',
+    he_text: 'האם y³ + y + x = 0 מגדירה את y(x) בסתר בסביבת x=0',
+  },
+  {
+    id: '70da8c16-ccea-4be6-a66f-2a2f20dfe11f',
+    en_text: 'In F(x,y)=y² + x², is ∂F/∂y at (0,0) nonzero',
+    he_text: 'האם ב‑F(x,y)=y² + x² הנגזרת החלקית ∂F/∂y בנקודה (0,0) שונה מאפס',
+  },
+  {
+    id: '5bfed97c-42a6-47f0-a227-d65c6ca820b8',
+    en_text: 'Can implicit differentiation find dy/dx from x² + y² = 4',
+    he_text:
+      'האם ניתן להשתמש בגזירה בסתר כדי למצוא dy/dx מן המשוואה x² + y² = 4',
+  },
+  {
+    id: '8bf1dbd5-ded2-4fd1-ae74-9dbc568bbeb8',
+    en_text: 'Is dy/dx for x² + y² = 4 equal to -x/y',
+    he_text: 'האם dy/dx עבור x² + y² = 4 שווה ל־-x/y',
+  },
+  {
+    id: '76359b63-9dff-4951-a709-1fa9f1da15cd',
+    en_text: 'For xy + y = 0, is dy/dx at (0,0) defined',
+    he_text: 'האם עבור xy + y = 0 מוגדר dy/dx בנקודה (0,0)',
+  },
+  {
+    id: 'f8dd7b41-e765-4642-a93e-3a6581f1e951',
+    en_text: 'Does y = cos x represent an implicit function',
+    he_text: 'האם y = cos x מייצגת פונקציה סמויה',
+  },
+  {
+    id: '42ab3dce-9ff9-48bf-b493-0a65134ddfe5',
+    en_text:
+      'Does every implicit function require solving a polynomial equation',
+    he_text: 'האם כל פונקציה סמויה דורשת פתרון של משוואה פולינומית',
+  },
+  {
+    id: '0e7f7b9b-8cab-4777-af79-cd0631de5bdf',
+    en_text:
+      'Is the Implicit Function Theorem valid in ℝⁿ for n greater than 2',
+    he_text: 'האם משפט הפונקציה הסמויה תקף ב‑ℝⁿ עבור n גדול מ‑2',
+  },
+  {
+    id: '91abfa9b-abcc-4d9d-83f5-a757b29d1dce',
+    en_text:
+      'Can the theorem be used to solve for multiple variables simultaneously',
+    he_text: 'האם ניתן להשתמש במשפט כדי לפתור עבור כמה משתנים בו‑זמנית',
+  },
+  {
+    id: '97ffc6c0-fea5-4331-94cd-20208fa3e1b3',
+    en_text:
+      'Is a nonzero Jacobian determinant required for the multivariable theorem',
+    he_text: 'האם דרוש דטרמיננטה לא אפסית של היעקוביאן עבור המשפט הרב משתני',
+  },
+  {
+    id: '1a7c9510-7498-4c83-b135-be80383a9933',
+    en_text:
+      'Does F(x,y)=y² - x have a differentiable solution y(x) near (0,0)',
+    he_text: 'האם ל‑F(x,y)=y² - x יש פתרון y(x) נגזר בסביבת (0,0)',
+  },
+  {
+    id: '96c2ed26-f52c-4882-b069-f1cdd702351c',
+    en_text:
+      'Does ln(x) + y = 0 require implicit differentiation to find dy/dx',
+    he_text: 'האם ln(x) + y = 0 מחייב גזירה בסתר כדי למצוא dy/dx',
+  },
+  {
+    id: 'df699b8f-89e5-4120-b1b7-231194efda99',
+    en_text:
+      'Does the Implicit Function Theorem guarantee a unique implicit function',
+    he_text: 'האם משפט הפונקציה הסמויה מבטיח פונקציה סמויה יחידה',
+  },
+  {
+    id: '377643db-0732-4680-9d7f-9fcd3eb21049',
+    en_text:
+      'For x + y + z = 0, can z be written as an implicit function of x and y',
+    he_text:
+      'האם מן המשוואה x + y + z = 0 ניתן לכתוב את z כפונקציה סמויה של x ו‑y',
+  },
+  {
+    id: '7fd20a5e-4ca6-4084-842d-d450283668b8',
+    en_text: 'Does x² + y² = 0 define y as a function of x near x=0',
+    he_text: 'האם x² + y² = 0 מגדירה את y כפונקציה של x בסביבת x=0',
+  },
+  {
+    id: 'f849a09a-d365-4d31-bc5f-a847a105bf0b',
+    en_text: 'In xy = 1, is dy/dx equal to -y/x',
+    he_text: 'האם ב‑xy = 1 מתקבל dy/dx = -y/x',
+  },
+  {
+    id: '6253f99d-4672-4816-960b-5013c7840a50',
+    en_text: 'For y² + x y + x² = 0, is dy/dx defined at (0,0)',
+    he_text: 'האם עבור y² + x y + x² = 0 מוגדר dy/dx בנקודה (0,0)',
+  },
+  {
+    id: 'b8f34e32-e2fa-414e-9ec4-87f29b007839',
+    en_text:
+      'Does the theorem ensure existence of derivatives for implicit functions',
+    he_text: 'האם המשפט מבטיח קיום נגזרות לפונקציות סמויות',
+  },
+  {
+    id: '4f6d44db-249e-48de-a23a-507f14b9d354',
+    en_text:
+      'If F(x,y)=0 defines y(x), is dy/dx equal to -F_x/F_y when F_y ≠ 0',
+    he_text:
+      'אם F(x,y)=0 מגדירה את y(x) האם dy/dx שווה ל־-F_x/F_y כאשר F_y ≠ 0',
+  },
 ];
