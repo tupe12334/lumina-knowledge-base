@@ -7112,4 +7112,890 @@ export const QUESTIONS: QuestionSeedData[] = [
       },
     ],
   },
+  // Vector Spaces questions
+  {
+    id: '4d7afd65-ae33-4f2e-9bc6-428c44d3c000',
+    translationId: 'e90a8ca3-1918-4cd3-a96f-6ef2896dc020',
+    text: {
+      en_text:
+        'Is the set of all linear combinations of given vectors called their span',
+      he_text:
+        'האם קבוצת כל הצירופים הלינאריים של וקטורים נתונים נקראת המרחב שהם פורשים',
+    },
+    type: QuestionType.selection,
+    moduleId: 'd49b124c-df8c-403d-8460-8f7ee813784f',
+    answers: [
+      {
+        id: '374d8248-df60-40ef-9eb6-bcdc775f50d3',
+        selectAnswers: [
+          {
+            id: '8222a3b0-cb21-476b-b71d-9a77a6f64c21',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: '2976dfcd-d46a-4d7d-9466-251328fd0a19',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '6dcace07-8234-422d-b43f-48c9f6a408a3',
+    translationId: '770c542e-e56e-4822-8c31-4fd1f1563355',
+    text: {
+      en_text: 'Does every vector space have a basis',
+      he_text: 'האם לכל מרחב וקטורי יש בסיס',
+    },
+    type: QuestionType.selection,
+    moduleId: 'd49b124c-df8c-403d-8460-8f7ee813784f',
+    answers: [
+      {
+        id: 'af2f14e1-006e-4f49-9fef-8ac85a5744a9',
+        selectAnswers: [
+          {
+            id: '86897a6f-6afe-48a9-ba8b-61e81410ca08',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: '70e76729-c262-4a27-a62f-e6afedc92366',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '804e496e-a643-4e20-b03a-595e53dcdacc',
+    translationId: 'c97bb73c-5d05-407d-85a9-61994c46bcc3',
+    text: {
+      en_text: 'Is the zero vector required in every subspace',
+      he_text: 'האם הווקטור האפס נדרש בכל תת־מרחב',
+    },
+    type: QuestionType.selection,
+    moduleId: 'd49b124c-df8c-403d-8460-8f7ee813784f',
+    answers: [
+      {
+        id: 'a1e2a76c-9bf5-498d-a164-b72de2095f2c',
+        selectAnswers: [
+          {
+            id: '1752dd51-0632-41b8-aefc-dab406cbd752',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: '469733e1-be19-434d-aa50-7f70fd9fda12',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '66bbc725-0cca-428e-a996-24ae24790223',
+    translationId: '032b3716-0912-4800-b1b5-b9a8d08dbcf3',
+    text: {
+      en_text: 'Can linearly dependent vectors form a basis',
+      he_text: 'האם וקטורים תלויים לינארית יכולים ליצור בסיס',
+    },
+    type: QuestionType.selection,
+    moduleId: 'd49b124c-df8c-403d-8460-8f7ee813784f',
+    answers: [
+      {
+        id: '4e4cb60e-4a4c-4282-b018-bad3134fa9ae',
+        selectAnswers: [
+          {
+            id: 'd36a3646-2982-4695-ac2b-262607df2229',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: false,
+          },
+          {
+            id: 'd7f7b2c3-db50-43d7-91a4-32e30113d8ed',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: true,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'd9dac7fe-2c62-437e-af20-358eb2ebd6f9',
+    translationId: 'fb793e45-1e34-499b-a568-ded5beb466dc',
+    text: {
+      en_text: 'Is the dimension of ℝ^3 equal to 3',
+      he_text: 'האם הממד של ℝ^3 שווה ל־3',
+    },
+    type: QuestionType.selection,
+    moduleId: 'd49b124c-df8c-403d-8460-8f7ee813784f',
+    answers: [
+      {
+        id: '223db1a3-b8d1-492d-8dc2-6e25340148c5',
+        selectAnswers: [
+          {
+            id: '5e3989cf-db2a-46c2-9b97-86f34f7a048d',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: 'eeb922d9-a2fa-4575-9d9e-bdd2ad44998e',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '93c3a659-430d-455a-96c4-9c2fa4fc2bc1',
+    translationId: '58901428-472f-40e9-996b-ca45302894db',
+    text: {
+      en_text: 'Are the standard basis vectors in ℝ^2 linearly independent',
+      he_text: 'האם וקטורי הבסיס הסטנדרטיים ב־ℝ^2 הם בלתי תלויים לינארית',
+    },
+    type: QuestionType.selection,
+    moduleId: 'd49b124c-df8c-403d-8460-8f7ee813784f',
+    answers: [
+      {
+        id: '920a67a3-7a50-435a-ba3a-e52988106a40',
+        selectAnswers: [
+          {
+            id: 'b0475821-deaa-416d-9961-ec2eaeb3e8fa',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: '1aa85fc3-e9dd-45ea-b828-9294ec372af6',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '39dda17c-e48f-449d-bfb5-adf7fdd9b2c7',
+    translationId: 'c8ec3add-8f51-484c-b47b-f51323be523f',
+    text: {
+      en_text: 'Does adding a vector to a basis always keep it a basis',
+      he_text: 'האם הוספת וקטור לבסיס תמיד משאירה אותו בסיס',
+    },
+    type: QuestionType.selection,
+    moduleId: 'd49b124c-df8c-403d-8460-8f7ee813784f',
+    answers: [
+      {
+        id: '3f91e800-7e0f-40ed-93ca-682b0e073f44',
+        selectAnswers: [
+          {
+            id: 'd37e0a6e-8d48-47f3-9730-3fa4af3cb39b',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: false,
+          },
+          {
+            id: '6ff18492-a5b6-4fab-8fd7-d5f0e5d74172',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: true,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '929e1990-c723-4ae6-8f5c-03f024e9287c',
+    translationId: 'a7db6a88-ff8d-4917-ace1-a376a8c97d42',
+    text: {
+      en_text: 'Is the empty set a basis of the zero vector space',
+      he_text: 'האם הקבוצה הריקה היא בסיס של מרחב הווקטורים האפסי',
+    },
+    type: QuestionType.selection,
+    moduleId: 'd49b124c-df8c-403d-8460-8f7ee813784f',
+    answers: [
+      {
+        id: '346042df-2b13-405e-b244-6b85c81d5e9e',
+        selectAnswers: [
+          {
+            id: 'a4ce08ab-0dff-47e7-a6ca-0f04cab86162',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: '795f4516-bd58-4b0f-96c1-20c57da91d39',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '6bf879f6-aabb-4623-951b-f3bacd831ce5',
+    translationId: '2b903c79-1786-451f-a5ad-52591230b567',
+    text: {
+      en_text:
+        'Are two different bases of a vector space always of the same size',
+      he_text: 'האם שני בסיסים שונים של מרחב וקטורי הם תמיד באותו גודל',
+    },
+    type: QuestionType.selection,
+    moduleId: 'd49b124c-df8c-403d-8460-8f7ee813784f',
+    answers: [
+      {
+        id: '05c1a333-f483-4fb2-9435-da3e78970831',
+        selectAnswers: [
+          {
+            id: 'ccbfd6ea-eb09-4168-b737-b37e2d1b6057',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: 'bfd0c5a1-bdd9-44c6-989f-8de370c8a1e4',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '87a25c59-a7cc-4e3e-9204-89c80c0bf4d6',
+    translationId: '565f4f02-22dc-49e8-8b55-9ecf7988d254',
+    text: {
+      en_text: 'Can a vector space over ℝ have an infinite basis',
+      he_text: 'האם למרחב וקטורי מעל ℝ יכול להיות בסיס אינסופי',
+    },
+    type: QuestionType.selection,
+    moduleId: 'd49b124c-df8c-403d-8460-8f7ee813784f',
+    answers: [
+      {
+        id: '6c2ec10b-2e63-47dc-890b-9a890e41ab01',
+        selectAnswers: [
+          {
+            id: 'e8587175-6538-4c85-81eb-5a986e281eb4',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: '8e3625eb-a0b0-4c4f-bf85-ae4756a5d5c0',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  // Eigenvalues and Eigenvectors questions
+  {
+    id: '85a97174-e9fe-4a46-baf5-c31613ada86f',
+    translationId: 'b6935507-f538-48f9-95bd-830923a12cfd',
+    text: {
+      en_text:
+        'Is λ an eigenvalue if there exists a nonzero vector v such that Av = λv',
+      he_text: 'האם λ הוא ערך עצמי אם קיים וקטור שאינו אפס כך ש־Av = λv',
+    },
+    type: QuestionType.selection,
+    moduleId: 'a2093775-11c1-40e2-9c10-3cdaaeaf6559',
+    answers: [
+      {
+        id: '63ad2822-e401-4eb5-ba4a-c9b4fa90695e',
+        selectAnswers: [
+          {
+            id: 'e4622474-99be-4e22-a26c-666736ec1782',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: 'c707a197-e424-4c17-b6f3-c1860390430c',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '81fdadc1-14b4-4ff6-8bc8-4a465db7897c',
+    translationId: '709285d5-4d1e-48d8-bf2c-67b79f6ebd2e',
+    text: {
+      en_text: 'Can a matrix have more eigenvectors than eigenvalues',
+      he_text: 'האם למטריצה יכולים להיות יותר וקטורים עצמיים מאשר ערכים עצמיים',
+    },
+    type: QuestionType.selection,
+    moduleId: 'a2093775-11c1-40e2-9c10-3cdaaeaf6559',
+    answers: [
+      {
+        id: 'c12a0735-5a00-4297-9c36-68e91a48acb0',
+        selectAnswers: [
+          {
+            id: 'cbdcb7fe-6d1d-4b29-a519-a71d6d2045ec',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: '6b228e28-15a4-4997-86dc-e4469cd6011a',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '5aad3c32-d657-4406-802a-dd3580280c62',
+    translationId: '64604d61-a769-48ad-b6dc-2a720b0c8741',
+    text: {
+      en_text:
+        'Are eigenvectors corresponding to distinct eigenvalues always linearly independent',
+      he_text:
+        'האם וקטורים עצמיים השייכים לערכים עצמיים שונים תמיד בלתי תלויים לינארית',
+    },
+    type: QuestionType.selection,
+    moduleId: 'a2093775-11c1-40e2-9c10-3cdaaeaf6559',
+    answers: [
+      {
+        id: '7eea37a1-5857-4f26-8351-8606bc6eeec2',
+        selectAnswers: [
+          {
+            id: '675cda48-ff26-4639-b0f9-404a2957b38e',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: 'ef091e02-7faa-40ef-aeb6-fd48b69d4253',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'ad86be35-9e48-4ef7-9ab8-79ad1aff4578',
+    translationId: '3e03bb09-da62-44cc-9e6d-9fd176b18a2c',
+    text: {
+      en_text: 'Is the determinant of A - λI equal to zero for an eigenvalue λ',
+      he_text: 'האם הדטרמיננטה של A - λI שווה לאפס עבור ערך עצמי λ',
+    },
+    type: QuestionType.selection,
+    moduleId: 'a2093775-11c1-40e2-9c10-3cdaaeaf6559',
+    answers: [
+      {
+        id: '2695daac-9de7-4718-bd19-3fd26c99ace4',
+        selectAnswers: [
+          {
+            id: '24f80ae6-de00-486e-bdfe-ba108f19958e',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: '7a748782-b4cd-4648-b139-9cbcc3551572',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '77494a04-db05-4e75-83a1-c3cec9a081a7',
+    translationId: '0c00cf37-667d-4b05-9ddd-82916562e13f',
+    text: {
+      en_text: 'Can a real matrix have complex eigenvalues',
+      he_text: 'האם למטריצה ממשית יכולים להיות ערכים עצמיים מרוכבים',
+    },
+    type: QuestionType.selection,
+    moduleId: 'a2093775-11c1-40e2-9c10-3cdaaeaf6559',
+    answers: [
+      {
+        id: 'dd80a97c-4b58-4152-a02b-e32e1ac31bfa',
+        selectAnswers: [
+          {
+            id: '7ea6d84d-6875-4ca3-bdf1-06c11513c5f5',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: 'e9e21a86-3a17-4655-9d09-99076f2d4f3f',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '7e72328b-6383-4bac-9745-d87025dff8ce',
+    translationId: '13ae2623-d9e9-4bda-a8ac-527341720eee',
+    text: {
+      en_text: 'Is every eigenvector also an eigenvalue',
+      he_text: 'האם כל וקטור עצמי הוא גם ערך עצמי',
+    },
+    type: QuestionType.selection,
+    moduleId: 'a2093775-11c1-40e2-9c10-3cdaaeaf6559',
+    answers: [
+      {
+        id: 'a133a035-de34-45e4-90c4-eca7bcdc8a75',
+        selectAnswers: [
+          {
+            id: 'b5a533a8-532c-487d-a702-d023359b55ed',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: false,
+          },
+          {
+            id: '4da30d17-b998-4466-a31b-62f6c7e1e70a',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: true,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'eab5f0e8-bdbd-4df9-bbda-8b85ef7383d6',
+    translationId: 'cf0ced9c-a271-40f8-a055-7b1ceafc3845',
+    text: {
+      en_text:
+        'Do eigenvectors corresponding to the same eigenvalue form a subspace',
+      he_text: 'האם וקטורים עצמיים השייכים לאותו ערך עצמי יוצרים תת־מרחב',
+    },
+    type: QuestionType.selection,
+    moduleId: 'a2093775-11c1-40e2-9c10-3cdaaeaf6559',
+    answers: [
+      {
+        id: 'e4cb769a-97c5-4e4b-98d4-fedca8689bce',
+        selectAnswers: [
+          {
+            id: '014e46e4-6f15-4eb7-ba57-58ea5836d1d6',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: 'a3ac1d2b-ce52-4e7f-a62b-584aec4130d6',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'f12c90a9-df9d-46b2-bf3d-3c3acf9e92b4',
+    translationId: '551ea0aa-3ca8-42bf-8b9c-8aac63e8d68c',
+    text: {
+      en_text: 'Is the trace of a matrix the product of its eigenvalues',
+      he_text: 'האם עקבת המטריצה היא מכפלת הערכים העצמיים שלה',
+    },
+    type: QuestionType.selection,
+    moduleId: 'a2093775-11c1-40e2-9c10-3cdaaeaf6559',
+    answers: [
+      {
+        id: '2cd83625-aab9-4eb7-b53c-b0d30eef7108',
+        selectAnswers: [
+          {
+            id: '84b043d7-0d35-42a8-9294-04661369d808',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: false,
+          },
+          {
+            id: '95120024-a2e0-4299-a73f-22878d4993c3',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: true,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '559beeff-3657-4e88-9184-b85b5ea8d2c8',
+    translationId: '511b4088-781e-4f74-8d1a-49df93d20be7',
+    text: {
+      en_text: 'Can a defective matrix be diagonalizable',
+      he_text: 'האם מטריצה דפקטיבית יכולה להיות ניתנת לדיאגונליזציה',
+    },
+    type: QuestionType.selection,
+    moduleId: 'a2093775-11c1-40e2-9c10-3cdaaeaf6559',
+    answers: [
+      {
+        id: '19a98860-81c0-4203-beea-f2f8f8b25e16',
+        selectAnswers: [
+          {
+            id: '36eb6d4d-5e0f-42e7-895d-f2eab2f1d3aa',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: false,
+          },
+          {
+            id: 'fcf875d4-6ba1-4e60-ba98-6b93341d14c3',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: true,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '4d4ed414-9c07-482b-afe0-274bbbadf9e4',
+    translationId: '0c08bdf7-617e-4947-b38b-f1803cbdf08b',
+    text: {
+      en_text:
+        'Is an eigenvalue of A^2 equal to the square of an eigenvalue of A',
+      he_text: 'האם ערך עצמי של A^2 שווה לריבוע ערך עצמי של A',
+    },
+    type: QuestionType.selection,
+    moduleId: 'a2093775-11c1-40e2-9c10-3cdaaeaf6559',
+    answers: [
+      {
+        id: '6e54c24e-2db5-46fc-a408-9a61ccd71c43',
+        selectAnswers: [
+          {
+            id: '8afd7622-757c-4c70-a7eb-f73f869d2313',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: 'f2298f82-11c4-4466-a715-a29eceff2334',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  // Diagonalization questions
+  {
+    id: 'c6c31eff-fdf1-4313-a9b5-091bd670224e',
+    translationId: '944c8356-0a34-4cf5-b343-36ec4f54f662',
+    text: {
+      en_text:
+        'Is a matrix diagonalizable if it has n linearly independent eigenvectors',
+      he_text:
+        'האם מטריצה ניתנת לדיאגונליזציה אם יש לה n וקטורים עצמיים בלתי תלויים לינארית',
+    },
+    type: QuestionType.selection,
+    moduleId: '0030cff5-5c9c-48db-ba6c-1c8fe12b9f7b',
+    answers: [
+      {
+        id: '457c5cdc-0bca-4153-a3a5-d7cd52b26069',
+        selectAnswers: [
+          {
+            id: '1da55ff1-9161-4bdb-8593-2c8444de9b0f',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: 'd1a3c169-ef80-4714-9ea4-a5cf334bfe2a',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'b94a896c-5e07-4c39-8034-1a9cae95b925',
+    translationId: 'e30be03f-cdbf-4682-a390-11dfcbb34b70',
+    text: {
+      en_text: 'Are all symmetric matrices diagonalizable over ℝ',
+      he_text: 'האם כל המטריצות הסימטריות ניתנות לדיאגונליזציה מעל ℝ',
+    },
+    type: QuestionType.selection,
+    moduleId: '0030cff5-5c9c-48db-ba6c-1c8fe12b9f7b',
+    answers: [
+      {
+        id: '062d77f6-8ebb-474d-a263-c536f12c9c69',
+        selectAnswers: [
+          {
+            id: 'ce2188ad-eec1-4e55-a1e4-908d936c5092',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: '06b3c3d5-2364-4641-9d5a-c41a4b484030',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '7a814e80-cea5-4c79-951f-ad794482dd5d',
+    translationId: '300a9d3c-d08f-4b8f-b20a-2b41a3873f8e',
+    text: {
+      en_text: 'Can a matrix with a repeated eigenvalue be non-diagonalizable',
+      he_text: 'האם מטריצה עם ערך עצמי חוזר יכולה להיות לא ניתנת לדיאגונליזציה',
+    },
+    type: QuestionType.selection,
+    moduleId: '0030cff5-5c9c-48db-ba6c-1c8fe12b9f7b',
+    answers: [
+      {
+        id: 'f2cbf0b3-6d7f-4f28-a9b9-bdd295674bee',
+        selectAnswers: [
+          {
+            id: '88299b4e-0f3c-4d06-ae86-05fb2a488e1e',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: '250c4267-30b0-4c7a-bf9a-4f952f7876f4',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '41f76405-4085-42a4-9af6-823933a361ca',
+    translationId: 'a198c112-0a4a-48bf-9328-570015f9cb95',
+    text: {
+      en_text:
+        'Is diagonalization possible if the minimal polynomial has distinct linear factors',
+      he_text:
+        'האם דיאגונליזציה אפשרית אם הפולינום המינימלי מתפרק לגורמים לינאריים שונים',
+    },
+    type: QuestionType.selection,
+    moduleId: '0030cff5-5c9c-48db-ba6c-1c8fe12b9f7b',
+    answers: [
+      {
+        id: '54361297-be3b-4b38-8a01-f32f6324fba8',
+        selectAnswers: [
+          {
+            id: '63cf7502-6463-476f-a755-560f4937e43e',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: '6b4ca74c-e4cc-4d98-8924-3063b00cc7f3',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'c93d3b6a-febd-425a-9dbc-949f3822ceb6',
+    translationId: '56539258-7920-4bff-8966-b11b25cb33fe',
+    text: {
+      en_text: 'Is every diagonalizable matrix invertible',
+      he_text: 'האם כל מטריצה הניתנת לדיאגונליזציה היא הפיכה',
+    },
+    type: QuestionType.selection,
+    moduleId: '0030cff5-5c9c-48db-ba6c-1c8fe12b9f7b',
+    answers: [
+      {
+        id: '2aa963e9-86af-4d97-af56-8aed42ff9f63',
+        selectAnswers: [
+          {
+            id: '139d227b-0f05-41d0-b263-700e2ad454db',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: false,
+          },
+          {
+            id: '65b8bac5-3ed2-419a-98cd-53df12511a1e',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: true,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '5274ebaf-2465-4b33-bdae-0c3c6d27ad6b',
+    translationId: '415f4e11-288e-4cf4-acd3-de241a2fc634',
+    text: {
+      en_text:
+        'Does a diagonalizable matrix necessarily commute with all matrices',
+      he_text: 'האם מטריצה שניתנת לדיאגונליזציה מתחלפת בהכרח עם כל המטריצות',
+    },
+    type: QuestionType.selection,
+    moduleId: '0030cff5-5c9c-48db-ba6c-1c8fe12b9f7b',
+    answers: [
+      {
+        id: '0dc73a95-0148-41ce-8c45-b3d296e6526f',
+        selectAnswers: [
+          {
+            id: '2a51b126-0232-42da-9f30-54cc85774ebe',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: false,
+          },
+          {
+            id: '1b8cac5d-0a77-43dd-aa0b-d27c96d224fb',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: true,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'af5fb900-4857-4ab7-bd32-981df31d8308',
+    translationId: '9284f0bd-288f-43d4-8175-64d973b92d4a',
+    text: {
+      en_text: 'Can a matrix be diagonalized by a similarity transformation',
+      he_text: 'האם ניתן לדיאגונליזציה של מטריצה באמצעות טרנספורמציית דמיון',
+    },
+    type: QuestionType.selection,
+    moduleId: '0030cff5-5c9c-48db-ba6c-1c8fe12b9f7b',
+    answers: [
+      {
+        id: '1666a586-5044-416a-91df-f0708a136ef6',
+        selectAnswers: [
+          {
+            id: '4c078ed5-d9d0-4d2c-93a2-e2afea220160',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: '8adec72b-736f-4b96-b249-2226facc4507',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '4d3a65e4-7bcc-4a91-bc88-8953a42e9e67',
+    translationId: 'ccb992bc-81f3-4678-87f7-764957fffc6d',
+    text: {
+      en_text: 'Are orthogonal matrices always diagonalizable over ℝ',
+      he_text: 'האם מטריצות אורתוגונליות תמיד ניתנות לדיאגונליזציה מעל ℝ',
+    },
+    type: QuestionType.selection,
+    moduleId: '0030cff5-5c9c-48db-ba6c-1c8fe12b9f7b',
+    answers: [
+      {
+        id: '833d0377-16c4-4e77-9bf9-6ba1582f58c2',
+        selectAnswers: [
+          {
+            id: 'c34ef2ce-693d-480d-a3b2-139b928350d4',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: false,
+          },
+          {
+            id: '8ed45ba8-8f85-4dd3-b72a-772bd0067072',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: true,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'a717d79d-5a37-4bb6-a876-bb66b611178f',
+    translationId: 'ab4f4fff-6fde-4154-8cf7-cc009ced31d5',
+    text: {
+      en_text: 'Is a diagonal matrix already diagonalizable',
+      he_text: 'האם מטריצה אלכסונית היא כבר ניתנת לדיאגונליזציה',
+    },
+    type: QuestionType.selection,
+    moduleId: '0030cff5-5c9c-48db-ba6c-1c8fe12b9f7b',
+    answers: [
+      {
+        id: '09fd1b99-ecf4-46e4-ad20-4ecaab1654ac',
+        selectAnswers: [
+          {
+            id: '34a41822-87aa-427b-bcc3-e43f914402b6',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: 'f3716c5b-62a1-4135-9721-9946d8d0a2d7',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: '091c829c-9f64-4206-b18a-a10f438c4a35',
+    translationId: 'dee66e0f-60b1-40aa-832a-1106870a039c',
+    text: {
+      en_text: 'Does diagonalization simplify computing matrix powers',
+      he_text: 'האם דיאגונליזציה מקלה על חישוב חזקה של מטריצה',
+    },
+    type: QuestionType.selection,
+    moduleId: '0030cff5-5c9c-48db-ba6c-1c8fe12b9f7b',
+    answers: [
+      {
+        id: '495d6418-471c-4b5e-92b9-f7ad44a1eeaa',
+        selectAnswers: [
+          {
+            id: '5576d0f6-ffce-4217-9f55-ced03479649c',
+            translationId: YES_TRANSLATION_ID,
+            text: { en_text: 'Yes', he_text: 'כן' },
+            isCorrect: true,
+          },
+          {
+            id: 'fc9f562f-4cec-4b32-a290-fc20cd99f86a',
+            translationId: NO_TRANSLATION_ID,
+            text: { en_text: 'No', he_text: 'לא' },
+            isCorrect: false,
+          },
+        ],
+      },
+    ],
+  },
 ] satisfies QuestionSeedData[];

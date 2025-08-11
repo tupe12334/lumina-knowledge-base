@@ -59,6 +59,11 @@ export const seedModules = async (
         '49ade8d5-78a1-4d66-a62a-4a1cebb3d80d',
       'Implicit Function_Implicit Function Theorem':
         'ceea03d8-cf5a-4297-a204-ee661c993ee2',
+      'Matrix Algebra_Vector Spaces': 'bc02e30c-58a4-4585-bfbc-d70e10377abb',
+      'Vector Spaces_Eigenvalues and Eigenvectors':
+        '5f84374f-c79c-419e-9c6c-523420bfcaed',
+      'Eigenvalues and Eigenvectors_Diagonalization':
+        'a55096c6-c840-4762-aa45-d41d27ad7fa5',
     };
     return relationshipMap[`${prerequisite}_${postrequisite}`] || '';
   };
@@ -96,6 +101,12 @@ export const seedModules = async (
         'fd84a9ac-b963-43db-a8dc-7dd2e656c18a',
       'ceea03d8-cf5a-4297-a204-ee661c993ee2':
         'e1a3f64b-6782-453a-9b38-aa36277e0fb5',
+      'bc02e30c-58a4-4585-bfbc-d70e10377abb':
+        'f04889e8-9a0a-4393-b9f3-4d825456cfe5',
+      '5f84374f-c79c-419e-9c6c-523420bfcaed':
+        'f81b70ac-8e45-4bb9-beb3-79721f7ecb00',
+      'a55096c6-c840-4762-aa45-d41d27ad7fa5':
+        '6eb8260b-2d34-435f-82ae-62e6d68fa16d',
     };
     return metadataMap[blockRelationshipId] || '';
   };
@@ -149,6 +160,9 @@ export const seedModules = async (
       Queues: '9c67cf86-b57c-4da2-b0fb-fe5a11d8bab0',
       'Hash Tables': 'b2db4907-ef15-4d56-8b33-8f61c5b9567d',
       'Binary Trees': 'b2c3d4e5-6f7a-4b8c-9d0e-2f3a4b5c6d7e',
+      'Vector Spaces': 'c6871315-ca77-4b15-b894-58a0b88e74e8',
+      'Eigenvalues and Eigenvectors': '2f476947-15fa-4c9c-9f27-90a640ed9f21',
+      Diagonalization: 'fe824c71-d84b-4ffb-a721-510283887674',
     };
     return translationMap[moduleText] || '';
   };
@@ -236,6 +250,9 @@ export const seedModules = async (
     Queues: 'b68ae937-37a8-4d10-95a6-89a7017694bc',
     'Hash Tables': 'c2781ae5-9358-4297-8db9-e6651f6f5cd8',
     'Binary Trees': 'f8c9d5e1-2a3b-4c6d-8e9f-1a2b3c4d5e6f',
+    'Vector Spaces': 'd49b124c-df8c-403d-8460-8f7ee813784f',
+    'Eigenvalues and Eigenvectors': 'a2093775-11c1-40e2-9c10-3cdaaeaf6559',
+    Diagonalization: '0030cff5-5c9c-48db-ba6c-1c8fe12b9f7b',
     'Linear Equations': 'f91d2e2e-3fc8-45b5-ae64-e08a7d075e24',
     'Probability Basics': '7496bad2-981e-4ac5-b464-788c4fc0d118',
     'Sequences and Series': 'e82b0404-286d-42ee-89a9-e54776575d9f',
@@ -744,6 +761,24 @@ export const seedModules = async (
       he_text: 'עצים בינאריים',
       course: 'Data Structures and Introduction to Algorithms',
       prerequisite: 'Arrays',
+    },
+    {
+      en_text: 'Vector Spaces',
+      he_text: 'מרחבים וקטוריים',
+      prerequisite: 'Matrix Algebra',
+      course: 'Topics in Mathematics for Social Sciences Students',
+    },
+    {
+      en_text: 'Eigenvalues and Eigenvectors',
+      he_text: 'ערכים עצמיים ווקטורים עצמיים',
+      prerequisite: 'Vector Spaces',
+      course: 'Topics in Mathematics for Social Sciences Students',
+    },
+    {
+      en_text: 'Diagonalization',
+      he_text: 'דיאגונליזציה',
+      prerequisite: 'Eigenvalues and Eigenvectors',
+      course: 'Topics in Mathematics for Social Sciences Students',
     },
   ];
 
