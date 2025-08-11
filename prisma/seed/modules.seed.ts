@@ -51,6 +51,10 @@ export const seedModules = async (
         '27a0eab8-6102-4020-a147-b5cfee9a2d76',
       Permutation_Derangements: 'f1a2b3c4-d5e6-4789-a012-bcdef4567890',
       'Number Systems_Matrix Algebra': '7314520e-de66-4e11-a0b6-5c251f34de4a',
+      'Set Theory_Number Theory': 'bd4c7174-ea38-4128-9e75-5321e3221e98',
+      'Number Theory_Prime Numbers': '5c2dfffd-06be-4157-b7ba-05f2f93001d8',
+      'Prime Numbers_Modular Arithmetic':
+        '415a3d20-0b1a-4989-a39b-9864f603c80a',
     };
     return relationshipMap[`${prerequisite}_${postrequisite}`] || '';
   };
@@ -78,6 +82,12 @@ export const seedModules = async (
         'f438751a-ed5d-4ed6-a090-cd9dc508b844',
       '7314520e-de66-4e11-a0b6-5c251f34de4a':
         '5203fc27-3295-4d03-b405-ddc57c038289',
+      'bd4c7174-ea38-4128-9e75-5321e3221e98':
+        '672a14e5-9fea-4fd8-bf62-21bee65604ba',
+      '5c2dfffd-06be-4157-b7ba-05f2f93001d8':
+        'bdc0e5c9-a6ea-4785-ab00-188f6295b4db',
+      '415a3d20-0b1a-4989-a39b-9864f603c80a':
+        'b891375a-7bc9-440a-a65f-47d124e15e70',
     };
     return metadataMap[blockRelationshipId] || '';
   };
@@ -129,6 +139,9 @@ export const seedModules = async (
       Queues: '9c67cf86-b57c-4da2-b0fb-fe5a11d8bab0',
       'Hash Tables': 'b2db4907-ef15-4d56-8b33-8f61c5b9567d',
       'Binary Trees': 'b2c3d4e5-6f7a-4b8c-9d0e-2f3a4b5c6d7e',
+      'Number Theory': 'd27c85c1-fed4-4a07-b1bd-8d85934e071d',
+      'Prime Numbers': 'a626238a-9cc6-4295-b74d-968619ef2d54',
+      'Modular Arithmetic': '079e5735-6651-41e7-a77c-b51db113db13',
     };
     return translationMap[moduleText] || '';
   };
@@ -214,6 +227,9 @@ export const seedModules = async (
     Queues: 'b68ae937-37a8-4d10-95a6-89a7017694bc',
     'Hash Tables': 'c2781ae5-9358-4297-8db9-e6651f6f5cd8',
     'Binary Trees': 'f8c9d5e1-2a3b-4c6d-8e9f-1a2b3c4d5e6f',
+    'Number Theory': '7b77b34c-29ce-411c-813f-27b54e2f537b',
+    'Prime Numbers': '27d45ed7-e7b0-4129-8337-fe5d09b9be2f',
+    'Modular Arithmetic': '883b49cb-61ce-40a8-9408-a7966385347b',
   };
 
   const modules = [
@@ -477,6 +493,26 @@ export const seedModules = async (
       en_text: 'Generating Functions',
       he_text: 'פונקציות יוצרות',
       parent: 'Combinatorics',
+      course: 'Discrete Mathematics',
+    },
+    {
+      en_text: 'Number Theory',
+      he_text: 'תורת המספרים',
+      prerequisite: 'Set Theory',
+      course: 'Discrete Mathematics',
+    },
+    {
+      en_text: 'Prime Numbers',
+      he_text: 'מספרים ראשוניים',
+      parent: 'Number Theory',
+      prerequisite: 'Number Theory',
+      course: 'Discrete Mathematics',
+    },
+    {
+      en_text: 'Modular Arithmetic',
+      he_text: 'חשבון מודולרי',
+      parent: 'Number Theory',
+      prerequisite: 'Prime Numbers',
       course: 'Discrete Mathematics',
     },
     {

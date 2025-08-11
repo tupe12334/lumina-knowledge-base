@@ -5279,4 +5279,1804 @@ export const QUESTIONS: QuestionSeedData[] = [
       },
     ],
   },
+  {
+    id: 'fe4c1d1c-ce7e-4f32-b101-19de2604dbee',
+    translationId: 'fe4c1d1c-ce7e-4f32-b101-19de2604dbee',
+    text: {
+      en_text: 'What is gcd(12, 18)?',
+      he_text: 'What is gcd(12, 18)?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '7b77b34c-29ce-411c-813f-27b54e2f537b',
+    answers: [
+      {
+        id: 'e17d8462-a575-4e6e-afeb-0b6a50f63600',
+        numberAnswer: {
+          id: '51e3204f-c008-4976-a7fd-ffbb42c5632e',
+          value: 6,
+        },
+      },
+    ],
+  },
+  {
+    id: 'd711a45d-9fb7-43b2-ab44-f1280e87d14e',
+    translationId: 'd711a45d-9fb7-43b2-ab44-f1280e87d14e',
+    text: {
+      en_text: 'What is gcd(20, 30)?',
+      he_text: 'What is gcd(20, 30)?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '7b77b34c-29ce-411c-813f-27b54e2f537b',
+    answers: [
+      {
+        id: '6543f10d-7933-4779-bc74-d8fcf8e7f024',
+        numberAnswer: {
+          id: '4975c04d-2c60-4c84-bf80-bf3ffb45afd2',
+          value: 10,
+        },
+      },
+    ],
+  },
+  {
+    id: '4b8cf6ec-075a-4e7f-9c55-440131b64465',
+    translationId: '4b8cf6ec-075a-4e7f-9c55-440131b64465',
+    text: {
+      en_text: 'What is gcd(45, 75)?',
+      he_text: 'What is gcd(45, 75)?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '7b77b34c-29ce-411c-813f-27b54e2f537b',
+    answers: [
+      {
+        id: '5ee0191b-5515-4769-b8ac-77f61cf896a5',
+        numberAnswer: {
+          id: '70dbac5d-2e65-4714-ae44-9b72c5fee598',
+          value: 15,
+        },
+      },
+    ],
+  },
+  {
+    id: '0aa64f91-e6b6-4f1f-8c2e-e1fef7b06e0f',
+    translationId: '0aa64f91-e6b6-4f1f-8c2e-e1fef7b06e0f',
+    text: {
+      en_text: 'What is gcd(81, 27)?',
+      he_text: 'What is gcd(81, 27)?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '7b77b34c-29ce-411c-813f-27b54e2f537b',
+    answers: [
+      {
+        id: '5f893f16-8c29-48c5-aed0-0f1cdf0324a6',
+        numberAnswer: {
+          id: '7e8eda43-56c0-4225-a2db-e7aa7c3bc845',
+          value: 27,
+        },
+      },
+    ],
+  },
+  {
+    id: '97d03a0d-310a-41d6-8664-b339fd8d8d96',
+    translationId: '97d03a0d-310a-41d6-8664-b339fd8d8d96',
+    text: {
+      en_text: 'What is gcd(84, 36)?',
+      he_text: 'What is gcd(84, 36)?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '7b77b34c-29ce-411c-813f-27b54e2f537b',
+    answers: [
+      {
+        id: 'e2fe6d21-b696-49be-84d5-3e06cdfed12d',
+        numberAnswer: {
+          id: 'a66f844a-01ff-4b41-aa2e-261bed6d5a4e',
+          value: 12,
+        },
+      },
+    ],
+  },
+  {
+    id: '8c3509b0-8bfd-45e6-b882-b676e70e4cf8',
+    translationId: '8c3509b0-8bfd-45e6-b882-b676e70e4cf8',
+    text: {
+      en_text: 'What is gcd(100, 10)?',
+      he_text: 'What is gcd(100, 10)?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '7b77b34c-29ce-411c-813f-27b54e2f537b',
+    answers: [
+      {
+        id: '6ee84db0-e7ad-458c-8b76-921e98d23a7f',
+        numberAnswer: {
+          id: '620b5169-756d-411c-a358-2c533ef52e01',
+          value: 10,
+        },
+      },
+    ],
+  },
+  {
+    id: '407a574b-9b8c-4c89-b501-5318375fb858',
+    translationId: '407a574b-9b8c-4c89-b501-5318375fb858',
+    text: {
+      en_text: 'What is gcd(35, 49)?',
+      he_text: 'What is gcd(35, 49)?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '7b77b34c-29ce-411c-813f-27b54e2f537b',
+    answers: [
+      {
+        id: '541d6d77-deb6-4bf2-8f80-cd19fa1e2773',
+        numberAnswer: {
+          id: '4a92f8aa-580e-457b-9f2c-6d6aa63b9b07',
+          value: 7,
+        },
+      },
+    ],
+  },
+  {
+    id: 'cde5bdf2-75ef-431a-9fc8-e865b8af4700',
+    translationId: 'cde5bdf2-75ef-431a-9fc8-e865b8af4700',
+    text: {
+      en_text: 'What is gcd(64, 16)?',
+      he_text: 'What is gcd(64, 16)?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '7b77b34c-29ce-411c-813f-27b54e2f537b',
+    answers: [
+      {
+        id: '8c0fb690-58b8-4f43-bfe2-64a921777136',
+        numberAnswer: {
+          id: '8945efc8-1766-4712-a33d-2ebe37fba675',
+          value: 16,
+        },
+      },
+    ],
+  },
+  {
+    id: 'f7cf87f0-5005-473f-8ff1-7c2d6623cd28',
+    translationId: 'f7cf87f0-5005-473f-8ff1-7c2d6623cd28',
+    text: {
+      en_text: 'What is gcd(121, 44)?',
+      he_text: 'What is gcd(121, 44)?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '7b77b34c-29ce-411c-813f-27b54e2f537b',
+    answers: [
+      {
+        id: 'b69531f6-16ed-4f99-a41d-660e0535c1f5',
+        numberAnswer: {
+          id: 'aeee3d0d-82f8-4300-abf1-4ea73061d421',
+          value: 11,
+        },
+      },
+    ],
+  },
+  {
+    id: 'bd331467-3a81-4356-9e14-43dbb0278f89',
+    translationId: 'bd331467-3a81-4356-9e14-43dbb0278f89',
+    text: {
+      en_text: 'What is gcd(70, 28)?',
+      he_text: 'What is gcd(70, 28)?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '7b77b34c-29ce-411c-813f-27b54e2f537b',
+    answers: [
+      {
+        id: '538d35f8-e420-4c88-aaa7-ffd174c488e6',
+        numberAnswer: {
+          id: '65fe356f-4963-4fa8-a094-a303b25fe689',
+          value: 14,
+        },
+      },
+    ],
+  },
+  {
+    id: '6bf27e8c-d6ee-4ee1-a091-065d53a9e41b',
+    translationId: '6bf27e8c-d6ee-4ee1-a091-065d53a9e41b',
+    text: {
+      en_text: 'What is lcm(4, 5)?',
+      he_text: 'What is lcm(4, 5)?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '7b77b34c-29ce-411c-813f-27b54e2f537b',
+    answers: [
+      {
+        id: 'b519ba8a-1d76-4371-8332-55d729a78515',
+        numberAnswer: {
+          id: '4b23bce1-e070-4f8e-9122-8d71e373342d',
+          value: 20,
+        },
+      },
+    ],
+  },
+  {
+    id: 'd13e1bed-da74-4022-b48b-75072f5962df',
+    translationId: 'd13e1bed-da74-4022-b48b-75072f5962df',
+    text: {
+      en_text: 'What is lcm(6, 8)?',
+      he_text: 'What is lcm(6, 8)?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '7b77b34c-29ce-411c-813f-27b54e2f537b',
+    answers: [
+      {
+        id: '75d6260b-e3e1-4695-9f00-612aa816c09a',
+        numberAnswer: {
+          id: 'fccfb22c-2ac6-4734-9535-560ba974bb4e',
+          value: 24,
+        },
+      },
+    ],
+  },
+  {
+    id: '633089d0-5265-49c8-8153-48e79796cd6f',
+    translationId: '633089d0-5265-49c8-8153-48e79796cd6f',
+    text: {
+      en_text: 'What is lcm(9, 12)?',
+      he_text: 'What is lcm(9, 12)?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '7b77b34c-29ce-411c-813f-27b54e2f537b',
+    answers: [
+      {
+        id: 'a8386eae-5fad-44ce-9dbe-b602adc8b55b',
+        numberAnswer: {
+          id: 'cb1eef63-3dc8-43e1-99bf-95ab4bed5464',
+          value: 36,
+        },
+      },
+    ],
+  },
+  {
+    id: '62a88039-08d5-467a-b565-8d98296fc902',
+    translationId: '62a88039-08d5-467a-b565-8d98296fc902',
+    text: {
+      en_text: 'What is lcm(15, 20)?',
+      he_text: 'What is lcm(15, 20)?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '7b77b34c-29ce-411c-813f-27b54e2f537b',
+    answers: [
+      {
+        id: '7658a7d0-1084-43c2-99b9-21dd08f3b5f6',
+        numberAnswer: {
+          id: '7e97f80e-3f5d-486f-bd68-017eecd36c54',
+          value: 60,
+        },
+      },
+    ],
+  },
+  {
+    id: '8294c625-5ff6-476f-b63c-0bd871e15225',
+    translationId: '8294c625-5ff6-476f-b63c-0bd871e15225',
+    text: {
+      en_text: 'What is lcm(7, 3)?',
+      he_text: 'What is lcm(7, 3)?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '7b77b34c-29ce-411c-813f-27b54e2f537b',
+    answers: [
+      {
+        id: '91c95f1a-6a17-4171-810d-36b74c37ced8',
+        numberAnswer: {
+          id: '2aaf9e90-c157-4095-ac06-96cff74127f6',
+          value: 21,
+        },
+      },
+    ],
+  },
+  {
+    id: '25593775-23c8-4f1f-b4fd-964ae54e6ea0',
+    translationId: '25593775-23c8-4f1f-b4fd-964ae54e6ea0',
+    text: {
+      en_text: 'What is lcm(14, 9)?',
+      he_text: 'What is lcm(14, 9)?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '7b77b34c-29ce-411c-813f-27b54e2f537b',
+    answers: [
+      {
+        id: 'b0a0ddb5-8540-426c-8797-6ee0e7813678',
+        numberAnswer: {
+          id: 'fe6916e4-862c-421e-95f8-d997cfe41305',
+          value: 126,
+        },
+      },
+    ],
+  },
+  {
+    id: '731f9dc3-b308-4371-b1d3-193d9860dba1',
+    translationId: '731f9dc3-b308-4371-b1d3-193d9860dba1',
+    text: {
+      en_text: 'What is lcm(5, 18)?',
+      he_text: 'What is lcm(5, 18)?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '7b77b34c-29ce-411c-813f-27b54e2f537b',
+    answers: [
+      {
+        id: 'f2573e0e-d490-457d-82ab-12507100d520',
+        numberAnswer: {
+          id: '761d6736-022f-4ce1-b95f-38811f4b2b23',
+          value: 90,
+        },
+      },
+    ],
+  },
+  {
+    id: '5c026f87-df60-4cf9-83a5-bccf54b351fd',
+    translationId: '5c026f87-df60-4cf9-83a5-bccf54b351fd',
+    text: {
+      en_text: 'What is lcm(8, 21)?',
+      he_text: 'What is lcm(8, 21)?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '7b77b34c-29ce-411c-813f-27b54e2f537b',
+    answers: [
+      {
+        id: 'c90c8525-2992-4f9e-873f-4922113fb5b7',
+        numberAnswer: {
+          id: '06ca7913-7113-4179-981e-40fa212c293f',
+          value: 168,
+        },
+      },
+    ],
+  },
+  {
+    id: '2f09fa49-4b76-4e98-b92b-c17eeaa3a581',
+    translationId: '2f09fa49-4b76-4e98-b92b-c17eeaa3a581',
+    text: {
+      en_text: 'What is lcm(11, 13)?',
+      he_text: 'What is lcm(11, 13)?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '7b77b34c-29ce-411c-813f-27b54e2f537b',
+    answers: [
+      {
+        id: '51cf8a0a-4636-4143-b252-ce5fffe650c3',
+        numberAnswer: {
+          id: '3574d91b-9de8-446a-b1a1-1fadfa9cadec',
+          value: 143,
+        },
+      },
+    ],
+  },
+  {
+    id: 'e401c45a-24a0-4040-b561-f9d152079d32',
+    translationId: 'e401c45a-24a0-4040-b561-f9d152079d32',
+    text: {
+      en_text: 'What is lcm(16, 6)?',
+      he_text: 'What is lcm(16, 6)?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '7b77b34c-29ce-411c-813f-27b54e2f537b',
+    answers: [
+      {
+        id: 'a3763643-6442-4455-ae29-80a79feacb6d',
+        numberAnswer: {
+          id: '25bf6d24-8258-4d00-a135-a0bdd1ccc19b',
+          value: 48,
+        },
+      },
+    ],
+  },
+  {
+    id: 'a37535f2-00d7-4620-9bdc-b2506a00466d',
+    translationId: 'a37535f2-00d7-4620-9bdc-b2506a00466d',
+    text: {
+      en_text: "What is Euler's totient function φ(5)?",
+      he_text: "What is Euler's totient function φ(5)?",
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '7b77b34c-29ce-411c-813f-27b54e2f537b',
+    answers: [
+      {
+        id: '90063d92-d20a-41b8-a81f-0d2218ab3738',
+        numberAnswer: {
+          id: 'b79b183c-c04b-4657-9d4d-de1dec6fc214',
+          value: 4,
+        },
+      },
+    ],
+  },
+  {
+    id: '52802a80-f838-427c-a533-cb6ae3487887',
+    translationId: '52802a80-f838-427c-a533-cb6ae3487887',
+    text: {
+      en_text: "What is Euler's totient function φ(8)?",
+      he_text: "What is Euler's totient function φ(8)?",
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '7b77b34c-29ce-411c-813f-27b54e2f537b',
+    answers: [
+      {
+        id: 'cd91850d-7b21-4f34-a2d0-b97ac4f307b2',
+        numberAnswer: {
+          id: '88daaef7-48d9-4032-9c22-cd63bd2961a5',
+          value: 4,
+        },
+      },
+    ],
+  },
+  {
+    id: 'd2dc9de8-a22a-4059-bb70-9246570af4fc',
+    translationId: 'd2dc9de8-a22a-4059-bb70-9246570af4fc',
+    text: {
+      en_text: "What is Euler's totient function φ(10)?",
+      he_text: "What is Euler's totient function φ(10)?",
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '7b77b34c-29ce-411c-813f-27b54e2f537b',
+    answers: [
+      {
+        id: '3b59cf8a-584c-487b-9735-54209e2b5394',
+        numberAnswer: {
+          id: '62c2c2d3-b996-49d4-8f07-81cdf93935bf',
+          value: 4,
+        },
+      },
+    ],
+  },
+  {
+    id: '71c1c01d-bfb8-4e5b-8c71-5f56d37d55c5',
+    translationId: '71c1c01d-bfb8-4e5b-8c71-5f56d37d55c5',
+    text: {
+      en_text: "What is Euler's totient function φ(12)?",
+      he_text: "What is Euler's totient function φ(12)?",
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '7b77b34c-29ce-411c-813f-27b54e2f537b',
+    answers: [
+      {
+        id: 'fa8008f7-a062-4225-96a1-9a0295abe54e',
+        numberAnswer: {
+          id: 'fe87a94a-2af5-49c5-abba-ec6bef20b271',
+          value: 4,
+        },
+      },
+    ],
+  },
+  {
+    id: 'd2faccee-9d00-4389-9569-3fd7761968d6',
+    translationId: 'd2faccee-9d00-4389-9569-3fd7761968d6',
+    text: {
+      en_text: "What is Euler's totient function φ(15)?",
+      he_text: "What is Euler's totient function φ(15)?",
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '7b77b34c-29ce-411c-813f-27b54e2f537b',
+    answers: [
+      {
+        id: '31bb3d80-c828-4a7a-84a9-1150d1142fee',
+        numberAnswer: {
+          id: '1e960ddc-857e-40b8-940a-ccf826a45a5e',
+          value: 8,
+        },
+      },
+    ],
+  },
+  {
+    id: '2d18ae75-03ab-42d6-aa3b-8a2da89d68e3',
+    translationId: '2d18ae75-03ab-42d6-aa3b-8a2da89d68e3',
+    text: {
+      en_text: "What is Euler's totient function φ(16)?",
+      he_text: "What is Euler's totient function φ(16)?",
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '7b77b34c-29ce-411c-813f-27b54e2f537b',
+    answers: [
+      {
+        id: 'f5b4a043-ba25-4f80-a6cf-005c52d2f1c5',
+        numberAnswer: {
+          id: '04f2fd04-d7f7-49a6-8c00-78b4bf6e6ac1',
+          value: 8,
+        },
+      },
+    ],
+  },
+  {
+    id: '27664426-fa7e-4ddc-929b-89e84ec6423f',
+    translationId: '27664426-fa7e-4ddc-929b-89e84ec6423f',
+    text: {
+      en_text: "What is Euler's totient function φ(20)?",
+      he_text: "What is Euler's totient function φ(20)?",
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '7b77b34c-29ce-411c-813f-27b54e2f537b',
+    answers: [
+      {
+        id: '5a59443e-6b13-435d-9f75-e17dc390f9f4',
+        numberAnswer: {
+          id: '06986002-5e1b-4395-8cd4-b878522c2b90',
+          value: 8,
+        },
+      },
+    ],
+  },
+  {
+    id: '41f1b4e1-5fb5-4653-8443-1f99151dbec1',
+    translationId: '41f1b4e1-5fb5-4653-8443-1f99151dbec1',
+    text: {
+      en_text: "What is Euler's totient function φ(25)?",
+      he_text: "What is Euler's totient function φ(25)?",
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '7b77b34c-29ce-411c-813f-27b54e2f537b',
+    answers: [
+      {
+        id: 'b19362ce-c3c0-4c01-9cec-665323ab9e08',
+        numberAnswer: {
+          id: '16fced2f-8360-46c6-8e03-faab2054e673',
+          value: 20,
+        },
+      },
+    ],
+  },
+  {
+    id: 'e1eecf92-d6ad-43df-8a89-d9fb890fc235',
+    translationId: 'e1eecf92-d6ad-43df-8a89-d9fb890fc235',
+    text: {
+      en_text: "What is Euler's totient function φ(30)?",
+      he_text: "What is Euler's totient function φ(30)?",
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '7b77b34c-29ce-411c-813f-27b54e2f537b',
+    answers: [
+      {
+        id: '4d75aab4-ab97-41db-b5d7-a6d710354f7d',
+        numberAnswer: {
+          id: 'bc1adf59-4632-4147-8a15-2ad491ace8f4',
+          value: 8,
+        },
+      },
+    ],
+  },
+  {
+    id: '64ba3f33-b39e-46c9-92f9-8c14debf2023',
+    translationId: '64ba3f33-b39e-46c9-92f9-8c14debf2023',
+    text: {
+      en_text: "What is Euler's totient function φ(36)?",
+      he_text: "What is Euler's totient function φ(36)?",
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '7b77b34c-29ce-411c-813f-27b54e2f537b',
+    answers: [
+      {
+        id: 'ad5beca9-73f6-4832-804d-4cf14534c0f9',
+        numberAnswer: {
+          id: '8307cd1b-6a67-44a4-ab46-3d7c973795fa',
+          value: 12,
+        },
+      },
+    ],
+  },
+  {
+    id: 'bb7de7df-02c3-4ff6-b174-8f92c54688dd',
+    translationId: 'bb7de7df-02c3-4ff6-b174-8f92c54688dd',
+    text: {
+      en_text: 'Is 2 a prime number? 1 for yes, 0 for no.',
+      he_text: 'Is 2 a prime number? 1 for yes, 0 for no.',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '27d45ed7-e7b0-4129-8337-fe5d09b9be2f',
+    answers: [
+      {
+        id: '85f92e9e-984a-453c-a801-af35720fcbf2',
+        numberAnswer: {
+          id: '4f1e3479-51da-4916-87ce-15047a2c8d38',
+          value: 1,
+        },
+      },
+    ],
+  },
+  {
+    id: 'e113efc6-4741-43ec-b1ac-c27b52710c35',
+    translationId: 'e113efc6-4741-43ec-b1ac-c27b52710c35',
+    text: {
+      en_text: 'Is 4 a prime number? 1 for yes, 0 for no.',
+      he_text: 'Is 4 a prime number? 1 for yes, 0 for no.',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '27d45ed7-e7b0-4129-8337-fe5d09b9be2f',
+    answers: [
+      {
+        id: '2f44145b-1b93-4f6e-ac15-f98508c0352f',
+        numberAnswer: {
+          id: 'd7636ce8-41e7-464e-a4ce-12267b5285ce',
+          value: 0,
+        },
+      },
+    ],
+  },
+  {
+    id: '6a01ed1f-7ad0-469a-ade5-5ddd12c708f7',
+    translationId: '6a01ed1f-7ad0-469a-ade5-5ddd12c708f7',
+    text: {
+      en_text: 'Is 7 a prime number? 1 for yes, 0 for no.',
+      he_text: 'Is 7 a prime number? 1 for yes, 0 for no.',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '27d45ed7-e7b0-4129-8337-fe5d09b9be2f',
+    answers: [
+      {
+        id: '543ef364-a0e5-4f25-839b-21bbbb1a0d4b',
+        numberAnswer: {
+          id: '819ff18a-7779-4cdd-8ff7-a5675f5d1c6f',
+          value: 1,
+        },
+      },
+    ],
+  },
+  {
+    id: '66e8683b-a458-472b-8535-8996a62ff130',
+    translationId: '66e8683b-a458-472b-8535-8996a62ff130',
+    text: {
+      en_text: 'Is 9 a prime number? 1 for yes, 0 for no.',
+      he_text: 'Is 9 a prime number? 1 for yes, 0 for no.',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '27d45ed7-e7b0-4129-8337-fe5d09b9be2f',
+    answers: [
+      {
+        id: 'a51aaaa2-e67b-4887-aa5f-8ef0539569b7',
+        numberAnswer: {
+          id: '173f1b37-6857-4081-8b8b-130ddc2e84d8',
+          value: 0,
+        },
+      },
+    ],
+  },
+  {
+    id: '8e47dacd-8d75-41e5-a8f8-9f1611caa20e',
+    translationId: '8e47dacd-8d75-41e5-a8f8-9f1611caa20e',
+    text: {
+      en_text: 'Is 11 a prime number? 1 for yes, 0 for no.',
+      he_text: 'Is 11 a prime number? 1 for yes, 0 for no.',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '27d45ed7-e7b0-4129-8337-fe5d09b9be2f',
+    answers: [
+      {
+        id: 'a295b03c-23db-4fc8-b954-7a4ef934d7ec',
+        numberAnswer: {
+          id: '2279cbcb-9638-4163-bc95-18eb9b5b741a',
+          value: 1,
+        },
+      },
+    ],
+  },
+  {
+    id: '5deb67f8-7230-44c0-9168-e427158e0c8c',
+    translationId: '5deb67f8-7230-44c0-9168-e427158e0c8c',
+    text: {
+      en_text: 'Is 15 a prime number? 1 for yes, 0 for no.',
+      he_text: 'Is 15 a prime number? 1 for yes, 0 for no.',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '27d45ed7-e7b0-4129-8337-fe5d09b9be2f',
+    answers: [
+      {
+        id: 'a3c089c0-fc0c-4f26-8cde-e909cd7eac0b',
+        numberAnswer: {
+          id: 'b701ee97-02b2-42d3-9ade-ce1276e44df9',
+          value: 0,
+        },
+      },
+    ],
+  },
+  {
+    id: 'a473a81b-bc90-41ca-a4d9-2bd6c0bc5d37',
+    translationId: 'a473a81b-bc90-41ca-a4d9-2bd6c0bc5d37',
+    text: {
+      en_text: 'Is 17 a prime number? 1 for yes, 0 for no.',
+      he_text: 'Is 17 a prime number? 1 for yes, 0 for no.',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '27d45ed7-e7b0-4129-8337-fe5d09b9be2f',
+    answers: [
+      {
+        id: '5e388c5a-467f-4304-8183-204ad831d6a0',
+        numberAnswer: {
+          id: 'c3a3470c-f604-4e63-bfdd-a3f8ee69a9c1',
+          value: 1,
+        },
+      },
+    ],
+  },
+  {
+    id: 'db8f79b1-42c0-4f01-a37d-f07412676dbe',
+    translationId: 'db8f79b1-42c0-4f01-a37d-f07412676dbe',
+    text: {
+      en_text: 'Is 19 a prime number? 1 for yes, 0 for no.',
+      he_text: 'Is 19 a prime number? 1 for yes, 0 for no.',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '27d45ed7-e7b0-4129-8337-fe5d09b9be2f',
+    answers: [
+      {
+        id: '43c7d45d-1e8c-49c6-9973-bd538f5cc192',
+        numberAnswer: {
+          id: 'd2db0f7c-d2f9-465e-801c-65975f70247c',
+          value: 1,
+        },
+      },
+    ],
+  },
+  {
+    id: 'ee59758a-ebca-47fd-8daa-fc0123804470',
+    translationId: 'ee59758a-ebca-47fd-8daa-fc0123804470',
+    text: {
+      en_text: 'Is 21 a prime number? 1 for yes, 0 for no.',
+      he_text: 'Is 21 a prime number? 1 for yes, 0 for no.',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '27d45ed7-e7b0-4129-8337-fe5d09b9be2f',
+    answers: [
+      {
+        id: '0ccf0088-4cb8-40e2-8cbf-a6b83b078cf6',
+        numberAnswer: {
+          id: 'aa54f6bb-4a67-4d25-96d6-8921d14d8467',
+          value: 0,
+        },
+      },
+    ],
+  },
+  {
+    id: '02dc598a-98f2-4664-8dfa-465d9a43faab',
+    translationId: '02dc598a-98f2-4664-8dfa-465d9a43faab',
+    text: {
+      en_text: 'Is 23 a prime number? 1 for yes, 0 for no.',
+      he_text: 'Is 23 a prime number? 1 for yes, 0 for no.',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '27d45ed7-e7b0-4129-8337-fe5d09b9be2f',
+    answers: [
+      {
+        id: '7e1a8144-725d-4588-858c-bff7a926d9f8',
+        numberAnswer: {
+          id: 'e5fa1304-2530-4e52-ad4c-74ca37ef20bc',
+          value: 1,
+        },
+      },
+    ],
+  },
+  {
+    id: '51032f79-8527-4313-83e8-93df4e5393c8',
+    translationId: '51032f79-8527-4313-83e8-93df4e5393c8',
+    text: {
+      en_text: 'What is the 1st prime number?',
+      he_text: 'What is the 1st prime number?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '27d45ed7-e7b0-4129-8337-fe5d09b9be2f',
+    answers: [
+      {
+        id: 'af17f66e-c91b-4a2c-a79b-18fbb527bcdb',
+        numberAnswer: {
+          id: '696b587d-0367-42de-b7bc-a39b09f89ade',
+          value: 2,
+        },
+      },
+    ],
+  },
+  {
+    id: 'c063c402-65eb-485a-9f5d-a3bd2f6fda4d',
+    translationId: 'c063c402-65eb-485a-9f5d-a3bd2f6fda4d',
+    text: {
+      en_text: 'What is the 2nd prime number?',
+      he_text: 'What is the 2nd prime number?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '27d45ed7-e7b0-4129-8337-fe5d09b9be2f',
+    answers: [
+      {
+        id: '1f693fc5-85ca-474a-b076-a9f4da7a89b3',
+        numberAnswer: {
+          id: '36da39c1-4160-4cf4-af19-c04dcd07f4a8',
+          value: 3,
+        },
+      },
+    ],
+  },
+  {
+    id: 'e31baaf3-576b-435a-9ca2-8c3452e7632a',
+    translationId: 'e31baaf3-576b-435a-9ca2-8c3452e7632a',
+    text: {
+      en_text: 'What is the 3rd prime number?',
+      he_text: 'What is the 3rd prime number?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '27d45ed7-e7b0-4129-8337-fe5d09b9be2f',
+    answers: [
+      {
+        id: 'db429418-840e-4c94-926f-e39f4687f481',
+        numberAnswer: {
+          id: '62bb4d7a-9e05-444b-b731-dd46faf28ae0',
+          value: 5,
+        },
+      },
+    ],
+  },
+  {
+    id: '435d9788-62a9-44fb-b10c-77c989338a4f',
+    translationId: '435d9788-62a9-44fb-b10c-77c989338a4f',
+    text: {
+      en_text: 'What is the 4th prime number?',
+      he_text: 'What is the 4th prime number?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '27d45ed7-e7b0-4129-8337-fe5d09b9be2f',
+    answers: [
+      {
+        id: '2c38b9d6-6483-4c96-ba6c-7cd017e22dec',
+        numberAnswer: {
+          id: 'a38d12ab-6996-41f4-afcc-803274694290',
+          value: 7,
+        },
+      },
+    ],
+  },
+  {
+    id: '440b099a-55e0-43a9-8d42-e55ff49272d4',
+    translationId: '440b099a-55e0-43a9-8d42-e55ff49272d4',
+    text: {
+      en_text: 'What is the 5th prime number?',
+      he_text: 'What is the 5th prime number?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '27d45ed7-e7b0-4129-8337-fe5d09b9be2f',
+    answers: [
+      {
+        id: '44f757c2-ad90-4682-b4c7-95d4819bd14e',
+        numberAnswer: {
+          id: 'fa454e11-6784-491d-a164-bfdcfc0fb0c2',
+          value: 11,
+        },
+      },
+    ],
+  },
+  {
+    id: '0125f50d-e082-4b67-8d72-1f668b3ebf81',
+    translationId: '0125f50d-e082-4b67-8d72-1f668b3ebf81',
+    text: {
+      en_text: 'What is the 10th prime number?',
+      he_text: 'What is the 10th prime number?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '27d45ed7-e7b0-4129-8337-fe5d09b9be2f',
+    answers: [
+      {
+        id: '5f3234b0-1bec-4cbb-be54-d7ec9106b1e3',
+        numberAnswer: {
+          id: 'c837163b-bde7-4dfe-8bda-2e047eddf733',
+          value: 29,
+        },
+      },
+    ],
+  },
+  {
+    id: '186a85c4-af76-42c0-8116-a9d8a722213f',
+    translationId: '186a85c4-af76-42c0-8116-a9d8a722213f',
+    text: {
+      en_text: 'What is the 15th prime number?',
+      he_text: 'What is the 15th prime number?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '27d45ed7-e7b0-4129-8337-fe5d09b9be2f',
+    answers: [
+      {
+        id: '60542544-79fa-4102-ae7b-a6f278b577c3',
+        numberAnswer: {
+          id: '9bcc97f8-dc21-46fe-a1da-893494f649be',
+          value: 47,
+        },
+      },
+    ],
+  },
+  {
+    id: '74314ef2-65d0-4a87-b15b-ce9439198d97',
+    translationId: '74314ef2-65d0-4a87-b15b-ce9439198d97',
+    text: {
+      en_text: 'What is the 20th prime number?',
+      he_text: 'What is the 20th prime number?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '27d45ed7-e7b0-4129-8337-fe5d09b9be2f',
+    answers: [
+      {
+        id: 'c259a9e2-b3ea-4c65-934b-e898d59ce7ce',
+        numberAnswer: {
+          id: '0095f721-f3d0-423d-ab57-fd4c05d7d5ad',
+          value: 71,
+        },
+      },
+    ],
+  },
+  {
+    id: 'e9dd42b2-84e0-4848-a180-6c63e8ce620c',
+    translationId: 'e9dd42b2-84e0-4848-a180-6c63e8ce620c',
+    text: {
+      en_text: 'What is the 25th prime number?',
+      he_text: 'What is the 25th prime number?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '27d45ed7-e7b0-4129-8337-fe5d09b9be2f',
+    answers: [
+      {
+        id: 'a679ef72-e221-45a3-a67b-91a52ff48732',
+        numberAnswer: {
+          id: 'd8a66ff1-e687-4104-9e12-deb8c4cea372',
+          value: 97,
+        },
+      },
+    ],
+  },
+  {
+    id: '0e52b5e6-ca90-4eba-b84a-591e5655cf54',
+    translationId: '0e52b5e6-ca90-4eba-b84a-591e5655cf54',
+    text: {
+      en_text: 'What is the 30th prime number?',
+      he_text: 'What is the 30th prime number?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '27d45ed7-e7b0-4129-8337-fe5d09b9be2f',
+    answers: [
+      {
+        id: '0d91d556-a3ca-4b71-8c85-3dfb8477681b',
+        numberAnswer: {
+          id: 'be3daf08-e8ee-4816-af52-0bef8bcd7d40',
+          value: 113,
+        },
+      },
+    ],
+  },
+  {
+    id: 'dbf10d09-e5a4-4d14-8f71-314f21f12573',
+    translationId: 'dbf10d09-e5a4-4d14-8f71-314f21f12573',
+    text: {
+      en_text: 'How many primes are less than 10?',
+      he_text: 'How many primes are less than 10?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '27d45ed7-e7b0-4129-8337-fe5d09b9be2f',
+    answers: [
+      {
+        id: '40ded435-c4c8-46bd-93e7-6f3789676a4b',
+        numberAnswer: {
+          id: 'be63c315-3bd9-482f-83e5-5d015047fca6',
+          value: 4,
+        },
+      },
+    ],
+  },
+  {
+    id: '97b623d1-0e1c-40e3-bf0f-e2eb74804963',
+    translationId: '97b623d1-0e1c-40e3-bf0f-e2eb74804963',
+    text: {
+      en_text: 'How many primes are less than 20?',
+      he_text: 'How many primes are less than 20?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '27d45ed7-e7b0-4129-8337-fe5d09b9be2f',
+    answers: [
+      {
+        id: '6aa7d0ea-98d6-453a-9939-607c779efe83',
+        numberAnswer: {
+          id: 'a571c27e-5d9d-4a6a-84dc-24b542025152',
+          value: 8,
+        },
+      },
+    ],
+  },
+  {
+    id: '470455ff-60b1-4a32-a50c-fdaa6c9277be',
+    translationId: '470455ff-60b1-4a32-a50c-fdaa6c9277be',
+    text: {
+      en_text: 'How many primes are less than 30?',
+      he_text: 'How many primes are less than 30?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '27d45ed7-e7b0-4129-8337-fe5d09b9be2f',
+    answers: [
+      {
+        id: '0950d0e7-b913-489e-a0c1-cd5eaa952ed9',
+        numberAnswer: {
+          id: '7fe62f86-ee4e-4584-a4f5-92800794f66f',
+          value: 10,
+        },
+      },
+    ],
+  },
+  {
+    id: '5c5de508-2f59-4836-80f0-df78ef1fc3f2',
+    translationId: '5c5de508-2f59-4836-80f0-df78ef1fc3f2',
+    text: {
+      en_text: 'How many primes are less than 40?',
+      he_text: 'How many primes are less than 40?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '27d45ed7-e7b0-4129-8337-fe5d09b9be2f',
+    answers: [
+      {
+        id: '1c9bb63b-ae02-4bc1-9f39-70bfb7e30726',
+        numberAnswer: {
+          id: 'de644371-5be7-4208-a336-44e76e7cd271',
+          value: 12,
+        },
+      },
+    ],
+  },
+  {
+    id: '2de42cd8-f122-4d61-a87a-611700554f4b',
+    translationId: '2de42cd8-f122-4d61-a87a-611700554f4b',
+    text: {
+      en_text: 'How many primes are less than 50?',
+      he_text: 'How many primes are less than 50?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '27d45ed7-e7b0-4129-8337-fe5d09b9be2f',
+    answers: [
+      {
+        id: '04cf2265-0629-4ccf-8620-9cf10d69d0f5',
+        numberAnswer: {
+          id: '3fdccfcb-74f0-46b2-a116-1251c6207eab',
+          value: 15,
+        },
+      },
+    ],
+  },
+  {
+    id: '0fe044bd-e55d-4817-9e7f-7ace4cb34c17',
+    translationId: '0fe044bd-e55d-4817-9e7f-7ace4cb34c17',
+    text: {
+      en_text: 'How many primes are less than 60?',
+      he_text: 'How many primes are less than 60?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '27d45ed7-e7b0-4129-8337-fe5d09b9be2f',
+    answers: [
+      {
+        id: '2f27fef5-8975-49ef-aff4-7ec524fe1bd7',
+        numberAnswer: {
+          id: '810c5bc4-7c95-49e7-a9d0-d1a98ac485bb',
+          value: 17,
+        },
+      },
+    ],
+  },
+  {
+    id: 'b0831308-29df-41e9-bd1d-c0c6f48de7a7',
+    translationId: 'b0831308-29df-41e9-bd1d-c0c6f48de7a7',
+    text: {
+      en_text: 'How many primes are less than 70?',
+      he_text: 'How many primes are less than 70?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '27d45ed7-e7b0-4129-8337-fe5d09b9be2f',
+    answers: [
+      {
+        id: '8ecc1399-eca5-4dc9-ac20-33c3a4a43c40',
+        numberAnswer: {
+          id: '91388f34-5123-4427-8c98-07dc39e33888',
+          value: 19,
+        },
+      },
+    ],
+  },
+  {
+    id: 'a63c37a3-0a60-43fb-a374-a219c8b72cab',
+    translationId: 'a63c37a3-0a60-43fb-a374-a219c8b72cab',
+    text: {
+      en_text: 'How many primes are less than 80?',
+      he_text: 'How many primes are less than 80?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '27d45ed7-e7b0-4129-8337-fe5d09b9be2f',
+    answers: [
+      {
+        id: 'a5c216e5-e0b9-4eb1-b7a9-9641f725b772',
+        numberAnswer: {
+          id: '2afc3d4e-e211-4310-9abb-601367136753',
+          value: 22,
+        },
+      },
+    ],
+  },
+  {
+    id: '81a7383a-2c38-4ae9-b385-46da67696478',
+    translationId: '81a7383a-2c38-4ae9-b385-46da67696478',
+    text: {
+      en_text: 'How many primes are less than 90?',
+      he_text: 'How many primes are less than 90?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '27d45ed7-e7b0-4129-8337-fe5d09b9be2f',
+    answers: [
+      {
+        id: '13b5ee39-e6be-4752-84a1-cd07830ca0f5',
+        numberAnswer: {
+          id: 'f3314e90-7bcf-4330-8114-4648b4216476',
+          value: 24,
+        },
+      },
+    ],
+  },
+  {
+    id: '2ac11ddd-fc1c-4010-a45a-50ee874b7f8d',
+    translationId: '2ac11ddd-fc1c-4010-a45a-50ee874b7f8d',
+    text: {
+      en_text: 'How many primes are less than 100?',
+      he_text: 'How many primes are less than 100?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '27d45ed7-e7b0-4129-8337-fe5d09b9be2f',
+    answers: [
+      {
+        id: '6e10fbe2-20a3-473d-a41a-71e91850888e',
+        numberAnswer: {
+          id: 'a8538ba7-5334-4dc7-b9a7-a6c5e2e5bf42',
+          value: 25,
+        },
+      },
+    ],
+  },
+  {
+    id: '5db76ec9-9166-4922-b738-4ee4512ad3f6',
+    translationId: '5db76ec9-9166-4922-b738-4ee4512ad3f6',
+    text: {
+      en_text: 'What is 17 mod 5?',
+      he_text: 'What is 17 mod 5?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '883b49cb-61ce-40a8-9408-a7966385347b',
+    answers: [
+      {
+        id: 'ff0352b6-001e-4207-92d4-b1574ec29682',
+        numberAnswer: {
+          id: 'aa7b16b0-922a-4631-8ae2-d87ebfb4dcb3',
+          value: 2,
+        },
+      },
+    ],
+  },
+  {
+    id: '76dcb2ff-d334-467a-964c-d36d65dd0689',
+    translationId: '76dcb2ff-d334-467a-964c-d36d65dd0689',
+    text: {
+      en_text: 'What is 23 mod 7?',
+      he_text: 'What is 23 mod 7?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '883b49cb-61ce-40a8-9408-a7966385347b',
+    answers: [
+      {
+        id: 'de52cb7e-a92e-4c73-ace0-912d1177d908',
+        numberAnswer: {
+          id: 'cb42c1f5-ac62-4d09-8151-fa22655016b2',
+          value: 2,
+        },
+      },
+    ],
+  },
+  {
+    id: 'f2cf9f5e-2c18-47cc-aba3-06da77cefdde',
+    translationId: 'f2cf9f5e-2c18-47cc-aba3-06da77cefdde',
+    text: {
+      en_text: 'What is 14 mod 3?',
+      he_text: 'What is 14 mod 3?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '883b49cb-61ce-40a8-9408-a7966385347b',
+    answers: [
+      {
+        id: 'b0944e3f-850e-441e-b00c-65883d1ff6b8',
+        numberAnswer: {
+          id: '3fdacec5-b84a-4629-98b9-dd69375962fb',
+          value: 2,
+        },
+      },
+    ],
+  },
+  {
+    id: 'ac75af65-3d8a-4a5f-a144-a0c3517e6d3f',
+    translationId: 'ac75af65-3d8a-4a5f-a144-a0c3517e6d3f',
+    text: {
+      en_text: 'What is 19 mod 4?',
+      he_text: 'What is 19 mod 4?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '883b49cb-61ce-40a8-9408-a7966385347b',
+    answers: [
+      {
+        id: '450052bf-204e-452d-b0b4-6b6ee1e478fb',
+        numberAnswer: {
+          id: 'ccc79319-7fe1-4ee4-8ff5-4b7bb09380f3',
+          value: 3,
+        },
+      },
+    ],
+  },
+  {
+    id: 'e671da7a-4a85-4790-88d6-5b995332b014',
+    translationId: 'e671da7a-4a85-4790-88d6-5b995332b014',
+    text: {
+      en_text: 'What is 20 mod 6?',
+      he_text: 'What is 20 mod 6?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '883b49cb-61ce-40a8-9408-a7966385347b',
+    answers: [
+      {
+        id: '7b4d73bd-edf6-4060-8997-b96efa5570f9',
+        numberAnswer: {
+          id: 'd89001c6-631e-43c6-b4e4-a69f781ef91c',
+          value: 2,
+        },
+      },
+    ],
+  },
+  {
+    id: 'eda3df8b-9e2d-4d2c-8f73-5e7ec7d18364',
+    translationId: 'eda3df8b-9e2d-4d2c-8f73-5e7ec7d18364',
+    text: {
+      en_text: 'What is 55 mod 10?',
+      he_text: 'What is 55 mod 10?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '883b49cb-61ce-40a8-9408-a7966385347b',
+    answers: [
+      {
+        id: 'cb42a24b-c5d5-4908-a741-f1159926abd1',
+        numberAnswer: {
+          id: 'dc8f1a64-0493-4d01-a5b8-28c0964a4f00',
+          value: 5,
+        },
+      },
+    ],
+  },
+  {
+    id: '04b00246-5d5d-4446-bf68-1c1fcd99003d',
+    translationId: '04b00246-5d5d-4446-bf68-1c1fcd99003d',
+    text: {
+      en_text: 'What is 99 mod 11?',
+      he_text: 'What is 99 mod 11?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '883b49cb-61ce-40a8-9408-a7966385347b',
+    answers: [
+      {
+        id: '05623914-8ad6-498e-bc1e-d4bb75035949',
+        numberAnswer: {
+          id: 'ec230f7c-dd49-47e2-a165-d2c17d8edd75',
+          value: 0,
+        },
+      },
+    ],
+  },
+  {
+    id: '72048826-70c4-4824-9aba-313bf2210d51',
+    translationId: '72048826-70c4-4824-9aba-313bf2210d51',
+    text: {
+      en_text: 'What is 100 mod 13?',
+      he_text: 'What is 100 mod 13?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '883b49cb-61ce-40a8-9408-a7966385347b',
+    answers: [
+      {
+        id: '1aff5a09-31e6-4971-ae67-8b9165d47bf5',
+        numberAnswer: {
+          id: '183c3945-ad3b-4967-bee6-9c1650c4df39',
+          value: 9,
+        },
+      },
+    ],
+  },
+  {
+    id: '4f6fd3d7-ce7d-43aa-a44e-dc17a231f37d',
+    translationId: '4f6fd3d7-ce7d-43aa-a44e-dc17a231f37d',
+    text: {
+      en_text: 'What is 45 mod 8?',
+      he_text: 'What is 45 mod 8?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '883b49cb-61ce-40a8-9408-a7966385347b',
+    answers: [
+      {
+        id: '24de7c0a-497f-45fd-aac6-2b7b409d6f79',
+        numberAnswer: {
+          id: '155867a7-cfc9-4a36-b504-6a91b86d4075',
+          value: 5,
+        },
+      },
+    ],
+  },
+  {
+    id: '743043b8-3ab2-4821-945e-353ce8e662a6',
+    translationId: '743043b8-3ab2-4821-945e-353ce8e662a6',
+    text: {
+      en_text: 'What is 76 mod 9?',
+      he_text: 'What is 76 mod 9?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '883b49cb-61ce-40a8-9408-a7966385347b',
+    answers: [
+      {
+        id: 'cc6d1d49-2687-48c2-a900-f50ddde544b0',
+        numberAnswer: {
+          id: 'df2fb0ca-4afa-4e1b-ac85-ab3d29747474',
+          value: 4,
+        },
+      },
+    ],
+  },
+  {
+    id: '074ea2e8-617d-49bc-bb24-9b4d550e85a4',
+    translationId: '074ea2e8-617d-49bc-bb24-9b4d550e85a4',
+    text: {
+      en_text: 'What is (7 + 13) mod 5?',
+      he_text: 'What is (7 + 13) mod 5?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '883b49cb-61ce-40a8-9408-a7966385347b',
+    answers: [
+      {
+        id: 'f8946d0e-d3e0-4a4a-8c75-2f4bc8aa641b',
+        numberAnswer: {
+          id: 'ad50427f-58c9-4fda-b6b1-947cc4ba1567',
+          value: 0,
+        },
+      },
+    ],
+  },
+  {
+    id: 'ae38be43-b6de-49db-a9f4-f3c23b7614b6',
+    translationId: 'ae38be43-b6de-49db-a9f4-f3c23b7614b6',
+    text: {
+      en_text: 'What is (9 + 14) mod 6?',
+      he_text: 'What is (9 + 14) mod 6?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '883b49cb-61ce-40a8-9408-a7966385347b',
+    answers: [
+      {
+        id: '64e65105-5c90-412a-ab85-38eecb065d41',
+        numberAnswer: {
+          id: '68cbaa9b-2454-419a-9cf7-ea528b6a6142',
+          value: 5,
+        },
+      },
+    ],
+  },
+  {
+    id: 'cc889223-da3b-45f4-9af5-3ed47815f2f1',
+    translationId: 'cc889223-da3b-45f4-9af5-3ed47815f2f1',
+    text: {
+      en_text: 'What is (12 + 18) mod 7?',
+      he_text: 'What is (12 + 18) mod 7?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '883b49cb-61ce-40a8-9408-a7966385347b',
+    answers: [
+      {
+        id: 'c4b5c4bb-a607-4602-9355-b4d8b9074820',
+        numberAnswer: {
+          id: '06453c91-61ce-4733-9906-cb7cf0e832d1',
+          value: 2,
+        },
+      },
+    ],
+  },
+  {
+    id: '3f8d7b5a-688a-4725-a0cc-f0e139c43f12',
+    translationId: '3f8d7b5a-688a-4725-a0cc-f0e139c43f12',
+    text: {
+      en_text: 'What is (20 + 25) mod 9?',
+      he_text: 'What is (20 + 25) mod 9?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '883b49cb-61ce-40a8-9408-a7966385347b',
+    answers: [
+      {
+        id: 'af6df461-d4d4-43ba-86d2-304174491b35',
+        numberAnswer: {
+          id: '24907f8b-407e-46ac-8216-a10b3b23064a',
+          value: 0,
+        },
+      },
+    ],
+  },
+  {
+    id: '87e7e279-47fd-47bf-a07e-2d1b72698c48',
+    translationId: '87e7e279-47fd-47bf-a07e-2d1b72698c48',
+    text: {
+      en_text: 'What is (30 + 15) mod 11?',
+      he_text: 'What is (30 + 15) mod 11?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '883b49cb-61ce-40a8-9408-a7966385347b',
+    answers: [
+      {
+        id: '1086f725-d960-4354-9936-7466e724357c',
+        numberAnswer: {
+          id: '32991f2c-36a0-4aa1-bfd2-dc320302cd7e',
+          value: 1,
+        },
+      },
+    ],
+  },
+  {
+    id: 'f7156245-471e-4718-946a-fad0c1798d61',
+    translationId: 'f7156245-471e-4718-946a-fad0c1798d61',
+    text: {
+      en_text: 'What is (40 + 22) mod 13?',
+      he_text: 'What is (40 + 22) mod 13?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '883b49cb-61ce-40a8-9408-a7966385347b',
+    answers: [
+      {
+        id: 'e4168a97-045e-47f4-a8cf-4ded91095a1b',
+        numberAnswer: {
+          id: 'df1ae6dc-2f2c-4313-a882-fce51610daa0',
+          value: 10,
+        },
+      },
+    ],
+  },
+  {
+    id: 'f10ac297-2a29-416a-969f-2a86e839e402',
+    translationId: 'f10ac297-2a29-416a-969f-2a86e839e402',
+    text: {
+      en_text: 'What is (17 + 29) mod 8?',
+      he_text: 'What is (17 + 29) mod 8?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '883b49cb-61ce-40a8-9408-a7966385347b',
+    answers: [
+      {
+        id: 'b53b6b2c-f2c5-49a3-a6ed-16990e115d4a',
+        numberAnswer: {
+          id: 'f147e305-4adc-4ddd-a8c7-9edcc579b564',
+          value: 6,
+        },
+      },
+    ],
+  },
+  {
+    id: 'e233653e-1f1c-4e54-949d-624df5d7c39c',
+    translationId: 'e233653e-1f1c-4e54-949d-624df5d7c39c',
+    text: {
+      en_text: 'What is (25 + 37) mod 12?',
+      he_text: 'What is (25 + 37) mod 12?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '883b49cb-61ce-40a8-9408-a7966385347b',
+    answers: [
+      {
+        id: '8847ef27-31e1-47e7-8355-280320f444f3',
+        numberAnswer: {
+          id: '4aa30cda-5359-4de6-aa14-59e8cd721e82',
+          value: 2,
+        },
+      },
+    ],
+  },
+  {
+    id: '3bb1bb01-0e85-4be8-b921-c93ede6dd319',
+    translationId: '3bb1bb01-0e85-4be8-b921-c93ede6dd319',
+    text: {
+      en_text: 'What is (31 + 42) mod 10?',
+      he_text: 'What is (31 + 42) mod 10?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '883b49cb-61ce-40a8-9408-a7966385347b',
+    answers: [
+      {
+        id: 'a890c276-c64b-450e-83cf-8a05c068176c',
+        numberAnswer: {
+          id: '9e64ff33-90b2-4924-bdff-181407461fe8',
+          value: 3,
+        },
+      },
+    ],
+  },
+  {
+    id: '3cbcecad-7006-43e2-a2df-7145b77c9658',
+    translationId: '3cbcecad-7006-43e2-a2df-7145b77c9658',
+    text: {
+      en_text: 'What is (50 + 60) mod 14?',
+      he_text: 'What is (50 + 60) mod 14?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '883b49cb-61ce-40a8-9408-a7966385347b',
+    answers: [
+      {
+        id: '0eceb9cf-cf70-43ae-8c07-37f792bc0205',
+        numberAnswer: {
+          id: '5f683f97-0076-4669-b0c4-72d02c34a679',
+          value: 12,
+        },
+      },
+    ],
+  },
+  {
+    id: '94182b67-d7e4-412d-ac67-ef8dfca979e2',
+    translationId: '94182b67-d7e4-412d-ac67-ef8dfca979e2',
+    text: {
+      en_text: 'What is (3^4) mod 5?',
+      he_text: 'What is (3^4) mod 5?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '883b49cb-61ce-40a8-9408-a7966385347b',
+    answers: [
+      {
+        id: '0d4490e2-a484-40e0-a633-48b0eaae85d1',
+        numberAnswer: {
+          id: '694e0f7a-d047-4952-b133-bffdf6e69026',
+          value: 1,
+        },
+      },
+    ],
+  },
+  {
+    id: '84c186de-f0af-473c-b93f-f6630047133e',
+    translationId: '84c186de-f0af-473c-b93f-f6630047133e',
+    text: {
+      en_text: 'What is (2^5) mod 7?',
+      he_text: 'What is (2^5) mod 7?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '883b49cb-61ce-40a8-9408-a7966385347b',
+    answers: [
+      {
+        id: '23a7874e-6a92-4024-83e8-ca0faa00bf89',
+        numberAnswer: {
+          id: 'eb912473-d002-4a52-b964-1d4b27148c1a',
+          value: 4,
+        },
+      },
+    ],
+  },
+  {
+    id: '9964c789-5f5d-4c7e-836a-0e8351ea60ad',
+    translationId: '9964c789-5f5d-4c7e-836a-0e8351ea60ad',
+    text: {
+      en_text: 'What is (4^3) mod 9?',
+      he_text: 'What is (4^3) mod 9?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '883b49cb-61ce-40a8-9408-a7966385347b',
+    answers: [
+      {
+        id: '58bd9274-a1ab-450e-9231-91028118f010',
+        numberAnswer: {
+          id: '97ee7d5f-6d43-4961-b172-100ac1ec5b27',
+          value: 1,
+        },
+      },
+    ],
+  },
+  {
+    id: '7b9046ec-cc20-4d48-a364-ecbc9c8f301a',
+    translationId: '7b9046ec-cc20-4d48-a364-ecbc9c8f301a',
+    text: {
+      en_text: 'What is (5^2) mod 11?',
+      he_text: 'What is (5^2) mod 11?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '883b49cb-61ce-40a8-9408-a7966385347b',
+    answers: [
+      {
+        id: '02873128-840e-4736-aa1b-a5d459eb84ce',
+        numberAnswer: {
+          id: '96bc82aa-454e-4a34-87e8-7662f79710dd',
+          value: 3,
+        },
+      },
+    ],
+  },
+  {
+    id: 'd7b0095c-d060-46c7-bc69-f91bb57c08e2',
+    translationId: 'd7b0095c-d060-46c7-bc69-f91bb57c08e2',
+    text: {
+      en_text: 'What is (6^3) mod 13?',
+      he_text: 'What is (6^3) mod 13?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '883b49cb-61ce-40a8-9408-a7966385347b',
+    answers: [
+      {
+        id: 'ed4dea7b-fee3-4a77-8d25-8b846afe35dc',
+        numberAnswer: {
+          id: '99cd308d-fa7a-4ea5-afca-4a5d8ba57ee4',
+          value: 8,
+        },
+      },
+    ],
+  },
+  {
+    id: '740f8745-cf38-4d51-adfe-7cf119818f91',
+    translationId: '740f8745-cf38-4d51-adfe-7cf119818f91',
+    text: {
+      en_text: 'What is (7^2) mod 15?',
+      he_text: 'What is (7^2) mod 15?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '883b49cb-61ce-40a8-9408-a7966385347b',
+    answers: [
+      {
+        id: 'd296ae15-aafe-4868-b259-6b1917a3b06b',
+        numberAnswer: {
+          id: '9bb780b5-e043-4b09-a68e-d51237ac6c71',
+          value: 4,
+        },
+      },
+    ],
+  },
+  {
+    id: '981d259d-79db-4c24-bfa6-1040b971ead9',
+    translationId: '981d259d-79db-4c24-bfa6-1040b971ead9',
+    text: {
+      en_text: 'What is (8^2) mod 17?',
+      he_text: 'What is (8^2) mod 17?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '883b49cb-61ce-40a8-9408-a7966385347b',
+    answers: [
+      {
+        id: '0b92f0d2-54fb-4c3b-ab2d-477c4a315b1d',
+        numberAnswer: {
+          id: '4d167888-5900-44f7-84c0-71d249a3513b',
+          value: 13,
+        },
+      },
+    ],
+  },
+  {
+    id: '582948dd-9b71-4119-93ee-027cf2195dc1',
+    translationId: '582948dd-9b71-4119-93ee-027cf2195dc1',
+    text: {
+      en_text: 'What is (9^2) mod 19?',
+      he_text: 'What is (9^2) mod 19?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '883b49cb-61ce-40a8-9408-a7966385347b',
+    answers: [
+      {
+        id: 'ba371708-e0d3-4201-b102-2f47cfb321b6',
+        numberAnswer: {
+          id: '36fb877b-e0de-420e-8b20-b7e9bf34fa45',
+          value: 5,
+        },
+      },
+    ],
+  },
+  {
+    id: 'bb47ea4f-883e-429a-b4ef-7dc4462b9c7b',
+    translationId: 'bb47ea4f-883e-429a-b4ef-7dc4462b9c7b',
+    text: {
+      en_text: 'What is (10^2) mod 21?',
+      he_text: 'What is (10^2) mod 21?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '883b49cb-61ce-40a8-9408-a7966385347b',
+    answers: [
+      {
+        id: '9b15c235-5cd9-4081-bbda-2158dfb6d4e9',
+        numberAnswer: {
+          id: '2257b474-bc14-43fe-a8a5-0bd9d928716d',
+          value: 16,
+        },
+      },
+    ],
+  },
+  {
+    id: '67a4e9f6-524b-4357-9016-7a56b211297d',
+    translationId: '67a4e9f6-524b-4357-9016-7a56b211297d',
+    text: {
+      en_text: 'What is (11^2) mod 23?',
+      he_text: 'What is (11^2) mod 23?',
+    },
+    type: QuestionType.value,
+    validationStatus: QuestionValidationStatus.ai_generated,
+    moduleId: '883b49cb-61ce-40a8-9408-a7966385347b',
+    answers: [
+      {
+        id: '8b9000c4-9ae7-4461-af08-6a4e78b7da60',
+        numberAnswer: {
+          id: '7b7f1cd8-12b8-4362-8f62-21b4ee4c6cdf',
+          value: 6,
+        },
+      },
+    ],
+  },
 ] satisfies QuestionSeedData[];
