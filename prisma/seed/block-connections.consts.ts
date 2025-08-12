@@ -126,4 +126,22 @@ export const BLOCK_CONNECTIONS: BlockConnectionData[] = [
       },
     ],
   },
+  {
+    id: 'B4E7F89A-2C3D-4A5F-9B6E-8D1F4A7C9E2B',
+    prerequisiteBlockId: 'a4bcc89e-7c87-425f-8f5b-7a05fab2cd40', // Block ID for 'Database Systems'
+    postrequisiteBlockId: 'a6b8af63-5f91-4381-8a43-12f67d9ec34d', // Block ID for 'Data Structures and Introduction to Algorithms'
+    metadata: [
+      {
+        id: '3F8E6D2A-9B4C-4F1A-8E5D-7C9A2B6F4E3A',
+        key: RelationshipMetadataKey.REASON,
+        value:
+          'Database Systems provides foundational knowledge in data management required for Data Structures and Introduction to Algorithms.',
+      },
+      {
+        id: '5A7C9E2B-4F8D-4A1C-9B6E-8D2F3A7C4E9B',
+        key: RelationshipMetadataKey.TYPE,
+        value: 'hard',
+      },
+    ],
+  },
 ];
