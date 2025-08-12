@@ -108,4 +108,22 @@ export const BLOCK_CONNECTIONS: BlockConnectionData[] = [
       },
     ],
   },
+  {
+    id: '24F98AFD-0968-407F-BECA-859C40EA47F2',
+    prerequisiteBlockId: '9FE9749F-0326-4D7D-B88A-C24251477C7C', // Block ID for 'Numerical Analysis 1'
+    postrequisiteBlockId: '441CCB1F-AE04-4992-8337-89D7930F8C3D', // Block ID for 'Numerical Analysis 2'
+    metadata: [
+      {
+        id: '8AF641E8-DC79-45C3-A4D1-2702EDB7F060',
+        key: RelationshipMetadataKey.REASON,
+        value:
+          'Numerical Analysis 1 is a prerequisite for Numerical Analysis 2.',
+      },
+      {
+        id: 'D2AF1634-542F-467C-AC33-5F5B5B79FBFB',
+        key: RelationshipMetadataKey.TYPE,
+        value: 'hard',
+      },
+    ],
+  },
 ];
