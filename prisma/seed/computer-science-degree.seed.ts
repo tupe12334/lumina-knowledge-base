@@ -54,6 +54,7 @@ export async function seedComputerScienceDegree(
     'Computational Models',
     'Computer Organization',
     'Defensive Systems Programming',
+    'Foundations of Mathematics',
   ];
 
   for (const courseName of courseNames) {
