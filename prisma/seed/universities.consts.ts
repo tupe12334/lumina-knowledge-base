@@ -2,6 +2,7 @@ export const THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME =
   'The Open University Of Israel';
 export const THE_COLLEGE_OF_MANAGEMENT_ACADEMIC_STUDIES_EN_NAME =
   'The College of Management Academic Studies';
+export const TEL_AVIV_UNIVERSITY_EN_NAME = 'Tel Aviv University';
 
 export const UNIVERSITIES = {
   [THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME]: {
@@ -15,5 +16,9 @@ export const UNIVERSITIES = {
   'Ben-Gurion University of the Negev': {
     id: '1f3de78b-954c-4747-9353-8df6803d835f',
     en_text: 'Ben-Gurion University of the Negev',
+  },
+  [TEL_AVIV_UNIVERSITY_EN_NAME]: {
+    id: '42e9a858-0a22-482d-ab1d-65f7a00ceb4c',
+    en_text: TEL_AVIV_UNIVERSITY_EN_NAME,
   },
 };

@@ -7641,6 +7641,11 @@ exports[`seed snapshot > saves seeded data snapshot 1`] = `
       "id": "fb5130e5-42f0-4e95-8fd7-6ec892ea3dd5",
     },
     {
+      "en_text": "Tel Aviv University",
+      "he_text": "אוניברסיטת תל אביב",
+      "id": "b5c861e7-7b50-4e5c-a34d-60b7ad37e59d",
+    },
+    {
       "en_text": "Binary Trees",
       "he_text": "עצים בינאריים",
       "id": "b2c3d4e5-6f7a-4b8c-9d0e-2f3a4b5c6d7e",
@@ -10795,6 +10800,10 @@ In the Faculty of Arts, you're not just learning about the world — you're lear
     {
       "id": "1f3de78b-954c-4747-9353-8df6803d835f",
       "translationId": "fb5130e5-42f0-4e95-8fd7-6ec892ea3dd5",
+    },
+    {
+      "id": "42e9a858-0a22-482d-ab1d-65f7a00ceb4c",
+      "translationId": "b5c861e7-7b50-4e5c-a34d-60b7ad37e59d",
     },
   ],
 }

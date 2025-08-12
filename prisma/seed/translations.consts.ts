@@ -1,6 +1,7 @@
 import {
   THE_COLLEGE_OF_MANAGEMENT_ACADEMIC_STUDIES_EN_NAME,
   THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME,
+  TEL_AVIV_UNIVERSITY_EN_NAME,
 } from './universities.consts';
 
 export interface TranslationSeed {
@@ -24,6 +25,11 @@ export const TRANSLATIONS: TranslationSeed[] = [
     id: 'fb5130e5-42f0-4e95-8fd7-6ec892ea3dd5',
     en_text: 'Ben-Gurion University of the Negev',
     he_text: 'אוניברסיטת בן-גוריון בנגב',
+  },
+  {
+    id: 'b5c861e7-7b50-4e5c-a34d-60b7ad37e59d',
+    en_text: TEL_AVIV_UNIVERSITY_EN_NAME,
+    he_text: 'אוניברסיטת תל אביב',
   },
   // Binary Trees Module Translation
   {
