@@ -17,6 +17,7 @@
     "start:debug": "pnpm exec nest start --debug --watch",
     "start:prod": "node dist/main",
     "start:e2e": "node dist/main",
+    "preview": "pnpm run build && pnpm run start:prod",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "type-check": "tsc --noEmit",
     "test": "vitest run",
