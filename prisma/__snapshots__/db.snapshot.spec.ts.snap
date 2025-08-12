@@ -1245,6 +1245,9 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "id": "19cfbc30-475c-4733-a5de-1064fa7f2ee7",
     },
     {
+      "id": "1FE2809D-9DA8-47AB-B16A-82B2B0F3BCEA",
+    },
+    {
       "id": "1ba27209-cfc3-4f46-93cc-5df7d272aebc",
     },
     {
@@ -1261,6 +1264,9 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
     },
     {
       "id": "240c2395-db81-48fb-9f3a-e39081da6b9f",
+    },
+    {
+      "id": "25A21167-85B9-4AEB-AE8B-2EBC96805075",
     },
     {
       "id": "26c124f0-1f05-4b18-921d-3b21d3f2279b",
@@ -1326,10 +1332,19 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "id": "3f2e1d4c-5b6a-4789-8c0d-1e2f3a4b5c6d",
     },
     {
+      "id": "42F87231-0ED4-4420-ACF0-D59DFE484B0B",
+    },
+    {
       "id": "435bd8ba-3c4c-474d-9d04-3d55cbab9d6f",
     },
     {
       "id": "4389ad4c-3cf3-4e06-b4d3-20f6b43a723b",
+    },
+    {
+      "id": "441CCB1F-AE04-4992-8337-89D7930F8C3D",
+    },
+    {
+      "id": "44515992-97B8-4248-8048-F1E392653D90",
     },
     {
       "id": "4812c1ad-4c64-4df0-af58-55abf897861f",
@@ -1374,6 +1389,9 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "id": "580f5e90-cd5a-4539-a07a-222e82497b27",
     },
     {
+      "id": "5A39C93C-6FA5-4D38-9AE7-A496F4B3BE23",
+    },
+    {
       "id": "5a6b7c8d-9e0f-4123-b567-89abcd234eff",
     },
     {
@@ -1398,6 +1416,15 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "id": "67251fe0-ebaf-4b7c-839d-6412181f330b",
     },
     {
+      "id": "67746F9D-EFA7-4C27-97D5-B97D803C414F",
+    },
+    {
+      "id": "6995FDB3-1127-49C2-A411-A7774BA057D3",
+    },
+    {
+      "id": "6F8AA229-C26D-48F7-B4D9-99B66801AFB1",
+    },
+    {
       "id": "6a66ccb6-e93a-48f4-84dd-44ea808813f3",
     },
     {
@@ -1408,6 +1435,9 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
     },
     {
       "id": "6ef0d2f1-a1df-4118-ab9f-0b804968d490",
+    },
+    {
+      "id": "702AF121-6DBC-424E-B5C6-9A19EC479DFF",
     },
     {
       "id": "70bf7dc6-cbb8-4f2e-b2e3-1736586c7d9d",
@@ -1431,6 +1461,9 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "id": "78123942-6F56-4C66-8881-B49BC26E107D",
     },
     {
+      "id": "7F4F9F15-6535-4738-9783-CCBB0E72B28E",
+    },
+    {
       "id": "7b4f3a21-89d5-4c3e-a8f7-1e3d2c9b8a5f",
     },
     {
@@ -1441,6 +1474,9 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
     },
     {
       "id": "8032b711-618c-4ff6-8bb3-afffd63fe61c",
+    },
+    {
+      "id": "80F05550-E13A-440F-BE7D-F1B02AAA21C6",
     },
     {
       "id": "81BE3915-2C63-470E-85FE-55C1062DEFF3",
@@ -1482,7 +1518,13 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "id": "907bd1ae-626e-41d5-8048-ab0be776a402",
     },
     {
+      "id": "93063920-88DB-41DB-AFDD-1FDE26CA5686",
+    },
+    {
       "id": "95c9c671-dc31-43ce-b068-0ffa0acda312",
+    },
+    {
+      "id": "9631D994-C908-4CB1-9E67-9566CD1E94CD",
     },
     {
       "id": "9693717e-b199-4760-aa14-2773b30effe0",
@@ -1500,6 +1542,9 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "id": "993a6a59-7fc7-4d96-ada6-5858d742496a",
     },
     {
+      "id": "9FE9749F-0326-4D7D-B88A-C24251477C7C",
+    },
+    {
       "id": "9a45204a-d855-4558-b187-bb136002a9bb",
     },
     {
@@ -1515,7 +1560,37 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "id": "9ec308be-4c73-4414-b6ac-fb147cca6f5e",
     },
     {
+      "id": "B2DBF109-153D-4369-945F-B51DC37C6458",
+    },
+    {
+      "id": "C1D87FAF-DA0D-4BCA-9055-1EB5004A2506",
+    },
+    {
+      "id": "CF1CF97B-2C80-4020-A398-2B84513DF1C7",
+    },
+    {
+      "id": "D2F5B46F-7D05-4224-9E83-70E2BC136EB3",
+    },
+    {
+      "id": "D3179696-0DF1-4356-99CD-D7884E974815",
+    },
+    {
+      "id": "D963CBC8-4684-47B0-872E-53ED1377A802",
+    },
+    {
+      "id": "E041319C-A848-4D4A-B65E-5D4550EB977B",
+    },
+    {
+      "id": "ECE425AA-7490-4361-961D-E92E9064DE06",
+    },
+    {
+      "id": "ED8F17D0-957B-4DAE-A73B-298FDB821976",
+    },
+    {
       "id": "EDE16E3C-66B1-4240-86B0-67B2A8B92973",
+    },
+    {
+      "id": "EF619178-0075-4528-A5E5-EDD11CDA1AC9",
     },
     {
       "id": "a1b2c3d4-5e6f-4a8b-9c0d-2e3f4a5b6c7d",
@@ -1725,6 +1800,11 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "prerequisiteId": "907bd1ae-626e-41d5-8048-ab0be776a402",
     },
     {
+      "id": "24F98AFD-0968-407F-BECA-859C40EA47F2",
+      "postrequisiteId": "441CCB1F-AE04-4992-8337-89D7930F8C3D",
+      "prerequisiteId": "9FE9749F-0326-4D7D-B88A-C24251477C7C",
+    },
+    {
       "id": "27a0eab8-6102-4020-a147-b5cfee9a2d76",
       "postrequisiteId": "5a6b7c8d-9e0f-4123-b567-89abcd234eff",
       "prerequisiteId": "78123942-6F56-4C66-8881-B49BC26E107D",
@@ -1815,9 +1895,29 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "prerequisiteId": "81BE3915-2C63-470E-85FE-55C1062DEFF3",
     },
     {
+      "id": "A7D2FBC1-6E3A-4E28-8A6F-4D6B1C3E9F20",
+      "postrequisiteId": "a4bcc89e-7c87-425f-8f5b-7a05fab2cd40",
+      "prerequisiteId": "7b4f3a21-89d5-4c3e-a8f7-1e3d2c9b8a5f",
+    },
+    {
+      "id": "B91E3F27-2C8D-4B7A-9E1F-0A2B3C4D5E6F",
+      "postrequisiteId": "a4bcc89e-7c87-425f-8f5b-7a05fab2cd40",
+      "prerequisiteId": "a6b8af63-5f91-4381-8a43-12f67d9ec34d",
+    },
+    {
       "id": "D2EE6EFD-2892-4BA0-AF12-A9320B590C34",
       "postrequisiteId": "86fa4bd9-56ab-411b-8494-19124458b4dd",
       "prerequisiteId": "993a6a59-7fc7-4d96-ada6-5858d742496a",
+    },
+    {
+      "id": "E3F2A9B1-7C4D-4E5F-9A1B-2C3D4E5F6A7B",
+      "postrequisiteId": "D963CBC8-4684-47B0-872E-53ED1377A802",
+      "prerequisiteId": "993a6a59-7fc7-4d96-ada6-5858d742496a",
+    },
+    {
+      "id": "FD61E7E7-3FEF-4307-8AFD-E57CF861D0CB",
+      "postrequisiteId": "7b4f3a21-89d5-4c3e-a8f7-1e3d2c9b8a5f",
+      "prerequisiteId": "93063920-88DB-41DB-AFDD-1FDE26CA5686",
     },
     {
       "id": "a1b2c3d4-e5f6-4789-a012-bcdef3456789",
@@ -1900,11 +2000,6 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "prerequisiteId": "9c8e5d2a-4b7f-4c8d-9e0a-1b2c3d4e5f6a",
     },
     {
-      "id": "ea241395-98bd-415a-939a-53d3c9ec4275",
-      "postrequisiteId": "a4bcc89e-7c87-425f-8f5b-7a05fab2cd40",
-      "prerequisiteId": "19cfbc30-475c-4733-a5de-1064fa7f2ee7",
-    },
-    {
       "id": "eced1d98-9bab-44af-84a4-cf788d704f6d",
       "postrequisiteId": "ac9e3b41-b2f5-4b77-8c76-1ef2293ea1f1",
       "prerequisiteId": "a2f66714-72c3-4506-ab08-4da8b74809cf",
@@ -1957,6 +2052,13 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "universityId": "92e73fb7-96de-45e4-aff3-4ca7b89be16c",
     },
     {
+      "blockId": "D2F5B46F-7D05-4224-9E83-70E2BC136EB3",
+      "id": "09C42D4D-336B-47B6-AC63-3CB9FB10989E",
+      "publishedAt": null,
+      "translationId": "F6B856CA-7849-4CDA-9FC9-794C9253936E",
+      "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
+    },
+    {
       "blockId": "824dc1ce-e232-48c0-aba1-98c445c9a0f8",
       "id": "0a70f485-4d99-4e35-a4f0-591a7de6b1eb",
       "publishedAt": null,
@@ -1968,6 +2070,13 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "id": "1267c131-bd95-40e2-8240-39d2100981a7",
       "publishedAt": null,
       "translationId": "0f9fce5f-6089-4661-93cc-72e6aa2e57cd",
+      "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
+    },
+    {
+      "blockId": "25A21167-85B9-4AEB-AE8B-2EBC96805075",
+      "id": "13FE6C94-7E65-4CD2-B105-1C8EA63C73A0",
+      "publishedAt": null,
+      "translationId": "B3B64068-0729-47CE-B245-0CB9A61EF133",
       "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
     },
     {
@@ -2006,6 +2115,20 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
     },
     {
+      "blockId": "E041319C-A848-4D4A-B65E-5D4550EB977B",
+      "id": "1A5F8C2E-7B4D-4F9A-A1F5-8C2E7B4D9A6F",
+      "publishedAt": null,
+      "translationId": "44FFF4D7-320E-4282-B8FD-A50D3F15F770",
+      "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
+    },
+    {
+      "blockId": "ED8F17D0-957B-4DAE-A73B-298FDB821976",
+      "id": "1C3F7A94-2B5C-4E7D-8F9A-6B3D2E4C8A1F",
+      "publishedAt": null,
+      "translationId": "2A1C89A1-3A4F-4A44-A747-3252152438C9",
+      "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
+    },
+    {
       "blockId": "0ef19d88-5b67-4cb0-abf3-31d2f4e680d3",
       "id": "1a07eadb-eb85-4d10-907a-cad281a06137",
       "publishedAt": null,
@@ -2027,10 +2150,24 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
     },
     {
+      "blockId": "93063920-88DB-41DB-AFDD-1FDE26CA5686",
+      "id": "28B8218D-2AD3-47DB-8273-0FB48288551A",
+      "publishedAt": null,
+      "translationId": "68A324D1-5434-4889-9900-236DBA47D169",
+      "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
+    },
+    {
       "blockId": "9693717e-b199-4760-aa14-2773b30effe0",
       "id": "28f851b6-0be8-4088-9035-845cbb7a1caf",
       "publishedAt": null,
       "translationId": "d0498c23-075c-4a53-8093-66b8982f940f",
+      "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
+    },
+    {
+      "blockId": "9FE9749F-0326-4D7D-B88A-C24251477C7C",
+      "id": "2E8A5F1C-7B4D-4A6F-8E2A-5C9B1F4A7E8D",
+      "publishedAt": null,
+      "translationId": "9AE95896-4575-4A5D-B061-E63084629AFC",
       "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
     },
     {
@@ -2090,10 +2227,31 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
     },
     {
+      "blockId": "702AF121-6DBC-424E-B5C6-9A19EC479DFF",
+      "id": "4A66FFC1-CF90-43B3-B4C2-39B47B63B5FF",
+      "publishedAt": null,
+      "translationId": "A85CE10B-18CD-4858-AFDF-FF1E648FF356",
+      "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
+    },
+    {
+      "blockId": "42F87231-0ED4-4420-ACF0-D59DFE484B0B",
+      "id": "4A8F2C6E-7B3D-4A5F-A4F8-2C6E7B3D5A9F",
+      "publishedAt": null,
+      "translationId": "5B91BD52-22E5-4335-ADE5-1C3E21B12EB8",
+      "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
+    },
+    {
       "blockId": "b7c6e8ad-8460-458e-91ac-1da7a84179c9",
       "id": "504badae-acc5-4d40-b66b-cbb6dcfc009d",
       "publishedAt": null,
       "translationId": "cad57e56-af9a-4bd8-b849-94bdbaf5efca",
+      "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
+    },
+    {
+      "blockId": "6995FDB3-1127-49C2-A411-A7774BA057D3",
+      "id": "555F3F2B-7CC9-496D-8F2C-FD558855BED4",
+      "publishedAt": null,
+      "translationId": "CCF23719-624D-4B9A-B946-1104B0B1988E",
       "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
     },
     {
@@ -2111,6 +2269,13 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
     },
     {
+      "blockId": "80F05550-E13A-440F-BE7D-F1B02AAA21C6",
+      "id": "5B8D1F4A-6C9E-4A2F-8D5B-3E7A9C2F6B4D",
+      "publishedAt": null,
+      "translationId": "F2DFBC55-3D87-4086-A84F-926462D58924",
+      "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
+    },
+    {
       "blockId": "4812c1ad-4c64-4df0-af58-55abf897861f",
       "id": "5b1c439a-cdef-43a6-853c-1a6eb255a4d1",
       "publishedAt": null,
@@ -2125,10 +2290,24 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
     },
     {
+      "blockId": "9631D994-C908-4CB1-9E67-9566CD1E94CD",
+      "id": "605D7AB6-ACB6-43CA-9911-496C4469C5E9",
+      "publishedAt": null,
+      "translationId": "F920D0C0-50E9-4A01-9B50-63F4E450C171",
+      "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
+    },
+    {
       "blockId": "e4700e5d-bcba-4f6f-8564-f36c97953a8b",
       "id": "627e3bcd-0c1d-4761-9993-eace56a29da4",
       "publishedAt": null,
       "translationId": "e29d162e-1a63-4875-b34c-67349bcdfb33",
+      "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
+    },
+    {
+      "blockId": "1FE2809D-9DA8-47AB-B16A-82B2B0F3BCEA",
+      "id": "65F040D4-B3B3-4534-9D3C-B1E328887AD6",
+      "publishedAt": null,
+      "translationId": "08DE7ADA-D64A-4A80-B404-ED9FDB890780",
       "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
     },
     {
@@ -2188,6 +2367,27 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
     },
     {
+      "blockId": "D963CBC8-4684-47B0-872E-53ED1377A802",
+      "id": "7A5F2C8E-4B6D-4F9A-A2C7-8E5B9D3F6A1C",
+      "publishedAt": null,
+      "translationId": "381E04F5-B0C5-4D7E-BDDB-910166A0FD89",
+      "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
+    },
+    {
+      "blockId": "5A39C93C-6FA5-4D38-9AE7-A496F4B3BE23",
+      "id": "7B4E6A9C-2F5D-4A8F-B7E4-6A9C2F5D8A1E",
+      "publishedAt": null,
+      "translationId": "4788A07E-2959-44CB-AFE1-69178D7278E8",
+      "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
+    },
+    {
+      "blockId": "441CCB1F-AE04-4992-8337-89D7930F8C3D",
+      "id": "7F4A1783-8268-4322-997A-201CF4E2B209",
+      "publishedAt": null,
+      "translationId": "60C2C386-A924-4906-8B1A-F38226A7F396",
+      "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
+    },
+    {
       "blockId": "31d48832-b6e9-4d7f-9807-cad5bc502df2",
       "id": "7b6523b1-5740-4f10-8303-773cdca0619d",
       "publishedAt": null,
@@ -2220,6 +2420,27 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "id": "83abedee-d83b-4957-bf0c-e4a66c511dde",
       "publishedAt": null,
       "translationId": "188799c1-cb5f-4908-9f74-474f5fa96d36",
+      "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
+    },
+    {
+      "blockId": "6F8AA229-C26D-48F7-B4D9-99B66801AFB1",
+      "id": "8D4E4C31-247D-435C-9FC9-C31C461BABDE",
+      "publishedAt": null,
+      "translationId": "7AD0CC1F-8100-4A61-9E5A-9A33FD44B6C4",
+      "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
+    },
+    {
+      "blockId": "67746F9D-EFA7-4C27-97D5-B97D803C414F",
+      "id": "8EFB3C4A-F840-4099-ABB1-C8B12FBF8337",
+      "publishedAt": null,
+      "translationId": "01791C4F-7F39-4E7A-82C4-74D310FD7764",
+      "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
+    },
+    {
+      "blockId": "44515992-97B8-4248-8048-F1E392653D90",
+      "id": "8F2E4B6A-3C7D-4A9F-B5E8-2D6C9F3A7B1E",
+      "publishedAt": null,
+      "translationId": "97508FE0-85AA-4504-AA81-6FB42E35D496",
       "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
     },
     {
@@ -2265,6 +2486,13 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
     },
     {
+      "blockId": "D3179696-0DF1-4356-99CD-D7884E974815",
+      "id": "908FF0D1-00D1-406B-9BF7-E9EA0374BE0E",
+      "publishedAt": null,
+      "translationId": "A30D9CD7-8C02-4472-BDE7-B23A001870AA",
+      "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
+    },
+    {
       "blockId": "f0cdf659-f0ce-49ec-a736-fe0f6b206fb1",
       "id": "90ac34be-66ce-430e-ab2b-aa670a3822f7",
       "publishedAt": null,
@@ -2293,6 +2521,20 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
     },
     {
+      "blockId": "EF619178-0075-4528-A5E5-EDD11CDA1AC9",
+      "id": "9C5513BB-A600-4590-8417-3EB32823B59C",
+      "publishedAt": null,
+      "translationId": "063346E1-5E9F-4B3E-B439-C47123A96642",
+      "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
+    },
+    {
+      "blockId": "7F4F9F15-6535-4738-9783-CCBB0E72B28E",
+      "id": "9D4B6F8A-2C5E-4F7A-B9D4-6A2C8F5B9E1A",
+      "publishedAt": null,
+      "translationId": "D16E5F7D-BADB-45FF-AA46-AA098CCCB860",
+      "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
+    },
+    {
       "blockId": "dc260f47-d88a-4e7e-b96e-a0d88779f784",
       "id": "9bc75568-f18c-42dc-b872-768e17550935",
       "publishedAt": null,
@@ -2312,6 +2554,34 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "publishedAt": null,
       "translationId": "3c4d5f6a-8b9c-4d0e-af2b-3c4d5f6a8b9c",
       "universityId": "92e73fb7-96de-45e4-aff3-4ca7b89be16c",
+    },
+    {
+      "blockId": "C1D87FAF-DA0D-4BCA-9055-1EB5004A2506",
+      "id": "C08B3FB0-94A9-4F57-9A9B-195C3F6A9A95",
+      "publishedAt": null,
+      "translationId": "EDA6A1CF-49B1-42B5-B222-2360567A1CC2",
+      "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
+    },
+    {
+      "blockId": "B2DBF109-153D-4369-945F-B51DC37C6458",
+      "id": "C944B168-697A-45A2-92BE-F05D7BF1A632",
+      "publishedAt": null,
+      "translationId": "912BFA9E-3A77-4E04-87D1-A51C676A173C",
+      "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
+    },
+    {
+      "blockId": "ECE425AA-7490-4361-961D-E92E9064DE06",
+      "id": "CFD5A7C3-E5B8-4E4A-B595-F2DCC4B4674A",
+      "publishedAt": null,
+      "translationId": "21523080-6A39-40DA-9DA3-2D6EB5B7F4AF",
+      "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
+    },
+    {
+      "blockId": "CF1CF97B-2C80-4020-A398-2B84513DF1C7",
+      "id": "DD0D76FF-66E4-404C-A897-D1C862601B2D",
+      "publishedAt": null,
+      "translationId": "BD8921E9-E6C9-4EF6-BE69-0D5A07A65191",
+      "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
     },
     {
       "blockId": "3105ba27-e740-42e5-be29-4212256eedac",
@@ -2512,6 +2782,11 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "id": "fa8a5dc5-8368-4f13-97f7-83cd9f701013",
       "translationId": "f0c2636f-08a8-4529-a37a-6206d7e1772a",
       "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
+    },
+    {
+      "id": "fe63f747-f7c8-4c63-bb5b-904f503cd23e",
+      "translationId": "25800af4-b146-4cd0-83c0-dc64729dcc7f",
+      "universityId": "42e9a858-0a22-482d-ab1d-65f7a00ceb4c",
     },
   ],
   "faculty": [
@@ -5709,10 +5984,22 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "value": "hard",
     },
     {
+      "blockRelationshipId": "B91E3F27-2C8D-4B7A-9E1F-0A2B3C4D5E6F",
+      "id": "0A1B2C3D-4E5F-6071-8293-A4B5C6D7E8F9",
+      "key": "TYPE",
+      "value": "hard",
+    },
+    {
       "blockRelationshipId": "d6eeb1a2-abcb-4603-b566-a15a5d2d0add",
       "id": "166270e8-1c12-4db3-8ac9-22edbb29704b",
       "key": "TYPE",
       "value": "hard",
+    },
+    {
+      "blockRelationshipId": "B91E3F27-2C8D-4B7A-9E1F-0A2B3C4D5E6F",
+      "id": "1A2B3C4D-5E6F-7081-92A3-B4C5D6E7F809",
+      "key": "REASON",
+      "value": "Data Structures and Intro to Algorithms is a prerequisite for Database Systems.",
     },
     {
       "blockRelationshipId": "D2EE6EFD-2892-4BA0-AF12-A9320B590C34",
@@ -5723,6 +6010,12 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
     {
       "blockRelationshipId": "b3c4d5e6-f7a8-4890-b123-cdef56789012",
       "id": "25033be0-357b-4a87-9b5c-71e8048fb8e3",
+      "key": "TYPE",
+      "value": "hard",
+    },
+    {
+      "blockRelationshipId": "FD61E7E7-3FEF-4307-8AFD-E57CF861D0CB",
+      "id": "32474139-6904-4D6B-A0D1-171D45B2D472",
       "key": "TYPE",
       "value": "hard",
     },
@@ -5763,12 +6056,6 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "value": "hard",
     },
     {
-      "blockRelationshipId": "ea241395-98bd-415a-939a-53d3c9ec4275",
-      "id": "671a9817-b041-4598-a52d-6bebe6d71e57",
-      "key": "TYPE",
-      "value": "hard",
-    },
-    {
       "blockRelationshipId": "b4a907e5-c49a-4368-9c50-fd625540285f",
       "id": "68c57ee8-118a-4008-92d7-119c35cf1a87",
       "key": "TYPE",
@@ -5799,8 +6086,44 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "value": "hard",
     },
     {
+      "blockRelationshipId": "24F98AFD-0968-407F-BECA-859C40EA47F2",
+      "id": "8AF641E8-DC79-45C3-A4D1-2702EDB7F060",
+      "key": "REASON",
+      "value": "Numerical Analysis 1 is a prerequisite for Numerical Analysis 2.",
+    },
+    {
+      "blockRelationshipId": "FD61E7E7-3FEF-4307-8AFD-E57CF861D0CB",
+      "id": "922D0EDA-AAFD-4E68-94CB-8C40B17714F4",
+      "key": "REASON",
+      "value": "Foundations of Mathematics is a prerequisite for Discrete Mathematics.",
+    },
+    {
       "blockRelationshipId": "8e9f0123-2345-4456-a89a-bcdef0567123",
       "id": "9aa0cc26-2d07-4ec7-b3b7-a10440362909",
+      "key": "TYPE",
+      "value": "hard",
+    },
+    {
+      "blockRelationshipId": "E3F2A9B1-7C4D-4E5F-9A1B-2C3D4E5F6A7B",
+      "id": "A1B2C3D4-E5F6-47A8-90B1-C2D3E4F5A6B7",
+      "key": "REASON",
+      "value": "Linear Algebra 1 is a prerequisite for Coding Theory.",
+    },
+    {
+      "blockRelationshipId": "E3F2A9B1-7C4D-4E5F-9A1B-2C3D4E5F6A7B",
+      "id": "B2C3D4E5-F6A7-4890-B1C2-D3E4F5A6B7C8",
+      "key": "TYPE",
+      "value": "hard",
+    },
+    {
+      "blockRelationshipId": "24F98AFD-0968-407F-BECA-859C40EA47F2",
+      "id": "D2AF1634-542F-467C-AC33-5F5B5B79FBFB",
+      "key": "TYPE",
+      "value": "hard",
+    },
+    {
+      "blockRelationshipId": "A7D2FBC1-6E3A-4E28-8A6F-4D6B1C3E9F20",
+      "id": "E1D2C3B4-A5F6-4789-B0C1-D2E3F4A5B6C7",
       "key": "TYPE",
       "value": "hard",
     },
@@ -5809,6 +6132,12 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "id": "F2416C88-D388-4CAF-8952-6049351A0C09",
       "key": "TYPE",
       "value": "hard",
+    },
+    {
+      "blockRelationshipId": "A7D2FBC1-6E3A-4E28-8A6F-4D6B1C3E9F20",
+      "id": "F8E7D6C5-B4A3-29C1-0D2E-3F4A5B6C7D8E",
+      "key": "REASON",
+      "value": "Discrete Mathematics is a prerequisite for Database Systems.",
     },
     {
       "blockRelationshipId": "4a400758-507b-4ff0-9799-026577878064",
@@ -7626,6 +7955,11 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "id": "00703a76-5fca-4f2f-82b2-5afd86fd0283",
     },
     {
+      "en_text": "Compilation",
+      "he_text": "קומפילציה",
+      "id": "01791C4F-7F39-4E7A-82C4-74D310FD7764",
+    },
+    {
       "en_text": "Are implicit functions always defined on an entire domain",
       "he_text": "האם פונקציות סמויות מוגדרות תמיד על כל התחום",
       "id": "01ab283c-1c72-413c-bb51-fe35e72f770a",
@@ -7644,6 +7978,11 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "en_text": "What is the determinant of the matrix [[2,0],[5,-1]]?",
       "he_text": "מהו הדטרמיננטה של המטריצה [[2,0],[5,-1]]?",
       "id": "055356ae-1862-4150-8b82-2f53f3abd864",
+    },
+    {
+      "en_text": "Object-Oriented Programming",
+      "he_text": "תכנות מונחה עצמים",
+      "id": "063346E1-5E9F-4B3E-B439-C47123A96642",
     },
     {
       "en_text": "What is the determinant of the matrix [[1,2,0],[0,3,4],[5,6,0]]?",
@@ -7679,6 +8018,11 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "en_text": "Pre-order traversal",
       "he_text": "מעבר pre-order",
       "id": "08810a27-f508-4cfe-8c65-c228495ea447",
+    },
+    {
+      "en_text": "Defensive System Programming",
+      "he_text": "תכנות מערכות דפנסיבי",
+      "id": "08DE7ADA-D64A-4A80-B404-ED9FDB890780",
     },
     {
       "en_text": "What is the determinant of the matrix [[3,5],[7,1]]?",
@@ -7911,6 +8255,11 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "id": "201abf55-c8fb-4b41-ab80-b373c958a084",
     },
     {
+      "en_text": "Systems Programming Laboratory",
+      "he_text": "מעבדה בתכנות מערכות",
+      "id": "21523080-6A39-40DA-9DA3-2D6EB5B7F4AF",
+    },
+    {
       "en_text": "How many ways can 8 identical balls be distributed into 4 distinct boxes if each box must contain at least one ball?",
       "he_text": "בכמה דרכים ניתן לחלק 8 כדורים זהים ל־4 תיבות שונות כך שבכל תיבה יהיה לפחות כדור אחד?",
       "id": "21885747-9432-4370-8901-0e0cf137297c",
@@ -7966,6 +8315,11 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "id": "24b5a671-ea76-4c9b-8fd2-97e09f958f39",
     },
     {
+      "en_text": "Electrical Engineering",
+      "he_text": "הנדסת חשמל",
+      "id": "25800af4-b146-4cd0-83c0-dc64729dcc7f",
+    },
+    {
       "en_text": "What is the value of the binomial coefficient C(24, 12) found in Pascal's Triangle?",
       "he_text": "מהו הערך של המקדם הבינומי C(24, 12) במשולש פסקל?",
       "id": "26d7aa85-f8ad-4484-b9dc-5a3dc992c4db",
@@ -7984,6 +8338,11 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "en_text": "Introduction to Macroeconomics",
       "he_text": "מבוא למקרוכלכלה",
       "id": "29fff600-3511-4311-bc67-c7f61504513a",
+    },
+    {
+      "en_text": "Operating Systems",
+      "he_text": "מערכות הפעלה",
+      "id": "2A1C89A1-3A4F-4A44-A747-3252152438C9",
     },
     {
       "en_text": "∀x ∈ ℝ, x ≠ 0 ∧ x² > 0",
@@ -8176,6 +8535,11 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "id": "37874beb-e35c-4a13-bb04-51eac3fa3b65",
     },
     {
+      "en_text": "Coding Theory",
+      "he_text": "תורת הקודים",
+      "id": "381E04F5-B0C5-4D7E-BDDB-910166A0FD89",
+    },
+    {
       "en_text": "Welcome to the Faculty of Exact Sciences, where curiosity meets precision and imagination is guided by logic. Here, you are not just a student — you are an explorer charting the fundamental laws that govern our universe. Whether you're drawn to the elegance of mathematics, the mysteries of physics, or the power of computer science, this faculty invites you to think deeply, question boldly, and solve the unsolvable.
 
 Each course is a key, unlocking a deeper understanding of reality. You'll work alongside passionate researchers, tackle real-world problems, and build the tools that shape tomorrow — all while honing a sharp, analytical mindset that will serve you in any path you choose.
@@ -8329,6 +8693,11 @@ In the Faculty of Arts, you're not just learning about the world — you're lear
       "id": "43fb0be2-16ac-4052-a44f-689d4af82440",
     },
     {
+      "en_text": "Computational Biology",
+      "he_text": "חישוביות ביולוגית",
+      "id": "44FFF4D7-320E-4282-B8FD-A50D3F15F770",
+    },
+    {
       "en_text": "How do upper sums relate to the definite integral?",
       "he_text": "איך סכומים עליונים קשורים לאינטגרל המסוים?",
       "id": "44a0d45b-2963-4836-94d7-90006e95caca",
@@ -8390,6 +8759,11 @@ In the Faculty of Engineering, you're more than a student — you're an inventor
       "en_text": "The Economics of Israel",
       "he_text": "כלכלת ישראל",
       "id": "474a614d-806d-4b79-8430-6242b799b7f6",
+    },
+    {
+      "en_text": "Introduction to Cryptography",
+      "he_text": "מבוא לקריפטוגרפיה",
+      "id": "4788A07E-2959-44CB-AFE1-69178D7278E8",
     },
     {
       "en_text": "Calculate the area, in square meters (m²), of a rectangle with a length of 80 cm and a width of 120 cm.",
@@ -8592,6 +8966,11 @@ In the Faculty of Engineering, you're more than a student — you're an inventor
       "id": "593afff3-cf87-4c67-b80d-ae06ffd4c829",
     },
     {
+      "en_text": "Computational Geometry",
+      "he_text": "גיאומטריה חישובית",
+      "id": "5B91BD52-22E5-4335-ADE5-1C3E21B12EB8",
+    },
+    {
       "en_text": "Separation Principle",
       "he_text": "עקרון ההפרדה",
       "id": "5a6b7c8d-9e0f-4123-b567-89abcd234eff",
@@ -8685,6 +9064,11 @@ In the Faculty of Engineering, you're more than a student — you're an inventor
       "en_text": "Organic Chemistry for Biologists",
       "he_text": "כימיה אורגנית לביולוגים",
       "id": "6086c503-3b98-40e1-a628-10f08a49cc7a",
+    },
+    {
+      "en_text": "Numerical Analysis 2",
+      "he_text": "אנליזה נומרית 2",
+      "id": "60C2C386-A924-4906-8B1A-F38226A7F396",
     },
     {
       "en_text": "Any node with two children",
@@ -8785,6 +9169,11 @@ In the Faculty of Engineering, you're more than a student — you're an inventor
       "en_text": "Linear Algebra 2",
       "he_text": "אלגברה ליניארית 2",
       "id": "68453935-7832-405a-b42a-e41d10099093",
+    },
+    {
+      "en_text": "Foundations of Mathematics",
+      "he_text": "אשנב למתמטיקה",
+      "id": "68A324D1-5434-4889-9900-236DBA47D169",
     },
     {
       "en_text": "What is the determinant of the matrix [[1,3,5],[2,4,6],[7,8,9]]?",
@@ -8983,6 +9372,11 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "en_text": "What is the value of the binomial coefficient C(12, 4) found in Pascal's Triangle?",
       "he_text": "מהו הערך של המקדם הבינומי C(12, 4) במשולש פסקל?",
       "id": "7826ef3c-e828-425d-a27a-378ad632403b",
+    },
+    {
+      "en_text": "Advanced Java Programming",
+      "he_text": "תכנות מתקדם בשפת Java",
+      "id": "7AD0CC1F-8100-4A61-9E5A-9A33FD44B6C4",
     },
     {
       "en_text": "Implicit Function Theorem",
@@ -9220,6 +9614,11 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "id": "90c1e7a5-1ccd-43ad-80ab-966fc1075ede",
     },
     {
+      "en_text": "Introduction to Computability and Complexity Theory",
+      "he_text": "מבוא לתורת החישוביות והסיבוכיות",
+      "id": "912BFA9E-3A77-4E04-87D1-A51C676A173C",
+    },
+    {
       "en_text": "How many ways can you choose 4 letters from 7 distinct letters if repetitions are allowed?",
       "he_text": "בכמה דרכים ניתן לבחור 4 אותיות מתוך 7 אותיות שונות כאשר מותר בחירה חוזרת?",
       "id": "913e8191-9320-4b00-8087-c77b84d16012",
@@ -9285,6 +9684,11 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "id": "96f33cd2-c9a5-4c60-8ffe-0d21c4fa04c4",
     },
     {
+      "en_text": "Programming Languages",
+      "he_text": "שפות תכנות",
+      "id": "97508FE0-85AA-4504-AA81-6FB42E35D496",
+    },
+    {
       "en_text": "Is a nonzero Jacobian determinant required for the multivariable theorem",
       "he_text": "האם דרוש דטרמיננטה לא אפסית של היעקוביאן עבור המשפט הרב משתני",
       "id": "97ffc6c0-fea5-4331-94cd-20208fa3e1b3",
@@ -9303,6 +9707,11 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "en_text": "Does y³ + y + x = 0 define y(x) implicitly near x=0",
       "he_text": "האם y³ + y + x = 0 מגדירה את y(x) בסתר בסביבת x=0",
       "id": "99dca6c8-4110-4942-abb4-7ed9a90fc0f7",
+    },
+    {
+      "en_text": "Numerical Analysis 1",
+      "he_text": "אנליזה נומרית 1",
+      "id": "9AE95896-4575-4A5D-B061-E63084629AFC",
     },
     {
       "en_text": "How many distinct permutations can be formed from the letters of "MISSISSIPPI"?",
@@ -9430,9 +9839,19 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "id": "9fe79279-2cc8-4531-b892-2c5a4daebb23",
     },
     {
+      "en_text": "Introduction to Computational Learning",
+      "he_text": "מבוא ללמידה חישובית",
+      "id": "A30D9CD7-8C02-4472-BDE7-B23A001870AA",
+    },
+    {
       "en_text": "Multiplication Principle",
       "he_text": "עקרון הכפל",
       "id": "A468A6C2-1D32-47D6-BC32-562F2F71BCB3",
+    },
+    {
+      "en_text": "Automata and Formal Languages",
+      "he_text": "אוטומטים ושפות פורמליות",
+      "id": "A85CE10B-18CD-4858-AFDF-FF1E648FF356",
     },
     {
       "en_text": "7,100 cm",
@@ -9440,9 +9859,29 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "id": "AF770977-4B29-4444-B907-F819EF5D0BEA",
     },
     {
+      "en_text": "Introduction to Artificial Intelligence",
+      "he_text": "מבוא לבינה מלאכותית",
+      "id": "B3B64068-0729-47CE-B245-0CB9A61EF133",
+    },
+    {
+      "en_text": "Algorithmic Robotics",
+      "he_text": "רובוטיקה אלגוריתמית",
+      "id": "BD8921E9-E6C9-4EF6-BE69-0D5A07A65191",
+    },
+    {
       "en_text": "Calculus B",
       "he_text": "חדו״א ב",
       "id": "C44DBE0A-CFF5-4259-9064-163E3ED72F32",
+    },
+    {
+      "en_text": "Data Systems – Technologies and Algorithms",
+      "he_text": "מערכות נתונים – טכנולוגיות ואלגוריתמים",
+      "id": "CCF23719-624D-4B9A-B946-1104B0B1988E",
+    },
+    {
+      "en_text": "Programming and Data Analysis in Python",
+      "he_text": "תכנות וניתוח נתונים בשפת Python",
+      "id": "D16E5F7D-BADB-45FF-AA46-AA098CCCB860",
     },
     {
       "en_text": "In how many ways can 5 boys and 5 girls be seated in a row so that no two girls sit together?",
@@ -9455,9 +9894,29 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "id": "E07E39B7-1EDE-4F5F-B988-01D92FED7BE3",
     },
     {
+      "en_text": "Computer Networks",
+      "he_text": "רשתות תקשורת מחשבים",
+      "id": "EDA6A1CF-49B1-42B5-B222-2360567A1CC2",
+    },
+    {
       "en_text": "6.9*10^6 millimeters",
       "he_text": "6.9*10^6 מילימטרים",
       "id": "EE38E69B-F2B3-477E-A06A-70EBB3E5F87D",
+    },
+    {
+      "en_text": "Principles of Information Systems Development",
+      "he_text": "עקרונות פיתוח מערכות מידע",
+      "id": "F2DFBC55-3D87-4086-A84F-926462D58924",
+    },
+    {
+      "en_text": "Introduction to Cybersecurity",
+      "he_text": "מבוא לאבטחת המרחב המקוון",
+      "id": "F6B856CA-7849-4CDA-9FC9-794C9253936E",
+    },
+    {
+      "en_text": "Introduction to Software Testing",
+      "he_text": "מבוא לבדיקות תוכנה",
+      "id": "F920D0C0-50E9-4A01-9B50-63F4E450C171",
     },
     {
       "en_text": "Is diagonalization possible if the minimal polynomial has distinct linear factors",
