@@ -9685,6 +9685,11 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "id": "b5b8e1fb-02be-4c0f-b0dd-d0cf037f887c",
     },
     {
+      "en_text": "Tel Aviv University",
+      "he_text": "אוניברסיטת תל אביב",
+      "id": "b5c861e7-7b50-4e5c-a34d-60b7ad37e59d",
+    },
+    {
       "en_text": "Matrix Algebra",
       "he_text": "אלגברת מטריצות",
       "id": "b665e731-2442-4bbe-8454-599af60e1454",
@@ -10786,6 +10791,10 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
     {
       "id": "3856bd36-8082-4821-8b1d-9ce806403ab2",
       "translationId": "fa6eb564-ad2c-480c-9086-82a4fd474b0a",
+    },
+    {
+      "id": "42e9a858-0a22-482d-ab1d-65f7a00ceb4c",
+      "translationId": "b5c861e7-7b50-4e5c-a34d-60b7ad37e59d",
     },
     {
       "id": "92e73fb7-96de-45e4-aff3-4ca7b89be16c",
