@@ -3566,4 +3566,10 @@ In the Faculty of Arts, you're not just learning about the world — you're lear
     en_text: 'Does diagonalization simplify computing matrix powers',
     he_text: 'האם דיאגונליזציה מקלה על חישוב חזקה של מטריצה',
   },
+  // Topics in Applied Mathematics - Adding for Colman CS degree
+  {
+    id: '3c4d5f6a-8b9c-4d0e-af2b-3c4d5f6a8b9c',
+    en_text: 'Topics in Applied Mathematics',
+    he_text: 'נושאים במטמתיקה שימושית',
+  },
 ];

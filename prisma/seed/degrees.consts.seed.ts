@@ -78,6 +78,7 @@ export const degreeCourses = {
       'Algorithms',
       'Computational Models',
       'Calculus B',
+      'Topics in Applied Mathematics',
     ],
   },
 };

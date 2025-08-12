@@ -1221,6 +1221,9 @@ exports[`seed snapshot > saves seeded data snapshot 1`] = `
       "id": "EDE16E3C-66B1-4240-86B0-67B2A8B92973",
     },
     {
+      "id": "4b3a2c1d-8e7f-4a6d-9c5b-3a4b5c6d7e8f",
+    },
+    {
       "id": "baed1685-70b6-4316-8598-693ddb29836a",
     },
     {
@@ -1951,6 +1954,13 @@ exports[`seed snapshot > saves seeded data snapshot 1`] = `
       "id": "3B714857-64FC-45B4-872F-079CAF47718A",
       "publishedAt": null,
       "translationId": "C44DBE0A-CFF5-4259-9064-163E3ED72F32",
+      "universityId": "92e73fb7-96de-45e4-aff3-4ca7b89be16c",
+    },
+    {
+      "blockId": "4b3a2c1d-8e7f-4a6d-9c5b-3a4b5c6d7e8f",
+      "id": "9f8e7d6c-5b4a-3928-8c7b-6a5d4f3e2c1b",
+      "publishedAt": null,
+      "translationId": "3c4d5f6a-8b9c-4d0e-af2b-3c4d5f6a8b9c",
       "universityId": "92e73fb7-96de-45e4-aff3-4ca7b89be16c",
     },
     {
@@ -10758,6 +10768,11 @@ In the Faculty of Arts, you're not just learning about the world — you're lear
       "en_text": "Does diagonalization simplify computing matrix powers",
       "he_text": "האם דיאגונליזציה מקלה על חישוב חזקה של מטריצה",
       "id": "dee66e0f-60b1-40aa-832a-1106870a039c",
+    },
+    {
+      "en_text": "Topics in Applied Mathematics",
+      "he_text": "נושאים במטמתיקה שימושית",
+      "id": "3c4d5f6a-8b9c-4d0e-af2b-3c4d5f6a8b9c",
     },
   ],
   "unitAnswer": [
