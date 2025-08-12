@@ -91,7 +91,7 @@ export const BLOCK_CONNECTIONS: BlockConnectionData[] = [
     ],
   },
   {
-    id: 'A3B4C5D6-E7F8-9012-3456-789ABCDEF012',
+    id: 'FD61E7E7-3FEF-4307-8AFD-E57CF861D0CB',
     prerequisiteBlockId: '93063920-88DB-41DB-AFDD-1FDE26CA5686', // Block ID for 'Foundations of Mathematics'
     postrequisiteBlockId: '7b4f3a21-89d5-4c3e-a8f7-1e3d2c9b8a5f', // Block ID for 'Discrete Mathematics'
     metadata: [

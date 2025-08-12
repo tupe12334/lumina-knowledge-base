@@ -629,6 +629,126 @@ export const TRANSLATIONS: TranslationSeed[] = [
     en_text: 'Artificial Intelligence',
     he_text: 'בינה מלכותית',
   },
+  {
+    id: '21523080-6A39-40DA-9DA3-2D6EB5B7F4AF',
+    en_text: 'Systems Programming Laboratory',
+    he_text: 'מעבדה בתכנות מערכות',
+  },
+  {
+    id: 'A85CE10B-18CD-4858-AFDF-FF1E648FF356',
+    en_text: 'Automata and Formal Languages',
+    he_text: 'אוטומטים ושפות פורמליות',
+  },
+  {
+    id: '912BFA9E-3A77-4E04-87D1-A51C676A173C',
+    en_text: 'Introduction to Computability and Complexity Theory',
+    he_text: 'מבוא לתורת החישוביות והסיבוכיות',
+  },
+  {
+    id: '2A1C89A1-3A4F-4A44-A747-3252152438C9',
+    en_text: 'Operating Systems',
+    he_text: 'מערכות הפעלה',
+  },
+  {
+    id: '97508FE0-85AA-4504-AA81-6FB42E35D496',
+    en_text: 'Programming Languages',
+    he_text: 'שפות תכנות',
+  },
+  {
+    id: 'F2DFBC55-3D87-4086-A84F-926462D58924',
+    en_text: 'Principles of Information Systems Development',
+    he_text: 'עקרונות פיתוח מערכות מידע',
+  },
+  {
+    id: '381E04F5-B0C5-4D7E-BDDB-910166A0FD89',
+    en_text: 'Coding Theory',
+    he_text: 'תורת הקודים',
+  },
+  {
+    id: '9AE95896-4575-4A5D-B061-E63084629AFC',
+    en_text: 'Numerical Analysis 1',
+    he_text: 'אנליזה נומרית 1',
+  },
+  {
+    id: 'D16E5F7D-BADB-45FF-AA46-AA098CCCB860',
+    en_text: 'Programming and Data Analysis in Python',
+    he_text: 'תכנות וניתוח נתונים בשפת Python',
+  },
+  {
+    id: 'B3B64068-0729-47CE-B245-0CB9A61EF133',
+    en_text: 'Introduction to Artificial Intelligence',
+    he_text: 'מבוא לבינה מלאכותית',
+  },
+  {
+    id: '7AD0CC1F-8100-4A61-9E5A-9A33FD44B6C4',
+    en_text: 'Advanced Java Programming',
+    he_text: 'תכנות מתקדם בשפת Java',
+  },
+  {
+    id: 'EDA6A1CF-49B1-42B5-B222-2360567A1CC2',
+    en_text: 'Computer Networks',
+    he_text: 'רשתות תקשורת מחשבים',
+  },
+  {
+    id: '08DE7ADA-D64A-4A80-B404-ED9FDB890780',
+    en_text: 'Defensive System Programming',
+    he_text: 'תכנות מערכות דפנסיבי',
+  },
+  {
+    id: '4788A07E-2959-44CB-AFE1-69178D7278E8',
+    en_text: 'Introduction to Cryptography',
+    he_text: 'מבוא לקריפטוגרפיה',
+  },
+  {
+    id: '01791C4F-7F39-4E7A-82C4-74D310FD7764',
+    en_text: 'Compilation',
+    he_text: 'קומפילציה',
+  },
+  {
+    id: '063346E1-5E9F-4B3E-B439-C47123A96642',
+    en_text: 'Object-Oriented Programming',
+    he_text: 'תכנות מונחה עצמים',
+  },
+  {
+    id: 'CCF23719-624D-4B9A-B946-1104B0B1988E',
+    en_text: 'Data Systems – Technologies and Algorithms',
+    he_text: 'מערכות נתונים – טכנולוגיות ואלגוריתמים',
+  },
+  {
+    id: '44FFF4D7-320E-4282-B8FD-A50D3F15F770',
+    en_text: 'Computational Biology',
+    he_text: 'חישוביות ביולוגית',
+  },
+  {
+    id: '60C2C386-A924-4906-8B1A-F38226A7F396',
+    en_text: 'Numerical Analysis 2',
+    he_text: 'אנליזה נומרית 2',
+  },
+  {
+    id: 'A30D9CD7-8C02-4472-BDE7-B23A001870AA',
+    en_text: 'Introduction to Computational Learning',
+    he_text: 'מבוא ללמידה חישובית',
+  },
+  {
+    id: 'BD8921E9-E6C9-4EF6-BE69-0D5A07A65191',
+    en_text: 'Algorithmic Robotics',
+    he_text: 'רובוטיקה אלגוריתמית',
+  },
+  {
+    id: 'F6B856CA-7849-4CDA-9FC9-794C9253936E',
+    en_text: 'Introduction to Cybersecurity',
+    he_text: 'מבוא לאבטחת המרחב המקוון',
+  },
+  {
+    id: 'F920D0C0-50E9-4A01-9B50-63F4E450C171',
+    en_text: 'Introduction to Software Testing',
+    he_text: 'מבוא לבדיקות תוכנה',
+  },
+  {
+    id: '5B91BD52-22E5-4335-ADE5-1C3E21B12EB8',
+    en_text: 'Computational Geometry',
+    he_text: 'גיאומטריה חישובית',
+  },
 
   {
     id: '58503f66-af42-4992-bdc1-79fc62c4a61f',
