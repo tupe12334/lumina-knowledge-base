@@ -3,6 +3,7 @@ import { SeedCache } from './cache';
 import {
   THE_COLLEGE_OF_MANAGEMENT_ACADEMIC_STUDIES_EN_NAME,
   THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME,
+  TEL_AVIV_UNIVERSITY_EN_NAME,
 } from './universities.consts';
 import { degreeCourses } from './degrees.consts.seed';
 
@@ -42,6 +43,11 @@ export const degreeSeeds: DegreeSeed[] = [
     id: 'c7a1e2b2-8e2d-4c1a-9e2a-1a2b3c4d5e6f',
     enText: 'Computer Science',
     university: THE_COLLEGE_OF_MANAGEMENT_ACADEMIC_STUDIES_EN_NAME,
+  },
+  {
+    id: 'fe63f747-f7c8-4c63-bb5b-904f503cd23e',
+    enText: 'Electrical Engineering',
+    university: TEL_AVIV_UNIVERSITY_EN_NAME,
   },
 ];
 

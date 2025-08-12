@@ -2513,6 +2513,11 @@ exports[`seed snapshot > saves seeded data snapshot 1`] = `
       "translationId": "63e95b0b-85de-4c54-b6af-face80091bb4",
       "universityId": "92e73fb7-96de-45e4-aff3-4ca7b89be16c",
     },
+    {
+      "id": "fe63f747-f7c8-4c63-bb5b-904f503cd23e",
+      "translationId": "25800af4-b146-4cd0-83c0-dc64729dcc7f",
+      "universityId": "42e9a858-0a22-482d-ab1d-65f7a00ceb4c",
+    },
   ],
   "faculty": [
     {
@@ -7709,6 +7714,11 @@ exports[`seed snapshot > saves seeded data snapshot 1`] = `
       "en_text": "Engineering",
       "he_text": "הנדסה",
       "id": "369f5ce8-05f1-4d30-820e-baeb8bfb4e93",
+    },
+    {
+      "en_text": "Electrical Engineering",
+      "he_text": "הנדסת חשמל",
+      "id": "25800af4-b146-4cd0-83c0-dc64729dcc7f",
     },
     {
       "en_text": "Arts",
