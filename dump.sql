@@ -1115,7 +1115,7 @@ INSERT INTO Translation VALUES('9284f0bd-288f-43d4-8175-64d973b92d4a','Can a mat
 INSERT INTO Translation VALUES('ccb992bc-81f3-4678-87f7-764957fffc6d','Are orthogonal matrices always diagonalizable over ℝ','האם מטריצות אורתוגונליות תמיד ניתנות לדיאגונליזציה מעל ℝ');
 INSERT INTO Translation VALUES('ab4f4fff-6fde-4154-8cf7-cc009ced31d5','Is a diagonal matrix already diagonalizable','האם מטריצה אלכסונית היא כבר ניתנת לדיאגונליזציה');
 INSERT INTO Translation VALUES('dee66e0f-60b1-40aa-832a-1106870a039c','Does diagonalization simplify computing matrix powers','האם דיאגונליזציה מקלה על חישוב חזקה של מטריצה');
-INSERT INTO Translation VALUES('3c4d5f6a-8b9c-4d0e-af2b-3c4d5f6a8b9c','Topics in Applied Mathematics','נושאים במטמתיקה שימושית');
+INSERT INTO Translation VALUES('3c4d5f6a-8b9c-4d0e-af2b-3c4d5f6a8b9c','Topics in Applied Mathematics','נושאים במתמטיקה שימושית');
 CREATE TABLE IF NOT EXISTS "Question" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "validationStatus" TEXT NOT NULL DEFAULT 'ai_generated',

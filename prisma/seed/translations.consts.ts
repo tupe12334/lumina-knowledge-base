@@ -48,6 +48,11 @@ export const TRANSLATIONS: TranslationSeed[] = [
     he_text: 'פיזיקה',
   },
   {
+    id: '68A324D1-5434-4889-9900-236DBA47D169',
+    en_text: 'Foundations of Mathematics',
+    he_text: 'אשנב למתמטיקה',
+  },
+  {
     id: 'dd8d69f7-9959-43a2-a227-233d003fb709',
     en_text: 'Chemistry',
     he_text: 'כימיה',
@@ -3581,6 +3586,6 @@ In the Faculty of Arts, you're not just learning about the world — you're lear
   {
     id: '3c4d5f6a-8b9c-4d0e-af2b-3c4d5f6a8b9c',
     en_text: 'Topics in Applied Mathematics',
-    he_text: 'נושאים במטמתיקה שימושית',
+    he_text: 'נושאים במתמטיקה שימושית',
   },
 ];

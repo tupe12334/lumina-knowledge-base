@@ -90,4 +90,22 @@ export const BLOCK_CONNECTIONS: BlockConnectionData[] = [
       },
     ],
   },
+  {
+    id: 'A3B4C5D6-E7F8-9012-3456-789ABCDEF012',
+    prerequisiteBlockId: '93063920-88DB-41DB-AFDD-1FDE26CA5686', // Block ID for 'Foundations of Mathematics'
+    postrequisiteBlockId: '7b4f3a21-89d5-4c3e-a8f7-1e3d2c9b8a5f', // Block ID for 'Discrete Mathematics'
+    metadata: [
+      {
+        id: '922D0EDA-AAFD-4E68-94CB-8C40B17714F4',
+        key: RelationshipMetadataKey.REASON,
+        value:
+          'Foundations of Mathematics is a prerequisite for Discrete Mathematics.',
+      },
+      {
+        id: '32474139-6904-4D6B-A0D1-171D45B2D472',
+        key: RelationshipMetadataKey.TYPE,
+        value: 'hard',
+      },
+    ],
+  },
 ];

@@ -37,6 +37,14 @@ export const courses = [
     universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
   },
   {
+    id: '28B8218D-2AD3-47DB-8273-0FB48288551A',
+    blockId: '93063920-88DB-41DB-AFDD-1FDE26CA5686',
+    translationId: '68A324D1-5434-4889-9900-236DBA47D169',
+    en_name: 'Foundations of Mathematics',
+    he_name: 'אשנב למתמטיקה',
+    universityId: UNIVERSITIES[THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME].id,
+  },
+  {
     id: '7b6523b1-5740-4f10-8303-773cdca0619d',
     blockId: '31d48832-b6e9-4d7f-9807-cad5bc502df2',
     translationId: 'be355b4a-6a11-49b9-ac5b-c3b66d52212b',

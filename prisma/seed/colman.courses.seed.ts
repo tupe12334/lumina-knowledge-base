@@ -44,7 +44,7 @@ export const seedColmanCourses = async (
     },
     {
       en_text: 'Topics in Applied Mathematics',
-      he_text: 'נושאים במטמתיקה שימושית',
+      he_text: 'נושאים במתמטיקה שימושית',
       id: '9f8e7d6c-5b4a-3928-8c7b-6a5d4f3e2c1b',
       blockId: '4b3a2c1d-8e7f-4a6d-9c5b-3a4b5c6d7e8f',
       translationId: '3c4d5f6a-8b9c-4d0e-af2b-3c4d5f6a8b9c',
