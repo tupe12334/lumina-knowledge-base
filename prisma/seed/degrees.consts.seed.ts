@@ -1,6 +1,7 @@
 import {
   THE_COLLEGE_OF_MANAGEMENT_ACADEMIC_STUDIES_EN_NAME,
   THE_OPEN_UNIVERSITY_OF_ISRAEL_EN_NAME,
+  TEL_AVIV_UNIVERSITY_EN_NAME,
 } from './universities.consts';
 
 const faculties = {
@@ -80,5 +81,8 @@ export const degreeCourses = {
       'Calculus B',
       'Topics in Applied Mathematics',
     ],
+  },
+  [TEL_AVIV_UNIVERSITY_EN_NAME]: {
+    'Electrical Engineering': ['Linear Algebra 1'],
   },
 };

@@ -98,6 +98,11 @@ export const TRANSLATIONS: TranslationSeed[] = [
     he_text: 'הנדסה',
   },
   {
+    id: '25800af4-b146-4cd0-83c0-dc64729dcc7f',
+    en_text: 'Electrical Engineering',
+    he_text: 'הנדסת חשמל',
+  },
+  {
     id: '1b1daa8c-4cc3-4715-b876-908c29dba6a4',
     en_text: 'Arts',
     he_text: 'אמנויות',
