@@ -1834,6 +1834,11 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "prerequisiteId": "c6dd59ac-1802-4bc9-b91e-ca77bb32620e",
     },
     {
+      "id": "29fcbe5e-212e-4e6c-a545-21c4af0d5ebc",
+      "postrequisiteId": "42F87231-0ED4-4420-ACF0-D59DFE484B0B",
+      "prerequisiteId": "73d5b87a-4c34-4b53-aa86-b3d425a51abd",
+    },
+    {
       "id": "2a72095d-41a6-472b-b5ad-c6e01c726885",
       "postrequisiteId": "4f5a6b7c-8d9e-4012-a456-789abc123def",
       "prerequisiteId": "81BE3915-2C63-470E-85FE-55C1062DEFF3",
