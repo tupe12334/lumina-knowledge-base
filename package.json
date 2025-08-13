@@ -27,21 +27,16 @@
     "test:e2e": "vitest run test/**/*.e2e-spec.ts",
     "test:ui": "vitest --ui",
     "test:update": "vitest --run --update",
-    "test:seed": "vitest run prisma/seed",
-    "test:db": "vitest run prisma/db.snapshot.spec.ts",
-    "test:db:update": "vitest run prisma/db.snapshot.spec.ts --update",
     "generate": "prisma generate",
     "prisma:migrate:dev": "prisma migrate dev",
     "prisma:migrate": "prisma migrate deploy",
     "prisma:db:push": "prisma db push --force-reset",
-    "seed": "prisma db seed",
     "prisma:studio": "prisma studio",
     "db:drop": "prisma migrate reset --force",
     "db:reset": "prisma migrate reset --force --skip-generate",
     "db:dump": "sqlite3 ./prisma/main.db .dump > dump.sql",
     "predb:dump:apply": "rm -rf ./prisma/main.db",
-    "db:dump:apply": "sqlite3 ./prisma/main.db < dump.sql",
-    "add-data": "gemini --yolo --model='gemini-2.5-flash' --include-directories ./prisma -p='Please update the seed script and add 3 new math module and 30 questions relevant to each module in various difficulty levels, make sure the new module applies to the existing knowledge base by reading the existing modules, dont forget to update and create the relevant relationships and to make sure the script is working as expected, This is only one prompt conversion so make sure to finish my task in and dont ask for my responses. Use the current implementation of the seed and do not create new files. Make sure to run the update to the snapshot and the 'test:seed' command, and do not forget to maintain the i18n support.'"
+    "db:dump:apply": "sqlite3 ./prisma/main.db < dump.sql"
   },
   "dependencies": {
     "@apollo/server": "^4.12.2",
@@ -91,8 +86,5 @@
       "environment": "node",
       "globals": true
     }
-  },
-  "prisma": {
-    "seed": "./prisma/seed/seed.sh"
   }
 }

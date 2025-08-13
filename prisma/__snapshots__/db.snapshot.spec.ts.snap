@@ -1446,9 +1446,6 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "id": "73d5b87a-4c34-4b53-aa86-b3d425a51abd",
     },
     {
-      "id": "7477a6fc-e0d3-4272-8c98-aa989c63c87a",
-    },
-    {
       "id": "7496bad2-981e-4ac5-b464-788c4fc0d118",
     },
     {
@@ -1632,9 +1629,6 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "id": "b4de3329-f3af-4ae9-b67d-bf1c5d1a30fb",
     },
     {
-      "id": "b53b792f-0cdc-4e89-bcd2-d23ad7f39db9",
-    },
-    {
       "id": "b68ae937-37a8-4d10-95a6-89a7017694bc",
     },
     {
@@ -1780,6 +1774,11 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "prerequisiteId": "81BE3915-2C63-470E-85FE-55C1062DEFF3",
     },
     {
+      "id": "0355c0b3-dd47-4c36-9e38-33445b2e30eb",
+      "postrequisiteId": "67746F9D-EFA7-4C27-97D5-B97D803C414F",
+      "prerequisiteId": "ECE425AA-7490-4361-961D-E92E9064DE06",
+    },
+    {
       "id": "0453e0f1-4917-4334-86e1-e8c2e76603e7",
       "postrequisiteId": "a5666d02-3086-44ba-97ab-2261915b21ff",
       "prerequisiteId": "2ca3350d-2870-47c4-b9b4-a397b8bbe7b9",
@@ -1788,6 +1787,21 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "id": "06cf92b7-1e0e-4f7a-964b-1527f3f2246a",
       "postrequisiteId": "8f4e9a3b-2c1d-4f5e-9a8b-7c3d6e5f8a9b",
       "prerequisiteId": "6e19169a-959d-4f5d-a475-de09ca9ba8cd",
+    },
+    {
+      "id": "0a7683cf-630a-464c-816e-6f514c05e222",
+      "postrequisiteId": "6995FDB3-1127-49C2-A411-A7774BA057D3",
+      "prerequisiteId": "a4bcc89e-7c87-425f-8f5b-7a05fab2cd40",
+    },
+    {
+      "id": "0b2ec91a-9cd6-425a-8639-575f1c81adf2",
+      "postrequisiteId": "5A39C93C-6FA5-4D38-9AE7-A496F4B3BE23",
+      "prerequisiteId": "19cfbc30-475c-4733-a5de-1064fa7f2ee7",
+    },
+    {
+      "id": "126fd178-526c-4059-8271-45b0a62c7c40",
+      "postrequisiteId": "9631D994-C908-4CB1-9E67-9566CD1E94CD",
+      "prerequisiteId": "19cfbc30-475c-4733-a5de-1064fa7f2ee7",
     },
     {
       "id": "1744d33d-8c25-421f-9104-6fb50ea30ccb",
@@ -1825,6 +1839,11 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "prerequisiteId": "81BE3915-2C63-470E-85FE-55C1062DEFF3",
     },
     {
+      "id": "42e95f37-166d-4981-bcdd-45e0ab3f616e",
+      "postrequisiteId": "9631D994-C908-4CB1-9E67-9566CD1E94CD",
+      "prerequisiteId": "73d5b87a-4c34-4b53-aa86-b3d425a51abd",
+    },
+    {
       "id": "45ddf9f9-ad99-4216-bd71-e74222f0061f",
       "postrequisiteId": "26c124f0-1f05-4b18-921d-3b21d3f2279b",
       "prerequisiteId": "19cfbc30-475c-4733-a5de-1064fa7f2ee7",
@@ -1845,6 +1864,11 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "prerequisiteId": "8b9c0d1e-2f3a-4b5c-86de-8f9a0b1c2d3e",
     },
     {
+      "id": "4b471392-b822-4979-832b-a1cd0402dd93",
+      "postrequisiteId": "44515992-97B8-4248-8048-F1E392653D90",
+      "prerequisiteId": "a6b8af63-5f91-4381-8a43-12f67d9ec34d",
+    },
+    {
       "id": "504a8133-8c3f-40b9-a874-11ebdeb76917",
       "postrequisiteId": "7f7b0380-8d2d-45f2-9a8a-645755fadf42",
       "prerequisiteId": "62e38ada-eb92-4a9c-bd52-943f6ed49b17",
@@ -1858,6 +1882,11 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "id": "5f84374f-c79c-419e-9c6c-523420bfcaed",
       "postrequisiteId": "a2093775-11c1-40e2-9c10-3cdaaeaf6559",
       "prerequisiteId": "d49b124c-df8c-403d-8460-8f7ee813784f",
+    },
+    {
+      "id": "6224d761-75e5-407d-9ca7-a344421af9e1",
+      "postrequisiteId": "6995FDB3-1127-49C2-A411-A7774BA057D3",
+      "prerequisiteId": "a6b8af63-5f91-4381-8a43-12f67d9ec34d",
     },
     {
       "id": "633b68fd-4e69-4729-bb25-59d2c804360e",
@@ -1890,6 +1919,11 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "prerequisiteId": "0d1e2f3a-4b5c-4d7e-a8fa-0b1c2d3e4f5a",
     },
     {
+      "id": "86222ce7-ae38-4edd-a08b-5d3a0ed63d13",
+      "postrequisiteId": "993a6a59-7fc7-4d96-ada6-5858d742496a",
+      "prerequisiteId": "5A39C93C-6FA5-4D38-9AE7-A496F4B3BE23",
+    },
+    {
       "id": "8e9f0123-2345-4456-a89a-bcdef0567123",
       "postrequisiteId": "3a4b5c6d-7e8f-409b-a1cd-3e4f5a6b7c8d",
       "prerequisiteId": "9c0d1e2f-3a4b-4c6d-87ef-9a0b1c2d3e4f",
@@ -1903,6 +1937,11 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "id": "9b81c7e2-4f6a-4d8b-b123-4c5d6e7f8a90",
       "postrequisiteId": "c6dd59ac-1802-4bc9-b91e-ca77bb32620e",
       "prerequisiteId": "81BE3915-2C63-470E-85FE-55C1062DEFF3",
+    },
+    {
+      "id": "9ca6eb5b-f32a-4c61-a4c1-fb2f1e47001a",
+      "postrequisiteId": "44515992-97B8-4248-8048-F1E392653D90",
+      "prerequisiteId": "ECE425AA-7490-4361-961D-E92E9064DE06",
     },
     {
       "id": "A1B2C3D4-E5F6-47A8-9B0C-1D2E3F4A5B6D",
@@ -2025,6 +2064,11 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "prerequisiteId": "9c8e5d2a-4b7f-4c8d-9e0a-1b2c3d4e5f6a",
     },
     {
+      "id": "c2758940-75d2-43e6-9b97-cc3b3cfee849",
+      "postrequisiteId": "9631D994-C908-4CB1-9E67-9566CD1E94CD",
+      "prerequisiteId": "d8b8235e-431d-404f-9057-8249a2902be0",
+    },
+    {
       "id": "c28b0006-13a2-422d-ae56-b75ddc686087",
       "postrequisiteId": "98c59241-27f0-4aec-9e33-84404d014b73",
       "prerequisiteId": "af0bd650-5f32-4dad-ba38-cea69f616692",
@@ -2068,6 +2112,11 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "id": "f1a2b3c4-d5e6-4789-a012-bcdef4567890",
       "postrequisiteId": "d55d4871-f7c6-47f8-94d7-ee4ada6bf45f",
       "prerequisiteId": "65acc4b0-c258-4bd0-8eb0-e686006d224d",
+    },
+    {
+      "id": "f6180800-730c-4270-8ea2-acd1c692b7ad",
+      "postrequisiteId": "5A39C93C-6FA5-4D38-9AE7-A496F4B3BE23",
+      "prerequisiteId": "5f6c93a2-02aa-4b7a-8637-9406a5a5386f",
     },
     {
       "id": "fcfd331c-bd37-4a51-b638-866fa5df19fe",
@@ -2256,13 +2305,6 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "id": "3F315C7D-0CF4-43BB-B8A1-FF03717E1EF8",
       "publishedAt": null,
       "translationId": "C44DBE0A-CFF5-4259-9064-163E3ED72F32",
-      "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
-    },
-    {
-      "blockId": "b53b792f-0cdc-4e89-bcd2-d23ad7f39db9",
-      "id": "3e0a0548-5ed2-416c-996a-02fad618e16d",
-      "publishedAt": null,
-      "translationId": "e6a95799-ced3-42d4-9e48-8bf68553044a",
       "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
     },
     {
@@ -2648,13 +2690,6 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "id": "a88f7888-97e1-4115-93f3-9e5faa3b2a6f",
       "publishedAt": null,
       "translationId": "90b094e5-7008-4d15-8760-4e5a0004e833",
-      "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
-    },
-    {
-      "blockId": "7477a6fc-e0d3-4272-8c98-aa989c63c87a",
-      "id": "bd18f3fe-1314-4c7f-ad13-edab78e24db9",
-      "publishedAt": null,
-      "translationId": "e3bf3cfa-6ce6-4c18-8acc-112cbfe2ec65",
       "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
     },
     {
@@ -10842,11 +10877,6 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "id": "e3780ebf-3209-4106-a36a-a598c3d8f597",
     },
     {
-      "en_text": "System Programming Laboratory",
-      "he_text": "מעבדת תכנות מערכות",
-      "id": "e3bf3cfa-6ce6-4c18-8acc-112cbfe2ec65",
-    },
-    {
       "en_text": "What is the value of the binomial coefficient C(5, 2) found in Pascal's Triangle?",
       "he_text": "מהו הערך של המקדם הבינומי C(5, 2) במשולש פסקל?",
       "id": "e3d93d41-3050-493a-8ad6-19105b04613f",
@@ -10890,11 +10920,6 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "en_text": "An online course platform has 4 math courses and 5 science courses. How many courses can a student enroll in if choosing one subject?",
       "he_text": "בפלטפורמת קורסים מקוונת יש 4 קורסי מתמטיקה ו-5 קורסי מדע. כמה קורסים יכול סטודנט להירשם אם בוחר מקצוע אחד?",
       "id": "e68b7607-efea-4b4c-a677-4a63db960f7a",
-    },
-    {
-      "en_text": "Introduction to Java",
-      "he_text": "מבוא לשפת Java",
-      "id": "e6a95799-ced3-42d4-9e48-8bf68553044a",
     },
     {
       "en_text": "What is the determinant of the matrix [[4,2,-1],[3,5,2],[1,0,6]]?",
