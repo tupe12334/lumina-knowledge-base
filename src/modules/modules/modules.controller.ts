@@ -1,9 +1,10 @@
 import { Controller, Get, Param, ParseUUIDPipe, Query } from '@nestjs/common';
-import { ApiOkResponse, ApiQuery } from '@nestjs/swagger';
+import { ApiOkResponse, ApiQuery, ApiTags } from '@nestjs/swagger';
 import { ModulesService } from './modules.service';
 import { Module as ModuleEntity } from './models/Module.entity';
 import { ModulesQueryDto } from './dto/modules-query.dto';
 
+@ApiTags('modules')
 @Controller('modules')
 export class ModulesController {
   constructor(private readonly modulesService: ModulesService) {}

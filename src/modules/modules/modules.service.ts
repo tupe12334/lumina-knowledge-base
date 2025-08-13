@@ -1,8 +1,15 @@
-import { Injectable } from '@nestjs/common';
-import { Prisma } from '../../../generated/client';
+import {
+  Injectable,
+  BadRequestException,
+  NotFoundException,
+} from '@nestjs/common';
+import { Prisma, RelationshipMetadataKey } from '../../../generated/client';
 import { PrismaService } from '../../prisma/prisma.service';
 import { Module as ModuleEntity } from './models/Module.entity';
 import { ModulesQueryDto } from './dto/modules-query.dto';
+import { CreateModuleRelationshipInput } from './dto/create-module-relationship.input';
+import { DeleteModuleRelationshipInput } from './dto/delete-module-relationship.input';
+import { ModuleRelationshipResult } from './dto/module-relationship-result.type';
 
 @Injectable()
 export class ModulesService {
@@ -164,5 +171,189 @@ export class ModulesService {
       const { _count, ...moduleWithoutCount } = module;
       return moduleWithoutCount;
     }) as unknown as ModuleEntity[];
+  }
+
+  /**
+   * Creates a prerequisite/postrequisite relationship between two modules.
+   * @param relationshipData - The relationship data containing module IDs and optional metadata
+   * @returns The created relationship with full details
+   */
+  async createModuleRelationship(
+    relationshipData: CreateModuleRelationshipInput,
+  ): Promise<ModuleRelationshipResult> {
+    const { prerequisiteModuleId, postrequisiteModuleId, metadata } =
+      relationshipData;
+
+    if (prerequisiteModuleId === postrequisiteModuleId) {
+      throw new BadRequestException(
+        'A module cannot be a prerequisite to itself',
+      );
+    }
+
+    // Validate that both modules exist
+    const [prerequisiteModule, postrequisiteModule] = await Promise.all([
+      this.prisma.module.findUnique({
+        where: { id: prerequisiteModuleId },
+        include: { Block: true },
+      }),
+      this.prisma.module.findUnique({
+        where: { id: postrequisiteModuleId },
+        include: { Block: true },
+      }),
+    ]);
+
+    if (!prerequisiteModule) {
+      throw new NotFoundException(
+        `Prerequisite module with ID ${prerequisiteModuleId} not found`,
+      );
+    }
+
+    if (!postrequisiteModule) {
+      throw new NotFoundException(
+        `Postrequisite module with ID ${postrequisiteModuleId} not found`,
+      );
+    }
+
+    // Check if relationship already exists
+    const existingRelationship = await this.prisma.blockRelationship.findUnique(
+      {
+        where: {
+          prerequisiteId_postrequisiteId: {
+            prerequisiteId: prerequisiteModule.Block.id,
+            postrequisiteId: postrequisiteModule.Block.id,
+          },
+        },
+      },
+    );
+
+    if (existingRelationship) {
+      throw new BadRequestException(
+        'Relationship already exists between these modules',
+      );
+    }
+
+    // Create the relationship
+    const relationship = await this.prisma.blockRelationship.create({
+      data: {
+        prerequisiteId: prerequisiteModule.Block.id,
+        postrequisiteId: postrequisiteModule.Block.id,
+        metadata: metadata
+          ? {
+              create: Object.entries(metadata).map(([key, value]) => ({
+                key: key as RelationshipMetadataKey,
+                value: String(value),
+              })),
+            }
+          : undefined,
+      },
+      include: {
+        prerequisite: true,
+        postrequisite: true,
+        metadata: true,
+      },
+    });
+
+    // Format metadata for response
+    const formattedMetadata =
+      relationship.metadata?.reduce(
+        (acc, meta) => {
+          acc[meta.key] = meta.value;
+          return acc;
+        },
+        {} as Record<string, string>,
+      ) || {};
+
+    return {
+      id: relationship.id,
+      prerequisite: relationship.prerequisite,
+      postrequisite: relationship.postrequisite,
+      metadata: JSON.stringify(formattedMetadata),
+    };
+  }
+
+  /**
+   * Delete a prerequisite/postrequisite relationship between two modules.
+   *
+   * @param relationshipData - Data for deleting the relationship
+   * @returns The deleted relationship details
+   */
+  async deleteModuleRelationship(
+    relationshipData: DeleteModuleRelationshipInput,
+  ): Promise<ModuleRelationshipResult> {
+    const { prerequisiteModuleId, postrequisiteModuleId } = relationshipData;
+
+    // Validate that both modules exist and get their blocks
+    const [prerequisiteModule, postrequisiteModule] = await Promise.all([
+      this.prisma.module.findUnique({
+        where: { id: prerequisiteModuleId },
+        include: { Block: true },
+      }),
+      this.prisma.module.findUnique({
+        where: { id: postrequisiteModuleId },
+        include: { Block: true },
+      }),
+    ]);
+
+    if (!prerequisiteModule) {
+      throw new NotFoundException(
+        `Prerequisite module with ID ${prerequisiteModuleId} not found`,
+      );
+    }
+
+    if (!postrequisiteModule) {
+      throw new NotFoundException(
+        `Postrequisite module with ID ${postrequisiteModuleId} not found`,
+      );
+    }
+
+    // Find the relationship
+    const relationship = await this.prisma.blockRelationship.findUnique({
+      where: {
+        prerequisiteId_postrequisiteId: {
+          prerequisiteId: prerequisiteModule.Block.id,
+          postrequisiteId: postrequisiteModule.Block.id,
+        },
+      },
+      include: {
+        prerequisite: {
+          include: {
+            Module: { include: { name: true } },
+          },
+        },
+        postrequisite: {
+          include: {
+            Module: { include: { name: true } },
+          },
+        },
+        metadata: true,
+      },
+    });
+
+    if (!relationship) {
+      throw new NotFoundException(
+        'Relationship not found between these modules',
+      );
+    }
+
+    // Format metadata for response
+    const formattedMetadata = relationship.metadata.reduce(
+      (acc, meta) => {
+        acc[meta.key] = meta.value;
+        return acc;
+      },
+      {} as Record<string, string>,
+    );
+
+    // Delete the relationship (this will cascade delete the metadata)
+    await this.prisma.blockRelationship.delete({
+      where: { id: relationship.id },
+    });
+
+    return {
+      id: relationship.id,
+      prerequisite: relationship.prerequisite,
+      postrequisite: relationship.postrequisite,
+      metadata: JSON.stringify(formattedMetadata),
+    };
   }
 }

@@ -1,7 +1,10 @@
-import { Resolver, Query, Args, ID } from '@nestjs/graphql';
+import { Resolver, Query, Args, ID, Mutation } from '@nestjs/graphql';
 import { ModulesService } from './modules.service';
 import { Module } from './models/Module.entity';
 import { ModulesQueryInput } from './dto/modules-query.input';
+import { CreateModuleRelationshipInput } from './dto/create-module-relationship.input';
+import { DeleteModuleRelationshipInput } from './dto/delete-module-relationship.input';
+import { ModuleRelationshipResult } from './dto/module-relationship-result.type';
 
 /**
  * GraphQL resolver for module-related operations.
@@ -41,5 +44,37 @@ export class ModulesResolver {
     @Args('id', { type: () => ID, description: 'Module ID' }) id: string,
   ): Promise<Module | null> {
     return this.modulesService.findUnique(id);
+  }
+
+  /**
+   * Creates a prerequisite/postrequisite relationship between two modules.
+   * @param input - The relationship creation data
+   * @returns Promise<ModuleRelationshipResult> The result of the operation
+   */
+  @Mutation(() => ModuleRelationshipResult, {
+    name: 'createModuleRelationship',
+    description:
+      'Create a prerequisite/postrequisite relationship between modules',
+  })
+  async createModuleRelationship(
+    @Args('input') input: CreateModuleRelationshipInput,
+  ): Promise<ModuleRelationshipResult> {
+    return this.modulesService.createModuleRelationship(input);
+  }
+
+  /**
+   * Deletes a prerequisite/postrequisite relationship between two modules.
+   * @param input - The relationship deletion data
+   * @returns Promise<ModuleRelationshipResult> The result of the operation
+   */
+  @Mutation(() => ModuleRelationshipResult, {
+    name: 'deleteModuleRelationship',
+    description:
+      'Delete a prerequisite/postrequisite relationship between modules',
+  })
+  async deleteModuleRelationship(
+    @Args('input') input: DeleteModuleRelationshipInput,
+  ): Promise<ModuleRelationshipResult> {
+    return this.modulesService.deleteModuleRelationship(input);
   }
 }

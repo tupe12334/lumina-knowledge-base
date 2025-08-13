@@ -36,6 +36,17 @@ type Course {
   universityId: String!
 }
 
+input CreateModuleRelationshipInput {
+  """Optional metadata for the relationship (JSON string)"""
+  metadata: String
+
+  """The ID of the postrequisite module"""
+  postrequisiteModuleId: ID!
+
+  """The ID of the prerequisite module"""
+  prerequisiteModuleId: ID!
+}
+
 """
 A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
 """
@@ -51,6 +62,14 @@ type Degree {
 
 input DegreesQueryDto {
   name: String
+}
+
+input DeleteModuleRelationshipInput {
+  """The ID of the postrequisite module"""
+  postrequisiteModuleId: ID!
+
+  """The ID of the prerequisite module"""
+  prerequisiteModuleId: ID!
 }
 
 type Faculty {
@@ -82,6 +101,20 @@ type Module {
   subModules: [Module!]
 }
 
+type ModuleRelationshipResult {
+  """ID of the created/deleted relationship"""
+  id: ID!
+
+  """Metadata associated with the relationship (JSON string)"""
+  metadata: String!
+
+  """The postrequisite block"""
+  postrequisite: Block!
+
+  """The prerequisite block"""
+  prerequisite: Block!
+}
+
 input ModulesQueryInput {
   """Filter modules by exact number of questions"""
   exactQuestions: Int
@@ -91,6 +124,14 @@ input ModulesQueryInput {
 
   """Filter modules by minimum number of questions"""
   minQuestions: Int
+}
+
+type Mutation {
+  """Create a prerequisite/postrequisite relationship between modules"""
+  createModuleRelationship(input: CreateModuleRelationshipInput!): ModuleRelationshipResult!
+
+  """Delete a prerequisite/postrequisite relationship between modules"""
+  deleteModuleRelationship(input: DeleteModuleRelationshipInput!): ModuleRelationshipResult!
 }
 
 type NumberAnswer {
