@@ -1248,6 +1248,9 @@ exports[`seed snapshot > saves seeded data snapshot 1`] = `
       "id": "7b4f3a21-89d5-4c3e-a8f7-1e3d2c9b8a5f",
     },
     {
+      "id": "93063920-88DB-41DB-AFDD-1FDE26CA5686",
+    },
+    {
       "id": "31d48832-b6e9-4d7f-9807-cad5bc502df2",
     },
     {
@@ -1444,6 +1447,78 @@ exports[`seed snapshot > saves seeded data snapshot 1`] = `
     },
     {
       "id": "34882399-4d6c-4812-a01f-f1e6aaca802f",
+    },
+    {
+      "id": "ECE425AA-7490-4361-961D-E92E9064DE06",
+    },
+    {
+      "id": "702AF121-6DBC-424E-B5C6-9A19EC479DFF",
+    },
+    {
+      "id": "B2DBF109-153D-4369-945F-B51DC37C6458",
+    },
+    {
+      "id": "ED8F17D0-957B-4DAE-A73B-298FDB821976",
+    },
+    {
+      "id": "44515992-97B8-4248-8048-F1E392653D90",
+    },
+    {
+      "id": "80F05550-E13A-440F-BE7D-F1B02AAA21C6",
+    },
+    {
+      "id": "D963CBC8-4684-47B0-872E-53ED1377A802",
+    },
+    {
+      "id": "9FE9749F-0326-4D7D-B88A-C24251477C7C",
+    },
+    {
+      "id": "7F4F9F15-6535-4738-9783-CCBB0E72B28E",
+    },
+    {
+      "id": "25A21167-85B9-4AEB-AE8B-2EBC96805075",
+    },
+    {
+      "id": "6F8AA229-C26D-48F7-B4D9-99B66801AFB1",
+    },
+    {
+      "id": "C1D87FAF-DA0D-4BCA-9055-1EB5004A2506",
+    },
+    {
+      "id": "1FE2809D-9DA8-47AB-B16A-82B2B0F3BCEA",
+    },
+    {
+      "id": "5A39C93C-6FA5-4D38-9AE7-A496F4B3BE23",
+    },
+    {
+      "id": "67746F9D-EFA7-4C27-97D5-B97D803C414F",
+    },
+    {
+      "id": "EF619178-0075-4528-A5E5-EDD11CDA1AC9",
+    },
+    {
+      "id": "6995FDB3-1127-49C2-A411-A7774BA057D3",
+    },
+    {
+      "id": "E041319C-A848-4D4A-B65E-5D4550EB977B",
+    },
+    {
+      "id": "441CCB1F-AE04-4992-8337-89D7930F8C3D",
+    },
+    {
+      "id": "D3179696-0DF1-4356-99CD-D7884E974815",
+    },
+    {
+      "id": "CF1CF97B-2C80-4020-A398-2B84513DF1C7",
+    },
+    {
+      "id": "D2F5B46F-7D05-4224-9E83-70E2BC136EB3",
+    },
+    {
+      "id": "9631D994-C908-4CB1-9E67-9566CD1E94CD",
+    },
+    {
+      "id": "42F87231-0ED4-4420-ACF0-D59DFE484B0B",
     },
     {
       "id": "af0bd650-5f32-4dad-ba38-cea69f616692",
@@ -1919,6 +1994,21 @@ exports[`seed snapshot > saves seeded data snapshot 1`] = `
       "postrequisiteId": "a6b8af63-5f91-4381-8a43-12f67d9ec34d",
       "prerequisiteId": "19cfbc30-475c-4733-a5de-1064fa7f2ee7",
     },
+    {
+      "id": "FD61E7E7-3FEF-4307-8AFD-E57CF861D0CB",
+      "postrequisiteId": "7b4f3a21-89d5-4c3e-a8f7-1e3d2c9b8a5f",
+      "prerequisiteId": "93063920-88DB-41DB-AFDD-1FDE26CA5686",
+    },
+    {
+      "id": "24F98AFD-0968-407F-BECA-859C40EA47F2",
+      "postrequisiteId": "441CCB1F-AE04-4992-8337-89D7930F8C3D",
+      "prerequisiteId": "9FE9749F-0326-4D7D-B88A-C24251477C7C",
+    },
+    {
+      "id": "B4E7F89A-2C3D-4A5F-9B6E-8D1F4A7C9E2B",
+      "postrequisiteId": "a6b8af63-5f91-4381-8a43-12f67d9ec34d",
+      "prerequisiteId": "a4bcc89e-7c87-425f-8f5b-7a05fab2cd40",
+    },
   ],
   "course": [
     {
@@ -2017,6 +2107,13 @@ exports[`seed snapshot > saves seeded data snapshot 1`] = `
       "id": "cc8fe111-8b1b-41d2-9299-6a68f2cca395",
       "publishedAt": null,
       "translationId": "4b42c9f4-436a-4008-9291-5ca24df618fe",
+      "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
+    },
+    {
+      "blockId": "93063920-88DB-41DB-AFDD-1FDE26CA5686",
+      "id": "28B8218D-2AD3-47DB-8273-0FB48288551A",
+      "publishedAt": null,
+      "translationId": "68A324D1-5434-4889-9900-236DBA47D169",
       "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
     },
     {
@@ -2479,6 +2576,174 @@ exports[`seed snapshot > saves seeded data snapshot 1`] = `
       "id": "de4a2333-2f9f-46c2-8006-38fa9e9cc466",
       "publishedAt": null,
       "translationId": "b5b8e1fb-02be-4c0f-b0dd-d0cf037f887c",
+      "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
+    },
+    {
+      "blockId": "ECE425AA-7490-4361-961D-E92E9064DE06",
+      "id": "CFD5A7C3-E5B8-4E4A-B595-F2DCC4B4674A",
+      "publishedAt": null,
+      "translationId": "21523080-6A39-40DA-9DA3-2D6EB5B7F4AF",
+      "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
+    },
+    {
+      "blockId": "702AF121-6DBC-424E-B5C6-9A19EC479DFF",
+      "id": "4A66FFC1-CF90-43B3-B4C2-39B47B63B5FF",
+      "publishedAt": null,
+      "translationId": "A85CE10B-18CD-4858-AFDF-FF1E648FF356",
+      "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
+    },
+    {
+      "blockId": "B2DBF109-153D-4369-945F-B51DC37C6458",
+      "id": "C944B168-697A-45A2-92BE-F05D7BF1A632",
+      "publishedAt": null,
+      "translationId": "912BFA9E-3A77-4E04-87D1-A51C676A173C",
+      "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
+    },
+    {
+      "blockId": "ED8F17D0-957B-4DAE-A73B-298FDB821976",
+      "id": "1C3F7A94-2B5C-4E7D-8F9A-6B3D2E4C8A1F",
+      "publishedAt": null,
+      "translationId": "2A1C89A1-3A4F-4A44-A747-3252152438C9",
+      "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
+    },
+    {
+      "blockId": "44515992-97B8-4248-8048-F1E392653D90",
+      "id": "8F2E4B6A-3C7D-4A9F-B5E8-2D6C9F3A7B1E",
+      "publishedAt": null,
+      "translationId": "97508FE0-85AA-4504-AA81-6FB42E35D496",
+      "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
+    },
+    {
+      "blockId": "80F05550-E13A-440F-BE7D-F1B02AAA21C6",
+      "id": "5B8D1F4A-6C9E-4A2F-8D5B-3E7A9C2F6B4D",
+      "publishedAt": null,
+      "translationId": "F2DFBC55-3D87-4086-A84F-926462D58924",
+      "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
+    },
+    {
+      "blockId": "D963CBC8-4684-47B0-872E-53ED1377A802",
+      "id": "7A5F2C8E-4B6D-4F9A-A2C7-8E5B9D3F6A1C",
+      "publishedAt": null,
+      "translationId": "381E04F5-B0C5-4D7E-BDDB-910166A0FD89",
+      "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
+    },
+    {
+      "blockId": "9FE9749F-0326-4D7D-B88A-C24251477C7C",
+      "id": "2E8A5F1C-7B4D-4A6F-8E2A-5C9B1F4A7E8D",
+      "publishedAt": null,
+      "translationId": "9AE95896-4575-4A5D-B061-E63084629AFC",
+      "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
+    },
+    {
+      "blockId": "7F4F9F15-6535-4738-9783-CCBB0E72B28E",
+      "id": "9D4B6F8A-2C5E-4F7A-B9D4-6A2C8F5B9E1A",
+      "publishedAt": null,
+      "translationId": "D16E5F7D-BADB-45FF-AA46-AA098CCCB860",
+      "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
+    },
+    {
+      "blockId": "25A21167-85B9-4AEB-AE8B-2EBC96805075",
+      "id": "13FE6C94-7E65-4CD2-B105-1C8EA63C73A0",
+      "publishedAt": null,
+      "translationId": "B3B64068-0729-47CE-B245-0CB9A61EF133",
+      "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
+    },
+    {
+      "blockId": "6F8AA229-C26D-48F7-B4D9-99B66801AFB1",
+      "id": "8D4E4C31-247D-435C-9FC9-C31C461BABDE",
+      "publishedAt": null,
+      "translationId": "7AD0CC1F-8100-4A61-9E5A-9A33FD44B6C4",
+      "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
+    },
+    {
+      "blockId": "C1D87FAF-DA0D-4BCA-9055-1EB5004A2506",
+      "id": "C08B3FB0-94A9-4F57-9A9B-195C3F6A9A95",
+      "publishedAt": null,
+      "translationId": "EDA6A1CF-49B1-42B5-B222-2360567A1CC2",
+      "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
+    },
+    {
+      "blockId": "1FE2809D-9DA8-47AB-B16A-82B2B0F3BCEA",
+      "id": "65F040D4-B3B3-4534-9D3C-B1E328887AD6",
+      "publishedAt": null,
+      "translationId": "08DE7ADA-D64A-4A80-B404-ED9FDB890780",
+      "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
+    },
+    {
+      "blockId": "5A39C93C-6FA5-4D38-9AE7-A496F4B3BE23",
+      "id": "7B4E6A9C-2F5D-4A8F-B7E4-6A9C2F5D8A1E",
+      "publishedAt": null,
+      "translationId": "4788A07E-2959-44CB-AFE1-69178D7278E8",
+      "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
+    },
+    {
+      "blockId": "67746F9D-EFA7-4C27-97D5-B97D803C414F",
+      "id": "8EFB3C4A-F840-4099-ABB1-C8B12FBF8337",
+      "publishedAt": null,
+      "translationId": "01791C4F-7F39-4E7A-82C4-74D310FD7764",
+      "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
+    },
+    {
+      "blockId": "EF619178-0075-4528-A5E5-EDD11CDA1AC9",
+      "id": "9C5513BB-A600-4590-8417-3EB32823B59C",
+      "publishedAt": null,
+      "translationId": "063346E1-5E9F-4B3E-B439-C47123A96642",
+      "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
+    },
+    {
+      "blockId": "6995FDB3-1127-49C2-A411-A7774BA057D3",
+      "id": "555F3F2B-7CC9-496D-8F2C-FD558855BED4",
+      "publishedAt": null,
+      "translationId": "CCF23719-624D-4B9A-B946-1104B0B1988E",
+      "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
+    },
+    {
+      "blockId": "E041319C-A848-4D4A-B65E-5D4550EB977B",
+      "id": "1A5F8C2E-7B4D-4F9A-A1F5-8C2E7B4D9A6F",
+      "publishedAt": null,
+      "translationId": "44FFF4D7-320E-4282-B8FD-A50D3F15F770",
+      "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
+    },
+    {
+      "blockId": "441CCB1F-AE04-4992-8337-89D7930F8C3D",
+      "id": "7F4A1783-8268-4322-997A-201CF4E2B209",
+      "publishedAt": null,
+      "translationId": "60C2C386-A924-4906-8B1A-F38226A7F396",
+      "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
+    },
+    {
+      "blockId": "D3179696-0DF1-4356-99CD-D7884E974815",
+      "id": "908FF0D1-00D1-406B-9BF7-E9EA0374BE0E",
+      "publishedAt": null,
+      "translationId": "A30D9CD7-8C02-4472-BDE7-B23A001870AA",
+      "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
+    },
+    {
+      "blockId": "CF1CF97B-2C80-4020-A398-2B84513DF1C7",
+      "id": "DD0D76FF-66E4-404C-A897-D1C862601B2D",
+      "publishedAt": null,
+      "translationId": "BD8921E9-E6C9-4EF6-BE69-0D5A07A65191",
+      "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
+    },
+    {
+      "blockId": "D2F5B46F-7D05-4224-9E83-70E2BC136EB3",
+      "id": "09C42D4D-336B-47B6-AC63-3CB9FB10989E",
+      "publishedAt": null,
+      "translationId": "F6B856CA-7849-4CDA-9FC9-794C9253936E",
+      "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
+    },
+    {
+      "blockId": "9631D994-C908-4CB1-9E67-9566CD1E94CD",
+      "id": "605D7AB6-ACB6-43CA-9911-496C4469C5E9",
+      "publishedAt": null,
+      "translationId": "F920D0C0-50E9-4A01-9B50-63F4E450C171",
+      "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
+    },
+    {
+      "blockId": "42F87231-0ED4-4420-ACF0-D59DFE484B0B",
+      "id": "4A8F2C6E-7B3D-4A5F-A4F8-2C6E7B3D5A9F",
+      "publishedAt": null,
+      "translationId": "5B91BD52-22E5-4335-ADE5-1C3E21B12EB8",
       "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
     },
   ],
@@ -5904,6 +6169,42 @@ exports[`seed snapshot > saves seeded data snapshot 1`] = `
       "key": "TYPE",
       "value": "hard",
     },
+    {
+      "blockRelationshipId": "FD61E7E7-3FEF-4307-8AFD-E57CF861D0CB",
+      "id": "922D0EDA-AAFD-4E68-94CB-8C40B17714F4",
+      "key": "REASON",
+      "value": "Foundations of Mathematics is a prerequisite for Discrete Mathematics.",
+    },
+    {
+      "blockRelationshipId": "FD61E7E7-3FEF-4307-8AFD-E57CF861D0CB",
+      "id": "32474139-6904-4D6B-A0D1-171D45B2D472",
+      "key": "TYPE",
+      "value": "hard",
+    },
+    {
+      "blockRelationshipId": "24F98AFD-0968-407F-BECA-859C40EA47F2",
+      "id": "8AF641E8-DC79-45C3-A4D1-2702EDB7F060",
+      "key": "REASON",
+      "value": "Numerical Analysis 1 is a prerequisite for Numerical Analysis 2.",
+    },
+    {
+      "blockRelationshipId": "24F98AFD-0968-407F-BECA-859C40EA47F2",
+      "id": "D2AF1634-542F-467C-AC33-5F5B5B79FBFB",
+      "key": "TYPE",
+      "value": "hard",
+    },
+    {
+      "blockRelationshipId": "B4E7F89A-2C3D-4A5F-9B6E-8D1F4A7C9E2B",
+      "id": "3F8E6D2A-9B4C-4F1A-8E5D-7C9A2B6F4E3A",
+      "key": "REASON",
+      "value": "Database Systems provides foundational knowledge in data management required for Data Structures and Introduction to Algorithms.",
+    },
+    {
+      "blockRelationshipId": "B4E7F89A-2C3D-4A5F-9B6E-8D1F4A7C9E2B",
+      "id": "5A7C9E2B-4F8D-4A1C-9B6E-8D2F3A7C4E9B",
+      "key": "TYPE",
+      "value": "hard",
+    },
   ],
   "selectAnswer": [
     {
@@ -7666,6 +7967,11 @@ exports[`seed snapshot > saves seeded data snapshot 1`] = `
       "id": "24b5a671-ea76-4c9b-8fd2-97e09f958f39",
     },
     {
+      "en_text": "Foundations of Mathematics",
+      "he_text": "אשנב למתמטיקה",
+      "id": "68A324D1-5434-4889-9900-236DBA47D169",
+    },
+    {
       "en_text": "Chemistry",
       "he_text": "כימיה",
       "id": "dd8d69f7-9959-43a2-a227-233d003fb709",
@@ -8239,6 +8545,126 @@ exports[`seed snapshot > saves seeded data snapshot 1`] = `
       "en_text": "Artificial Intelligence",
       "he_text": "בינה מלכותית",
       "id": "b5b8e1fb-02be-4c0f-b0dd-d0cf037f887c",
+    },
+    {
+      "en_text": "Systems Programming Laboratory",
+      "he_text": "מעבדה בתכנות מערכות",
+      "id": "21523080-6A39-40DA-9DA3-2D6EB5B7F4AF",
+    },
+    {
+      "en_text": "Automata and Formal Languages",
+      "he_text": "אוטומטים ושפות פורמליות",
+      "id": "A85CE10B-18CD-4858-AFDF-FF1E648FF356",
+    },
+    {
+      "en_text": "Introduction to Computability and Complexity Theory",
+      "he_text": "מבוא לתורת החישוביות והסיבוכיות",
+      "id": "912BFA9E-3A77-4E04-87D1-A51C676A173C",
+    },
+    {
+      "en_text": "Operating Systems",
+      "he_text": "מערכות הפעלה",
+      "id": "2A1C89A1-3A4F-4A44-A747-3252152438C9",
+    },
+    {
+      "en_text": "Programming Languages",
+      "he_text": "שפות תכנות",
+      "id": "97508FE0-85AA-4504-AA81-6FB42E35D496",
+    },
+    {
+      "en_text": "Principles of Information Systems Development",
+      "he_text": "עקרונות פיתוח מערכות מידע",
+      "id": "F2DFBC55-3D87-4086-A84F-926462D58924",
+    },
+    {
+      "en_text": "Coding Theory",
+      "he_text": "תורת הקודים",
+      "id": "381E04F5-B0C5-4D7E-BDDB-910166A0FD89",
+    },
+    {
+      "en_text": "Numerical Analysis 1",
+      "he_text": "אנליזה נומרית 1",
+      "id": "9AE95896-4575-4A5D-B061-E63084629AFC",
+    },
+    {
+      "en_text": "Programming and Data Analysis in Python",
+      "he_text": "תכנות וניתוח נתונים בשפת Python",
+      "id": "D16E5F7D-BADB-45FF-AA46-AA098CCCB860",
+    },
+    {
+      "en_text": "Introduction to Artificial Intelligence",
+      "he_text": "מבוא לבינה מלאכותית",
+      "id": "B3B64068-0729-47CE-B245-0CB9A61EF133",
+    },
+    {
+      "en_text": "Advanced Java Programming",
+      "he_text": "תכנות מתקדם בשפת Java",
+      "id": "7AD0CC1F-8100-4A61-9E5A-9A33FD44B6C4",
+    },
+    {
+      "en_text": "Computer Networks",
+      "he_text": "רשתות תקשורת מחשבים",
+      "id": "EDA6A1CF-49B1-42B5-B222-2360567A1CC2",
+    },
+    {
+      "en_text": "Defensive System Programming",
+      "he_text": "תכנות מערכות דפנסיבי",
+      "id": "08DE7ADA-D64A-4A80-B404-ED9FDB890780",
+    },
+    {
+      "en_text": "Introduction to Cryptography",
+      "he_text": "מבוא לקריפטוגרפיה",
+      "id": "4788A07E-2959-44CB-AFE1-69178D7278E8",
+    },
+    {
+      "en_text": "Compilation",
+      "he_text": "קומפילציה",
+      "id": "01791C4F-7F39-4E7A-82C4-74D310FD7764",
+    },
+    {
+      "en_text": "Object-Oriented Programming",
+      "he_text": "תכנות מונחה עצמים",
+      "id": "063346E1-5E9F-4B3E-B439-C47123A96642",
+    },
+    {
+      "en_text": "Data Systems – Technologies and Algorithms",
+      "he_text": "מערכות נתונים – טכנולוגיות ואלגוריתמים",
+      "id": "CCF23719-624D-4B9A-B946-1104B0B1988E",
+    },
+    {
+      "en_text": "Computational Biology",
+      "he_text": "חישוביות ביולוגית",
+      "id": "44FFF4D7-320E-4282-B8FD-A50D3F15F770",
+    },
+    {
+      "en_text": "Numerical Analysis 2",
+      "he_text": "אנליזה נומרית 2",
+      "id": "60C2C386-A924-4906-8B1A-F38226A7F396",
+    },
+    {
+      "en_text": "Introduction to Computational Learning",
+      "he_text": "מבוא ללמידה חישובית",
+      "id": "A30D9CD7-8C02-4472-BDE7-B23A001870AA",
+    },
+    {
+      "en_text": "Algorithmic Robotics",
+      "he_text": "רובוטיקה אלגוריתמית",
+      "id": "BD8921E9-E6C9-4EF6-BE69-0D5A07A65191",
+    },
+    {
+      "en_text": "Introduction to Cybersecurity",
+      "he_text": "מבוא לאבטחת המרחב המקוון",
+      "id": "F6B856CA-7849-4CDA-9FC9-794C9253936E",
+    },
+    {
+      "en_text": "Introduction to Software Testing",
+      "he_text": "מבוא לבדיקות תוכנה",
+      "id": "F920D0C0-50E9-4A01-9B50-63F4E450C171",
+    },
+    {
+      "en_text": "Computational Geometry",
+      "he_text": "גיאומטריה חישובית",
+      "id": "5B91BD52-22E5-4335-ADE5-1C3E21B12EB8",
     },
     {
       "en_text": "How to formalize the statement: "The square of every real number different from zero is greater than zero"",

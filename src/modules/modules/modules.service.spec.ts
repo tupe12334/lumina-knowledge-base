@@ -8,7 +8,7 @@ vi.mock('../../../generated/client', async () => {
   const actual = (await vi.importActual(
     '../../../generated/client',
   )) as unknown as typeof client;
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+
   return { ...actual, PrismaClient: createPrismock(actual.Prisma) };
 });
 

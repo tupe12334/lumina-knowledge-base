@@ -22,7 +22,11 @@ describe('ModulesController', () => {
     it('gets a module from service', async () => {
       const expectedModule = {
         id: 'm1',
-        name: { en_text: 'mod', he_text: 'מודול' },
+        name: {
+          id: '11111111-1111-1111-1111-111111111111',
+          en_text: 'mod',
+          he_text: 'מודול',
+        },
         subModules: [],
         parentModules: [],
       };
@@ -51,6 +55,7 @@ describe('ModulesController', () => {
         {
           id: '1',
           name: {
+            id: '22222222-2222-2222-2222-222222222222',
             en_text: 'Module 1',
             he_text: 'מודול 1',
           },
@@ -58,6 +63,7 @@ describe('ModulesController', () => {
         {
           id: '2',
           name: {
+            id: '33333333-3333-3333-3333-333333333333',
             en_text: 'Module 2',
             he_text: 'מודול 2',
           },

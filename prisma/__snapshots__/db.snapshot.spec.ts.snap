@@ -1895,14 +1895,54 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "prerequisiteId": "81BE3915-2C63-470E-85FE-55C1062DEFF3",
     },
     {
+      "id": "A1B2C3D4-E5F6-47A8-9B0C-1D2E3F4A5B6D",
+      "postrequisiteId": "1052c11f-8fea-4d91-b180-297632d36c46",
+      "prerequisiteId": "e4a74368-8567-4f01-9907-d51434ffcbfd",
+    },
+    {
+      "id": "A3B5C7D9-2E4F-4A6B-8D01-23456789ABC0",
+      "postrequisiteId": "9FE9749F-0326-4D7D-B88A-C24251477C7C",
+      "prerequisiteId": "19cfbc30-475c-4733-a5de-1064fa7f2ee7",
+    },
+    {
       "id": "A7D2FBC1-6E3A-4E28-8A6F-4D6B1C3E9F20",
       "postrequisiteId": "a4bcc89e-7c87-425f-8f5b-7a05fab2cd40",
       "prerequisiteId": "7b4f3a21-89d5-4c3e-a8f7-1e3d2c9b8a5f",
     },
     {
+      "id": "B1C2D3E4-F5A6-47B8-9C0D-1E2F3A4B5C6D",
+      "postrequisiteId": "73d5b87a-4c34-4b53-aa86-b3d425a51abd",
+      "prerequisiteId": "7b4f3a21-89d5-4c3e-a8f7-1e3d2c9b8a5f",
+    },
+    {
+      "id": "B2C4D6E8-1A3B-4C5D-9E7F-0A1B2C3D4E5F",
+      "postrequisiteId": "9FE9749F-0326-4D7D-B88A-C24251477C7C",
+      "prerequisiteId": "ac9e3b41-b2f5-4b77-8c76-1ef2293ea1f1",
+    },
+    {
       "id": "B91E3F27-2C8D-4B7A-9E1F-0A2B3C4D5E6F",
       "postrequisiteId": "a4bcc89e-7c87-425f-8f5b-7a05fab2cd40",
       "prerequisiteId": "a6b8af63-5f91-4381-8a43-12f67d9ec34d",
+    },
+    {
+      "id": "C1D2E3F4-5A6B-7C8D-9E0F-A1B2C3D4E5F6",
+      "postrequisiteId": "e4a74368-8567-4f01-9907-d51434ffcbfd",
+      "prerequisiteId": "baed1685-70b6-4316-8598-693ddb29836a",
+    },
+    {
+      "id": "C1D2E3F4-A5B6-47C8-9D0E-1F2A3B4C5D6E",
+      "postrequisiteId": "73d5b87a-4c34-4b53-aa86-b3d425a51abd",
+      "prerequisiteId": "a6b8af63-5f91-4381-8a43-12f67d9ec34d",
+    },
+    {
+      "id": "D2A1C3B4-E5F6-47A8-9B0C-1D2E3F4A5B6C",
+      "postrequisiteId": "1052c11f-8fea-4d91-b180-297632d36c46",
+      "prerequisiteId": "7b4f3a21-89d5-4c3e-a8f7-1e3d2c9b8a5f",
+    },
+    {
+      "id": "D2E3F4A5-B6C7-4890-8DEF-0A1B2C3D4E5F",
+      "postrequisiteId": "e4a74368-8567-4f01-9907-d51434ffcbfd",
+      "prerequisiteId": "7b4f3a21-89d5-4c3e-a8f7-1e3d2c9b8a5f",
     },
     {
       "id": "D2EE6EFD-2892-4BA0-AF12-A9320B590C34",
@@ -1912,6 +1952,16 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
     {
       "id": "E3F2A9B1-7C4D-4E5F-9A1B-2C3D4E5F6A7B",
       "postrequisiteId": "D963CBC8-4684-47B0-872E-53ED1377A802",
+      "prerequisiteId": "993a6a59-7fc7-4d96-ada6-5858d742496a",
+    },
+    {
+      "id": "F0B1C2D3-E4F5-4617-980A-B1C2D3E4F5A6",
+      "postrequisiteId": "a6b8af63-5f91-4381-8a43-12f67d9ec34d",
+      "prerequisiteId": "7b4f3a21-89d5-4c3e-a8f7-1e3d2c9b8a5f",
+    },
+    {
+      "id": "F1A3C5E7-9B2D-4F6A-8C10-1234567890AB",
+      "postrequisiteId": "9FE9749F-0326-4D7D-B88A-C24251477C7C",
       "prerequisiteId": "993a6a59-7fc7-4d96-ada6-5858d742496a",
     },
     {
@@ -5990,6 +6040,54 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "value": "hard",
     },
     {
+      "blockRelationshipId": "D2A1C3B4-E5F6-47A8-9B0C-1D2E3F4A5B6C",
+      "id": "11111111-2222-4333-8444-555566667770",
+      "key": "TYPE",
+      "value": "hard",
+    },
+    {
+      "blockRelationshipId": "D2A1C3B4-E5F6-47A8-9B0C-1D2E3F4A5B6C",
+      "id": "11111111-2222-4333-8444-555566667771",
+      "key": "REASON",
+      "value": "Discrete Mathematics is a prerequisite for Algorithms.",
+    },
+    {
+      "blockRelationshipId": "A1B2C3D4-E5F6-47A8-9B0C-1D2E3F4A5B6D",
+      "id": "11111111-2222-4333-8444-555566667772",
+      "key": "TYPE",
+      "value": "hard",
+    },
+    {
+      "blockRelationshipId": "A1B2C3D4-E5F6-47A8-9B0C-1D2E3F4A5B6D",
+      "id": "11111111-2222-4333-8444-555566667773",
+      "key": "REASON",
+      "value": "Data Structures and Introduction to Algorithms is a prerequisite for Algorithms.",
+    },
+    {
+      "blockRelationshipId": "B1C2D3E4-F5A6-47B8-9C0D-1E2F3A4B5C6D",
+      "id": "11111111-2222-4333-8444-555566667774",
+      "key": "TYPE",
+      "value": "hard",
+    },
+    {
+      "blockRelationshipId": "B1C2D3E4-F5A6-47B8-9C0D-1E2F3A4B5C6D",
+      "id": "11111111-2222-4333-8444-555566667775",
+      "key": "REASON",
+      "value": "Discrete Mathematics is a prerequisite for Algorithms.",
+    },
+    {
+      "blockRelationshipId": "C1D2E3F4-A5B6-47C8-9D0E-1F2A3B4C5D6E",
+      "id": "11111111-2222-4333-8444-555566667776",
+      "key": "TYPE",
+      "value": "hard",
+    },
+    {
+      "blockRelationshipId": "C1D2E3F4-A5B6-47C8-9D0E-1F2A3B4C5D6E",
+      "id": "11111111-2222-4333-8444-555566667777",
+      "key": "REASON",
+      "value": "Data Structures and Introduction to Algorithms is a prerequisite for Algorithms.",
+    },
+    {
       "blockRelationshipId": "d6eeb1a2-abcb-4603-b566-a15a5d2d0add",
       "id": "166270e8-1c12-4db3-8ac9-22edbb29704b",
       "key": "TYPE",
@@ -6098,10 +6196,22 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "value": "Foundations of Mathematics is a prerequisite for Discrete Mathematics.",
     },
     {
+      "blockRelationshipId": "F0B1C2D3-E4F5-4617-980A-B1C2D3E4F5A6",
+      "id": "9D8C7B6A-5E4F-4D3C-8B2A-1C0D9E8F7A6B",
+      "key": "TYPE",
+      "value": "hard",
+    },
+    {
       "blockRelationshipId": "8e9f0123-2345-4456-a89a-bcdef0567123",
       "id": "9aa0cc26-2d07-4ec7-b3b7-a10440362909",
       "key": "TYPE",
       "value": "hard",
+    },
+    {
+      "blockRelationshipId": "F0B1C2D3-E4F5-4617-980A-B1C2D3E4F5A6",
+      "id": "A0B1C2D3-E4F5-4617-980A-B1C2D3E4F5A6",
+      "key": "REASON",
+      "value": "Discrete Mathematics is a prerequisite for Data Structures and Introduction to Algorithms.",
     },
     {
       "blockRelationshipId": "E3F2A9B1-7C4D-4E5F-9A1B-2C3D4E5F6A7B",
@@ -6110,10 +6220,22 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "value": "Linear Algebra 1 is a prerequisite for Coding Theory.",
     },
     {
+      "blockRelationshipId": "C1D2E3F4-5A6B-7C8D-9E0F-A1B2C3D4E5F6",
+      "id": "B1C2D3E4-F5A6-47C8-90DE-1A2B3C4D5E6F",
+      "key": "TYPE",
+      "value": "hard",
+    },
+    {
       "blockRelationshipId": "E3F2A9B1-7C4D-4E5F-9A1B-2C3D4E5F6A7B",
       "id": "B2C3D4E5-F6A7-4890-B1C2-D3E4F5A6B7C8",
       "key": "TYPE",
       "value": "hard",
+    },
+    {
+      "blockRelationshipId": "C1D2E3F4-5A6B-7C8D-9E0F-A1B2C3D4E5F6",
+      "id": "C2D3E4F5-A6B7-4C8D-90EF-1A2B3C4D5E6F",
+      "key": "REASON",
+      "value": "Introduction to Computer Science and Java is a prerequisite for Data Structures and Introduction to Algorithms.",
     },
     {
       "blockRelationshipId": "24F98AFD-0968-407F-BECA-859C40EA47F2",
@@ -6122,10 +6244,22 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "value": "hard",
     },
     {
+      "blockRelationshipId": "D2E3F4A5-B6C7-4890-8DEF-0A1B2C3D4E5F",
+      "id": "D3E4F5A6-B7C8-490D-8E0F-A1B2C3D4E5F6",
+      "key": "TYPE",
+      "value": "hard",
+    },
+    {
       "blockRelationshipId": "A7D2FBC1-6E3A-4E28-8A6F-4D6B1C3E9F20",
       "id": "E1D2C3B4-A5F6-4789-B0C1-D2E3F4A5B6C7",
       "key": "TYPE",
       "value": "hard",
+    },
+    {
+      "blockRelationshipId": "D2E3F4A5-B6C7-4890-8DEF-0A1B2C3D4E5F",
+      "id": "E4F5A6B7-C8D9-4A0B-9E1F-A2B3C4D5E6F7",
+      "key": "REASON",
+      "value": "Discrete Mathematics is a prerequisite for Data Structures and Introduction to Algorithms.",
     },
     {
       "blockRelationshipId": "76DC9C77-F975-4413-A3FF-CDF3F05B3518",
