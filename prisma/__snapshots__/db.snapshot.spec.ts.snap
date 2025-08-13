@@ -2034,6 +2034,11 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "prerequisiteId": "a2093775-11c1-40e2-9c10-3cdaaeaf6559",
     },
     {
+      "id": "a56b205d-b410-4e1e-8c6b-e8aa347e7c81",
+      "postrequisiteId": "42F87231-0ED4-4420-ACF0-D59DFE484B0B",
+      "prerequisiteId": "a6b8af63-5f91-4381-8a43-12f67d9ec34d",
+    },
+    {
       "id": "ac73be63-69fa-4224-8f36-7634587ccb16",
       "postrequisiteId": "31d48832-b6e9-4d7f-9807-cad5bc502df2",
       "prerequisiteId": "7b4f3a21-89d5-4c3e-a8f7-1e3d2c9b8a5f",
@@ -2072,6 +2077,11 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "id": "c28b0006-13a2-422d-ae56-b75ddc686087",
       "postrequisiteId": "98c59241-27f0-4aec-9e33-84404d014b73",
       "prerequisiteId": "af0bd650-5f32-4dad-ba38-cea69f616692",
+    },
+    {
+      "id": "c7e496aa-dc6c-4ce6-821a-d32d67bdb6fc",
+      "postrequisiteId": "80F05550-E13A-440F-BE7D-F1B02AAA21C6",
+      "prerequisiteId": "a4bcc89e-7c87-425f-8f5b-7a05fab2cd40",
     },
     {
       "id": "c908742e-aee1-48fd-a4e9-a106d8c35202",
