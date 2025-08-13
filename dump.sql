@@ -132,7 +132,6 @@ INSERT INTO Course VALUES('627e3bcd-0c1d-4761-9993-eace56a29da4','e29d162e-1a63-
 INSERT INTO Course VALUES('8cd40c56-68d2-416b-9639-37f8525bdfe0','e45aa0ec-3d93-402d-be14-83c7e35bfed6','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL,'0af28bdb-67a9-4c7e-8e10-990002576b3a');
 INSERT INTO Course VALUES('4874f73a-f045-44b6-99c8-edbbd220475d','85c94e9d-d658-47e1-8792-649c597b4d2a','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL,'2e2063b3-d759-4a8c-97d4-3ae6bdd9ce26');
 INSERT INTO Course VALUES('99b40ba0-8cd5-451e-aa30-1413931c3d16','0fca4bf4-a204-4cc8-9911-8485516ff5a0','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL,'e049739c-86a4-4f8e-a423-e39e8f38d2ca');
-INSERT INTO Course VALUES('bd18f3fe-1314-4c7f-ad13-edab78e24db9','e3bf3cfa-6ce6-4c18-8acc-112cbfe2ec65','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL,'7477a6fc-e0d3-4272-8c98-aa989c63c87a');
 INSERT INTO Course VALUES('723d9c6b-c174-4831-9342-c58f3339357d','474a614d-806d-4b79-8430-6242b799b7f6','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL,'67251fe0-ebaf-4b7c-839d-6412181f330b');
 INSERT INTO Course VALUES('0689ba53-b271-4c13-b7b6-79b5553fd958','37874beb-e35c-4a13-bb04-51eac3fa3b65','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL,'ab8d4523-db3b-480e-8174-420d0ef87012');
 INSERT INTO Course VALUES('07990e8d-d205-46ee-ac6a-d1f371dd7a0f','6316c2a7-f4e8-4e32-8fb5-e0e2611bde66','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL,'fb797046-22db-45bc-8663-75421e1fdf84');
@@ -240,7 +239,6 @@ INSERT INTO Block VALUES('e4700e5d-bcba-4f6f-8564-f36c97953a8b');
 INSERT INTO Block VALUES('0af28bdb-67a9-4c7e-8e10-990002576b3a');
 INSERT INTO Block VALUES('2e2063b3-d759-4a8c-97d4-3ae6bdd9ce26');
 INSERT INTO Block VALUES('e049739c-86a4-4f8e-a423-e39e8f38d2ca');
-INSERT INTO Block VALUES('7477a6fc-e0d3-4272-8c98-aa989c63c87a');
 INSERT INTO Block VALUES('67251fe0-ebaf-4b7c-839d-6412181f330b');
 INSERT INTO Block VALUES('ab8d4523-db3b-480e-8174-420d0ef87012');
 INSERT INTO Block VALUES('fb797046-22db-45bc-8663-75421e1fdf84');
@@ -426,6 +424,7 @@ INSERT INTO BlockRelationship VALUES('0355c0b3-dd47-4c36-9e38-33445b2e30eb','ECE
 INSERT INTO BlockRelationship VALUES('86222ce7-ae38-4edd-a08b-5d3a0ed63d13','5A39C93C-6FA5-4D38-9AE7-A496F4B3BE23','993a6a59-7fc7-4d96-ada6-5858d742496a');
 INSERT INTO BlockRelationship VALUES('f6180800-730c-4270-8ea2-acd1c692b7ad','5f6c93a2-02aa-4b7a-8637-9406a5a5386f','5A39C93C-6FA5-4D38-9AE7-A496F4B3BE23');
 INSERT INTO BlockRelationship VALUES('0b2ec91a-9cd6-425a-8639-575f1c81adf2','19cfbc30-475c-4733-a5de-1064fa7f2ee7','5A39C93C-6FA5-4D38-9AE7-A496F4B3BE23');
+INSERT INTO BlockRelationship VALUES('4b471392-b822-4979-832b-a1cd0402dd93','a6b8af63-5f91-4381-8a43-12f67d9ec34d','44515992-97B8-4248-8048-F1E392653D90');
 CREATE TABLE IF NOT EXISTS "RelationshipMetadata" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "key" TEXT NOT NULL,
@@ -706,7 +705,6 @@ INSERT INTO Translation VALUES('e29d162e-1a63-4875-b34c-67349bcdfb33','Semicondu
 INSERT INTO Translation VALUES('e45aa0ec-3d93-402d-be14-83c7e35bfed6','Semiconductors','מוליכים למחצה');
 INSERT INTO Translation VALUES('85c94e9d-d658-47e1-8792-649c597b4d2a','Social Preference and Choice','העדפה חברתית ובחירה');
 INSERT INTO Translation VALUES('0fca4bf4-a204-4cc8-9911-8485516ff5a0','Strategic Thinking: Game Theory and its Applications in Economics and Management','חשיבה אסטרטגית: תורת המשחקים ויישומיה בכלכלה ובניהול');
-INSERT INTO Translation VALUES('e3bf3cfa-6ce6-4c18-8acc-112cbfe2ec65','System Programming Laboratory','מעבדת תכנות מערכות');
 INSERT INTO Translation VALUES('474a614d-806d-4b79-8430-6242b799b7f6','The Economics of Israel','כלכלת ישראל');
 INSERT INTO Translation VALUES('37874beb-e35c-4a13-bb04-51eac3fa3b65','Thermodynamics','תרמודינמיקה');
 INSERT INTO Translation VALUES('6316c2a7-f4e8-4e32-8fb5-e0e2611bde66','Topics in Mathematics for Social Sciences Students','נושאים במתמטיקה לסטודנטים למדעי החברה');
@@ -2519,7 +2517,6 @@ INSERT INTO _CourseToDegree VALUES('ea2a8249-c9af-4f62-8e3f-7f16b1b01d7a','43eae
 INSERT INTO _CourseToDegree VALUES('18f17e49-ac1b-451e-a21e-732c7bb0fea8','43eae81a-0c42-4e5c-894d-bd803334f0cd');
 INSERT INTO _CourseToDegree VALUES('3e624b22-dabf-422c-82c2-64a6538faf4f','73ef0be5-bd20-4181-aa70-52cf19ac5a9c');
 INSERT INTO _CourseToDegree VALUES('48153e85-e200-4b72-8c9e-2ea63775bfdd','73ef0be5-bd20-4181-aa70-52cf19ac5a9c');
-INSERT INTO _CourseToDegree VALUES('bd18f3fe-1314-4c7f-ad13-edab78e24db9','73ef0be5-bd20-4181-aa70-52cf19ac5a9c');
 INSERT INTO _CourseToDegree VALUES('edf8c677-623d-4855-a749-417d7a4ec247','73ef0be5-bd20-4181-aa70-52cf19ac5a9c');
 INSERT INTO _CourseToDegree VALUES('7b6523b1-5740-4f10-8303-773cdca0619d','73ef0be5-bd20-4181-aa70-52cf19ac5a9c');
 INSERT INTO _CourseToDegree VALUES('66841064-a880-4ca5-9ef4-09e66e4f0f4b','73ef0be5-bd20-4181-aa70-52cf19ac5a9c');
