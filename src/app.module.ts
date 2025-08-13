@@ -2,6 +2,7 @@ import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { GraphQLModule } from '@nestjs/graphql';
+import { APP_GUARD } from '@nestjs/core';
 import { join } from 'path';
 import { serverEnvSchema } from './env/schema';
 import { BlocksModule } from './modules/blocks/blocks.module';
@@ -15,6 +16,7 @@ import { ModulesModule } from './modules/modules/modules.module';
 import { QuestionsModule } from './modules/questions/questions.module';
 import { UniversitiesModule } from './modules/universities/universities.module';
 import { PrismaModule } from './prisma/prisma.module';
+import { MutationsGuard } from './guards/mutations.guard';
 
 @Module({
   imports: [
@@ -45,6 +47,11 @@ import { PrismaModule } from './prisma/prisma.module';
     LearningResourcesModule,
   ],
   controllers: [],
-  providers: [],
+  providers: [
+    {
+      provide: APP_GUARD,
+      useClass: MutationsGuard,
+    },
+  ],
 })
 export class AppModule {}
