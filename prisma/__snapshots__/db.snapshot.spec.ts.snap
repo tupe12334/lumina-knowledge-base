@@ -1800,6 +1800,11 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "prerequisiteId": "907bd1ae-626e-41d5-8048-ab0be776a402",
     },
     {
+      "id": "1a2b3c4d-5e6f-4a7b-8c9d-0e1f2a3b4c5d",
+      "postrequisiteId": "d8b8235e-431d-404f-9057-8249a2902be0",
+      "prerequisiteId": "a6b8af63-5f91-4381-8a43-12f67d9ec34d",
+    },
+    {
       "id": "24F98AFD-0968-407F-BECA-859C40EA47F2",
       "postrequisiteId": "441CCB1F-AE04-4992-8337-89D7930F8C3D",
       "prerequisiteId": "9FE9749F-0326-4D7D-B88A-C24251477C7C",
@@ -1863,6 +1868,11 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "id": "6a70e70d-a1e0-486e-9c55-b22090cede3f",
       "postrequisiteId": "81BE3915-2C63-470E-85FE-55C1062DEFF3",
       "prerequisiteId": "78123942-6F56-4C66-8881-B49BC26E107D",
+    },
+    {
+      "id": "6b5c3d12-9af3-4c1b-9f2e-8a7b6c5d4e3f",
+      "postrequisiteId": "4389ad4c-3cf3-4e06-b4d3-20f6b43a723b",
+      "prerequisiteId": "e4a74368-8567-4f01-9907-d51434ffcbfd",
     },
     {
       "id": "6c7d8e9f-0123-4234-a678-9abcde345f01",
@@ -6274,6 +6284,12 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "value": "Discrete Mathematics is a prerequisite for Database Systems.",
     },
     {
+      "blockRelationshipId": "6b5c3d12-9af3-4c1b-9f2e-8a7b6c5d4e3f",
+      "id": "a9b8c7d6-e5f4-4a3b-9c8d-7e6f5a4b3c2d",
+      "key": "REASON",
+      "value": "Data Structures and Introduction to Algorithms is a prerequisite for Computational Models.",
+    },
+    {
       "blockRelationshipId": "4a400758-507b-4ff0-9799-026577878064",
       "id": "b1ca7937-494b-44af-840b-933bea047e36",
       "key": "TYPE",
@@ -6292,8 +6308,20 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "value": "hard",
     },
     {
+      "blockRelationshipId": "1a2b3c4d-5e6f-4a7b-8c9d-0e1f2a3b4c5d",
+      "id": "c3d4e5f6-a7b8-4c9d-8e0f-1a2b3c4d5e6f",
+      "key": "REASON",
+      "value": "Data Structures and Introduction to Algorithms is a prerequisite for Computational Models.",
+    },
+    {
       "blockRelationshipId": "27a0eab8-6102-4020-a147-b5cfee9a2d76",
       "id": "cadb461d-ba7c-42e4-9abb-607047d2d4da",
+      "key": "TYPE",
+      "value": "hard",
+    },
+    {
+      "blockRelationshipId": "1a2b3c4d-5e6f-4a7b-8c9d-0e1f2a3b4c5d",
+      "id": "d1e2f3a4-b5c6-4d7e-8f9a-0b1c2d3e4f5a",
       "key": "TYPE",
       "value": "hard",
     },
@@ -6306,6 +6334,12 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
     {
       "blockRelationshipId": "ceea03d8-cf5a-4297-a204-ee661c993ee2",
       "id": "e1a3f64b-6782-453a-9b38-aa36277e0fb5",
+      "key": "TYPE",
+      "value": "hard",
+    },
+    {
+      "blockRelationshipId": "6b5c3d12-9af3-4c1b-9f2e-8a7b6c5d4e3f",
+      "id": "e7f6d5c4-b3a2-4c1d-9e8f-7a6b5c4d3e2f",
       "key": "TYPE",
       "value": "hard",
     },
