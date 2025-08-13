@@ -36,6 +36,31 @@ type Course {
   universityId: String!
 }
 
+type CourseRelationshipResult {
+  """ID of the created/deleted relationship"""
+  id: ID!
+
+  """Metadata associated with the relationship (JSON string)"""
+  metadata: String!
+
+  """The postrequisite block"""
+  postrequisite: Block!
+
+  """The prerequisite block"""
+  prerequisite: Block!
+}
+
+input CreateCourseRelationshipInput {
+  """Optional metadata for the relationship (JSON string)"""
+  metadata: String
+
+  """The ID of the postrequisite course"""
+  postrequisiteCourseId: ID!
+
+  """The ID of the prerequisite course"""
+  prerequisiteCourseId: ID!
+}
+
 input CreateModuleRelationshipInput {
   """Optional metadata for the relationship (JSON string)"""
   metadata: String
@@ -62,6 +87,14 @@ type Degree {
 
 input DegreesQueryDto {
   name: String
+}
+
+input DeleteCourseRelationshipInput {
+  """The ID of the postrequisite course"""
+  postrequisiteCourseId: ID!
+
+  """The ID of the prerequisite course"""
+  prerequisiteCourseId: ID!
 }
 
 input DeleteModuleRelationshipInput {
@@ -127,8 +160,14 @@ input ModulesQueryInput {
 }
 
 type Mutation {
+  """Create a prerequisite/postrequisite relationship between courses"""
+  createCourseRelationship(input: CreateCourseRelationshipInput!): CourseRelationshipResult!
+
   """Create a prerequisite/postrequisite relationship between modules"""
   createModuleRelationship(input: CreateModuleRelationshipInput!): ModuleRelationshipResult!
+
+  """Delete a prerequisite/postrequisite relationship between courses"""
+  deleteCourseRelationship(input: DeleteCourseRelationshipInput!): CourseRelationshipResult!
 
   """Delete a prerequisite/postrequisite relationship between modules"""
   deleteModuleRelationship(input: DeleteModuleRelationshipInput!): ModuleRelationshipResult!

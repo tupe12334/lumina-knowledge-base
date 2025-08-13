@@ -1,12 +1,21 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { BadRequestException, NotFoundException } from '@nestjs/common';
 import { CoursesService } from './courses.service';
 import { PrismaService } from '../../prisma/prisma.service';
+import { CreateCourseRelationshipInput } from './dto/create-course-relationship.input';
+import { DeleteCourseRelationshipInput } from './dto/delete-course-relationship.input';
 
 describe('CoursesService', () => {
   let service: CoursesService;
   const mockPrismaService = {
     course: {
       findMany: vi.fn(),
+      findUnique: vi.fn(),
+    },
+    blockRelationship: {
+      findUnique: vi.fn(),
+      create: vi.fn(),
+      delete: vi.fn(),
     },
   };
 
@@ -33,5 +42,135 @@ describe('CoursesService', () => {
     expect(result[0].name.en_text).toBe('course');
     expect(result[0].university).toBeDefined();
     expect(result[0].university!.name.en_text).toBe('uni');
+  });
+
+  describe('createCourseRelationship', () => {
+    it('should create a relationship between two courses', async () => {
+      const input: CreateCourseRelationshipInput = {
+        prerequisiteCourseId: 'course-1',
+        postrequisiteCourseId: 'course-2',
+        metadata: { type: 'hard' },
+      };
+
+      const mockCourse1 = {
+        id: 'course-1',
+        Block: { id: 'block-1' },
+      };
+      const mockCourse2 = {
+        id: 'course-2',
+        Block: { id: 'block-2' },
+      };
+
+      const mockRelationship = {
+        id: 'relationship-1',
+        prerequisite: { id: 'block-1' },
+        postrequisite: { id: 'block-2' },
+        metadata: [{ key: 'TYPE', value: 'hard' }],
+      };
+
+      mockPrismaService.course.findUnique
+        .mockResolvedValueOnce(mockCourse1)
+        .mockResolvedValueOnce(mockCourse2);
+      mockPrismaService.blockRelationship.findUnique.mockResolvedValue(null);
+      mockPrismaService.blockRelationship.create.mockResolvedValue(
+        mockRelationship,
+      );
+
+      const result = await service.createCourseRelationship(input);
+
+      expect(result.id).toBe('relationship-1');
+      expect(result.metadata).toBe('{"TYPE":"hard"}');
+    });
+
+    it('should throw BadRequestException if same course is used for both prerequisite and postrequisite', async () => {
+      const input: CreateCourseRelationshipInput = {
+        prerequisiteCourseId: 'course-1',
+        postrequisiteCourseId: 'course-1',
+      };
+
+      await expect(service.createCourseRelationship(input)).rejects.toThrow(
+        BadRequestException,
+      );
+    });
+
+    it('should throw NotFoundException if prerequisite course does not exist', async () => {
+      const input: CreateCourseRelationshipInput = {
+        prerequisiteCourseId: 'non-existent',
+        postrequisiteCourseId: 'course-2',
+      };
+
+      mockPrismaService.course.findUnique
+        .mockResolvedValueOnce(null)
+        .mockResolvedValueOnce({ id: 'course-2', Block: { id: 'block-2' } });
+
+      await expect(service.createCourseRelationship(input)).rejects.toThrow(
+        NotFoundException,
+      );
+    });
+  });
+
+  describe('deleteCourseRelationship', () => {
+    it('should delete a relationship between two courses', async () => {
+      const input: DeleteCourseRelationshipInput = {
+        prerequisiteCourseId: 'course-1',
+        postrequisiteCourseId: 'course-2',
+      };
+
+      const mockCourse1 = {
+        id: 'course-1',
+        Block: { id: 'block-1' },
+      };
+      const mockCourse2 = {
+        id: 'course-2',
+        Block: { id: 'block-2' },
+      };
+
+      const mockRelationship = {
+        id: 'relationship-1',
+        prerequisite: { id: 'block-1' },
+        postrequisite: { id: 'block-2' },
+        metadata: [{ key: 'TYPE', value: 'hard' }],
+      };
+
+      mockPrismaService.course.findUnique
+        .mockResolvedValueOnce(mockCourse1)
+        .mockResolvedValueOnce(mockCourse2);
+      mockPrismaService.blockRelationship.findUnique.mockResolvedValue(
+        mockRelationship,
+      );
+      mockPrismaService.blockRelationship.delete.mockResolvedValue(
+        mockRelationship,
+      );
+
+      const result = await service.deleteCourseRelationship(input);
+
+      expect(result.id).toBe('relationship-1');
+      expect(result.metadata).toBe('{"TYPE":"hard"}');
+    });
+
+    it('should throw NotFoundException if relationship does not exist', async () => {
+      const input: DeleteCourseRelationshipInput = {
+        prerequisiteCourseId: 'course-1',
+        postrequisiteCourseId: 'course-2',
+      };
+
+      const mockCourse1 = {
+        id: 'course-1',
+        Block: { id: 'block-1' },
+      };
+      const mockCourse2 = {
+        id: 'course-2',
+        Block: { id: 'block-2' },
+      };
+
+      mockPrismaService.course.findUnique
+        .mockResolvedValueOnce(mockCourse1)
+        .mockResolvedValueOnce(mockCourse2);
+      mockPrismaService.blockRelationship.findUnique.mockResolvedValue(null);
+
+      await expect(service.deleteCourseRelationship(input)).rejects.toThrow(
+        NotFoundException,
+      );
+    });
   });
 });
