@@ -8,7 +8,8 @@
   "scripts": {
     "prebuild": "pnpm run generate",
     "prelint": "pnpm run generate",
-    "build": "pnpm exec nest build",
+    "build": "pnpm exec nest build && pnpm run build:copy",
+    "build:copy": "mkdir -p ../../dist && cp -r dist/* ../../dist/",
     "format": "prettier --write \"src/**/*.ts\" \"prisma/**/*.ts\" \"!src/generated/**\" \"!generated/**\"",
     "format:check": "prettier --check \"src/**/*.ts\" \"prisma/**/*.ts\" \"!src/generated/**\" \"!generated/**\"",
     "start": "pnpm exec nest start",
