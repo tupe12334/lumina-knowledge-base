@@ -420,7 +420,6 @@ INSERT INTO BlockRelationship VALUES('D2A1C3B4-E5F6-47A8-9B0C-1D2E3F4A5B6C','7b4
 INSERT INTO BlockRelationship VALUES('A1B2C3D4-E5F6-47A8-9B0C-1D2E3F4A5B6D','e4a74368-8567-4f01-9907-d51434ffcbfd','1052c11f-8fea-4d91-b180-297632d36c46');
 INSERT INTO BlockRelationship VALUES('B1C2D3E4-F5A6-47B8-9C0D-1E2F3A4B5C6D','7b4f3a21-89d5-4c3e-a8f7-1e3d2c9b8a5f','73d5b87a-4c34-4b53-aa86-b3d425a51abd');
 INSERT INTO BlockRelationship VALUES('C1D2E3F4-A5B6-47C8-9D0E-1F2A3B4C5D6E','a6b8af63-5f91-4381-8a43-12f67d9ec34d','73d5b87a-4c34-4b53-aa86-b3d425a51abd');
--- Make "Data Structures and Introduction to Algorithms" a prerequisite of "Computational Models" (both universities)
 INSERT INTO BlockRelationship VALUES('6b5c3d12-9af3-4c1b-9f2e-8a7b6c5d4e3f','e4a74368-8567-4f01-9907-d51434ffcbfd','4389ad4c-3cf3-4e06-b4d3-20f6b43a723b');
 INSERT INTO BlockRelationship VALUES('1a2b3c4d-5e6f-4a7b-8c9d-0e1f2a3b4c5d','a6b8af63-5f91-4381-8a43-12f67d9ec34d','d8b8235e-431d-404f-9057-8249a2902be0');
 CREATE TABLE IF NOT EXISTS "RelationshipMetadata" (
@@ -487,7 +486,6 @@ INSERT INTO RelationshipMetadata VALUES('B1C2D3E4-F5A6-47C8-90DE-1A2B3C4D5E6F','
 INSERT INTO RelationshipMetadata VALUES('C2D3E4F5-A6B7-4C8D-90EF-1A2B3C4D5E6F','REASON','Introduction to Computer Science and Java is a prerequisite for Data Structures and Introduction to Algorithms.','C1D2E3F4-5A6B-7C8D-9E0F-A1B2C3D4E5F6');
 INSERT INTO RelationshipMetadata VALUES('D3E4F5A6-B7C8-490D-8E0F-A1B2C3D4E5F6','TYPE','hard','D2E3F4A5-B6C7-4890-8DEF-0A1B2C3D4E5F');
 INSERT INTO RelationshipMetadata VALUES('E4F5A6B7-C8D9-4A0B-9E1F-A2B3C4D5E6F7','REASON','Discrete Mathematics is a prerequisite for Data Structures and Introduction to Algorithms.','D2E3F4A5-B6C7-4890-8DEF-0A1B2C3D4E5F');
--- Metadata for the new prerequisites: DS&A -> Computational Models (both universities)
 INSERT INTO RelationshipMetadata VALUES('e7f6d5c4-b3a2-4c1d-9e8f-7a6b5c4d3e2f','TYPE','hard','6b5c3d12-9af3-4c1b-9f2e-8a7b6c5d4e3f');
 INSERT INTO RelationshipMetadata VALUES('a9b8c7d6-e5f4-4a3b-9c8d-7e6f5a4b3c2d','REASON','Data Structures and Introduction to Algorithms is a prerequisite for Computational Models.','6b5c3d12-9af3-4c1b-9f2e-8a7b6c5d4e3f');
 INSERT INTO RelationshipMetadata VALUES('d1e2f3a4-b5c6-4d7e-8f9a-0b1c2d3e4f5a','TYPE','hard','1a2b3c4d-5e6f-4a7b-8c9d-0e1f2a3b4c5d');

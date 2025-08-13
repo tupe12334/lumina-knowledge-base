@@ -6,6 +6,7 @@ import { join } from 'path';
 import { serverEnvSchema } from './env/schema';
 import { BlocksModule } from './modules/blocks/blocks.module';
 import { CoursesModule } from './modules/courses/courses.module';
+import { DatabaseModule } from './modules/database/database.module';
 import { DegreesModule } from './modules/degrees/degrees.module';
 import { FacultiesModule } from './modules/faculties/faculties.module';
 import { HealthModule } from './modules/health/health.module';
@@ -33,6 +34,7 @@ import { PrismaModule } from './prisma/prisma.module';
     }),
     PrismaModule,
     HealthModule,
+    DatabaseModule,
     UniversitiesModule,
     CoursesModule,
     DegreesModule,

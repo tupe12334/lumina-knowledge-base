@@ -496,6 +496,28 @@
         }
       }
     },
+    "/database/dump": {
+      "get": {
+        "operationId": "DatabaseController_getDump",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/database/info": {
+      "get": {
+        "operationId": "DatabaseController_getDatabaseInfo",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
     "/courses": {
       "get": {
         "operationId": "CoursesController_getCourses",
