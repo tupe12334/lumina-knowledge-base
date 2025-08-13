@@ -19,7 +19,7 @@ export class MutationsGuard implements CanActivate {
     // Get GraphQL context
     const gqlContext = GqlExecutionContext.create(context);
     const info: GraphQLResolveInfo = gqlContext.getInfo();
-    
+
     // Only check mutations, allow queries and subscriptions
     if (info?.operation?.operation !== OperationTypeNode.MUTATION) {
       return true;
@@ -30,7 +30,7 @@ export class MutationsGuard implements CanActivate {
         'Mutations are disabled. Set ENABLE_MUTATIONS=true in environment variables to enable them.',
       );
     }
-    
+
     return true;
   }
 }
