@@ -26,6 +26,20 @@ type BlockRelationship {
   prerequisiteId: String!
 }
 
+type BlockRelationshipResult {
+  """ID of the created/deleted relationship"""
+  id: ID!
+
+  """Metadata associated with the relationship (JSON string)"""
+  metadata: String!
+
+  """The postrequisite block"""
+  postrequisite: Block!
+
+  """The prerequisite block"""
+  prerequisite: Block!
+}
+
 type Course {
   Block: Block
   id: ID!
@@ -48,6 +62,17 @@ type CourseRelationshipResult {
 
   """The prerequisite block"""
   prerequisite: Block!
+}
+
+input CreateBlockRelationshipInput {
+  """Optional metadata for the relationship (JSON string)"""
+  metadata: String
+
+  """The ID of the postrequisite block"""
+  postrequisiteBlockId: ID!
+
+  """The ID of the prerequisite block"""
+  prerequisiteBlockId: ID!
 }
 
 input CreateCourseRelationshipInput {
@@ -87,6 +112,14 @@ type Degree {
 
 input DegreesQueryDto {
   name: String
+}
+
+input DeleteBlockRelationshipInput {
+  """The ID of the postrequisite block"""
+  postrequisiteBlockId: ID!
+
+  """The ID of the prerequisite block"""
+  prerequisiteBlockId: ID!
 }
 
 input DeleteCourseRelationshipInput {
@@ -160,11 +193,17 @@ input ModulesQueryInput {
 }
 
 type Mutation {
+  """Create a prerequisite/postrequisite relationship between blocks"""
+  createBlockRelationship(input: CreateBlockRelationshipInput!): BlockRelationshipResult!
+
   """Create a prerequisite/postrequisite relationship between courses"""
   createCourseRelationship(input: CreateCourseRelationshipInput!): CourseRelationshipResult!
 
   """Create a prerequisite/postrequisite relationship between modules"""
   createModuleRelationship(input: CreateModuleRelationshipInput!): ModuleRelationshipResult!
+
+  """Delete a prerequisite/postrequisite relationship between blocks"""
+  deleteBlockRelationship(input: DeleteBlockRelationshipInput!): BlockRelationshipResult!
 
   """Delete a prerequisite/postrequisite relationship between courses"""
   deleteCourseRelationship(input: DeleteCourseRelationshipInput!): CourseRelationshipResult!
