@@ -14,14 +14,14 @@ export class DatabaseService {
     try {
       // Get the database path from the current working directory
       const dbPath = join(process.cwd(), 'prisma', 'main.db');
-      
+
       // Execute sqlite3 dump command
       const { stdout, stderr } = await execAsync(`sqlite3 "${dbPath}" .dump`);
-      
+
       if (stderr) {
         throw new Error(`SQLite dump error: ${stderr}`);
       }
-      
+
       return stdout;
     } catch (error) {
       throw new Error(
@@ -52,7 +52,7 @@ export class DatabaseService {
       // Get database file size
       const dbPath = join(process.cwd(), 'prisma', 'main.db');
       let dbSize = 0;
-      
+
       try {
         const { stdout } = await execAsync(
           `stat -f%z "${dbPath}" 2>/dev/null || stat -c%s "${dbPath}" 2>/dev/null || echo 0`,
@@ -89,11 +89,11 @@ export class DatabaseService {
 
   private formatBytes(bytes: number): string {
     if (bytes === 0) return '0 Bytes';
-    
+
     const k = 1024;
     const sizes = ['Bytes', 'KB', 'MB', 'GB'];
     const i = Math.floor(Math.log(bytes) / Math.log(k));
-    
+
     return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
   }
 }
