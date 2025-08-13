@@ -1784,6 +1784,11 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "prerequisiteId": "2ca3350d-2870-47c4-b9b4-a397b8bbe7b9",
     },
     {
+      "id": "05d15781-18ff-4f84-9f90-6ae6c125be3a",
+      "postrequisiteId": "50db41ff-0606-40b9-8df4-89878c424024",
+      "prerequisiteId": "ac9e3b41-b2f5-4b77-8c76-1ef2293ea1f1",
+    },
+    {
       "id": "06cf92b7-1e0e-4f7a-964b-1527f3f2246a",
       "postrequisiteId": "8f4e9a3b-2c1d-4f5e-9a8b-7c3d6e5f8a9b",
       "prerequisiteId": "6e19169a-959d-4f5d-a475-de09ca9ba8cd",
@@ -1802,6 +1807,11 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "id": "126fd178-526c-4059-8271-45b0a62c7c40",
       "postrequisiteId": "9631D994-C908-4CB1-9E67-9566CD1E94CD",
       "prerequisiteId": "19cfbc30-475c-4733-a5de-1064fa7f2ee7",
+    },
+    {
+      "id": "142ea6f9-f035-4957-829a-ce63a7033dd3",
+      "postrequisiteId": "D2F5B46F-7D05-4224-9E83-70E2BC136EB3",
+      "prerequisiteId": "C1D87FAF-DA0D-4BCA-9055-1EB5004A2506",
     },
     {
       "id": "1744d33d-8c25-421f-9104-6fb50ea30ccb",
@@ -1834,6 +1844,11 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "prerequisiteId": "c6dd59ac-1802-4bc9-b91e-ca77bb32620e",
     },
     {
+      "id": "2990e64b-c667-407e-9866-e9d984df2b18",
+      "postrequisiteId": "D2F5B46F-7D05-4224-9E83-70E2BC136EB3",
+      "prerequisiteId": "ED8F17D0-957B-4DAE-A73B-298FDB821976",
+    },
+    {
       "id": "29fcbe5e-212e-4e6c-a545-21c4af0d5ebc",
       "postrequisiteId": "42F87231-0ED4-4420-ACF0-D59DFE484B0B",
       "prerequisiteId": "73d5b87a-4c34-4b53-aa86-b3d425a51abd",
@@ -1859,6 +1874,11 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "prerequisiteId": "b4de3329-f3af-4ae9-b67d-bf1c5d1a30fb",
     },
     {
+      "id": "4a037e75-270a-4fb3-94bb-31193c953170",
+      "postrequisiteId": "C1D87FAF-DA0D-4BCA-9055-1EB5004A2506",
+      "prerequisiteId": "5f6c93a2-02aa-4b7a-8637-9406a5a5386f",
+    },
+    {
       "id": "4a400758-507b-4ff0-9799-026577878064",
       "postrequisiteId": "2ca3350d-2870-47c4-b9b4-a397b8bbe7b9",
       "prerequisiteId": "1ba27209-cfc3-4f46-93cc-5df7d272aebc",
@@ -1867,6 +1887,11 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "id": "4a5b6c7d-8e9f-4412-a456-789abc123def",
       "postrequisiteId": "9c0d1e2f-3a4b-4c6d-87ef-9a0b1c2d3e4f",
       "prerequisiteId": "8b9c0d1e-2f3a-4b5c-86de-8f9a0b1c2d3e",
+    },
+    {
+      "id": "4af8b133-0a14-49fe-ad97-f5d6b08ea640",
+      "postrequisiteId": "ECE425AA-7490-4361-961D-E92E9064DE06",
+      "prerequisiteId": "19cfbc30-475c-4733-a5de-1064fa7f2ee7",
     },
     {
       "id": "4b471392-b822-4979-832b-a1cd0402dd93",
@@ -1912,6 +1937,11 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "id": "6c7d8e9f-0123-4234-a678-9abcde345f01",
       "postrequisiteId": "1e2f3a4b-5c6d-4e8f-a9ab-1c2d3e4f5a6b",
       "prerequisiteId": "9c0d1e2f-3a4b-4c6d-87ef-9a0b1c2d3e4f",
+    },
+    {
+      "id": "71443c44-1ea9-482d-b389-149e92f9f839",
+      "postrequisiteId": "ed51e6cd-de6c-4c9e-8523-2559bff025e6",
+      "prerequisiteId": "ED8F17D0-957B-4DAE-A73B-298FDB821976",
     },
     {
       "id": "76DC9C77-F975-4413-A3FF-CDF3F05B3518",
@@ -2044,6 +2074,11 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "prerequisiteId": "a6b8af63-5f91-4381-8a43-12f67d9ec34d",
     },
     {
+      "id": "a645e32b-3f45-4196-8e45-f08f63b20a00",
+      "postrequisiteId": "C1D87FAF-DA0D-4BCA-9055-1EB5004A2506",
+      "prerequisiteId": "a6b8af63-5f91-4381-8a43-12f67d9ec34d",
+    },
+    {
       "id": "ac73be63-69fa-4224-8f36-7634587ccb16",
       "postrequisiteId": "31d48832-b6e9-4d7f-9807-cad5bc502df2",
       "prerequisiteId": "7b4f3a21-89d5-4c3e-a8f7-1e3d2c9b8a5f",
@@ -2109,6 +2144,11 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "prerequisiteId": "6e19169a-959d-4f5d-a475-de09ca9ba8cd",
     },
     {
+      "id": "dbe6d7b8-a1dc-4c92-b7c3-3385a31efaea",
+      "postrequisiteId": "12607152-f869-4b7b-84a7-38d15a74b388",
+      "prerequisiteId": "a6b8af63-5f91-4381-8a43-12f67d9ec34d",
+    },
+    {
       "id": "e08f5dfb-a229-4805-a343-aeefd3e449dd",
       "postrequisiteId": "f91d2e2e-3fc8-45b5-ae64-e08a7d075e24",
       "prerequisiteId": "3ad31ae2-3870-4d9d-8826-284bd8c34b12",
@@ -2117,6 +2157,11 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "id": "e110371c-44f6-4715-b394-fe9b21e18155",
       "postrequisiteId": "7496bad2-981e-4ac5-b464-788c4fc0d118",
       "prerequisiteId": "9c8e5d2a-4b7f-4c8d-9e0a-1b2c3d4e5f6a",
+    },
+    {
+      "id": "e2ff6ac7-85a4-4acc-9d16-3131c55f6be2",
+      "postrequisiteId": "12607152-f869-4b7b-84a7-38d15a74b388",
+      "prerequisiteId": "5f6c93a2-02aa-4b7a-8637-9406a5a5386f",
     },
     {
       "id": "eced1d98-9bab-44af-84a4-cf788d704f6d",
