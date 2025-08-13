@@ -122,12 +122,48 @@ input DeleteBlockRelationshipInput {
   prerequisiteBlockId: ID!
 }
 
+"""Input for deleting a course and all its related data"""
+input DeleteCourseInput {
+  """The ID of the course to delete"""
+  courseId: ID!
+
+  """Force deletion and cleanup of all related data (default: true)"""
+  force: Boolean! = true
+}
+
 input DeleteCourseRelationshipInput {
   """The ID of the postrequisite course"""
   postrequisiteCourseId: ID!
 
   """The ID of the prerequisite course"""
   prerequisiteCourseId: ID!
+}
+
+"""Result of a course deletion operation with cleanup details"""
+type DeleteCourseResult {
+  """The ID of the deleted course"""
+  courseId: ID!
+
+  """The name of the deleted course"""
+  courseName: String!
+
+  """Number of learning resources deleted"""
+  deletedLearningResources: Int!
+
+  """Number of course relationships deleted"""
+  deletedRelationships: Int!
+
+  """Additional details about the deletion operation"""
+  message: String
+
+  """Number of orphaned modules"""
+  orphanedModules: Int!
+
+  """Number of orphaned questions"""
+  orphanedQuestions: Int!
+
+  """Whether the deletion was successful"""
+  success: Boolean!
 }
 
 input DeleteModuleRelationshipInput {
@@ -204,6 +240,9 @@ type Mutation {
 
   """Delete a prerequisite/postrequisite relationship between blocks"""
   deleteBlockRelationship(input: DeleteBlockRelationshipInput!): BlockRelationshipResult!
+
+  """Delete a course and clean up all related data from the database"""
+  deleteCourse(input: DeleteCourseInput!): DeleteCourseResult!
 
   """Delete a prerequisite/postrequisite relationship between courses"""
   deleteCourseRelationship(input: DeleteCourseRelationshipInput!): CourseRelationshipResult!

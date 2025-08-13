@@ -4,6 +4,8 @@ import { Course } from './models/Course.entity';
 import { CreateCourseRelationshipInput } from './dto/create-course-relationship.input';
 import { DeleteCourseRelationshipInput } from './dto/delete-course-relationship.input';
 import { CourseRelationshipResult } from './dto/course-relationship-result.type';
+import { DeleteCourseInput } from './dto/delete-course.input';
+import { DeleteCourseResult } from './dto/delete-course-result.type';
 
 /**
  * GraphQL resolver for course-related operations.
@@ -71,5 +73,28 @@ export class CoursesResolver {
     @Args('input') input: DeleteCourseRelationshipInput,
   ): Promise<CourseRelationshipResult> {
     return this.coursesService.deleteCourseRelationship(input);
+  }
+
+  /**
+   * Deletes a course and cleans up all related data from the database.
+   * This is a destructive operation that will remove:
+   * - The course itself
+   * - All course relationships (prerequisites/postrequisites)
+   * - Orphaned modules (modules only used by this course)
+   * - Questions associated with orphaned modules
+   * - Learning resources associated with orphaned modules
+   * - Translation data that becomes unused
+   * @param input - The course deletion data
+   * @returns Promise<DeleteCourseResult> The result of the deletion operation
+   */
+  @Mutation(() => DeleteCourseResult, {
+    name: 'deleteCourse',
+    description:
+      'Delete a course and clean up all related data from the database',
+  })
+  async deleteCourse(
+    @Args('input') input: DeleteCourseInput,
+  ): Promise<DeleteCourseResult> {
+    return this.coursesService.deleteCourse(input);
   }
 }

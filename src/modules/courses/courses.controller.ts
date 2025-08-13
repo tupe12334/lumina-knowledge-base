@@ -1,7 +1,16 @@
-import { Controller, Get, Param, ParseUUIDPipe } from '@nestjs/common';
-import { ApiOkResponse } from '@nestjs/swagger';
+import {
+  Controller,
+  Get,
+  Param,
+  ParseUUIDPipe,
+  Delete,
+  Body,
+} from '@nestjs/common';
+import { ApiOkResponse, ApiOperation } from '@nestjs/swagger';
 import { CoursesService } from './courses.service';
 import { Course } from './models/Course.entity';
+import { DeleteCourseInput } from './dto/delete-course.input';
+import { DeleteCourseResult } from './dto/delete-course-result.type';
 
 @Controller('courses')
 export class CoursesController {

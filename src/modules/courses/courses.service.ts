@@ -9,6 +9,8 @@ import { Course } from './models/Course.entity';
 import { CreateCourseRelationshipInput } from './dto/create-course-relationship.input';
 import { DeleteCourseRelationshipInput } from './dto/delete-course-relationship.input';
 import { CourseRelationshipResult } from './dto/course-relationship-result.type';
+import { DeleteCourseInput } from './dto/delete-course.input';
+import { DeleteCourseResult } from './dto/delete-course-result.type';
 
 @Injectable()
 export class CoursesService {
@@ -260,5 +262,273 @@ export class CoursesService {
       postrequisite: existingRelationship.postrequisite,
       metadata: JSON.stringify(formattedMetadata),
     };
+  }
+
+  /**
+   * Deletes a course and cleans up all related data from the database.
+   * This includes:
+   * - Course relationships (prerequisites/postrequisites)
+   * - Module relationships
+   * - Questions associated with course modules
+   * - Learning resources
+   * - Translation data
+   * @param deleteData - The course deletion data containing course ID
+   * @returns The deletion result with cleanup details
+   */
+  async deleteCourse(
+    deleteData: DeleteCourseInput,
+  ): Promise<DeleteCourseResult> {
+    const { courseId, force = true } = deleteData;
+
+    // First, verify the course exists and get all related data
+    const course = await this.prisma.course.findUnique({
+      where: { id: courseId },
+      include: {
+        name: true,
+        Block: {
+          include: {
+            prerequisiteFor: {
+              include: {
+                metadata: true,
+              },
+            },
+            postrequisiteOf: {
+              include: {
+                metadata: true,
+              },
+            },
+          },
+        },
+        modules: {
+          include: {
+            Questions: {
+              include: {
+                Answer: {
+                  include: {
+                    SelectAnswer: true,
+                    UnitAnswer: true,
+                    NumberAnswer: true,
+                  },
+                },
+                Parts: true,
+                PartOf: true,
+              },
+            },
+            LearningResource: true,
+            name: true,
+            Block: {
+              include: {
+                prerequisiteFor: {
+                  include: {
+                    metadata: true,
+                  },
+                },
+                postrequisiteOf: {
+                  include: {
+                    metadata: true,
+                  },
+                },
+              },
+            },
+            Course: true, // To check if modules are used by other courses
+          },
+        },
+      },
+    });
+
+    if (!course) {
+      throw new NotFoundException(`Course with ID ${courseId} not found`);
+    }
+
+    // Check if we should proceed without force flag
+    if (!force) {
+      const hasRelationships =
+        course.Block.prerequisiteFor.length > 0 ||
+        course.Block.postrequisiteOf.length > 0;
+      const hasModulesWithQuestions = course.modules.some(
+        (module) => module.Questions.length > 0,
+      );
+
+      if (hasRelationships || hasModulesWithQuestions) {
+        throw new BadRequestException(
+          'Cannot delete course with existing relationships or questions. Use force=true to override.',
+        );
+      }
+    }
+
+    // Start the deletion process in a transaction
+    const result = await this.prisma.$transaction(async (tx) => {
+      let deletedRelationships = 0;
+      let orphanedModules = 0;
+      let orphanedQuestions = 0;
+      let deletedLearningResources = 0;
+
+      // 1. Delete all course relationships (prerequisites/postrequisites)
+      const courseRelationships = await tx.blockRelationship.findMany({
+        where: {
+          OR: [
+            { prerequisiteId: course.Block.id },
+            { postrequisiteId: course.Block.id },
+          ],
+        },
+        include: {
+          metadata: true,
+        },
+      });
+
+      for (const relationship of courseRelationships) {
+        // Delete relationship metadata first
+        await tx.relationshipMetadata.deleteMany({
+          where: { blockRelationshipId: relationship.id },
+        });
+
+        // Delete the relationship
+        await tx.blockRelationship.delete({
+          where: { id: relationship.id },
+        });
+
+        deletedRelationships++;
+      }
+
+      // 2. Handle modules and their data
+      for (const module of course.modules) {
+        // Check if this module is used by other courses
+        const otherCourseModules = module.Course.filter(
+          (c) => c.id !== courseId,
+        );
+
+        if (otherCourseModules.length === 0) {
+          // Module is only used by this course, we can delete it
+          orphanedModules++;
+
+          // Delete questions associated with this module
+          for (const question of module.Questions) {
+            // Delete question parts relationships
+            await tx.questionPart.deleteMany({
+              where: {
+                OR: [
+                  { questionId: question.id },
+                  { partQuestionId: question.id },
+                ],
+              },
+            });
+
+            // Delete answers and their sub-answers
+            for (const answer of question.Answer) {
+              await tx.selectAnswer.deleteMany({
+                where: { answerId: answer.id },
+              });
+              await tx.unitAnswer.deleteMany({
+                where: { answerId: answer.id },
+              });
+              await tx.numberAnswer.deleteMany({
+                where: { answerId: answer.id },
+              });
+              await tx.answer.delete({
+                where: { id: answer.id },
+              });
+            }
+
+            // Delete the question
+            await tx.question.delete({
+              where: { id: question.id },
+            });
+
+            orphanedQuestions++;
+          }
+
+          // Delete learning resources
+          const learningResources = await tx.learningResource.deleteMany({
+            where: { moduleId: module.id },
+          });
+          deletedLearningResources += learningResources.count;
+
+          // Delete module relationships
+          const moduleRelationships = await tx.blockRelationship.findMany({
+            where: {
+              OR: [
+                { prerequisiteId: module.Block.id },
+                { postrequisiteId: module.Block.id },
+              ],
+            },
+            include: {
+              metadata: true,
+            },
+          });
+
+          for (const relationship of moduleRelationships) {
+            await tx.relationshipMetadata.deleteMany({
+              where: { blockRelationshipId: relationship.id },
+            });
+            await tx.blockRelationship.delete({
+              where: { id: relationship.id },
+            });
+          }
+
+          // Delete the module
+          await tx.module.delete({
+            where: { id: module.id },
+          });
+
+          // Delete module's block
+          await tx.block.delete({
+            where: { id: module.Block.id },
+          });
+
+          // Delete module's translation if not used elsewhere
+          const translationUsage = await tx.module.findFirst({
+            where: { translationId: module.translationId },
+          });
+          if (!translationUsage) {
+            await tx.translation.delete({
+              where: { id: module.translationId },
+            });
+          }
+        } else {
+          // Module is used by other courses, just remove the relationship
+          await tx.course.update({
+            where: { id: courseId },
+            data: {
+              modules: {
+                disconnect: { id: module.id },
+              },
+            },
+          });
+        }
+      }
+
+      // 3. Delete the course itself
+      await tx.course.delete({
+        where: { id: courseId },
+      });
+
+      // 4. Delete course's block
+      await tx.block.delete({
+        where: { id: course.Block.id },
+      });
+
+      // 5. Delete course's translation if not used elsewhere
+      const translationUsage = await tx.course.findFirst({
+        where: { translationId: course.translationId },
+      });
+      if (!translationUsage) {
+        await tx.translation.delete({
+          where: { id: course.translationId },
+        });
+      }
+
+      return {
+        courseId,
+        courseName: course.name.en_text || course.name.he_text,
+        deletedRelationships,
+        orphanedModules,
+        orphanedQuestions,
+        deletedLearningResources,
+        success: true,
+        message: `Successfully deleted course "${course.name.en_text || course.name.he_text}" and cleaned up ${orphanedModules} modules, ${orphanedQuestions} questions, ${deletedRelationships} relationships, and ${deletedLearningResources} learning resources.`,
+      };
+    });
+
+    return result;
   }
 }
