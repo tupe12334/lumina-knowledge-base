@@ -22,7 +22,10 @@ RUN --mount=type=cache,id=pnpm-store,target=/pnpm/store,sharing=locked \
 # Copy source code and configuration files
 COPY . .
 
-# Skip generate and build directly with available tools
+# Generate Prisma client first (without JSON schema generator for Docker build)
+RUN cd apps/knowledge-base && npx prisma generate --schema=prisma/schema.prisma --generator client
+
+# Build the application
 RUN cd apps/knowledge-base && npx tsc -p tsconfig.build.json || echo "TypeScript build completed"
 
 # Stage 3: Production image
@@ -46,27 +49,33 @@ RUN --mount=type=cache,id=pnpm-store,target=/pnpm/store,sharing=locked \
 # Copy built application from builder stage
 COPY --from=builder /app/apps/knowledge-base/dist ./apps/knowledge-base/dist
 
+# Copy generated Prisma client
+COPY --from=builder /app/apps/knowledge-base/generated ./apps/knowledge-base/generated
+
 # Copy Prisma schema and migrations
 COPY --from=builder /app/apps/knowledge-base/prisma ./apps/knowledge-base/prisma
 
+# Generate Prisma client in production stage (client only)
+RUN cd apps/knowledge-base && npx prisma generate --schema=prisma/schema.prisma --generator client
+
 # Create database initialization script
 RUN echo '#!/bin/sh' > /app/init-db.sh && \
-    echo 'cd /app' >> /app/init-db.sh && \
-    echo 'if [ ! -f "./prisma/main.db" ]; then' >> /app/init-db.sh && \
-    echo '  echo "Initializing database from dump..."' >> /app/init-db.sh && \
-    echo '  if [ -f "./dump.sql" ]; then' >> /app/init-db.sh && \
-    echo '    sqlite3 ./prisma/main.db < dump.sql' >> /app/init-db.sh && \
-    echo '    echo "Database initialized successfully!"' >> /app/init-db.sh && \
-    echo '  else' >> /app/init-db.sh && \
-    echo '    echo "No dump.sql found, creating empty database..."' >> /app/init-db.sh && \
-    echo '    npx prisma migrate deploy --schema=apps/knowledge-base/prisma/schema.prisma' >> /app/init-db.sh && \
-    echo '    echo "Database migrated successfully!"' >> /app/init-db.sh && \
-    echo '  fi' >> /app/init-db.sh && \
-    echo 'else' >> /app/init-db.sh && \
-    echo '  echo "Database already exists, skipping initialization"' >> /app/init-db.sh && \
-    echo 'fi' >> /app/init-db.sh && \
-    echo 'exec "$@"' >> /app/init-db.sh && \
-    chmod +x /app/init-db.sh
+  echo 'cd /app' >> /app/init-db.sh && \
+  echo 'if [ ! -f "./prisma/main.db" ]; then' >> /app/init-db.sh && \
+  echo '  echo "Initializing database from dump..."' >> /app/init-db.sh && \
+  echo '  if [ -f "./dump.sql" ]; then' >> /app/init-db.sh && \
+  echo '    sqlite3 ./prisma/main.db < dump.sql' >> /app/init-db.sh && \
+  echo '    echo "Database initialized successfully!"' >> /app/init-db.sh && \
+  echo '  else' >> /app/init-db.sh && \
+  echo '    echo "No dump.sql found, creating empty database..."' >> /app/init-db.sh && \
+  echo '    npx prisma migrate deploy --schema=apps/knowledge-base/prisma/schema.prisma' >> /app/init-db.sh && \
+  echo '    echo "Database migrated successfully!"' >> /app/init-db.sh && \
+  echo '  fi' >> /app/init-db.sh && \
+  echo 'else' >> /app/init-db.sh && \
+  echo '  echo "Database already exists, skipping initialization"' >> /app/init-db.sh && \
+  echo 'fi' >> /app/init-db.sh && \
+  echo 'exec "$@"' >> /app/init-db.sh && \
+  chmod +x /app/init-db.sh
 
 EXPOSE 3000
 ENTRYPOINT ["/app/init-db.sh"]
