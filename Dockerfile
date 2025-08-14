@@ -59,7 +59,7 @@ RUN echo '#!/bin/sh' > /app/init-db.sh && \
     echo '    echo "Database initialized successfully!"' >> /app/init-db.sh && \
     echo '  else' >> /app/init-db.sh && \
     echo '    echo "No dump.sql found, creating empty database..."' >> /app/init-db.sh && \
-    echo '    npx prisma migrate deploy' >> /app/init-db.sh && \
+    echo '    npx prisma migrate deploy --schema=apps/knowledge-base/prisma/schema.prisma' >> /app/init-db.sh && \
     echo '    echo "Database migrated successfully!"' >> /app/init-db.sh && \
     echo '  fi' >> /app/init-db.sh && \
     echo 'else' >> /app/init-db.sh && \
@@ -70,4 +70,4 @@ RUN echo '#!/bin/sh' > /app/init-db.sh && \
 
 EXPOSE 3000
 ENTRYPOINT ["/app/init-db.sh"]
-CMD ["node", "apps/knowledge-base/dist/main.js"]
+CMD ["sh", "-c", "cd /app && node apps/knowledge-base/dist/main.js"]
