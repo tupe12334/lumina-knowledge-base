@@ -104,6 +104,8 @@ scalar DateTime
 
 type Degree {
   courses: [Course!]
+  faculty: Faculty
+  facultyId: String
   id: ID!
   name: Translation!
   university: University
@@ -251,6 +253,11 @@ type Mutation {
 
   """Delete a prerequisite/postrequisite relationship between modules"""
   deleteModuleRelationship(input: DeleteModuleRelationshipInput!): ModuleRelationshipResult!
+
+  """
+  Assign a faculty to a degree or clear the assignment when facultyId is null
+  """
+  setDegreeFaculty(input: SetDegreeFacultyInput!): Degree!
 }
 
 type NumberAnswer {
@@ -397,6 +404,14 @@ type SelectAnswer {
   isCorrect: Boolean!
   text: Translation!
   translationId: String!
+}
+
+input SetDegreeFacultyInput {
+  """Degree ID"""
+  degreeId: ID!
+
+  """Faculty ID to assign. If null, clears the faculty assignment."""
+  facultyId: ID
 }
 
 type Translation {

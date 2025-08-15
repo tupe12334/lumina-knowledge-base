@@ -1,7 +1,8 @@
-import { Resolver, Query, Args, ID } from '@nestjs/graphql';
+import { Resolver, Query, Args, ID, Mutation } from '@nestjs/graphql';
 import { DegreesService } from './degrees.service';
 import { Degree } from './models/Degree.entity';
 import { DegreesQueryDto } from './dto/degrees-query.dto';
+import { SetDegreeFacultyInput } from './dto/set-degree-faculty.input';
 
 /**
  * GraphQL resolver for degree-related operations.
@@ -41,5 +42,23 @@ export class DegreesResolver {
     @Args('id', { type: () => ID, description: 'Degree ID' }) id: string,
   ): Promise<Degree | null> {
     return this.degreesService.findUnique(id);
+  }
+
+  /**
+   * Sets or clears the faculty for a degree.
+   * @param input - Degree ID and optional faculty ID (null to clear)
+   * @returns The updated degree
+   */
+  @Mutation(() => Degree, {
+    name: 'setDegreeFaculty',
+    description:
+      'Assign a faculty to a degree or clear the assignment when facultyId is null',
+  })
+  async setDegreeFaculty(
+    @Args('input', { type: () => SetDegreeFacultyInput })
+    input: SetDegreeFacultyInput,
+  ): Promise<Degree> {
+    const { degreeId, facultyId } = input;
+    return this.degreesService.setFacultyForDegree(degreeId, facultyId ?? null);
   }
 }

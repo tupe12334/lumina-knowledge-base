@@ -39,6 +39,12 @@ export class DegreesService {
             name: true,
           },
         },
+        faculty: {
+          include: {
+            name: true,
+            description: true,
+          },
+        },
         courses: {
           include: {
             name: true,
@@ -64,6 +70,12 @@ export class DegreesService {
         university: {
           include: {
             name: true,
+          },
+        },
+        faculty: {
+          include: {
+            name: true,
+            description: true,
           },
         },
         courses: {
@@ -102,6 +114,12 @@ export class DegreesService {
             name: true,
           },
         },
+        faculty: {
+          include: {
+            name: true,
+            description: true,
+          },
+        },
         courses: {
           include: {
             name: true,
@@ -134,6 +152,12 @@ export class DegreesService {
             name: true,
           },
         },
+        faculty: {
+          include: {
+            name: true,
+            description: true,
+          },
+        },
         courses: {
           include: {
             name: true,
@@ -149,5 +173,37 @@ export class DegreesService {
     });
 
     return degrees;
+  }
+
+  /**
+   * Sets or clears the faculty for a given degree.
+   * @param degreeId - The degree to update
+   * @param facultyId - The faculty to assign (null to clear)
+   * @returns Updated Degree with relations
+   */
+  async setFacultyForDegree(
+    degreeId: string,
+    facultyId: string | null,
+  ): Promise<Degree> {
+    await this.prisma.degree.update({
+      where: { id: degreeId },
+      data: { facultyId: facultyId ?? null },
+    });
+
+    const updated = await this.prisma.degree.findUnique({
+      where: { id: degreeId },
+      include: {
+        name: true,
+        university: { include: { name: true } },
+        faculty: { include: { name: true, description: true } },
+        courses: { include: { name: true } },
+      },
+    });
+
+    if (!updated) {
+      throw new Error('Degree not found after update');
+    }
+
+    return updated;
   }
 }
