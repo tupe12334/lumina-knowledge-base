@@ -5,7 +5,6 @@ import { DegreesResolver } from './degrees.resolver';
 
 @Module({
   imports: [PrismaModule],
-  controllers: [],
   providers: [DegreesService, DegreesResolver],
   exports: [DegreesService],
 })
