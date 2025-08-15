@@ -20,11 +20,17 @@ export class DegreesService {
   async findAll(query?: DegreesQueryDto): Promise<Degree[]> {
     const degrees = await this.prisma.degree.findMany({
       where: {
-        name: {
-          en_text: {
-            contains: query?.name,
-          },
-        },
+        ...(query?.name
+          ? {
+              name: {
+                en_text: {
+                  contains: query?.name,
+                },
+              },
+            }
+          : {}),
+        ...(query?.facultyId ? { facultyId: query.facultyId } : {}),
+        ...(query?.universityId ? { universityId: query.universityId } : {}),
       },
       include: {
         name: true,
@@ -89,6 +95,38 @@ export class DegreesService {
   async findByUniversityId(universityId: string): Promise<Degree[]> {
     const degrees = await this.prisma.degree.findMany({
       where: { universityId },
+      include: {
+        name: true,
+        university: {
+          include: {
+            name: true,
+          },
+        },
+        courses: {
+          include: {
+            name: true,
+            Block: {
+              include: {
+                postrequisiteOf: true,
+                prerequisiteFor: true,
+              },
+            },
+          },
+        },
+      },
+    });
+
+    return degrees;
+  }
+
+  /**
+   * Retrieves all degrees for a specific faculty.
+   * @param facultyId - The unique identifier of the faculty
+   * @returns Promise<Degree[]> Array of degrees for the specified faculty
+   */
+  async findByFacultyId(facultyId: string): Promise<Degree[]> {
+    const degrees = await this.prisma.degree.findMany({
+      where: { facultyId },
       include: {
         name: true,
         university: {

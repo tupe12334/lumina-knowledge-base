@@ -111,7 +111,9 @@ type Degree {
 }
 
 input DegreesQueryDto {
+  facultyId: String
   name: String
+  universityId: String
 }
 
 input DeleteBlockRelationshipInput {
@@ -281,12 +283,6 @@ type Query {
 
   """Get all degrees with optional filtering"""
   degrees(query: DegreesQueryDto): [Degree!]!
-
-  """Get degrees by university ID"""
-  degreesByUniversity(
-    """University ID"""
-    universityId: ID!
-  ): [Degree!]!
 
   """Get faculties by university ID"""
   facultiesByUniversity(

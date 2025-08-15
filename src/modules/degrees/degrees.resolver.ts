@@ -42,20 +42,4 @@ export class DegreesResolver {
   ): Promise<Degree | null> {
     return this.degreesService.findUnique(id);
   }
-
-  /**
-   * Retrieves all degrees for a specific university.
-   * @param universityId - The unique identifier of the university
-   * @returns Promise<Degree[]> Array of degrees for the specified university
-   */
-  @Query(() => [Degree], {
-    name: 'degreesByUniversity',
-    description: 'Get degrees by university ID',
-  })
-  async getDegreesByUniversity(
-    @Args('universityId', { type: () => ID, description: 'University ID' })
-    universityId: string,
-  ): Promise<Degree[]> {
-    return this.degreesService.findByUniversityId(universityId);
-  }
 }

@@ -30,6 +30,7 @@ model Faculty {
   translationId String
   universityId  String
   university    University  @relation(fields: [universityId], references: [id])
+  Degree        Degree[]
 
   @@unique([translationId, universityId])
 }
@@ -41,6 +42,9 @@ model Degree {
   universityId  String
   university    University  @relation(fields: [universityId], references: [id])
   courses       Course[]
+  // Optional relation to a Faculty. When null, degree is not assigned to a specific faculty.
+  facultyId     String?
+  faculty       Faculty?    @relation(fields: [facultyId], references: [id])
 }
 
 model Course {
