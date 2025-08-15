@@ -7,6 +7,7 @@ import {
   DiskHealthIndicator,
 } from '@nestjs/terminus';
 import { PrismaService } from '../../prisma/prisma.service';
+import { DbRowsHealthIndicator } from './db-rows.indicator';
 
 @Controller('health')
 export class HealthController {
@@ -16,6 +17,7 @@ export class HealthController {
     private memoryHealth: MemoryHealthIndicator,
     private diskHealth: DiskHealthIndicator,
     private prisma: PrismaService,
+    private dbRows: DbRowsHealthIndicator,
   ) {}
 
   @Get()
@@ -23,6 +25,7 @@ export class HealthController {
   check() {
     return this.health.check([
       () => this.prismaHealth.pingCheck('database', this.prisma),
+      () => this.dbRows.isHealthy('db_rows', 100),
       () => this.memoryHealth.checkHeap('memory_heap', 150 * 1024 * 1024),
       () => this.memoryHealth.checkRSS('memory_rss', 150 * 1024 * 1024),
     ]);
@@ -42,6 +45,7 @@ export class HealthController {
   readiness() {
     return this.health.check([
       () => this.prismaHealth.pingCheck('database', this.prisma),
+      () => this.dbRows.isHealthy('db_rows', 100),
       () =>
         this.diskHealth.checkStorage('storage', {
           thresholdPercent: 0.95,
