@@ -6,6 +6,25 @@ export default defineConfig({
     environment: 'node',
     globals: true,
     include: ['src/**/*.spec.ts', 'test/**/*.e2e-spec.ts'],
+    coverage: {
+      provider: 'v8',
+      reportsDirectory: 'coverage',
+      all: false,
+      exclude: [
+        'generated/**',
+        'src/**/generated/**',
+        'src/main.ts',
+        'src/app.module.ts',
+        'src/swagger/**',
+        '**/*.spec.ts',
+      ],
+      thresholds: {
+        branches: 50,
+        functions: 25,
+        lines: 55,
+        statements: 55,
+      },
+    },
   },
   resolve: {
     alias: {
