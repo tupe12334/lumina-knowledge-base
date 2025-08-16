@@ -1,6 +1,15 @@
-import { Resolver, Query, Args, ID } from '@nestjs/graphql';
+import {
+  Resolver,
+  Query,
+  Args,
+  ID,
+  ResolveField,
+  Parent,
+} from '@nestjs/graphql';
 import { FacultiesService } from './faculties.service';
 import { Faculty } from './models/Faculty.entity';
+import { Degree } from '../degrees/models/Degree.entity';
+import { DegreesService } from '../degrees/degrees.service';
 
 /**
  * GraphQL resolver for faculty-related operations.
@@ -8,7 +17,10 @@ import { Faculty } from './models/Faculty.entity';
  */
 @Resolver(() => Faculty)
 export class FacultiesResolver {
-  constructor(private readonly facultiesService: FacultiesService) {}
+  constructor(
+    private readonly facultiesService: FacultiesService,
+    private readonly degreesService: DegreesService,
+  ) {}
 
   /**
    * Retrieves faculties for a specific university.
@@ -40,5 +52,14 @@ export class FacultiesResolver {
     @Args('id', { type: () => ID, description: 'Faculty ID' }) id: string,
   ): Promise<Faculty | null> {
     return this.facultiesService.getFacultyById(id);
+  }
+
+  /**
+   * Field resolver to fetch degrees for a Faculty.
+   */
+  @ResolveField(() => [Degree], { name: 'degrees' })
+  async getDegrees(@Parent() faculty: Faculty): Promise<Degree[]> {
+    if (!faculty?.id) return [];
+    return this.degreesService.findByFacultyId(faculty.id);
   }
 }

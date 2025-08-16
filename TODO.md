@@ -8,14 +8,14 @@ This list focuses on the next high-impact engineering tasks. Completed items are
 
 1. Tighten tests and quality
 
-- Run all Vitest suites, fix failures, and add missing specs for GraphQL resolvers/guards: degrees, faculties, blocks, courses
+- [done] Run all Vitest suites, fix failures, and add missing specs for GraphQL resolvers/guards: degrees, faculties, blocks, courses
 - Add coverage thresholds and ensure green runs locally and in CI
 - Acceptance: all tests pass; coverage trend improves without flaky tests
 
 2. Implement Degree–Faculty relation in GraphQL
 
-- Expose Prisma relation in GraphQL schema/resolvers; add DTOs if needed
-- Query degrees with faculty and faculty with degrees; add unit tests
+- [done] Expose Prisma relation in GraphQL schema/resolvers; add DTOs if needed
+- [done] Query degrees with faculty and faculty with degrees; add unit tests
 - Acceptance: resolvers covered by unit tests; e2e smoke passes
 
 3. DB sync and safety rails
