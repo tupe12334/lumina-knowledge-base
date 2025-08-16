@@ -1811,6 +1811,11 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "prerequisiteId": "C1D87FAF-DA0D-4BCA-9055-1EB5004A2506",
     },
     {
+      "id": "16c9d1ce-a187-4372-b19a-b29309413535",
+      "postrequisiteId": "CF1CF97B-2C80-4020-A398-2B84513DF1C7",
+      "prerequisiteId": "ac9e3b41-b2f5-4b77-8c76-1ef2293ea1f1",
+    },
+    {
       "id": "1744d33d-8c25-421f-9104-6fb50ea30ccb",
       "postrequisiteId": "9c8e5d2a-4b7f-4c8d-9e0a-1b2c3d4e5f6a",
       "prerequisiteId": "81BE3915-2C63-470E-85FE-55C1062DEFF3",
@@ -1859,6 +1864,11 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "id": "2a72095d-41a6-472b-b5ad-c6e01c726885",
       "postrequisiteId": "4f5a6b7c-8d9e-4012-a456-789abc123def",
       "prerequisiteId": "81BE3915-2C63-470E-85FE-55C1062DEFF3",
+    },
+    {
+      "id": "3fe4654b-b847-4836-9c84-850a804f9fdb",
+      "postrequisiteId": "993a6a59-7fc7-4d96-ada6-5858d742496a",
+      "prerequisiteId": "93063920-88DB-41DB-AFDD-1FDE26CA5686",
     },
     {
       "id": "41945a2c-825c-4895-8665-429144fd58ac",
@@ -1921,6 +1931,16 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "prerequisiteId": "8b9c0d1e-2f3a-4b5c-86de-8f9a0b1c2d3e",
     },
     {
+      "id": "5ca34f88-09c8-4560-aba7-c3d32fe29ed7",
+      "postrequisiteId": "CF1CF97B-2C80-4020-A398-2B84513DF1C7",
+      "prerequisiteId": "73d5b87a-4c34-4b53-aa86-b3d425a51abd",
+    },
+    {
+      "id": "5e284d03-0ee3-41fe-a1f7-56010feb9564",
+      "postrequisiteId": "E041319C-A848-4D4A-B65E-5D4550EB977B",
+      "prerequisiteId": "5f6c93a2-02aa-4b7a-8637-9406a5a5386f",
+    },
+    {
       "id": "5f84374f-c79c-419e-9c6c-523420bfcaed",
       "postrequisiteId": "a2093775-11c1-40e2-9c10-3cdaaeaf6559",
       "prerequisiteId": "d49b124c-df8c-403d-8460-8f7ee813784f",
@@ -1956,6 +1976,21 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "prerequisiteId": "9c0d1e2f-3a4b-4c6d-87ef-9a0b1c2d3e4f",
     },
     {
+      "id": "6cd3e625-d2f1-4dc4-8bd0-710b96fdab90",
+      "postrequisiteId": "CF1CF97B-2C80-4020-A398-2B84513DF1C7",
+      "prerequisiteId": "86fa4bd9-56ab-411b-8494-19124458b4dd",
+    },
+    {
+      "id": "72d3517c-b93d-4706-9a7c-c9a85927252d",
+      "postrequisiteId": "D3179696-0DF1-4356-99CD-D7884E974815",
+      "prerequisiteId": "993a6a59-7fc7-4d96-ada6-5858d742496a",
+    },
+    {
+      "id": "757292b3-20e1-43bc-b6cb-f9f7b625774f",
+      "postrequisiteId": "E041319C-A848-4D4A-B65E-5D4550EB977B",
+      "prerequisiteId": "993a6a59-7fc7-4d96-ada6-5858d742496a",
+    },
+    {
       "id": "76DC9C77-F975-4413-A3FF-CDF3F05B3518",
       "postrequisiteId": "a6b8af63-5f91-4381-8a43-12f67d9ec34d",
       "prerequisiteId": "19cfbc30-475c-4733-a5de-1064fa7f2ee7",
@@ -1971,14 +2006,19 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "prerequisiteId": "0d1e2f3a-4b5c-4d7e-a8fa-0b1c2d3e4f5a",
     },
     {
-      "id": "86222ce7-ae38-4edd-a08b-5d3a0ed63d13",
-      "postrequisiteId": "993a6a59-7fc7-4d96-ada6-5858d742496a",
-      "prerequisiteId": "5A39C93C-6FA5-4D38-9AE7-A496F4B3BE23",
-    },
-    {
       "id": "8e9f0123-2345-4456-a89a-bcdef0567123",
       "postrequisiteId": "3a4b5c6d-7e8f-409b-a1cd-3e4f5a6b7c8d",
       "prerequisiteId": "9c0d1e2f-3a4b-4c6d-87ef-9a0b1c2d3e4f",
+    },
+    {
+      "id": "908c24e5-08b5-47c3-ba2a-b804a2d91c20",
+      "postrequisiteId": "5f6c93a2-02aa-4b7a-8637-9406a5a5386f",
+      "prerequisiteId": "ac9e3b41-b2f5-4b77-8c76-1ef2293ea1f1",
+    },
+    {
+      "id": "916f0c62-1c5d-44d5-855c-03ab2bb14996",
+      "postrequisiteId": "D3179696-0DF1-4356-99CD-D7884E974815",
+      "prerequisiteId": "19cfbc30-475c-4733-a5de-1064fa7f2ee7",
     },
     {
       "id": "9959f18b-ffd8-4940-858b-da4aa984e5fb",
@@ -1994,6 +2034,11 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "id": "9ca6eb5b-f32a-4c61-a4c1-fb2f1e47001a",
       "postrequisiteId": "44515992-97B8-4248-8048-F1E392653D90",
       "prerequisiteId": "ECE425AA-7490-4361-961D-E92E9064DE06",
+    },
+    {
+      "id": "9fcc00dd-9086-4663-b487-86250d55ed4f",
+      "postrequisiteId": "D3179696-0DF1-4356-99CD-D7884E974815",
+      "prerequisiteId": "5f6c93a2-02aa-4b7a-8637-9406a5a5386f",
     },
     {
       "id": "A1B2C3D4-E5F6-47A8-9B0C-1D2E3F4A5B6D",
@@ -2086,6 +2131,11 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "prerequisiteId": "907bd1ae-626e-41d5-8048-ab0be776a402",
     },
     {
+      "id": "a48fd056-c4c6-4f40-adcc-680a622a1776",
+      "postrequisiteId": "E041319C-A848-4D4A-B65E-5D4550EB977B",
+      "prerequisiteId": "a6b8af63-5f91-4381-8a43-12f67d9ec34d",
+    },
+    {
       "id": "a55096c6-c840-4762-aa45-d41d27ad7fa5",
       "postrequisiteId": "0030cff5-5c9c-48db-ba6c-1c8fe12b9f7b",
       "prerequisiteId": "a2093775-11c1-40e2-9c10-3cdaaeaf6559",
@@ -2121,9 +2171,19 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "prerequisiteId": "f91d2e2e-3fc8-45b5-ae64-e08a7d075e24",
     },
     {
+      "id": "bb07043d-f690-4f1f-8ae2-579e8cf9fae7",
+      "postrequisiteId": "25A21167-85B9-4AEB-AE8B-2EBC96805075",
+      "prerequisiteId": "73d5b87a-4c34-4b53-aa86-b3d425a51abd",
+    },
+    {
       "id": "bba994cb-72e3-465e-b4fa-47d2189870b1",
       "postrequisiteId": "016ddc51-9b0a-43d0-9ac5-8fe54d171b29",
       "prerequisiteId": "ec8270ca-1f32-4928-a2c6-2f998f6061b6",
+    },
+    {
+      "id": "bbf53d54-fe0d-4cf1-adef-4020ba2007cf",
+      "postrequisiteId": "25A21167-85B9-4AEB-AE8B-2EBC96805075",
+      "prerequisiteId": "5f6c93a2-02aa-4b7a-8637-9406a5a5386f",
     },
     {
       "id": "bc02e30c-58a4-4585-bfbc-d70e10377abb",
@@ -2234,6 +2294,11 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
       "id": "fcfd331c-bd37-4a51-b638-866fa5df19fe",
       "postrequisiteId": "87a1da94-793c-4565-8706-8fd073a50cf6",
       "prerequisiteId": "9c8e5d2a-4b7f-4c8d-9e0a-1b2c3d4e5f6a",
+    },
+    {
+      "id": "ff5f2fe3-0b74-422a-841c-b1f26f71b497",
+      "postrequisiteId": "D3179696-0DF1-4356-99CD-D7884E974815",
+      "prerequisiteId": "ac9e3b41-b2f5-4b77-8c76-1ef2293ea1f1",
     },
   ],
   "course": [
@@ -2954,36 +3019,43 @@ exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
   ],
   "degree": [
     {
+      "facultyId": null,
       "id": "17004398-f4fe-4658-a023-f79283bf22de",
       "translationId": "5b51d5e2-608f-4ceb-8184-efc63ce643cd",
       "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
     },
     {
+      "facultyId": null,
       "id": "43eae81a-0c42-4e5c-894d-bd803334f0cd",
       "translationId": "e8b9f640-68b9-4d90-a56b-9ab8dfade0af",
       "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
     },
     {
+      "facultyId": "c65fa3bd-2f3a-40d8-b192-3be77adc7802",
       "id": "73ef0be5-bd20-4181-aa70-52cf19ac5a9c",
       "translationId": "63e95b0b-85de-4c54-b6af-face80091bb4",
       "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
     },
     {
+      "facultyId": null,
       "id": "8c6a661a-a1f0-4922-82dd-45b4938b3887",
       "translationId": "ee53adf0-406c-43bc-9710-3a96cdcfb4c0",
       "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
     },
     {
+      "facultyId": null,
       "id": "c7a1e2b2-8e2d-4c1a-9e2a-1a2b3c4d5e6f",
       "translationId": "63e95b0b-85de-4c54-b6af-face80091bb4",
       "universityId": "92e73fb7-96de-45e4-aff3-4ca7b89be16c",
     },
     {
+      "facultyId": null,
       "id": "fa8a5dc5-8368-4f13-97f7-83cd9f701013",
       "translationId": "f0c2636f-08a8-4529-a37a-6206d7e1772a",
       "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
     },
     {
+      "facultyId": null,
       "id": "fe63f747-f7c8-4c63-bb5b-904f503cd23e",
       "translationId": "25800af4-b146-4cd0-83c0-dc64729dcc7f",
       "universityId": "42e9a858-0a22-482d-ab1d-65f7a00ceb4c",
