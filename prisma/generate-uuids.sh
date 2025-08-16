@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Why: Quickly produce a requested number of PostgreSQL-compatible UUID v4 values
-# for seeding or manual insertion. Keeps output simple (newline-delimited) so it
+# for manual insertion. Keeps output simple (newline-delimited) so it
 # can be piped or pasted directly into SQL INSERT value lists.
 
 set -euo pipefail

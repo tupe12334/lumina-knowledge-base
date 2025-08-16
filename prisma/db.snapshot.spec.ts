@@ -45,7 +45,7 @@ const fetchAllData = async (prisma: PrismaClient) => ({
 });
 
 describe('sqlite db snapshot', () => {
-  it('seeds real sqlite DB and matches snapshot', async () => {
+  it('reads real sqlite DB and matches snapshot', async () => {
     const prisma = new PrismaClient();
     await prisma.$connect();
     await prisma.$executeRaw`PRAGMA foreign_keys = ON;`;

@@ -20,7 +20,7 @@ This list focuses on the next high-impact engineering tasks. Completed items are
 
 1. DB sync and safety rails
 
-- Check Prisma migration status, regenerate client, ensure seeds run idempotently
+- Check Prisma migration status and regenerate client as needed
 - Strengthen snapshot test (prisma/db.snapshot.spec.ts) to detect schema drift
 - Acceptance: migrate status clean; snapshot test stable across runs
 

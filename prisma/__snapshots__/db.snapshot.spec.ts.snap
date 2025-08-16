@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`sqlite db snapshot > seeds real sqlite DB and matches snapshot 1`] = `
+exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
 {
   "answer": [
     {
