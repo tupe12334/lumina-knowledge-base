@@ -179,6 +179,7 @@ input DeleteModuleRelationshipInput {
 }
 
 type Faculty {
+  degrees: [Degree!]!
   description: Translation!
   id: ID!
   name: Translation!
