@@ -1,3 +1,12 @@
 import { serverEnvSchema } from './schema';
 
-export const env = serverEnvSchema.parse(process.env);
+/**
+ * Parse and validate environment variables from a given source.
+ * Keeps function small and predictable for unit testing.
+ */
+export const loadEnv = (source: NodeJS.ProcessEnv = process.env) => {
+  const parsed = serverEnvSchema.parse(source);
+  return Object.freeze(parsed);
+};
+
+export const env = loadEnv();

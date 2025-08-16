@@ -2,7 +2,6 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { setupSwagger } from './swagger/setup-swagger';
 import { env } from './env';
-import { DEFAULT_CORS } from './consts';
 
 process.title = 'lumina-server';
 
@@ -13,17 +12,15 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   setupSwagger(app);
-  // Configure CORS with environment-specific origins
-  const corsOrigins = env.CORS_ORIGIN
-    ? env.CORS_ORIGIN.split(',').map((origin) => origin.trim())
-    : DEFAULT_CORS;
-
-  app.enableCors({
-    origin: corsOrigins,
-    credentials: true,
-    methods: ['GET', 'POST'],
-    allowedHeaders: ['Content-Type', 'Authorization', 'Accept'],
-  });
+  // Configure CORS only if CORS_ORIGIN is provided via env
+  if (env.CORS_ORIGIN) {
+    app.enableCors({
+      origin: env.CORS_ORIGIN,
+      credentials: true,
+      methods: ['GET', 'POST'],
+      allowedHeaders: ['Content-Type', 'Authorization', 'Accept'],
+    });
+  }
 
   await app.listen(env.PORT);
 }

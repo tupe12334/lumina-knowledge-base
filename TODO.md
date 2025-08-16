@@ -1,6 +1,6 @@
 # Lumina Knowledge Base - Project TODO
 
-> **Last Updated**: August 2, 2025  
+> **Last Updated**: August 16, 2025  
 > **Status**: Planning & Implementation Phase
 
 ## 🎯 Immediate High Priority Items (This Week)
@@ -54,6 +54,16 @@ Impact: MEDIUM | Effort: LOW | Status: Good Foundation
 - [ ] **Add integration tests for GraphQL endpoints**
 - [ ] **Implement E2E tests for critical user journeys**
 - [ ] **Set up test coverage reporting and CI/CD integration**
+
+### 4. Environment Variable Validation Hardening
+
+Impact: HIGH | Effort: LOW | Status: Pending
+
+- [ ] Adopt a single source of truth for env configuration using Zod with strict parsing and sensible defaults (keep functions <50 LOC)
+- [ ] Add support for `NODE_ENV`, strict `PORT` range, boolean coercion for flags, and robust CORS origin parsing
+- [ ] Provide a small `loadEnv(source?: NodeJS.ProcessEnv)` function for testability and export a frozen `env` value
+- [ ] Add unit tests in `src/env/index.spec.ts` for: defaults, invalid `PORT`, boolean flags, and CORS parsing
+- [ ] Fail fast in bootstrap on invalid env; keep imports absolute and avoid type casts
 
 ---
 
