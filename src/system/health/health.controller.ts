@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Inject } from '@nestjs/common';
 import {
   HealthCheck,
   HealthCheckService,
@@ -12,12 +12,18 @@ import { DbRowsHealthIndicator } from 'src/system/health/db-rows.indicator';
 @Controller('health')
 export class HealthController {
   constructor(
-    private health: HealthCheckService,
-    private prismaHealth: PrismaHealthIndicator,
-    private memoryHealth: MemoryHealthIndicator,
-    private diskHealth: DiskHealthIndicator,
-    private prisma: PrismaService,
-    private dbRows: DbRowsHealthIndicator,
+    @Inject(HealthCheckService)
+    private readonly health: HealthCheckService,
+    @Inject(PrismaHealthIndicator)
+    private readonly prismaHealth: PrismaHealthIndicator,
+    @Inject(MemoryHealthIndicator)
+    private readonly memoryHealth: MemoryHealthIndicator,
+    @Inject(DiskHealthIndicator)
+    private readonly diskHealth: DiskHealthIndicator,
+    @Inject(PrismaService)
+    private readonly prisma: PrismaService,
+    @Inject(DbRowsHealthIndicator)
+    private readonly dbRows: DbRowsHealthIndicator,
   ) {}
 
   @Get()

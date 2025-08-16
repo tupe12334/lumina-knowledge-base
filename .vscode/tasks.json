@@ -9,6 +9,12 @@
 				"$tsc"
 			],
 			"group": "build"
+		},
+		{
+			"label": "build",
+			"type": "shell",
+			"command": "pnpm build",
+			"group": "build"
 		}
 	]
 }
