@@ -32,7 +32,7 @@ This list focuses on the next high-impact engineering tasks. Completed items are
 
 5. Health/readiness checks
 
-- Verify health module readiness/liveness endpoints; add unit/e2e tests
+- [done] Verify health module readiness/liveness endpoints; add unit tests
 - Ensure endpoints are CI-friendly and document expected responses
 - Acceptance: probes tested; CI health checks green
 
