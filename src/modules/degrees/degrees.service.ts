@@ -233,13 +233,18 @@ export class DegreesService {
     }
 
     // Connect the course to the degree
-    const updatedDegree = await this.prisma.degree.update({
+    await this.prisma.degree.update({
       where: { id: degreeId },
       data: {
         courses: {
           connect: { id: courseId },
         },
       },
+    });
+
+    // Fetch the updated degree with all its relations
+    const updatedDegree = await this.prisma.degree.findUnique({
+      where: { id: degreeId },
       include: {
         name: true,
         university: { include: { name: true } },
@@ -247,6 +252,10 @@ export class DegreesService {
         courses: { include: { name: true } },
       },
     });
+
+    if (!updatedDegree) {
+      throw new Error('Degree not found after update'); // Should not happen if degree was found initially
+    }
 
     return updatedDegree;
   }
