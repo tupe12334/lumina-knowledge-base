@@ -26,7 +26,7 @@ export interface PrismaCountClient {
   selectAnswer: CountableDelegate;
   unitAnswer: CountableDelegate;
   numberAnswer: CountableDelegate;
-  learningResource: CountableDelegate;
+  
 }
 
 @Injectable()
@@ -55,7 +55,7 @@ export class DbRowsHealthIndicator extends HealthIndicator {
       this.prisma.selectAnswer,
       this.prisma.unitAnswer,
       this.prisma.numberAnswer,
-      this.prisma.learningResource,
+      
     ];
 
     const counts = await Promise.all(delegates.map((d) => d.count()));

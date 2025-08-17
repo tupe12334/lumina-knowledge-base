@@ -85,9 +85,7 @@ export class ModulesService {
           },
         },
         parentModules: { include: { name: true } },
-        LearningResource: {
-          orderBy: { relevance: 'desc' },
-        },
+        
       },
     });
     return result as ModuleEntity | null;
@@ -109,9 +107,7 @@ export class ModulesService {
         },
       },
       parentModules: { include: { name: true } },
-      LearningResource: {
-        orderBy: { relevance: 'desc' },
-      },
+      
     };
 
     if (this.shouldFilterByQuestionCount(filters)) {

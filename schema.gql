@@ -151,9 +151,6 @@ type DeleteCourseResult {
   """The name of the deleted course"""
   courseName: String!
 
-  """Number of learning resources deleted"""
-  deletedLearningResources: Int!
-
   """Number of course relationships deleted"""
   deletedRelationships: Int!
 
@@ -185,23 +182,8 @@ type Faculty {
   name: Translation!
 }
 
-type LearningResource {
-  id: ID!
-  language: String!
-  moduleId: String!
-  relevance: Int!
-  suggestedBy: String
-  type: LearningResourceType!
-  url: String!
-}
-
-enum LearningResourceType {
-  video
-}
-
 type Module {
   Block: Block
-  LearningResource: [LearningResource!]
   id: ID!
   name: Translation!
   parentModules: [Module!]
@@ -311,21 +293,6 @@ type Query {
     """Faculty ID"""
     id: ID!
   ): Faculty
-
-  """Get a specific learning resource by ID"""
-  learningResource(
-    """Learning Resource ID"""
-    id: ID!
-  ): LearningResource
-
-  """Get all learning resources"""
-  learningResources: [LearningResource!]!
-
-  """Get learning resources by module ID"""
-  learningResourcesByModule(
-    """Module ID"""
-    moduleId: ID!
-  ): [LearningResource!]!
 
   """Get a specific module by ID"""
   module(

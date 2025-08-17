@@ -3,7 +3,7 @@ import { ObjectType, Field, ID } from '@nestjs/graphql';
 import { Type } from 'class-transformer';
 import { Translation } from '../../translations/models/Translation.entity';
 import { Block } from 'src/modules/blocks/models/Block.entity';
-import { LearningResource } from '../../learning-resources/models/LearningResource.entity';
+
 
 @ObjectType()
 export class Module {
@@ -15,6 +15,8 @@ export class Module {
   @Type(() => Translation)
   @ApiProperty({ type: () => Translation })
   name!: Translation;
+
+  translationId!: string;
 
   @Field(() => [Module], { nullable: true })
   @ApiProperty({ type: () => [Module], required: false })
@@ -28,7 +30,5 @@ export class Module {
   @ApiProperty({ type: () => Block, required: false })
   Block?: Block;
 
-  @Field(() => [LearningResource], { nullable: true })
-  @ApiProperty({ type: () => [LearningResource], required: false })
-  LearningResource?: LearningResource[];
+  
 }

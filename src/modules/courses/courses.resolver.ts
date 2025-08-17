@@ -84,7 +84,7 @@ export class CoursesResolver {
    * - All course relationships (prerequisites/postrequisites)
    * - Orphaned modules (modules only used by this course)
    * - Questions associated with orphaned modules
-   * - Learning resources associated with orphaned modules
+   
    * - Translation data that becomes unused
    * @param input - The course deletion data
    * @returns Promise<DeleteCourseResult> The result of the deletion operation

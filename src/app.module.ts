@@ -11,7 +11,6 @@ import { DatabaseModule } from './system/database/database.module';
 import { DegreesModule } from './modules/degrees/degrees.module';
 import { FacultiesModule } from './modules/faculties/faculties.module';
 import { HealthModule } from './system/health/health.module';
-import { LearningResourcesModule } from './modules/learning-resources/learning-resources.module';
 import { ModulesModule } from './modules/modules/modules.module';
 import { QuestionsModule } from './modules/questions/questions.module';
 import { UniversitiesModule } from './modules/universities/universities.module';
@@ -44,7 +43,6 @@ import { MutationsGuard } from './guards/mutations.guard';
     ModulesModule,
     BlocksModule,
     FacultiesModule,
-    LearningResourcesModule,
   ],
   controllers: [],
   providers: [

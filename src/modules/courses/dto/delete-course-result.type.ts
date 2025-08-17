@@ -49,12 +49,7 @@ export class DeleteCourseResult {
   orphanedQuestions: number;
 
   /**
-   * Number of learning resources that were deleted.
-   */
-  @Field(() => Int, {
-    description: 'Number of learning resources deleted',
-  })
-  deletedLearningResources: number;
+   
 
   /**
    * Whether the deletion was successful.

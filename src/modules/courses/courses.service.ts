@@ -272,7 +272,6 @@ export class CoursesService {
    * - Course relationships (prerequisites/postrequisites)
    * - Module relationships
    * - Questions associated with course modules
-   * - Learning resources
    * - Translation data
    * @param deleteData - The course deletion data containing course ID
    * @returns The deletion result with cleanup details
@@ -316,7 +315,6 @@ export class CoursesService {
                 PartOf: true,
               },
             },
-            LearningResource: true,
             name: true,
             Block: {
               include: {
@@ -363,7 +361,6 @@ export class CoursesService {
       let deletedRelationships = 0;
       let orphanedModules = 0;
       let orphanedQuestions = 0;
-      let deletedLearningResources = 0;
 
       // 1. Delete all course relationships (prerequisites/postrequisites)
       const courseRelationships = await tx.blockRelationship.findMany({
@@ -438,12 +435,6 @@ export class CoursesService {
 
             orphanedQuestions++;
           }
-
-          // Delete learning resources
-          const learningResources = await tx.learningResource.deleteMany({
-            where: { moduleId: module.id },
-          });
-          deletedLearningResources += learningResources.count;
 
           // Delete module relationships
           const moduleRelationships = await tx.blockRelationship.findMany({
@@ -525,9 +516,8 @@ export class CoursesService {
         deletedRelationships,
         orphanedModules,
         orphanedQuestions,
-        deletedLearningResources,
         success: true,
-        message: `Successfully deleted course "${course.name.en_text || course.name.he_text}" and cleaned up ${orphanedModules} modules, ${orphanedQuestions} questions, ${deletedRelationships} relationships, and ${deletedLearningResources} learning resources.`,
+        message: `Successfully deleted course "${course.name.en_text || course.name.he_text}" and cleaned up ${orphanedModules} modules, ${orphanedQuestions} questions, ${deletedRelationships} relationships.`,
       };
     });
 

@@ -22,7 +22,7 @@ type PrismaPickMock = Record<string, { count: () => Promise<number> }> & {
   selectAnswer: { count: () => Promise<number> };
   unitAnswer: { count: () => Promise<number> };
   numberAnswer: { count: () => Promise<number> };
-  learningResource: { count: () => Promise<number> };
+  
 };
 
 describe('DbRowsHealthIndicator', () => {
@@ -43,7 +43,7 @@ describe('DbRowsHealthIndicator', () => {
       selectAnswer: mockDelegate(10),
       unitAnswer: mockDelegate(10),
       numberAnswer: mockDelegate(10),
-      learningResource: mockDelegate(10),
+      
     } as PrismaPickMock as unknown as PrismaService);
 
     const res = (await indicator.isHealthy('db_rows', 100)) as unknown as {
@@ -70,7 +70,7 @@ describe('DbRowsHealthIndicator', () => {
       selectAnswer: mockDelegate(1),
       unitAnswer: mockDelegate(1),
       numberAnswer: mockDelegate(1),
-      learningResource: mockDelegate(1),
+      
     } as PrismaPickMock as unknown as PrismaService);
 
     await expect(indicator.isHealthy('db_rows', 100)).rejects.toMatchObject({
