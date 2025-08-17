@@ -12,7 +12,10 @@ vi.mock('@prisma/client', async () => {
     '@prisma/client',
   )) as unknown as typeof client;
 
-  return { ...actual, PrismaClient: createPrismock(actual.Prisma) };
+  return {
+    ...actual,
+    PrismaClient: createPrismock(actual.Prisma) as typeof client.PrismaClient,
+  };
 });
 
 let prisma: PrismaService;

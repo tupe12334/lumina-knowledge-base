@@ -10,6 +10,7 @@ import { ModulesQueryDto } from './dto/modules-query.dto';
 import { CreateModuleRelationshipInput } from './dto/create-module-relationship.input';
 import { DeleteModuleRelationshipInput } from './dto/delete-module-relationship.input';
 import { ModuleRelationshipResult } from './dto/module-relationship-result.type';
+import { CreateModuleInput } from './dto/create-module.input';
 
 @Injectable()
 export class ModulesService {
@@ -85,7 +86,6 @@ export class ModulesService {
           },
         },
         parentModules: { include: { name: true } },
-        
       },
     });
     return result as ModuleEntity | null;
@@ -107,7 +107,6 @@ export class ModulesService {
         },
       },
       parentModules: { include: { name: true } },
-      
     };
 
     if (this.shouldFilterByQuestionCount(filters)) {
@@ -167,6 +166,54 @@ export class ModulesService {
       const { _count, ...moduleWithoutCount } = module;
       return moduleWithoutCount;
     }) as unknown as ModuleEntity[];
+  }
+
+  /**
+   * Creates a new module.
+   * @param input - The data for creating the module
+   * @returns The newly created module
+   */
+  async create(input: CreateModuleInput): Promise<ModuleEntity> {
+    const { en_text, he_text, courseId } = input;
+
+    // Validate that the course exists
+    const course = await this.prisma.course.findUnique({
+      where: { id: courseId },
+    });
+
+    if (!course) {
+      throw new NotFoundException(`Course with ID ${courseId} not found`);
+    }
+
+    // Create a new translation for the module name
+    const translation = await this.prisma.translation.create({
+      data: {
+        en_text,
+        he_text,
+      },
+    });
+
+    // Create a new block for the module
+    const block = await this.prisma.block.create({
+      data: {},
+    });
+
+    // Create the module, linking it to the translation, block, and course
+    const module = await this.prisma.module.create({
+      data: {
+        translationId: translation.id,
+        blockId: block.id,
+        Course: {
+          connect: { id: courseId },
+        },
+      },
+      include: {
+        name: true,
+        Block: true,
+      },
+    });
+
+    return module as ModuleEntity;
   }
 
   /**

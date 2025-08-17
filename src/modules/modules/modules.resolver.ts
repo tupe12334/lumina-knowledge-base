@@ -5,6 +5,7 @@ import { ModulesQueryInput } from './dto/modules-query.input';
 import { CreateModuleRelationshipInput } from './dto/create-module-relationship.input';
 import { DeleteModuleRelationshipInput } from './dto/delete-module-relationship.input';
 import { ModuleRelationshipResult } from './dto/module-relationship-result.type';
+import { CreateModuleInput } from './dto/create-module.input';
 
 /**
  * GraphQL resolver for module-related operations.
@@ -76,5 +77,18 @@ export class ModulesResolver {
     @Args('input') input: DeleteModuleRelationshipInput,
   ): Promise<ModuleRelationshipResult> {
     return this.modulesService.deleteModuleRelationship(input);
+  }
+
+  /**
+   * Creates a new module.
+   * @param input - The data for creating the module
+   * @returns Promise<Module> The newly created module
+   */
+  @Mutation(() => Module, {
+    name: 'createModule',
+    description: 'Creates a new module',
+  })
+  async createModule(@Args('input') input: CreateModuleInput): Promise<Module> {
+    return this.modulesService.create(input);
   }
 }

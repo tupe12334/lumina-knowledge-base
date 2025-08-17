@@ -8,7 +8,8 @@ export class SetCourseModulesInput {
   courseId!: string;
 
   @Field(() => [ID], {
-    description: 'List of module IDs to assign to the course (replaces existing)',
+    description:
+      'List of module IDs to assign to the course (replaces existing)',
   })
   @IsArray()
   moduleIds!: string[];
