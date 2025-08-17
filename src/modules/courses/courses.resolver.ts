@@ -7,6 +7,7 @@ import { CourseRelationshipResult } from './dto/course-relationship-result.type'
 import { DeleteCourseInput } from './dto/delete-course.input';
 import { DeleteCourseResult } from './dto/delete-course-result.type';
 import { UpdateCourseInput } from './dto/update-course.input';
+import { SetCourseModulesInput } from './dto/set-course-modules.input';
 
 /**
  * GraphQL resolver for course-related operations.
@@ -109,5 +110,18 @@ export class CoursesResolver {
   })
   updateCourse(@Args('input') input: UpdateCourseInput): Promise<Course> {
     return this.coursesService.updateCourse(input);
+  }
+
+  /**
+   * Sets course modules (replaces existing assignments)
+   */
+  @Mutation(() => Course, {
+    name: 'setCourseModules',
+    description: "Replace a course's modules with the provided module IDs",
+  })
+  setCourseModules(
+    @Args('input') input: SetCourseModulesInput,
+  ): Promise<Course> {
+    return this.coursesService.setCourseModules(input);
   }
 }

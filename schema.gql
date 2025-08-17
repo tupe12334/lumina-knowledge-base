@@ -255,6 +255,9 @@ type Mutation {
   """Delete a prerequisite/postrequisite relationship between modules"""
   deleteModuleRelationship(input: DeleteModuleRelationshipInput!): ModuleRelationshipResult!
 
+  """Replace a course's modules with the provided module IDs"""
+  setCourseModules(input: SetCourseModulesInput!): Course!
+
   """
   Assign a faculty to a degree or clear the assignment when facultyId is null
   """
@@ -410,6 +413,14 @@ type SelectAnswer {
   isCorrect: Boolean!
   text: Translation!
   translationId: String!
+}
+
+input SetCourseModulesInput {
+  """Course ID"""
+  courseId: ID!
+
+  """List of module IDs to assign to the course (replaces existing)"""
+  moduleIds: [ID!]!
 }
 
 input SetDegreeFacultyInput {

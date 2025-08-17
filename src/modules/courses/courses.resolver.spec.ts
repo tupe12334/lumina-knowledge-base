@@ -4,6 +4,7 @@ import { CoursesService } from './courses.service';
 import { CreateCourseRelationshipInput } from './dto/create-course-relationship.input';
 import { DeleteCourseRelationshipInput } from './dto/delete-course-relationship.input';
 import { UpdateCourseInput } from './dto/update-course.input';
+import { SetCourseModulesInput } from './dto/set-course-modules.input';
 
 describe('CoursesResolver', () => {
   let resolver: CoursesResolver;
@@ -13,6 +14,7 @@ describe('CoursesResolver', () => {
     createCourseRelationship: vi.fn(),
     deleteCourseRelationship: vi.fn(),
     updateCourse: vi.fn(),
+    setCourseModules: vi.fn(),
   };
 
   beforeEach(() => {
@@ -131,6 +133,26 @@ describe('CoursesResolver', () => {
       expect(mockCoursesService.updateCourse as any).toHaveBeenCalledWith({
         courseId: 'c1',
         enText: 'B',
+      });
+    });
+  });
+
+  describe('setCourseModules', () => {
+    it('delegates to service and returns course', async () => {
+      const mockCourse = { id: 'c1', name: { en_text: 'A', he_text: 'א' } };
+      (
+        mockCoursesService.setCourseModules as unknown as Mock
+      ).mockResolvedValue(mockCourse);
+
+      const result = await resolver.setCourseModules({
+        courseId: 'c1',
+        moduleIds: ['m1', 'm2'],
+      } as unknown as SetCourseModulesInput);
+
+      expect(result).toBe(mockCourse);
+      expect(mockCoursesService.setCourseModules as any).toHaveBeenCalledWith({
+        courseId: 'c1',
+        moduleIds: ['m1', 'm2'],
       });
     });
   });
