@@ -17,6 +17,8 @@ Enable fast semantic search over domain content by storing text embeddings and q
 
 If approved, we’ll migrate from SQLite to Postgres.
 
+See also: POSTGRES-MIGRATION.md for a detailed stateless migration plan and production bootstrap.
+
 ## Data model (first iteration)
 
 - EmbeddingChunk
