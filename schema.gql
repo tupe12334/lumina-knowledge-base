@@ -259,6 +259,11 @@ type Mutation {
   Assign a faculty to a degree or clear the assignment when facultyId is null
   """
   setDegreeFaculty(input: SetDegreeFacultyInput!): Degree!
+
+  """
+  Update a course's fields (e.g., name translation, university, publishedAt)
+  """
+  updateCourse(input: UpdateCourseInput!): Course!
 }
 
 type NumberAnswer {
@@ -433,4 +438,21 @@ type University {
   degrees: [Degree!]
   id: ID!
   name: Translation!
+}
+
+input UpdateCourseInput {
+  """Course ID"""
+  courseId: ID!
+
+  """English name text"""
+  enText: String
+
+  """Hebrew name text"""
+  heText: String
+
+  """Published at timestamp (UTC)"""
+  publishedAt: DateTime
+
+  """University ID of the course"""
+  universityId: String
 }

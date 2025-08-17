@@ -6,6 +6,7 @@ import { DeleteCourseRelationshipInput } from './dto/delete-course-relationship.
 import { CourseRelationshipResult } from './dto/course-relationship-result.type';
 import { DeleteCourseInput } from './dto/delete-course.input';
 import { DeleteCourseResult } from './dto/delete-course-result.type';
+import { UpdateCourseInput } from './dto/update-course.input';
 
 /**
  * GraphQL resolver for course-related operations.
@@ -96,5 +97,17 @@ export class CoursesResolver {
     @Args('input') input: DeleteCourseInput,
   ): Promise<DeleteCourseResult> {
     return this.coursesService.deleteCourse(input);
+  }
+
+  /**
+   * Updates a course fields. Supports updating translation texts and other optional fields.
+   */
+  @Mutation(() => Course, {
+    name: 'updateCourse',
+    description:
+      "Update a course's fields (e.g., name translation, university, publishedAt)",
+  })
+  updateCourse(@Args('input') input: UpdateCourseInput): Promise<Course> {
+    return this.coursesService.updateCourse(input);
   }
 }
