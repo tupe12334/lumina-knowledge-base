@@ -1,8 +1,11 @@
-import { Resolver, Query, Args, ID } from '@nestjs/graphql';
+import { Resolver, Query, Args, ID, Mutation } from '@nestjs/graphql';
 import { NotFoundException } from '@nestjs/common';
 import { QuestionsService } from './questions.service';
 import { Question } from './models/Question.entity';
-import { QuestionsQueryInput } from './dto/questions-query.input';
+import { QuestionsQueryDto } from './dto/question-query.dto';
+import { CreateQuestionInput } from './dto/create-question.input';
+import { UpdateQuestionInput } from './dto/update-question.input';
+import { DeleteQuestionInput } from './dto/delete-question.input';
 
 /**
  * GraphQL resolver for question-related operations.
@@ -22,8 +25,8 @@ export class QuestionsResolver {
     description: 'Get all questions with optional filtering',
   })
   async getQuestions(
-    @Args('input', { type: () => QuestionsQueryInput, nullable: true })
-    input?: QuestionsQueryInput,
+    @Args('input', { type: () => QuestionsQueryDto, nullable: true })
+    input?: QuestionsQueryDto,
   ): Promise<Question[]> {
     return this.questionsService.findAll(input);
   }
@@ -47,5 +50,35 @@ export class QuestionsResolver {
       throw new NotFoundException('Question not found');
     }
     return question;
+  }
+
+  @Mutation(() => Question, {
+    name: 'createQuestion',
+    description: 'Create a new question',
+  })
+  async createQuestion(
+    @Args('input') input: CreateQuestionInput,
+  ): Promise<Question> {
+    return this.questionsService.create(input);
+  }
+
+  @Mutation(() => Question, {
+    name: 'updateQuestion',
+    description: 'Update an existing question',
+  })
+  async updateQuestion(
+    @Args('input') input: UpdateQuestionInput,
+  ): Promise<Question> {
+    return this.questionsService.update(input);
+  }
+
+  @Mutation(() => Question, {
+    name: 'deleteQuestion',
+    description: 'Delete a question',
+  })
+  async deleteQuestion(
+    @Args('input') input: DeleteQuestionInput,
+  ): Promise<Question> {
+    return this.questionsService.remove(input);
   }
 }

@@ -11,10 +11,7 @@ input AddCourseToDegreeInput {
 }
 
 type Answer {
-  NumberAnswer: NumberAnswer
-  SelectAnswer: [SelectAnswer!]
-  UnitAnswer: UnitAnswer
-  id: ID!
+  id: String!
   questionId: String!
 }
 
@@ -116,6 +113,18 @@ input CreateModuleRelationshipInput {
   prerequisiteModuleId: ID!
 }
 
+input CreateQuestionInput {
+  """Optional list of module IDs this question belongs to"""
+  moduleIds: [String!]
+
+  """The ID of the translation for the question text"""
+  translationId: String!
+
+  """The type of the question"""
+  type: QuestionType!
+  validationStatus: QuestionValidationStatus! = ai_generated
+}
+
 input CreateUniversityInput {
   """English name of the university"""
   en_text: String!
@@ -202,6 +211,10 @@ input DeleteModuleRelationshipInput {
   prerequisiteModuleId: ID!
 }
 
+input DeleteQuestionInput {
+  id: String!
+}
+
 type Faculty {
   degrees: [Degree!]!
   description: Translation!
@@ -258,6 +271,9 @@ type Mutation {
   """Create a prerequisite/postrequisite relationship between modules"""
   createModuleRelationship(input: CreateModuleRelationshipInput!): ModuleRelationshipResult!
 
+  """Create a new question"""
+  createQuestion(input: CreateQuestionInput!): Question!
+
   """Creates a new university"""
   createUniversity(input: CreateUniversityInput!): University!
 
@@ -273,6 +289,9 @@ type Mutation {
   """Delete a prerequisite/postrequisite relationship between modules"""
   deleteModuleRelationship(input: DeleteModuleRelationshipInput!): ModuleRelationshipResult!
 
+  """Delete a question"""
+  deleteQuestion(input: DeleteQuestionInput!): Question!
+
   """Replace a course's modules with the provided module IDs"""
   setCourseModules(input: SetCourseModulesInput!): Course!
 
@@ -285,12 +304,9 @@ type Mutation {
   Update a course's fields (e.g., name translation, university, publishedAt)
   """
   updateCourse(input: UpdateCourseInput!): Course!
-}
 
-type NumberAnswer {
-  answerId: String!
-  id: ID!
-  value: Float!
+  """Update an existing question"""
+  updateQuestion(input: UpdateQuestionInput!): Question!
 }
 
 type Query {
@@ -346,55 +362,69 @@ type Query {
   ): Question
 
   """Get all questions with optional filtering"""
-  questions(input: QuestionsQueryInput): [Question!]!
+  questions(input: QuestionsQueryDto): [Question!]!
   universities: [University!]!
   university(id: ID!): University
 }
 
 type Question {
-  answers: [Answer!]
-  id: ID!
-  modules: [Module!]
-  parts: [QuestionPart!]
+  Answer: [Answer!]
+  Modules: [Module!]
+  PartOf: [QuestionPart!]
+  Parts: [QuestionPart!]
+  id: String!
   text: Translation!
+  translationId: String!
+  type: QuestionType!
+  validationStatus: QuestionValidationStatus!
 }
 
 type QuestionPart {
-  id: ID!
+  id: String!
   order: Int!
-  partQuestion: Question!
+  partQuestionId: String!
+  questionId: String!
 }
 
-"""The type of question"""
+"""The type of the question"""
 enum QuestionType {
-  SELECTION
-  VALUE
-  VOID
+  selection
+  value
+  void
 }
 
-input QuestionsQueryInput {
-  """Filter questions by course ID (deprecated, use courseIds)"""
-  courseId: String
+"""The validation status of the question"""
+enum QuestionValidationStatus {
+  ai_generated
+  approved
+  in_manual_review
+  rejected
+}
 
-  """Filter questions by course IDs"""
-  courseIds: [String!]
+input QuestionsQueryDto {
+  """Filter by course ID"""
+  courseId: ID
 
-  """
-  Whether to include questions from submodules when filtering by module (default: true)
-  """
+  """Filter by multiple course IDs"""
+  courseIds: [ID!]
+  id: ID
+
+  """Include submodules when filtering by module ID"""
   includeSubmodules: Boolean = true
 
-  """Filter questions by module ID (deprecated, use moduleIds)"""
-  moduleId: String
+  """Filter by module ID"""
+  moduleId: ID
 
-  """Filter questions by module IDs"""
-  moduleIds: [String!]
+  """Filter by multiple module IDs"""
+  moduleIds: [ID!]
 
-  """Filter questions by question type (deprecated, use questionTypes)"""
+  """Filter by question type"""
   questionType: QuestionType
 
-  """Filter questions by question types"""
+  """Filter by multiple question types"""
   questionTypes: [QuestionType!]
+  type: QuestionType
+  validationStatus: QuestionValidationStatus
 }
 
 type RelationshipMetadata {
@@ -408,14 +438,6 @@ enum RelationshipMetadataKey {
   DESCRIPTION
   REASON
   TYPE
-}
-
-type SelectAnswer {
-  answerId: String!
-  id: ID!
-  isCorrect: Boolean!
-  text: Translation!
-  translationId: String!
 }
 
 input SetCourseModulesInput {
@@ -440,13 +462,6 @@ type Translation {
   id: String!
 }
 
-type UnitAnswer {
-  answerId: String!
-  id: ID!
-  unit: String!
-  value: Float!
-}
-
 type University {
   courses: [Course!]
   degrees: [Degree!]
@@ -469,4 +484,18 @@ input UpdateCourseInput {
 
   """University ID of the course"""
   universityId: String
+}
+
+input UpdateQuestionInput {
+  id: String!
+
+  """Optional list of module IDs this question belongs to"""
+  moduleIds: [String!]
+
+  """The ID of the translation for the question text"""
+  translationId: String
+
+  """The type of the question"""
+  type: QuestionType
+  validationStatus: QuestionValidationStatus = ai_generated
 }

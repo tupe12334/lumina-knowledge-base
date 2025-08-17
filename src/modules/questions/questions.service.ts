@@ -1,8 +1,11 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { Prisma } from '../../../generated/client';
 import { PrismaService } from '../../prisma/prisma.service';
 import { Question } from './models/Question.entity';
-import { QuestionsQueryInput } from './dto/questions-query.input';
+import { QuestionsQueryDto } from './dto/question-query.dto';
+import { CreateQuestionInput } from './dto/create-question.input';
+import { UpdateQuestionInput } from './dto/update-question.input';
+import { DeleteQuestionInput } from './dto/delete-question.input';
 
 @Injectable()
 export class QuestionsService {
@@ -38,7 +41,7 @@ export class QuestionsService {
     return Array.from(submoduleIds);
   }
 
-  async findAll(filters?: QuestionsQueryInput): Promise<Question[]> {
+  async findAll(filters?: QuestionsQueryDto): Promise<Question[]> {
     // Build where clause based on filters
     const where: Prisma.QuestionWhereInput = {};
 
@@ -152,16 +155,34 @@ export class QuestionsService {
             },
           },
         },
+        PartOf: {
+          orderBy: { order: 'asc' },
+          include: {
+            question: {
+              include: {
+                text: true,
+                Answer: {
+                  include: {
+                    SelectAnswer: { include: { text: true } },
+                    UnitAnswer: true,
+                    NumberAnswer: true,
+                  },
+                },
+              },
+            },
+          },
+        },
       },
     });
 
     console.log('🔍 Query returned', questions.length, 'questions');
 
-    return questions.map(({ Answer, Modules, Parts, ...question }) => ({
+    return questions.map(({ Answer, Modules, Parts, PartOf, ...question }) => ({
       ...question,
-      modules: Modules,
-      answers: Answer,
-      parts: Parts,
+      Modules: Modules,
+      Answer: Answer,
+      Parts: Parts,
+      PartOf: PartOf,
     }));
   }
 
@@ -195,6 +216,23 @@ export class QuestionsService {
             },
           },
         },
+        PartOf: {
+          orderBy: { order: 'asc' },
+          include: {
+            question: {
+              include: {
+                text: true,
+                Answer: {
+                  include: {
+                    SelectAnswer: { include: { text: true } },
+                    UnitAnswer: true,
+                    NumberAnswer: true,
+                  },
+                },
+              },
+            },
+          },
+        },
       },
     });
 
@@ -202,8 +240,304 @@ export class QuestionsService {
       return null;
     }
 
-    const { Answer, Modules, Parts, ...rest } = question;
+    const { Answer, Modules, Parts, PartOf, ...rest } = question;
 
-    return { ...rest, modules: Modules, answers: Answer, parts: Parts };
+    return {
+      ...rest,
+      Modules: Modules,
+      Answer: Answer,
+      Parts: Parts,
+      PartOf: PartOf,
+    };
+  }
+
+  async create(data: CreateQuestionInput): Promise<Question> {
+    const { translationId, moduleIds, ...rest } = data;
+
+    const question = await this.prisma.question.create({
+      data: {
+        ...rest,
+        text: {
+          connect: { id: translationId },
+        },
+        Modules: {
+          connect: moduleIds?.map((id) => ({ id })),
+        },
+      },
+      include: {
+        text: true,
+        Modules: { include: { name: true } },
+        Answer: {
+          include: {
+            SelectAnswer: { include: { text: true } },
+            UnitAnswer: true,
+            NumberAnswer: true,
+          },
+        },
+        Parts: {
+          orderBy: { order: 'asc' },
+          include: {
+            partQuestion: {
+              include: {
+                text: true,
+                Answer: {
+                  include: {
+                    SelectAnswer: { include: { text: true } },
+                    UnitAnswer: true,
+                    NumberAnswer: true,
+                  },
+                },
+              },
+            },
+          },
+        },
+        PartOf: {
+          orderBy: { order: 'asc' },
+          include: {
+            question: {
+              include: {
+                text: true,
+                Answer: {
+                  include: {
+                    SelectAnswer: { include: { text: true } },
+                    UnitAnswer: true,
+                    NumberAnswer: true,
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    });
+
+    const { Answer, Modules, Parts, PartOf, ...questionRest } = question;
+    return {
+      ...questionRest,
+      Modules: Modules,
+      Answer: Answer,
+      Parts: Parts,
+      PartOf: PartOf,
+    };
+  }
+
+  async update(data: UpdateQuestionInput): Promise<Question> {
+    const { id, translationId, moduleIds, ...rest } = data;
+
+    const existingQuestion = await this.prisma.question.findUnique({
+      where: { id },
+      include: { Modules: true },
+    });
+
+    if (!existingQuestion) {
+      throw new NotFoundException(`Question with ID ${id} not found`);
+    }
+
+    const disconnectModules = existingQuestion.Modules.filter(
+      (module) => !moduleIds?.includes(module.id),
+    ).map((module) => ({ id: module.id }));
+
+    const connectModules = moduleIds
+      ?.filter(
+        (id) => !existingQuestion.Modules.some((module) => module.id === id),
+      )
+      .map((id) => ({ id }));
+
+    const question = await this.prisma.question.update({
+      where: { id },
+      data: {
+        ...rest,
+        ...(translationId && { text: { connect: { id: translationId } } }),
+        Modules: {
+          disconnect: disconnectModules,
+          connect: connectModules,
+        },
+      },
+      include: {
+        text: true,
+        Modules: { include: { name: true } },
+        Answer: {
+          include: {
+            SelectAnswer: { include: { text: true } },
+            UnitAnswer: true,
+            NumberAnswer: true,
+          },
+        },
+        Parts: {
+          orderBy: { order: 'asc' },
+          include: {
+            partQuestion: {
+              include: {
+                text: true,
+                Answer: {
+                  include: {
+                    SelectAnswer: { include: { text: true } },
+                    UnitAnswer: true,
+                    NumberAnswer: true,
+                  },
+                },
+              },
+            },
+          },
+        },
+        PartOf: {
+          orderBy: { order: 'asc' },
+          include: {
+            question: {
+              include: {
+                text: true,
+                Answer: {
+                  include: {
+                    SelectAnswer: { include: { text: true } },
+                    UnitAnswer: true,
+                    NumberAnswer: true,
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    });
+
+    const { Answer, Modules, Parts, PartOf, ...questionRest } = question;
+    return {
+      ...questionRest,
+      Modules: Modules,
+      Answer: Answer,
+      Parts: Parts,
+      PartOf: PartOf,
+    };
+  }
+
+  async remove(data: DeleteQuestionInput): Promise<Question> {
+    const { id } = data;
+
+    const questionToDelete = await this.prisma.question.findUnique({
+      where: { id },
+      include: {
+        Answer: {
+          include: {
+            SelectAnswer: true,
+            UnitAnswer: true,
+            NumberAnswer: true,
+          },
+        },
+      },
+    });
+
+    if (!questionToDelete) {
+      throw new NotFoundException(`Question with ID ${id} not found`);
+    }
+
+    // Delete related answers first
+    for (const answer of questionToDelete.Answer) {
+      if (answer.SelectAnswer) {
+        await this.prisma.selectAnswer.deleteMany({
+          where: { answerId: answer.id },
+        });
+      }
+      if (answer.UnitAnswer) {
+        await this.prisma.unitAnswer.delete({ where: { answerId: answer.id } });
+      }
+      if (answer.NumberAnswer) {
+        await this.prisma.numberAnswer.delete({
+          where: { answerId: answer.id },
+        });
+      }
+      await this.prisma.answer.delete({ where: { id: answer.id } });
+    }
+
+    // Disconnect from modules
+    await this.prisma.question.update({
+      where: { id },
+      data: {
+        Modules: { set: [] },
+      },
+    });
+
+    // Delete the question itself
+    const question = await this.prisma.question.delete({
+      where: { id },
+      include: {
+        text: true,
+        Modules: { include: { name: true } },
+        Answer: {
+          include: {
+            SelectAnswer: { include: { text: true } },
+            UnitAnswer: true,
+            NumberAnswer: true,
+          },
+        },
+        Parts: {
+          orderBy: { order: 'asc' },
+          include: {
+            partQuestion: {
+              include: {
+                text: true,
+                Answer: {
+                  include: {
+                    SelectAnswer: { include: { text: true } },
+                    UnitAnswer: true,
+                    NumberAnswer: true,
+                  },
+                },
+              },
+            },
+          },
+        },
+        PartOf: {
+          orderBy: { order: 'asc' },
+          include: {
+            question: {
+              include: {
+                text: true,
+                Answer: {
+                  include: {
+                    SelectAnswer: { include: { text: true } },
+                    UnitAnswer: true,
+                    NumberAnswer: true,
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    });
+
+    // Delete the associated translation if it's no longer used by other entities
+    const translationUsage = await this.prisma.translation.findUnique({
+      where: { id: question.translationId },
+      include: {
+        University: true,
+        Course: true,
+        Module: true,
+        Question: true,
+        Degree: true,
+        FacultyName: true,
+        FacultyDescription: true,
+        SelectAnswer: true,
+      },
+    });
+
+    const isTranslationUsed = Object.values(translationUsage || {}).some(
+      (value) => Array.isArray(value) && value.length > 0,
+    );
+
+    if (!isTranslationUsed) {
+      await this.prisma.translation.delete({
+        where: { id: question.translationId },
+      });
+    }
+
+    const { Answer, Modules, Parts, PartOf, ...questionRest } = question;
+    return {
+      ...questionRest,
+      Modules: Modules,
+      Answer: Answer,
+      Parts: Parts,
+      PartOf: PartOf,
+    };
   }
 }

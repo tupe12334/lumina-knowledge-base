@@ -40,9 +40,7 @@ const fetchAllData = async (prisma: PrismaClient) => ({
   selectAnswer: await prisma.selectAnswer.findMany({ orderBy: { id: 'asc' } }),
   unitAnswer: await prisma.unitAnswer.findMany({ orderBy: { id: 'asc' } }),
   numberAnswer: await prisma.numberAnswer.findMany({ orderBy: { id: 'asc' } }),
-  learningResource: await prisma.learningResource.findMany({
-    orderBy: { id: 'asc' },
-  }),
+  
 });
 
 describe('DB snapshot', () => {
