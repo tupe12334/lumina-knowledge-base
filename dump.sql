@@ -2949,7 +2949,7 @@ INSERT INTO Degree VALUES('8c6a661a-a1f0-4922-82dd-45b4938b3887','ee53adf0-406c-
 INSERT INTO Degree VALUES('fa8a5dc5-8368-4f13-97f7-83cd9f701013','f0c2636f-08a8-4529-a37a-6206d7e1772a','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL);
 INSERT INTO Degree VALUES('43eae81a-0c42-4e5c-894d-bd803334f0cd','e8b9f640-68b9-4d90-a56b-9ab8dfade0af','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL);
 INSERT INTO Degree VALUES('73ef0be5-bd20-4181-aa70-52cf19ac5a9c','63e95b0b-85de-4c54-b6af-face80091bb4','3856bd36-8082-4821-8b1d-9ce806403ab2','c65fa3bd-2f3a-40d8-b192-3be77adc7802');
-INSERT INTO Degree VALUES('c7a1e2b2-8e2d-4c1a-9e2a-1a2b3c4d5e6f','63e95b0b-85de-4c54-b6af-face80091bb4','92e73fb7-96de-45e4-aff3-4ca7b89be16c',NULL);
+INSERT INTO Degree VALUES('c7a1e2b2-8e2d-4c1a-9e2a-1a2b3c4d5e6f','63e95b0b-85de-4c54-b6af-face80091bb4','92e73fb7-96de-45e4-aff3-4ca7b89be16c','7e3f2c1b-9a8d-4f6e-8c5b-2d3e4f5a6b7c');
 INSERT INTO Degree VALUES('fe63f747-f7c8-4c63-bb5b-904f503cd23e','25800af4-b146-4cd0-83c0-dc64729dcc7f','42e9a858-0a22-482d-ab1d-65f7a00ceb4c',NULL);
 CREATE UNIQUE INDEX "Faculty_translationId_universityId_key" ON "Faculty"("translationId", "universityId");
 CREATE UNIQUE INDEX "Course_translationId_universityId_key" ON "Course"("translationId", "universityId");
