@@ -677,7 +677,7 @@ INSERT INTO Translation VALUES('4b42c9f4-436a-4008-9291-5ca24df618fe','Discrete 
 INSERT INTO Translation VALUES('be355b4a-6a11-49b9-ac5b-c3b66d52212b','Logic for Computer Science Students','לוגיקה לסטודנטים למדעי המחשב');
 INSERT INTO Translation VALUES('6b3dd279-082e-47d6-a5cf-e795d5f07986','Auctions and Electronic Markets: Mechanism Design and Algorithms','מכרזים ושוקיים אלקטרוניים: תכנון מכניזמים ואלגוריתמים');
 INSERT INTO Translation VALUES('fb83c421-6e77-4571-9640-f0865e4c0ce9','Calculus A','חדו״א א');
-INSERT INTO Translation VALUES('C44DBE0A-CFF5-4259-9064-163E3ED72F32','Calculus B','חדו״א ב');
+INSERT INTO Translation VALUES('C44DBE0A-CFF5-4259-9064-163E3ED72F32','Infinitesimal Calculus 2','חשבון אינפינטסימאלי 2');
 INSERT INTO Translation VALUES('d191be2f-56ed-4cf6-880b-18c749786af9','Database Systems','מערכות בסיסי נתונים');
 INSERT INTO Translation VALUES('c7e930db-5b2a-43ba-a6e9-567bf5883053','Introduction to Psychology','מבוא לפסיכולוגיה');
 INSERT INTO Translation VALUES('45268d5a-6c0d-4760-ab4f-828be0a86d88','Introduction to Microeconomics','מבוא למיקרוכלכלה');
