@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from '../../prisma/prisma.service';
 import { University } from './models/University.entity';
+import { CreateUniversityInput } from './dto/create-university.input';
 
 @Injectable()
 export class UniversitiesService {
@@ -39,6 +40,35 @@ export class UniversitiesService {
     if (!university) {
       return null;
     }
+
+    return university;
+  }
+
+  /**
+   * Creates a new university.
+   * @param input - The data for creating the university
+   * @returns The newly created university
+   */
+  async create(input: CreateUniversityInput): Promise<University> {
+    const { en_text, he_text } = input;
+
+    // Create a new translation for the university name
+    const translation = await this.prisma.translation.create({
+      data: {
+        en_text,
+        he_text,
+      },
+    });
+
+    // Create the university, linking it to the translation
+    const university = await this.prisma.university.create({
+      data: {
+        translationId: translation.id,
+      },
+      include: {
+        name: true,
+      },
+    });
 
     return university;
   }
