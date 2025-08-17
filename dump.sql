@@ -336,6 +336,7 @@ INSERT INTO Block VALUES('f8c9d5e1-2a3b-4c6d-8e9f-1a2b3c4d5e6f');
 INSERT INTO Block VALUES('d49b124c-df8c-403d-8460-8f7ee813784f');
 INSERT INTO Block VALUES('a2093775-11c1-40e2-9c10-3cdaaeaf6559');
 INSERT INTO Block VALUES('0030cff5-5c9c-48db-ba6c-1c8fe12b9f7b');
+INSERT INTO Block VALUES('840E951F-0BD1-4B4C-BA15-53CDA007BE5A');
 CREATE TABLE IF NOT EXISTS "BlockRelationship" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "prerequisiteId" TEXT NOT NULL,
@@ -450,6 +451,7 @@ INSERT INTO BlockRelationship VALUES('5e284d03-0ee3-41fe-a1f7-56010feb9564','5f6
 INSERT INTO BlockRelationship VALUES('a48fd056-c4c6-4f40-adcc-680a622a1776','a6b8af63-5f91-4381-8a43-12f67d9ec34d','E041319C-A848-4D4A-B65E-5D4550EB977B');
 INSERT INTO BlockRelationship VALUES('757292b3-20e1-43bc-b6cb-f9f7b625774f','993a6a59-7fc7-4d96-ada6-5858d742496a','E041319C-A848-4D4A-B65E-5D4550EB977B');
 INSERT INTO BlockRelationship VALUES('3fe4654b-b847-4836-9c84-850a804f9fdb','93063920-88DB-41DB-AFDD-1FDE26CA5686','993a6a59-7fc7-4d96-ada6-5858d742496a');
+INSERT INTO BlockRelationship VALUES('FC6F09BB-DDEF-4D6C-A379-02E192678066','EDE16E3C-66B1-4240-86B0-67B2A8B92973','840E951F-0BD1-4B4C-BA15-53CDA007BE5A');
 CREATE TABLE IF NOT EXISTS "RelationshipMetadata" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "key" TEXT NOT NULL,
@@ -518,6 +520,7 @@ INSERT INTO RelationshipMetadata VALUES('e7f6d5c4-b3a2-4c1d-9e8f-7a6b5c4d3e2f','
 INSERT INTO RelationshipMetadata VALUES('a9b8c7d6-e5f4-4a3b-9c8d-7e6f5a4b3c2d','REASON','Data Structures and Introduction to Algorithms is a prerequisite for Computational Models.','6b5c3d12-9af3-4c1b-9f2e-8a7b6c5d4e3f');
 INSERT INTO RelationshipMetadata VALUES('d1e2f3a4-b5c6-4d7e-8f9a-0b1c2d3e4f5a','TYPE','hard','1a2b3c4d-5e6f-4a7b-8c9d-0e1f2a3b4c5d');
 INSERT INTO RelationshipMetadata VALUES('c3d4e5f6-a7b8-4c9d-8e0f-1a2b3c4d5e6f','REASON','Data Structures and Introduction to Algorithms is a prerequisite for Computational Models.','1a2b3c4d-5e6f-4a7b-8c9d-0e1f2a3b4c5d');
+INSERT INTO RelationshipMetadata VALUES('766437EE-43B1-4641-9842-B13B21DC7001','TYPE','hard','FC6F09BB-DDEF-4D6C-A379-02E192678066');
 CREATE TABLE IF NOT EXISTS "Module" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "translationId" TEXT NOT NULL,
@@ -609,6 +612,7 @@ INSERT INTO Module VALUES('f8c9d5e1-2a3b-4c6d-8e9f-1a2b3c4d5e6f','b2c3d4e5-6f7a-
 INSERT INTO Module VALUES('d49b124c-df8c-403d-8460-8f7ee813784f','c6871315-ca77-4b15-b894-58a0b88e74e8','d49b124c-df8c-403d-8460-8f7ee813784f');
 INSERT INTO Module VALUES('a2093775-11c1-40e2-9c10-3cdaaeaf6559','2f476947-15fa-4c9c-9f27-90a640ed9f21','a2093775-11c1-40e2-9c10-3cdaaeaf6559');
 INSERT INTO Module VALUES('0030cff5-5c9c-48db-ba6c-1c8fe12b9f7b','fe824c71-d84b-4ffb-a721-510283887674','0030cff5-5c9c-48db-ba6c-1c8fe12b9f7b');
+INSERT INTO Module VALUES('840E951F-0BD1-4B4C-BA15-53CDA007BE5A','F3D76731-C3DB-4937-8671-05063BE4D25A','840E951F-0BD1-4B4C-BA15-53CDA007BE5A');
 CREATE TABLE IF NOT EXISTS "Translation" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "en_text" TEXT NOT NULL,
@@ -1261,6 +1265,7 @@ INSERT INTO Translation VALUES('ccb992bc-81f3-4678-87f7-764957fffc6d','Are ortho
 INSERT INTO Translation VALUES('ab4f4fff-6fde-4154-8cf7-cc009ced31d5','Is a diagonal matrix already diagonalizable','האם מטריצה אלכסונית היא כבר ניתנת לדיאגונליזציה');
 INSERT INTO Translation VALUES('dee66e0f-60b1-40aa-832a-1106870a039c','Does diagonalization simplify computing matrix powers','האם דיאגונליזציה מקלה על חישוב חזקה של מטריצה');
 INSERT INTO Translation VALUES('3c4d5f6a-8b9c-4d0e-af2b-3c4d5f6a8b9c','Topics in Applied Mathematics','נושאים במתמטיקה שימושית');
+INSERT INTO Translation VALUES('F3D76731-C3DB-4937-8671-05063BE4D25A','Derivative','נגזרת');
 CREATE TABLE IF NOT EXISTS "Question" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "validationStatus" TEXT NOT NULL DEFAULT 'ai_generated',
