@@ -13,7 +13,9 @@ export class CreateDegreeInput {
   @IsNotEmpty()
   he_text: string;
 
-  @Field(() => String, { description: 'ID of the university this degree belongs to' })
+  @Field(() => String, {
+    description: 'ID of the university this degree belongs to',
+  })
   @IsString()
   @IsNotEmpty()
   universityId: string;

@@ -2,6 +2,14 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+input AddCourseToDegreeInput {
+  """ID of the course to add"""
+  courseId: String!
+
+  """ID of the degree to add the course to"""
+  degreeId: String!
+}
+
 type Answer {
   NumberAnswer: NumberAnswer
   SelectAnswer: [SelectAnswer!]
@@ -235,6 +243,9 @@ input ModulesQueryInput {
 }
 
 type Mutation {
+  """Adds a course to a degree"""
+  addCourseToDegree(input: AddCourseToDegreeInput!): Degree!
+
   """Create a prerequisite/postrequisite relationship between blocks"""
   createBlockRelationship(input: CreateBlockRelationshipInput!): BlockRelationshipResult!
 

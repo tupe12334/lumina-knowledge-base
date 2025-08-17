@@ -3,6 +3,7 @@ import { DegreesService } from './degrees.service';
 import { Degree } from './models/Degree.entity';
 import { DegreesQueryDto } from './dto/degrees-query.dto';
 import { SetDegreeFacultyInput } from './dto/set-degree-faculty.input';
+import { AddCourseToDegreeInput } from './dto/add-course-to-degree.input';
 
 /**
  * GraphQL resolver for degree-related operations.
@@ -60,5 +61,21 @@ export class DegreesResolver {
   ): Promise<Degree> {
     const { degreeId, facultyId } = input;
     return this.degreesService.setFacultyForDegree(degreeId, facultyId ?? null);
+  }
+
+  /**
+   * Adds a course to a degree.
+   * @param input - The data for adding the course to the degree
+   * @returns Promise<Degree> The updated degree
+   */
+  @Mutation(() => Degree, {
+    name: 'addCourseToDegree',
+    description: 'Adds a course to a degree',
+  })
+  async addCourseToDegree(
+    @Args('input') input: AddCourseToDegreeInput,
+  ): Promise<Degree> {
+    const { courseId, degreeId } = input;
+    return this.degreesService.addCourse(degreeId, courseId);
   }
 }

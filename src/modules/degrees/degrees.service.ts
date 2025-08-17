@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { PrismaService } from '../../prisma/prisma.service';
 import { Degree } from './models/Degree.entity';
 import { DegreesQueryDto } from './dto/degrees-query.dto';
@@ -205,5 +205,49 @@ export class DegreesService {
     }
 
     return updated;
+  }
+
+  /**
+   * Adds a course to a degree.
+   * @param degreeId - The ID of the degree to add the course to.
+   * @param courseId - The ID of the course to add.
+   * @returns The updated degree with the course added.
+   */
+  async addCourse(degreeId: string, courseId: string): Promise<Degree> {
+    // Validate that the degree exists
+    const degree = await this.prisma.degree.findUnique({
+      where: { id: degreeId },
+    });
+
+    if (!degree) {
+      throw new NotFoundException(`Degree with ID ${degreeId} not found`);
+    }
+
+    // Validate that the course exists
+    const course = await this.prisma.course.findUnique({
+      where: { id: courseId },
+    });
+
+    if (!course) {
+      throw new NotFoundException(`Course with ID ${courseId} not found`);
+    }
+
+    // Connect the course to the degree
+    const updatedDegree = await this.prisma.degree.update({
+      where: { id: degreeId },
+      data: {
+        courses: {
+          connect: { id: courseId },
+        },
+      },
+      include: {
+        name: true,
+        university: { include: { name: true } },
+        faculty: { include: { name: true, description: true } },
+        courses: { include: { name: true } },
+      },
+    });
+
+    return updatedDegree;
   }
 }
