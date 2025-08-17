@@ -72,7 +72,7 @@ describe('QuestionsService', () => {
 
     expect(result).toHaveLength(1);
     expect(result[0].text.en_text).toBe('Q');
-    expect(result[0].modules?.[0]?.name.en_text).toBe('mod');
+    expect(result[0].Modules?.[0]?.name.en_text).toBe('mod');
   });
 
   describe('getAllSubmoduleIds', () => {

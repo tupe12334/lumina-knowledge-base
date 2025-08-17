@@ -3,6 +3,9 @@
 # ---- Base builder image ----
 FROM node:22-bookworm-slim AS builder
 
+# Install openssl for Prisma
+RUN apt-get update -y && apt-get install -y openssl
+
 # Enable corepack to use pnpm
 RUN corepack enable
 
@@ -26,8 +29,12 @@ ENV NODE_ENV=production \
     PORT=3000 \
     ENABLE_MUTATIONS=false
 
+# Install openssl for Prisma at runtime
+RUN apt-get update -y && apt-get install -y openssl
+
 # Enable corepack to use pnpm at runtime for prisma CLI
 RUN corepack enable
+
 
 WORKDIR /app
 
