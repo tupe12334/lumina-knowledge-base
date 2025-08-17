@@ -1,3 +1,4 @@
+import { execSync } from 'child_process';
 import { describe, expect, it } from 'vitest';
 import { PrismaClient } from '../generated/client';
 
@@ -44,15 +45,24 @@ const fetchAllData = async (prisma: PrismaClient) => ({
   }),
 });
 
-describe('sqlite db snapshot', () => {
-  it('reads real sqlite DB and matches snapshot', async () => {
-    const prisma = new PrismaClient();
-    await prisma.$connect();
-    await prisma.$executeRaw`PRAGMA foreign_keys = ON;`;
+describe('DB snapshot', () => {
+  describe('data', () => {
+    it('matches snapshot', async () => {
+      const prisma = new PrismaClient();
+      await prisma.$connect();
+      await prisma.$executeRaw`PRAGMA foreign_keys = ON;`;
 
-    const data = await fetchAllData(prisma);
-    await prisma.$disconnect();
+      const data = await fetchAllData(prisma);
+      await prisma.$disconnect();
 
-    expect(normalize(data)).toMatchSnapshot();
-  }, 120_000);
+      expect(normalize(data)).toMatchSnapshot();
+    }, 120_000);
+  });
+
+  describe('schema', () => {
+    it('matches snapshot', () => {
+      const schema = execSync('pnpm prisma db pull --print').toString();
+      expect(schema).toMatchSnapshot();
+    });
+  });
 });
