@@ -6,31 +6,8 @@ import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { TestInput, TestResolver } from './test-graphql-schema';
 import { Field } from '@nestjs/graphql';
 import { env } from 'src/env';
-
-describe('Mutations E2E (Disabled)', () => {
-  let app: INestApplication;
-  let testMutation: string;
-
-  beforeAll(async () => {
-    env.ENABLE_MUTATIONS = false;
-    import request from 'supertest';
-import { INestApplication } from '@nestjs/common';
 import request from 'supertest';
 import { INestApplication } from '@nestjs/common';
-import request from 'supertest';
-import { INestApplication } from '@nestjs/common';
-import request from 'supertest';
-import { INestApplication } from '@nestjs/common';
-import request from 'supertest';
-import { INestApplication } from '@nestjs/common';
-import { describe, it, beforeAll, afterAll, expect, vi } from 'vitest';
-import { Test } from '@nestjs/testing';
-import { APP_GUARD } from '@nestjs/core';
-import { GraphQLModule } from '@nestjs/graphql';
-import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
-import { TestInput, TestResolver } from './test-graphql-schema';
-import { Field } from '@nestjs/graphql';
-import { env } from 'src/env';
 
 describe('Mutations E2E (Disabled)', () => {
   let app: INestApplication;
@@ -88,7 +65,7 @@ describe('Mutations E2E (Disabled)', () => {
         query: testMutation,
         variables: {
           input: {
-            test: 'test'
+            test: 'test',
           },
         },
       })

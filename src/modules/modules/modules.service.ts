@@ -110,11 +110,20 @@ export class ModulesService {
       parentModules: { include: { name: true } },
     };
 
-    if (this.shouldFilterByQuestionCount(filters)) {
-      return this.findAllWithQuestionCountFilter(filters!, baseInclude);
+    // Build the where clause based on filters
+    const whereClause = this.buildWhereClause(filters);
+
+    // Check if we need to include question count for filtering
+    const needsQuestionCount =
+      this.shouldFilterByQuestionCount(filters) ||
+      filters?.hasQuestions !== undefined;
+
+    if (needsQuestionCount) {
+      return this.findAllWithComplexFilters(filters!, baseInclude, whereClause);
     }
 
     const modules = await this.prisma.module.findMany({
+      where: whereClause,
       include: baseInclude,
     });
     return modules as unknown as ModuleEntity[];
@@ -128,11 +137,109 @@ export class ModulesService {
     );
   }
 
-  private async findAllWithQuestionCountFilter(
+  private buildWhereClause(filters?: ModulesQueryDto): Prisma.ModuleWhereInput {
+    if (!filters) return {};
+
+    const where: Prisma.ModuleWhereInput = {};
+
+    // Course filter
+    if (filters.courseId) {
+      where.Course = {
+        some: {
+          id: filters.courseId,
+        },
+      };
+    }
+
+    // University filter (through courses)
+    if (filters.universityId) {
+      where.Course = {
+        some: {
+          universityId: filters.universityId,
+        },
+      };
+    }
+
+    // Name search filter (SQLite doesn't support case insensitive mode, so we'll handle it in post-processing)
+    if (filters.nameSearch) {
+      where.name = {
+        OR: [
+          {
+            en_text: {
+              contains: filters.nameSearch,
+            },
+          },
+          {
+            he_text: {
+              contains: filters.nameSearch,
+            },
+          },
+        ],
+      };
+    }
+
+    // Prerequisites and Postrequisites filters
+    if (
+      filters.hasPrerequisites !== undefined ||
+      filters.hasPostrequisites !== undefined
+    ) {
+      const blockWhere: any = {};
+
+      if (filters.hasPrerequisites !== undefined) {
+        if (filters.hasPrerequisites) {
+          blockWhere.postrequisiteOf = { some: {} };
+        } else {
+          blockWhere.postrequisiteOf = { none: {} };
+        }
+      }
+
+      if (filters.hasPostrequisites !== undefined) {
+        if (filters.hasPostrequisites) {
+          blockWhere.prerequisiteFor = { some: {} };
+        } else {
+          blockWhere.prerequisiteFor = { none: {} };
+        }
+      }
+
+      where.Block = blockWhere;
+    }
+
+    // Sub-modules filter
+    if (filters.hasSubModules !== undefined) {
+      if (filters.hasSubModules) {
+        where.subModules = {
+          some: {},
+        };
+      } else {
+        where.subModules = {
+          none: {},
+        };
+      }
+    }
+
+    // Parent modules filter
+    if (filters.hasParentModules !== undefined) {
+      if (filters.hasParentModules) {
+        where.parentModules = {
+          some: {},
+        };
+      } else {
+        where.parentModules = {
+          none: {},
+        };
+      }
+    }
+
+    return where;
+  }
+
+  private async findAllWithComplexFilters(
     filters: ModulesQueryDto,
     baseInclude: Prisma.ModuleInclude,
+    whereClause: Prisma.ModuleWhereInput,
   ): Promise<ModuleEntity[]> {
     const modules = await this.prisma.module.findMany({
+      where: whereClause,
       include: {
         ...baseInclude,
         _count: {
@@ -146,19 +253,28 @@ export class ModulesService {
     const filteredModules = modules.filter((module) => {
       const questionCount = module._count.Questions;
 
+      // Question count filters
       if (filters.exactQuestions !== undefined) {
-        return questionCount === filters.exactQuestions;
+        if (questionCount !== filters.exactQuestions) return false;
+      } else {
+        const meetsMinRequirement =
+          filters.minQuestions === undefined ||
+          questionCount >= filters.minQuestions;
+
+        const meetsMaxRequirement =
+          filters.maxQuestions === undefined ||
+          questionCount <= filters.maxQuestions;
+
+        if (!meetsMinRequirement || !meetsMaxRequirement) return false;
       }
 
-      const meetsMinRequirement =
-        filters.minQuestions === undefined ||
-        questionCount >= filters.minQuestions;
+      // Has questions filter
+      if (filters.hasQuestions !== undefined) {
+        const hasQuestions = questionCount > 0;
+        if (hasQuestions !== filters.hasQuestions) return false;
+      }
 
-      const meetsMaxRequirement =
-        filters.maxQuestions === undefined ||
-        questionCount <= filters.maxQuestions;
-
-      return meetsMinRequirement && meetsMaxRequirement;
+      return true;
     });
 
     // Remove the _count property before returning

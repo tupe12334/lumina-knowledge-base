@@ -1,13 +1,5 @@
 import request from 'supertest';
 import { INestApplication } from '@nestjs/common';
-import request from 'supertest';
-import { INestApplication } from '@nestjs/common';
-import request from 'supertest';
-import { INestApplication } from '@nestjs/common';
-import request from 'supertest';
-import { INestApplication } from '@nestjs/common';
-import request from 'supertest';
-import { INestApplication } from '@nestjs/common';
 import { describe, it, beforeAll, afterAll, expect, vi } from 'vitest';
 import { Test } from '@nestjs/testing';
 import { APP_GUARD } from '@nestjs/core';
@@ -72,16 +64,14 @@ describe('Mutations E2E (Enabled)', () => {
         query: testMutation,
         variables: {
           input: {
-            test: 'Test University'
+            test: 'Test University',
           },
         },
       })
       .expect(200)
       .then((res) => {
         expect(res.body.errors).toBeUndefined();
-        expect(res.body.data.testMutation).toBe(
-          'Test University',
-        );
+        expect(res.body.data.testMutation).toBe('Test University');
       });
   });
 });
