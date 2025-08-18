@@ -269,14 +269,38 @@ type ModuleRelationshipResult {
 }
 
 input ModulesQueryInput {
+  """Filter modules by course ID"""
+  courseId: ID
+
   """Filter modules by exact number of questions"""
   exactQuestions: Int
+
+  """Filter modules that have parent modules"""
+  hasParentModules: Boolean
+
+  """Filter modules that have postrequisites"""
+  hasPostrequisites: Boolean
+
+  """Filter modules that have prerequisites"""
+  hasPrerequisites: Boolean
+
+  """Filter modules that have questions"""
+  hasQuestions: Boolean
+
+  """Filter modules that have sub-modules"""
+  hasSubModules: Boolean
 
   """Filter modules by maximum number of questions"""
   maxQuestions: Int
 
   """Filter modules by minimum number of questions"""
   minQuestions: Int
+
+  """Search modules by name (partial match, case insensitive)"""
+  nameSearch: String
+
+  """Filter modules by university ID"""
+  universityId: ID
 }
 
 type Mutation {
