@@ -6,7 +6,7 @@ import { serverEnvSchema } from './schema';
  */
 export const loadEnv = (source: NodeJS.ProcessEnv = process.env) => {
   const parsed = serverEnvSchema.parse(source);
-  return Object.freeze(parsed);
+  return parsed;
 };
 
-export const env = loadEnv();
+export let env = loadEnv();
