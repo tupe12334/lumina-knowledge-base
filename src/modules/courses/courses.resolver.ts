@@ -8,6 +8,7 @@ import { DeleteCourseInput } from './dto/delete-course.input';
 import { DeleteCourseResult } from './dto/delete-course-result.type';
 import { UpdateCourseInput } from './dto/update-course.input';
 import { SetCourseModulesInput } from './dto/set-course-modules.input';
+import { CreateCourseInput } from './dto/create-course.input';
 
 /**
  * GraphQL resolver for course-related operations.
@@ -16,6 +17,16 @@ import { SetCourseModulesInput } from './dto/set-course-modules.input';
 @Resolver(() => Course)
 export class CoursesResolver {
   constructor(private readonly coursesService: CoursesService) {}
+
+  @Mutation(() => Course, {
+    name: 'createCourse',
+    description: 'Create a new course',
+  })
+  createCourse(
+    @Args('createCourseInput') createCourseInput: CreateCourseInput,
+  ): Promise<Course> {
+    return this.coursesService.create(createCourseInput);
+  }
 
   /**
    * Retrieves all courses from the system.

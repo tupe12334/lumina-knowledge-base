@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { PrismaService } from '../../prisma/prisma.service';
 import { University } from './models/University.entity';
 import { CreateUniversityInput } from './dto/create-university.input';
+import { UpdateUniversityInput } from './dto/update-university.input';
 
 @Injectable()
 export class UniversitiesService {
@@ -71,5 +72,16 @@ export class UniversitiesService {
     });
 
     return university;
+  }
+
+  async update(id: string, updateUniversityInput: UpdateUniversityInput) {
+    return this.prisma.university.update({
+      where: { id },
+      data: updateUniversityInput,
+    });
+  }
+
+  async remove(id: string) {
+    return this.prisma.university.delete({ where: { id } });
   }
 }

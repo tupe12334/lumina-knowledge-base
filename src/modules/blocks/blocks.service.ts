@@ -9,6 +9,8 @@ import { Block } from './models/Block.entity';
 import { CreateBlockRelationshipInput } from './dto/create-block-relationship.input';
 import { DeleteBlockRelationshipInput } from './dto/delete-block-relationship.input';
 import { BlockRelationshipResult } from './dto/block-relationship-result.type';
+import { CreateBlockInput } from './dto/create-block.input';
+import { UpdateBlockInput } from './dto/update-block.input';
 
 /**
  * Service handling block retrieval and relationship logic.
@@ -16,6 +18,14 @@ import { BlockRelationshipResult } from './dto/block-relationship-result.type';
 @Injectable()
 export class BlocksService {
   constructor(private readonly prisma: PrismaService) {}
+
+  async create(createBlockInput: CreateBlockInput): Promise<Block> {
+    return this.prisma.block.create({ data: createBlockInput });
+  }
+
+  async findAll(): Promise<Block[]> {
+    return this.prisma.block.findMany();
+  }
 
   /**
    * Find a block by its id.
@@ -42,6 +52,17 @@ export class BlocksService {
         },
       },
     });
+  }
+
+  async update(id: string, updateBlockInput: UpdateBlockInput): Promise<Block> {
+    return this.prisma.block.update({
+      where: { id },
+      data: updateBlockInput,
+    });
+  }
+
+  async delete(id: string): Promise<Block> {
+    return this.prisma.block.delete({ where: { id } });
   }
 
   /**

@@ -13,10 +13,38 @@ import { DeleteCourseInput } from './dto/delete-course.input';
 import { DeleteCourseResult } from './dto/delete-course-result.type';
 import { UpdateCourseInput } from './dto/update-course.input';
 import { SetCourseModulesInput } from './dto/set-course-modules.input';
+import { CreateCourseInput } from './dto/create-course.input';
 
 @Injectable()
 export class CoursesService {
   constructor(private readonly prisma: PrismaService) {}
+
+  async create(createCourseInput: CreateCourseInput): Promise<Course> {
+    const { name, universityId } = createCourseInput;
+    return this.prisma.course.create({
+      data: {
+        university: {
+          connect: {
+            id: universityId,
+          },
+        },
+        name: {
+          create: {
+            en_text: name,
+          },
+        },
+        Block: {
+          create: {
+            name: {
+              create: {
+                en_text: name,
+              },
+            },
+          },
+        },
+      },
+    });
+  }
 
   async findAll(): Promise<Course[]> {
     const courses = await this.prisma.course.findMany({

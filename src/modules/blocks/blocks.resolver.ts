@@ -4,6 +4,8 @@ import { Block } from './models/Block.entity';
 import { CreateBlockRelationshipInput } from './dto/create-block-relationship.input';
 import { DeleteBlockRelationshipInput } from './dto/delete-block-relationship.input';
 import { BlockRelationshipResult } from './dto/block-relationship-result.type';
+import { CreateBlockInput } from './dto/create-block.input';
+import { UpdateBlockInput } from './dto/update-block.input';
 
 /**
  * GraphQL resolver for block-related operations.
@@ -12,6 +14,16 @@ import { BlockRelationshipResult } from './dto/block-relationship-result.type';
 @Resolver(() => Block)
 export class BlocksResolver {
   constructor(private readonly blocksService: BlocksService) {}
+
+  @Mutation(() => Block)
+  createBlock(@Args('createBlockInput') createBlockInput: CreateBlockInput) {
+    return this.blocksService.create(createBlockInput);
+  }
+
+  @Query(() => [Block], { name: 'blocks' })
+  findAll() {
+    return this.blocksService.findAll();
+  }
 
   /**
    * Retrieves a specific block by its ID.
@@ -27,6 +39,16 @@ export class BlocksResolver {
     @Args('id', { type: () => ID, description: 'Block ID' }) id: string,
   ): Promise<Block | null> {
     return this.blocksService.findUnique(id);
+  }
+
+  @Mutation(() => Block)
+  updateBlock(@Args('updateBlockInput') updateBlockInput: UpdateBlockInput) {
+    return this.blocksService.update(updateBlockInput.id, updateBlockInput);
+  }
+
+  @Mutation(() => Block)
+  removeBlock(@Args('id', { type: () => ID }) id: string) {
+    return this.blocksService.delete(id);
   }
 
   /**

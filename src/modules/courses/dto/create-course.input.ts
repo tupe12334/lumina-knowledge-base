@@ -2,7 +2,7 @@ import { Field, InputType } from '@nestjs/graphql';
 import { IsNotEmpty, IsString, IsUUID } from 'class-validator';
 
 @InputType()
-export class CreateDegreeInput {
+export class CreateCourseInput {
   @Field()
   @IsString()
   @IsNotEmpty()

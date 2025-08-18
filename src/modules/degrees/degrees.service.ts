@@ -2,6 +2,8 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { PrismaService } from '../../prisma/prisma.service';
 import { Degree } from './models/Degree.entity';
 import { DegreesQueryDto } from './dto/degrees-query.dto';
+import { CreateDegreeInput } from './dto/create-degree.input';
+import { UpdateDegreeInput } from './dto/update-degree.input';
 
 /**
  * Service for managing degree operations.
@@ -11,6 +13,24 @@ import { DegreesQueryDto } from './dto/degrees-query.dto';
 @Injectable()
 export class DegreesService {
   constructor(private readonly prisma: PrismaService) {}
+
+  async create(createDegreeInput: CreateDegreeInput): Promise<Degree> {
+    const { name, universityId } = createDegreeInput;
+    return this.prisma.degree.create({
+      data: {
+        university: {
+          connect: {
+            id: universityId,
+          },
+        },
+        name: {
+          create: {
+            en_text: name,
+          },
+        },
+      },
+    });
+  }
 
   /**
    * Retrieves all degrees from the database.
@@ -97,6 +117,20 @@ export class DegreesService {
     }
 
     return degree;
+  }
+
+  async update(
+    id: string,
+    updateDegreeInput: UpdateDegreeInput,
+  ): Promise<Degree> {
+    return this.prisma.degree.update({
+      where: { id },
+      data: updateDegreeInput,
+    });
+  }
+
+  async delete(id: string): Promise<Degree> {
+    return this.prisma.degree.delete({ where: { id } });
   }
 
   /**

@@ -4,6 +4,8 @@ import { Degree } from './models/Degree.entity';
 import { DegreesQueryDto } from './dto/degrees-query.dto';
 import { SetDegreeFacultyInput } from './dto/set-degree-faculty.input';
 import { AddCourseToDegreeInput } from './dto/add-course-to-degree.input';
+import { CreateDegreeInput } from './dto/create-degree.input';
+import { UpdateDegreeInput } from './dto/update-degree.input';
 
 /**
  * GraphQL resolver for degree-related operations.
@@ -12,6 +14,13 @@ import { AddCourseToDegreeInput } from './dto/add-course-to-degree.input';
 @Resolver(() => Degree)
 export class DegreesResolver {
   constructor(private readonly degreesService: DegreesService) {}
+
+  @Mutation(() => Degree)
+  createDegree(
+    @Args('createDegreeInput') createDegreeInput: CreateDegreeInput,
+  ) {
+    return this.degreesService.create(createDegreeInput);
+  }
 
   /**
    * Retrieves all degrees with optional filtering.
@@ -43,6 +52,18 @@ export class DegreesResolver {
     @Args('id', { type: () => ID, description: 'Degree ID' }) id: string,
   ): Promise<Degree | null> {
     return this.degreesService.findUnique(id);
+  }
+
+  @Mutation(() => Degree)
+  updateDegree(
+    @Args('updateDegreeInput') updateDegreeInput: UpdateDegreeInput,
+  ) {
+    return this.degreesService.update(updateDegreeInput.id, updateDegreeInput);
+  }
+
+  @Mutation(() => Degree)
+  removeDegree(@Args('id', { type: () => ID }) id: string) {
+    return this.degreesService.delete(id);
   }
 
   /**

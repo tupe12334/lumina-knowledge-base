@@ -11,6 +11,7 @@ import { CreateModuleRelationshipInput } from './dto/create-module-relationship.
 import { DeleteModuleRelationshipInput } from './dto/delete-module-relationship.input';
 import { ModuleRelationshipResult } from './dto/module-relationship-result.type';
 import { CreateModuleInput } from './dto/create-module.input';
+import { UpdateModuleInput } from './dto/update-module.input';
 
 @Injectable()
 export class ModulesService {
@@ -214,6 +215,17 @@ export class ModulesService {
     });
 
     return module as ModuleEntity;
+  }
+
+  async update(id: string, updateModuleInput: UpdateModuleInput) {
+    return this.prisma.module.update({
+      where: { id },
+      data: updateModuleInput,
+    });
+  }
+
+  async delete(id: string) {
+    return this.prisma.module.delete({ where: { id } });
   }
 
   /**
