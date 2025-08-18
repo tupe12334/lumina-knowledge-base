@@ -39,7 +39,7 @@ describe('TranslationsResolver', () => {
         id: 'some-uuid',
         ...createTranslationInput,
       };
-  vi.spyOn(service, 'create').mockResolvedValue(expectedTranslation as any);
+      vi.spyOn(service, 'create').mockResolvedValue(expectedTranslation as any);
 
       await expect(
         resolver.createTranslation(createTranslationInput),
@@ -54,7 +54,9 @@ describe('TranslationsResolver', () => {
         { id: 'uuid1', en_text: 'Hello', he_text: 'שלום' },
         { id: 'uuid2', en_text: 'World', he_text: 'עולם' },
       ];
-  vi.spyOn(service, 'findAll').mockResolvedValue(expectedTranslations as any);
+      vi.spyOn(service, 'findAll').mockResolvedValue(
+        expectedTranslations as any,
+      );
 
       await expect(resolver.findAll()).resolves.toEqual(expectedTranslations);
       expect(service.findAll).toHaveBeenCalled();
@@ -65,7 +67,9 @@ describe('TranslationsResolver', () => {
     it('should return a single translation', async () => {
       const id = 'some-uuid';
       const expectedTranslation = { id, en_text: 'Hello', he_text: 'שלום' };
-  vi.spyOn(service, 'findOne').mockResolvedValue(expectedTranslation as any);
+      vi.spyOn(service, 'findOne').mockResolvedValue(
+        expectedTranslation as any,
+      );
 
       await expect(resolver.findOne(id)).resolves.toEqual(expectedTranslation);
       expect(service.findOne).toHaveBeenCalledWith(id);
@@ -73,7 +77,7 @@ describe('TranslationsResolver', () => {
 
     it('should return null if translation not found', async () => {
       const id = 'non-existent-uuid';
-  vi.spyOn(service, 'findOne').mockResolvedValue(null);
+      vi.spyOn(service, 'findOne').mockResolvedValue(null);
 
       await expect(resolver.findOne(id)).resolves.toBeNull();
       expect(service.findOne).toHaveBeenCalledWith(id);
@@ -91,7 +95,7 @@ describe('TranslationsResolver', () => {
         en_text: 'Hi there',
         he_text: 'שלום',
       };
-  vi.spyOn(service, 'update').mockResolvedValue(expectedTranslation as any);
+      vi.spyOn(service, 'update').mockResolvedValue(expectedTranslation as any);
 
       await expect(
         resolver.updateTranslation(updateTranslationInput),
@@ -107,7 +111,7 @@ describe('TranslationsResolver', () => {
     it('should remove a translation', async () => {
       const id = 'some-uuid';
       const expectedTranslation = { id, en_text: 'Hello', he_text: 'שלום' };
-  vi.spyOn(service, 'remove').mockResolvedValue(expectedTranslation as any);
+      vi.spyOn(service, 'remove').mockResolvedValue(expectedTranslation as any);
 
       await expect(resolver.removeTranslation(id)).resolves.toEqual(
         expectedTranslation,

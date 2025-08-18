@@ -36,7 +36,7 @@ describe('Mutations E2E (Enabled)', () => {
         testMutation(input: $input)
       }
     `;
-  // Ensure we get a fresh module instance that picks up our mock
+    // Ensure we get a fresh module instance that picks up our mock
     class AllowAllGuard implements CanActivate {
       canActivate(context: ExecutionContext): boolean {
         // Still allow queries and mutations

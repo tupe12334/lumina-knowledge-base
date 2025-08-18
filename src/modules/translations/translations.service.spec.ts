@@ -89,7 +89,7 @@ describe('TranslationsService', () => {
   describe('update', () => {
     it('should update a translation', async () => {
       const id = 'some-uuid';
-  const updateTranslationInput = { id: 'some-uuid', en_text: 'Hi there' };
+      const updateTranslationInput = { id: 'some-uuid', en_text: 'Hi there' };
       const expectedTranslation = { id, en_text: 'Hi there', he_text: 'שלום' };
       vi.spyOn(prisma.translation, 'update').mockResolvedValue(
         expectedTranslation,
@@ -98,7 +98,7 @@ describe('TranslationsService', () => {
       await expect(service.update(id, updateTranslationInput)).resolves.toEqual(
         expectedTranslation,
       );
-  expect((prisma as any).translation.update).toHaveBeenCalledWith({
+      expect((prisma as any).translation.update).toHaveBeenCalledWith({
         where: { id },
         data: updateTranslationInput,
       });
@@ -114,7 +114,9 @@ describe('TranslationsService', () => {
       );
 
       await expect(service.remove(id)).resolves.toEqual(expectedTranslation);
-  expect((prisma as any).translation.delete).toHaveBeenCalledWith({ where: { id } });
+      expect((prisma as any).translation.delete).toHaveBeenCalledWith({
+        where: { id },
+      });
     });
   });
 });
