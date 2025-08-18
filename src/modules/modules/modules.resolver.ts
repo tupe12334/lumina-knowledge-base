@@ -1,4 +1,12 @@
-import { Resolver, Query, Args, ID, Mutation } from '@nestjs/graphql';
+import {
+  Resolver,
+  Query,
+  Args,
+  ID,
+  Mutation,
+  ResolveField,
+  Parent,
+} from '@nestjs/graphql';
 import { ModulesService } from './modules.service';
 import { Module } from './models/Module.entity';
 import { ModulesQueryInput } from './dto/modules-query.input';
@@ -7,6 +15,9 @@ import { DeleteModuleRelationshipInput } from './dto/delete-module-relationship.
 import { ModuleRelationshipResult } from './dto/module-relationship-result.type';
 import { CreateModuleInput } from './dto/create-module.input';
 import { UpdateModuleInput } from './dto/update-module.input';
+import { QuestionsService } from '../questions/questions.service';
+import { Question } from '../questions/models/Question.entity';
+import { QuestionsQueryDto } from '../questions/dto/question-query.dto';
 
 /**
  * GraphQL resolver for module-related operations.
@@ -14,7 +25,10 @@ import { UpdateModuleInput } from './dto/update-module.input';
  */
 @Resolver(() => Module)
 export class ModulesResolver {
-  constructor(private readonly modulesService: ModulesService) {}
+  constructor(
+    private readonly modulesService: ModulesService,
+    private readonly questionsService: QuestionsService,
+  ) {}
 
   /**
    * Retrieves all modules from the system with optional filtering.
@@ -103,5 +117,35 @@ export class ModulesResolver {
   @Mutation(() => Module)
   removeModule(@Args('id', { type: () => ID }) id: string) {
     return this.modulesService.delete(id);
+  }
+
+  /**
+   * ResolveField to fetch questions for a specific module with optional filtering.
+   * This does not add a new endpoint; it augments the Module type with a questions field.
+   */
+  @ResolveField(() => [Question], {
+    name: 'questions',
+    description:
+      'Questions associated with this module (supports same filters as questions query)',
+  })
+  async questions(
+    @Parent() module: Module,
+    @Args('input', { type: () => QuestionsQueryDto, nullable: true })
+    input?: QuestionsQueryDto,
+  ): Promise<Question[]> {
+    // Discard any external moduleIds to enforce this field is scoped to the current module
+    const rest = ((args: QuestionsQueryDto | undefined): QuestionsQueryDto => {
+      if (!args) return {} as QuestionsQueryDto;
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const { moduleIds, ...other } = args as QuestionsQueryDto & {
+        moduleIds?: string[];
+      };
+      return other as QuestionsQueryDto;
+    })(input);
+    const effectiveInput: QuestionsQueryDto = {
+      ...rest,
+      moduleId: module.id,
+    };
+    return this.questionsService.findAll(effectiveInput);
   }
 }

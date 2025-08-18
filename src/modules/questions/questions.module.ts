@@ -6,5 +6,6 @@ import { QuestionsResolver } from './questions.resolver';
 @Module({
   imports: [PrismaModule],
   providers: [QuestionsService, QuestionsResolver],
+  exports: [QuestionsService],
 })
 export class QuestionsModule {}

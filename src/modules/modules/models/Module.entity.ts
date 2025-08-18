@@ -2,6 +2,7 @@ import { ObjectType, Field, ID } from '@nestjs/graphql';
 import { Type } from 'class-transformer';
 import { Translation } from '../../translations/models/Translation.entity';
 import { Block } from 'src/modules/blocks/models/Block.entity';
+import { Question } from '../../questions/models/Question.entity';
 
 @ObjectType()
 export class Module {
@@ -22,4 +23,7 @@ export class Module {
 
   @Field(() => Block, { nullable: true })
   Block?: Block;
+
+  @Field(() => [Question], { nullable: true })
+  questions?: Question[];
 }

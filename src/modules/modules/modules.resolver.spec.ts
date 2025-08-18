@@ -1,6 +1,10 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { ModulesResolver } from './modules.resolver';
 import { ModulesService } from './modules.service';
+import { QuestionsService } from '../questions/questions.service';
+import { Question } from '../questions/models/Question.entity';
+import type { Module as ModuleType } from './models/Module.entity';
+import { QuestionsQueryDto } from '../questions/dto/question-query.dto';
 
 describe('ModulesResolver', () => {
   let resolver: ModulesResolver;
@@ -10,10 +14,14 @@ describe('ModulesResolver', () => {
     createModuleRelationship: vi.fn(),
     deleteModuleRelationship: vi.fn(),
   };
+  const mockQuestionsService = {
+    findAll: vi.fn(),
+  } as unknown as QuestionsService;
 
   beforeEach(() => {
     resolver = new ModulesResolver(
       mockModulesService as unknown as ModulesService,
+      mockQuestionsService,
     );
   });
 
@@ -86,6 +94,25 @@ describe('ModulesResolver', () => {
       expect(mockModulesService.deleteModuleRelationship).toHaveBeenCalledWith(
         mockInput,
       );
+    });
+  });
+
+  describe('resolve fields', () => {
+    it('should resolve questions for a module with input passthrough', async () => {
+      const moduleArg: Pick<ModuleType, 'id'> = { id: 'module-1' };
+      const input = {} as QuestionsQueryDto;
+      const expected: Question[] = [];
+      const findAll = vi.fn().mockResolvedValue(expected);
+      (mockQuestionsService as unknown as { findAll: typeof findAll }).findAll =
+        findAll;
+
+      const result = await resolver.questions(moduleArg as ModuleType, input);
+
+      expect(findAll).toHaveBeenCalledWith({
+        ...input,
+        moduleId: moduleArg.id,
+      });
+      expect(result).toBe(expected);
     });
   });
 });
