@@ -1,14 +1,14 @@
-import { Test, TestingModule } from '@nestjs/testing';
+import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { TranslationsService } from './translations.service';
 import { PrismaService } from '../../prisma/prisma.service';
 
 describe('TranslationsService', () => {
   let service: TranslationsService;
-  let prisma: PrismaService; // This will hold the mocked PrismaService
+  let prisma: PrismaService; // mocked PrismaService
 
-  beforeEach(async () => {
-    // Create a mock for PrismaService
-    const prismaMock = {
+  beforeEach(() => {
+    // Mock PrismaService API used by TranslationsService
+    prisma = {
       translation: {
         create: vi.fn(),
         findMany: vi.fn(),
@@ -16,20 +16,10 @@ describe('TranslationsService', () => {
         update: vi.fn(),
         delete: vi.fn(),
       },
-    };
+    } as unknown as PrismaService;
 
-    const module: TestingModule = await Test.createTestingModule({
-      providers: [
-        TranslationsService,
-        {
-          provide: PrismaService,
-          useValue: prismaMock, // Provide the mock here
-        },
-      ],
-    }).compile();
-
-    service = module.get<TranslationsService>(TranslationsService);
-    prisma = module.get<PrismaService>(PrismaService); // Get the mocked PrismaService
+    // Instantiate service directly with mocked prisma
+    service = new TranslationsService(prisma);
   });
 
   it('should be defined', () => {
@@ -99,7 +89,7 @@ describe('TranslationsService', () => {
   describe('update', () => {
     it('should update a translation', async () => {
       const id = 'some-uuid';
-      const updateTranslationInput = { en_text: 'Hi there' };
+  const updateTranslationInput = { id: 'some-uuid', en_text: 'Hi there' };
       const expectedTranslation = { id, en_text: 'Hi there', he_text: 'שלום' };
       vi.spyOn(prisma.translation, 'update').mockResolvedValue(
         expectedTranslation,
@@ -108,7 +98,7 @@ describe('TranslationsService', () => {
       await expect(service.update(id, updateTranslationInput)).resolves.toEqual(
         expectedTranslation,
       );
-      expect(prisma.translation.update).toHaveBeenCalledWith({
+  expect((prisma as any).translation.update).toHaveBeenCalledWith({
         where: { id },
         data: updateTranslationInput,
       });
@@ -124,7 +114,7 @@ describe('TranslationsService', () => {
       );
 
       await expect(service.remove(id)).resolves.toEqual(expectedTranslation);
-      expect(prisma.translation.delete).toHaveBeenCalledWith({ where: { id } });
+  expect((prisma as any).translation.delete).toHaveBeenCalledWith({ where: { id } });
     });
   });
 });

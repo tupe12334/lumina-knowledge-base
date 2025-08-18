@@ -5,6 +5,11 @@ export default defineConfig({
   test: {
     environment: 'node',
     globals: true,
+  setupFiles: [resolve(__dirname, 'vitest.setup.ts')],
+    sequence: {
+      // Run test files sequentially to avoid global mutable state races (e.g., env toggling)
+      concurrent: false,
+    },
     include: ['src/**/*.spec.ts', 'test/**/*.e2e-spec.ts'],
     coverage: {
       provider: 'v8',
