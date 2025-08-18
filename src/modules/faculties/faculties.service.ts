@@ -19,13 +19,19 @@ export class FacultiesService {
         name: {
           create: {
             en_text: name,
+            he_text: name,
           },
         },
         description: {
           create: {
             en_text: description,
+            he_text: description,
           },
         },
+      },
+      include: {
+        name: true,
+        description: true,
       },
     });
   }
@@ -62,9 +68,24 @@ export class FacultiesService {
   }
 
   async update(id: string, updateFacultyInput: UpdateFacultyInput) {
+    const { name, description, universityId } = updateFacultyInput;
     return this.prisma.faculty.update({
       where: { id },
-      data: updateFacultyInput,
+      data: {
+        ...(universityId ? { university: { connect: { id: universityId } } } : {}),
+        ...(name ? { name: { update: { en_text: name, he_text: name } } } : {}),
+        ...(description
+          ? {
+              description: {
+                update: { en_text: description, he_text: description },
+              },
+            }
+          : {}),
+      },
+      include: {
+        name: true,
+        description: true,
+      },
     });
   }
 
