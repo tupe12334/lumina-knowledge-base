@@ -259,6 +259,7 @@ type Module {
   id: ID!
   name: Translation!
   parentModules: [Module!]
+  questions(input: QuestionsQueryDto): [Question!]
   subModules: [Module!]
 }
 
