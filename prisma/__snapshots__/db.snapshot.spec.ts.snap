@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
+exports[`DB snapshot > data > matches snapshot 1`] = `
 {
   "answer": [
     {
@@ -30,14 +30,6 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
     {
       "id": "03d23b7a-9bdb-4729-bed8-9ea4290b4442",
       "questionId": "6be2c824-0394-4e7b-a885-e9f101bc9429",
-    },
-    {
-      "id": "042d79cb-dd8d-49b4-8149-6f2bbc0decce",
-      "questionId": "c66df6bb-f651-4d90-9262-521d952b4d80",
-    },
-    {
-      "id": "04f341f3-de9a-46d1-9c5f-7f2d66f0dc6b",
-      "questionId": "209ebf99-ee8f-47cd-bf08-c98a252ea9bb",
     },
     {
       "id": "054136a5-012e-42ea-8da0-dab1f491c814",
@@ -200,10 +192,6 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "questionId": "ad86be35-9e48-4ef7-9ab8-79ad1aff4578",
     },
     {
-      "id": "29ece213-9e2e-4dc1-a78b-b52959e63ca1",
-      "questionId": "1c5b70f1-c7ef-4669-9cdc-97138ecba701",
-    },
-    {
       "id": "2aa963e9-86af-4d97-af56-8aed42ff9f63",
       "questionId": "c93d3b6a-febd-425a-9dbc-949f3822ceb6",
     },
@@ -246,10 +234,6 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
     {
       "id": "394f3b35-a28f-4f15-80e2-0e1e82bf2159",
       "questionId": "b727573b-e1b5-4382-989d-bcc450db06cf",
-    },
-    {
-      "id": "39aa6731-c5df-4b4e-ab6a-2fb4a047f24f",
-      "questionId": "059f0be9-0812-4ae8-8ae9-5789b1a45227",
     },
     {
       "id": "3C95C523-997F-4BC3-A9A4-684E26ED4971",
@@ -480,10 +464,6 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "questionId": "87a25c59-a7cc-4e3e-9204-89c80c0bf4d6",
     },
     {
-      "id": "6cab652c-5754-43f8-a552-8a137d76e50f",
-      "questionId": "f9e86b69-1eb2-4f55-b8d4-7fb7c69ebd45",
-    },
-    {
       "id": "6ccf46c4-361c-4c8b-b8b4-52905614831a",
       "questionId": "053fef57-b721-4fc0-a182-661e79593209",
     },
@@ -644,10 +624,6 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "questionId": "4e5c702f-1653-4273-9e0b-6d0d0f371123",
     },
     {
-      "id": "99bf073a-6207-456d-bc9f-4a23a37f03f3",
-      "questionId": "ad3b3737-f005-421a-a007-bd113aa559bb",
-    },
-    {
       "id": "9C030140-9A43-46ED-9B57-9E7A17ABEB41-answer",
       "questionId": "9C030140-9A43-46ED-9B57-9E7A17ABEB41",
     },
@@ -662,10 +638,6 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
     {
       "id": "9b0d2897-23a1-414a-8350-dd0ab1d1785b",
       "questionId": "bec99b5f-f52c-4209-99c3-66d6165a9e7a",
-    },
-    {
-      "id": "9b3314a4-6a72-48b9-b9a6-af26f6e1659d",
-      "questionId": "94282b4f-cb55-4199-ab72-c6ca765e601d",
     },
     {
       "id": "9be9e6ba-c7d5-4a16-a582-c4f895550e53",
@@ -924,24 +896,12 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "questionId": "e9c7cc22-e039-406a-bde5-de4d1d9809de",
     },
     {
-      "id": "cb017d46-0391-4fd3-84af-5a6a65936098",
-      "questionId": "4a7a367e-3cfa-43a3-a851-94ba3116228e",
-    },
-    {
       "id": "cb1b2809-91cf-44d5-9725-c8a8cb42f98e",
       "questionId": "124add0f-b5ef-41ad-8939-32c8c373ac9e",
     },
     {
-      "id": "cbb0a466-8561-47f4-a045-3da90c50ff3e",
-      "questionId": "8ea1c704-ecae-4555-b5ed-a8e9fc6e99e5",
-    },
-    {
       "id": "cc91281f-899e-41f0-97f2-8872aff55d19",
       "questionId": "57527199-a218-437d-878a-256cc6f3cb29",
-    },
-    {
-      "id": "cdc6ebaf-cc52-46a7-a029-4f15c7ba28b6",
-      "questionId": "4a530557-7254-4fbd-96b7-770071376510",
     },
     {
       "id": "ce096208-793b-42bc-95a7-e1cd7a594264",
@@ -1218,6 +1178,9 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "id": "08859f70-6ad9-4163-a601-9b67e88ce43d",
     },
     {
+      "id": "0a8e346c-5eaf-4852-86d0-5f637c3665d3",
+    },
+    {
       "id": "0af28bdb-67a9-4c7e-8e10-990002576b3a",
     },
     {
@@ -1239,6 +1202,9 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "id": "136e9363-7853-45b0-84e5-fee8012894b9",
     },
     {
+      "id": "1566bfc7-b551-4718-a30d-3d3f1e958d7c",
+    },
+    {
       "id": "19a75237-5577-45a6-aedc-60a2995eb88a",
     },
     {
@@ -1254,6 +1220,9 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "id": "1d2e3f4a-5b6c-4d7e-8f9a-0b1c2d3e4f5a",
     },
     {
+      "id": "1d73364e-d892-4cd8-b7b3-6edca726b394",
+    },
+    {
       "id": "1e2f3a4b-5c6d-4e8f-a9ab-1c2d3e4f5a6b",
     },
     {
@@ -1261,6 +1230,9 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
     },
     {
       "id": "213c1ac3-1a7b-4b1e-8a95-4ba5433ffac7",
+    },
+    {
+      "id": "231c0ba2-51ff-4e00-bd56-2798af134ad0",
     },
     {
       "id": "240c2395-db81-48fb-9f3a-e39081da6b9f",
@@ -1314,10 +1286,16 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "id": "34882399-4d6c-4812-a01f-f1e6aaca802f",
     },
     {
+      "id": "35b60523-73e0-46ef-b7a3-d71d1a77a9e1",
+    },
+    {
       "id": "37d15e78-fcf2-49a0-bbde-b4dbffd904a7",
     },
     {
       "id": "3a4b5c6d-7e8f-409b-a1cd-3e4f5a6b7c8d",
+    },
+    {
+      "id": "3a53db65-d6a9-4453-b0ee-dfd2bfe8348d",
     },
     {
       "id": "3a8c4066-52cc-4ed9-94ae-206a853e614d",
@@ -1347,6 +1325,9 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "id": "44515992-97B8-4248-8048-F1E392653D90",
     },
     {
+      "id": "44a2670c-c5c6-4a47-8230-5ec0a33f4848",
+    },
+    {
       "id": "4812c1ad-4c64-4df0-af58-55abf897861f",
     },
     {
@@ -1372,6 +1353,9 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
     },
     {
       "id": "50db41ff-0606-40b9-8df4-89878c424024",
+    },
+    {
+      "id": "5337a956-4209-4b3c-92bb-a9ca88c53e39",
     },
     {
       "id": "53a9b98b-c124-4a2b-9eca-90d4ea56208a",
@@ -1488,6 +1472,9 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "id": "83fa81db-f677-4024-9151-ce8d39feb2c9",
     },
     {
+      "id": "840E951F-0BD1-4B4C-BA15-53CDA007BE5A",
+    },
+    {
       "id": "869a58bd-7484-432d-978d-6a77a4af0821",
     },
     {
@@ -1504,6 +1491,12 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
     },
     {
       "id": "8b9c0d1e-2f3a-4b5c-86de-8f9a0b1c2d3e",
+    },
+    {
+      "id": "8bf65e84-8175-4862-b3f2-b2e0aa9723f5",
+    },
+    {
+      "id": "8d6b5006-580d-4c98-a6b9-aa0d367052fc",
     },
     {
       "id": "8deece25-acb3-4e79-869a-db098d479ec9",
@@ -1554,6 +1547,9 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "id": "9c8e5d2a-4b7f-4c8d-9e0a-1b2c3d4e5f6a",
     },
     {
+      "id": "9cd7e0d3-7128-4ab5-8606-cf4431a031d0",
+    },
+    {
       "id": "9ec308be-4c73-4414-b6ac-fb147cca6f5e",
     },
     {
@@ -1594,9 +1590,6 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
     },
     {
       "id": "a2093775-11c1-40e2-9c10-3cdaaeaf6559",
-    },
-    {
-      "id": "a2f66714-72c3-4506-ab08-4da8b74809cf",
     },
     {
       "id": "a4bcc89e-7c87-425f-8f5b-7a05fab2cd40",
@@ -1647,6 +1640,9 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "id": "bd8947e7-bd42-4ea0-976b-639ec22fe2ea",
     },
     {
+      "id": "bd9dd545-5b25-4245-a4a9-2aa7f56d692e",
+    },
+    {
       "id": "bdcc18bf-e894-4e7c-afc9-02f155a0596b",
     },
     {
@@ -1683,10 +1679,19 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "id": "c80139f4-bcbb-4971-a43f-1132ae1c7e13",
     },
     {
+      "id": "ca1e0bfd-2967-4bac-b840-acd08862aca7",
+    },
+    {
       "id": "cc67261f-c80e-44cb-98fe-2e3d824b15e0",
     },
     {
       "id": "cd51ecf0-6899-4cae-aec8-1e28c293fee9",
+    },
+    {
+      "id": "cf6f37bc-9f76-4cde-8b1a-5c980e523bde",
+    },
+    {
+      "id": "d101185e-8ae1-4ec7-8a9d-3aedcceb74ec",
     },
     {
       "id": "d49b124c-df8c-403d-8460-8f7ee813784f",
@@ -1698,16 +1703,28 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "id": "d8b8235e-431d-404f-9057-8249a2902be0",
     },
     {
+      "id": "da9c91de-f9ea-4cd0-99c6-46a83bcd6392",
+    },
+    {
       "id": "dc260f47-d88a-4e7e-b96e-a0d88779f784",
     },
     {
       "id": "e049739c-86a4-4f8e-a423-e39e8f38d2ca",
     },
     {
+      "id": "e065f545-090a-44ae-b24a-7efbb347f759",
+    },
+    {
       "id": "e1367766-2b1a-42f9-a725-58d092bbc080",
     },
     {
+      "id": "e46b4448-3b6b-4a8f-908a-9015b0fd7570",
+    },
+    {
       "id": "e4700e5d-bcba-4f6f-8564-f36c97953a8b",
+    },
+    {
+      "id": "e4971e65-96d4-4710-b45b-788a7764b563",
     },
     {
       "id": "e4a74368-8567-4f01-9907-d51434ffcbfd",
@@ -1716,13 +1733,16 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "id": "e4e3361c-9c9f-4d12-a9d6-8de53f794295",
     },
     {
+      "id": "e583ab26-2829-44b9-be2b-35ed6706e7d8",
+    },
+    {
       "id": "e719ae79-9e51-4a3b-a420-967892bf3a81",
     },
     {
-      "id": "e82b0404-286d-42ee-89a9-e54776575d9f",
+      "id": "ec8270ca-1f32-4928-a2c6-2f998f6061b6",
     },
     {
-      "id": "ec8270ca-1f32-4928-a2c6-2f998f6061b6",
+      "id": "ece7e8b0-33a7-48ec-b9cc-5869597b0876",
     },
     {
       "id": "f0cdf659-f0ce-49ec-a736-fe0f6b206fb1",
@@ -1749,6 +1769,9 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "id": "fae56388-e1d2-4f5e-a537-8ff28803871f",
     },
     {
+      "id": "faff5d86-8866-4147-8b34-d8a774f12bb1",
+    },
+    {
       "id": "fb797046-22db-45bc-8663-75421e1fdf84",
     },
     {
@@ -1758,10 +1781,16 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "id": "fc0c176d-4992-4a99-8070-d30a948c845c",
     },
     {
+      "id": "fc27b5ed-9675-4f14-baf1-525df8963185",
+    },
+    {
       "id": "fce22107-4e8d-435c-9534-da7c38340441",
     },
     {
       "id": "fd581c68-40d3-493b-8220-202e51946d5f",
+    },
+    {
+      "id": "fef9c425-d3de-4e92-8456-0a2234dca31e",
     },
   ],
   "blockRelationship": [
@@ -1826,11 +1855,6 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "prerequisiteId": "907bd1ae-626e-41d5-8048-ab0be776a402",
     },
     {
-      "id": "1906e8cc-503f-412c-a358-71306bf8ff2f",
-      "postrequisiteId": "a2f66714-72c3-4506-ab08-4da8b74809cf",
-      "prerequisiteId": "7b4f3a21-89d5-4c3e-a8f7-1e3d2c9b8a5f",
-    },
-    {
       "id": "1a2b3c4d-5e6f-4a7b-8c9d-0e1f2a3b4c5d",
       "postrequisiteId": "d8b8235e-431d-404f-9057-8249a2902be0",
       "prerequisiteId": "a6b8af63-5f91-4381-8a43-12f67d9ec34d",
@@ -1869,6 +1893,11 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "id": "3fe4654b-b847-4836-9c84-850a804f9fdb",
       "postrequisiteId": "993a6a59-7fc7-4d96-ada6-5858d742496a",
       "prerequisiteId": "93063920-88DB-41DB-AFDD-1FDE26CA5686",
+    },
+    {
+      "id": "3fef44d5-ec15-42d3-ac12-abe70b4f6865",
+      "postrequisiteId": "EDE16E3C-66B1-4240-86B0-67B2A8B92973",
+      "prerequisiteId": "c331fa88-e9f3-4341-9b8a-4fe05b428f1f",
     },
     {
       "id": "41945a2c-825c-4895-8665-429144fd58ac",
@@ -2021,11 +2050,6 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "prerequisiteId": "19cfbc30-475c-4733-a5de-1064fa7f2ee7",
     },
     {
-      "id": "9959f18b-ffd8-4940-858b-da4aa984e5fb",
-      "postrequisiteId": "e82b0404-286d-42ee-89a9-e54776575d9f",
-      "prerequisiteId": "4a360125-e963-4c2b-88a8-d86aee59d8bc",
-    },
-    {
       "id": "9b81c7e2-4f6a-4d8b-b123-4c5d6e7f8a90",
       "postrequisiteId": "c6dd59ac-1802-4bc9-b91e-ca77bb32620e",
       "prerequisiteId": "81BE3915-2C63-470E-85FE-55C1062DEFF3",
@@ -2109,6 +2133,11 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "id": "F1A3C5E7-9B2D-4F6A-8C10-1234567890AB",
       "postrequisiteId": "9FE9749F-0326-4D7D-B88A-C24251477C7C",
       "prerequisiteId": "993a6a59-7fc7-4d96-ada6-5858d742496a",
+    },
+    {
+      "id": "FC6F09BB-DDEF-4D6C-A379-02E192678066",
+      "postrequisiteId": "840E951F-0BD1-4B4C-BA15-53CDA007BE5A",
+      "prerequisiteId": "EDE16E3C-66B1-4240-86B0-67B2A8B92973",
     },
     {
       "id": "FD61E7E7-3FEF-4307-8AFD-E57CF861D0CB",
@@ -2266,9 +2295,9 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "prerequisiteId": "5f6c93a2-02aa-4b7a-8637-9406a5a5386f",
     },
     {
-      "id": "eced1d98-9bab-44af-84a4-cf788d704f6d",
-      "postrequisiteId": "ac9e3b41-b2f5-4b77-8c76-1ef2293ea1f1",
-      "prerequisiteId": "a2f66714-72c3-4506-ab08-4da8b74809cf",
+      "id": "e31c2da6-612a-4a71-b928-17a44a926506",
+      "postrequisiteId": "9c26aa0e-9b49-405e-b1c4-090ce2d16d29",
+      "prerequisiteId": "c331fa88-e9f3-4341-9b8a-4fe05b428f1f",
     },
     {
       "id": "f1a2b3c4-d5e6-4789-a012-bcdef4567890",
@@ -2587,13 +2616,6 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "id": "65F040D4-B3B3-4534-9D3C-B1E328887AD6",
       "publishedAt": null,
       "translationId": "08DE7ADA-D64A-4A80-B404-ED9FDB890780",
-      "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
-    },
-    {
-      "blockId": "a2f66714-72c3-4506-ab08-4da8b74809cf",
-      "id": "66841064-a880-4ca5-9ef4-09e66e4f0f4b",
-      "publishedAt": null,
-      "translationId": "43f262a6-2545-43fb-8a5d-90d69072fddf",
       "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
     },
     {
@@ -3043,7 +3065,7 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
     },
     {
-      "facultyId": null,
+      "facultyId": "7e3f2c1b-9a8d-4f6e-8c5b-2d3e4f5a6b7c",
       "id": "c7a1e2b2-8e2d-4c1a-9e2a-1a2b3c4d5e6f",
       "translationId": "63e95b0b-85de-4c54-b6af-face80091bb4",
       "universityId": "92e73fb7-96de-45e4-aff3-4ca7b89be16c",
@@ -3093,7 +3115,6 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "universityId": "3856bd36-8082-4821-8b1d-9ce806403ab2",
     },
   ],
-  "learningResource": [],
   "module": [
     {
       "blockId": "0030cff5-5c9c-48db-ba6c-1c8fe12b9f7b",
@@ -3104,6 +3125,11 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "blockId": "016ddc51-9b0a-43d0-9ac5-8fe54d171b29",
       "id": "016ddc51-9b0a-43d0-9ac5-8fe54d171b29",
       "translationId": "fe2ca514-efb5-416e-ae84-ea6f8abfbbc3",
+    },
+    {
+      "blockId": "5337a956-4209-4b3c-92bb-a9ca88c53e39",
+      "id": "0333813d-15e3-4a89-aa14-aa646f68c461",
+      "translationId": "a5bccc18-0f65-4717-9f99-5ae0ebd50d83",
     },
     {
       "blockId": "04479133-a106-4341-82cd-c19240a87ed9",
@@ -3121,14 +3147,34 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "translationId": "fe759279-2e38-4cc2-ba66-fedb147c6e3d",
     },
     {
+      "blockId": "1566bfc7-b551-4718-a30d-3d3f1e958d7c",
+      "id": "1ab30bee-9804-4598-858d-ab647658f2d2",
+      "translationId": "11ad7d66-ee69-4479-97b1-9c83b1f75342",
+    },
+    {
+      "blockId": "e065f545-090a-44ae-b24a-7efbb347f759",
+      "id": "1b3bca4d-26e6-49e1-8f04-1d12b546d15c",
+      "translationId": "1cd319a2-5a8d-4256-b557-7e6affcff742",
+    },
+    {
       "blockId": "1d2e3f4a-5b6c-4d7e-8f9a-0b1c2d3e4f5a",
       "id": "1d2e3f4a-5b6c-4d7e-8f9a-0b1c2d3e4f5a",
       "translationId": "4b6c8d1e-3f5a-4d7b-af8c-5e9f1a2b3c4d",
     },
     {
+      "blockId": "e46b4448-3b6b-4a8f-908a-9015b0fd7570",
+      "id": "1e16bb62-2403-4512-a50d-0a2710f4a7ba",
+      "translationId": "d0a6d4b4-d0ed-4c72-bf90-8254711d7282",
+    },
+    {
       "blockId": "1e2f3a4b-5c6d-4e8f-a9ab-1c2d3e4f5a6b",
       "id": "1e2f3a4b-5c6d-4e8f-a9ab-1c2d3e4f5a6b",
       "translationId": "5e6f7a8b-9c0d-4e1f-a2ab-4c5d6e7f8a9b",
+    },
+    {
+      "blockId": "faff5d86-8866-4147-8b34-d8a774f12bb1",
+      "id": "21552ced-4d04-46b8-96e9-6d8977d87f54",
+      "translationId": "793b0e27-6145-4647-b508-eb766d192bb8",
     },
     {
       "blockId": "240c2395-db81-48fb-9f3a-e39081da6b9f",
@@ -3161,6 +3207,16 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "translationId": "31b7ef41-3b67-4181-ba4d-c6170399a6d9",
     },
     {
+      "blockId": "fef9c425-d3de-4e92-8456-0a2234dca31e",
+      "id": "3987a98b-fcd0-4ddd-8a6f-0df30c2fa567",
+      "translationId": "2c3bf417-85b6-4a73-97a3-b5d2ec324f90",
+    },
+    {
+      "blockId": "fc27b5ed-9675-4f14-baf1-525df8963185",
+      "id": "398943c0-271a-41ed-bacf-d23b1874540e",
+      "translationId": "df33e047-c95b-4f05-bfdf-4a4d31afe92d",
+    },
+    {
       "blockId": "3a4b5c6d-7e8f-409b-a1cd-3e4f5a6b7c8d",
       "id": "3a4b5c6d-7e8f-409b-a1cd-3e4f5a6b7c8d",
       "translationId": "7a8b9c0d-1e2f-403b-a4cd-6e7f8a9b0c1d",
@@ -3176,9 +3232,24 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "translationId": "730785ee-5d3a-4160-93bd-24aad42be048",
     },
     {
+      "blockId": "44a2670c-c5c6-4a47-8230-5ec0a33f4848",
+      "id": "3f71c0d1-524f-44e3-b641-d8b1c045957c",
+      "translationId": "5a23f591-0af9-49d8-a7db-563a624c1261",
+    },
+    {
       "blockId": "435bd8ba-3c4c-474d-9d04-3d55cbab9d6f",
       "id": "435bd8ba-3c4c-474d-9d04-3d55cbab9d6f",
       "translationId": "d6a6d4dc-56c9-479d-8477-0b49dd5d19d7",
+    },
+    {
+      "blockId": "ca1e0bfd-2967-4bac-b840-acd08862aca7",
+      "id": "46250c3f-5ac6-411b-8fc1-0ac43ae111db",
+      "translationId": "64a2357a-0029-4767-b154-1f82de96fbe1",
+    },
+    {
+      "blockId": "e583ab26-2829-44b9-be2b-35ed6706e7d8",
+      "id": "47350365-912a-4e50-b29a-e6eac667d530",
+      "translationId": "52aac4c7-470f-497d-a756-16eb64fb975d",
     },
     {
       "blockId": "4a360125-e963-4c2b-88a8-d86aee59d8bc",
@@ -3281,9 +3352,19 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "translationId": "187640FA-5A52-4AC3-8EBC-1FB89091E6E8",
     },
     {
+      "blockId": "35b60523-73e0-46ef-b7a3-d71d1a77a9e1",
+      "id": "7a402552-e0d3-4fc9-ab48-3911f0a0f6da",
+      "translationId": "19c4e5aa-f7b7-4ebe-94bf-fc8de2f282da",
+    },
+    {
       "blockId": "7d8e9f01-2345-4567-890a-bcdef0123456",
       "id": "7d8e9f01-2345-4567-890a-bcdef0123456",
       "translationId": "2f9e8a7b-c123-4def-9876-543210fedcba",
+    },
+    {
+      "blockId": "1d73364e-d892-4cd8-b7b3-6edca726b394",
+      "id": "7f64c0b5-fbf7-493d-8945-3f60cd49ceed",
+      "translationId": "9700e35b-7176-4f36-944b-6e0cc4ca0050",
     },
     {
       "blockId": "7f7b0380-8d2d-45f2-9a8a-645755fadf42",
@@ -3301,6 +3382,11 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "translationId": "453489f6-61fa-4699-b275-26d6165dbc89",
     },
     {
+      "blockId": "840E951F-0BD1-4B4C-BA15-53CDA007BE5A",
+      "id": "840E951F-0BD1-4B4C-BA15-53CDA007BE5A",
+      "translationId": "F3D76731-C3DB-4937-8671-05063BE4D25A",
+    },
+    {
       "blockId": "869a58bd-7484-432d-978d-6a77a4af0821",
       "id": "869a58bd-7484-432d-978d-6a77a4af0821",
       "translationId": "88127e0b-b188-43b8-9ab4-e5a20fc801c6",
@@ -3309,6 +3395,11 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "blockId": "87a1da94-793c-4565-8706-8fd073a50cf6",
       "id": "87a1da94-793c-4565-8706-8fd073a50cf6",
       "translationId": "e289a3c2-6d14-479d-89e6-a83b56e08287",
+    },
+    {
+      "blockId": "9cd7e0d3-7128-4ab5-8606-cf4431a031d0",
+      "id": "87d8137a-731d-423c-aa49-9596a777a577",
+      "translationId": "53027035-4b33-4f6c-8bbe-98153be21a95",
     },
     {
       "blockId": "888d9b93-facd-47f4-9f6b-51056e6445bf",
@@ -3326,6 +3417,11 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "translationId": "09d74ad2-a8eb-4120-90df-81190243d3cf",
     },
     {
+      "blockId": "d101185e-8ae1-4ec7-8a9d-3aedcceb74ec",
+      "id": "955ba0ae-e5a5-4cf9-8b0c-ab3b4b23e179",
+      "translationId": "f9e56dd3-2af2-4719-82af-cc633511677d",
+    },
+    {
       "blockId": "96faa327-fae1-479a-907c-2e96ab8ee7cf",
       "id": "96faa327-fae1-479a-907c-2e96ab8ee7cf",
       "translationId": "1c66ed81-b549-40b4-9b90-567da80eaf42",
@@ -3341,6 +3437,11 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "translationId": "7a2defc6-8d92-4547-bf19-520c79cf2c7d",
     },
     {
+      "blockId": "8d6b5006-580d-4c98-a6b9-aa0d367052fc",
+      "id": "99fbfae5-1a32-4344-87b3-46de3688dfc1",
+      "translationId": "123232c7-f523-4cf2-877d-556075f0aabf",
+    },
+    {
       "blockId": "9a45204a-d855-4558-b187-bb136002a9bb",
       "id": "9a45204a-d855-4558-b187-bb136002a9bb",
       "translationId": "1bf61cb6-9d5f-4fa8-9565-27fbdf4a1a18",
@@ -3354,6 +3455,11 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "blockId": "9c8e5d2a-4b7f-4c8d-9e0a-1b2c3d4e5f6a",
       "id": "9c8e5d2a-4b7f-4c8d-9e0a-1b2c3d4e5f6a",
       "translationId": "b8a9c2d3-4e5f-4567-8901-2a3b4c5d6e7f",
+    },
+    {
+      "blockId": "da9c91de-f9ea-4cd0-99c6-46a83bcd6392",
+      "id": "a12082d9-d591-4283-be13-7462fe402c81",
+      "translationId": "b8775c13-696f-4e06-9fee-15c2aec00980",
     },
     {
       "blockId": "a1b2c3d4-5e6f-4a8b-9c0d-2e3f4a5b6c7d",
@@ -3376,6 +3482,11 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "translationId": "30c0f737-78bf-4b62-8ecd-5e7b1ea0074d",
     },
     {
+      "blockId": "231c0ba2-51ff-4e00-bd56-2798af134ad0",
+      "id": "aa7b1b5a-4cdb-4f13-aba5-69485a77d23a",
+      "translationId": "3f075b98-7e6e-4a47-b912-971d16b6d13a",
+    },
+    {
       "blockId": "af0bd650-5f32-4dad-ba38-cea69f616692",
       "id": "af0bd650-5f32-4dad-ba38-cea69f616692",
       "translationId": "21d803d9-2816-4a0b-a1b4-deafc757ca7b",
@@ -3389,6 +3500,16 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "blockId": "b68ae937-37a8-4d10-95a6-89a7017694bc",
       "id": "b68ae937-37a8-4d10-95a6-89a7017694bc",
       "translationId": "9c67cf86-b57c-4da2-b0fb-fe5a11d8bab0",
+    },
+    {
+      "blockId": "e4971e65-96d4-4710-b45b-788a7764b563",
+      "id": "b924d7ea-1463-4087-a123-5651a2b50f72",
+      "translationId": "b4927a7a-e924-49ef-aba3-9a99c8d74fad",
+    },
+    {
+      "blockId": "0a8e346c-5eaf-4852-86d0-5f637c3665d3",
+      "id": "bb4806c9-6451-4d6d-a369-d336086ae859",
+      "translationId": "e01b68d3-76e9-4da5-85ad-022ea6840151",
     },
     {
       "blockId": "bd422960-2e1e-4fb2-8acb-effd3bcb9b96",
@@ -3431,6 +3552,11 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "translationId": "5dc13d54-9817-451b-a07f-1155c8e3bc26",
     },
     {
+      "blockId": "3a53db65-d6a9-4453-b0ee-dfd2bfe8348d",
+      "id": "c5720c9e-756b-46fa-affe-277046b517a5",
+      "translationId": "e397006e-2349-421d-b20e-16ab65a22bb5",
+    },
+    {
       "blockId": "c6dd59ac-1802-4bc9-b91e-ca77bb32620e",
       "id": "c6dd59ac-1802-4bc9-b91e-ca77bb32620e",
       "translationId": "b046c3a7-4e8f-4571-a015-0a7cc33daca2",
@@ -3451,9 +3577,19 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "translationId": "4c031bcd-19fb-46d0-9f62-d7d8612c052f",
     },
     {
+      "blockId": "bd9dd545-5b25-4245-a4a9-2aa7f56d692e",
+      "id": "d883348e-4123-44b8-8510-187a9af94a21",
+      "translationId": "24b8249f-06d4-4a28-a304-dd2c2c5e629f",
+    },
+    {
       "blockId": "e1367766-2b1a-42f9-a725-58d092bbc080",
       "id": "e1367766-2b1a-42f9-a725-58d092bbc080",
       "translationId": "ee3583e5-7114-4a42-8a78-c1cb689276c9",
+    },
+    {
+      "blockId": "ece7e8b0-33a7-48ec-b9cc-5869597b0876",
+      "id": "e3125331-d2e7-472b-9af9-93bafd0aed89",
+      "translationId": "5970ab28-dffb-40f0-bbfb-a33e5791cd8e",
     },
     {
       "blockId": "e4e3361c-9c9f-4d12-a9d6-8de53f794295",
@@ -3461,14 +3597,14 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "translationId": "7a1446e4-14e7-4406-be95-3e291f8e3b6f",
     },
     {
-      "blockId": "e82b0404-286d-42ee-89a9-e54776575d9f",
-      "id": "e82b0404-286d-42ee-89a9-e54776575d9f",
-      "translationId": "b2bfed06-5f13-4c27-9611-b4cd1bbd258b",
-    },
-    {
       "blockId": "ec8270ca-1f32-4928-a2c6-2f998f6061b6",
       "id": "ec8270ca-1f32-4928-a2c6-2f998f6061b6",
       "translationId": "c3f0f380-14e4-4a4f-acc8-2e6e8174d929",
+    },
+    {
+      "blockId": "8bf65e84-8175-4862-b3f2-b2e0aa9723f5",
+      "id": "ef87706d-2121-4c0e-929a-b8031f91cfb2",
+      "translationId": "45dae09e-b512-40ed-8763-972fdade0f7f",
     },
     {
       "blockId": "f2663296-2bcc-4e50-b079-8986d078bbbf",
@@ -3484,6 +3620,11 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "blockId": "f2866b62-f4f6-4e22-8fcc-f4bd8bbdb275",
       "id": "f2866b62-f4f6-4e22-8fcc-f4bd8bbdb275",
       "translationId": "e7c5b81e-5aad-4715-ab5d-c08122c05ef1",
+    },
+    {
+      "blockId": "cf6f37bc-9f76-4cde-8b1a-5c980e523bde",
+      "id": "f8b69a8a-4d84-4e61-8dce-92f30dcdf495",
+      "translationId": "5672ee26-5ee4-49bc-9d02-1f9d6e6edc58",
     },
     {
       "blockId": "f8c9d5e1-2a3b-4c6d-8e9f-1a2b3c4d5e6f",
@@ -4446,12 +4587,6 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "validationStatus": "ai_generated",
     },
     {
-      "id": "059f0be9-0812-4ae8-8ae9-5789b1a45227",
-      "translationId": "af2d2a04-bf10-4cad-bbd1-8383ff2bd981",
-      "type": "selection",
-      "validationStatus": "ai_generated",
-    },
-    {
       "id": "06575de9-99ef-407f-ab59-8046e2467450",
       "translationId": "06575de9-99ef-407f-ab59-8046e2467450",
       "type": "value",
@@ -4578,12 +4713,6 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "validationStatus": "ai_generated",
     },
     {
-      "id": "1c5b70f1-c7ef-4669-9cdc-97138ecba701",
-      "translationId": "53ee56a0-ce58-498e-9eab-5d4b5979655b",
-      "type": "selection",
-      "validationStatus": "ai_generated",
-    },
-    {
       "id": "1d982e83-fe47-4a63-9cee-d981e4c4904d",
       "translationId": "9e6be0ca-8822-433b-9434-25faebe6ff2a",
       "type": "selection",
@@ -4605,12 +4734,6 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "id": "20771ee6-aafe-433b-b153-03b474b67aa3",
       "translationId": "190e3057-0c8f-4d44-a387-b216e8632ede",
       "type": "value",
-      "validationStatus": "ai_generated",
-    },
-    {
-      "id": "209ebf99-ee8f-47cd-bf08-c98a252ea9bb",
-      "translationId": "d8014943-6a36-4908-9aca-2923cf28452e",
-      "type": "selection",
       "validationStatus": "ai_generated",
     },
     {
@@ -4875,18 +4998,6 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "id": "4931fa06-ee0e-4bcb-8e9d-5869294d6ae3",
       "translationId": "efc49f76-65ac-4f41-8329-17b055ff654f",
       "type": "value",
-      "validationStatus": "ai_generated",
-    },
-    {
-      "id": "4a530557-7254-4fbd-96b7-770071376510",
-      "translationId": "c9848308-6852-4a3c-ab16-649fae324e55",
-      "type": "selection",
-      "validationStatus": "ai_generated",
-    },
-    {
-      "id": "4a7a367e-3cfa-43a3-a851-94ba3116228e",
-      "translationId": "8a8a4611-353d-4d9f-a19c-674dd54c68b8",
-      "type": "selection",
       "validationStatus": "ai_generated",
     },
     {
@@ -5388,12 +5499,6 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "validationStatus": "ai_generated",
     },
     {
-      "id": "8ea1c704-ecae-4555-b5ed-a8e9fc6e99e5",
-      "translationId": "4629eb56-9988-4784-9527-f01cc8b2b0a8",
-      "type": "selection",
-      "validationStatus": "ai_generated",
-    },
-    {
       "id": "916a44ad-414a-4cb0-bb1a-3ac2dec17764",
       "translationId": "6efa549c-7c42-4b96-92df-9838aafc0055",
       "type": "value",
@@ -5414,12 +5519,6 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
     {
       "id": "93c3a659-430d-455a-96c4-9c2fa4fc2bc1",
       "translationId": "58901428-472f-40e9-996b-ca45302894db",
-      "type": "selection",
-      "validationStatus": "ai_generated",
-    },
-    {
-      "id": "94282b4f-cb55-4199-ab72-c6ca765e601d",
-      "translationId": "f8318255-f2f3-4c00-b628-1ef1371a2376",
       "type": "selection",
       "validationStatus": "ai_generated",
     },
@@ -5568,12 +5667,6 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "validationStatus": "approved",
     },
     {
-      "id": "ad3b3737-f005-421a-a007-bd113aa559bb",
-      "translationId": "bb6e2d5d-ed1e-46b5-a016-d1a1b21053eb",
-      "type": "selection",
-      "validationStatus": "ai_generated",
-    },
-    {
       "id": "ad86be35-9e48-4ef7-9ab8-79ad1aff4578",
       "translationId": "3e03bb09-da62-44cc-9e6d-9fd176b18a2c",
       "type": "selection",
@@ -5714,12 +5807,6 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
     {
       "id": "c597d294-577d-4612-92d5-70d5a2bfed75",
       "translationId": "b0500946-9885-4afa-b80d-72969aefbe82",
-      "type": "selection",
-      "validationStatus": "ai_generated",
-    },
-    {
-      "id": "c66df6bb-f651-4d90-9262-521d952b4d80",
-      "translationId": "fdeed27d-2ead-4743-b772-545a7585c2ab",
       "type": "selection",
       "validationStatus": "ai_generated",
     },
@@ -6138,12 +6225,6 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "validationStatus": "ai_generated",
     },
     {
-      "id": "f9e86b69-1eb2-4f55-b8d4-7fb7c69ebd45",
-      "translationId": "a98199ac-0f21-4702-bfd4-95fc2667313a",
-      "type": "selection",
-      "validationStatus": "ai_generated",
-    },
-    {
       "id": "fa6c1642-52f4-488f-986b-c7af0b31efee",
       "translationId": "2ffad47c-642b-4c62-acd0-06cbdcc794fd",
       "type": "value",
@@ -6364,18 +6445,6 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "value": "Introduction to Computer Science and Java is a prerequisite for Data Structures and Introduction to Algorithms.",
     },
     {
-      "blockRelationshipId": "eced1d98-9bab-44af-84a4-cf788d704f6d",
-      "id": "4a0b90ed-1646-4677-bdcf-e85273c2c3c0",
-      "key": "REASON",
-      "value": "Infinitesimal Calculus 1 is a prerequisite for Infinitesimal Calculus 2.",
-    },
-    {
-      "blockRelationshipId": "eced1d98-9bab-44af-84a4-cf788d704f6d",
-      "id": "5145788d-285a-4a51-82cb-61cbccdf0a25",
-      "key": "TYPE",
-      "value": "hard",
-    },
-    {
       "blockRelationshipId": "b4a907e5-c49a-4368-9c50-fd625540285f",
       "id": "68c57ee8-118a-4008-92d7-119c35cf1a87",
       "key": "TYPE",
@@ -6390,6 +6459,12 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
     {
       "blockRelationshipId": "0453e0f1-4917-4334-86e1-e8c2e76603e7",
       "id": "6eb957c8-6aa6-4d2b-b6c7-f788807031a6",
+      "key": "TYPE",
+      "value": "hard",
+    },
+    {
+      "blockRelationshipId": "FC6F09BB-DDEF-4D6C-A379-02E192678066",
+      "id": "766437EE-43B1-4641-9842-B13B21DC7001",
       "key": "TYPE",
       "value": "hard",
     },
@@ -6552,12 +6627,6 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
     {
       "blockRelationshipId": "6b5c3d12-9af3-4c1b-9f2e-8a7b6c5d4e3f",
       "id": "e7f6d5c4-b3a2-4c1d-9e8f-7a6b5c4d3e2f",
-      "key": "TYPE",
-      "value": "hard",
-    },
-    {
-      "blockRelationshipId": "9959f18b-ffd8-4940-858b-da4aa984e5fb",
-      "id": "efe8c558-a765-474f-a471-ed1beda8bbfe",
       "key": "TYPE",
       "value": "hard",
     },
@@ -6840,12 +6909,6 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "translationId": "c1d6bbad-b174-4f06-8dbd-89aaac420be5",
     },
     {
-      "answerId": "042d79cb-dd8d-49b4-8149-6f2bbc0decce",
-      "id": "33de3f3e-6bac-4ec7-aeec-2fdedf294c2b",
-      "isCorrect": false,
-      "translationId": "c1d6bbad-b174-4f06-8dbd-89aaac420be5",
-    },
-    {
       "answerId": "7d88e065-5a8b-4e81-b34e-50e69479251b",
       "id": "349b2d53-8876-4757-8da3-f44e98f29efb",
       "isCorrect": false,
@@ -6858,20 +6921,8 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "translationId": "c1d6bbad-b174-4f06-8dbd-89aaac420be5",
     },
     {
-      "answerId": "cdc6ebaf-cc52-46a7-a029-4f15c7ba28b6",
-      "id": "34c203ca-c140-4b34-9ecc-4b125aba9999",
-      "isCorrect": false,
-      "translationId": "5ad96b46-8670-4368-858b-453472383bd2",
-    },
-    {
       "answerId": "19a98860-81c0-4203-beea-f2f8f8b25e16",
       "id": "36eb6d4d-5e0f-42e7-895d-f2eab2f1d3aa",
-      "isCorrect": false,
-      "translationId": "c1d6bbad-b174-4f06-8dbd-89aaac420be5",
-    },
-    {
-      "answerId": "39aa6731-c5df-4b4e-ab6a-2fb4a047f24f",
-      "id": "3920f0a9-1fd3-4629-8759-7df269d9cb44",
       "isCorrect": false,
       "translationId": "c1d6bbad-b174-4f06-8dbd-89aaac420be5",
     },
@@ -6918,12 +6969,6 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "translationId": "6c5b287b-818c-489d-abaa-aff849761944",
     },
     {
-      "answerId": "29ece213-9e2e-4dc1-a78b-b52959e63ca1",
-      "id": "456bfa13-2fb4-4cd8-9b1e-2b961231b297",
-      "isCorrect": false,
-      "translationId": "5ad96b46-8670-4368-858b-453472383bd2",
-    },
-    {
       "answerId": "c5391820-1747-4e64-81ba-564513f33d01",
       "id": "468166b1-abc6-4cf1-9ed2-02a7e20756f2",
       "isCorrect": false,
@@ -6936,22 +6981,10 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "translationId": "5ad96b46-8670-4368-858b-453472383bd2",
     },
     {
-      "answerId": "cb017d46-0391-4fd3-84af-5a6a65936098",
-      "id": "472d8f7b-d7b3-4bf9-a8f0-6bc8d23ea702",
-      "isCorrect": true,
-      "translationId": "c1d6bbad-b174-4f06-8dbd-89aaac420be5",
-    },
-    {
       "answerId": "6c116e48-5b1b-412e-a8d6-247e8baad789",
       "id": "47377013-0153-460c-8ef4-9ecf306495e4",
       "isCorrect": false,
       "translationId": "c90dfde3-0732-42af-a85f-7843ded1b8a2",
-    },
-    {
-      "answerId": "9b3314a4-6a72-48b9-b9a6-af26f6e1659d",
-      "id": "4a77e6cb-8a6c-4013-be1d-727db847daca",
-      "isCorrect": true,
-      "translationId": "c1d6bbad-b174-4f06-8dbd-89aaac420be5",
     },
     {
       "answerId": "b8498467-eac2-4528-816b-13ffb71d66eb",
@@ -7038,12 +7071,6 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "translationId": "5ad96b46-8670-4368-858b-453472383bd2",
     },
     {
-      "answerId": "cbb0a466-8561-47f4-a045-3da90c50ff3e",
-      "id": "5eeebe56-0a33-4f87-9f69-7a02ef31370a",
-      "isCorrect": true,
-      "translationId": "5ad96b46-8670-4368-858b-453472383bd2",
-    },
-    {
       "answerId": "54361297-be3b-4b38-8a01-f32f6324fba8",
       "id": "63cf7502-6463-476f-a755-560f4937e43e",
       "isCorrect": true,
@@ -7122,18 +7149,6 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "translationId": "9425e428-80a9-42f2-b37d-be8d6bb3b2ef",
     },
     {
-      "answerId": "042d79cb-dd8d-49b4-8149-6f2bbc0decce",
-      "id": "6e6aee5d-dec7-4b81-838c-ac63991c7c73",
-      "isCorrect": true,
-      "translationId": "5ad96b46-8670-4368-858b-453472383bd2",
-    },
-    {
-      "answerId": "9b3314a4-6a72-48b9-b9a6-af26f6e1659d",
-      "id": "6fb0e471-3856-4a43-98a0-bba7b874a61e",
-      "isCorrect": false,
-      "translationId": "5ad96b46-8670-4368-858b-453472383bd2",
-    },
-    {
       "answerId": "3f91e800-7e0f-40ed-93ca-682b0e073f44",
       "id": "6ff18492-a5b6-4fab-8fd7-d5f0e5d74172",
       "isCorrect": true,
@@ -7206,12 +7221,6 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "translationId": "5ad96b46-8670-4368-858b-453472383bd2",
     },
     {
-      "answerId": "6cab652c-5754-43f8-a552-8a137d76e50f",
-      "id": "79e0e7b5-88d4-4720-841b-23b20c08b9b8",
-      "isCorrect": true,
-      "translationId": "5ad96b46-8670-4368-858b-453472383bd2",
-    },
-    {
       "answerId": "2695daac-9de7-4718-bd19-3fd26c99ace4",
       "id": "7a748782-b4cd-4648-b139-9cbcc3551572",
       "isCorrect": false,
@@ -7246,12 +7255,6 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "id": "7ea6d84d-6875-4ca3-bdf1-06c11513c5f5",
       "isCorrect": true,
       "translationId": "c1d6bbad-b174-4f06-8dbd-89aaac420be5",
-    },
-    {
-      "answerId": "99bf073a-6207-456d-bc9f-4a23a37f03f3",
-      "id": "7f8245be-052d-4c7e-85be-bd0d5c4698ae",
-      "isCorrect": false,
-      "translationId": "5ad96b46-8670-4368-858b-453472383bd2",
     },
     {
       "answerId": "e7774c7f-a4d0-4cba-bc64-dc13e3e48449",
@@ -7380,12 +7383,6 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "translationId": "c1d6bbad-b174-4f06-8dbd-89aaac420be5",
     },
     {
-      "answerId": "99bf073a-6207-456d-bc9f-4a23a37f03f3",
-      "id": "93d9a850-ac81-4bfd-8e18-361a64fa1bb3",
-      "isCorrect": true,
-      "translationId": "c1d6bbad-b174-4f06-8dbd-89aaac420be5",
-    },
-    {
       "answerId": "2cd83625-aab9-4eb7-b53c-b0d30eef7108",
       "id": "95120024-a2e0-4299-a73f-22878d4993c3",
       "isCorrect": true,
@@ -7426,12 +7423,6 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "id": "9b98199a-84f5-4b90-882f-ed5a0b811868",
       "isCorrect": true,
       "translationId": "5ad96b46-8670-4368-858b-453472383bd2",
-    },
-    {
-      "answerId": "29ece213-9e2e-4dc1-a78b-b52959e63ca1",
-      "id": "9bec624b-6451-4256-8792-cff58f73bf09",
-      "isCorrect": true,
-      "translationId": "c1d6bbad-b174-4f06-8dbd-89aaac420be5",
     },
     {
       "answerId": "9b0d2897-23a1-414a-8350-dd0ab1d1785b",
@@ -7572,12 +7563,6 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "translationId": "c1d6bbad-b174-4f06-8dbd-89aaac420be5",
     },
     {
-      "answerId": "6cab652c-5754-43f8-a552-8a137d76e50f",
-      "id": "a56c3d51-d506-4d2e-a100-7c3b1cdad86d",
-      "isCorrect": false,
-      "translationId": "c1d6bbad-b174-4f06-8dbd-89aaac420be5",
-    },
-    {
       "answerId": "59f4ca8f-034c-4a0c-ae07-e4789177ba4a",
       "id": "a87999c9-7cf6-48a1-b53e-040a19c373ab",
       "isCorrect": true,
@@ -7606,12 +7591,6 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "id": "abe1a03a-bc0f-4818-a2bd-eea0facb00fd",
       "isCorrect": false,
       "translationId": "5ad96b46-8670-4368-858b-453472383bd2",
-    },
-    {
-      "answerId": "04f341f3-de9a-46d1-9c5f-7f2d66f0dc6b",
-      "id": "ac1dfdb9-80ea-42ae-891b-abfea2de6137",
-      "isCorrect": true,
-      "translationId": "c1d6bbad-b174-4f06-8dbd-89aaac420be5",
     },
     {
       "answerId": "df5c4ed7-7109-4c20-88dd-87e05833d16f",
@@ -7714,12 +7693,6 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "id": "b8c9daeb-2f3a-4b5c-ad7e-8f9aab1c2d33",
       "isCorrect": false,
       "translationId": "4a6c8eaa-7b9e-44ab-ae8f-5c6d7e8f9aab",
-    },
-    {
-      "answerId": "39aa6731-c5df-4b4e-ab6a-2fb4a047f24f",
-      "id": "bc57fc1f-52fa-43e5-aa96-5de80301cf60",
-      "isCorrect": true,
-      "translationId": "5ad96b46-8670-4368-858b-453472383bd2",
     },
     {
       "answerId": "05c1a333-f483-4fb2-9435-da3e78970831",
@@ -7932,12 +7905,6 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "translationId": "2351c70a-3dea-4239-8bd5-2f61e2959bee",
     },
     {
-      "answerId": "cbb0a466-8561-47f4-a045-3da90c50ff3e",
-      "id": "dc6c4de3-7fd3-4a61-bf11-3d27ad498a9c",
-      "isCorrect": false,
-      "translationId": "c1d6bbad-b174-4f06-8dbd-89aaac420be5",
-    },
-    {
       "answerId": "ea231715-01f6-4d65-b8e7-1c36444cc6f9",
       "id": "dc8506a2-bf0e-4a05-9341-b46b35224b40",
       "isCorrect": true,
@@ -7972,12 +7939,6 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "id": "dfb0bdcc-b665-4346-9c3e-4c8363abfa82",
       "isCorrect": false,
       "translationId": "1f3e5a7c-4b6d-4e8f-9a1c-2d3e4f5a6b7c",
-    },
-    {
-      "answerId": "cdc6ebaf-cc52-46a7-a029-4f15c7ba28b6",
-      "id": "e14e5f47-1629-4f25-969b-959379195adf",
-      "isCorrect": true,
-      "translationId": "c1d6bbad-b174-4f06-8dbd-89aaac420be5",
     },
     {
       "answerId": "0f7c5864-c09d-4f4f-88e3-84e6f9e11dc1",
@@ -8052,22 +8013,10 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "translationId": "5ad96b46-8670-4368-858b-453472383bd2",
     },
     {
-      "answerId": "04f341f3-de9a-46d1-9c5f-7f2d66f0dc6b",
-      "id": "e819dc5b-a820-4b86-8f41-a3787bbfac84",
-      "isCorrect": false,
-      "translationId": "5ad96b46-8670-4368-858b-453472383bd2",
-    },
-    {
       "answerId": "6c2ec10b-2e63-47dc-890b-9a890e41ab01",
       "id": "e8587175-6538-4c85-81eb-5a986e281eb4",
       "isCorrect": true,
       "translationId": "c1d6bbad-b174-4f06-8dbd-89aaac420be5",
-    },
-    {
-      "answerId": "cb017d46-0391-4fd3-84af-5a6a65936098",
-      "id": "e8642c90-4928-460d-9c03-12c5f1bc633b",
-      "isCorrect": false,
-      "translationId": "5ad96b46-8670-4368-858b-453472383bd2",
     },
     {
       "answerId": "f2a3b4c5-6d7e-8f9a-aab1-answer0000000",
@@ -8470,9 +8419,19 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "id": "1125b34d-08d7-427d-ac09-9bc662fb6f4e",
     },
     {
+      "en_text": "Absolute extrema for continuous functions",
+      "he_text": "קיצון מוחלט לפוקנציה רציפה",
+      "id": "11ad7d66-ee69-4479-97b1-9c83b1f75342",
+    },
+    {
       "en_text": "Infinitesimal Calculus 3",
       "he_text": "חשבון אינפיניטסימלי 3",
       "id": "11d4ed91-e7d3-4eb5-ae96-5933d7de4951",
+    },
+    {
+      "en_text": "Asymptotes",
+      "he_text": "אסימפטוטות",
+      "id": "123232c7-f523-4cf2-877d-556075f0aabf",
     },
     {
       "en_text": "How many four digit numbers contain at least one even digit",
@@ -8540,6 +8499,11 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "id": "190e3057-0c8f-4d44-a387-b216e8632ede",
     },
     {
+      "en_text": "Inflection points",
+      "he_text": "נקודות פיתול",
+      "id": "19c4e5aa-f7b7-4ebe-94bf-fc8de2f282da",
+    },
+    {
       "en_text": "How many 6-letter strings from {A,B,C,D} contain at least one A",
       "he_text": "כמה מחרוזות באורך 6 מתוך {A,B,C,D} מכילות לפחות A אחת",
       "id": "19f79c58-69ed-418c-8ff5-0fd9a506437f",
@@ -8598,6 +8562,11 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "en_text": "Prenex Normal Form",
       "he_text": "צורה פרנקסית נורמלית",
       "id": "1c66ed81-b549-40b4-9b90-567da80eaf42",
+    },
+    {
+      "en_text": "Derivatives of trigonometric functions",
+      "he_text": "נגזרות של פונקציות טריגונומטריות",
+      "id": "1cd319a2-5a8d-4256-b557-7e6affcff742",
     },
     {
       "en_text": "What is the value of the binomial coefficient C(22, 11) found in Pascal's Triangle?",
@@ -8695,6 +8664,11 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "id": "24b5a671-ea76-4c9b-8fd2-97e09f958f39",
     },
     {
+      "en_text": "Critical points of a function",
+      "he_text": "נקודות קריטיות של פונקציה",
+      "id": "24b8249f-06d4-4a28-a304-dd2c2c5e629f",
+    },
+    {
       "en_text": "Electrical Engineering",
       "he_text": "הנדסת חשמל",
       "id": "25800af4-b146-4cd0-83c0-dc64729dcc7f",
@@ -8753,6 +8727,11 @@ exports[`sqlite db snapshot > reads real sqlite DB and matches snapshot 1`] = `
       "en_text": "Macroeconomics B",
       "he_text": "מקרו כלכלה ב",
       "id": "2befe762-2d92-40b2-a970-83f9a08db26e",
+    },
+    {
+      "en_text": "Higher-order derivatives",
+      "he_text": "נגזרות מסדר גבוה",
+      "id": "2c3bf417-85b6-4a73-97a3-b5d2ec324f90",
     },
     {
       "en_text": "Lower Sums",
@@ -9005,6 +8984,11 @@ This is where your journey begins — in the exact sciences, where precision dri
       "id": "3eed2bf4-2068-4492-b0a1-d6230df46d99",
     },
     {
+      "en_text": "Continuity",
+      "he_text": "רציפות",
+      "id": "3f075b98-7e6e-4a47-b912-971d16b6d13a",
+    },
+    {
       "en_text": "How many ways can you choose 5 coins from 8 types if repetitions are allowed?",
       "he_text": "בכמה דרכים ניתן לבחור 5 מטבעות מתוך 8 סוגים כאשר מותר בחירה חוזרת?",
       "id": "3f1cb82d-592e-4df9-a2bf-fcccdec55a6f",
@@ -9086,6 +9070,11 @@ In the Faculty of Arts, you're not just learning about the world — you're lear
       "en_text": "Pascal Triangle",
       "he_text": "משולש פסקל",
       "id": "453489f6-61fa-4699-b275-26d6165dbc89",
+    },
+    {
+      "en_text": "Differentiation of log",
+      "he_text": "גזירה של log",
+      "id": "45dae09e-b512-40ed-8763-972fdade0f7f",
     },
     {
       "en_text": "For F(x,y)=xy, is y uniquely an implicit function of x near (0,0)",
@@ -9276,9 +9265,19 @@ In the Faculty of Engineering, you're more than a student — you're an inventor
       "id": "529780e7-32c7-4685-b54d-df934d032de6",
     },
     {
+      "en_text": "Differentiation of inverse functions",
+      "he_text": "גזיקה של פונקציות הפוכות",
+      "id": "52aac4c7-470f-497d-a756-16eb64fb975d",
+    },
+    {
       "en_text": "What is the determinant of the matrix [[1,2],[3,4]]?",
       "he_text": "מהו הדטרמיננטה של המטריצה [[1,2],[3,4]]?",
       "id": "52c4d70d-5b41-40eb-841a-d655bee0ded0",
+    },
+    {
+      "en_text": "Derivatives",
+      "he_text": "גזירות",
+      "id": "53027035-4b33-4f6c-8bbe-98153be21a95",
     },
     {
       "en_text": "How many distinct permutations can be formed from the letters of "BASEBALL"?",
@@ -9316,6 +9315,11 @@ In the Faculty of Engineering, you're more than a student — you're an inventor
       "id": "565f4f02-22dc-49e8-8b55-9ecf7988d254",
     },
     {
+      "en_text": "Determining local extrema",
+      "he_text": "קביעת נקודות קיצון מקומי",
+      "id": "5672ee26-5ee4-49bc-9d02-1f9d6e6edc58",
+    },
+    {
       "en_text": "Calculate the number of distributions where no cell contains balls of all types.",
       "he_text": "חשבו את מספר הפיזורים שבהם אין תא המכיל כדורים מכל הסוגים.",
       "id": "57975cc8-efa9-4174-ac5e-fd003913c63d",
@@ -9341,9 +9345,19 @@ In the Faculty of Engineering, you're more than a student — you're an inventor
       "id": "593afff3-cf87-4c67-b80d-ae06ffd4c829",
     },
     {
+      "en_text": "Convexity",
+      "he_text": "קמירות",
+      "id": "5970ab28-dffb-40f0-bbfb-a33e5791cd8e",
+    },
+    {
       "en_text": "Computational Geometry",
       "he_text": "גיאומטריה חישובית",
       "id": "5B91BD52-22E5-4335-ADE5-1C3E21B12EB8",
+    },
+    {
+      "en_text": "Implicit differentiation",
+      "he_text": "גזירה סתומה",
+      "id": "5a23f591-0af9-49d8-a7db-563a624c1261",
     },
     {
       "en_text": "Separation Principle",
@@ -9499,6 +9513,11 @@ In the Faculty of Engineering, you're more than a student — you're an inventor
       "en_text": "Are eigenvectors corresponding to distinct eigenvalues always linearly independent",
       "he_text": "האם וקטורים עצמיים השייכים לערכים עצמיים שונים תמיד בלתי תלויים לינארית",
       "id": "64604d61-a769-48ad-b6dc-2a720b0c8741",
+    },
+    {
+      "en_text": "LHôpitals Rule",
+      "he_text": "כלל לופיטל",
+      "id": "64a2357a-0029-4767-b154-1f82de96fbe1",
     },
     {
       "en_text": "A sports club offers 5 indoor activities and 4 outdoor activities. How many activities can you select if participating in only one?",
@@ -9747,6 +9766,11 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "en_text": "What is the value of the binomial coefficient C(12, 4) found in Pascal's Triangle?",
       "he_text": "מהו הערך של המקדם הבינומי C(12, 4) במשולש פסקל?",
       "id": "7826ef3c-e828-425d-a27a-378ad632403b",
+    },
+    {
+      "en_text": "Monotonic functions",
+      "he_text": "פונקציות מונוטוניות",
+      "id": "793b0e27-6145-4647-b508-eb766d192bb8",
     },
     {
       "en_text": "Advanced Java Programming",
@@ -10059,6 +10083,11 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "id": "96f33cd2-c9a5-4c60-8ffe-0d21c4fa04c4",
     },
     {
+      "en_text": "Rolle's Theorem",
+      "he_text": "משפט רול",
+      "id": "9700e35b-7176-4f36-944b-6e0cc4ca0050",
+    },
+    {
       "en_text": "Programming Languages",
       "he_text": "שפות תכנות",
       "id": "97508FE0-85AA-4504-AA81-6FB42E35D496",
@@ -10244,8 +10273,8 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "id": "BD8921E9-E6C9-4EF6-BE69-0D5A07A65191",
     },
     {
-      "en_text": "Calculus B",
-      "he_text": "חדו״א ב",
+      "en_text": "Infinitesimal Calculus 2",
+      "he_text": "חשבון אינפינטסימאלי 2",
       "id": "C44DBE0A-CFF5-4259-9064-163E3ED72F32",
     },
     {
@@ -10284,6 +10313,11 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "id": "F2DFBC55-3D87-4086-A84F-926462D58924",
     },
     {
+      "en_text": "Derivative",
+      "he_text": "נגזרת",
+      "id": "F3D76731-C3DB-4937-8671-05063BE4D25A",
+    },
+    {
       "en_text": "Introduction to Cybersecurity",
       "he_text": "מבוא לאבטחת המרחב המקוון",
       "id": "F6B856CA-7849-4CDA-9FC9-794C9253936E",
@@ -10312,6 +10346,11 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "en_text": "What is the value of the binomial coefficient C(6, 3) found in Pascal's Triangle?",
       "he_text": "מהו הערך של המקדם הבינומי C(6, 3) במשולש פסקל?",
       "id": "a4e3c1a8-e257-4fe8-be97-f2c3cd035b13",
+    },
+    {
+      "en_text": "Types of Non-Differentiability",
+      "he_text": "סוגי אי גזירות",
+      "id": "a5bccc18-0f65-4717-9f99-5ae0ebd50d83",
     },
     {
       "en_text": "2^(h+1) - 1",
@@ -10474,11 +10513,6 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "id": "b12833a0-1b09-464a-ad7c-e148c216bccb",
     },
     {
-      "en_text": "Sequences and Series",
-      "he_text": "סדרות וטורים",
-      "id": "b2bfed06-5f13-4c27-9611-b4cd1bbd258b",
-    },
-    {
       "en_text": "Binary Trees",
       "he_text": "עצים בינאריים",
       "id": "b2c3d4e5-6f7a-4b8c-9d0e-2f3a4b5c6d7e",
@@ -10502,6 +10536,11 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "en_text": "Is x=4 a solution to 2x+1=9",
       "he_text": "האם x=4 הוא פתרון למשוואה 2x+1=9",
       "id": "b3a07885-f515-4a33-ac10-5c92695d0172",
+    },
+    {
+      "en_text": "Mean Value Theorem",
+      "he_text": "משפט הערך הממוצע",
+      "id": "b4927a7a-e924-49ef-aba3-9a99c8d74fad",
     },
     {
       "en_text": "The College of Management Academic Studies",
@@ -10562,6 +10601,11 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "en_text": "Is x=1 a solution to 5x+2=12",
       "he_text": "האם x=1 הוא פתרון למשוואה 5x+2=12",
       "id": "b84aaec3-5374-460e-abc7-dd26801acc97",
+    },
+    {
+      "en_text": "Chain rule",
+      "he_text": "כלל השרשרת",
+      "id": "b8775c13-696f-4e06-9fee-15c2aec00980",
     },
     {
       "en_text": "Combinations",
@@ -10869,6 +10913,11 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "id": "d0498c23-075c-4a53-8093-66b8982f940f",
     },
     {
+      "en_text": "Definition of the Derivative",
+      "he_text": "הגדרת הנגזרת",
+      "id": "d0a6d4b4-d0ed-4c72-bf90-8254711d7282",
+    },
+    {
       "en_text": "There exists a small open interval (a,b) such that A ∩ (a,b) = ℵ₀",
       "he_text": "קיים רווח פתוח קטן (a,b) כך ש A ∩ (a,b) = ℵ₀",
       "id": "d18996b8-4006-460d-a20c-720e7f830eb1",
@@ -11014,9 +11063,19 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "id": "dee66e0f-60b1-40aa-832a-1106870a039c",
     },
     {
+      "en_text": "Differentiation Rules",
+      "he_text": "כללי גזירה",
+      "id": "df33e047-c95b-4f05-bfdf-4a4d31afe92d",
+    },
+    {
       "en_text": "Does the Implicit Function Theorem guarantee a unique implicit function",
       "he_text": "האם משפט הפונקציה הסמויה מבטיח פונקציה סמויה יחידה",
       "id": "df699b8f-89e5-4120-b1b7-231194efda99",
+    },
+    {
+      "en_text": "Concavity",
+      "he_text": "קעירות",
+      "id": "e01b68d3-76e9-4da5-85ad-022ea6840151",
     },
     {
       "en_text": "General Biology B",
@@ -11047,6 +11106,11 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "en_text": "In which case is a binary search tree most efficient",
       "he_text": "באיזה מקרה עץ חיפוש בינארי הכי יעיל",
       "id": "e3780ebf-3209-4106-a36a-a598c3d8f597",
+    },
+    {
+      "en_text": "One-Sided Derivatives",
+      "he_text": "נגזרות חד צדדיות",
+      "id": "e397006e-2349-421d-b20e-16ab65a22bb5",
     },
     {
       "en_text": "What is the value of the binomial coefficient C(5, 2) found in Pascal's Triangle?",
@@ -11434,6 +11498,11 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
       "id": "f9aa190e-6d9e-4c57-aa90-f40c605d7863",
     },
     {
+      "en_text": "Differentiation of e",
+      "he_text": "גזירה של e",
+      "id": "f9e56dd3-2af2-4719-82af-cc633511677d",
+    },
+    {
       "en_text": "A science fair displays 4 physics projects and 5 chemistry projects. How many projects can a visitor view if focusing on one subject?",
       "he_text": "ביריד מדע מוצגים 4 פרויקטים בפיזיקה ו-5 בכימיה. כמה פרויקטים יכול מבקר לראות אם מתמקד בנושא אחד?",
       "id": "fa2a7e90-3615-498c-8d8f-e958ffde4c51",
@@ -11626,4 +11695,209 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
     },
   ],
 }
+`;
+
+exports[`DB snapshot > schema > matches snapshot 1`] = `
+"generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/client"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./main.db"
+}
+
+model University {
+  id            String      @id @default(uuid())
+  translationId String
+  courses       Course[]
+  Degree        Degree[]
+  Faculty       Faculty[]
+  name          Translation @relation(fields: [translationId], references: [id])
+}
+
+model Faculty {
+  id            String      @id @default(uuid())
+  descriptionId String
+  translationId String
+  universityId  String
+  Degree        Degree[]
+  university    University  @relation(fields: [universityId], references: [id])
+  description   Translation @relation("FacultyDescription", fields: [descriptionId], references: [id])
+  name          Translation @relation("FacultyName", fields: [translationId], references: [id])
+
+  @@unique([translationId, universityId])
+}
+
+model Degree {
+  id            String      @id @default(uuid())
+  translationId String
+  universityId  String
+  facultyId     String?
+  faculty       Faculty?    @relation(fields: [facultyId], references: [id])
+  university    University  @relation(fields: [universityId], references: [id])
+  name          Translation @relation(fields: [translationId], references: [id])
+  courses       Course[]    @relation("CourseToDegree")
+}
+
+model Course {
+  id            String      @id @default(uuid())
+  translationId String
+  universityId  String
+  publishedAt   DateTime?
+  blockId       String
+  Block         Block       @relation(fields: [blockId], references: [id])
+  university    University  @relation(fields: [universityId], references: [id])
+  name          Translation @relation(fields: [translationId], references: [id])
+  modules       Module[]    @relation("CourseModules")
+  Degree        Degree[]    @relation("CourseToDegree")
+
+  @@unique([translationId, universityId])
+}
+
+model Block {
+  id              String              @id @default(uuid())
+  postrequisiteOf BlockRelationship[] @relation("Postquisites")
+  prerequisiteFor BlockRelationship[] @relation("Prerequisites")
+  Course          Course[]
+  Module          Module[]
+}
+
+model BlockRelationship {
+  id              String                 @id @default(uuid())
+  prerequisiteId  String
+  postrequisiteId String
+  postrequisite   Block                  @relation("Postquisites", fields: [postrequisiteId], references: [id])
+  prerequisite    Block                  @relation("Prerequisites", fields: [prerequisiteId], references: [id])
+  metadata        RelationshipMetadata[]
+
+  @@unique([prerequisiteId, postrequisiteId])
+}
+
+model RelationshipMetadata {
+  id                  String                  @id @default(uuid())
+  key                 RelationshipMetadataKey
+  value               String
+  blockRelationshipId String
+  blockRelationship   BlockRelationship       @relation(fields: [blockRelationshipId], references: [id])
+
+  @@unique([key, blockRelationshipId])
+}
+
+model Module {
+  id            String      @id @default(uuid())
+  translationId String
+  blockId       String
+  Block         Block       @relation(fields: [blockId], references: [id])
+  name          Translation @relation(fields: [translationId], references: [id])
+  Course        Course[]    @relation("CourseModules")
+  Module_A      Module[]    @relation("ModuleHierarchy")
+  Module_B      Module[]    @relation("ModuleHierarchy")
+  Questions     Question[]  @relation("ModuleToQuestion")
+}
+
+model Translation {
+  id                 String         @id @default(uuid())
+  en_text            String
+  he_text            String
+  Course             Course[]
+  Degree             Degree[]
+  FacultyDescription Faculty[]      @relation("FacultyDescription")
+  FacultyName        Faculty[]      @relation("FacultyName")
+  Module             Module[]
+  Question           Question[]
+  SelectAnswer       SelectAnswer[]
+  University         University[]
+
+  @@unique([en_text, he_text])
+}
+
+model Question {
+  id               String                   @id @default(uuid())
+  validationStatus QuestionValidationStatus @default("ai_generated")
+  translationId    String
+  type             QuestionType
+  Answer           Answer[]
+  text             Translation              @relation(fields: [translationId], references: [id])
+  PartOf           QuestionPart[]           @relation("QuestionParts")
+  Parts            QuestionPart[]
+  Modules          Module[]                 @relation("ModuleToQuestion")
+}
+
+model QuestionPart {
+  id             String   @id @default(uuid())
+  questionId     String
+  partQuestionId String
+  order          Int
+  partQuestion   Question @relation("QuestionParts", fields: [partQuestionId], references: [id])
+  question       Question @relation(fields: [questionId], references: [id])
+
+  @@unique([questionId, order])
+}
+
+model Answer {
+  id           String         @id @default(uuid())
+  questionId   String
+  question     Question       @relation(fields: [questionId], references: [id])
+  NumberAnswer NumberAnswer?
+  SelectAnswer SelectAnswer[]
+  UnitAnswer   UnitAnswer?
+}
+
+model SelectAnswer {
+  id            String      @id @default(uuid())
+  isCorrect     Boolean
+  translationId String
+  answerId      String
+  answer        Answer      @relation(fields: [answerId], references: [id])
+  text          Translation @relation(fields: [translationId], references: [id])
+}
+
+model UnitAnswer {
+  id       String @id @default(uuid())
+  value    Float
+  unit     Units
+  answerId String @unique
+  answer   Answer @relation(fields: [answerId], references: [id])
+}
+
+model NumberAnswer {
+  id       String @id @default(uuid())
+  value    Float
+  answerId String @unique
+  answer   Answer @relation(fields: [answerId], references: [id])
+}
+
+enum RelationshipMetadataKey {
+  REASON
+  TYPE
+  DESCRIPTION
+}
+
+enum QuestionType {
+  selection
+  value
+  void
+}
+
+enum QuestionValidationStatus {
+  ai_generated
+  in_manual_review
+  approved
+  rejected
+}
+
+enum Units {
+  meter
+  kilogram
+  second
+  ampere
+  kelvin
+  mole
+  candela
+}
+
+
+"
 `;

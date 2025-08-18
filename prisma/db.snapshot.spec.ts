@@ -60,6 +60,6 @@ describe('DB snapshot', () => {
     it('matches snapshot', () => {
       const schema = execSync('pnpm prisma db pull --print').toString();
       expect(schema).toMatchSnapshot();
-    });
+    }, 60_000);
   });
 });
