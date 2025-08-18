@@ -6,16 +6,9 @@ import {
   IsBoolean,
   IsUUID,
 } from 'class-validator';
-import { ApiPropertyOptional } from '@nestjs/swagger';
 import { Transform, Type } from 'class-transformer';
 
 export class ModulesQueryDto {
-  @ApiPropertyOptional({
-    description: 'Filter modules by minimum number of questions',
-    example: 5,
-    type: 'integer',
-    minimum: 0,
-  })
   @IsOptional()
   @IsInt()
   @Min(0)
@@ -25,12 +18,6 @@ export class ModulesQueryDto {
   })
   minQuestions?: number;
 
-  @ApiPropertyOptional({
-    description: 'Filter modules by maximum number of questions',
-    example: 20,
-    type: 'integer',
-    minimum: 0,
-  })
   @IsOptional()
   @IsInt()
   @Min(0)
@@ -40,12 +27,6 @@ export class ModulesQueryDto {
   })
   maxQuestions?: number;
 
-  @ApiPropertyOptional({
-    description: 'Filter modules by exact number of questions',
-    example: 10,
-    type: 'integer',
-    minimum: 0,
-  })
   @IsOptional()
   @IsInt()
   @Min(0)
@@ -55,40 +36,18 @@ export class ModulesQueryDto {
   })
   exactQuestions?: number;
 
-  @ApiPropertyOptional({
-    description: 'Filter modules by course ID',
-    example: '123e4567-e89b-12d3-a456-426614174000',
-    type: 'string',
-    format: 'uuid',
-  })
   @IsOptional()
   @IsUUID()
   courseId?: string;
 
-  @ApiPropertyOptional({
-    description: 'Filter modules by university ID',
-    example: '123e4567-e89b-12d3-a456-426614174000',
-    type: 'string',
-    format: 'uuid',
-  })
   @IsOptional()
   @IsUUID()
   universityId?: string;
 
-  @ApiPropertyOptional({
-    description: 'Search modules by name (partial match, case insensitive)',
-    example: 'calculus',
-    type: 'string',
-  })
   @IsOptional()
   @IsString()
   nameSearch?: string;
 
-  @ApiPropertyOptional({
-    description: 'Filter modules that have questions',
-    example: true,
-    type: 'boolean',
-  })
   @IsOptional()
   @IsBoolean()
   @Type(() => Boolean)
@@ -100,11 +59,6 @@ export class ModulesQueryDto {
   })
   hasQuestions?: boolean;
 
-  @ApiPropertyOptional({
-    description: 'Filter modules that have prerequisites',
-    example: true,
-    type: 'boolean',
-  })
   @IsOptional()
   @IsBoolean()
   @Type(() => Boolean)
@@ -116,11 +70,6 @@ export class ModulesQueryDto {
   })
   hasPrerequisites?: boolean;
 
-  @ApiPropertyOptional({
-    description: 'Filter modules that have postrequisites',
-    example: true,
-    type: 'boolean',
-  })
   @IsOptional()
   @IsBoolean()
   @Type(() => Boolean)
@@ -132,11 +81,6 @@ export class ModulesQueryDto {
   })
   hasPostrequisites?: boolean;
 
-  @ApiPropertyOptional({
-    description: 'Filter modules that have sub-modules',
-    example: true,
-    type: 'boolean',
-  })
   @IsOptional()
   @IsBoolean()
   @Type(() => Boolean)
@@ -148,11 +92,6 @@ export class ModulesQueryDto {
   })
   hasSubModules?: boolean;
 
-  @ApiPropertyOptional({
-    description: 'Filter modules that have parent modules',
-    example: true,
-    type: 'boolean',
-  })
   @IsOptional()
   @IsBoolean()
   @Type(() => Boolean)

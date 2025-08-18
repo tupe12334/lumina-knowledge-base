@@ -9,4 +9,4 @@ export const loadEnv = (source: NodeJS.ProcessEnv = process.env) => {
   return parsed;
 };
 
-export let env = loadEnv();
+export const env = loadEnv();

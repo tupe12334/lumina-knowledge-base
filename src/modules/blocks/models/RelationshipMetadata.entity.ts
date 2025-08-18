@@ -1,4 +1,3 @@
-import { ApiProperty } from '@nestjs/swagger';
 import { ObjectType, Field, ID, registerEnumType } from '@nestjs/graphql';
 import type { RelationshipMetadataKey as PrismaRelationshipMetadataKey } from 'generated/client';
 
@@ -18,21 +17,14 @@ registerEnumType(RelationshipMetadataKey, {
 @ObjectType()
 export class RelationshipMetadata {
   @Field(() => ID)
-  @ApiProperty()
   id!: string;
 
   @Field(() => RelationshipMetadataKey)
-  @ApiProperty({
-    enum: RelationshipMetadataKey,
-    enumName: 'RelationshipMetadataKey',
-  })
   key!: keyof typeof RelationshipMetadataKey;
 
   @Field()
-  @ApiProperty()
   value!: string;
 
   @Field()
-  @ApiProperty()
   blockRelationshipId!: string;
 }

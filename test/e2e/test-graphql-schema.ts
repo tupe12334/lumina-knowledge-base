@@ -1,4 +1,11 @@
-import { Field, InputType, Mutation, Query, Args, Resolver } from '@nestjs/graphql';
+import {
+  Field,
+  InputType,
+  Mutation,
+  Query,
+  Args,
+  Resolver,
+} from '@nestjs/graphql';
 
 @InputType()
 export class TestInput {

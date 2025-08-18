@@ -131,7 +131,9 @@ export class DegreesService {
     return this.prisma.degree.update({
       where: { id },
       data: {
-        ...(universityId ? { university: { connect: { id: universityId } } } : {}),
+        ...(universityId
+          ? { university: { connect: { id: universityId } } }
+          : {}),
         ...(name ? { name: { update: { en_text: name, he_text: name } } } : {}),
       },
       include: {

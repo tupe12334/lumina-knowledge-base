@@ -1,4 +1,3 @@
-import { ApiProperty } from '@nestjs/swagger';
 import { ObjectType, Field, ID } from '@nestjs/graphql';
 import { Type } from 'class-transformer';
 import { University } from '../../universities/models/University.entity';
@@ -9,31 +8,24 @@ import { Block } from 'src/modules/blocks/models/Block.entity';
 @ObjectType()
 export class Course {
   @Field(() => ID)
-  @ApiProperty()
   id!: string;
 
   @Field(() => Translation)
   @Type(() => Translation)
-  @ApiProperty({ type: () => Translation })
   name!: Translation;
 
   @Field()
-  @ApiProperty()
   universityId!: string;
 
   @Field(() => University, { nullable: true })
-  @ApiProperty({ type: () => University, required: false })
   university?: University;
 
   @Field(() => [Module], { nullable: true })
-  @ApiProperty({ type: () => [Module], required: false })
   modules?: Module[];
 
   @Field(() => Date, { nullable: true })
-  @ApiProperty({ nullable: true })
   publishedAt!: Date | null;
 
   @Field(() => Block, { nullable: true })
-  @ApiProperty({ nullable: true })
   Block?: Block;
 }
