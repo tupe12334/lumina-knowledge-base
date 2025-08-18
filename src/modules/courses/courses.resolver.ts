@@ -1,4 +1,12 @@
-import { Resolver, Query, Args, ID, Mutation } from '@nestjs/graphql';
+import {
+  Resolver,
+  Query,
+  Args,
+  ID,
+  Mutation,
+  ResolveField,
+  Parent,
+} from '@nestjs/graphql';
 import { CoursesService } from './courses.service';
 import { Course } from './models/Course.entity';
 import { CreateCourseRelationshipInput } from './dto/create-course-relationship.input';
@@ -9,6 +17,8 @@ import { DeleteCourseResult } from './dto/delete-course-result.type';
 import { UpdateCourseInput } from './dto/update-course.input';
 import { SetCourseModulesInput } from './dto/set-course-modules.input';
 import { CreateCourseInput } from './dto/create-course.input';
+import { ModulesService } from '../modules/modules.service'; // Added import
+import { Module } from '../modules/models/Module.entity'; // Added import
 
 /**
  * GraphQL resolver for course-related operations.
@@ -16,7 +26,18 @@ import { CreateCourseInput } from './dto/create-course.input';
  */
 @Resolver(() => Course)
 export class CoursesResolver {
-  constructor(private readonly coursesService: CoursesService) {}
+  constructor(
+    private readonly coursesService: CoursesService,
+    private readonly modulesService: ModulesService, // Injected ModulesService
+  ) {}
+
+  @ResolveField(() => [Module], {
+    name: 'modules',
+    description: 'Modules associated with this course',
+  })
+  async modules(@Parent() course: Course): Promise<Module[]> {
+    return this.modulesService.findModulesByCourseId(course.id);
+  }
 
   @Mutation(() => Course, {
     name: 'createCourse',

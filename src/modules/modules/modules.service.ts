@@ -344,6 +344,34 @@ export class ModulesService {
     return this.prisma.module.delete({ where: { id } });
   }
 
+  async findModulesByCourseId(courseId: string): Promise<ModuleEntity[]> {
+    return this.prisma.module.findMany({
+      where: {
+        Course: {
+          some: {
+            id: courseId,
+          },
+        },
+      },
+      include: {
+        name: true,
+        Block: {
+          include: {
+            prerequisiteFor: true,
+            postrequisiteOf: true,
+          },
+        },
+        subModules: {
+          include: {
+            name: true,
+            subModules: { include: { name: true } },
+          },
+        },
+        parentModules: { include: { name: true } },
+      },
+    });
+  }
+
   /**
    * Creates a prerequisite/postrequisite relationship between two modules.
    * @param relationshipData - The relationship data containing module IDs and optional metadata
