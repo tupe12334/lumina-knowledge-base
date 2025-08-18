@@ -11,7 +11,10 @@ input AddCourseToDegreeInput {
 }
 
 type Answer {
-  id: String!
+  NumberAnswer: NumberAnswer
+  SelectAnswer: [SelectAnswer!]
+  UnitAnswer: UnitAnswer
+  id: ID!
   questionId: String!
 }
 
@@ -346,6 +349,12 @@ type Mutation {
   updateUniversity(updateUniversityInput: UpdateUniversityInput!): University!
 }
 
+type NumberAnswer {
+  answerId: String!
+  id: ID!
+  value: Float!
+}
+
 type Query {
   """Get a specific block by ID"""
   block(
@@ -479,6 +488,14 @@ enum RelationshipMetadataKey {
   TYPE
 }
 
+type SelectAnswer {
+  answerId: String!
+  id: ID!
+  isCorrect: Boolean!
+  text: Translation!
+  translationId: String!
+}
+
 input SetCourseModulesInput {
   """Course ID"""
   courseId: ID!
@@ -499,6 +516,13 @@ type Translation {
   en_text: String!
   he_text: String!
   id: String!
+}
+
+type UnitAnswer {
+  answerId: String!
+  id: ID!
+  unit: String!
+  value: Float!
 }
 
 type University {

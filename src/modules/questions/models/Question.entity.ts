@@ -6,7 +6,7 @@ import {
 } from '../../../../generated/client';
 import { Translation } from '../../translations/models/Translation.entity';
 import { Module } from '../../modules/models/Module.entity';
-import { Answer } from '../../answers/models/Answer.entity';
+import { Answer } from './Answer.entity';
 import { QuestionPart } from './QuestionPart.entity';
 
 registerEnumType(QuestionType, {

@@ -141,7 +141,15 @@ export class DegreesService {
   }
 
   async delete(id: string): Promise<Degree> {
-    return this.prisma.degree.delete({ where: { id } });
+    return this.prisma.degree.delete({
+      where: { id },
+      include: {
+        name: true,
+        university: { include: { name: true } },
+        faculty: { include: { name: true, description: true } },
+        courses: { include: { name: true } },
+      },
+    });
   }
 
   /**
