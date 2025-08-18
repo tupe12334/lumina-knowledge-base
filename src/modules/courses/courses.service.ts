@@ -31,17 +31,15 @@ export class CoursesService {
         name: {
           create: {
             en_text: name,
+            he_text: name,
           },
         },
         Block: {
-          create: {
-            name: {
-              create: {
-                en_text: name,
-              },
-            },
-          },
+          create: {},
         },
+      },
+      include: {
+        name: true,
       },
     });
   }

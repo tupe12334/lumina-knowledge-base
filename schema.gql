@@ -11,7 +11,10 @@ input AddCourseToDegreeInput {
 }
 
 type Answer {
-  id: String!
+  NumberAnswer: NumberAnswer
+  SelectAnswer: [SelectAnswer!]
+  UnitAnswer: UnitAnswer
+  id: ID!
   questionId: String!
 }
 
@@ -69,6 +72,11 @@ type CourseRelationshipResult {
   prerequisite: Block!
 }
 
+input CreateBlockInput {
+  moduleId: String!
+  name: String!
+}
+
 input CreateBlockRelationshipInput {
   """Optional metadata for the relationship (JSON string)"""
   metadata: String
@@ -80,6 +88,11 @@ input CreateBlockRelationshipInput {
   prerequisiteBlockId: ID!
 }
 
+input CreateCourseInput {
+  name: String!
+  universityId: String!
+}
+
 input CreateCourseRelationshipInput {
   """Optional metadata for the relationship (JSON string)"""
   metadata: String
@@ -89,6 +102,17 @@ input CreateCourseRelationshipInput {
 
   """The ID of the prerequisite course"""
   prerequisiteCourseId: ID!
+}
+
+input CreateDegreeInput {
+  name: String!
+  universityId: String!
+}
+
+input CreateFacultyInput {
+  description: String!
+  name: String!
+  universityId: String!
 }
 
 input CreateModuleInput {
@@ -258,12 +282,18 @@ input ModulesQueryInput {
 type Mutation {
   """Adds a course to a degree"""
   addCourseToDegree(input: AddCourseToDegreeInput!): Degree!
+  createBlock(createBlockInput: CreateBlockInput!): Block!
 
   """Create a prerequisite/postrequisite relationship between blocks"""
   createBlockRelationship(input: CreateBlockRelationshipInput!): BlockRelationshipResult!
 
+  """Create a new course"""
+  createCourse(createCourseInput: CreateCourseInput!): Course!
+
   """Create a prerequisite/postrequisite relationship between courses"""
   createCourseRelationship(input: CreateCourseRelationshipInput!): CourseRelationshipResult!
+  createDegree(createDegreeInput: CreateDegreeInput!): Degree!
+  createFaculty(createFacultyInput: CreateFacultyInput!): Faculty!
 
   """Creates a new module"""
   createModule(input: CreateModuleInput!): Module!
@@ -291,6 +321,11 @@ type Mutation {
 
   """Delete a question"""
   deleteQuestion(input: DeleteQuestionInput!): Question!
+  removeBlock(id: ID!): Block!
+  removeDegree(id: ID!): Degree!
+  removeFaculty(id: ID!): Faculty!
+  removeModule(id: ID!): Module!
+  removeUniversity(id: ID!): University!
 
   """Replace a course's modules with the provided module IDs"""
   setCourseModules(input: SetCourseModulesInput!): Course!
@@ -299,14 +334,25 @@ type Mutation {
   Assign a faculty to a degree or clear the assignment when facultyId is null
   """
   setDegreeFaculty(input: SetDegreeFacultyInput!): Degree!
+  updateBlock(updateBlockInput: UpdateBlockInput!): Block!
 
   """
   Update a course's fields (e.g., name translation, university, publishedAt)
   """
   updateCourse(input: UpdateCourseInput!): Course!
+  updateDegree(updateDegreeInput: UpdateDegreeInput!): Degree!
+  updateFaculty(updateFacultyInput: UpdateFacultyInput!): Faculty!
+  updateModule(updateModuleInput: UpdateModuleInput!): Module!
 
   """Update an existing question"""
   updateQuestion(input: UpdateQuestionInput!): Question!
+  updateUniversity(updateUniversityInput: UpdateUniversityInput!): University!
+}
+
+type NumberAnswer {
+  answerId: String!
+  id: ID!
+  value: Float!
 }
 
 type Query {
@@ -315,6 +361,7 @@ type Query {
     """Block ID"""
     id: ID!
   ): Block
+  blocks: [Block!]!
 
   """Get a specific course by ID"""
   course(
@@ -333,6 +380,7 @@ type Query {
 
   """Get all degrees with optional filtering"""
   degrees(query: DegreesQueryDto): [Degree!]!
+  faculties: [Faculty!]!
 
   """Get faculties by university ID"""
   facultiesByUniversity(
@@ -440,6 +488,14 @@ enum RelationshipMetadataKey {
   TYPE
 }
 
+type SelectAnswer {
+  answerId: String!
+  id: ID!
+  isCorrect: Boolean!
+  text: Translation!
+  translationId: String!
+}
+
 input SetCourseModulesInput {
   """Course ID"""
   courseId: ID!
@@ -462,11 +518,24 @@ type Translation {
   id: String!
 }
 
+type UnitAnswer {
+  answerId: String!
+  id: ID!
+  unit: String!
+  value: Float!
+}
+
 type University {
   courses: [Course!]
   degrees: [Degree!]
   id: ID!
   name: Translation!
+}
+
+input UpdateBlockInput {
+  id: String!
+  moduleId: String
+  name: String
 }
 
 input UpdateCourseInput {
@@ -486,6 +555,31 @@ input UpdateCourseInput {
   universityId: String
 }
 
+input UpdateDegreeInput {
+  id: String!
+  name: String
+  universityId: String
+}
+
+input UpdateFacultyInput {
+  description: String
+  id: String!
+  name: String
+  universityId: String
+}
+
+input UpdateModuleInput {
+  """ID of the course this module belongs to"""
+  courseId: String
+
+  """English name of the module"""
+  en_text: String
+
+  """Hebrew name of the module"""
+  he_text: String
+  id: String!
+}
+
 input UpdateQuestionInput {
   id: String!
 
@@ -498,4 +592,13 @@ input UpdateQuestionInput {
   """The type of the question"""
   type: QuestionType
   validationStatus: QuestionValidationStatus = ai_generated
+}
+
+input UpdateUniversityInput {
+  """English name of the university"""
+  en_text: String
+
+  """Hebrew name of the university"""
+  he_text: String
+  id: String!
 }

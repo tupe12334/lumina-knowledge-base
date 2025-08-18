@@ -26,8 +26,12 @@ export class DegreesService {
         name: {
           create: {
             en_text: name,
+            he_text: name,
           },
         },
+      },
+      include: {
+        name: true,
       },
     });
   }
@@ -123,14 +127,29 @@ export class DegreesService {
     id: string,
     updateDegreeInput: UpdateDegreeInput,
   ): Promise<Degree> {
+    const { universityId, name } = updateDegreeInput;
     return this.prisma.degree.update({
       where: { id },
-      data: updateDegreeInput,
+      data: {
+        ...(universityId ? { university: { connect: { id: universityId } } } : {}),
+        ...(name ? { name: { update: { en_text: name, he_text: name } } } : {}),
+      },
+      include: {
+        name: true,
+      },
     });
   }
 
   async delete(id: string): Promise<Degree> {
-    return this.prisma.degree.delete({ where: { id } });
+    return this.prisma.degree.delete({
+      where: { id },
+      include: {
+        name: true,
+        university: { include: { name: true } },
+        faculty: { include: { name: true, description: true } },
+        courses: { include: { name: true } },
+      },
+    });
   }
 
   /**
