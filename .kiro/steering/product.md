@@ -1,6 +1,13 @@
 # Product Overview
 
-Lumina Knowledge Base is an educational platform backend that manages academic content and relationships. The system models universities, faculties, degrees, courses, modules, and questions in a hierarchical structure.
+Lumina Knowledge Base is a stateless microservice backend that manages academic content and relationships. The system models universities, faculties, degrees, courses, modules, and questions in a hierarchical structure.
+
+## Service Architecture
+
+- **Stateless Design**: No session state or user context maintained between requests
+- **Production Safety**: Mutations are disabled in production environments via `ENABLE_MUTATIONS` flag
+- **Read-Only Production**: Production deployments serve as read-only data access layer
+- **Development Flexibility**: Full CRUD operations available in development/test environments
 
 ## Core Features
 
