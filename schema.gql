@@ -149,6 +149,14 @@ input CreateQuestionInput {
   validationStatus: QuestionValidationStatus! = ai_generated
 }
 
+input CreateTranslationInput {
+  """English text"""
+  en_text: String!
+
+  """Hebrew text"""
+  he_text: String!
+}
+
 input CreateUniversityInput {
   """English name of the university"""
   en_text: String!
@@ -327,6 +335,7 @@ type Mutation {
 
   """Create a new question"""
   createQuestion(input: CreateQuestionInput!): Question!
+  createTranslation(createTranslationInput: CreateTranslationInput!): Translation!
 
   """Creates a new university"""
   createUniversity(input: CreateUniversityInput!): University!
@@ -349,6 +358,7 @@ type Mutation {
   removeDegree(id: ID!): Degree!
   removeFaculty(id: ID!): Faculty!
   removeModule(id: ID!): Module!
+  removeTranslation(id: ID!): Translation!
   removeUniversity(id: ID!): University!
 
   """Replace a course's modules with the provided module IDs"""
@@ -370,6 +380,7 @@ type Mutation {
 
   """Update an existing question"""
   updateQuestion(input: UpdateQuestionInput!): Question!
+  updateTranslation(updateTranslationInput: UpdateTranslationInput!): Translation!
   updateUniversity(updateUniversityInput: UpdateUniversityInput!): University!
 }
 
@@ -435,6 +446,8 @@ type Query {
 
   """Get all questions with optional filtering"""
   questions(input: QuestionsQueryDto): [Question!]!
+  translation(id: ID!): Translation
+  translations: [Translation!]!
   universities: [University!]!
   university(id: ID!): University
 }
@@ -616,6 +629,17 @@ input UpdateQuestionInput {
   """The type of the question"""
   type: QuestionType
   validationStatus: QuestionValidationStatus = ai_generated
+}
+
+input UpdateTranslationInput {
+  """English text"""
+  en_text: String
+
+  """Hebrew text"""
+  he_text: String
+
+  """Translation ID"""
+  id: ID!
 }
 
 input UpdateUniversityInput {
