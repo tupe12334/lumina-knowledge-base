@@ -633,6 +633,7 @@
             "name": "id",
             "required": true,
             "in": "path",
+            "description": "The ID of the university",
             "schema": {
               "type": "string"
             }
@@ -669,6 +670,7 @@
             "name": "id",
             "required": true,
             "in": "path",
+            "description": "The ID of the university",
             "schema": {
               "type": "string"
             }
@@ -708,6 +710,7 @@
             "name": "id",
             "required": true,
             "in": "path",
+            "description": "The ID of the university",
             "schema": {
               "type": "string"
             }
@@ -805,6 +808,7 @@
             "name": "id",
             "required": true,
             "in": "path",
+            "description": "The ID of the course",
             "schema": {
               "type": "string"
             }
@@ -841,6 +845,7 @@
             "name": "id",
             "required": true,
             "in": "path",
+            "description": "The ID of the course",
             "schema": {
               "type": "string"
             }
@@ -880,6 +885,7 @@
             "name": "id",
             "required": true,
             "in": "path",
+            "description": "The ID of the course",
             "schema": {
               "type": "string"
             }
@@ -980,6 +986,7 @@
             "name": "id",
             "required": true,
             "in": "path",
+            "description": "The ID of the course",
             "schema": {
               "type": "string"
             }
@@ -1053,7 +1060,107 @@
       "get": {
         "description": "Returns a list of all modules.",
         "operationId": "ModulesController_findAll",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "minQuestions",
+            "required": false,
+            "in": "query",
+            "description": "Filter modules by minimum number of questions",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "maxQuestions",
+            "required": false,
+            "in": "query",
+            "description": "Filter modules by maximum number of questions",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "exactQuestions",
+            "required": false,
+            "in": "query",
+            "description": "Filter modules by exact number of questions",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "courseId",
+            "required": false,
+            "in": "query",
+            "description": "Filter modules by course ID",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "universityId",
+            "required": false,
+            "in": "query",
+            "description": "Filter modules by university ID",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "nameSearch",
+            "required": false,
+            "in": "query",
+            "description": "Search modules by name (partial match, case insensitive)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "hasQuestions",
+            "required": false,
+            "in": "query",
+            "description": "Filter modules that have questions",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "hasPrerequisites",
+            "required": false,
+            "in": "query",
+            "description": "Filter modules that have prerequisites",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "hasPostrequisites",
+            "required": false,
+            "in": "query",
+            "description": "Filter modules that have postrequisites",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "hasSubModules",
+            "required": false,
+            "in": "query",
+            "description": "Filter modules that have sub-modules",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "hasParentModules",
+            "required": false,
+            "in": "query",
+            "description": "Filter modules that have parent modules",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "A list of modules.",
@@ -1087,6 +1194,7 @@
             "name": "id",
             "required": true,
             "in": "path",
+            "description": "The ID of the module",
             "schema": {
               "type": "string"
             }
@@ -1123,6 +1231,7 @@
             "name": "id",
             "required": true,
             "in": "path",
+            "description": "The ID of the module",
             "schema": {
               "type": "string"
             }
@@ -1162,6 +1271,7 @@
             "name": "id",
             "required": true,
             "in": "path",
+            "description": "The ID of the module",
             "schema": {
               "type": "string"
             }
@@ -1415,6 +1525,7 @@
             "name": "id",
             "required": true,
             "in": "path",
+            "description": "The ID of the question",
             "schema": {
               "type": "string"
             }
@@ -1451,6 +1562,7 @@
             "name": "id",
             "required": true,
             "in": "path",
+            "description": "The ID of the question",
             "schema": {
               "type": "string"
             }
@@ -1490,6 +1602,7 @@
             "name": "id",
             "required": true,
             "in": "path",
+            "description": "The ID of the question",
             "schema": {
               "type": "string"
             }
@@ -1615,6 +1728,7 @@
             "name": "id",
             "required": true,
             "in": "path",
+            "description": "The ID of the degree",
             "schema": {
               "type": "string"
             }
@@ -1651,6 +1765,7 @@
             "name": "id",
             "required": true,
             "in": "path",
+            "description": "The ID of the degree",
             "schema": {
               "type": "string"
             }
@@ -1690,6 +1805,7 @@
             "name": "id",
             "required": true,
             "in": "path",
+            "description": "The ID of the degree",
             "schema": {
               "type": "string"
             }
@@ -1721,6 +1837,7 @@
             "name": "id",
             "required": true,
             "in": "path",
+            "description": "The ID of the degree",
             "schema": {
               "type": "string"
             }
@@ -1762,6 +1879,7 @@
             "name": "id",
             "required": true,
             "in": "path",
+            "description": "The ID of the degree",
             "schema": {
               "type": "string"
             }
@@ -1869,6 +1987,7 @@
             "name": "id",
             "required": true,
             "in": "path",
+            "description": "The ID of the block",
             "schema": {
               "type": "string"
             }
@@ -1905,6 +2024,7 @@
             "name": "id",
             "required": true,
             "in": "path",
+            "description": "The ID of the block",
             "schema": {
               "type": "string"
             }
@@ -1954,6 +2074,7 @@
             "name": "id",
             "required": true,
             "in": "path",
+            "description": "The ID of the block",
             "schema": {
               "type": "string"
             }
@@ -2120,6 +2241,7 @@
             "name": "id",
             "required": true,
             "in": "path",
+            "description": "The ID of the faculty",
             "schema": {
               "type": "string"
             }
@@ -2156,6 +2278,7 @@
             "name": "id",
             "required": true,
             "in": "path",
+            "description": "The ID of the faculty",
             "schema": {
               "type": "string"
             }
@@ -2195,6 +2318,7 @@
             "name": "id",
             "required": true,
             "in": "path",
+            "description": "The ID of the faculty",
             "schema": {
               "type": "string"
             }
@@ -2226,6 +2350,7 @@
             "name": "universityId",
             "required": true,
             "in": "path",
+            "description": "The ID of the university",
             "schema": {
               "type": "string"
             }
@@ -2333,6 +2458,7 @@
             "name": "id",
             "required": true,
             "in": "path",
+            "description": "The ID of the translation",
             "schema": {
               "type": "string"
             }
@@ -2369,6 +2495,7 @@
             "name": "id",
             "required": true,
             "in": "path",
+            "description": "The ID of the translation",
             "schema": {
               "type": "string"
             }
@@ -2408,6 +2535,7 @@
             "name": "id",
             "required": true,
             "in": "path",
+            "description": "The ID of the translation",
             "schema": {
               "type": "string"
             }
@@ -2514,6 +2642,7 @@
             "name": "id",
             "required": true,
             "in": "path",
+            "description": "The ID of the answer",
             "schema": {
               "type": "string"
             }
@@ -2550,6 +2679,7 @@
             "name": "id",
             "required": true,
             "in": "path",
+            "description": "The ID of the answer",
             "schema": {
               "type": "string"
             }
@@ -2589,6 +2719,7 @@
             "name": "id",
             "required": true,
             "in": "path",
+            "description": "The ID of the answer",
             "schema": {
               "type": "string"
             }
@@ -2608,6 +2739,22 @@
         "summary": "Delete an answer by ID",
         "tags": [
           "answers"
+        ]
+      }
+    },
+    "/system/db-hash": {
+      "get": {
+        "description": "Returns a deterministic SHA-256 hash representing the current database contents.",
+        "operationId": "DataHashController_getDbHash",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Database data hash"
+          }
+        },
+        "summary": "Get database data hash",
+        "tags": [
+          "system"
         ]
       }
     }
@@ -3207,7 +3354,24 @@
       },
       "CreateCourseRelationshipInput": {
         "type": "object",
-        "properties": {}
+        "properties": {
+          "prerequisiteCourseId": {
+            "type": "string",
+            "description": "The ID of the prerequisite course"
+          },
+          "postrequisiteCourseId": {
+            "type": "string",
+            "description": "The ID of the postrequisite course"
+          },
+          "metadata": {
+            "type": "object",
+            "description": "Optional metadata for the relationship (JSON string)"
+          }
+        },
+        "required": [
+          "prerequisiteCourseId",
+          "postrequisiteCourseId"
+        ]
       },
       "CourseRelationshipResult": {
         "type": "object",
@@ -3215,7 +3379,20 @@
       },
       "DeleteCourseRelationshipInput": {
         "type": "object",
-        "properties": {}
+        "properties": {
+          "prerequisiteCourseId": {
+            "type": "string",
+            "description": "The ID of the prerequisite course"
+          },
+          "postrequisiteCourseId": {
+            "type": "string",
+            "description": "The ID of the postrequisite course"
+          }
+        },
+        "required": [
+          "prerequisiteCourseId",
+          "postrequisiteCourseId"
+        ]
       },
       "CreateModuleInput": {
         "type": "object",
@@ -3241,7 +3418,24 @@
       },
       "CreateModuleRelationshipInput": {
         "type": "object",
-        "properties": {}
+        "properties": {
+          "prerequisiteModuleId": {
+            "type": "string",
+            "description": "The ID of the prerequisite module"
+          },
+          "postrequisiteModuleId": {
+            "type": "string",
+            "description": "The ID of the postrequisite module"
+          },
+          "metadata": {
+            "type": "object",
+            "description": "Optional metadata for the relationship (JSON string)"
+          }
+        },
+        "required": [
+          "prerequisiteModuleId",
+          "postrequisiteModuleId"
+        ]
       },
       "ModuleRelationshipResult": {
         "type": "object",
@@ -3268,11 +3462,59 @@
       },
       "DeleteModuleRelationshipInput": {
         "type": "object",
-        "properties": {}
+        "properties": {
+          "prerequisiteModuleId": {
+            "type": "string",
+            "description": "The ID of the prerequisite module"
+          },
+          "postrequisiteModuleId": {
+            "type": "string",
+            "description": "The ID of the postrequisite module"
+          }
+        },
+        "required": [
+          "prerequisiteModuleId",
+          "postrequisiteModuleId"
+        ]
       },
       "CreateQuestionInput": {
         "type": "object",
-        "properties": {}
+        "properties": {
+          "validationStatus": {
+            "type": "string",
+            "enum": [
+              "ai_generated",
+              "in_manual_review",
+              "approved",
+              "rejected"
+            ],
+            "description": "The validation status of the question"
+          },
+          "translationId": {
+            "type": "string",
+            "description": "The ID of the translation for the question text"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "selection",
+              "value",
+              "void"
+            ],
+            "description": "The type of the question"
+          },
+          "moduleIds": {
+            "description": "Optional list of module IDs this question belongs to",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "translationId",
+          "type"
+        ]
       },
       "CreateDegreeInput": {
         "type": "object",
@@ -3294,15 +3536,53 @@
       },
       "CreateBlockInput": {
         "type": "object",
-        "properties": {}
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of the block"
+          },
+          "moduleId": {
+            "type": "string",
+            "description": "ID of the module this block belongs to"
+          }
+        },
+        "required": [
+          "name",
+          "moduleId"
+        ]
       },
       "UpdateBlockInput": {
         "type": "object",
-        "properties": {}
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Block ID"
+          }
+        },
+        "required": [
+          "id"
+        ]
       },
       "CreateBlockRelationshipInput": {
         "type": "object",
-        "properties": {}
+        "properties": {
+          "prerequisiteBlockId": {
+            "type": "string",
+            "description": "The ID of the prerequisite block"
+          },
+          "postrequisiteBlockId": {
+            "type": "string",
+            "description": "The ID of the postrequisite block"
+          },
+          "metadata": {
+            "type": "object",
+            "description": "Optional metadata for the relationship (JSON string)"
+          }
+        },
+        "required": [
+          "prerequisiteBlockId",
+          "postrequisiteBlockId"
+        ]
       },
       "BlockRelationshipResult": {
         "type": "object",
@@ -3329,11 +3609,42 @@
       },
       "DeleteBlockRelationshipInput": {
         "type": "object",
-        "properties": {}
+        "properties": {
+          "prerequisiteBlockId": {
+            "type": "string",
+            "description": "The ID of the prerequisite block"
+          },
+          "postrequisiteBlockId": {
+            "type": "string",
+            "description": "The ID of the postrequisite block"
+          }
+        },
+        "required": [
+          "prerequisiteBlockId",
+          "postrequisiteBlockId"
+        ]
       },
       "CreateFacultyInput": {
         "type": "object",
-        "properties": {}
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of the faculty"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the faculty"
+          },
+          "universityId": {
+            "type": "string",
+            "description": "ID of the university this faculty belongs to"
+          }
+        },
+        "required": [
+          "name",
+          "description",
+          "universityId"
+        ]
       },
       "CreateTranslationInput": {
         "type": "object",
