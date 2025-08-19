@@ -163,7 +163,10 @@
               }
             }
           }
-        }
+        },
+        "tags": [
+          "Health"
+        ]
       }
     },
     "/health/liveness": {
@@ -328,7 +331,10 @@
               }
             }
           }
-        }
+        },
+        "tags": [
+          "Health"
+        ]
       }
     },
     "/health/readiness": {
@@ -493,7 +499,10 @@
               }
             }
           }
-        }
+        },
+        "tags": [
+          "Health"
+        ]
       }
     },
     "/database/dump": {
@@ -504,7 +513,10 @@
           "200": {
             "description": ""
           }
-        }
+        },
+        "tags": [
+          "Database"
+        ]
       }
     },
     "/database/info": {
@@ -515,7 +527,10 @@
           "200": {
             "description": ""
           }
-        }
+        },
+        "tags": [
+          "Database"
+        ]
       }
     }
   },

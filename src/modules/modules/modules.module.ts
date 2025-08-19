@@ -7,5 +7,6 @@ import { QuestionsModule } from '../questions/questions.module';
 @Module({
   imports: [PrismaModule, QuestionsModule],
   providers: [ModulesService, ModulesResolver],
+  exports: [ModulesService],
 })
 export class ModulesModule {}
