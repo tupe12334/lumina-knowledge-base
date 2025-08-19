@@ -80,6 +80,9 @@
               }
             }
           },
+          "500": {
+            "description": "Health check failed"
+          },
           "503": {
             "description": "The Health Check is not successful",
             "content": {
@@ -165,7 +168,7 @@
           }
         },
         "tags": [
-          "Health"
+          "health"
         ]
       }
     },
@@ -248,173 +251,8 @@
               }
             }
           },
-          "503": {
-            "description": "The Health Check is not successful",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "example": "error"
-                    },
-                    "info": {
-                      "type": "object",
-                      "example": {
-                        "database": {
-                          "status": "up"
-                        }
-                      },
-                      "additionalProperties": {
-                        "type": "object",
-                        "required": [
-                          "status"
-                        ],
-                        "properties": {
-                          "status": {
-                            "type": "string"
-                          }
-                        },
-                        "additionalProperties": true
-                      },
-                      "nullable": true
-                    },
-                    "error": {
-                      "type": "object",
-                      "example": {
-                        "redis": {
-                          "status": "down",
-                          "message": "Could not connect"
-                        }
-                      },
-                      "additionalProperties": {
-                        "type": "object",
-                        "required": [
-                          "status"
-                        ],
-                        "properties": {
-                          "status": {
-                            "type": "string"
-                          }
-                        },
-                        "additionalProperties": true
-                      },
-                      "nullable": true
-                    },
-                    "details": {
-                      "type": "object",
-                      "example": {
-                        "database": {
-                          "status": "up"
-                        },
-                        "redis": {
-                          "status": "down",
-                          "message": "Could not connect"
-                        }
-                      },
-                      "additionalProperties": {
-                        "type": "object",
-                        "required": [
-                          "status"
-                        ],
-                        "properties": {
-                          "status": {
-                            "type": "string"
-                          }
-                        },
-                        "additionalProperties": true
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "tags": [
-          "Health"
-        ]
-      }
-    },
-    "/health/readiness": {
-      "get": {
-        "operationId": "HealthController_readiness",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "The Health Check is successful",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "string",
-                      "example": "ok"
-                    },
-                    "info": {
-                      "type": "object",
-                      "example": {
-                        "database": {
-                          "status": "up"
-                        }
-                      },
-                      "additionalProperties": {
-                        "type": "object",
-                        "required": [
-                          "status"
-                        ],
-                        "properties": {
-                          "status": {
-                            "type": "string"
-                          }
-                        },
-                        "additionalProperties": true
-                      },
-                      "nullable": true
-                    },
-                    "error": {
-                      "type": "object",
-                      "example": {},
-                      "additionalProperties": {
-                        "type": "object",
-                        "required": [
-                          "status"
-                        ],
-                        "properties": {
-                          "status": {
-                            "type": "string"
-                          }
-                        },
-                        "additionalProperties": true
-                      },
-                      "nullable": true
-                    },
-                    "details": {
-                      "type": "object",
-                      "example": {
-                        "database": {
-                          "status": "up"
-                        }
-                      },
-                      "additionalProperties": {
-                        "type": "object",
-                        "required": [
-                          "status"
-                        ],
-                        "properties": {
-                          "status": {
-                            "type": "string"
-                          }
-                        },
-                        "additionalProperties": true
-                      }
-                    }
-                  }
-                }
-              }
-            }
+          "500": {
+            "description": "Liveness check failed"
           },
           "503": {
             "description": "The Health Check is not successful",
@@ -501,7 +339,178 @@
           }
         },
         "tags": [
-          "Health"
+          "health"
+        ]
+      }
+    },
+    "/health/readiness": {
+      "get": {
+        "operationId": "HealthController_readiness",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "The Health Check is successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "ok"
+                    },
+                    "info": {
+                      "type": "object",
+                      "example": {
+                        "database": {
+                          "status": "up"
+                        }
+                      },
+                      "additionalProperties": {
+                        "type": "object",
+                        "required": [
+                          "status"
+                        ],
+                        "properties": {
+                          "status": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": true
+                      },
+                      "nullable": true
+                    },
+                    "error": {
+                      "type": "object",
+                      "example": {},
+                      "additionalProperties": {
+                        "type": "object",
+                        "required": [
+                          "status"
+                        ],
+                        "properties": {
+                          "status": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": true
+                      },
+                      "nullable": true
+                    },
+                    "details": {
+                      "type": "object",
+                      "example": {
+                        "database": {
+                          "status": "up"
+                        }
+                      },
+                      "additionalProperties": {
+                        "type": "object",
+                        "required": [
+                          "status"
+                        ],
+                        "properties": {
+                          "status": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Readiness check failed"
+          },
+          "503": {
+            "description": "The Health Check is not successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "error"
+                    },
+                    "info": {
+                      "type": "object",
+                      "example": {
+                        "database": {
+                          "status": "up"
+                        }
+                      },
+                      "additionalProperties": {
+                        "type": "object",
+                        "required": [
+                          "status"
+                        ],
+                        "properties": {
+                          "status": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": true
+                      },
+                      "nullable": true
+                    },
+                    "error": {
+                      "type": "object",
+                      "example": {
+                        "redis": {
+                          "status": "down",
+                          "message": "Could not connect"
+                        }
+                      },
+                      "additionalProperties": {
+                        "type": "object",
+                        "required": [
+                          "status"
+                        ],
+                        "properties": {
+                          "status": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": true
+                      },
+                      "nullable": true
+                    },
+                    "details": {
+                      "type": "object",
+                      "example": {
+                        "database": {
+                          "status": "up"
+                        },
+                        "redis": {
+                          "status": "down",
+                          "message": "Could not connect"
+                        }
+                      },
+                      "additionalProperties": {
+                        "type": "object",
+                        "required": [
+                          "status"
+                        ],
+                        "properties": {
+                          "status": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "health"
         ]
       }
     },
@@ -511,11 +520,14 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": ""
+            "description": "Database dump in SQL format"
+          },
+          "500": {
+            "description": "Failed to create database dump"
           }
         },
         "tags": [
-          "Database"
+          "database"
         ]
       }
     },
@@ -525,11 +537,14 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": ""
+            "description": "Database information"
+          },
+          "500": {
+            "description": "Failed to get database info"
           }
         },
         "tags": [
-          "Database"
+          "database"
         ]
       }
     },
@@ -549,7 +564,14 @@
         },
         "responses": {
           "201": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/University"
+                }
+              }
+            }
           }
         },
         "tags": [
@@ -561,7 +583,17 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/University"
+                  }
+                }
+              }
+            }
           }
         },
         "tags": [
@@ -584,7 +616,14 @@
         ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/University"
+                }
+              }
+            }
           }
         },
         "tags": [
@@ -605,7 +644,14 @@
         ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/University"
+                }
+              }
+            }
           }
         },
         "tags": [
@@ -650,7 +696,14 @@
         },
         "responses": {
           "201": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Course"
+                }
+              }
+            }
           }
         },
         "tags": [
@@ -662,7 +715,17 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Course"
+                  }
+                }
+              }
+            }
           }
         },
         "tags": [
@@ -685,7 +748,14 @@
         ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Course"
+                }
+              }
+            }
           }
         },
         "tags": [
@@ -706,7 +776,14 @@
         ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Course"
+                }
+              }
+            }
           }
         },
         "tags": [
@@ -751,7 +828,14 @@
         },
         "responses": {
           "201": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CourseRelationshipResult"
+                }
+              }
+            }
           }
         },
         "tags": [
@@ -772,7 +856,7 @@
           }
         },
         "responses": {
-          "200": {
+          "204": {
             "description": ""
           }
         },
@@ -795,8 +879,15 @@
           }
         ],
         "responses": {
-          "201": {
-            "description": ""
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Course"
+                }
+              }
+            }
           }
         },
         "tags": [
@@ -820,7 +911,14 @@
         },
         "responses": {
           "201": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Module"
+                }
+              }
+            }
           }
         },
         "tags": [
@@ -832,7 +930,17 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Module"
+                  }
+                }
+              }
+            }
           }
         },
         "tags": [
@@ -855,7 +963,14 @@
         ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Module"
+                }
+              }
+            }
           }
         },
         "tags": [
@@ -876,7 +991,14 @@
         ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Module"
+                }
+              }
+            }
           }
         },
         "tags": [
@@ -921,7 +1043,14 @@
         },
         "responses": {
           "201": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModuleRelationshipResult"
+                }
+              }
+            }
           }
         },
         "tags": [
@@ -942,7 +1071,7 @@
           }
         },
         "responses": {
-          "200": {
+          "204": {
             "description": ""
           }
         },
@@ -967,7 +1096,14 @@
         },
         "responses": {
           "201": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Question"
+                }
+              }
+            }
           }
         },
         "tags": [
@@ -1066,7 +1202,17 @@
         ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Question"
+                  }
+                }
+              }
+            }
           }
         },
         "tags": [
@@ -1089,7 +1235,14 @@
         ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Question"
+                }
+              }
+            }
           }
         },
         "tags": [
@@ -1110,7 +1263,14 @@
         ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Question"
+                }
+              }
+            }
           }
         },
         "tags": [
@@ -1155,7 +1315,14 @@
         },
         "responses": {
           "201": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Degree"
+                }
+              }
+            }
           }
         },
         "tags": [
@@ -1195,7 +1362,17 @@
         ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Degree"
+                  }
+                }
+              }
+            }
           }
         },
         "tags": [
@@ -1218,7 +1395,14 @@
         ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Degree"
+                }
+              }
+            }
           }
         },
         "tags": [
@@ -1239,7 +1423,14 @@
         ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Degree"
+                }
+              }
+            }
           }
         },
         "tags": [
@@ -1282,8 +1473,15 @@
           }
         ],
         "responses": {
-          "201": {
-            "description": ""
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Degree"
+                }
+              }
+            }
           }
         },
         "tags": [
@@ -1305,8 +1503,15 @@
           }
         ],
         "responses": {
-          "201": {
-            "description": ""
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Degree"
+                }
+              }
+            }
           }
         },
         "tags": [
@@ -1330,11 +1535,18 @@
         },
         "responses": {
           "201": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Block"
+                }
+              }
+            }
           }
         },
         "tags": [
-          "Blocks"
+          "blocks"
         ]
       },
       "get": {
@@ -1342,11 +1554,21 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Block"
+                  }
+                }
+              }
+            }
           }
         },
         "tags": [
-          "Blocks"
+          "blocks"
         ]
       }
     },
@@ -1365,11 +1587,18 @@
         ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Block"
+                }
+              }
+            }
           }
         },
         "tags": [
-          "Blocks"
+          "blocks"
         ]
       },
       "put": {
@@ -1396,11 +1625,18 @@
         },
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Block"
+                }
+              }
+            }
           }
         },
         "tags": [
-          "Blocks"
+          "blocks"
         ]
       },
       "delete": {
@@ -1421,7 +1657,7 @@
           }
         },
         "tags": [
-          "Blocks"
+          "blocks"
         ]
       }
     },
@@ -1441,11 +1677,18 @@
         },
         "responses": {
           "201": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BlockRelationshipResult"
+                }
+              }
+            }
           }
         },
         "tags": [
-          "Blocks"
+          "blocks"
         ]
       },
       "delete": {
@@ -1462,12 +1705,12 @@
           }
         },
         "responses": {
-          "200": {
+          "204": {
             "description": ""
           }
         },
         "tags": [
-          "Blocks"
+          "blocks"
         ]
       }
     },
@@ -1652,7 +1895,14 @@
         },
         "responses": {
           "201": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Translation"
+                }
+              }
+            }
           }
         },
         "tags": [
@@ -1664,7 +1914,17 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Translation"
+                  }
+                }
+              }
+            }
           }
         },
         "tags": [
@@ -1687,7 +1947,14 @@
         ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Translation"
+                }
+              }
+            }
           }
         },
         "tags": [
@@ -1708,7 +1975,14 @@
         ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Translation"
+                }
+              }
+            }
           }
         },
         "tags": [
@@ -1753,7 +2027,14 @@
         },
         "responses": {
           "201": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Answer"
+                }
+              }
+            }
           }
         },
         "tags": [
@@ -1774,7 +2055,17 @@
         ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Answer"
+                  }
+                }
+              }
+            }
           }
         },
         "tags": [
@@ -1797,7 +2088,14 @@
         ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Answer"
+                }
+              }
+            }
           }
         },
         "tags": [
@@ -1818,7 +2116,14 @@
         ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Answer"
+                }
+              }
+            }
           }
         },
         "tags": [
@@ -1882,121 +2187,6 @@
           "he_text"
         ]
       },
-      "CreateCourseInput": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "description": "Course name"
-          },
-          "universityId": {
-            "type": "string",
-            "description": "Owning university id",
-            "format": "uuid"
-          }
-        },
-        "required": [
-          "name",
-          "universityId"
-        ]
-      },
-      "CreateCourseRelationshipInput": {
-        "type": "object",
-        "properties": {}
-      },
-      "DeleteCourseRelationshipInput": {
-        "type": "object",
-        "properties": {}
-      },
-      "CreateModuleInput": {
-        "type": "object",
-        "properties": {
-          "en_text": {
-            "type": "string",
-            "description": "English name of the module"
-          },
-          "he_text": {
-            "type": "string",
-            "description": "Hebrew name of the module"
-          },
-          "courseId": {
-            "type": "string",
-            "description": "ID of the course this module belongs to"
-          }
-        },
-        "required": [
-          "en_text",
-          "he_text",
-          "courseId"
-        ]
-      },
-      "CreateModuleRelationshipInput": {
-        "type": "object",
-        "properties": {}
-      },
-      "DeleteModuleRelationshipInput": {
-        "type": "object",
-        "properties": {}
-      },
-      "CreateQuestionInput": {
-        "type": "object",
-        "properties": {}
-      },
-      "QuestionType": {
-        "type": "string",
-        "enum": [
-          "selection",
-          "value",
-          "void"
-        ]
-      },
-      "QuestionValidationStatus": {
-        "type": "string",
-        "enum": [
-          "ai_generated",
-          "in_manual_review",
-          "approved",
-          "rejected"
-        ]
-      },
-      "CreateDegreeInput": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "description": "Degree name"
-          },
-          "universityId": {
-            "type": "string",
-            "description": "Owning university id",
-            "format": "uuid"
-          }
-        },
-        "required": [
-          "name",
-          "universityId"
-        ]
-      },
-      "CreateBlockInput": {
-        "type": "object",
-        "properties": {}
-      },
-      "UpdateBlockInput": {
-        "type": "object",
-        "properties": {}
-      },
-      "CreateBlockRelationshipInput": {
-        "type": "object",
-        "properties": {}
-      },
-      "DeleteBlockRelationshipInput": {
-        "type": "object",
-        "properties": {}
-      },
-      "CreateFacultyInput": {
-        "type": "object",
-        "properties": {}
-      },
       "Translation": {
         "type": "object",
         "properties": {
@@ -2014,6 +2204,114 @@
           "id",
           "en_text",
           "he_text"
+        ]
+      },
+      "Faculty": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "$ref": "#/components/schemas/Translation"
+          },
+          "description": {
+            "$ref": "#/components/schemas/Translation"
+          },
+          "degrees": {
+            "nullable": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Degree"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "description",
+          "degrees"
+        ]
+      },
+      "Degree": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "$ref": "#/components/schemas/Translation"
+          },
+          "universityId": {
+            "type": "string"
+          },
+          "university": {
+            "nullable": true,
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/University"
+              }
+            ]
+          },
+          "courses": {
+            "nullable": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Course"
+            }
+          },
+          "facultyId": {
+            "type": "string",
+            "nullable": true
+          },
+          "faculty": {
+            "nullable": true,
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Faculty"
+              }
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "universityId",
+          "university",
+          "courses",
+          "facultyId",
+          "faculty"
+        ]
+      },
+      "University": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "$ref": "#/components/schemas/Translation"
+          },
+          "courses": {
+            "nullable": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Course"
+            }
+          },
+          "degrees": {
+            "nullable": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Degree"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "courses",
+          "degrees"
         ]
       },
       "RelationshipMetadataKey": {
@@ -2131,6 +2429,15 @@
           "modules"
         ]
       },
+      "QuestionValidationStatus": {
+        "type": "string",
+        "enum": [
+          "ai_generated",
+          "in_manual_review",
+          "approved",
+          "rejected"
+        ]
+      },
       "SelectAnswer": {
         "type": "object",
         "properties": {
@@ -2239,6 +2546,14 @@
           "SelectAnswer",
           "UnitAnswer",
           "NumberAnswer"
+        ]
+      },
+      "QuestionType": {
+        "type": "string",
+        "enum": [
+          "selection",
+          "value",
+          "void"
         ]
       },
       "QuestionPart": {
@@ -2434,113 +2749,153 @@
           "Block"
         ]
       },
-      "University": {
+      "CreateCourseInput": {
         "type": "object",
         "properties": {
-          "id": {
-            "type": "string"
-          },
           "name": {
-            "$ref": "#/components/schemas/Translation"
-          },
-          "courses": {
-            "nullable": true,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Course"
-            }
-          },
-          "degrees": {
-            "nullable": true,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Degree"
-            }
-          }
-        },
-        "required": [
-          "id",
-          "name",
-          "courses",
-          "degrees"
-        ]
-      },
-      "Faculty": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "$ref": "#/components/schemas/Translation"
-          },
-          "description": {
-            "$ref": "#/components/schemas/Translation"
-          },
-          "degrees": {
-            "nullable": true,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Degree"
-            }
-          }
-        },
-        "required": [
-          "id",
-          "name",
-          "description",
-          "degrees"
-        ]
-      },
-      "Degree": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "$ref": "#/components/schemas/Translation"
+            "type": "string",
+            "description": "Course name"
           },
           "universityId": {
+            "type": "string",
+            "description": "Owning university id",
+            "format": "uuid"
+          }
+        },
+        "required": [
+          "name",
+          "universityId"
+        ]
+      },
+      "CreateCourseRelationshipInput": {
+        "type": "object",
+        "properties": {}
+      },
+      "CourseRelationshipResult": {
+        "type": "object",
+        "properties": {}
+      },
+      "DeleteCourseRelationshipInput": {
+        "type": "object",
+        "properties": {}
+      },
+      "CreateModuleInput": {
+        "type": "object",
+        "properties": {
+          "en_text": {
+            "type": "string",
+            "description": "English name of the module"
+          },
+          "he_text": {
+            "type": "string",
+            "description": "Hebrew name of the module"
+          },
+          "courseId": {
+            "type": "string",
+            "description": "ID of the course this module belongs to"
+          }
+        },
+        "required": [
+          "en_text",
+          "he_text",
+          "courseId"
+        ]
+      },
+      "CreateModuleRelationshipInput": {
+        "type": "object",
+        "properties": {}
+      },
+      "ModuleRelationshipResult": {
+        "type": "object",
+        "properties": {
+          "id": {
             "type": "string"
           },
-          "university": {
-            "nullable": true,
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/University"
-              }
-            ]
+          "prerequisite": {
+            "$ref": "#/components/schemas/Block"
           },
-          "courses": {
-            "nullable": true,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Course"
-            }
+          "postrequisite": {
+            "$ref": "#/components/schemas/Block"
           },
-          "facultyId": {
-            "type": "string",
-            "nullable": true
-          },
-          "faculty": {
-            "nullable": true,
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/Faculty"
-              }
-            ]
+          "metadata": {
+            "type": "object"
           }
         },
         "required": [
           "id",
-          "name",
-          "universityId",
-          "university",
-          "courses",
-          "facultyId",
-          "faculty"
+          "prerequisite",
+          "postrequisite",
+          "metadata"
         ]
+      },
+      "DeleteModuleRelationshipInput": {
+        "type": "object",
+        "properties": {}
+      },
+      "CreateQuestionInput": {
+        "type": "object",
+        "properties": {}
+      },
+      "CreateDegreeInput": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Degree name"
+          },
+          "universityId": {
+            "type": "string",
+            "description": "Owning university id",
+            "format": "uuid"
+          }
+        },
+        "required": [
+          "name",
+          "universityId"
+        ]
+      },
+      "CreateBlockInput": {
+        "type": "object",
+        "properties": {}
+      },
+      "UpdateBlockInput": {
+        "type": "object",
+        "properties": {}
+      },
+      "CreateBlockRelationshipInput": {
+        "type": "object",
+        "properties": {}
+      },
+      "BlockRelationshipResult": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "prerequisite": {
+            "$ref": "#/components/schemas/Block"
+          },
+          "postrequisite": {
+            "$ref": "#/components/schemas/Block"
+          },
+          "metadata": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "id",
+          "prerequisite",
+          "postrequisite",
+          "metadata"
+        ]
+      },
+      "DeleteBlockRelationshipInput": {
+        "type": "object",
+        "properties": {}
+      },
+      "CreateFacultyInput": {
+        "type": "object",
+        "properties": {}
       },
       "CreateTranslationInput": {
         "type": "object",
