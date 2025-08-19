@@ -17,6 +17,8 @@ import {
   ApiCreatedResponse,
   ApiOkResponse,
   ApiNoContentResponse,
+  ApiOperation,
+  ApiResponse,
 } from '@nestjs/swagger';
 import { University } from './models/University.entity';
 
@@ -26,25 +28,37 @@ export class UniversitiesController {
   constructor(private readonly universitiesService: UniversitiesService) {}
 
   @Post()
-  @ApiCreatedResponse({ type: University })
+  @ApiOperation({ summary: 'Create a new university', description: 'Creates a new university record.' })
+  @ApiCreatedResponse({ type: University, description: 'The newly created university.' })
+  @ApiResponse({ status: 400, description: 'Bad Request.' })
+  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
   create(@Body() createUniversityDto: CreateUniversityInput) {
     return this.universitiesService.create(createUniversityDto);
   }
 
   @Get()
-  @ApiOkResponse({ type: University, isArray: true })
+  @ApiOperation({ summary: 'Retrieve all universities', description: 'Returns a list of all universities.' })
+  @ApiOkResponse({ type: University, isArray: true, description: 'A list of universities.' })
+  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
   findAll() {
     return this.universitiesService.findAll();
   }
 
   @Get(':id')
-  @ApiOkResponse({ type: University })
+  @ApiOperation({ summary: 'Retrieve a university by ID', description: 'Returns a single university by its ID.' })
+  @ApiOkResponse({ type: University, description: 'The university with the specified ID.' })
+  @ApiResponse({ status: 404, description: 'University not found.' })
+  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
   findOne(@Param('id') id: string) {
     return this.universitiesService.findUnique(id);
   }
 
   @Put(':id')
-  @ApiOkResponse({ type: University })
+  @ApiOperation({ summary: 'Update a university by ID', description: 'Updates an existing university record.' })
+  @ApiOkResponse({ type: University, description: 'The updated university.' })
+  @ApiResponse({ status: 400, description: 'Bad Request.' })
+  @ApiResponse({ status: 404, description: 'University not found.' })
+  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
   update(
     @Param('id') id: string,
     @Body() updateUniversityDto: Omit<UpdateUniversityInput, 'id'>,
@@ -53,8 +67,11 @@ export class UniversitiesController {
   }
 
   @Delete(':id')
+  @ApiOperation({ summary: 'Delete a university by ID', description: 'Deletes a university record by its ID.' })
   @HttpCode(HttpStatus.NO_CONTENT)
-  @ApiNoContentResponse()
+  @ApiNoContentResponse({ description: 'University successfully deleted.' })
+  @ApiResponse({ status: 404, description: 'University not found.' })
+  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
   remove(@Param('id') id: string) {
     return this.universitiesService.remove(id);
   }

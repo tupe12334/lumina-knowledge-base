@@ -14,6 +14,8 @@ import {
   ApiCreatedResponse,
   ApiOkResponse,
   ApiNoContentResponse,
+  ApiOperation,
+  ApiResponse,
 } from '@nestjs/swagger';
 import { CoursesService } from './courses.service';
 import { CreateCourseInput } from './dto/create-course.input';
@@ -31,25 +33,37 @@ export class CoursesController {
   constructor(private readonly coursesService: CoursesService) {}
 
   @Post()
-  @ApiCreatedResponse({ type: Course })
+  @ApiOperation({ summary: 'Create a new course', description: 'Creates a new course record.' })
+  @ApiCreatedResponse({ type: Course, description: 'The newly created course.' })
+  @ApiResponse({ status: 400, description: 'Bad Request.' })
+  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
   create(@Body() createCourseDto: CreateCourseInput) {
     return this.coursesService.create(createCourseDto);
   }
 
   @Get()
-  @ApiOkResponse({ type: Course, isArray: true })
+  @ApiOperation({ summary: 'Retrieve all courses', description: 'Returns a list of all courses.' })
+  @ApiOkResponse({ type: Course, isArray: true, description: 'A list of courses.' })
+  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
   findAll() {
     return this.coursesService.findAll();
   }
 
   @Get(':id')
-  @ApiOkResponse({ type: Course })
+  @ApiOperation({ summary: 'Retrieve a course by ID', description: 'Returns a single course by its ID.' })
+  @ApiOkResponse({ type: Course, description: 'The course with the specified ID.' })
+  @ApiResponse({ status: 404, description: 'Course not found.' })
+  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
   findOne(@Param('id') id: string) {
     return this.coursesService.findUnique(id);
   }
 
   @Put(':id')
-  @ApiOkResponse({ type: Course })
+  @ApiOperation({ summary: 'Update a course by ID', description: 'Updates an existing course record.' })
+  @ApiOkResponse({ type: Course, description: 'The updated course.' })
+  @ApiResponse({ status: 400, description: 'Bad Request.' })
+  @ApiResponse({ status: 404, description: 'Course not found.' })
+  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
   update(
     @Param('id') id: string,
     @Body() updateCourseDto: Omit<UpdateCourseInput, 'courseId'>,
@@ -61,15 +75,21 @@ export class CoursesController {
   }
 
   @Delete(':id')
+  @ApiOperation({ summary: 'Delete a course by ID', description: 'Deletes a course record by its ID.' })
   @HttpCode(HttpStatus.NO_CONTENT)
-  @ApiNoContentResponse()
+  @ApiNoContentResponse({ description: 'Course successfully deleted.' })
+  @ApiResponse({ status: 404, description: 'Course not found.' })
+  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
   remove(@Param('id') id: string) {
     const deleteCourseInput: DeleteCourseInput = { courseId: id, force: true };
     return this.coursesService.deleteCourse(deleteCourseInput);
   }
 
   @Post('relationship')
-  @ApiCreatedResponse({ type: CourseRelationshipResult })
+  @ApiOperation({ summary: 'Create a course relationship', description: 'Creates a new relationship between courses.' })
+  @ApiCreatedResponse({ type: CourseRelationshipResult, description: 'The newly created course relationship.' })
+  @ApiResponse({ status: 400, description: 'Bad Request.' })
+  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
   createRelationship(
     @Body() createCourseRelationshipDto: CreateCourseRelationshipInput,
   ) {
@@ -79,7 +99,10 @@ export class CoursesController {
   }
 
   @Delete('relationship')
-  @ApiNoContentResponse()
+  @ApiOperation({ summary: 'Delete a course relationship', description: 'Deletes an existing relationship between courses.' })
+  @ApiNoContentResponse({ description: 'Course relationship successfully deleted.' })
+  @ApiResponse({ status: 404, description: 'Course relationship not found.' })
+  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
   deleteRelationship(
     @Body() deleteCourseRelationshipDto: DeleteCourseRelationshipInput,
   ) {
@@ -89,7 +112,11 @@ export class CoursesController {
   }
 
   @Post(':id/modules')
-  @ApiOkResponse({ type: Course })
+  @ApiOperation({ summary: 'Set modules for a course', description: 'Sets or updates the modules associated with a course.' })
+  @ApiOkResponse({ type: Course, description: 'The course with the updated modules.' })
+  @ApiResponse({ status: 400, description: 'Bad Request.' })
+  @ApiResponse({ status: 404, description: 'Course or Module not found.' })
+  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
   setModules(
     @Param('id') id: string,
     @Body() setCourseModulesDto: Omit<SetCourseModulesInput, 'courseId'>,

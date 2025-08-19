@@ -14,6 +14,8 @@ import {
   ApiCreatedResponse,
   ApiOkResponse,
   ApiNoContentResponse,
+  ApiOperation,
+  ApiResponse,
 } from '@nestjs/swagger';
 import { BlocksService } from './blocks.service';
 import { CreateBlockInput } from './dto/create-block.input';
@@ -29,38 +31,56 @@ export class BlocksController {
   constructor(private readonly blocksService: BlocksService) {}
 
   @Post()
-  @ApiCreatedResponse({ type: Block })
+  @ApiOperation({ summary: 'Create a new block', description: 'Creates a new block record.' })
+  @ApiCreatedResponse({ type: Block, description: 'The newly created block.' })
+  @ApiResponse({ status: 400, description: 'Bad Request.' })
+  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
   create(@Body() createBlockDto: CreateBlockInput) {
     return this.blocksService.create(createBlockDto);
   }
 
   @Get()
-  @ApiOkResponse({ type: Block, isArray: true })
+  @ApiOperation({ summary: 'Retrieve all blocks', description: 'Returns a list of all blocks.' })
+  @ApiOkResponse({ type: Block, isArray: true, description: 'A list of blocks.' })
+  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
   findAll() {
     return this.blocksService.findAll();
   }
 
   @Get(':id')
-  @ApiOkResponse({ type: Block })
+  @ApiOperation({ summary: 'Retrieve a block by ID', description: 'Returns a single block by its ID.' })
+  @ApiOkResponse({ type: Block, description: 'The block with the specified ID.' })
+  @ApiResponse({ status: 404, description: 'Block not found.' })
+  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
   findOne(@Param('id') id: string) {
     return this.blocksService.findUnique(id);
   }
 
   @Put(':id')
-  @ApiOkResponse({ type: Block })
+  @ApiOperation({ summary: 'Update a block by ID', description: 'Updates an existing block record.' })
+  @ApiOkResponse({ type: Block, description: 'The updated block.' })
+  @ApiResponse({ status: 400, description: 'Bad Request.' })
+  @ApiResponse({ status: 404, description: 'Block not found.' })
+  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
   update(@Param('id') id: string, @Body() updateBlockDto: UpdateBlockInput) {
     return this.blocksService.update(id, updateBlockDto);
   }
 
   @Delete(':id')
+  @ApiOperation({ summary: 'Delete a block by ID', description: 'Deletes a block record by its ID.' })
   @HttpCode(HttpStatus.NO_CONTENT)
-  @ApiNoContentResponse()
+  @ApiNoContentResponse({ description: 'Block successfully deleted.' })
+  @ApiResponse({ status: 404, description: 'Block not found.' })
+  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
   remove(@Param('id') id: string) {
     return this.blocksService.delete(id);
   }
 
   @Post('relationship')
-  @ApiCreatedResponse({ type: BlockRelationshipResult })
+  @ApiOperation({ summary: 'Create a block relationship', description: 'Creates a new relationship between blocks.' })
+  @ApiCreatedResponse({ type: BlockRelationshipResult, description: 'The newly created block relationship.' })
+  @ApiResponse({ status: 400, description: 'Bad Request.' })
+  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
   createRelationship(
     @Body() createBlockRelationshipDto: CreateBlockRelationshipInput,
   ) {
@@ -70,7 +90,10 @@ export class BlocksController {
   }
 
   @Delete('relationship')
-  @ApiNoContentResponse()
+  @ApiOperation({ summary: 'Delete a block relationship', description: 'Deletes an existing relationship between blocks.' })
+  @ApiNoContentResponse({ description: 'Block relationship successfully deleted.' })
+  @ApiResponse({ status: 404, description: 'Block relationship not found.' })
+  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
   deleteRelationship(
     @Body() deleteBlockRelationshipDto: DeleteBlockRelationshipInput,
   ) {

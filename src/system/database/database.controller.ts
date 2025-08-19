@@ -9,6 +9,8 @@ import {
   ApiTags,
   ApiOkResponse,
   ApiInternalServerErrorResponse,
+  ApiOperation,
+  ApiResponse,
 } from '@nestjs/swagger';
 import { DatabaseService } from 'src/system/database/database.service';
 
@@ -18,6 +20,7 @@ export class DatabaseController {
   constructor(private readonly databaseService: DatabaseService) {}
 
   @Get('dump')
+  @ApiOperation({ summary: 'Get database dump', description: 'Retrieves a dump of the database in SQL format.' })
   @Header('Content-Type', 'application/sql')
   @Header(
     'Content-Disposition',
@@ -27,6 +30,7 @@ export class DatabaseController {
   @ApiInternalServerErrorResponse({
     description: 'Failed to create database dump',
   })
+  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
   async getDump(): Promise<string> {
     try {
       const dumpContent = await this.databaseService.createDump();
@@ -40,10 +44,12 @@ export class DatabaseController {
   }
 
   @Get('info')
+  @ApiOperation({ summary: 'Get database information', description: 'Retrieves information about the database.' })
   @ApiOkResponse({ description: 'Database information' })
   @ApiInternalServerErrorResponse({
     description: 'Failed to get database info',
   })
+  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
   async getDatabaseInfo() {
     try {
       return await this.databaseService.getDatabaseInfo();
