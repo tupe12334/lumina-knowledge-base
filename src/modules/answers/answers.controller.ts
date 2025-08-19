@@ -17,6 +17,7 @@ import {
   ApiNoContentResponse,
   ApiOperation,
   ApiResponse,
+  ApiParam,
 } from '@nestjs/swagger';
 import { AnswersService } from './answers.service';
 import { CreateAnswerInput } from './dto/create-answer.input';
@@ -30,8 +31,14 @@ export class AnswersController {
   constructor(private readonly answersService: AnswersService) {}
 
   @Post()
-  @ApiOperation({ summary: 'Create a new answer', description: 'Creates a new answer record.' })
-  @ApiCreatedResponse({ type: Answer, description: 'The newly created answer.' })
+  @ApiOperation({
+    summary: 'Create a new answer',
+    description: 'Creates a new answer record.',
+  })
+  @ApiCreatedResponse({
+    type: Answer,
+    description: 'The newly created answer.',
+  })
   @ApiResponse({ status: 400, description: 'Bad Request.' })
   @ApiResponse({ status: 500, description: 'Internal Server Error.' })
   create(@Body() createDto: CreateAnswerInput) {
@@ -39,16 +46,30 @@ export class AnswersController {
   }
 
   @Get()
-  @ApiOperation({ summary: 'Retrieve all answers', description: 'Returns a list of all answers.' })
-  @ApiOkResponse({ type: Answer, isArray: true, description: 'A list of answers.' })
+  @ApiOperation({
+    summary: 'Retrieve all answers',
+    description: 'Returns a list of all answers.',
+  })
+  @ApiOkResponse({
+    type: Answer,
+    isArray: true,
+    description: 'A list of answers.',
+  })
   @ApiResponse({ status: 500, description: 'Internal Server Error.' })
   findAll(@Query() query: AnswersQueryDto) {
     return this.answersService.findAll(query);
   }
 
   @Get(':id')
-  @ApiOperation({ summary: 'Retrieve an answer by ID', description: 'Returns a single answer by its ID.' })
-  @ApiOkResponse({ type: Answer, description: 'The answer with the specified ID.' })
+  @ApiOperation({
+    summary: 'Retrieve an answer by ID',
+    description: 'Returns a single answer by its ID.',
+  })
+  @ApiParam({ name: 'id', description: 'The ID of the answer', type: String })
+  @ApiOkResponse({
+    type: Answer,
+    description: 'The answer with the specified ID.',
+  })
   @ApiResponse({ status: 404, description: 'Answer not found.' })
   @ApiResponse({ status: 500, description: 'Internal Server Error.' })
   findOne(@Param('id') id: string) {
@@ -56,7 +77,11 @@ export class AnswersController {
   }
 
   @Put(':id')
-  @ApiOperation({ summary: 'Update an answer by ID', description: 'Updates an existing answer record.' })
+  @ApiOperation({
+    summary: 'Update an answer by ID',
+    description: 'Updates an existing answer record.',
+  })
+  @ApiParam({ name: 'id', description: 'The ID of the answer', type: String })
   @ApiOkResponse({ type: Answer, description: 'The updated answer.' })
   @ApiResponse({ status: 400, description: 'Bad Request.' })
   @ApiResponse({ status: 404, description: 'Answer not found.' })
@@ -69,7 +94,11 @@ export class AnswersController {
   }
 
   @Delete(':id')
-  @ApiOperation({ summary: 'Delete an answer by ID', description: 'Deletes an answer record by its ID.' })
+  @ApiOperation({
+    summary: 'Delete an answer by ID',
+    description: 'Deletes an answer record by its ID.',
+  })
+  @ApiParam({ name: 'id', description: 'The ID of the answer', type: String })
   @HttpCode(HttpStatus.NO_CONTENT)
   @ApiNoContentResponse({ description: 'Answer successfully deleted.' })
   @ApiResponse({ status: 404, description: 'Answer not found.' })

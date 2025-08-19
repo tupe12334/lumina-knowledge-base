@@ -13,7 +13,7 @@ vi.mock('@nestjs/swagger', async () => {
   };
 });
 
-import { SwaggerModule, OpenAPIObject, DocumentBuilder } from '@nestjs/swagger';
+import { SwaggerModule, OpenAPIObject } from '@nestjs/swagger';
 import { setupSwagger } from './setup-swagger';
 vi.mock('../openapi/save-openapi-spec', () => ({
   saveOpenapiSpec: vi.fn(),

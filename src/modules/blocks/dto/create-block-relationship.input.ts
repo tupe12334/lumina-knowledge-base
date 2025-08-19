@@ -32,7 +32,9 @@ export class CreateBlockRelationshipInput {
   /**
    * Optional metadata for the relationship.
    */
-  @ApiPropertyOptional({ description: 'Optional metadata for the relationship (JSON string)' })
+  @ApiPropertyOptional({
+    description: 'Optional metadata for the relationship (JSON string)',
+  })
   @Field(() => String, {
     nullable: true,
     description: 'Optional metadata for the relationship (JSON string)',

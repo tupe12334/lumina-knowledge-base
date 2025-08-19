@@ -17,6 +17,7 @@ import {
   ApiNoContentResponse,
   ApiOperation,
   ApiResponse,
+  ApiParam,
 } from '@nestjs/swagger';
 import { DegreesService } from './degrees.service';
 import { CreateDegreeInput } from './dto/create-degree.input';
@@ -32,8 +33,14 @@ export class DegreesController {
   constructor(private readonly degreesService: DegreesService) {}
 
   @Post()
-  @ApiOperation({ summary: 'Create a new degree', description: 'Creates a new degree record.' })
-  @ApiCreatedResponse({ type: Degree, description: 'The newly created degree.' })
+  @ApiOperation({
+    summary: 'Create a new degree',
+    description: 'Creates a new degree record.',
+  })
+  @ApiCreatedResponse({
+    type: Degree,
+    description: 'The newly created degree.',
+  })
   @ApiResponse({ status: 400, description: 'Bad Request.' })
   @ApiResponse({ status: 500, description: 'Internal Server Error.' })
   create(@Body() createDegreeDto: CreateDegreeInput) {
@@ -41,16 +48,30 @@ export class DegreesController {
   }
 
   @Get()
-  @ApiOperation({ summary: 'Retrieve all degrees', description: 'Returns a list of all degrees.' })
-  @ApiOkResponse({ type: Degree, isArray: true, description: 'A list of degrees.' })
+  @ApiOperation({
+    summary: 'Retrieve all degrees',
+    description: 'Returns a list of all degrees.',
+  })
+  @ApiOkResponse({
+    type: Degree,
+    isArray: true,
+    description: 'A list of degrees.',
+  })
   @ApiResponse({ status: 500, description: 'Internal Server Error.' })
   findAll(@Query() query: DegreesQueryDto) {
     return this.degreesService.findAll(query);
   }
 
   @Get(':id')
-  @ApiOperation({ summary: 'Retrieve a degree by ID', description: 'Returns a single degree by its ID.' })
-  @ApiOkResponse({ type: Degree, description: 'The degree with the specified ID.' })
+  @ApiOperation({
+    summary: 'Retrieve a degree by ID',
+    description: 'Returns a single degree by its ID.',
+  })
+  @ApiParam({ name: 'id', description: 'The ID of the degree', type: String })
+  @ApiOkResponse({
+    type: Degree,
+    description: 'The degree with the specified ID.',
+  })
   @ApiResponse({ status: 404, description: 'Degree not found.' })
   @ApiResponse({ status: 500, description: 'Internal Server Error.' })
   findOne(@Param('id') id: string) {
@@ -58,7 +79,11 @@ export class DegreesController {
   }
 
   @Put(':id')
-  @ApiOperation({ summary: 'Update a degree by ID', description: 'Updates an existing degree record.' })
+  @ApiOperation({
+    summary: 'Update a degree by ID',
+    description: 'Updates an existing degree record.',
+  })
+  @ApiParam({ name: 'id', description: 'The ID of the degree', type: String })
   @ApiOkResponse({ type: Degree, description: 'The updated degree.' })
   @ApiResponse({ status: 400, description: 'Bad Request.' })
   @ApiResponse({ status: 404, description: 'Degree not found.' })
@@ -71,7 +96,11 @@ export class DegreesController {
   }
 
   @Delete(':id')
-  @ApiOperation({ summary: 'Delete a degree by ID', description: 'Deletes a degree record by its ID.' })
+  @ApiOperation({
+    summary: 'Delete a degree by ID',
+    description: 'Deletes a degree record by its ID.',
+  })
+  @ApiParam({ name: 'id', description: 'The ID of the degree', type: String })
   @HttpCode(HttpStatus.NO_CONTENT)
   @ApiNoContentResponse({ description: 'Degree successfully deleted.' })
   @ApiResponse({ status: 404, description: 'Degree not found.' })
@@ -81,8 +110,15 @@ export class DegreesController {
   }
 
   @Post(':id/faculty')
-  @ApiOperation({ summary: 'Set faculty for a degree', description: 'Sets or updates the faculty associated with a degree.' })
-  @ApiOkResponse({ type: Degree, description: 'The degree with the updated faculty.' })
+  @ApiOperation({
+    summary: 'Set faculty for a degree',
+    description: 'Sets or updates the faculty associated with a degree.',
+  })
+  @ApiParam({ name: 'id', description: 'The ID of the degree', type: String })
+  @ApiOkResponse({
+    type: Degree,
+    description: 'The degree with the updated faculty.',
+  })
   @ApiResponse({ status: 400, description: 'Bad Request.' })
   @ApiResponse({ status: 404, description: 'Degree or Faculty not found.' })
   @ApiResponse({ status: 500, description: 'Internal Server Error.' })
@@ -97,8 +133,15 @@ export class DegreesController {
   }
 
   @Post(':id/courses')
-  @ApiOperation({ summary: 'Add a course to a degree', description: 'Adds a course to the specified degree.' })
-  @ApiOkResponse({ type: Degree, description: 'The degree with the added course.' })
+  @ApiOperation({
+    summary: 'Add a course to a degree',
+    description: 'Adds a course to the specified degree.',
+  })
+  @ApiParam({ name: 'id', description: 'The ID of the degree', type: String })
+  @ApiOkResponse({
+    type: Degree,
+    description: 'The degree with the added course.',
+  })
   @ApiResponse({ status: 400, description: 'Bad Request.' })
   @ApiResponse({ status: 404, description: 'Degree or Course not found.' })
   @ApiResponse({ status: 500, description: 'Internal Server Error.' })

@@ -1,5 +1,6 @@
 import { InputType, Field, ID } from '@nestjs/graphql';
-import { IsUUID }mport { ApiProperty } from '@nestjs/swagger';
+import { IsUUID } from 'class-validator';
+import { ApiProperty } from '@nestjs/swagger';
 
 /**
  * GraphQL input type for deleting prerequisite/postrequisite relationships between courses.

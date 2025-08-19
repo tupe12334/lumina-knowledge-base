@@ -1,5 +1,6 @@
 import { InputType, Field, ID } from '@nestjs/graphql';
-import { IsUUID, IsArray }mport { ApiProperty } from '@nestjs/swagger';
+import { IsUUID, IsArray } from 'class-validator';
+import { ApiProperty } from '@nestjs/swagger';
 
 @InputType()
 export class SetCourseModulesInput {
@@ -8,7 +9,10 @@ export class SetCourseModulesInput {
   @IsUUID()
   courseId!: string;
 
-  @ApiProperty({ description: 'List of module IDs to assign to the course (replaces existing)' })
+  @ApiProperty({
+    description:
+      'List of module IDs to assign to the course (replaces existing)',
+  })
   @Field(() => [ID], {
     description:
       'List of module IDs to assign to the course (replaces existing)',

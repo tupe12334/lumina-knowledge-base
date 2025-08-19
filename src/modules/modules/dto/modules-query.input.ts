@@ -7,11 +7,13 @@ import {
   IsBoolean,
   IsUUID,
 } from 'class-validator';
-import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
+import { ApiPropertyOptional } from '@nestjs/swagger';
 
 @InputType()
 export class ModulesQueryInput {
-  @ApiPropertyOptional({ description: 'Filter modules by minimum number of questions' })
+  @ApiPropertyOptional({
+    description: 'Filter modules by minimum number of questions',
+  })
   @Field(() => Int, {
     nullable: true,
     description: 'Filter modules by minimum number of questions',
@@ -21,7 +23,9 @@ export class ModulesQueryInput {
   @Min(0)
   minQuestions?: number;
 
-  @ApiPropertyOptional({ description: 'Filter modules by maximum number of questions' })
+  @ApiPropertyOptional({
+    description: 'Filter modules by maximum number of questions',
+  })
   @Field(() => Int, {
     nullable: true,
     description: 'Filter modules by maximum number of questions',
@@ -31,7 +35,9 @@ export class ModulesQueryInput {
   @Min(0)
   maxQuestions?: number;
 
-  @ApiPropertyOptional({ description: 'Filter modules by exact number of questions' })
+  @ApiPropertyOptional({
+    description: 'Filter modules by exact number of questions',
+  })
   @Field(() => Int, {
     nullable: true,
     description: 'Filter modules by exact number of questions',
@@ -59,7 +65,9 @@ export class ModulesQueryInput {
   @IsUUID()
   universityId?: string;
 
-  @ApiPropertyOptional({ description: 'Search modules by name (partial match, case insensitive)' })
+  @ApiPropertyOptional({
+    description: 'Search modules by name (partial match, case insensitive)',
+  })
   @Field(() => String, {
     nullable: true,
     description: 'Search modules by name (partial match, case insensitive)',
@@ -77,7 +85,9 @@ export class ModulesQueryInput {
   @IsBoolean()
   hasQuestions?: boolean;
 
-  @ApiPropertyOptional({ description: 'Filter modules that have prerequisites' })
+  @ApiPropertyOptional({
+    description: 'Filter modules that have prerequisites',
+  })
   @Field(() => Boolean, {
     nullable: true,
     description: 'Filter modules that have prerequisites',
@@ -86,7 +96,9 @@ export class ModulesQueryInput {
   @IsBoolean()
   hasPrerequisites?: boolean;
 
-  @ApiPropertyOptional({ description: 'Filter modules that have postrequisites' })
+  @ApiPropertyOptional({
+    description: 'Filter modules that have postrequisites',
+  })
   @Field(() => Boolean, {
     nullable: true,
     description: 'Filter modules that have postrequisites',
@@ -104,7 +116,9 @@ export class ModulesQueryInput {
   @IsBoolean()
   hasSubModules?: boolean;
 
-  @ApiPropertyOptional({ description: 'Filter modules that have parent modules' })
+  @ApiPropertyOptional({
+    description: 'Filter modules that have parent modules',
+  })
   @Field(() => Boolean, {
     nullable: true,
     description: 'Filter modules that have parent modules',

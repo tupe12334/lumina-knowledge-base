@@ -16,6 +16,7 @@ import {
   ApiNoContentResponse,
   ApiOperation,
   ApiResponse,
+  ApiParam,
 } from '@nestjs/swagger';
 import { TranslationsService } from './translations.service';
 import { CreateTranslationInput } from './dto/create-translation.input';
@@ -28,8 +29,14 @@ export class TranslationsController {
   constructor(private readonly translationsService: TranslationsService) {}
 
   @Post()
-  @ApiOperation({ summary: 'Create a new translation', description: 'Creates a new translation record.' })
-  @ApiCreatedResponse({ type: Translation, description: 'The newly created translation.' })
+  @ApiOperation({
+    summary: 'Create a new translation',
+    description: 'Creates a new translation record.',
+  })
+  @ApiCreatedResponse({
+    type: Translation,
+    description: 'The newly created translation.',
+  })
   @ApiResponse({ status: 400, description: 'Bad Request.' })
   @ApiResponse({ status: 500, description: 'Internal Server Error.' })
   create(@Body() createTranslationDto: CreateTranslationInput) {
@@ -37,16 +44,34 @@ export class TranslationsController {
   }
 
   @Get()
-  @ApiOperation({ summary: 'Retrieve all translations', description: 'Returns a list of all translations.' })
-  @ApiOkResponse({ type: Translation, isArray: true, description: 'A list of translations.' })
+  @ApiOperation({
+    summary: 'Retrieve all translations',
+    description: 'Returns a list of all translations.',
+  })
+  @ApiOkResponse({
+    type: Translation,
+    isArray: true,
+    description: 'A list of translations.',
+  })
   @ApiResponse({ status: 500, description: 'Internal Server Error.' })
   findAll() {
     return this.translationsService.findAll();
   }
 
   @Get(':id')
-  @ApiOperation({ summary: 'Retrieve a translation by ID', description: 'Returns a single translation by its ID.' })
-  @ApiOkResponse({ type: Translation, description: 'The translation with the specified ID.' })
+  @ApiOperation({
+    summary: 'Retrieve a translation by ID',
+    description: 'Returns a single translation by its ID.',
+  })
+  @ApiParam({
+    name: 'id',
+    description: 'The ID of the translation',
+    type: String,
+  })
+  @ApiOkResponse({
+    type: Translation,
+    description: 'The translation with the specified ID.',
+  })
   @ApiResponse({ status: 404, description: 'Translation not found.' })
   @ApiResponse({ status: 500, description: 'Internal Server Error.' })
   findOne(@Param('id') id: string) {
@@ -54,7 +79,15 @@ export class TranslationsController {
   }
 
   @Put(':id')
-  @ApiOperation({ summary: 'Update a translation by ID', description: 'Updates an existing translation record.' })
+  @ApiOperation({
+    summary: 'Update a translation by ID',
+    description: 'Updates an existing translation record.',
+  })
+  @ApiParam({
+    name: 'id',
+    description: 'The ID of the translation',
+    type: String,
+  })
   @ApiOkResponse({ type: Translation, description: 'The updated translation.' })
   @ApiResponse({ status: 400, description: 'Bad Request.' })
   @ApiResponse({ status: 404, description: 'Translation not found.' })
@@ -67,7 +100,15 @@ export class TranslationsController {
   }
 
   @Delete(':id')
-  @ApiOperation({ summary: 'Delete a translation by ID', description: 'Deletes a translation record by its ID.' })
+  @ApiOperation({
+    summary: 'Delete a translation by ID',
+    description: 'Deletes a translation record by its ID.',
+  })
+  @ApiParam({
+    name: 'id',
+    description: 'The ID of the translation',
+    type: String,
+  })
   @HttpCode(HttpStatus.NO_CONTENT)
   @ApiNoContentResponse({ description: 'Translation successfully deleted.' })
   @ApiResponse({ status: 404, description: 'Translation not found.' })

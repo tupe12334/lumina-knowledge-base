@@ -35,7 +35,9 @@ export class CreateModuleRelationshipInput {
    * Can contain additional information about the relationship such as
    * minimum grade required, completion percentage, etc.
    */
-  @ApiPropertyOptional({ description: 'Optional metadata for the relationship (JSON string)' })
+  @ApiPropertyOptional({
+    description: 'Optional metadata for the relationship (JSON string)',
+  })
   @Field(() => String, {
     nullable: true,
     description: 'Optional metadata for the relationship (JSON string)',
