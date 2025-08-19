@@ -1072,19 +1072,47 @@
           }
         },
         "tags": [
-          "Degrees"
+          "degrees"
         ]
       },
       "get": {
         "operationId": "DegreesController_findAll",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "name",
+            "required": false,
+            "in": "query",
+            "description": "Filter by name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "facultyId",
+            "required": false,
+            "in": "query",
+            "description": "Filter by faculty id",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "universityId",
+            "required": false,
+            "in": "query",
+            "description": "Filter by university id",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": ""
           }
         },
         "tags": [
-          "Degrees"
+          "degrees"
         ]
       }
     },
@@ -1107,7 +1135,7 @@
           }
         },
         "tags": [
-          "Degrees"
+          "degrees"
         ]
       },
       "put": {
@@ -1128,7 +1156,7 @@
           }
         },
         "tags": [
-          "Degrees"
+          "degrees"
         ]
       },
       "delete": {
@@ -1149,7 +1177,7 @@
           }
         },
         "tags": [
-          "Degrees"
+          "degrees"
         ]
       }
     },
@@ -1172,7 +1200,7 @@
           }
         },
         "tags": [
-          "Degrees"
+          "degrees"
         ]
       }
     },
@@ -1195,7 +1223,7 @@
           }
         },
         "tags": [
-          "Degrees"
+          "degrees"
         ]
       }
     },
@@ -1747,7 +1775,21 @@
       },
       "CreateDegreeInput": {
         "type": "object",
-        "properties": {}
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Degree name"
+          },
+          "universityId": {
+            "type": "string",
+            "description": "Owning university id",
+            "format": "uuid"
+          }
+        },
+        "required": [
+          "name",
+          "universityId"
+        ]
       },
       "CreateBlockInput": {
         "type": "object",
