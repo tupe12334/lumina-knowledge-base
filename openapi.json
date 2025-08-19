@@ -2162,13 +2162,6 @@
   "tags": [],
   "servers": [],
   "components": {
-    "securitySchemes": {
-      "bearer": {
-        "scheme": "bearer",
-        "bearerFormat": "JWT",
-        "type": "http"
-      }
-    },
     "schemas": {
       "CreateUniversityInput": {
         "type": "object",
@@ -2517,35 +2510,21 @@
             "type": "string"
           },
           "SelectAnswer": {
-            "nullable": true,
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/SelectAnswer"
             }
           },
           "UnitAnswer": {
-            "nullable": true,
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/UnitAnswer"
-              }
-            ]
+            "$ref": "#/components/schemas/UnitAnswer"
           },
           "NumberAnswer": {
-            "nullable": true,
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/NumberAnswer"
-              }
-            ]
+            "$ref": "#/components/schemas/NumberAnswer"
           }
         },
         "required": [
           "id",
-          "questionId",
-          "SelectAnswer",
-          "UnitAnswer",
-          "NumberAnswer"
+          "questionId"
         ]
       },
       "QuestionType": {

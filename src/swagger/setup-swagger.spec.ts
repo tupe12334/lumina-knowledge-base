@@ -31,7 +31,6 @@ describe('setupSwagger', () => {
     const setupSpy = vi
       .spyOn(SwaggerModule, 'setup')
       .mockImplementation(() => {});
-    const authSpy = vi.spyOn(DocumentBuilder.prototype, 'addBearerAuth');
 
     setupSwagger(app);
 
@@ -39,7 +38,6 @@ describe('setupSwagger', () => {
     expect(setupSpy).toHaveBeenCalledWith('api', app, document, {
       jsonDocumentUrl: 'openapi',
     });
-    expect(authSpy).toHaveBeenCalled();
     expect(saveOpenapiSpecMock).toHaveBeenCalled();
   });
 });

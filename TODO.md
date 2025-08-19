@@ -18,5 +18,3 @@ This list focuses on the next high-impact engineering tasks. Completed items are
 3.  **Health/readiness checks**
     - Ensure endpoints are CI-friendly and document expected responses
     - Acceptance: probes tested; CI health checks green
-
-4.  [ ] Remove the addBearerAuth from the swagger

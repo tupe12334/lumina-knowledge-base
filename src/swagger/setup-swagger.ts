@@ -13,7 +13,6 @@ export const setupSwagger = (app: INestApplication): void => {
     .setTitle('Lumina API')
     .setDescription('API documentation for Lumina server')
     .setVersion('1.0')
-    .addBearerAuth()
     .build();
 
   const document = SwaggerModule.createDocument(app, config);
