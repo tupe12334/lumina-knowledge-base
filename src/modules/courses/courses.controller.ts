@@ -9,7 +9,12 @@ import {
   HttpCode,
   HttpStatus,
 } from '@nestjs/common';
-import { ApiTags } from '@nestjs/swagger';
+import {
+  ApiTags,
+  ApiCreatedResponse,
+  ApiOkResponse,
+  ApiNoContentResponse,
+} from '@nestjs/swagger';
 import { CoursesService } from './courses.service';
 import { CreateCourseInput } from './dto/create-course.input';
 import { UpdateCourseInput } from './dto/update-course.input';
@@ -17,6 +22,8 @@ import { CreateCourseRelationshipInput } from './dto/create-course-relationship.
 import { DeleteCourseRelationshipInput } from './dto/delete-course-relationship.input';
 import { SetCourseModulesInput } from './dto/set-course-modules.input';
 import { DeleteCourseInput } from './dto/delete-course.input';
+import { Course } from './models/Course.entity';
+import { CourseRelationshipResult } from './dto/course-relationship-result.type';
 
 @ApiTags('courses')
 @Controller('courses')
@@ -24,21 +31,25 @@ export class CoursesController {
   constructor(private readonly coursesService: CoursesService) {}
 
   @Post()
+  @ApiCreatedResponse({ type: Course })
   create(@Body() createCourseDto: CreateCourseInput) {
     return this.coursesService.create(createCourseDto);
   }
 
   @Get()
+  @ApiOkResponse({ type: Course, isArray: true })
   findAll() {
     return this.coursesService.findAll();
   }
 
   @Get(':id')
+  @ApiOkResponse({ type: Course })
   findOne(@Param('id') id: string) {
     return this.coursesService.findUnique(id);
   }
 
   @Put(':id')
+  @ApiOkResponse({ type: Course })
   update(
     @Param('id') id: string,
     @Body() updateCourseDto: Omit<UpdateCourseInput, 'courseId'>,
@@ -51,12 +62,14 @@ export class CoursesController {
 
   @Delete(':id')
   @HttpCode(HttpStatus.NO_CONTENT)
+  @ApiNoContentResponse()
   remove(@Param('id') id: string) {
     const deleteCourseInput: DeleteCourseInput = { courseId: id, force: true };
     return this.coursesService.deleteCourse(deleteCourseInput);
   }
 
   @Post('relationship')
+  @ApiCreatedResponse({ type: CourseRelationshipResult })
   createRelationship(
     @Body() createCourseRelationshipDto: CreateCourseRelationshipInput,
   ) {
@@ -66,6 +79,7 @@ export class CoursesController {
   }
 
   @Delete('relationship')
+  @ApiNoContentResponse()
   deleteRelationship(
     @Body() deleteCourseRelationshipDto: DeleteCourseRelationshipInput,
   ) {
@@ -75,6 +89,7 @@ export class CoursesController {
   }
 
   @Post(':id/modules')
+  @ApiOkResponse({ type: Course })
   setModules(
     @Param('id') id: string,
     @Body() setCourseModulesDto: Omit<SetCourseModulesInput, 'courseId'>,

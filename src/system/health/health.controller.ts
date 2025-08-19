@@ -6,9 +6,15 @@ import {
   MemoryHealthIndicator,
   DiskHealthIndicator,
 } from '@nestjs/terminus';
+import {
+  ApiTags,
+  ApiOkResponse,
+  ApiInternalServerErrorResponse,
+} from '@nestjs/swagger';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { DbRowsHealthIndicator } from 'src/system/health/db-rows.indicator';
 
+@ApiTags('health')
 @Controller('health')
 export class HealthController {
   constructor(
@@ -28,6 +34,8 @@ export class HealthController {
 
   @Get()
   @HealthCheck()
+  @ApiOkResponse({ description: 'Health check status' })
+  @ApiInternalServerErrorResponse({ description: 'Health check failed' })
   check() {
     return this.health.check([
       () => this.prismaHealth.pingCheck('database', this.prisma),
@@ -39,6 +47,8 @@ export class HealthController {
 
   @Get('liveness')
   @HealthCheck()
+  @ApiOkResponse({ description: 'Liveness check status' })
+  @ApiInternalServerErrorResponse({ description: 'Liveness check failed' })
   liveness() {
     return this.health.check([
       () => this.memoryHealth.checkHeap('memory_heap', 300 * 1024 * 1024),
@@ -48,6 +58,8 @@ export class HealthController {
 
   @Get('readiness')
   @HealthCheck()
+  @ApiOkResponse({ description: 'Readiness check status' })
+  @ApiInternalServerErrorResponse({ description: 'Readiness check failed' })
   readiness() {
     return this.health.check([
       () => this.prismaHealth.pingCheck('database', this.prisma),
