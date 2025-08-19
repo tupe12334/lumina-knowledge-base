@@ -48,14 +48,17 @@ describe('BlocksService', () => {
     expect(result).toBeDefined();
     expect(result?.id).toBe('b1');
     // Module is the actual property name from Prisma (capital M)
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-    expect((result as any)?.Module).toHaveLength(1);
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-    expect((result as any)?.Module?.[0]?.id).toBe('m1');
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-    expect((result as any)?.Module?.[0]?.name?.en_text).toBe('Module');
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-    expect((result as any)?.Module?.[0]?.name?.he_text).toBe('מודול');
+    type WithModule = typeof result & {
+      Module?: Array<{
+        id: string;
+        name: { en_text: string; he_text: string };
+      }>;
+    };
+    const withModule = result as unknown as WithModule;
+    expect(withModule?.Module).toHaveLength(1);
+    expect(withModule?.Module?.[0]?.id).toBe('m1');
+    expect(withModule?.Module?.[0]?.name?.en_text).toBe('Module');
+    expect(withModule?.Module?.[0]?.name?.he_text).toBe('מודול');
     expect(result?.prerequisiteFor).toEqual([]);
     expect(result?.postrequisiteOf).toEqual([]);
   });

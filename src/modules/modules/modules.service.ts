@@ -111,7 +111,7 @@ export class ModulesService {
     };
 
     // Build the where clause based on filters
-    const whereClause = this.buildWhereClause(filters);
+    const whereClause: Prisma.ModuleWhereInput = this.buildWhereClause(filters);
 
     // Check if we need to include question count for filtering
     const needsQuestionCount =
@@ -183,7 +183,7 @@ export class ModulesService {
       filters.hasPrerequisites !== undefined ||
       filters.hasPostrequisites !== undefined
     ) {
-      const blockWhere: any = {};
+      const blockWhere: Prisma.BlockWhereInput = {};
 
       if (filters.hasPrerequisites !== undefined) {
         if (filters.hasPrerequisites) {
@@ -251,7 +251,9 @@ export class ModulesService {
     });
 
     const filteredModules = modules.filter((module) => {
-      const questionCount = module._count.Questions;
+      const questionCount = (
+        module as unknown as { _count: { Questions: number } }
+      )._count.Questions;
 
       // Question count filters
       if (filters.exactQuestions !== undefined) {

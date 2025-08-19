@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { Test, TestingModule } from '@nestjs/testing';
 import { QuestionsService } from './questions.service';
@@ -45,7 +44,8 @@ describe('QuestionsService', () => {
     service = module.get<QuestionsService>(QuestionsService);
 
     // Manually set the prisma property since NestJS DI might not work properly in tests
-    (service as any).prisma = mockPrismaService;
+    (service as unknown as { prisma: typeof mockPrismaService }).prisma =
+      mockPrismaService;
   });
 
   it('returns questions from prisma', async () => {
@@ -82,7 +82,11 @@ describe('QuestionsService', () => {
         subModules: [],
       });
 
-      const result = await (service as any).getAllSubmoduleIds('module-1');
+      const result = await (
+        service as unknown as {
+          getAllSubmoduleIds: (id: string) => Promise<string[]>;
+        }
+      ).getAllSubmoduleIds('module-1');
       expect(result).toEqual([]);
     });
 
@@ -106,7 +110,11 @@ describe('QuestionsService', () => {
           subModules: [],
         });
 
-      const result = await (service as any).getAllSubmoduleIds('module-1');
+      const result = await (
+        service as unknown as {
+          getAllSubmoduleIds: (id: string) => Promise<string[]>;
+        }
+      ).getAllSubmoduleIds('module-1');
       expect(result).toEqual(
         expect.arrayContaining(['module-2', 'module-3', 'module-4']),
       );
@@ -125,7 +133,11 @@ describe('QuestionsService', () => {
           subModules: [{ id: 'module-1' }],
         });
 
-      const result = await (service as any).getAllSubmoduleIds('module-1');
+      const result = await (
+        service as unknown as {
+          getAllSubmoduleIds: (id: string) => Promise<string[]>;
+        }
+      ).getAllSubmoduleIds('module-1');
       // Should include all unique modules found, avoiding infinite loops
       expect(result).toEqual(expect.arrayContaining(['module-2']));
       expect(Array.isArray(result) && !result.includes('module-1')).toBe(false); // The original module shouldn't be included

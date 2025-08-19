@@ -39,7 +39,13 @@ describe('TranslationsResolver', () => {
         id: 'some-uuid',
         ...createTranslationInput,
       };
-      vi.spyOn(service, 'create').mockResolvedValue(expectedTranslation as any);
+      vi.spyOn(service, 'create').mockResolvedValue(
+        expectedTranslation as unknown as {
+          id: string;
+          en_text: string;
+          he_text: string;
+        },
+      );
 
       await expect(
         resolver.createTranslation(createTranslationInput),
@@ -55,7 +61,11 @@ describe('TranslationsResolver', () => {
         { id: 'uuid2', en_text: 'World', he_text: 'עולם' },
       ];
       vi.spyOn(service, 'findAll').mockResolvedValue(
-        expectedTranslations as any,
+        expectedTranslations as unknown as Array<{
+          id: string;
+          en_text: string;
+          he_text: string;
+        }>,
       );
 
       await expect(resolver.findAll()).resolves.toEqual(expectedTranslations);
@@ -68,7 +78,11 @@ describe('TranslationsResolver', () => {
       const id = 'some-uuid';
       const expectedTranslation = { id, en_text: 'Hello', he_text: 'שלום' };
       vi.spyOn(service, 'findOne').mockResolvedValue(
-        expectedTranslation as any,
+        expectedTranslation as unknown as {
+          id: string;
+          en_text: string;
+          he_text: string;
+        },
       );
 
       await expect(resolver.findOne(id)).resolves.toEqual(expectedTranslation);
@@ -95,7 +109,13 @@ describe('TranslationsResolver', () => {
         en_text: 'Hi there',
         he_text: 'שלום',
       };
-      vi.spyOn(service, 'update').mockResolvedValue(expectedTranslation as any);
+      vi.spyOn(service, 'update').mockResolvedValue(
+        expectedTranslation as unknown as {
+          id: string;
+          en_text: string;
+          he_text: string;
+        },
+      );
 
       await expect(
         resolver.updateTranslation(updateTranslationInput),
@@ -111,7 +131,13 @@ describe('TranslationsResolver', () => {
     it('should remove a translation', async () => {
       const id = 'some-uuid';
       const expectedTranslation = { id, en_text: 'Hello', he_text: 'שלום' };
-      vi.spyOn(service, 'remove').mockResolvedValue(expectedTranslation as any);
+      vi.spyOn(service, 'remove').mockResolvedValue(
+        expectedTranslation as unknown as {
+          id: string;
+          en_text: string;
+          he_text: string;
+        },
+      );
 
       await expect(resolver.removeTranslation(id)).resolves.toEqual(
         expectedTranslation,

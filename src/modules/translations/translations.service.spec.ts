@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/unbound-method */
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { TranslationsService } from './translations.service';
 import { PrismaService } from '../../prisma/prisma.service';
@@ -98,7 +99,10 @@ describe('TranslationsService', () => {
       await expect(service.update(id, updateTranslationInput)).resolves.toEqual(
         expectedTranslation,
       );
-      expect((prisma as any).translation.update).toHaveBeenCalledWith({
+      expect(
+        (prisma as unknown as { translation: { update: unknown } }).translation
+          .update,
+      ).toHaveBeenCalledWith({
         where: { id },
         data: updateTranslationInput,
       });
@@ -114,7 +118,10 @@ describe('TranslationsService', () => {
       );
 
       await expect(service.remove(id)).resolves.toEqual(expectedTranslation);
-      expect((prisma as any).translation.delete).toHaveBeenCalledWith({
+      expect(
+        (prisma as unknown as { translation: { delete: unknown } }).translation
+          .delete,
+      ).toHaveBeenCalledWith({
         where: { id },
       });
     });

@@ -87,7 +87,7 @@ describe('CoursesResolver', () => {
 
       expect(result).toBe(mockResult);
       expect(
-        mockCoursesService.createCourseRelationship as any,
+        mockCoursesService.createCourseRelationship as unknown as Mock,
       ).toHaveBeenCalledWith(input);
     });
   });
@@ -135,7 +135,9 @@ describe('CoursesResolver', () => {
       } as unknown as UpdateCourseInput);
 
       expect(result).toBe(mockCourse);
-      expect(mockCoursesService.updateCourse as any).toHaveBeenCalledWith({
+      expect(
+        mockCoursesService.updateCourse as unknown as Mock,
+      ).toHaveBeenCalledWith({
         courseId: 'c1',
         enText: 'B',
       });
@@ -155,7 +157,9 @@ describe('CoursesResolver', () => {
       } as unknown as SetCourseModulesInput);
 
       expect(result).toBe(mockCourse);
-      expect(mockCoursesService.setCourseModules as any).toHaveBeenCalledWith({
+      expect(
+        mockCoursesService.setCourseModules as unknown as Mock,
+      ).toHaveBeenCalledWith({
         courseId: 'c1',
         moduleIds: ['m1', 'm2'],
       });
