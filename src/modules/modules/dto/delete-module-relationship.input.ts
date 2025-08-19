@@ -1,5 +1,5 @@
 import { InputType, Field, ID } from '@nestjs/graphql';
-import { IsUUID } from 'class-validator';
+import { IsUUID }mport { ApiProperty } from '@nestjs/swagger';
 
 /**
  * GraphQL input type for deleting prerequisite/postrequisite relationships between modules.
@@ -11,6 +11,7 @@ export class DeleteModuleRelationshipInput {
    * The ID of the prerequisite module.
    * Part of the relationship identifier.
    */
+  @ApiProperty({ description: 'The ID of the prerequisite module' })
   @Field(() => ID, {
     description: 'The ID of the prerequisite module',
   })
@@ -21,6 +22,7 @@ export class DeleteModuleRelationshipInput {
    * The ID of the postrequisite module.
    * Part of the relationship identifier.
    */
+  @ApiProperty({ description: 'The ID of the postrequisite module' })
   @Field(() => ID, {
     description: 'The ID of the postrequisite module',
   })
