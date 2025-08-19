@@ -10,11 +10,13 @@ import {
   Put,
   Query,
 } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
 import { AnswersService } from './answers.service';
 import { CreateAnswerInput } from './dto/create-answer.input';
 import { UpdateAnswerInput } from './dto/update-answer.input';
 import { AnswersQueryDto } from './dto/answers-query.dto';
 
+@ApiTags('answers')
 @Controller('answers')
 export class AnswersController {
   constructor(private readonly answersService: AnswersService) {}

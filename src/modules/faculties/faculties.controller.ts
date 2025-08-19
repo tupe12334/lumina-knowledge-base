@@ -9,10 +9,12 @@ import {
   HttpCode,
   HttpStatus,
 } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
 import { FacultiesService } from './faculties.service';
 import { CreateFacultyInput } from './dto/create-faculty.input';
 import { UpdateFacultyInput } from './dto/update-faculty.input';
 
+@ApiTags('faculties')
 @Controller('faculties')
 export class FacultiesController {
   constructor(private readonly facultiesService: FacultiesService) {}

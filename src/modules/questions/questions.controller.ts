@@ -10,12 +10,14 @@ import {
   HttpStatus,
   Query,
 } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
 import { QuestionsService } from './questions.service';
 import { CreateQuestionInput } from './dto/create-question.input';
 import { UpdateQuestionInput } from './dto/update-question.input';
 import { QuestionsQueryDto } from './dto/question-query.dto';
 import { DeleteQuestionInput } from './dto/delete-question.input';
 
+@ApiTags('questions')
 @Controller('questions')
 export class QuestionsController {
   constructor(private readonly questionsService: QuestionsService) {}

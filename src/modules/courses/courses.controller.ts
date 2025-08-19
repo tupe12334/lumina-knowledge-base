@@ -9,6 +9,7 @@ import {
   HttpCode,
   HttpStatus,
 } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
 import { CoursesService } from './courses.service';
 import { CreateCourseInput } from './dto/create-course.input';
 import { UpdateCourseInput } from './dto/update-course.input';
@@ -17,6 +18,7 @@ import { DeleteCourseRelationshipInput } from './dto/delete-course-relationship.
 import { SetCourseModulesInput } from './dto/set-course-modules.input';
 import { DeleteCourseInput } from './dto/delete-course.input';
 
+@ApiTags('courses')
 @Controller('courses')
 export class CoursesController {
   constructor(private readonly coursesService: CoursesService) {}

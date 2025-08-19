@@ -9,10 +9,12 @@ import {
   HttpCode,
   HttpStatus,
 } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
 import { TranslationsService } from './translations.service';
 import { CreateTranslationInput } from './dto/create-translation.input';
 import { UpdateTranslationInput } from './dto/update-translation.input';
 
+@ApiTags('translations')
 @Controller('translations')
 export class TranslationsController {
   constructor(private readonly translationsService: TranslationsService) {}

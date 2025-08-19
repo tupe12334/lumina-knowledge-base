@@ -10,6 +10,7 @@ import {
   HttpStatus,
   Query,
 } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
 import { ModulesService } from './modules.service';
 import { CreateModuleInput } from './dto/create-module.input';
 import { UpdateModuleInput } from './dto/update-module.input';
@@ -17,6 +18,7 @@ import { ModulesQueryInput } from './dto/modules-query.input';
 import { CreateModuleRelationshipInput } from './dto/create-module-relationship.input';
 import { DeleteModuleRelationshipInput } from './dto/delete-module-relationship.input';
 
+@ApiTags('modules')
 @Controller('modules')
 export class ModulesController {
   constructor(private readonly modulesService: ModulesService) {}
