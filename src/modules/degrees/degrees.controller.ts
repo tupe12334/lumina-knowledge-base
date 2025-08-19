@@ -10,6 +10,7 @@ import {
   HttpStatus,
   Query,
 } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
 import { DegreesService } from './degrees.service';
 import { CreateDegreeInput } from './dto/create-degree.input';
 import { UpdateDegreeInput } from './dto/update-degree.input';
@@ -17,6 +18,7 @@ import { SetDegreeFacultyInput } from './dto/set-degree-faculty.input';
 import { AddCourseToDegreeInput } from './dto/add-course-to-degree.input';
 import { DegreesQueryDto } from './dto/degrees-query.dto';
 
+@ApiTags('degrees')
 @Controller('degrees')
 export class DegreesController {
   constructor(private readonly degreesService: DegreesService) {}
