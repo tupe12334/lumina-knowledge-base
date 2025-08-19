@@ -654,7 +654,7 @@
           }
         },
         "tags": [
-          "Courses"
+          "courses"
         ]
       },
       "get": {
@@ -666,7 +666,7 @@
           }
         },
         "tags": [
-          "Courses"
+          "courses"
         ]
       }
     },
@@ -689,7 +689,7 @@
           }
         },
         "tags": [
-          "Courses"
+          "courses"
         ]
       },
       "put": {
@@ -710,7 +710,7 @@
           }
         },
         "tags": [
-          "Courses"
+          "courses"
         ]
       },
       "delete": {
@@ -731,7 +731,7 @@
           }
         },
         "tags": [
-          "Courses"
+          "courses"
         ]
       }
     },
@@ -755,7 +755,7 @@
           }
         },
         "tags": [
-          "Courses"
+          "courses"
         ]
       },
       "delete": {
@@ -777,7 +777,7 @@
           }
         },
         "tags": [
-          "Courses"
+          "courses"
         ]
       }
     },
@@ -800,7 +800,7 @@
           }
         },
         "tags": [
-          "Courses"
+          "courses"
         ]
       }
     },
@@ -824,7 +824,7 @@
           }
         },
         "tags": [
-          "Modules"
+          "modules"
         ]
       },
       "get": {
@@ -836,7 +836,7 @@
           }
         },
         "tags": [
-          "Modules"
+          "modules"
         ]
       }
     },
@@ -859,7 +859,7 @@
           }
         },
         "tags": [
-          "Modules"
+          "modules"
         ]
       },
       "put": {
@@ -880,7 +880,7 @@
           }
         },
         "tags": [
-          "Modules"
+          "modules"
         ]
       },
       "delete": {
@@ -901,7 +901,7 @@
           }
         },
         "tags": [
-          "Modules"
+          "modules"
         ]
       }
     },
@@ -925,7 +925,7 @@
           }
         },
         "tags": [
-          "Modules"
+          "modules"
         ]
       },
       "delete": {
@@ -947,7 +947,7 @@
           }
         },
         "tags": [
-          "Modules"
+          "modules"
         ]
       }
     },
@@ -971,7 +971,7 @@
           }
         },
         "tags": [
-          "Questions"
+          "questions"
         ]
       },
       "get": {
@@ -983,7 +983,7 @@
           }
         },
         "tags": [
-          "Questions"
+          "questions"
         ]
       }
     },
@@ -1006,7 +1006,7 @@
           }
         },
         "tags": [
-          "Questions"
+          "questions"
         ]
       },
       "put": {
@@ -1027,7 +1027,7 @@
           }
         },
         "tags": [
-          "Questions"
+          "questions"
         ]
       },
       "delete": {
@@ -1048,7 +1048,7 @@
           }
         },
         "tags": [
-          "Questions"
+          "questions"
         ]
       }
     },
@@ -1404,7 +1404,7 @@
           }
         },
         "tags": [
-          "Faculties"
+          "faculties"
         ]
       },
       "get": {
@@ -1416,7 +1416,7 @@
           }
         },
         "tags": [
-          "Faculties"
+          "faculties"
         ]
       }
     },
@@ -1439,7 +1439,7 @@
           }
         },
         "tags": [
-          "Faculties"
+          "faculties"
         ]
       },
       "put": {
@@ -1460,7 +1460,7 @@
           }
         },
         "tags": [
-          "Faculties"
+          "faculties"
         ]
       },
       "delete": {
@@ -1481,7 +1481,7 @@
           }
         },
         "tags": [
-          "Faculties"
+          "faculties"
         ]
       }
     },
@@ -1504,7 +1504,7 @@
           }
         },
         "tags": [
-          "Faculties"
+          "faculties"
         ]
       }
     },
@@ -1528,7 +1528,7 @@
           }
         },
         "tags": [
-          "Translations"
+          "translations"
         ]
       },
       "get": {
@@ -1540,7 +1540,7 @@
           }
         },
         "tags": [
-          "Translations"
+          "translations"
         ]
       }
     },
@@ -1563,7 +1563,7 @@
           }
         },
         "tags": [
-          "Translations"
+          "translations"
         ]
       },
       "put": {
@@ -1584,7 +1584,7 @@
           }
         },
         "tags": [
-          "Translations"
+          "translations"
         ]
       },
       "delete": {
@@ -1605,7 +1605,7 @@
           }
         },
         "tags": [
-          "Translations"
+          "translations"
         ]
       }
     },
@@ -1629,7 +1629,7 @@
           }
         },
         "tags": [
-          "Answers"
+          "answers"
         ]
       },
       "get": {
@@ -1641,7 +1641,7 @@
           }
         },
         "tags": [
-          "Answers"
+          "answers"
         ]
       }
     },
@@ -1664,7 +1664,7 @@
           }
         },
         "tags": [
-          "Answers"
+          "answers"
         ]
       },
       "put": {
@@ -1685,7 +1685,7 @@
           }
         },
         "tags": [
-          "Answers"
+          "answers"
         ]
       },
       "delete": {
@@ -1706,7 +1706,7 @@
           }
         },
         "tags": [
-          "Answers"
+          "answers"
         ]
       }
     }
@@ -1747,7 +1747,21 @@
       },
       "CreateCourseInput": {
         "type": "object",
-        "properties": {}
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Course name"
+          },
+          "universityId": {
+            "type": "string",
+            "description": "Owning university id",
+            "format": "uuid"
+          }
+        },
+        "required": [
+          "name",
+          "universityId"
+        ]
       },
       "CreateCourseRelationshipInput": {
         "type": "object",
@@ -1759,7 +1773,25 @@
       },
       "CreateModuleInput": {
         "type": "object",
-        "properties": {}
+        "properties": {
+          "en_text": {
+            "type": "string",
+            "description": "English name of the module"
+          },
+          "he_text": {
+            "type": "string",
+            "description": "Hebrew name of the module"
+          },
+          "courseId": {
+            "type": "string",
+            "description": "ID of the course this module belongs to"
+          }
+        },
+        "required": [
+          "en_text",
+          "he_text",
+          "courseId"
+        ]
       },
       "CreateModuleRelationshipInput": {
         "type": "object",
@@ -1813,11 +1845,77 @@
       },
       "CreateTranslationInput": {
         "type": "object",
-        "properties": {}
+        "properties": {
+          "en_text": {
+            "type": "string",
+            "description": "English text"
+          },
+          "he_text": {
+            "type": "string",
+            "description": "Hebrew text"
+          }
+        },
+        "required": [
+          "en_text",
+          "he_text"
+        ]
+      },
+      "CreateSelectAnswerInputItem": {
+        "type": "object",
+        "properties": {
+          "isCorrect": {
+            "type": "boolean",
+            "description": "Whether the answer item is correct"
+          },
+          "translationId": {
+            "type": "string",
+            "description": "Translation id for answer text",
+            "format": "uuid"
+          }
+        },
+        "required": [
+          "isCorrect",
+          "translationId"
+        ]
       },
       "CreateAnswerInput": {
         "type": "object",
-        "properties": {}
+        "properties": {
+          "questionId": {
+            "type": "string",
+            "description": "Question id",
+            "format": "uuid"
+          },
+          "selectAnswers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateSelectAnswerInputItem"
+            }
+          },
+          "unitValue": {
+            "type": "number",
+            "description": "Unit value for unit-based answers"
+          },
+          "unit": {
+            "type": "string",
+            "enum": [
+              "meter",
+              "kilogram",
+              "second",
+              "ampere",
+              "kelvin",
+              "mole",
+              "candela"
+            ]
+          },
+          "numberAnswer": {
+            "type": "number",
+            "description": "Numeric answer (when not unit based)"
+          }
+        },
+        "required": [
+          "questionId"
+        ]
       }
     }
   }
