@@ -10,7 +10,6 @@
 
 - **SQLite**: Database engine (file-based: `prisma/main.db`)
 - **Prisma**: Database ORM and query builder
-- **Generated Client**: Located in `generated/client/`
 
 ## API Technologies
 

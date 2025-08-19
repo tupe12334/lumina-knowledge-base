@@ -1,6 +1,5 @@
 generator client {
   provider = "prisma-client-js"
-  output   = "../generated/client"
 }
 
 // generator jsonSchema {
@@ -102,16 +101,16 @@ model RelationshipMetadata {
 }
 
 model Module {
-  id               String             @id @default(uuid())
-  name             Translation        @relation(fields: [translationId], references: [id])
-  translationId    String
-  subModules       Module[]           @relation("ModuleHierarchy")
-  parentModules    Module[]           @relation("ModuleHierarchy")
-  Course           Course[]           @relation("CourseModules")
-  Questions        Question[]
-  
-  blockId          String
-  Block            Block              @relation(fields: [blockId], references: [id])
+  id            String      @id @default(uuid())
+  name          Translation @relation(fields: [translationId], references: [id])
+  translationId String
+  subModules    Module[]    @relation("ModuleHierarchy")
+  parentModules Module[]    @relation("ModuleHierarchy")
+  Course        Course[]    @relation("CourseModules")
+  Questions     Question[]
+
+  blockId String
+  Block   Block  @relation(fields: [blockId], references: [id])
 }
 
 model Translation {
@@ -214,5 +213,3 @@ enum Units {
   mole
   candela
 }
-
-

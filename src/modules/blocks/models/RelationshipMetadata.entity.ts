@@ -1,5 +1,5 @@
 import { ObjectType, Field, ID, registerEnumType } from '@nestjs/graphql';
-import type { RelationshipMetadataKey as PrismaRelationshipMetadataKey } from 'generated/client';
+import type { RelationshipMetadataKey as PrismaRelationshipMetadataKey } from '@prisma/client';
 
 export const RelationshipMetadataKey = {
   REASON: 'REASON',

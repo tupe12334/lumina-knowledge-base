@@ -1,5 +1,5 @@
 import { Field, ObjectType } from '@nestjs/graphql';
-import { QuestionPart as PrismaQuestionPart } from '../../../../generated/client';
+import { QuestionPart as PrismaQuestionPart } from '@prisma/client';
 
 @ObjectType()
 export class QuestionPart implements PrismaQuestionPart {

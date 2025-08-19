@@ -1,5 +1,5 @@
 import { Field, ObjectType, ID, Float } from '@nestjs/graphql';
-import { Answer as PrismaAnswer } from '../../../../generated/client';
+import { Answer as PrismaAnswer } from '@prisma/client';
 import { Translation } from '../../translations/models/Translation.entity';
 
 @ObjectType()

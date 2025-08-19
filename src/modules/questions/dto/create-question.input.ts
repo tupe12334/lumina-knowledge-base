@@ -1,9 +1,6 @@
 import { InputType, Field } from '@nestjs/graphql';
 import { IsEnum, IsUUID, IsOptional } from 'class-validator';
-import {
-  QuestionType,
-  QuestionValidationStatus,
-} from '../../../../generated/client';
+import { QuestionType, QuestionValidationStatus } from '@prisma/client';
 
 @InputType()
 export class CreateQuestionInput {

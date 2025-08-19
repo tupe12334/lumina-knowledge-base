@@ -3,7 +3,7 @@ import {
   BadRequestException,
   NotFoundException,
 } from '@nestjs/common';
-import { Prisma, RelationshipMetadataKey } from '../../../generated/client';
+import { Prisma, RelationshipMetadataKey } from '@prisma/client';
 import { PrismaService } from '../../prisma/prisma.service';
 import { Module as ModuleEntity } from './models/Module.entity';
 import { ModulesQueryDto } from './dto/modules-query.dto';

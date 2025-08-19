@@ -11700,7 +11700,6 @@ This faculty is your gateway to becoming a thoughtful analyst, a change-maker, a
 exports[`DB snapshot > schema > matches snapshot 1`] = `
 "generator client {
   provider = "prisma-client-js"
-  output   = "../generated/client"
 }
 
 datasource db {

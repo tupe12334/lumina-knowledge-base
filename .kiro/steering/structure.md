@@ -80,7 +80,6 @@ Each module follows NestJS conventions:
 - `prisma/schema.prisma` - Database schema definition
 - `prisma/migrations/` - Database migration files
 - `prisma/main.db` - SQLite database file
-- `generated/client/` - Generated Prisma client
 
 ## Testing Structure
 

@@ -3,7 +3,7 @@ import {
   QuestionType,
   QuestionValidationStatus,
   Question as PrismaQuestion,
-} from '../../../../generated/client';
+} from '@prisma/client';
 import { Translation } from '../../translations/models/Translation.entity';
 import { Module } from '../../modules/models/Module.entity';
 import { Answer } from './Answer.entity';
