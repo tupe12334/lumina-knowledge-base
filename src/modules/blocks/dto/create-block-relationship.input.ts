@@ -1,5 +1,5 @@
 import { InputType, Field, ID } from '@nestjs/graphql';
-import { IsNotEmpty, IsOptional, IsString } from 'class-validator';
+import { IsNotEmpty, IsOptional, IsObject, IsString } from 'class-validator';
 
 /**
  * Input type for creating a prerequisite/postrequisite relationship between blocks.
@@ -34,6 +34,6 @@ export class CreateBlockRelationshipInput {
     description: 'Optional metadata for the relationship (JSON string)',
   })
   @IsOptional()
-  @IsString()
-  metadata?: string;
+  @IsObject()
+  metadata?: Record<string, unknown>;
 }

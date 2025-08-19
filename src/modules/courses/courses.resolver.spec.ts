@@ -5,6 +5,7 @@ import { CreateCourseRelationshipInput } from './dto/create-course-relationship.
 import { DeleteCourseRelationshipInput } from './dto/delete-course-relationship.input';
 import { UpdateCourseInput } from './dto/update-course.input';
 import { SetCourseModulesInput } from './dto/set-course-modules.input';
+import { ModulesService } from '../modules/modules.service';
 
 describe('CoursesResolver', () => {
   let resolver: CoursesResolver;
@@ -16,10 +17,14 @@ describe('CoursesResolver', () => {
     updateCourse: vi.fn(),
     setCourseModules: vi.fn(),
   };
+  const mockModulesService = {
+    findModulesByCourseId: vi.fn(),
+  } as unknown as ModulesService;
 
   beforeEach(() => {
     resolver = new CoursesResolver(
       mockCoursesService as unknown as CoursesService,
+      mockModulesService,
     );
   });
 
