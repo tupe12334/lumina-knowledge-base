@@ -553,7 +553,7 @@
           }
         },
         "tags": [
-          "Universities"
+          "universities"
         ]
       },
       "get": {
@@ -565,7 +565,7 @@
           }
         },
         "tags": [
-          "Universities"
+          "universities"
         ]
       }
     },
@@ -588,7 +588,7 @@
           }
         },
         "tags": [
-          "Universities"
+          "universities"
         ]
       },
       "put": {
@@ -609,7 +609,7 @@
           }
         },
         "tags": [
-          "Universities"
+          "universities"
         ]
       },
       "delete": {
@@ -630,7 +630,7 @@
           }
         },
         "tags": [
-          "Universities"
+          "universities"
         ]
       }
     },
@@ -1702,7 +1702,20 @@
     "schemas": {
       "CreateUniversityInput": {
         "type": "object",
-        "properties": {}
+        "properties": {
+          "en_text": {
+            "type": "string",
+            "description": "English name of the university"
+          },
+          "he_text": {
+            "type": "string",
+            "description": "Hebrew name of the university"
+          }
+        },
+        "required": [
+          "en_text",
+          "he_text"
+        ]
       },
       "CreateCourseInput": {
         "type": "object",

@@ -12,7 +12,9 @@ import {
 import { UniversitiesService } from './universities.service';
 import { CreateUniversityInput } from './dto/create-university.input';
 import { UpdateUniversityInput } from './dto/update-university.input';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('universities')
 @Controller('universities')
 export class UniversitiesController {
   constructor(private readonly universitiesService: UniversitiesService) {}
