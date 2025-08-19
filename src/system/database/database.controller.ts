@@ -20,7 +20,10 @@ export class DatabaseController {
   constructor(private readonly databaseService: DatabaseService) {}
 
   @Get('dump')
-  @ApiOperation({ summary: 'Get database dump', description: 'Retrieves a dump of the database in SQL format.' })
+  @ApiOperation({
+    summary: 'Get database dump',
+    description: 'Retrieves a dump of the database in SQL format.',
+  })
   @Header('Content-Type', 'application/sql')
   @Header(
     'Content-Disposition',
@@ -44,7 +47,10 @@ export class DatabaseController {
   }
 
   @Get('info')
-  @ApiOperation({ summary: 'Get database information', description: 'Retrieves information about the database.' })
+  @ApiOperation({
+    summary: 'Get database information',
+    description: 'Retrieves information about the database.',
+  })
   @ApiOkResponse({ description: 'Database information' })
   @ApiInternalServerErrorResponse({
     description: 'Failed to get database info',

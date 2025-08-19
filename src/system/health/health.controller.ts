@@ -35,7 +35,11 @@ export class HealthController {
   ) {}
 
   @Get()
-  @ApiOperation({ summary: 'Perform health check', description: 'Checks the health of various services including database, memory, and disk.' })
+  @ApiOperation({
+    summary: 'Perform health check',
+    description:
+      'Checks the health of various services including database, memory, and disk.',
+  })
   @HealthCheck()
   @ApiOkResponse({ description: 'Health check status' })
   @ApiInternalServerErrorResponse({ description: 'Health check failed' })
@@ -50,7 +54,10 @@ export class HealthController {
   }
 
   @Get('liveness')
-  @ApiOperation({ summary: 'Perform liveness check', description: 'Checks if the application is alive.' })
+  @ApiOperation({
+    summary: 'Perform liveness check',
+    description: 'Checks if the application is alive.',
+  })
   @HealthCheck()
   @ApiOkResponse({ description: 'Liveness check status' })
   @ApiInternalServerErrorResponse({ description: 'Liveness check failed' })
@@ -63,7 +70,10 @@ export class HealthController {
   }
 
   @Get('readiness')
-  @ApiOperation({ summary: 'Perform readiness check', description: 'Checks if the application is ready to handle requests.' })
+  @ApiOperation({
+    summary: 'Perform readiness check',
+    description: 'Checks if the application is ready to handle requests.',
+  })
   @HealthCheck()
   @ApiOkResponse({ description: 'Readiness check status' })
   @ApiInternalServerErrorResponse({ description: 'Readiness check failed' })
