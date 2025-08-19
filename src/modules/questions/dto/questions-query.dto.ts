@@ -2,8 +2,6 @@ import { IsOptional, IsString, IsUUID, IsBoolean, IsIn } from 'class-validator';
 import { Transform } from 'class-transformer';
 import { QuestionType } from '../models/question-type.enum';
 
-const QUESTION_TYPES = ['selection', 'value', 'void'] as const;
-
 export class QuestionsQueryDto {
   @IsOptional()
   @IsString()

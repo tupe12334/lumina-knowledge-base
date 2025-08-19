@@ -20,3 +20,15 @@ export const QuestionValidationStatus = {
 >;
 
 export type QuestionValidationStatus = $Enums.QuestionValidationStatus;
+
+export const Units = {
+  meter: 'meter',
+  kilogram: 'kilogram',
+  second: 'second',
+  ampere: 'ampere',
+  kelvin: 'kelvin',
+  mole: 'mole',
+  candela: 'candela',
+} as const satisfies Record<$Enums.Units, $Enums.Units>;
+
+export type Units = $Enums.Units;

@@ -1,10 +1,9 @@
-import { describe, it, beforeAll, afterAll, expect, vi } from 'vitest';
+import { describe, it, beforeAll, afterAll, expect } from 'vitest';
 import { Test } from '@nestjs/testing';
 import { APP_GUARD } from '@nestjs/core';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
-import { TestInput, TestResolver } from './test-graphql-schema';
-import { Field } from '@nestjs/graphql';
+import { TestResolver } from './test-graphql-schema';
 import { env } from 'src/env';
 import request from 'supertest';
 import { INestApplication } from '@nestjs/common';
@@ -59,7 +58,8 @@ describe('Mutations E2E (Disabled)', () => {
   });
 
   it('should block mutations when ENABLE_MUTATIONS is false', async () => {
-    return request(app.getHttpServer())
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+    return request(app.getHttpAdapter().getInstance())
       .post('/graphql')
       .send({
         query: testMutation,
@@ -70,12 +70,16 @@ describe('Mutations E2E (Disabled)', () => {
         },
       })
       .expect(200)
-      .then((res) => {
-        expect(res.body.errors).toBeDefined();
-        expect(res.body.errors[0].message).toBe(
-          'Mutations are disabled. Set ENABLE_MUTATIONS=true in environment variables to enable them.',
-        );
-        expect(res.body.errors[0].extensions.code).toBe('FORBIDDEN');
-      });
+      .then(
+        (res: {
+          body: { errors: { message: string; extensions: { code: string } }[] };
+        }) => {
+          expect(res.body.errors).toBeDefined();
+          expect(res.body.errors[0].message).toBe(
+            'Mutations are disabled. Set ENABLE_MUTATIONS=true in environment variables to enable them.',
+          );
+          expect(res.body.errors[0].extensions.code).toBe('FORBIDDEN');
+        },
+      );
   });
 });
