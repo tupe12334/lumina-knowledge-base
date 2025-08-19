@@ -3,6 +3,7 @@
   "paths": {
     "/health": {
       "get": {
+        "description": "Checks the health of various services including database, memory, and disk.",
         "operationId": "HealthController_check",
         "parameters": [],
         "responses": {
@@ -167,6 +168,7 @@
             }
           }
         },
+        "summary": "Perform health check",
         "tags": [
           "health"
         ]
@@ -174,6 +176,7 @@
     },
     "/health/liveness": {
       "get": {
+        "description": "Checks if the application is alive.",
         "operationId": "HealthController_liveness",
         "parameters": [],
         "responses": {
@@ -338,6 +341,7 @@
             }
           }
         },
+        "summary": "Perform liveness check",
         "tags": [
           "health"
         ]
@@ -345,6 +349,7 @@
     },
     "/health/readiness": {
       "get": {
+        "description": "Checks if the application is ready to handle requests.",
         "operationId": "HealthController_readiness",
         "parameters": [],
         "responses": {
@@ -509,6 +514,7 @@
             }
           }
         },
+        "summary": "Perform readiness check",
         "tags": [
           "health"
         ]
@@ -516,6 +522,7 @@
     },
     "/database/dump": {
       "get": {
+        "description": "Retrieves a dump of the database in SQL format.",
         "operationId": "DatabaseController_getDump",
         "parameters": [],
         "responses": {
@@ -526,6 +533,7 @@
             "description": "Failed to create database dump"
           }
         },
+        "summary": "Get database dump",
         "tags": [
           "database"
         ]
@@ -533,6 +541,7 @@
     },
     "/database/info": {
       "get": {
+        "description": "Retrieves information about the database.",
         "operationId": "DatabaseController_getDatabaseInfo",
         "parameters": [],
         "responses": {
@@ -543,6 +552,7 @@
             "description": "Failed to get database info"
           }
         },
+        "summary": "Get database information",
         "tags": [
           "database"
         ]
@@ -550,6 +560,7 @@
     },
     "/universities": {
       "post": {
+        "description": "Creates a new university record.",
         "operationId": "UniversitiesController_create",
         "parameters": [],
         "requestBody": {
@@ -564,7 +575,7 @@
         },
         "responses": {
           "201": {
-            "description": "",
+            "description": "The newly created university.",
             "content": {
               "application/json": {
                 "schema": {
@@ -572,18 +583,26 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "500": {
+            "description": "Internal Server Error."
           }
         },
+        "summary": "Create a new university",
         "tags": [
           "universities"
         ]
       },
       "get": {
+        "description": "Returns a list of all universities.",
         "operationId": "UniversitiesController_findAll",
         "parameters": [],
         "responses": {
           "200": {
-            "description": "",
+            "description": "A list of universities.",
             "content": {
               "application/json": {
                 "schema": {
@@ -594,8 +613,12 @@
                 }
               }
             }
+          },
+          "500": {
+            "description": "Internal Server Error."
           }
         },
+        "summary": "Retrieve all universities",
         "tags": [
           "universities"
         ]
@@ -603,6 +626,7 @@
     },
     "/universities/{id}": {
       "get": {
+        "description": "Returns a single university by its ID.",
         "operationId": "UniversitiesController_findOne",
         "parameters": [
           {
@@ -616,7 +640,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
+            "description": "The university with the specified ID.",
             "content": {
               "application/json": {
                 "schema": {
@@ -624,13 +648,21 @@
                 }
               }
             }
+          },
+          "404": {
+            "description": "University not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
           }
         },
+        "summary": "Retrieve a university by ID",
         "tags": [
           "universities"
         ]
       },
       "put": {
+        "description": "Updates an existing university record.",
         "operationId": "UniversitiesController_update",
         "parameters": [
           {
@@ -644,7 +676,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
+            "description": "The updated university.",
             "content": {
               "application/json": {
                 "schema": {
@@ -652,13 +684,24 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "404": {
+            "description": "University not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
           }
         },
+        "summary": "Update a university by ID",
         "tags": [
           "universities"
         ]
       },
       "delete": {
+        "description": "Deletes a university record by its ID.",
         "operationId": "UniversitiesController_remove",
         "parameters": [
           {
@@ -672,9 +715,16 @@
         ],
         "responses": {
           "204": {
-            "description": ""
+            "description": "University successfully deleted."
+          },
+          "404": {
+            "description": "University not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
           }
         },
+        "summary": "Delete a university by ID",
         "tags": [
           "universities"
         ]
@@ -682,6 +732,7 @@
     },
     "/courses": {
       "post": {
+        "description": "Creates a new course record.",
         "operationId": "CoursesController_create",
         "parameters": [],
         "requestBody": {
@@ -696,7 +747,7 @@
         },
         "responses": {
           "201": {
-            "description": "",
+            "description": "The newly created course.",
             "content": {
               "application/json": {
                 "schema": {
@@ -704,18 +755,26 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "500": {
+            "description": "Internal Server Error."
           }
         },
+        "summary": "Create a new course",
         "tags": [
           "courses"
         ]
       },
       "get": {
+        "description": "Returns a list of all courses.",
         "operationId": "CoursesController_findAll",
         "parameters": [],
         "responses": {
           "200": {
-            "description": "",
+            "description": "A list of courses.",
             "content": {
               "application/json": {
                 "schema": {
@@ -726,8 +785,12 @@
                 }
               }
             }
+          },
+          "500": {
+            "description": "Internal Server Error."
           }
         },
+        "summary": "Retrieve all courses",
         "tags": [
           "courses"
         ]
@@ -735,6 +798,7 @@
     },
     "/courses/{id}": {
       "get": {
+        "description": "Returns a single course by its ID.",
         "operationId": "CoursesController_findOne",
         "parameters": [
           {
@@ -748,7 +812,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
+            "description": "The course with the specified ID.",
             "content": {
               "application/json": {
                 "schema": {
@@ -756,13 +820,21 @@
                 }
               }
             }
+          },
+          "404": {
+            "description": "Course not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
           }
         },
+        "summary": "Retrieve a course by ID",
         "tags": [
           "courses"
         ]
       },
       "put": {
+        "description": "Updates an existing course record.",
         "operationId": "CoursesController_update",
         "parameters": [
           {
@@ -776,7 +848,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
+            "description": "The updated course.",
             "content": {
               "application/json": {
                 "schema": {
@@ -784,13 +856,24 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "404": {
+            "description": "Course not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
           }
         },
+        "summary": "Update a course by ID",
         "tags": [
           "courses"
         ]
       },
       "delete": {
+        "description": "Deletes a course record by its ID.",
         "operationId": "CoursesController_remove",
         "parameters": [
           {
@@ -804,9 +887,16 @@
         ],
         "responses": {
           "204": {
-            "description": ""
+            "description": "Course successfully deleted."
+          },
+          "404": {
+            "description": "Course not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
           }
         },
+        "summary": "Delete a course by ID",
         "tags": [
           "courses"
         ]
@@ -814,6 +904,7 @@
     },
     "/courses/relationship": {
       "post": {
+        "description": "Creates a new relationship between courses.",
         "operationId": "CoursesController_createRelationship",
         "parameters": [],
         "requestBody": {
@@ -828,7 +919,7 @@
         },
         "responses": {
           "201": {
-            "description": "",
+            "description": "The newly created course relationship.",
             "content": {
               "application/json": {
                 "schema": {
@@ -836,13 +927,21 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "500": {
+            "description": "Internal Server Error."
           }
         },
+        "summary": "Create a course relationship",
         "tags": [
           "courses"
         ]
       },
       "delete": {
+        "description": "Deletes an existing relationship between courses.",
         "operationId": "CoursesController_deleteRelationship",
         "parameters": [],
         "requestBody": {
@@ -857,9 +956,16 @@
         },
         "responses": {
           "204": {
-            "description": ""
+            "description": "Course relationship successfully deleted."
+          },
+          "404": {
+            "description": "Course relationship not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
           }
         },
+        "summary": "Delete a course relationship",
         "tags": [
           "courses"
         ]
@@ -867,6 +973,7 @@
     },
     "/courses/{id}/modules": {
       "post": {
+        "description": "Sets or updates the modules associated with a course.",
         "operationId": "CoursesController_setModules",
         "parameters": [
           {
@@ -880,7 +987,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
+            "description": "The course with the updated modules.",
             "content": {
               "application/json": {
                 "schema": {
@@ -888,8 +995,18 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "404": {
+            "description": "Course or Module not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
           }
         },
+        "summary": "Set modules for a course",
         "tags": [
           "courses"
         ]
@@ -897,6 +1014,7 @@
     },
     "/modules": {
       "post": {
+        "description": "Creates a new module record.",
         "operationId": "ModulesController_create",
         "parameters": [],
         "requestBody": {
@@ -911,7 +1029,7 @@
         },
         "responses": {
           "201": {
-            "description": "",
+            "description": "The newly created module.",
             "content": {
               "application/json": {
                 "schema": {
@@ -919,18 +1037,26 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "500": {
+            "description": "Internal Server Error."
           }
         },
+        "summary": "Create a new module",
         "tags": [
           "modules"
         ]
       },
       "get": {
+        "description": "Returns a list of all modules.",
         "operationId": "ModulesController_findAll",
         "parameters": [],
         "responses": {
           "200": {
-            "description": "",
+            "description": "A list of modules.",
             "content": {
               "application/json": {
                 "schema": {
@@ -941,8 +1067,12 @@
                 }
               }
             }
+          },
+          "500": {
+            "description": "Internal Server Error."
           }
         },
+        "summary": "Retrieve all modules",
         "tags": [
           "modules"
         ]
@@ -950,6 +1080,7 @@
     },
     "/modules/{id}": {
       "get": {
+        "description": "Returns a single module by its ID.",
         "operationId": "ModulesController_findOne",
         "parameters": [
           {
@@ -963,7 +1094,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
+            "description": "The module with the specified ID.",
             "content": {
               "application/json": {
                 "schema": {
@@ -971,13 +1102,21 @@
                 }
               }
             }
+          },
+          "404": {
+            "description": "Module not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
           }
         },
+        "summary": "Retrieve a module by ID",
         "tags": [
           "modules"
         ]
       },
       "put": {
+        "description": "Updates an existing module record.",
         "operationId": "ModulesController_update",
         "parameters": [
           {
@@ -991,7 +1130,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
+            "description": "The updated module.",
             "content": {
               "application/json": {
                 "schema": {
@@ -999,13 +1138,24 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "404": {
+            "description": "Module not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
           }
         },
+        "summary": "Update a module by ID",
         "tags": [
           "modules"
         ]
       },
       "delete": {
+        "description": "Deletes a module record by its ID.",
         "operationId": "ModulesController_remove",
         "parameters": [
           {
@@ -1019,9 +1169,16 @@
         ],
         "responses": {
           "204": {
-            "description": ""
+            "description": "Module successfully deleted."
+          },
+          "404": {
+            "description": "Module not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
           }
         },
+        "summary": "Delete a module by ID",
         "tags": [
           "modules"
         ]
@@ -1029,6 +1186,7 @@
     },
     "/modules/relationship": {
       "post": {
+        "description": "Creates a new relationship between modules.",
         "operationId": "ModulesController_createRelationship",
         "parameters": [],
         "requestBody": {
@@ -1043,7 +1201,7 @@
         },
         "responses": {
           "201": {
-            "description": "",
+            "description": "The newly created module relationship.",
             "content": {
               "application/json": {
                 "schema": {
@@ -1051,13 +1209,21 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "500": {
+            "description": "Internal Server Error."
           }
         },
+        "summary": "Create a module relationship",
         "tags": [
           "modules"
         ]
       },
       "delete": {
+        "description": "Deletes an existing relationship between modules.",
         "operationId": "ModulesController_deleteRelationship",
         "parameters": [],
         "requestBody": {
@@ -1072,9 +1238,16 @@
         },
         "responses": {
           "204": {
-            "description": ""
+            "description": "Module relationship successfully deleted."
+          },
+          "404": {
+            "description": "Module relationship not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
           }
         },
+        "summary": "Delete a module relationship",
         "tags": [
           "modules"
         ]
@@ -1082,6 +1255,7 @@
     },
     "/questions": {
       "post": {
+        "description": "Creates a new question record.",
         "operationId": "QuestionsController_create",
         "parameters": [],
         "requestBody": {
@@ -1096,7 +1270,7 @@
         },
         "responses": {
           "201": {
-            "description": "",
+            "description": "The newly created question.",
             "content": {
               "application/json": {
                 "schema": {
@@ -1104,13 +1278,21 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "500": {
+            "description": "Internal Server Error."
           }
         },
+        "summary": "Create a new question",
         "tags": [
           "questions"
         ]
       },
       "get": {
+        "description": "Returns a list of all questions.",
         "operationId": "QuestionsController_findAll",
         "parameters": [
           {
@@ -1202,7 +1384,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
+            "description": "A list of questions.",
             "content": {
               "application/json": {
                 "schema": {
@@ -1213,8 +1395,12 @@
                 }
               }
             }
+          },
+          "500": {
+            "description": "Internal Server Error."
           }
         },
+        "summary": "Retrieve all questions",
         "tags": [
           "questions"
         ]
@@ -1222,6 +1408,7 @@
     },
     "/questions/{id}": {
       "get": {
+        "description": "Returns a single question by its ID.",
         "operationId": "QuestionsController_findOne",
         "parameters": [
           {
@@ -1235,7 +1422,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
+            "description": "The question with the specified ID.",
             "content": {
               "application/json": {
                 "schema": {
@@ -1243,13 +1430,21 @@
                 }
               }
             }
+          },
+          "404": {
+            "description": "Question not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
           }
         },
+        "summary": "Retrieve a question by ID",
         "tags": [
           "questions"
         ]
       },
       "put": {
+        "description": "Updates an existing question record.",
         "operationId": "QuestionsController_update",
         "parameters": [
           {
@@ -1263,7 +1458,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
+            "description": "The updated question.",
             "content": {
               "application/json": {
                 "schema": {
@@ -1271,13 +1466,24 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "404": {
+            "description": "Question not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
           }
         },
+        "summary": "Update a question by ID",
         "tags": [
           "questions"
         ]
       },
       "delete": {
+        "description": "Deletes a question record by its ID.",
         "operationId": "QuestionsController_remove",
         "parameters": [
           {
@@ -1291,9 +1497,16 @@
         ],
         "responses": {
           "204": {
-            "description": ""
+            "description": "Question successfully deleted."
+          },
+          "404": {
+            "description": "Question not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
           }
         },
+        "summary": "Delete a question by ID",
         "tags": [
           "questions"
         ]
@@ -1301,6 +1514,7 @@
     },
     "/degrees": {
       "post": {
+        "description": "Creates a new degree record.",
         "operationId": "DegreesController_create",
         "parameters": [],
         "requestBody": {
@@ -1315,7 +1529,7 @@
         },
         "responses": {
           "201": {
-            "description": "",
+            "description": "The newly created degree.",
             "content": {
               "application/json": {
                 "schema": {
@@ -1323,13 +1537,21 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "500": {
+            "description": "Internal Server Error."
           }
         },
+        "summary": "Create a new degree",
         "tags": [
           "degrees"
         ]
       },
       "get": {
+        "description": "Returns a list of all degrees.",
         "operationId": "DegreesController_findAll",
         "parameters": [
           {
@@ -1362,7 +1584,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
+            "description": "A list of degrees.",
             "content": {
               "application/json": {
                 "schema": {
@@ -1373,8 +1595,12 @@
                 }
               }
             }
+          },
+          "500": {
+            "description": "Internal Server Error."
           }
         },
+        "summary": "Retrieve all degrees",
         "tags": [
           "degrees"
         ]
@@ -1382,6 +1608,7 @@
     },
     "/degrees/{id}": {
       "get": {
+        "description": "Returns a single degree by its ID.",
         "operationId": "DegreesController_findOne",
         "parameters": [
           {
@@ -1395,7 +1622,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
+            "description": "The degree with the specified ID.",
             "content": {
               "application/json": {
                 "schema": {
@@ -1403,13 +1630,21 @@
                 }
               }
             }
+          },
+          "404": {
+            "description": "Degree not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
           }
         },
+        "summary": "Retrieve a degree by ID",
         "tags": [
           "degrees"
         ]
       },
       "put": {
+        "description": "Updates an existing degree record.",
         "operationId": "DegreesController_update",
         "parameters": [
           {
@@ -1423,7 +1658,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
+            "description": "The updated degree.",
             "content": {
               "application/json": {
                 "schema": {
@@ -1431,13 +1666,24 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "404": {
+            "description": "Degree not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
           }
         },
+        "summary": "Update a degree by ID",
         "tags": [
           "degrees"
         ]
       },
       "delete": {
+        "description": "Deletes a degree record by its ID.",
         "operationId": "DegreesController_remove",
         "parameters": [
           {
@@ -1451,9 +1697,16 @@
         ],
         "responses": {
           "204": {
-            "description": ""
+            "description": "Degree successfully deleted."
+          },
+          "404": {
+            "description": "Degree not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
           }
         },
+        "summary": "Delete a degree by ID",
         "tags": [
           "degrees"
         ]
@@ -1461,6 +1714,7 @@
     },
     "/degrees/{id}/faculty": {
       "post": {
+        "description": "Sets or updates the faculty associated with a degree.",
         "operationId": "DegreesController_setFaculty",
         "parameters": [
           {
@@ -1474,7 +1728,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
+            "description": "The degree with the updated faculty.",
             "content": {
               "application/json": {
                 "schema": {
@@ -1482,8 +1736,18 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "404": {
+            "description": "Degree or Faculty not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
           }
         },
+        "summary": "Set faculty for a degree",
         "tags": [
           "degrees"
         ]
@@ -1491,6 +1755,7 @@
     },
     "/degrees/{id}/courses": {
       "post": {
+        "description": "Adds a course to the specified degree.",
         "operationId": "DegreesController_addCourse",
         "parameters": [
           {
@@ -1504,7 +1769,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
+            "description": "The degree with the added course.",
             "content": {
               "application/json": {
                 "schema": {
@@ -1512,8 +1777,18 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "404": {
+            "description": "Degree or Course not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
           }
         },
+        "summary": "Add a course to a degree",
         "tags": [
           "degrees"
         ]
@@ -1521,6 +1796,7 @@
     },
     "/blocks": {
       "post": {
+        "description": "Creates a new block record.",
         "operationId": "BlocksController_create",
         "parameters": [],
         "requestBody": {
@@ -1535,7 +1811,7 @@
         },
         "responses": {
           "201": {
-            "description": "",
+            "description": "The newly created block.",
             "content": {
               "application/json": {
                 "schema": {
@@ -1543,18 +1819,26 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "500": {
+            "description": "Internal Server Error."
           }
         },
+        "summary": "Create a new block",
         "tags": [
           "blocks"
         ]
       },
       "get": {
+        "description": "Returns a list of all blocks.",
         "operationId": "BlocksController_findAll",
         "parameters": [],
         "responses": {
           "200": {
-            "description": "",
+            "description": "A list of blocks.",
             "content": {
               "application/json": {
                 "schema": {
@@ -1565,8 +1849,12 @@
                 }
               }
             }
+          },
+          "500": {
+            "description": "Internal Server Error."
           }
         },
+        "summary": "Retrieve all blocks",
         "tags": [
           "blocks"
         ]
@@ -1574,6 +1862,7 @@
     },
     "/blocks/{id}": {
       "get": {
+        "description": "Returns a single block by its ID.",
         "operationId": "BlocksController_findOne",
         "parameters": [
           {
@@ -1587,7 +1876,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
+            "description": "The block with the specified ID.",
             "content": {
               "application/json": {
                 "schema": {
@@ -1595,13 +1884,21 @@
                 }
               }
             }
+          },
+          "404": {
+            "description": "Block not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
           }
         },
+        "summary": "Retrieve a block by ID",
         "tags": [
           "blocks"
         ]
       },
       "put": {
+        "description": "Updates an existing block record.",
         "operationId": "BlocksController_update",
         "parameters": [
           {
@@ -1625,7 +1922,7 @@
         },
         "responses": {
           "200": {
-            "description": "",
+            "description": "The updated block.",
             "content": {
               "application/json": {
                 "schema": {
@@ -1633,13 +1930,24 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "404": {
+            "description": "Block not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
           }
         },
+        "summary": "Update a block by ID",
         "tags": [
           "blocks"
         ]
       },
       "delete": {
+        "description": "Deletes a block record by its ID.",
         "operationId": "BlocksController_remove",
         "parameters": [
           {
@@ -1653,9 +1961,16 @@
         ],
         "responses": {
           "204": {
-            "description": ""
+            "description": "Block successfully deleted."
+          },
+          "404": {
+            "description": "Block not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
           }
         },
+        "summary": "Delete a block by ID",
         "tags": [
           "blocks"
         ]
@@ -1663,6 +1978,7 @@
     },
     "/blocks/relationship": {
       "post": {
+        "description": "Creates a new relationship between blocks.",
         "operationId": "BlocksController_createRelationship",
         "parameters": [],
         "requestBody": {
@@ -1677,7 +1993,7 @@
         },
         "responses": {
           "201": {
-            "description": "",
+            "description": "The newly created block relationship.",
             "content": {
               "application/json": {
                 "schema": {
@@ -1685,13 +2001,21 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "500": {
+            "description": "Internal Server Error."
           }
         },
+        "summary": "Create a block relationship",
         "tags": [
           "blocks"
         ]
       },
       "delete": {
+        "description": "Deletes an existing relationship between blocks.",
         "operationId": "BlocksController_deleteRelationship",
         "parameters": [],
         "requestBody": {
@@ -1706,9 +2030,16 @@
         },
         "responses": {
           "204": {
-            "description": ""
+            "description": "Block relationship successfully deleted."
+          },
+          "404": {
+            "description": "Block relationship not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
           }
         },
+        "summary": "Delete a block relationship",
         "tags": [
           "blocks"
         ]
@@ -1716,6 +2047,7 @@
     },
     "/faculties": {
       "post": {
+        "description": "Creates a new faculty record.",
         "operationId": "FacultiesController_create",
         "parameters": [],
         "requestBody": {
@@ -1738,18 +2070,26 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "500": {
+            "description": "Internal Server Error."
           }
         },
+        "summary": "Create a new faculty",
         "tags": [
           "faculties"
         ]
       },
       "get": {
+        "description": "Returns a list of all faculties.",
         "operationId": "FacultiesController_findAll",
         "parameters": [],
         "responses": {
           "200": {
-            "description": "",
+            "description": "A list of faculties.",
             "content": {
               "application/json": {
                 "schema": {
@@ -1760,8 +2100,12 @@
                 }
               }
             }
+          },
+          "500": {
+            "description": "Internal Server Error."
           }
         },
+        "summary": "Retrieve all faculties",
         "tags": [
           "faculties"
         ]
@@ -1769,6 +2113,7 @@
     },
     "/faculties/{id}": {
       "get": {
+        "description": "Returns a single faculty by its ID.",
         "operationId": "FacultiesController_findOne",
         "parameters": [
           {
@@ -1782,7 +2127,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
+            "description": "The faculty with the specified ID.",
             "content": {
               "application/json": {
                 "schema": {
@@ -1790,13 +2135,21 @@
                 }
               }
             }
+          },
+          "404": {
+            "description": "Faculty not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
           }
         },
+        "summary": "Retrieve a faculty by ID",
         "tags": [
           "faculties"
         ]
       },
       "put": {
+        "description": "Updates an existing faculty record.",
         "operationId": "FacultiesController_update",
         "parameters": [
           {
@@ -1810,7 +2163,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
+            "description": "The updated faculty.",
             "content": {
               "application/json": {
                 "schema": {
@@ -1818,13 +2171,24 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "404": {
+            "description": "Faculty not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
           }
         },
+        "summary": "Update a faculty by ID",
         "tags": [
           "faculties"
         ]
       },
       "delete": {
+        "description": "Deletes a faculty record by its ID.",
         "operationId": "FacultiesController_remove",
         "parameters": [
           {
@@ -1839,8 +2203,15 @@
         "responses": {
           "204": {
             "description": "Faculty deleted"
+          },
+          "404": {
+            "description": "Faculty not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
           }
         },
+        "summary": "Delete a faculty by ID",
         "tags": [
           "faculties"
         ]
@@ -1848,6 +2219,7 @@
     },
     "/faculties/university/{universityId}": {
       "get": {
+        "description": "Returns a list of faculties associated with a specific university ID.",
         "operationId": "FacultiesController_findByUniversity",
         "parameters": [
           {
@@ -1861,7 +2233,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
+            "description": "A list of faculties for the specified university.",
             "content": {
               "application/json": {
                 "schema": {
@@ -1872,8 +2244,15 @@
                 }
               }
             }
+          },
+          "404": {
+            "description": "University not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
           }
         },
+        "summary": "Retrieve faculties by university ID",
         "tags": [
           "faculties"
         ]
@@ -1881,6 +2260,7 @@
     },
     "/translations": {
       "post": {
+        "description": "Creates a new translation record.",
         "operationId": "TranslationsController_create",
         "parameters": [],
         "requestBody": {
@@ -1895,7 +2275,7 @@
         },
         "responses": {
           "201": {
-            "description": "",
+            "description": "The newly created translation.",
             "content": {
               "application/json": {
                 "schema": {
@@ -1903,18 +2283,26 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "500": {
+            "description": "Internal Server Error."
           }
         },
+        "summary": "Create a new translation",
         "tags": [
           "translations"
         ]
       },
       "get": {
+        "description": "Returns a list of all translations.",
         "operationId": "TranslationsController_findAll",
         "parameters": [],
         "responses": {
           "200": {
-            "description": "",
+            "description": "A list of translations.",
             "content": {
               "application/json": {
                 "schema": {
@@ -1925,8 +2313,12 @@
                 }
               }
             }
+          },
+          "500": {
+            "description": "Internal Server Error."
           }
         },
+        "summary": "Retrieve all translations",
         "tags": [
           "translations"
         ]
@@ -1934,6 +2326,7 @@
     },
     "/translations/{id}": {
       "get": {
+        "description": "Returns a single translation by its ID.",
         "operationId": "TranslationsController_findOne",
         "parameters": [
           {
@@ -1947,7 +2340,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
+            "description": "The translation with the specified ID.",
             "content": {
               "application/json": {
                 "schema": {
@@ -1955,13 +2348,21 @@
                 }
               }
             }
+          },
+          "404": {
+            "description": "Translation not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
           }
         },
+        "summary": "Retrieve a translation by ID",
         "tags": [
           "translations"
         ]
       },
       "put": {
+        "description": "Updates an existing translation record.",
         "operationId": "TranslationsController_update",
         "parameters": [
           {
@@ -1975,7 +2376,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
+            "description": "The updated translation.",
             "content": {
               "application/json": {
                 "schema": {
@@ -1983,13 +2384,24 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "404": {
+            "description": "Translation not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
           }
         },
+        "summary": "Update a translation by ID",
         "tags": [
           "translations"
         ]
       },
       "delete": {
+        "description": "Deletes a translation record by its ID.",
         "operationId": "TranslationsController_remove",
         "parameters": [
           {
@@ -2003,9 +2415,16 @@
         ],
         "responses": {
           "204": {
-            "description": ""
+            "description": "Translation successfully deleted."
+          },
+          "404": {
+            "description": "Translation not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
           }
         },
+        "summary": "Delete a translation by ID",
         "tags": [
           "translations"
         ]
@@ -2013,6 +2432,7 @@
     },
     "/answers": {
       "post": {
+        "description": "Creates a new answer record.",
         "operationId": "AnswersController_create",
         "parameters": [],
         "requestBody": {
@@ -2027,7 +2447,7 @@
         },
         "responses": {
           "201": {
-            "description": "",
+            "description": "The newly created answer.",
             "content": {
               "application/json": {
                 "schema": {
@@ -2035,13 +2455,21 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "500": {
+            "description": "Internal Server Error."
           }
         },
+        "summary": "Create a new answer",
         "tags": [
           "answers"
         ]
       },
       "get": {
+        "description": "Returns a list of all answers.",
         "operationId": "AnswersController_findAll",
         "parameters": [
           {
@@ -2055,7 +2483,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
+            "description": "A list of answers.",
             "content": {
               "application/json": {
                 "schema": {
@@ -2066,8 +2494,12 @@
                 }
               }
             }
+          },
+          "500": {
+            "description": "Internal Server Error."
           }
         },
+        "summary": "Retrieve all answers",
         "tags": [
           "answers"
         ]
@@ -2075,6 +2507,7 @@
     },
     "/answers/{id}": {
       "get": {
+        "description": "Returns a single answer by its ID.",
         "operationId": "AnswersController_findOne",
         "parameters": [
           {
@@ -2088,7 +2521,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
+            "description": "The answer with the specified ID.",
             "content": {
               "application/json": {
                 "schema": {
@@ -2096,13 +2529,21 @@
                 }
               }
             }
+          },
+          "404": {
+            "description": "Answer not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
           }
         },
+        "summary": "Retrieve an answer by ID",
         "tags": [
           "answers"
         ]
       },
       "put": {
+        "description": "Updates an existing answer record.",
         "operationId": "AnswersController_update",
         "parameters": [
           {
@@ -2116,7 +2557,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
+            "description": "The updated answer.",
             "content": {
               "application/json": {
                 "schema": {
@@ -2124,13 +2565,24 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "404": {
+            "description": "Answer not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
           }
         },
+        "summary": "Update an answer by ID",
         "tags": [
           "answers"
         ]
       },
       "delete": {
+        "description": "Deletes an answer record by its ID.",
         "operationId": "AnswersController_remove",
         "parameters": [
           {
@@ -2144,9 +2596,16 @@
         ],
         "responses": {
           "204": {
-            "description": ""
+            "description": "Answer successfully deleted."
+          },
+          "404": {
+            "description": "Answer not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
           }
         },
+        "summary": "Delete an answer by ID",
         "tags": [
           "answers"
         ]
