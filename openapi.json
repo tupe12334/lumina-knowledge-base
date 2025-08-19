@@ -976,7 +976,94 @@
       },
       "get": {
         "operationId": "QuestionsController_findAll",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "id",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "type",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/QuestionType"
+            }
+          },
+          {
+            "name": "validationStatus",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/QuestionValidationStatus"
+            }
+          },
+          {
+            "name": "moduleId",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "moduleIds",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "includeSubmodules",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "courseId",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "courseIds",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "questionType",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/QuestionType"
+            }
+          },
+          {
+            "name": "questionTypes",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/QuestionType"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": ""
@@ -1634,7 +1721,16 @@
       },
       "get": {
         "operationId": "AnswersController_findAll",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "questionId",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": ""
@@ -1804,6 +1900,23 @@
       "CreateQuestionInput": {
         "type": "object",
         "properties": {}
+      },
+      "QuestionType": {
+        "type": "string",
+        "enum": [
+          "selection",
+          "value",
+          "void"
+        ]
+      },
+      "QuestionValidationStatus": {
+        "type": "string",
+        "enum": [
+          "ai_generated",
+          "in_manual_review",
+          "approved",
+          "rejected"
+        ]
       },
       "CreateDegreeInput": {
         "type": "object",
