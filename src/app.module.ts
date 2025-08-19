@@ -18,6 +18,7 @@ import { TranslationsModule } from './modules/translations/translations.module';
 import { PrismaModule } from './prisma/prisma.module';
 import { MutationsGuard } from './guards/mutations.guard';
 import { AnswersModule } from './modules/answers/answers.module';
+import { DataHashModule } from 'src/system/data-hash/data-hash.module';
 
 @Module({
   imports: [
@@ -47,6 +48,7 @@ import { AnswersModule } from './modules/answers/answers.module';
     FacultiesModule,
     TranslationsModule,
     AnswersModule,
+    DataHashModule,
   ],
   controllers: [],
   providers: [
