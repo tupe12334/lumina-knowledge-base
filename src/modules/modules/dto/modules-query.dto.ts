@@ -6,9 +6,11 @@ import {
   IsBoolean,
   IsUUID,
 } from 'class-validator';
+import { ApiPropertyOptional } from '@nestjs/swagger';
 import { Transform, Type } from 'class-transformer';
 
 export class ModulesQueryDto {
+  @ApiPropertyOptional()
   @IsOptional()
   @IsInt()
   @Min(0)
@@ -18,6 +20,7 @@ export class ModulesQueryDto {
   })
   minQuestions?: number;
 
+  @ApiPropertyOptional()
   @IsOptional()
   @IsInt()
   @Min(0)
@@ -27,6 +30,7 @@ export class ModulesQueryDto {
   })
   maxQuestions?: number;
 
+  @ApiPropertyOptional()
   @IsOptional()
   @IsInt()
   @Min(0)
@@ -36,18 +40,22 @@ export class ModulesQueryDto {
   })
   exactQuestions?: number;
 
+  @ApiPropertyOptional()
   @IsOptional()
   @IsUUID()
   courseId?: string;
 
+  @ApiPropertyOptional()
   @IsOptional()
   @IsUUID()
   universityId?: string;
 
+  @ApiPropertyOptional()
   @IsOptional()
   @IsString()
   nameSearch?: string;
 
+  @ApiPropertyOptional()
   @IsOptional()
   @IsBoolean()
   @Type(() => Boolean)
@@ -59,6 +67,7 @@ export class ModulesQueryDto {
   })
   hasQuestions?: boolean;
 
+  @ApiPropertyOptional()
   @IsOptional()
   @IsBoolean()
   @Type(() => Boolean)
@@ -70,6 +79,7 @@ export class ModulesQueryDto {
   })
   hasPrerequisites?: boolean;
 
+  @ApiPropertyOptional()
   @IsOptional()
   @IsBoolean()
   @Type(() => Boolean)
@@ -81,6 +91,7 @@ export class ModulesQueryDto {
   })
   hasPostrequisites?: boolean;
 
+  @ApiPropertyOptional()
   @IsOptional()
   @IsBoolean()
   @Type(() => Boolean)
@@ -92,6 +103,7 @@ export class ModulesQueryDto {
   })
   hasSubModules?: boolean;
 
+  @ApiPropertyOptional()
   @IsOptional()
   @IsBoolean()
   @Type(() => Boolean)
