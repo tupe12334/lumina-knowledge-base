@@ -1487,7 +1487,14 @@
         },
         "responses": {
           "201": {
-            "description": ""
+            "description": "Faculty created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Faculty"
+                }
+              }
+            }
           }
         },
         "tags": [
@@ -1499,7 +1506,17 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Faculty"
+                  }
+                }
+              }
+            }
           }
         },
         "tags": [
@@ -1522,7 +1539,14 @@
         ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Faculty"
+                }
+              }
+            }
           }
         },
         "tags": [
@@ -1543,7 +1567,14 @@
         ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Faculty"
+                }
+              }
+            }
           }
         },
         "tags": [
@@ -1564,7 +1595,7 @@
         ],
         "responses": {
           "204": {
-            "description": ""
+            "description": "Faculty deleted"
           }
         },
         "tags": [
@@ -1587,7 +1618,17 @@
         ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Faculty"
+                  }
+                }
+              }
+            }
           }
         },
         "tags": [
@@ -1955,6 +1996,551 @@
       "CreateFacultyInput": {
         "type": "object",
         "properties": {}
+      },
+      "Translation": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "en_text": {
+            "type": "string"
+          },
+          "he_text": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "en_text",
+          "he_text"
+        ]
+      },
+      "RelationshipMetadataKey": {
+        "type": "string",
+        "enum": [
+          "REASON",
+          "TYPE",
+          "DESCRIPTION"
+        ]
+      },
+      "RelationshipMetadata": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "key": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/RelationshipMetadataKey"
+              }
+            ]
+          },
+          "value": {
+            "type": "string"
+          },
+          "blockRelationshipId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "key",
+          "value",
+          "blockRelationshipId"
+        ]
+      },
+      "BlockRelationship": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "prerequisiteId": {
+            "type": "string"
+          },
+          "postrequisiteId": {
+            "type": "string"
+          },
+          "prerequisite": {
+            "nullable": true,
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Block"
+              }
+            ]
+          },
+          "postrequisite": {
+            "nullable": true,
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Block"
+              }
+            ]
+          },
+          "metadata": {
+            "nullable": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RelationshipMetadata"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "prerequisiteId",
+          "postrequisiteId",
+          "prerequisite",
+          "postrequisite",
+          "metadata"
+        ]
+      },
+      "Block": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "prerequisiteFor": {
+            "nullable": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BlockRelationship"
+            }
+          },
+          "postrequisiteOf": {
+            "nullable": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BlockRelationship"
+            }
+          },
+          "modules": {
+            "nullable": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Module"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "prerequisiteFor",
+          "postrequisiteOf",
+          "modules"
+        ]
+      },
+      "SelectAnswer": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "isCorrect": {
+            "type": "boolean"
+          },
+          "translationId": {
+            "type": "string"
+          },
+          "text": {
+            "$ref": "#/components/schemas/Translation"
+          },
+          "answerId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "isCorrect",
+          "translationId",
+          "text",
+          "answerId"
+        ]
+      },
+      "UnitAnswer": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "value": {
+            "type": "number"
+          },
+          "unit": {
+            "type": "string"
+          },
+          "answerId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "value",
+          "unit",
+          "answerId"
+        ]
+      },
+      "NumberAnswer": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "value": {
+            "type": "number"
+          },
+          "answerId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "value",
+          "answerId"
+        ]
+      },
+      "Answer": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "questionId": {
+            "type": "string"
+          },
+          "SelectAnswer": {
+            "nullable": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SelectAnswer"
+            }
+          },
+          "UnitAnswer": {
+            "nullable": true,
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/UnitAnswer"
+              }
+            ]
+          },
+          "NumberAnswer": {
+            "nullable": true,
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/NumberAnswer"
+              }
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "questionId",
+          "SelectAnswer",
+          "UnitAnswer",
+          "NumberAnswer"
+        ]
+      },
+      "QuestionPart": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "questionId": {
+            "type": "string"
+          },
+          "partQuestionId": {
+            "type": "string"
+          },
+          "order": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "id",
+          "questionId",
+          "partQuestionId",
+          "order"
+        ]
+      },
+      "Question": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "validationStatus": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/QuestionValidationStatus"
+              }
+            ]
+          },
+          "translationId": {
+            "type": "string"
+          },
+          "text": {
+            "$ref": "#/components/schemas/Translation"
+          },
+          "Answer": {
+            "nullable": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Answer"
+            }
+          },
+          "type": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/QuestionType"
+              }
+            ]
+          },
+          "Modules": {
+            "nullable": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Module"
+            }
+          },
+          "Parts": {
+            "nullable": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/QuestionPart"
+            }
+          },
+          "PartOf": {
+            "nullable": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/QuestionPart"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "validationStatus",
+          "translationId",
+          "text",
+          "Answer",
+          "type",
+          "Modules",
+          "Parts",
+          "PartOf"
+        ]
+      },
+      "Module": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "$ref": "#/components/schemas/Translation"
+          },
+          "translationId": {
+            "type": "string"
+          },
+          "subModules": {
+            "nullable": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Module"
+            }
+          },
+          "parentModules": {
+            "nullable": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Module"
+            }
+          },
+          "Block": {
+            "nullable": true,
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Block"
+              }
+            ]
+          },
+          "questions": {
+            "nullable": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Question"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "translationId",
+          "subModules",
+          "parentModules",
+          "Block",
+          "questions"
+        ]
+      },
+      "Course": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "$ref": "#/components/schemas/Translation"
+          },
+          "universityId": {
+            "type": "string"
+          },
+          "university": {
+            "nullable": true,
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/University"
+              }
+            ]
+          },
+          "modules": {
+            "nullable": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Module"
+            }
+          },
+          "publishedAt": {
+            "format": "date-time",
+            "type": "string",
+            "nullable": true
+          },
+          "Block": {
+            "nullable": true,
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Block"
+              }
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "universityId",
+          "university",
+          "modules",
+          "publishedAt",
+          "Block"
+        ]
+      },
+      "University": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "$ref": "#/components/schemas/Translation"
+          },
+          "courses": {
+            "nullable": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Course"
+            }
+          },
+          "degrees": {
+            "nullable": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Degree"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "courses",
+          "degrees"
+        ]
+      },
+      "Faculty": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "$ref": "#/components/schemas/Translation"
+          },
+          "description": {
+            "$ref": "#/components/schemas/Translation"
+          },
+          "degrees": {
+            "nullable": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Degree"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "description",
+          "degrees"
+        ]
+      },
+      "Degree": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "$ref": "#/components/schemas/Translation"
+          },
+          "universityId": {
+            "type": "string"
+          },
+          "university": {
+            "nullable": true,
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/University"
+              }
+            ]
+          },
+          "courses": {
+            "nullable": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Course"
+            }
+          },
+          "facultyId": {
+            "type": "string",
+            "nullable": true
+          },
+          "faculty": {
+            "nullable": true,
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Faculty"
+              }
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "universityId",
+          "university",
+          "courses",
+          "facultyId",
+          "faculty"
+        ]
       },
       "CreateTranslationInput": {
         "type": "object",
