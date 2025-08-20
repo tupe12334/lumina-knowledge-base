@@ -1,4 +1,4 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { Injectable, NotFoundException, InternalServerErrorException } from '@nestjs/common';
 import { PrismaService } from '../../prisma/prisma.service';
 import { University } from './models/University.entity';
 import { CreateUniversityInput } from './dto/create-university.input';
@@ -90,17 +90,19 @@ export class UniversitiesService {
    * @param id - The university ID
    * @returns A plain text summary of the university
    * @throws NotFoundException if the university doesn't exist
+   * @throws InternalServerErrorException if database operation fails
    */
   async generateSummary(id: string): Promise<string> {
-    const university = await this.prisma.university.findUnique({
-      where: { id },
-      include: {
-        name: true,
-        Faculty: { include: { name: true } },
-        Degree: { include: { name: true } },
-        courses: { include: { name: true } },
-      },
-    });
+    try {
+      const university = await this.prisma.university.findUnique({
+        where: { id },
+        include: {
+          name: true,
+          Faculty: { include: { name: true } },
+          Degree: { include: { name: true } },
+          courses: { include: { name: true } },
+        },
+      });
 
     if (!university) {
       throw new NotFoundException(`University with ID ${id} not found`);
@@ -127,7 +129,7 @@ export class UniversitiesService {
           ).join('\n')
         : 'No faculties available';
 
-    const summary = `University: ${universityName}
+      const summary = `University: ${universityName}
 ID: ${university.id}
 Faculties: ${facultyCount} faculties including ${facultyNames || 'none'}
 Degrees: ${degreeCount} degree programs
@@ -135,6 +137,14 @@ Courses: ${courseCount} courses offered
 Faculty Details:
 ${facultyDetails}`;
 
-    return summary;
+      return summary;
+    } catch (error) {
+      if (error instanceof NotFoundException) {
+        throw error;
+      }
+      throw new InternalServerErrorException(
+        `Failed to generate university summary: ${error.message}`,
+      );
+    }
   }
 }

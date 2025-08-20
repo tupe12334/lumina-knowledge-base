@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { BadRequestException, NotFoundException } from '@nestjs/common';
+import { BadRequestException, NotFoundException, InternalServerErrorException } from '@nestjs/common';
 import { CoursesService } from './courses.service';
 import { PrismaService } from '../../prisma/prisma.service';
 import { CreateCourseRelationshipInput } from './dto/create-course-relationship.input';
@@ -42,6 +42,92 @@ describe('CoursesService', () => {
     expect(result[0].name.en_text).toBe('course');
     expect(result[0].university).toBeDefined();
     expect(result[0].university!.name.en_text).toBe('uni');
+  });
+
+  describe('generateSummary', () => {
+    it('should generate a comprehensive course summary', async () => {
+      const mockCourse = {
+        id: 'course-123',
+        name: { en_text: 'Introduction to Computer Science', he_text: 'מבוא למדעי המחשב' },
+        description: { en_text: 'Fundamental concepts', he_text: 'מושגי יסוד' },
+        creditPoints: 4.5,
+        university: {
+          name: { en_text: 'Harvard University', he_text: 'אוניברסיטת הרווארד' },
+        },
+        Degree: [
+          {
+            name: { en_text: 'Bachelor of CS', he_text: 'תואר ראשון במדעי המחשב' },
+          },
+        ],
+        modules: [
+          {
+            name: { en_text: 'Algorithms', he_text: 'אלגוריתמים' },
+          },
+          {
+            name: { en_text: 'Data Structures', he_text: 'מבני נתונים' },
+          },
+        ],
+        CourseBlocks: [],
+      };
+
+      mockPrismaService.course.findUnique.mockResolvedValue(mockCourse);
+
+      const result = await service.generateSummary('course-123');
+
+      expect(result).toContain('Course: Introduction to Computer Science');
+      expect(result).toContain('ID: course-123');
+      expect(result).toContain('University: Harvard University');
+      expect(result).toContain('Credit Points: 4.5');
+      expect(result).toContain('Description: Fundamental concepts');
+      expect(result).toContain('Blocks: 2 blocks available');
+      expect(result).toContain('Block Details:');
+      expect(result).toContain('- Algorithms: Algorithm basics');
+      expect(result).toContain('- Data Structures: Data organization');
+    });
+
+    it('should handle course with no blocks', async () => {
+      const mockCourse = {
+        id: 'course-456',
+        name: { en_text: 'Simple Course', he_text: 'קורס פשוט' },
+        description: { en_text: 'Basic course', he_text: 'קורס בסיסי' },
+        creditPoints: 2.0,
+        university: {
+          name: { en_text: 'Small College', he_text: 'מכללה קטנה' },
+        },
+        CourseBlocks: [],
+      };
+
+      mockPrismaService.course.findUnique.mockResolvedValue(mockCourse);
+
+      const result = await service.generateSummary('course-456');
+
+      expect(result).toContain('Course: Simple Course');
+      expect(result).toContain('Blocks: 0 blocks available');
+      expect(result).toContain('Block Details:\nNo blocks available');
+    });
+
+    it('should throw NotFoundException when course does not exist', async () => {
+      mockPrismaService.course.findUnique.mockResolvedValue(null);
+
+      await expect(service.generateSummary('non-existent')).rejects.toThrow(
+        NotFoundException,
+      );
+      await expect(service.generateSummary('non-existent')).rejects.toThrow(
+        'Course with ID non-existent not found',
+      );
+    });
+
+    it('should throw InternalServerErrorException on database error', async () => {
+      const dbError = new Error('Database connection failed');
+      mockPrismaService.course.findUnique.mockRejectedValue(dbError);
+
+      await expect(service.generateSummary('course-123')).rejects.toThrow(
+        InternalServerErrorException,
+      );
+      await expect(service.generateSummary('course-123')).rejects.toThrow(
+        'Failed to generate course summary',
+      );
+    });
   });
 
   describe('createCourseRelationship', () => {

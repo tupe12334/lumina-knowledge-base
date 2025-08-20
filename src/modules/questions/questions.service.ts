@@ -1,4 +1,4 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { Injectable, NotFoundException, InternalServerErrorException } from '@nestjs/common';
 import { Prisma } from '@prisma/client';
 import { PrismaService } from '../../prisma/prisma.service';
 import { Question } from './models/Question.entity';
@@ -545,10 +545,12 @@ export class QuestionsService {
    * Generates a human-readable summary of a question including its type, modules, answers, and parts.
    * @param id - The question ID
    * @returns A plain text summary of the question
-   * @throws Error if the question doesn't exist
+   * @throws NotFoundException if the question doesn't exist
+   * @throws InternalServerErrorException if database operation fails
    */
   async generateSummary(id: string): Promise<string> {
-    const question = await this.prisma.question.findUnique({
+    try {
+      const question = await this.prisma.question.findUnique({
       where: { id },
       include: {
         text: true,
@@ -635,7 +637,7 @@ export class QuestionsService {
           ).join('; ')
         : 'None';
 
-    const summary = `Question: ${questionText}
+      const summary = `Question: ${questionText}
 ID: ${question.id}
 Type: ${question.type}
 Validation Status: ${validationStatus}
@@ -643,6 +645,14 @@ Associated Modules: ${moduleNames || 'None'}
 ${answerInfo}
 Question Parts: ${questionParts}`;
 
-    return summary;
+      return summary;
+    } catch (error) {
+      if (error instanceof NotFoundException) {
+        throw error;
+      }
+      throw new InternalServerErrorException(
+        `Failed to generate question summary: ${error.message}`,
+      );
+    }
   }
 }

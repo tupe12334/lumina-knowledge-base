@@ -1,4 +1,4 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { Injectable, NotFoundException, InternalServerErrorException } from '@nestjs/common';
 import { PrismaService } from '../../prisma/prisma.service';
 import { Degree } from './models/Degree.entity';
 import { DegreesQueryDto } from './dto/degrees-query.dto';
@@ -319,10 +319,12 @@ export class DegreesService {
    * Generates a human-readable summary of a degree including its university, faculty, and courses.
    * @param id - The degree ID
    * @returns A plain text summary of the degree
-   * @throws Error if the degree doesn't exist
+   * @throws NotFoundException if the degree doesn't exist
+   * @throws InternalServerErrorException if database operation fails
    */
   async generateSummary(id: string): Promise<string> {
-    const degree = await this.prisma.degree.findUnique({
+    try {
+      const degree = await this.prisma.degree.findUnique({
       where: { id },
       include: {
         name: true,
@@ -363,12 +365,20 @@ export class DegreesService {
       )
       .join(', ');
 
-    const summary = `Degree: ${degreeName}
+      const summary = `Degree: ${degreeName}
 ID: ${degree.id}
 University: ${universityName}
 Faculty: ${facultyName}
 Associated Courses: ${courseCount} courses - ${courseNames || 'None'}`;
 
-    return summary;
+      return summary;
+    } catch (error) {
+      if (error instanceof NotFoundException) {
+        throw error;
+      }
+      throw new InternalServerErrorException(
+        `Failed to generate degree summary: ${error.message}`,
+      );
+    }
   }
 }

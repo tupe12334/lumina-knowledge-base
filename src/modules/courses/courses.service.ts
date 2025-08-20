@@ -2,6 +2,7 @@ import {
   Injectable,
   NotFoundException,
   BadRequestException,
+  InternalServerErrorException,
 } from '@nestjs/common';
 import { RelationshipMetadataKey } from '@prisma/client';
 import { PrismaService } from '../../prisma/prisma.service';
@@ -418,8 +419,8 @@ export class CoursesService {
       // 2. Handle modules and their data
       for (const module of course.modules) {
         // Check if this module is used by other courses
-        const otherCourseModules = (module.Course as any[]).filter(
-          (c: any) => c.id !== courseId,
+        const otherCourseModules = module.Course.filter(
+          (c) => c.id !== courseId,
         );
 
         if (otherCourseModules.length === 0) {
@@ -739,88 +740,90 @@ export class CoursesService {
    * Generates a human-readable summary of a course including its university, degrees, modules, and prerequisites.
    * @param id - The course ID
    * @returns A plain text summary of the course
-   * @throws Error if the course doesn't exist
+   * @throws NotFoundException if the course doesn't exist
+   * @throws InternalServerErrorException if database operation fails
    */
   async generateSummary(id: string): Promise<string> {
-    const course = await this.prisma.course.findUnique({
-      where: { id },
-      include: {
-        name: true,
-        university: {
-          include: {
-            name: true,
+    try {
+      const course = await this.prisma.course.findUnique({
+        where: { id },
+        include: {
+          name: true,
+          university: {
+            include: {
+              name: true,
+            },
           },
-        },
-        Degree: {
-          include: {
-            name: true,
+          Degree: {
+            include: {
+              name: true,
+            },
           },
-        },
-        modules: {
-          include: {
-            name: true,
+          modules: {
+            include: {
+              name: true,
+            },
           },
-        },
-        Block: {
-          include: {
-            prerequisiteFor: {
-              include: {
-                postrequisite: {
-                  include: {
-                    Course: {
-                      include: {
-                        name: true,
+          Block: {
+            include: {
+              prerequisiteFor: {
+                include: {
+                  postrequisite: {
+                    include: {
+                      Course: {
+                        include: {
+                          name: true,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+              postrequisiteOf: {
+                include: {
+                  prerequisite: {
+                    include: {
+                      Course: {
+                        include: {
+                          name: true,
+                        },
                       },
                     },
                   },
                 },
               },
             },
-            postrequisiteOf: {
-              include: {
-                prerequisite: {
-                  include: {
-                    Course: {
-                      include: {
-                        name: true,
-                      },
-                    },
-                  },
-                },
-              },
-            },
           },
         },
-      },
-    });
+      });
 
-    if (!course) {
-      throw new NotFoundException(`Course with ID ${id} not found`);
-    }
+      if (!course) {
+        throw new NotFoundException(`Course with ID ${id} not found`);
+      }
 
-    const courseName =
-      course.name?.en_text || 'No English translation available';
-    const universityName =
-      course.university?.name?.en_text || 'No English translation available';
+      const courseName =
+        course.name?.en_text || 'No English translation available';
+      const universityName =
+        course.university?.name?.en_text || 'No English translation available';
 
-    // Build associated degrees
-    const degreeNames = course.Degree.map(
-      (degree) => degree.name?.en_text || 'No English translation available',
-    ).join(', ');
+      // Build associated degrees
+      const degreeNames = course.Degree.map(
+        (degree) => degree.name?.en_text || 'No English translation available',
+      ).join(', ');
 
-    // Build modules information
-    const moduleCount = course.modules.length;
-    const moduleNames = course.modules
-      .map(
-        (module) => module.name?.en_text || 'No English translation available',
-      )
-      .join(', ');
+      // Build modules information
+      const moduleCount = course.modules.length;
+      const moduleNames = course.modules
+        .map(
+          (module) => module.name?.en_text || 'No English translation available',
+        )
+        .join(', ');
 
-    // Build prerequisites and postrequisites (simplified for now)
-    const prerequisites = 'None';
-    const postrequisites = 'None';
+      // Build prerequisites and postrequisites (simplified for now)
+      const prerequisites = 'None';
+      const postrequisites = 'None';
 
-    const summary = `Course: ${courseName}
+      const summary = `Course: ${courseName}
 ID: ${course.id}
 University: ${universityName}
 Associated Degrees: ${degreeNames || 'None'}
@@ -828,6 +831,14 @@ Modules: ${moduleCount} modules - ${moduleNames || 'None'}
 Prerequisites: ${prerequisites}
 Postrequisites: ${postrequisites}`;
 
-    return summary;
+      return summary;
+    } catch (error) {
+      if (error instanceof NotFoundException) {
+        throw error;
+      }
+      throw new InternalServerErrorException(
+        `Failed to generate course summary: ${error.message}`,
+      );
+    }
   }
 }

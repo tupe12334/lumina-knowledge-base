@@ -3,12 +3,14 @@ import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { Test, TestingModule } from '@nestjs/testing';
 import { QuestionsService } from './questions.service';
 import { PrismaService } from '../../prisma/prisma.service';
+import { NotFoundException, InternalServerErrorException } from '@nestjs/common';
 
 describe('QuestionsService', () => {
   let service: QuestionsService;
   let mockPrismaService: {
     question: {
       findMany: ReturnType<typeof vi.fn>;
+      findUnique: ReturnType<typeof vi.fn>;
     };
     questionPart: {
       findMany: ReturnType<typeof vi.fn>;
@@ -22,6 +24,7 @@ describe('QuestionsService', () => {
     mockPrismaService = {
       question: {
         findMany: vi.fn(),
+        findUnique: vi.fn(),
       },
       questionPart: {
         findMany: vi.fn(),
@@ -244,6 +247,69 @@ describe('QuestionsService', () => {
             },
           }),
         }),
+      );
+    });
+  });
+
+  describe('generateSummary', () => {
+    it('should generate a comprehensive question summary', async () => {
+      const mockQuestion = {
+        id: 'question-123',
+        text: { en_text: 'What is the time complexity of quicksort?', he_text: 'מה מורכבות הזמן של quicksort?' },
+        Answer: [
+          {
+            id: 'ans-1',
+            text: { en_text: 'O(n log n) average case', he_text: 'O(n log n) במקרה ממוצע' },
+            isCorrect: true,
+          },
+          {
+            id: 'ans-2',
+            text: { en_text: 'O(n^2) worst case', he_text: 'O(n^2) במקרה הגרוע' },
+            isCorrect: false,
+          },
+        ],
+        QuestionBlock: [
+          {
+            Block: {
+              name: { en_text: 'Algorithms', he_text: 'אלגוריתמים' },
+            },
+          },
+        ],
+      };
+
+      mockPrismaService.question.findUnique.mockResolvedValue(mockQuestion);
+
+      const result = await service.generateSummary('question-123');
+
+      expect(result).toContain('Question: What is the time complexity of quicksort?');
+      expect(result).toContain('ID: question-123');
+      expect(result).toContain('Answers: 2 answers (1 correct)');
+      expect(result).toContain('Blocks: 1 blocks');
+      expect(result).toContain('Answer Details:');
+      expect(result).toContain('Block Details:');
+      expect(result).toContain('- Algorithms');
+    });
+
+    it('should throw NotFoundException when question does not exist', async () => {
+      mockPrismaService.question.findUnique.mockResolvedValue(null);
+
+      await expect(service.generateSummary('non-existent')).rejects.toThrow(
+        NotFoundException,
+      );
+      await expect(service.generateSummary('non-existent')).rejects.toThrow(
+        'Question with ID non-existent not found',
+      );
+    });
+
+    it('should throw InternalServerErrorException on database error', async () => {
+      const dbError = new Error('Database connection failed');
+      mockPrismaService.question.findUnique.mockRejectedValue(dbError);
+
+      await expect(service.generateSummary('question-123')).rejects.toThrow(
+        InternalServerErrorException,
+      );
+      await expect(service.generateSummary('question-123')).rejects.toThrow(
+        'Failed to generate question summary',
       );
     });
   });

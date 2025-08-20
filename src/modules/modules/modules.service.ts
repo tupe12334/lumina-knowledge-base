@@ -2,6 +2,7 @@ import {
   Injectable,
   BadRequestException,
   NotFoundException,
+  InternalServerErrorException,
 } from '@nestjs/common';
 import { Prisma, RelationshipMetadataKey } from '@prisma/client';
 import { PrismaService } from '../../prisma/prisma.service';
@@ -562,10 +563,12 @@ export class ModulesService {
    * Generates a human-readable summary of a module including its courses, questions, hierarchy, and prerequisites.
    * @param id - The module ID
    * @returns A plain text summary of the module
-   * @throws Error if the module doesn't exist
+   * @throws NotFoundException if the module doesn't exist
+   * @throws InternalServerErrorException if database operation fails
    */
   async generateSummary(id: string): Promise<string> {
-    const module = await this.prisma.module.findUnique({
+    try {
+      const module = await this.prisma.module.findUnique({
       where: { id },
       include: {
         name: true,
@@ -670,7 +673,7 @@ export class ModulesService {
         .filter((name) => name !== 'No English translation available')
         .join(', ') || 'None';
 
-    const summary = `Module: ${moduleName}
+      const summary = `Module: ${moduleName}
 ID: ${module.id}
 Associated Courses: ${courseNames || 'None'}
 Questions: ${questionCount} questions of types ${questionTypes || 'None'}
@@ -679,6 +682,14 @@ Sub-modules: ${subModuleNames || 'None'}
 Prerequisites: ${prerequisites}
 Postrequisites: ${postrequisites}`;
 
-    return summary;
+      return summary;
+    } catch (error) {
+      if (error instanceof NotFoundException) {
+        throw error;
+      }
+      throw new InternalServerErrorException(
+        `Failed to generate module summary: ${error.message}`,
+      );
+    }
   }
 }

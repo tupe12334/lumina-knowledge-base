@@ -3,6 +3,7 @@ import { createPrismock } from 'prismock';
 import * as client from '../../../generated/client';
 import { ModulesService } from './modules.service';
 import { PrismaService } from '../../prisma/prisma.service';
+import { NotFoundException, InternalServerErrorException } from '@nestjs/common';
 
 vi.mock('../../../generated/client', async () => {
   const actual = (await vi.importActual(
@@ -86,6 +87,42 @@ describe('ModulesService', () => {
       // Skip this test for now due to prismock limitations with many-to-many relations
       // The real implementation will work correctly
       expect(true).toBe(true);
+    });
+  });
+
+  describe('generateSummary', () => {
+    it('should throw NotFoundException when module does not exist', async () => {
+      await expect(service.generateSummary('non-existent')).rejects.toThrow(
+        NotFoundException,
+      );
+      await expect(service.generateSummary('non-existent')).rejects.toThrow(
+        'Module with ID non-existent not found',
+      );
+    });
+
+    it('should generate summary for module without courses', async () => {
+      const block = await prisma.block.create({ data: {} });
+      const moduleName = await prisma.translation.create({
+        data: { en_text: 'Empty Module', he_text: 'מודול ריק' },
+      });
+      const moduleDesc = await prisma.translation.create({
+        data: { en_text: 'No courses', he_text: 'אין קורסים' },
+      });
+
+      const createdModule = await prisma.module.create({
+        data: {
+          id: 'module-456',
+          translationId: moduleName.id,
+          blockId: block.id,
+          descriptionId: moduleDesc.id,
+          creditPoints: 0.0,
+        },
+      });
+
+      const result = await service.generateSummary('module-456');
+
+      expect(result).toContain('Module: Empty Module');
+      expect(result).toContain('ID: module-456');
     });
   });
 });
