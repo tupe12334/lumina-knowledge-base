@@ -582,7 +582,7 @@ export class QuestionsService {
     });
 
     if (!question) {
-      throw new Error(`Question with ID ${id} not found`);
+      throw new NotFoundException(`Question with ID ${id} not found`);
     }
 
     const questionText =
@@ -610,9 +610,9 @@ export class QuestionsService {
     } else if (question.type === 'value' && question.Answer.length > 0) {
       const valueAnswers = question.Answer.map((answer) => {
         if (answer.UnitAnswer) {
-          return `Unit: ${answer.UnitAnswer.unit}, Expected: ${answer.UnitAnswer.expectedValue}`;
+          return `Unit: ${answer.UnitAnswer.unit}, Value: ${answer.UnitAnswer.value}`;
         } else if (answer.NumberAnswer) {
-          return `Number, Expected: ${answer.NumberAnswer.expectedValue}`;
+          return `Number, Value: ${answer.NumberAnswer.value}`;
         }
         return '';
       })

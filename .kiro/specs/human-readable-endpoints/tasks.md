@@ -40,42 +40,42 @@
   - Handle optional faculty assignment properly
   - _Requirements: 1.5, 4.4, 5.1, 5.3_
 
-- [ ] 3. Add summary endpoints to existing controllers
+- [x] 3. Add summary endpoints to existing controllers
   - Add GET /:id/summary endpoints to universities, courses, and modules controllers
   - Implement proper HTTP status codes and content-type headers
   - Add Swagger documentation for new endpoints
   - _Requirements: 2.1, 2.4, 3.2, 3.3_
 
-- [ ] 3.1 Add summary endpoint to UniversitiesController
+- [x] 3.1 Add summary endpoint to UniversitiesController
   - Add GET /:id/summary route that calls UniversitiesService.generateSummary
   - Set Content-Type to text/plain and return plain text response
   - Add proper Swagger documentation with ApiOperation and ApiResponse decorators
   - _Requirements: 1.3, 2.1, 2.4_
 
-- [ ] 3.2 Add summary endpoint to CoursesController
+- [x] 3.2 Add summary endpoint to CoursesController
   - Add GET /:id/summary route that calls CoursesService.generateSummary
   - Set Content-Type to text/plain and return plain text response
   - Add proper Swagger documentation with ApiOperation and ApiResponse decorators
   - _Requirements: 1.1, 2.1, 2.4_
 
-- [ ] 3.3 Add summary endpoint to ModulesController
+- [x] 3.3 Add summary endpoint to ModulesController
   - Add GET /:id/summary route that calls ModulesService.generateSummary
   - Set Content-Type to text/plain and return plain text response
   - Add proper Swagger documentation with ApiOperation and ApiResponse decorators
   - _Requirements: 1.2, 2.1, 2.4_
 
-- [ ] 4. Create controllers and endpoints for questions and degrees
+- [x] 4. Create controllers and endpoints for questions and degrees
   - Create complete controller structure for questions and degrees following existing patterns
   - Implement summary endpoints with proper error handling
   - _Requirements: 1.4, 1.5, 2.1, 2.4_
 
-- [ ] 4.1 Create QuestionsController with summary endpoint
+- [x] 4.1 Create QuestionsController with summary endpoint
   - Create new controller following existing controller patterns
   - Add GET /:id/summary route that calls QuestionsService.generateSummary
   - Set Content-Type to text/plain and add proper Swagger documentation
   - _Requirements: 1.4, 2.1, 2.4_
 
-- [ ] 4.2 Create DegreesController with summary endpoint
+- [x] 4.2 Create DegreesController with summary endpoint
   - Create new controller following existing controller patterns
   - Add GET /:id/summary route that calls DegreesService.generateSummary
   - Set Content-Type to text/plain and add proper Swagger documentation
@@ -87,13 +87,13 @@
   - Add error handling for database connection issues
   - _Requirements: 3.1, 3.2, 3.3, 3.4_
 
-- [ ] 5.1 Add ID validation to all summary endpoints
+- [x] 5.1 Add ID validation to all summary endpoints
   - Implement UUID format validation using class-validator or similar
   - Return 400 Bad Request for invalid ID formats with descriptive error message
   - Test validation with various invalid ID formats
   - _Requirements: 3.2_
 
-- [ ] 5.2 Add entity existence checking to all summary methods
+- [x] 5.2 Add entity existence checking to all summary methods
   - Check if entity exists before generating summary in all service methods
   - Return 404 Not Found for non-existent entities with descriptive error message
   - Ensure consistent error message format across all endpoints

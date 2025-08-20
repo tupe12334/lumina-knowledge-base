@@ -574,11 +574,7 @@ export class ModulesService {
             name: true,
           },
         },
-        Questions: {
-          include: {
-            name: true,
-          },
-        },
+        Questions: true,
         parentModules: {
           include: {
             name: true,
@@ -623,41 +619,56 @@ export class ModulesService {
     });
 
     if (!module) {
-      throw new Error(`Module with ID ${id} not found`);
+      throw new NotFoundException(`Module with ID ${id} not found`);
     }
 
-    const moduleName = module.name?.en_text || 'No English translation available';
-    
+    const moduleName =
+      module.name?.en_text || 'No English translation available';
+
     // Build associated courses
-    const courseNames = module.Course
-      .map(course => course.name?.en_text || 'No English translation available')
-      .join(', ');
-    
+    const courseNames = module.Course.map(
+      (course) => course.name?.en_text || 'No English translation available',
+    ).join(', ');
+
     // Build questions information
     const questionCount = module.Questions.length;
-    const questionTypes = [...new Set(module.Questions.map(q => q.type))].join(', ');
-    
+    const questionTypes = [
+      ...new Set(module.Questions.map((q) => q.type)),
+    ].join(', ');
+
     // Build parent modules
     const parentModuleNames = module.parentModules
-      .map(parent => parent.name?.en_text || 'No English translation available')
+      .map(
+        (parent) => parent.name?.en_text || 'No English translation available',
+      )
       .join(', ');
-    
+
     // Build sub-modules
     const subModuleNames = module.subModules
-      .map(sub => sub.name?.en_text || 'No English translation available')
+      .map((sub) => sub.name?.en_text || 'No English translation available')
       .join(', ');
-    
+
     // Build prerequisites (modules that are prerequisites for this module)
-    const prerequisites = module.Block?.postrequisiteOf
-      ?.map(rel => rel.prerequisite.Module?.name?.en_text || 'No English translation available')
-      .filter(name => name !== 'No English translation available')
-      .join(', ') || 'None';
-    
+    const prerequisites =
+      module.Block?.postrequisiteOf
+        ?.map(
+          (rel) =>
+            rel.prerequisite.Module[0]?.name?.en_text ||
+            'No English translation available',
+        )
+        .filter((name) => name !== 'No English translation available')
+        .join(', ') || 'None';
+
     // Build postrequisites (modules that require this module as prerequisite)
-    const postrequisites = module.Block?.prerequisiteFor
-      ?.map(rel => rel.postrequisite.Module?.name?.en_text || 'No English translation available')
-      .filter(name => name !== 'No English translation available')
-      .join(', ') || 'None';
+    const postrequisites =
+      module.Block?.prerequisiteFor
+        ?.map(
+          (rel) =>
+            rel.postrequisite.Module[0]?.name?.en_text ||
+            'No English translation available',
+        )
+        .filter((name) => name !== 'No English translation available')
+        .join(', ') || 'None';
 
     const summary = `Module: ${moduleName}
 ID: ${module.id}

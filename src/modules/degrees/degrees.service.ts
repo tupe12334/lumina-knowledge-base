@@ -345,7 +345,7 @@ export class DegreesService {
     });
 
     if (!degree) {
-      throw new Error(`Degree with ID ${id} not found`);
+      throw new NotFoundException(`Degree with ID ${id} not found`);
     }
 
     const degreeName =
