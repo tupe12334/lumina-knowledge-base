@@ -81,7 +81,7 @@
   - Set Content-Type to text/plain and add proper Swagger documentation
   - _Requirements: 1.5, 2.1, 2.4_
 
-- [ ] 5. Implement comprehensive error handling
+- [x] 5. Implement comprehensive error handling
   - Add validation for UUID format in all summary endpoints
   - Implement proper error responses with appropriate HTTP status codes
   - Add error handling for database connection issues
@@ -99,19 +99,25 @@
   - Ensure consistent error message format across all endpoints
   - _Requirements: 3.1_
 
-- [ ] 6. Write comprehensive tests for all summary functionality
+- [x] 5.3 Add database error handling to all summary methods
+  - Implement try-catch blocks in all generateSummary methods
+  - Return 500 Internal Server Error for database connection issues
+  - Preserve original NotFoundException while catching other errors
+  - _Requirements: 3.3, 3.4_
+
+- [x] 6. Write comprehensive tests for all summary functionality
   - Create unit tests for all service generateSummary methods
   - Create integration tests for all summary endpoints
   - Test error scenarios and edge cases
   - _Requirements: All requirements validation_
 
-- [ ] 6.1 Write unit tests for service methods
+- [x] 6.1 Write unit tests for service methods
   - Test generateSummary methods for all entities with mock data
   - Test error handling for non-existent entities
   - Test translation data extraction and fallback behavior
   - _Requirements: 1.1, 1.2, 1.3, 1.4, 1.5, 5.1, 5.3, 5.4_
 
-- [ ] 6.2 Write integration tests for summary endpoints
+- [x] 6.2 Write integration tests for summary endpoints
   - Test all five summary endpoints with real database data
   - Test HTTP status codes for success and error scenarios
   - Test response content type and format

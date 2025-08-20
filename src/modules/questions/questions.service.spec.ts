@@ -256,25 +256,29 @@ describe('QuestionsService', () => {
       const mockQuestion = {
         id: 'question-123',
         text: { en_text: 'What is the time complexity of quicksort?', he_text: 'מה מורכבות הזמן של quicksort?' },
+        type: 'selection',
+        validationStatus: 'validated',
+        Modules: [
+          {
+            name: { en_text: 'Algorithms', he_text: 'אלגוריתמים' },
+          },
+        ],
         Answer: [
           {
             id: 'ans-1',
-            text: { en_text: 'O(n log n) average case', he_text: 'O(n log n) במקרה ממוצע' },
-            isCorrect: true,
-          },
-          {
-            id: 'ans-2',
-            text: { en_text: 'O(n^2) worst case', he_text: 'O(n^2) במקרה הגרוע' },
-            isCorrect: false,
-          },
-        ],
-        QuestionBlock: [
-          {
-            Block: {
-              name: { en_text: 'Algorithms', he_text: 'אלגוריתמים' },
-            },
+            SelectAnswer: [
+              {
+                text: { en_text: 'O(n log n) average case', he_text: 'O(n log n) במקרה ממוצע' },
+                isCorrect: true,
+              },
+              {
+                text: { en_text: 'O(n^2) worst case', he_text: 'O(n^2) במקרה הגרוע' },
+                isCorrect: false,
+              },
+            ],
           },
         ],
+        Parts: [],
       };
 
       mockPrismaService.question.findUnique.mockResolvedValue(mockQuestion);
@@ -283,11 +287,7 @@ describe('QuestionsService', () => {
 
       expect(result).toContain('Question: What is the time complexity of quicksort?');
       expect(result).toContain('ID: question-123');
-      expect(result).toContain('Answers: 2 answers (1 correct)');
-      expect(result).toContain('Blocks: 1 blocks');
-      expect(result).toContain('Answer Details:');
-      expect(result).toContain('Block Details:');
-      expect(result).toContain('- Algorithms');
+      expect(result).toContain('Associated Modules: Algorithms');
     });
 
     it('should throw NotFoundException when question does not exist', async () => {

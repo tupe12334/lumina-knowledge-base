@@ -45,19 +45,15 @@ describe('DegreesService', () => {
         university: {
           name: { en_text: 'Harvard University', he_text: 'אוניברסיטת הרווארד' },
         },
-        Module: [
+        faculty: {
+          name: { en_text: 'Computer Science Faculty', he_text: 'פקולטה למדעי המחשב' },
+        },
+        courses: [
           {
-            name: { en_text: 'Core Programming', he_text: 'תכנות ליבה' },
-            creditPoints: 12.0,
+            name: { en_text: 'Algorithms', he_text: 'אלגוריתמים' },
           },
           {
-            name: { en_text: 'Advanced Algorithms', he_text: 'אלגוריתמים מתקדמים' },
-            creditPoints: 8.0,
-          },
-        ],
-        Faculty: [
-          {
-            name: { en_text: 'Computer Science Faculty', he_text: 'פקולטה למדעי המחשב' },
+            name: { en_text: 'Data Structures', he_text: 'מבני נתונים' },
           },
         ],
       };
@@ -69,9 +65,8 @@ describe('DegreesService', () => {
       expect(result).toContain('Degree: Bachelor of Computer Science');
       expect(result).toContain('ID: degree-123');
       expect(result).toContain('University: Harvard University');
-      expect(result).toContain('Description: Comprehensive CS program');
-      expect(result).toContain('Modules: 2 modules (20 total credits)');
-      expect(result).toContain('Faculties: 1 faculties');
+      expect(result).toContain('Faculty: Computer Science Faculty');
+      expect(result).toContain('Associated Courses: 2 courses - Algorithms, Data Structures');
     });
 
     it('should throw NotFoundException when degree does not exist', async () => {

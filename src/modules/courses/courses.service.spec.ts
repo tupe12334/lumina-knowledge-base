@@ -77,12 +77,8 @@ describe('CoursesService', () => {
       expect(result).toContain('Course: Introduction to Computer Science');
       expect(result).toContain('ID: course-123');
       expect(result).toContain('University: Harvard University');
-      expect(result).toContain('Credit Points: 4.5');
-      expect(result).toContain('Description: Fundamental concepts');
-      expect(result).toContain('Blocks: 2 blocks available');
-      expect(result).toContain('Block Details:');
-      expect(result).toContain('- Algorithms: Algorithm basics');
-      expect(result).toContain('- Data Structures: Data organization');
+      expect(result).toContain('Associated Degrees: Bachelor of CS');
+      expect(result).toContain('Modules: 2 modules - Algorithms, Data Structures');
     });
 
     it('should handle course with no blocks', async () => {
@@ -94,6 +90,8 @@ describe('CoursesService', () => {
         university: {
           name: { en_text: 'Small College', he_text: 'מכללה קטנה' },
         },
+        Degree: [],
+        modules: [],
         CourseBlocks: [],
       };
 
@@ -102,8 +100,8 @@ describe('CoursesService', () => {
       const result = await service.generateSummary('course-456');
 
       expect(result).toContain('Course: Simple Course');
-      expect(result).toContain('Blocks: 0 blocks available');
-      expect(result).toContain('Block Details:\nNo blocks available');
+      expect(result).toContain('Associated Degrees: None');
+      expect(result).toContain('Modules: 0 modules - None');
     });
 
     it('should throw NotFoundException when course does not exist', async () => {

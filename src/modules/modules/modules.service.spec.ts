@@ -3,7 +3,7 @@ import { createPrismock } from 'prismock';
 import * as client from '../../../generated/client';
 import { ModulesService } from './modules.service';
 import { PrismaService } from '../../prisma/prisma.service';
-import { NotFoundException, InternalServerErrorException } from '@nestjs/common';
+import { NotFoundException } from '@nestjs/common';
 
 vi.mock('../../../generated/client', async () => {
   const actual = (await vi.importActual(
@@ -109,13 +109,11 @@ describe('ModulesService', () => {
         data: { en_text: 'No courses', he_text: 'אין קורסים' },
       });
 
-      const createdModule = await prisma.module.create({
+      await prisma.module.create({
         data: {
           id: 'module-456',
           translationId: moduleName.id,
           blockId: block.id,
-          descriptionId: moduleDesc.id,
-          creditPoints: 0.0,
         },
       });
 
