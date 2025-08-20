@@ -1,23 +1,23 @@
 # Implementation Plan
 
-- [ ] 1. Create summary service methods for existing entities
+- [-] 1. Create summary service methods for existing entities
   - Add generateSummary methods to existing services that fetch entity data with relationships and generate human-readable text
   - Implement proper error handling for non-existent entities
   - _Requirements: 1.1, 1.2, 1.3, 1.4, 1.5, 3.1, 4.1, 4.2, 4.3, 4.4, 5.1, 5.2, 5.3_
 
-- [ ] 1.1 Implement UniversitiesService.generateSummary method
+- [x] 1.1 Implement UniversitiesService.generateSummary method
   - Write method to fetch university with faculties, degrees, and courses including translations
   - Generate natural language summary following the university format from design
   - Handle missing translation data gracefully
   - _Requirements: 1.3, 4.3, 5.1, 5.3_
 
-- [ ] 1.2 Implement CoursesService.generateSummary method
+- [x] 1.2 Implement CoursesService.generateSummary method
   - Write method to fetch course with university, degrees, modules, and block relationships including translations
   - Generate natural language summary following the course format from design
   - Include prerequisite and postrequisite information from block relationships
   - _Requirements: 1.1, 4.1, 5.1, 5.3_
 
-- [ ] 1.3 Implement ModulesService.generateSummary method
+- [x] 1.3 Implement ModulesService.generateSummary method
   - Write method to fetch module with courses, questions, parent/sub-modules, and block relationships including translations
   - Generate natural language summary following the module format from design
   - Handle module hierarchy relationships properly

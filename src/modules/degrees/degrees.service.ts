@@ -314,4 +314,61 @@ export class DegreesService {
 
     return updatedDegree;
   }
+
+  /**
+   * Generates a human-readable summary of a degree including its university, faculty, and courses.
+   * @param id - The degree ID
+   * @returns A plain text summary of the degree
+   * @throws Error if the degree doesn't exist
+   */
+  async generateSummary(id: string): Promise<string> {
+    const degree = await this.prisma.degree.findUnique({
+      where: { id },
+      include: {
+        name: true,
+        university: {
+          include: {
+            name: true,
+          },
+        },
+        faculty: {
+          include: {
+            name: true,
+          },
+        },
+        courses: {
+          include: {
+            name: true,
+          },
+        },
+      },
+    });
+
+    if (!degree) {
+      throw new Error(`Degree with ID ${id} not found`);
+    }
+
+    const degreeName =
+      degree.name?.en_text || 'No English translation available';
+    const universityName =
+      degree.university?.name?.en_text || 'No English translation available';
+    const facultyName =
+      degree.faculty?.name?.en_text || 'Not assigned to specific faculty';
+
+    // Build associated courses
+    const courseCount = degree.courses.length;
+    const courseNames = degree.courses
+      .map(
+        (course) => course.name?.en_text || 'No English translation available',
+      )
+      .join(', ');
+
+    const summary = `Degree: ${degreeName}
+ID: ${degree.id}
+University: ${universityName}
+Faculty: ${facultyName}
+Associated Courses: ${courseCount} courses - ${courseNames || 'None'}`;
+
+    return summary;
+  }
 }

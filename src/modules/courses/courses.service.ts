@@ -734,4 +734,118 @@ export class CoursesService {
 
     return updated;
   }
+
+  /**
+   * Generates a human-readable summary of a course including its university, degrees, modules, and prerequisites.
+   * @param id - The course ID
+   * @returns A plain text summary of the course
+   * @throws Error if the course doesn't exist
+   */
+  async generateSummary(id: string): Promise<string> {
+    const course = await this.prisma.course.findUnique({
+      where: { id },
+      include: {
+        name: true,
+        university: {
+          include: {
+            name: true,
+          },
+        },
+        Degree: {
+          include: {
+            name: true,
+          },
+        },
+        modules: {
+          include: {
+            name: true,
+          },
+        },
+        Block: {
+          include: {
+            prerequisiteFor: {
+              include: {
+                postrequisite: {
+                  include: {
+                    Course: {
+                      include: {
+                        name: true,
+                      },
+                    },
+                  },
+                },
+              },
+            },
+            postrequisiteOf: {
+              include: {
+                prerequisite: {
+                  include: {
+                    Course: {
+                      include: {
+                        name: true,
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    });
+
+    if (!course) {
+      throw new Error(`Course with ID ${id} not found`);
+    }
+
+    const courseName =
+      course.name?.en_text || 'No English translation available';
+    const universityName =
+      course.university?.name?.en_text || 'No English translation available';
+
+    // Build associated degrees
+    const degreeNames = course.Degree.map(
+      (degree) => degree.name?.en_text || 'No English translation available',
+    ).join(', ');
+
+    // Build modules information
+    const moduleCount = course.modules.length;
+    const moduleNames = course.modules
+      .map(
+        (module) => module.name?.en_text || 'No English translation available',
+      )
+      .join(', ');
+
+    // Build prerequisites (courses that are prerequisites for this course)
+    const prerequisites =
+      course.Block?.postrequisiteOf
+        ?.map(
+          (rel) =>
+            rel.prerequisite.Course?.name?.en_text ||
+            'No English translation available',
+        )
+        .filter((name) => name !== 'No English translation available')
+        .join(', ') || 'None';
+
+    // Build postrequisites (courses that require this course as prerequisite)
+    const postrequisites =
+      course.Block?.prerequisiteFor
+        ?.map(
+          (rel) =>
+            rel.postrequisite.Course?.name?.en_text ||
+            'No English translation available',
+        )
+        .filter((name) => name !== 'No English translation available')
+        .join(', ') || 'None';
+
+    const summary = `Course: ${courseName}
+ID: ${course.id}
+University: ${universityName}
+Associated Degrees: ${degreeNames || 'None'}
+Modules: ${moduleCount} modules - ${moduleNames || 'None'}
+Prerequisites: ${prerequisites}
+Postrequisites: ${postrequisites}`;
+
+    return summary;
+  }
 }

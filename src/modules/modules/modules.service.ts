@@ -557,4 +557,117 @@ export class ModulesService {
       metadata: JSON.stringify(formattedMetadata),
     };
   }
+
+  /**
+   * Generates a human-readable summary of a module including its courses, questions, hierarchy, and prerequisites.
+   * @param id - The module ID
+   * @returns A plain text summary of the module
+   * @throws Error if the module doesn't exist
+   */
+  async generateSummary(id: string): Promise<string> {
+    const module = await this.prisma.module.findUnique({
+      where: { id },
+      include: {
+        name: true,
+        Course: {
+          include: {
+            name: true,
+          },
+        },
+        Questions: {
+          include: {
+            name: true,
+          },
+        },
+        parentModules: {
+          include: {
+            name: true,
+          },
+        },
+        subModules: {
+          include: {
+            name: true,
+          },
+        },
+        Block: {
+          include: {
+            prerequisiteFor: {
+              include: {
+                postrequisite: {
+                  include: {
+                    Module: {
+                      include: {
+                        name: true,
+                      },
+                    },
+                  },
+                },
+              },
+            },
+            postrequisiteOf: {
+              include: {
+                prerequisite: {
+                  include: {
+                    Module: {
+                      include: {
+                        name: true,
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    });
+
+    if (!module) {
+      throw new Error(`Module with ID ${id} not found`);
+    }
+
+    const moduleName = module.name?.en_text || 'No English translation available';
+    
+    // Build associated courses
+    const courseNames = module.Course
+      .map(course => course.name?.en_text || 'No English translation available')
+      .join(', ');
+    
+    // Build questions information
+    const questionCount = module.Questions.length;
+    const questionTypes = [...new Set(module.Questions.map(q => q.type))].join(', ');
+    
+    // Build parent modules
+    const parentModuleNames = module.parentModules
+      .map(parent => parent.name?.en_text || 'No English translation available')
+      .join(', ');
+    
+    // Build sub-modules
+    const subModuleNames = module.subModules
+      .map(sub => sub.name?.en_text || 'No English translation available')
+      .join(', ');
+    
+    // Build prerequisites (modules that are prerequisites for this module)
+    const prerequisites = module.Block?.postrequisiteOf
+      ?.map(rel => rel.prerequisite.Module?.name?.en_text || 'No English translation available')
+      .filter(name => name !== 'No English translation available')
+      .join(', ') || 'None';
+    
+    // Build postrequisites (modules that require this module as prerequisite)
+    const postrequisites = module.Block?.prerequisiteFor
+      ?.map(rel => rel.postrequisite.Module?.name?.en_text || 'No English translation available')
+      .filter(name => name !== 'No English translation available')
+      .join(', ') || 'None';
+
+    const summary = `Module: ${moduleName}
+ID: ${module.id}
+Associated Courses: ${courseNames || 'None'}
+Questions: ${questionCount} questions of types ${questionTypes || 'None'}
+Parent Modules: ${parentModuleNames || 'None'}
+Sub-modules: ${subModuleNames || 'None'}
+Prerequisites: ${prerequisites}
+Postrequisites: ${postrequisites}`;
+
+    return summary;
+  }
 }

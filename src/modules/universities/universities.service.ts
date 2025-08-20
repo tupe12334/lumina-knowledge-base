@@ -84,4 +84,76 @@ export class UniversitiesService {
   async remove(id: string) {
     return this.prisma.university.delete({ where: { id } });
   }
+
+  /**
+   * Generates a human-readable summary of a university including its faculties, degrees, and courses.
+   * @param id - The university ID
+   * @returns A plain text summary of the university
+   * @throws NotFoundException if the university doesn't exist
+   */
+  async generateSummary(id: string): Promise<string> {
+    const university = await this.prisma.university.findUnique({
+      where: { id },
+      include: {
+        name: true,
+        faculties: {
+          include: {
+            name: true,
+          },
+        },
+        Degree: {
+          include: {
+            name: true,
+          },
+        },
+        courses: {
+          include: {
+            name: true,
+          },
+        },
+      },
+    });
+
+    if (!university) {
+      throw new Error(`University with ID ${id} not found`);
+    }
+
+    const universityName =
+      university.name?.en_text || 'No English translation available';
+
+    // Build faculty information
+    const facultyCount = university.faculties.length;
+    const facultyNames = university.faculties
+      .map(
+        (faculty) =>
+          faculty.name?.en_text || 'No English translation available',
+      )
+      .join(', ');
+
+    // Build degree and course counts
+    const degreeCount = university.Degree.length;
+    const courseCount = university.courses.length;
+
+    // Build faculty details section
+    const facultyDetails =
+      university.faculties.length > 0
+        ? university.faculties
+            .map((faculty) => {
+              const name =
+                faculty.name?.en_text || 'No English translation available';
+              return `- ${name}`;
+            })
+            .join('\n')
+        : 'No faculties available';
+
+    const summary = `University: ${universityName}
+ID: ${university.id}
+Faculties: ${facultyCount} faculties including ${facultyNames || 'none'}
+Degrees: ${degreeCount} degree programs
+Courses: ${courseCount} courses offered
+Faculty Details:
+${facultyDetails}`;
+
+    return summary;
+  }
 }
