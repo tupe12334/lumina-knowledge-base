@@ -9,6 +9,9 @@ import {
   HttpCode,
   HttpStatus,
   Query,
+  ParseUUIDPipe,
+  NotFoundException,
+  Header,
 } from '@nestjs/common';
 import {
   ApiTags,
@@ -18,6 +21,7 @@ import {
   ApiOperation,
   ApiResponse,
   ApiParam,
+  ApiProduces,
 } from '@nestjs/swagger';
 import { DegreesService } from './degrees.service';
 import { CreateDegreeInput } from './dto/create-degree.input';
@@ -150,5 +154,40 @@ export class DegreesController {
     @Body() addCourseToDegreeDto: Omit<AddCourseToDegreeInput, 'degreeId'>,
   ) {
     return this.degreesService.addCourse(id, addCourseToDegreeDto.courseId);
+  }
+
+  @Get(':id/summary')
+  @ApiOperation({
+    summary: 'Get degree summary',
+    description:
+      'Returns a human-readable plain text summary for the specified degree.',
+  })
+  @ApiParam({
+    name: 'id',
+    description: 'The ID of the degree',
+    type: String,
+  })
+  @ApiProduces('text/plain')
+  @ApiOkResponse({
+    description: 'Plain text summary of the degree',
+    schema: { type: 'string' },
+  })
+  @ApiResponse({ status: 400, description: 'Invalid ID format' })
+  @ApiResponse({ status: 404, description: 'Degree not found' })
+  @ApiResponse({ status: 500, description: 'Internal Server Error' })
+  @Header('Content-Type', 'text/plain; charset=utf-8')
+  async getSummary(
+    @Param('id', new ParseUUIDPipe({ version: '4' })) id: string,
+  ): Promise<string> {
+    try {
+      return await this.degreesService.generateSummary(id);
+    } catch (err: unknown) {
+      if (err instanceof NotFoundException) throw err;
+      const message = err instanceof Error ? err.message : String(err);
+      if (message.toLowerCase().includes('not found')) {
+        throw new NotFoundException(message);
+      }
+      throw err;
+    }
   }
 }

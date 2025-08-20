@@ -9,6 +9,9 @@ import {
   HttpCode,
   HttpStatus,
   Query,
+  ParseUUIDPipe,
+  NotFoundException,
+  Header,
 } from '@nestjs/common';
 import {
   ApiTags,
@@ -18,6 +21,7 @@ import {
   ApiOperation,
   ApiResponse,
   ApiParam,
+  ApiProduces,
 } from '@nestjs/swagger';
 import { ModulesService } from './modules.service';
 import { CreateModuleInput } from './dto/create-module.input';
@@ -145,5 +149,40 @@ export class ModulesController {
     return this.modulesService.deleteModuleRelationship(
       deleteModuleRelationshipDto,
     );
+  }
+
+  @Get(':id/summary')
+  @ApiOperation({
+    summary: 'Get module summary',
+    description:
+      'Returns a human-readable plain text summary for the specified module.',
+  })
+  @ApiParam({
+    name: 'id',
+    description: 'The ID of the module',
+    type: String,
+  })
+  @ApiProduces('text/plain')
+  @ApiOkResponse({
+    description: 'Plain text summary of the module',
+    schema: { type: 'string' },
+  })
+  @ApiResponse({ status: 400, description: 'Invalid ID format' })
+  @ApiResponse({ status: 404, description: 'Module not found' })
+  @ApiResponse({ status: 500, description: 'Internal Server Error' })
+  @Header('Content-Type', 'text/plain; charset=utf-8')
+  async getSummary(
+    @Param('id', new ParseUUIDPipe({ version: '4' })) id: string,
+  ): Promise<string> {
+    try {
+      return await this.modulesService.generateSummary(id);
+    } catch (err: unknown) {
+      if (err instanceof NotFoundException) throw err;
+      const message = err instanceof Error ? err.message : String(err);
+      if (message.toLowerCase().includes('not found')) {
+        throw new NotFoundException(message);
+      }
+      throw err;
+    }
   }
 }

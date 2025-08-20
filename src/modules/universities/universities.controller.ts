@@ -8,6 +8,9 @@ import {
   Put,
   HttpCode,
   HttpStatus,
+  ParseUUIDPipe,
+  NotFoundException,
+  Header,
 } from '@nestjs/common';
 import { UniversitiesService } from './universities.service';
 import { CreateUniversityInput } from './dto/create-university.input';
@@ -20,6 +23,7 @@ import {
   ApiOperation,
   ApiResponse,
   ApiParam,
+  ApiProduces,
 } from '@nestjs/swagger';
 import { University } from './models/University.entity';
 
@@ -115,5 +119,40 @@ export class UniversitiesController {
   @ApiResponse({ status: 500, description: 'Internal Server Error.' })
   remove(@Param('id') id: string) {
     return this.universitiesService.remove(id);
+  }
+
+  @Get(':id/summary')
+  @ApiOperation({
+    summary: 'Get university summary',
+    description:
+      'Returns a human-readable plain text summary for the specified university.',
+  })
+  @ApiParam({
+    name: 'id',
+    description: 'The ID of the university',
+    type: String,
+  })
+  @ApiProduces('text/plain')
+  @ApiOkResponse({
+    description: 'Plain text summary of the university',
+    schema: { type: 'string' },
+  })
+  @ApiResponse({ status: 400, description: 'Invalid ID format' })
+  @ApiResponse({ status: 404, description: 'University not found' })
+  @ApiResponse({ status: 500, description: 'Internal Server Error' })
+  @Header('Content-Type', 'text/plain; charset=utf-8')
+  async getSummary(
+    @Param('id', new ParseUUIDPipe({ version: '4' })) id: string,
+  ): Promise<string> {
+    try {
+      return await this.universitiesService.generateSummary(id);
+    } catch (err: unknown) {
+      if (err instanceof NotFoundException) throw err;
+      const message = err instanceof Error ? err.message : String(err);
+      if (message.toLowerCase().includes('not found')) {
+        throw new NotFoundException(message);
+      }
+      throw err;
+    }
   }
 }

@@ -8,6 +8,9 @@ import {
   Put,
   HttpCode,
   HttpStatus,
+  ParseUUIDPipe,
+  NotFoundException,
+  Header,
 } from '@nestjs/common';
 import {
   ApiTags,
@@ -17,6 +20,7 @@ import {
   ApiOperation,
   ApiResponse,
   ApiParam,
+  ApiProduces,
 } from '@nestjs/swagger';
 import { CoursesService } from './courses.service';
 import { CreateCourseInput } from './dto/create-course.input';
@@ -172,5 +176,40 @@ export class CoursesController {
       ...setCourseModulesDto,
       courseId: id,
     });
+  }
+
+  @Get(':id/summary')
+  @ApiOperation({
+    summary: 'Get course summary',
+    description:
+      'Returns a human-readable plain text summary for the specified course.',
+  })
+  @ApiParam({
+    name: 'id',
+    description: 'The ID of the course',
+    type: String,
+  })
+  @ApiProduces('text/plain')
+  @ApiOkResponse({
+    description: 'Plain text summary of the course',
+    schema: { type: 'string' },
+  })
+  @ApiResponse({ status: 400, description: 'Invalid ID format' })
+  @ApiResponse({ status: 404, description: 'Course not found' })
+  @ApiResponse({ status: 500, description: 'Internal Server Error' })
+  @Header('Content-Type', 'text/plain; charset=utf-8')
+  async getSummary(
+    @Param('id', new ParseUUIDPipe({ version: '4' })) id: string,
+  ): Promise<string> {
+    try {
+      return await this.coursesService.generateSummary(id);
+    } catch (err: unknown) {
+      if (err instanceof NotFoundException) throw err;
+      const message = err instanceof Error ? err.message : String(err);
+      if (message.toLowerCase().includes('not found')) {
+        throw new NotFoundException(message);
+      }
+      throw err;
+    }
   }
 }

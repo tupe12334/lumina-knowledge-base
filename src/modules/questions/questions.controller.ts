@@ -9,6 +9,9 @@ import {
   HttpCode,
   HttpStatus,
   Query,
+  ParseUUIDPipe,
+  NotFoundException,
+  Header,
 } from '@nestjs/common';
 import {
   ApiTags,
@@ -18,6 +21,7 @@ import {
   ApiOperation,
   ApiResponse,
   ApiParam,
+  ApiProduces,
 } from '@nestjs/swagger';
 import { QuestionsService } from './questions.service';
 import { CreateQuestionInput } from './dto/create-question.input';
@@ -107,5 +111,40 @@ export class QuestionsController {
   remove(@Param('id') id: string) {
     const deleteQuestionInput: DeleteQuestionInput = { id };
     return this.questionsService.remove(deleteQuestionInput);
+  }
+
+  @Get(':id/summary')
+  @ApiOperation({
+    summary: 'Get question summary',
+    description:
+      'Returns a human-readable plain text summary for the specified question.',
+  })
+  @ApiParam({
+    name: 'id',
+    description: 'The ID of the question',
+    type: String,
+  })
+  @ApiProduces('text/plain')
+  @ApiOkResponse({
+    description: 'Plain text summary of the question',
+    schema: { type: 'string' },
+  })
+  @ApiResponse({ status: 400, description: 'Invalid ID format' })
+  @ApiResponse({ status: 404, description: 'Question not found' })
+  @ApiResponse({ status: 500, description: 'Internal Server Error' })
+  @Header('Content-Type', 'text/plain; charset=utf-8')
+  async getSummary(
+    @Param('id', new ParseUUIDPipe({ version: '4' })) id: string,
+  ): Promise<string> {
+    try {
+      return await this.questionsService.generateSummary(id);
+    } catch (err: unknown) {
+      if (err instanceof NotFoundException) throw err;
+      const message = err instanceof Error ? err.message : String(err);
+      if (message.toLowerCase().includes('not found')) {
+        throw new NotFoundException(message);
+      }
+      throw err;
+    }
   }
 }

@@ -23,18 +23,18 @@
   - Handle module hierarchy relationships properly
   - _Requirements: 1.2, 4.2, 5.1, 5.3_
 
-- [ ] 2. Create or extend controllers for missing entities
+- [x] 2. Create or extend controllers for missing entities
   - Create controllers for questions and degrees if they don't exist
   - Ensure consistent controller structure following existing patterns
   - _Requirements: 1.4, 1.5_
 
-- [ ] 2.1 Create QuestionsService.generateSummary method
+- [x] 2.1 Create QuestionsService.generateSummary method
   - Write service method to fetch question with modules, answers, and question parts including translations
   - Generate natural language summary following the question format from design
   - Handle different question types (selection, value, void) appropriately
   - _Requirements: 1.4, 4.5, 5.1, 5.3_
 
-- [ ] 2.2 Create DegreesService.generateSummary method
+- [x] 2.2 Create DegreesService.generateSummary method
   - Write service method to fetch degree with university, faculty, and courses including translations
   - Generate natural language summary following the degree format from design
   - Handle optional faculty assignment properly
