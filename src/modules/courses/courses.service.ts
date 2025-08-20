@@ -815,7 +815,8 @@ export class CoursesService {
       const moduleCount = course.modules.length;
       const moduleNames = course.modules
         .map(
-          (module) => module.name?.en_text || 'No English translation available',
+          (module) =>
+            module.name?.en_text || 'No English translation available',
         )
         .join(', ');
 

@@ -569,109 +569,110 @@ export class ModulesService {
   async generateSummary(id: string): Promise<string> {
     try {
       const module = await this.prisma.module.findUnique({
-      where: { id },
-      include: {
-        name: true,
-        Course: {
-          include: {
-            name: true,
+        where: { id },
+        include: {
+          name: true,
+          Course: {
+            include: {
+              name: true,
+            },
           },
-        },
-        Questions: true,
-        parentModules: {
-          include: {
-            name: true,
+          Questions: true,
+          parentModules: {
+            include: {
+              name: true,
+            },
           },
-        },
-        subModules: {
-          include: {
-            name: true,
+          subModules: {
+            include: {
+              name: true,
+            },
           },
-        },
-        Block: {
-          include: {
-            prerequisiteFor: {
-              include: {
-                postrequisite: {
-                  include: {
-                    Module: {
-                      include: {
-                        name: true,
+          Block: {
+            include: {
+              prerequisiteFor: {
+                include: {
+                  postrequisite: {
+                    include: {
+                      Module: {
+                        include: {
+                          name: true,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+              postrequisiteOf: {
+                include: {
+                  prerequisite: {
+                    include: {
+                      Module: {
+                        include: {
+                          name: true,
+                        },
                       },
                     },
                   },
                 },
               },
             },
-            postrequisiteOf: {
-              include: {
-                prerequisite: {
-                  include: {
-                    Module: {
-                      include: {
-                        name: true,
-                      },
-                    },
-                  },
-                },
-              },
-            },
           },
         },
-      },
-    });
+      });
 
-    if (!module) {
-      throw new NotFoundException(`Module with ID ${id} not found`);
-    }
+      if (!module) {
+        throw new NotFoundException(`Module with ID ${id} not found`);
+      }
 
-    const moduleName =
-      module.name?.en_text || 'No English translation available';
+      const moduleName =
+        module.name?.en_text || 'No English translation available';
 
-    // Build associated courses
-    const courseNames = module.Course.map(
-      (course) => course.name?.en_text || 'No English translation available',
-    ).join(', ');
+      // Build associated courses
+      const courseNames = module.Course.map(
+        (course) => course.name?.en_text || 'No English translation available',
+      ).join(', ');
 
-    // Build questions information
-    const questionCount = module.Questions.length;
-    const questionTypes = [
-      ...new Set(module.Questions.map((q) => q.type)),
-    ].join(', ');
+      // Build questions information
+      const questionCount = module.Questions.length;
+      const questionTypes = [
+        ...new Set(module.Questions.map((q) => q.type)),
+      ].join(', ');
 
-    // Build parent modules
-    const parentModuleNames = module.parentModules
-      .map(
-        (parent) => parent.name?.en_text || 'No English translation available',
-      )
-      .join(', ');
-
-    // Build sub-modules
-    const subModuleNames = module.subModules
-      .map((sub) => sub.name?.en_text || 'No English translation available')
-      .join(', ');
-
-    // Build prerequisites (modules that are prerequisites for this module)
-    const prerequisites =
-      module.Block?.postrequisiteOf
-        ?.map(
-          (rel) =>
-            rel.prerequisite.Module[0]?.name?.en_text ||
-            'No English translation available',
+      // Build parent modules
+      const parentModuleNames = module.parentModules
+        .map(
+          (parent) =>
+            parent.name?.en_text || 'No English translation available',
         )
-        .filter((name) => name !== 'No English translation available')
-        .join(', ') || 'None';
+        .join(', ');
 
-    // Build postrequisites (modules that require this module as prerequisite)
-    const postrequisites =
-      module.Block?.prerequisiteFor
-        ?.map(
-          (rel) =>
-            rel.postrequisite.Module[0]?.name?.en_text ||
-            'No English translation available',
-        )
-        .filter((name) => name !== 'No English translation available')
-        .join(', ') || 'None';
+      // Build sub-modules
+      const subModuleNames = module.subModules
+        .map((sub) => sub.name?.en_text || 'No English translation available')
+        .join(', ');
+
+      // Build prerequisites (modules that are prerequisites for this module)
+      const prerequisites =
+        module.Block?.postrequisiteOf
+          ?.map(
+            (rel) =>
+              rel.prerequisite.Module[0]?.name?.en_text ||
+              'No English translation available',
+          )
+          .filter((name) => name !== 'No English translation available')
+          .join(', ') || 'None';
+
+      // Build postrequisites (modules that require this module as prerequisite)
+      const postrequisites =
+        module.Block?.prerequisiteFor
+          ?.map(
+            (rel) =>
+              rel.postrequisite.Module[0]?.name?.en_text ||
+              'No English translation available',
+          )
+          .filter((name) => name !== 'No English translation available')
+          .join(', ') || 'None';
 
       const summary = `Module: ${moduleName}
 ID: ${module.id}

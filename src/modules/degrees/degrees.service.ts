@@ -1,4 +1,8 @@
-import { Injectable, NotFoundException, InternalServerErrorException } from '@nestjs/common';
+import {
+  Injectable,
+  NotFoundException,
+  InternalServerErrorException,
+} from '@nestjs/common';
 import { PrismaService } from '../../prisma/prisma.service';
 import { Degree } from './models/Degree.entity';
 import { DegreesQueryDto } from './dto/degrees-query.dto';
@@ -325,45 +329,46 @@ export class DegreesService {
   async generateSummary(id: string): Promise<string> {
     try {
       const degree = await this.prisma.degree.findUnique({
-      where: { id },
-      include: {
-        name: true,
-        university: {
-          include: {
-            name: true,
+        where: { id },
+        include: {
+          name: true,
+          university: {
+            include: {
+              name: true,
+            },
+          },
+          faculty: {
+            include: {
+              name: true,
+            },
+          },
+          courses: {
+            include: {
+              name: true,
+            },
           },
         },
-        faculty: {
-          include: {
-            name: true,
-          },
-        },
-        courses: {
-          include: {
-            name: true,
-          },
-        },
-      },
-    });
+      });
 
-    if (!degree) {
-      throw new NotFoundException(`Degree with ID ${id} not found`);
-    }
+      if (!degree) {
+        throw new NotFoundException(`Degree with ID ${id} not found`);
+      }
 
-    const degreeName =
-      degree.name?.en_text || 'No English translation available';
-    const universityName =
-      degree.university?.name?.en_text || 'No English translation available';
-    const facultyName =
-      degree.faculty?.name?.en_text || 'Not assigned to specific faculty';
+      const degreeName =
+        degree.name?.en_text || 'No English translation available';
+      const universityName =
+        degree.university?.name?.en_text || 'No English translation available';
+      const facultyName =
+        degree.faculty?.name?.en_text || 'Not assigned to specific faculty';
 
-    // Build associated courses
-    const courseCount = degree.courses.length;
-    const courseNames = degree.courses
-      .map(
-        (course) => course.name?.en_text || 'No English translation available',
-      )
-      .join(', ');
+      // Build associated courses
+      const courseCount = degree.courses.length;
+      const courseNames = degree.courses
+        .map(
+          (course) =>
+            course.name?.en_text || 'No English translation available',
+        )
+        .join(', ');
 
       const summary = `Degree: ${degreeName}
 ID: ${degree.id}

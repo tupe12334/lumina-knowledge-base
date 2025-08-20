@@ -1,4 +1,8 @@
-import { Injectable, NotFoundException, InternalServerErrorException } from '@nestjs/common';
+import {
+  Injectable,
+  NotFoundException,
+  InternalServerErrorException,
+} from '@nestjs/common';
 import { PrismaService } from '../../prisma/prisma.service';
 import { University } from './models/University.entity';
 import { CreateUniversityInput } from './dto/create-university.input';
@@ -104,30 +108,31 @@ export class UniversitiesService {
         },
       });
 
-    if (!university) {
-      throw new NotFoundException(`University with ID ${id} not found`);
-    }
+      if (!university) {
+        throw new NotFoundException(`University with ID ${id} not found`);
+      }
 
-    const universityName =
-      university.name?.en_text || 'No English translation available';
+      const universityName =
+        university.name?.en_text || 'No English translation available';
 
-    // Build faculty information
-    const facultyCount = university.Faculty.length;
-    const facultyNames = university.Faculty.map(
-      (f) => f.name?.en_text || 'No English translation available',
-    ).join(', ');
+      // Build faculty information
+      const facultyCount = university.Faculty.length;
+      const facultyNames = university.Faculty.map(
+        (f) => f.name?.en_text || 'No English translation available',
+      ).join(', ');
 
-    // Build degree and course counts
-    const degreeCount = university.Degree.length;
-    const courseCount = university.courses.length;
+      // Build degree and course counts
+      const degreeCount = university.Degree.length;
+      const courseCount = university.courses.length;
 
-    // Build faculty details section
-    const facultyDetails =
-      university.Faculty.length > 0
-        ? university.Faculty.map(
-            (f) => `- ${f.name?.en_text || 'No English translation available'}`,
-          ).join('\n')
-        : 'No faculties available';
+      // Build faculty details section
+      const facultyDetails =
+        university.Faculty.length > 0
+          ? university.Faculty.map(
+              (f) =>
+                `- ${f.name?.en_text || 'No English translation available'}`,
+            ).join('\n')
+          : 'No faculties available';
 
       const summary = `University: ${universityName}
 ID: ${university.id}

@@ -1,7 +1,10 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { DegreesService } from './degrees.service';
 import { PrismaService } from '../../prisma/prisma.service';
-import { NotFoundException, InternalServerErrorException } from '@nestjs/common';
+import {
+  NotFoundException,
+  InternalServerErrorException,
+} from '@nestjs/common';
 
 describe('DegreesService', () => {
   let service: DegreesService;
@@ -40,13 +43,25 @@ describe('DegreesService', () => {
     it('should generate a comprehensive degree summary', async () => {
       const mockDegree = {
         id: 'degree-123',
-        name: { en_text: 'Bachelor of Computer Science', he_text: 'תואר ראשון במדעי המחשב' },
-        description: { en_text: 'Comprehensive CS program', he_text: 'תכנית מקיפה במדעי המחשב' },
+        name: {
+          en_text: 'Bachelor of Computer Science',
+          he_text: 'תואר ראשון במדעי המחשב',
+        },
+        description: {
+          en_text: 'Comprehensive CS program',
+          he_text: 'תכנית מקיפה במדעי המחשב',
+        },
         university: {
-          name: { en_text: 'Harvard University', he_text: 'אוניברסיטת הרווארד' },
+          name: {
+            en_text: 'Harvard University',
+            he_text: 'אוניברסיטת הרווארד',
+          },
         },
         faculty: {
-          name: { en_text: 'Computer Science Faculty', he_text: 'פקולטה למדעי המחשב' },
+          name: {
+            en_text: 'Computer Science Faculty',
+            he_text: 'פקולטה למדעי המחשב',
+          },
         },
         courses: [
           {
@@ -66,7 +81,9 @@ describe('DegreesService', () => {
       expect(result).toContain('ID: degree-123');
       expect(result).toContain('University: Harvard University');
       expect(result).toContain('Faculty: Computer Science Faculty');
-      expect(result).toContain('Associated Courses: 2 courses - Algorithms, Data Structures');
+      expect(result).toContain(
+        'Associated Courses: 2 courses - Algorithms, Data Structures',
+      );
     });
 
     it('should throw NotFoundException when degree does not exist', async () => {

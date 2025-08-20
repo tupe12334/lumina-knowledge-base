@@ -1,5 +1,9 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { BadRequestException, NotFoundException, InternalServerErrorException } from '@nestjs/common';
+import {
+  BadRequestException,
+  NotFoundException,
+  InternalServerErrorException,
+} from '@nestjs/common';
 import { CoursesService } from './courses.service';
 import { PrismaService } from '../../prisma/prisma.service';
 import { CreateCourseRelationshipInput } from './dto/create-course-relationship.input';
@@ -48,15 +52,24 @@ describe('CoursesService', () => {
     it('should generate a comprehensive course summary', async () => {
       const mockCourse = {
         id: 'course-123',
-        name: { en_text: 'Introduction to Computer Science', he_text: 'מבוא למדעי המחשב' },
+        name: {
+          en_text: 'Introduction to Computer Science',
+          he_text: 'מבוא למדעי המחשב',
+        },
         description: { en_text: 'Fundamental concepts', he_text: 'מושגי יסוד' },
         creditPoints: 4.5,
         university: {
-          name: { en_text: 'Harvard University', he_text: 'אוניברסיטת הרווארד' },
+          name: {
+            en_text: 'Harvard University',
+            he_text: 'אוניברסיטת הרווארד',
+          },
         },
         Degree: [
           {
-            name: { en_text: 'Bachelor of CS', he_text: 'תואר ראשון במדעי המחשב' },
+            name: {
+              en_text: 'Bachelor of CS',
+              he_text: 'תואר ראשון במדעי המחשב',
+            },
           },
         ],
         modules: [
@@ -78,7 +91,9 @@ describe('CoursesService', () => {
       expect(result).toContain('ID: course-123');
       expect(result).toContain('University: Harvard University');
       expect(result).toContain('Associated Degrees: Bachelor of CS');
-      expect(result).toContain('Modules: 2 modules - Algorithms, Data Structures');
+      expect(result).toContain(
+        'Modules: 2 modules - Algorithms, Data Structures',
+      );
     });
 
     it('should handle course with no blocks', async () => {

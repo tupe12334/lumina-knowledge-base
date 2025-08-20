@@ -1,7 +1,10 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { UniversitiesService } from './universities.service';
 import { PrismaService } from '../../prisma/prisma.service';
-import { NotFoundException, InternalServerErrorException } from '@nestjs/common';
+import {
+  NotFoundException,
+  InternalServerErrorException,
+} from '@nestjs/common';
 
 describe('UniversitiesService', () => {
   let service: UniversitiesService;
@@ -51,8 +54,15 @@ describe('UniversitiesService', () => {
           { name: { en_text: 'Mathematics', he_text: 'מתמטיקה' } },
         ],
         Degree: [
-          { name: { en_text: 'BSc Computer Science', he_text: 'תואר ראשון במדעי המחשב' } },
-          { name: { en_text: 'MSc Mathematics', he_text: 'תואר שני במתמטיקה' } },
+          {
+            name: {
+              en_text: 'BSc Computer Science',
+              he_text: 'תואר ראשון במדעי המחשב',
+            },
+          },
+          {
+            name: { en_text: 'MSc Mathematics', he_text: 'תואר שני במתמטיקה' },
+          },
         ],
         courses: [
           { name: { en_text: 'Algorithms', he_text: 'אלגוריתמים' } },
@@ -66,7 +76,9 @@ describe('UniversitiesService', () => {
 
       expect(result).toContain('University: Harvard University');
       expect(result).toContain('ID: uni-123');
-      expect(result).toContain('Faculties: 2 faculties including Computer Science, Mathematics');
+      expect(result).toContain(
+        'Faculties: 2 faculties including Computer Science, Mathematics',
+      );
       expect(result).toContain('Degrees: 2 degree programs');
       expect(result).toContain('Courses: 2 courses offered');
       expect(result).toContain('Faculty Details:');
@@ -96,9 +108,7 @@ describe('UniversitiesService', () => {
       const mockUniversity = {
         id: 'uni-789',
         name: { en_text: '', he_text: 'אוניברסיטה בעברית' },
-        Faculty: [
-          { name: { en_text: '', he_text: 'פקולטה בעברית' } },
-        ],
+        Faculty: [{ name: { en_text: '', he_text: 'פקולטה בעברית' } }],
         Degree: [],
         courses: [],
       };
@@ -108,7 +118,9 @@ describe('UniversitiesService', () => {
       const result = await service.generateSummary('uni-789');
 
       expect(result).toContain('University: No English translation available');
-      expect(result).toContain('Faculties: 1 faculties including No English translation available');
+      expect(result).toContain(
+        'Faculties: 1 faculties including No English translation available',
+      );
     });
 
     it('should throw NotFoundException when university does not exist', async () => {

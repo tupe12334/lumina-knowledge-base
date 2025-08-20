@@ -1,4 +1,8 @@
-import { Injectable, NotFoundException, InternalServerErrorException } from '@nestjs/common';
+import {
+  Injectable,
+  NotFoundException,
+  InternalServerErrorException,
+} from '@nestjs/common';
 import { Prisma } from '@prisma/client';
 import { PrismaService } from '../../prisma/prisma.service';
 import { Question } from './models/Question.entity';
@@ -551,91 +555,91 @@ export class QuestionsService {
   async generateSummary(id: string): Promise<string> {
     try {
       const question = await this.prisma.question.findUnique({
-      where: { id },
-      include: {
-        text: true,
-        Modules: {
-          include: {
-            name: true,
-          },
-        },
-        Answer: {
-          include: {
-            SelectAnswer: {
-              include: {
-                text: true,
-              },
-            },
-            UnitAnswer: true,
-            NumberAnswer: true,
-          },
-        },
-        Parts: {
-          orderBy: { order: 'asc' },
-          include: {
-            partQuestion: {
-              include: {
-                text: true,
-              },
+        where: { id },
+        include: {
+          text: true,
+          Modules: {
+            include: {
+              name: true,
             },
           },
+          Answer: {
+            include: {
+              SelectAnswer: {
+                include: {
+                  text: true,
+                },
+              },
+              UnitAnswer: true,
+              NumberAnswer: true,
+            },
+          },
+          Parts: {
+            orderBy: { order: 'asc' },
+            include: {
+              partQuestion: {
+                include: {
+                  text: true,
+                },
+              },
+            },
+          },
         },
-      },
-    });
+      });
 
-    if (!question) {
-      throw new NotFoundException(`Question with ID ${id} not found`);
-    }
+      if (!question) {
+        throw new NotFoundException(`Question with ID ${id} not found`);
+      }
 
-    const questionText =
-      question.text?.en_text || 'No English translation available';
-    const validationStatus = question.validationStatus || 'Unknown';
+      const questionText =
+        question.text?.en_text || 'No English translation available';
+      const validationStatus = question.validationStatus || 'Unknown';
 
-    // Build associated modules
-    const moduleNames = question.Modules.map(
-      (module) => module.name?.en_text || 'No English translation available',
-    ).join(', ');
+      // Build associated modules
+      const moduleNames = question.Modules.map(
+        (module) => module.name?.en_text || 'No English translation available',
+      ).join(', ');
 
-    // Build answer information based on question type
-    let answerInfo = '';
-    if (question.type === 'selection' && question.Answer.length > 0) {
-      const answers = question.Answer.map((answer) => {
-        const selectAnswers = answer.SelectAnswer.map(
-          (sa) =>
-            `${sa.text?.en_text || 'No English translation available'}${sa.isCorrect ? ' (correct)' : ''}`,
-        ).join(', ');
-        return selectAnswers;
-      })
-        .filter((a) => a)
-        .join('; ');
-      answerInfo = `Answer Options: ${answers}`;
-    } else if (question.type === 'value' && question.Answer.length > 0) {
-      const valueAnswers = question.Answer.map((answer) => {
-        if (answer.UnitAnswer) {
-          return `Unit: ${answer.UnitAnswer.unit}, Value: ${answer.UnitAnswer.value}`;
-        } else if (answer.NumberAnswer) {
-          return `Number, Value: ${answer.NumberAnswer.value}`;
-        }
-        return '';
-      })
-        .filter((a) => a)
-        .join('; ');
-      answerInfo = `Answer Type: ${valueAnswers}`;
-    } else if (question.type === 'void') {
-      answerInfo = 'Answer Type: No specific answer required (void type)';
-    } else {
-      answerInfo = 'Answer Type: No answers defined';
-    }
+      // Build answer information based on question type
+      let answerInfo = '';
+      if (question.type === 'selection' && question.Answer.length > 0) {
+        const answers = question.Answer.map((answer) => {
+          const selectAnswers = answer.SelectAnswer.map(
+            (sa) =>
+              `${sa.text?.en_text || 'No English translation available'}${sa.isCorrect ? ' (correct)' : ''}`,
+          ).join(', ');
+          return selectAnswers;
+        })
+          .filter((a) => a)
+          .join('; ');
+        answerInfo = `Answer Options: ${answers}`;
+      } else if (question.type === 'value' && question.Answer.length > 0) {
+        const valueAnswers = question.Answer.map((answer) => {
+          if (answer.UnitAnswer) {
+            return `Unit: ${answer.UnitAnswer.unit}, Value: ${answer.UnitAnswer.value}`;
+          } else if (answer.NumberAnswer) {
+            return `Number, Value: ${answer.NumberAnswer.value}`;
+          }
+          return '';
+        })
+          .filter((a) => a)
+          .join('; ');
+        answerInfo = `Answer Type: ${valueAnswers}`;
+      } else if (question.type === 'void') {
+        answerInfo = 'Answer Type: No specific answer required (void type)';
+      } else {
+        answerInfo = 'Answer Type: No answers defined';
+      }
 
-    // Build question parts information
-    const questionParts =
-      question.Parts.length > 0
-        ? question.Parts.map(
-            (part) =>
-              part.partQuestion?.text?.en_text ||
-              'No English translation available',
-          ).join('; ')
-        : 'None';
+      // Build question parts information
+      const questionParts =
+        question.Parts.length > 0
+          ? question.Parts.map(
+              (part) =>
+                part.partQuestion?.text?.en_text ||
+                'No English translation available',
+            ).join('; ')
+          : 'None';
 
       const summary = `Question: ${questionText}
 ID: ${question.id}

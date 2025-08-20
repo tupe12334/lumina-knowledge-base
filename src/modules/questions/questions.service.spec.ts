@@ -3,7 +3,10 @@ import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { Test, TestingModule } from '@nestjs/testing';
 import { QuestionsService } from './questions.service';
 import { PrismaService } from '../../prisma/prisma.service';
-import { NotFoundException, InternalServerErrorException } from '@nestjs/common';
+import {
+  NotFoundException,
+  InternalServerErrorException,
+} from '@nestjs/common';
 
 describe('QuestionsService', () => {
   let service: QuestionsService;
@@ -255,7 +258,10 @@ describe('QuestionsService', () => {
     it('should generate a comprehensive question summary', async () => {
       const mockQuestion = {
         id: 'question-123',
-        text: { en_text: 'What is the time complexity of quicksort?', he_text: 'מה מורכבות הזמן של quicksort?' },
+        text: {
+          en_text: 'What is the time complexity of quicksort?',
+          he_text: 'מה מורכבות הזמן של quicksort?',
+        },
         type: 'selection',
         validationStatus: 'validated',
         Modules: [
@@ -268,11 +274,17 @@ describe('QuestionsService', () => {
             id: 'ans-1',
             SelectAnswer: [
               {
-                text: { en_text: 'O(n log n) average case', he_text: 'O(n log n) במקרה ממוצע' },
+                text: {
+                  en_text: 'O(n log n) average case',
+                  he_text: 'O(n log n) במקרה ממוצע',
+                },
                 isCorrect: true,
               },
               {
-                text: { en_text: 'O(n^2) worst case', he_text: 'O(n^2) במקרה הגרוע' },
+                text: {
+                  en_text: 'O(n^2) worst case',
+                  he_text: 'O(n^2) במקרה הגרוע',
+                },
                 isCorrect: false,
               },
             ],
@@ -285,7 +297,9 @@ describe('QuestionsService', () => {
 
       const result = await service.generateSummary('question-123');
 
-      expect(result).toContain('Question: What is the time complexity of quicksort?');
+      expect(result).toContain(
+        'Question: What is the time complexity of quicksort?',
+      );
       expect(result).toContain('ID: question-123');
       expect(result).toContain('Associated Modules: Algorithms');
     });
