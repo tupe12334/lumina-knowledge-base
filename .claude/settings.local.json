@@ -18,7 +18,8 @@
       "Bash(PORT=3333 pnpm run start:dev)",
       "Bash(pnpm run:*)",
       "Bash(npm test:*)",
-      "Bash(pnpm db:dump:*)"
+      "Bash(pnpm db:dump:*)",
+      "Bash(pgrep:*)"
     ],
     "deny": [],
     "ask": []
