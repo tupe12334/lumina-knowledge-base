@@ -663,6 +663,11 @@ INSERT INTO BlockRelationship VALUES('5c59e46e-648b-462a-be71-da005a1a1479','3b0
 INSERT INTO BlockRelationship VALUES('21454e3e-79ca-44a5-9baa-1d0b10a12b8b','9b4a122c-14f6-45bd-b6f7-2d9012543bd2','04b9017a-2b47-42e9-92ec-8e172aabf80c');
 INSERT INTO BlockRelationship VALUES('f6d7519f-83e2-411a-adf5-8256507cb0f3','66c74bfa-fbea-4973-8ec5-ccea8b91a5d7','f7403989-dfff-4ccf-a717-091aef5635ac');
 INSERT INTO BlockRelationship VALUES('fe274b8c-90be-426f-abca-b4401e73657f','c331fa88-e9f3-4341-9b8a-4fe05b428f1f','3f299f94-7cf0-4ed5-be01-ca84e6da4faa');
+INSERT INTO BlockRelationship VALUES('eb612a0c-a358-41ec-942f-47fac3018744','4ed24fa7-159f-460a-93aa-acb9f7fe098f','0fc9053e-bbb1-4258-af90-cef4de1a72f9');
+INSERT INTO BlockRelationship VALUES('00cee2b6-d42e-4fa8-ad59-93ee865706fe','4ed24fa7-159f-460a-93aa-acb9f7fe098f','bbc19e74-14ea-48f2-bb1f-fe27ec6385d3');
+INSERT INTO BlockRelationship VALUES('83a5b018-9b70-401b-80e7-66efce37cb0c','bbc19e74-14ea-48f2-bb1f-fe27ec6385d3','0fb4a21b-7755-4797-8aec-aa91a8517bba');
+INSERT INTO BlockRelationship VALUES('85b5d410-d8a0-41ef-ac27-51e6390deb99','4ed24fa7-159f-460a-93aa-acb9f7fe098f','7d8e9f01-2345-4567-890a-bcdef0123456');
+INSERT INTO BlockRelationship VALUES('6bd2e764-508e-4968-81f5-6fdd4584fa39','bbc19e74-14ea-48f2-bb1f-fe27ec6385d3','d498ae32-8ec7-4a29-abd1-f101b35c7940');
 CREATE TABLE IF NOT EXISTS "RelationshipMetadata" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "key" TEXT NOT NULL,
