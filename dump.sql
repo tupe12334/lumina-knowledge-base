@@ -1843,6 +1843,20 @@ INSERT INTO Translation VALUES('9d288181-ba30-4e45-84ab-69ed3072c0b1','P(x) ∧ 
 INSERT INTO Translation VALUES('638abcf5-b908-440e-a1b2-a93b19000769','In structural induction, what is the first step of the proof technique?','באינדוקציה מבנית, מה השלב הראשון של טכניקת ההוכחה?');
 INSERT INTO Translation VALUES('8993c417-f214-4d8c-97d5-29467f0369e2','Base case: Prove the property holds for the simplest structures','מקרה בסיס: הוכח שהמאפיין מתקיים למבנים הפשוטים ביותר');
 INSERT INTO Translation VALUES('cc8cb9ce-9bb8-428d-adb2-726f2af31e38','Inductive step: Assume the property holds for larger structures','צעד אינדוקטיבי: הנח שהמאפיין מתקיים למבנים גדולים יותר');
+INSERT INTO Translation VALUES('a53bad4c-f761-4b68-b1a0-97080ac0fc59','What is the primary focus of semantics in logic?','מהו המוקד העיקרי של סמנטיקה בלוגיקה?');
+INSERT INTO Translation VALUES('8da0a5c9-0321-43b4-b48e-7d9cddfb6cea','The study of meaning and truth conditions of logical statements','חקר המשמעות ותנאי האמת של הצהרות לוגיות');
+INSERT INTO Translation VALUES('ba0103a6-c121-40ee-afe6-1c6406739009','The study of logical symbols and their manipulation','חקר הסמלים הלוגיים והמניפולציה שלהם');
+INSERT INTO Translation VALUES('9928827f-8a4f-4f8a-9009-7e40a3fa7229','The creation of new logical rules and axioms','יצירת כללים לוגיים ואקסיומות חדשות');
+INSERT INTO Translation VALUES('8491257e-d91e-4e5d-b4cf-762606020d9f','The optimization of logical inference algorithms','אופטימיזציה של אלגוריתמי הסקה לוגיים');
+INSERT INTO Translation VALUES('7f5bdf05-ed50-4dc5-acea-b5ae4d9e70ae','In classical propositional logic, how many possible truth value combinations are there for a formula with 3 propositional variables?','בלוגיקה הפרופוזיציונלית הקלאסית, כמה צירופי ערכי אמת אפשריים יש לנוסחה עם 3 משתנים פרופוזיציונליים?');
+INSERT INTO Translation VALUES('ab889af5-5b93-4cb9-8a43-46bf632ed6be','A set of logical formulas is satisfiable if:','קבוצה של נוסחאות לוגיות היא ניתנת לסיפוק אם:');
+INSERT INTO Translation VALUES('0dd46f1a-880e-467a-8a56-3c52a41f86e7','There exists an interpretation that makes all formulas true','קיימת פרשנות שהופכת את כל הנוסחאות לאמיתיות');
+INSERT INTO Translation VALUES('16fec1d3-d035-4fcd-801f-fdfeaa6c6b45','All formulas are tautologies','כל הנוסחאות הן טאוטולוגיות');
+INSERT INTO Translation VALUES('dbdb74bd-f24b-4dda-af21-68db68af58b5','No interpretation can make any formula true','אף פרשנות לא יכולה להפוך אף נוסחה לאמיתית');
+INSERT INTO Translation VALUES('ecc4bee0-c89c-49a3-b41e-099647373277','The formulas contradict each other','הנוסחאות סותרות זו את זו');
+INSERT INTO Translation VALUES('926633d9-7c42-4b8f-8c11-6c367e3258cf','The Hilbert system is characterized by:','מערכת הילברט מאופיינת על ידי:');
+INSERT INTO Translation VALUES('318815c7-6454-47ef-99bd-bc7c51ba6798','A large set of axioms and few inference rules','קבוצה גדולה של אקסיומות וכללי הסקה מעטים');
+INSERT INTO Translation VALUES('504a2f10-c3a0-4e93-bde0-ed18b7be3f5f','Few axioms and many inference rules','אקסיומות מעטות וכללי הסקה רבים');
 CREATE TABLE IF NOT EXISTS "Question" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "validationStatus" TEXT NOT NULL DEFAULT 'ai_generated',
@@ -2161,6 +2175,10 @@ INSERT INTO Question VALUES('a8293a05-c971-4515-b6b7-eb0b608a09b9','ai_generated
 INSERT INTO Question VALUES('0f03346a-3562-4dc6-9d62-075c6f7d79ce','ai_generated','3b8a4997-75bf-4785-a538-5e5da21f3657','value');
 INSERT INTO Question VALUES('bae9c7aa-5d33-4455-a31e-8f2db3e153a5','ai_generated','d18bb80d-e9d4-4467-a3e8-36e19ae9bed6','selection');
 INSERT INTO Question VALUES('6f440a0c-3a5f-4f88-8574-cf42c94dc70d','ai_generated','638abcf5-b908-440e-a1b2-a93b19000769','selection');
+INSERT INTO Question VALUES('3b4971b3-4040-4237-a5c5-84a4fcf6d3ac','ai_generated','a53bad4c-f761-4b68-b1a0-97080ac0fc59','selection');
+INSERT INTO Question VALUES('7a74d986-d14b-4046-91f9-d34e217d7a6c','ai_generated','7f5bdf05-ed50-4dc5-acea-b5ae4d9e70ae','value');
+INSERT INTO Question VALUES('6d813c35-76c4-4720-8c1d-15b22438bcbb','ai_generated','ab889af5-5b93-4cb9-8a43-46bf632ed6be','selection');
+INSERT INTO Question VALUES('779e9e5d-c290-4454-a934-534e0785946e','ai_generated','926633d9-7c42-4b8f-8c11-6c367e3258cf','selection');
 CREATE TABLE IF NOT EXISTS "QuestionPart" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "questionId" TEXT NOT NULL,
@@ -2490,6 +2508,9 @@ INSERT INTO Answer VALUES('5dfda78e-883a-41fe-a10a-d3c33ee77999','a8293a05-c971-
 INSERT INTO Answer VALUES('d37ef755-a261-45ea-b67f-f4ab63582b9c','0f03346a-3562-4dc6-9d62-075c6f7d79ce');
 INSERT INTO Answer VALUES('2217e305-9c6c-449c-80b3-1b6ea455a738','bae9c7aa-5d33-4455-a31e-8f2db3e153a5');
 INSERT INTO Answer VALUES('bdd9da92-e4bb-428c-9e93-3874d9a44609','6f440a0c-3a5f-4f88-8574-cf42c94dc70d');
+INSERT INTO Answer VALUES('f2dfe004-1a32-416d-9589-031846f5c9d9','3b4971b3-4040-4237-a5c5-84a4fcf6d3ac');
+INSERT INTO Answer VALUES('1451b605-e86a-468a-ab58-e628ab867807','7a74d986-d14b-4046-91f9-d34e217d7a6c');
+INSERT INTO Answer VALUES('90a960df-b278-47b2-a84a-94a150e25671','6d813c35-76c4-4720-8c1d-15b22438bcbb');
 CREATE TABLE IF NOT EXISTS "SelectAnswer" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "isCorrect" BOOLEAN NOT NULL,
@@ -2793,6 +2814,14 @@ INSERT INTO SelectAnswer VALUES('63db52e4-9af1-4a37-b5b3-913c96713cc5',0,'03fd2a
 INSERT INTO SelectAnswer VALUES('ec1fe848-aaf7-4831-bde8-b201d01f737c',1,'eb282c72-787b-42f7-8675-99dd97a55e60','2217e305-9c6c-449c-80b3-1b6ea455a738');
 INSERT INTO SelectAnswer VALUES('d4c1f391-b5d8-449b-9cb3-c21b2f71c376',0,'cc8cb9ce-9bb8-428d-adb2-726f2af31e38','bdd9da92-e4bb-428c-9e93-3874d9a44609');
 INSERT INTO SelectAnswer VALUES('c62538ad-7e57-4201-ace2-4e24e8bdab78',1,'8993c417-f214-4d8c-97d5-29467f0369e2','bdd9da92-e4bb-428c-9e93-3874d9a44609');
+INSERT INTO SelectAnswer VALUES('e6e4d75f-7884-404f-9c78-3d2b965bc65c',0,'8491257e-d91e-4e5d-b4cf-762606020d9f','f2dfe004-1a32-416d-9589-031846f5c9d9');
+INSERT INTO SelectAnswer VALUES('5b8793f2-e602-47a1-9d11-901138709d5f',0,'9928827f-8a4f-4f8a-9009-7e40a3fa7229','f2dfe004-1a32-416d-9589-031846f5c9d9');
+INSERT INTO SelectAnswer VALUES('a78823a6-2f33-4861-b3aa-1616d4e2aeb0',0,'ba0103a6-c121-40ee-afe6-1c6406739009','f2dfe004-1a32-416d-9589-031846f5c9d9');
+INSERT INTO SelectAnswer VALUES('85b697ac-38f7-45d6-b1f1-f96ff0ff9601',1,'8da0a5c9-0321-43b4-b48e-7d9cddfb6cea','f2dfe004-1a32-416d-9589-031846f5c9d9');
+INSERT INTO SelectAnswer VALUES('221ef72b-e558-4f9b-86ba-de010ab5fcb8',0,'ecc4bee0-c89c-49a3-b41e-099647373277','90a960df-b278-47b2-a84a-94a150e25671');
+INSERT INTO SelectAnswer VALUES('387f0063-dea1-4d4c-8c7b-7311761a0478',0,'dbdb74bd-f24b-4dda-af21-68db68af58b5','90a960df-b278-47b2-a84a-94a150e25671');
+INSERT INTO SelectAnswer VALUES('39ddbe06-4648-4826-9840-0deb95083187',0,'16fec1d3-d035-4fcd-801f-fdfeaa6c6b45','90a960df-b278-47b2-a84a-94a150e25671');
+INSERT INTO SelectAnswer VALUES('a14408f3-9a1b-47d5-8fa1-63272f310472',1,'0dd46f1a-880e-467a-8a56-3c52a41f86e7','90a960df-b278-47b2-a84a-94a150e25671');
 CREATE TABLE IF NOT EXISTS "UnitAnswer" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "value" REAL NOT NULL,
@@ -2998,6 +3027,7 @@ INSERT INTO NumberAnswer VALUES('5e095cf9-7bd4-4254-ad0d-0a9689b7a19c',3.0,'3267
 INSERT INTO NumberAnswer VALUES('69ee9785-4062-4f4f-9393-a80b33ddf3b0',7.0,'e382a4d6-3709-407a-a2c1-8fe5596be29f');
 INSERT INTO NumberAnswer VALUES('77e9b09d-5bca-47c7-905f-badb59b550c8',20.0,'ccb6a827-6314-4faa-b1f2-c843f208869f');
 INSERT INTO NumberAnswer VALUES('d4ffe951-b4eb-48ba-94bf-e59e6d218830',16.0,'d37ef755-a261-45ea-b67f-f4ab63582b9c');
+INSERT INTO NumberAnswer VALUES('faa45d22-1155-49b4-8726-775808c3f4a8',8.0,'1451b605-e86a-468a-ab58-e628ab867807');
 CREATE TABLE IF NOT EXISTS "_CourseModules" (
     "A" TEXT NOT NULL,
     "B" TEXT NOT NULL,
@@ -3614,6 +3644,10 @@ INSERT INTO _ModuleToQuestion VALUES('ec8270ca-1f32-4928-a2c6-2f998f6061b6','a82
 INSERT INTO _ModuleToQuestion VALUES('ec8270ca-1f32-4928-a2c6-2f998f6061b6','0f03346a-3562-4dc6-9d62-075c6f7d79ce');
 INSERT INTO _ModuleToQuestion VALUES('016ddc51-9b0a-43d0-9ac5-8fe54d171b29','bae9c7aa-5d33-4455-a31e-8f2db3e153a5');
 INSERT INTO _ModuleToQuestion VALUES('574e782a-2a2f-4b40-8d4e-79d1901e458e','6f440a0c-3a5f-4f88-8574-cf42c94dc70d');
+INSERT INTO _ModuleToQuestion VALUES('c80139f4-bcbb-4971-a43f-1132ae1c7e13','3b4971b3-4040-4237-a5c5-84a4fcf6d3ac');
+INSERT INTO _ModuleToQuestion VALUES('c80139f4-bcbb-4971-a43f-1132ae1c7e13','7a74d986-d14b-4046-91f9-d34e217d7a6c');
+INSERT INTO _ModuleToQuestion VALUES('506521a0-7219-40ba-ae0e-609e012654ce','6d813c35-76c4-4720-8c1d-15b22438bcbb');
+INSERT INTO _ModuleToQuestion VALUES('fce22107-4e8d-435c-9534-da7c38340441','779e9e5d-c290-4454-a934-534e0785946e');
 CREATE TABLE IF NOT EXISTS "Degree" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "translationId" TEXT NOT NULL,
