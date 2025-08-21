@@ -115,6 +115,46 @@ input CreateFacultyInput {
   universityId: String!
 }
 
+input CreateManyBlocksInput {
+  """Array of block data to create"""
+  blocks: [CreateBlockInput!]!
+}
+
+input CreateManyCoursesInput {
+  """Array of course data to create"""
+  courses: [CreateCourseInput!]!
+}
+
+input CreateManyDegreesInput {
+  """Array of degree data to create"""
+  degrees: [CreateDegreeInput!]!
+}
+
+input CreateManyFacultiesInput {
+  """Array of faculty data to create"""
+  faculties: [CreateFacultyInput!]!
+}
+
+input CreateManyModulesInput {
+  """Array of module data to create"""
+  modules: [CreateModuleInput!]!
+}
+
+input CreateManyQuestionsInput {
+  """Array of question data to create"""
+  questions: [CreateQuestionInput!]!
+}
+
+type CreateManyResult {
+  """The number of records created"""
+  count: Int!
+}
+
+input CreateManyTranslationsInput {
+  """Array of translation data to create"""
+  translations: [CreateTranslationInput!]!
+}
+
 input CreateManyUniversitiesInput {
   """Array of university data to create"""
   universities: [CreateUniversityInput!]!
@@ -336,8 +376,29 @@ type Mutation {
   createDegree(createDegreeInput: CreateDegreeInput!): Degree!
   createFaculty(createFacultyInput: CreateFacultyInput!): Faculty!
 
+  """Create multiple blocks in bulk"""
+  createManyBlocks(input: CreateManyBlocksInput!): CreateManyResult!
+
+  """Create multiple courses in bulk"""
+  createManyCourses(input: CreateManyCoursesInput!): CreateManyResult!
+
+  """Create multiple degrees in bulk"""
+  createManyDegrees(input: CreateManyDegreesInput!): CreateManyResult!
+
+  """Create multiple faculties in bulk"""
+  createManyFaculties(input: CreateManyFacultiesInput!): CreateManyResult!
+
+  """Creates multiple modules in bulk"""
+  createManyModules(input: CreateManyModulesInput!): CreateManyResult!
+
+  """Create multiple questions in bulk"""
+  createManyQuestions(input: CreateManyQuestionsInput!): CreateManyResult!
+
+  """Create multiple translations in bulk"""
+  createManyTranslations(input: CreateManyTranslationsInput!): CreateManyResult!
+
   """Creates multiple universities in bulk"""
-  createManyUniversities(input: CreateManyUniversitiesInput!): [University!]!
+  createManyUniversities(input: CreateManyUniversitiesInput!): CreateManyResult!
 
   """Creates a new module"""
   createModule(input: CreateModuleInput!): Module!
