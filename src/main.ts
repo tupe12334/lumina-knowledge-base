@@ -3,7 +3,7 @@ import { AppModule } from './app.module';
 import { setupSwagger } from './swagger/setup-swagger';
 import { env } from './env';
 
-process.title = 'lumina-server';
+process.title = 'Lumina Knowledge-base';
 
 /**
  * Initializes the Nest application so it can serve API requests.
