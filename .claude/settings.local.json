@@ -11,7 +11,8 @@
       "Bash(pnpm add:*)",
       "Bash(node:*)",
       "Bash(PORT=3002 pnpm run dev)",
-      "Bash(lsof:*)"
+      "Bash(lsof:*)",
+      "Bash(PORT=3333 pnpm run dev)"
     ],
     "deny": [],
     "ask": []
