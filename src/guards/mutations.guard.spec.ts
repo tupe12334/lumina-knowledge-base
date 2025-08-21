@@ -44,7 +44,7 @@ describe('MutationsGuard', () => {
       // Reset mutations to disabled for each test
       const { env } = await import('../env');
       vi.mocked(env).ENABLE_MUTATIONS = false;
-      
+
       mockContext = {
         getType: vi.fn().mockReturnValue('graphql'),
       } as unknown as ExecutionContext;
@@ -113,7 +113,7 @@ describe('MutationsGuard', () => {
       // Reset mutations to disabled for each test
       const { env } = await import('../env');
       vi.mocked(env).ENABLE_MUTATIONS = false;
-      
+
       mockContext = {
         getType: vi.fn().mockReturnValue('http'),
         switchToHttp: vi.fn().mockReturnValue(mockHttpContext),
