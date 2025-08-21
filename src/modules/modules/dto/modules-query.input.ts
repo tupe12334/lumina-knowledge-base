@@ -126,4 +126,15 @@ export class ModulesQueryInput {
   @IsOptional()
   @IsBoolean()
   hasParentModules?: boolean;
+
+  @ApiPropertyOptional({
+    description: 'Filter modules with fewer than 20 questions',
+  })
+  @Field(() => Boolean, {
+    nullable: true,
+    description: 'Filter modules with fewer than 20 questions',
+  })
+  @IsOptional()
+  @IsBoolean()
+  fewQuestions?: boolean;
 }

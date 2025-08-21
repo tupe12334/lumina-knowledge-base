@@ -1243,6 +1243,15 @@
             "schema": {
               "type": "boolean"
             }
+          },
+          {
+            "name": "fewQuestions",
+            "required": false,
+            "in": "query",
+            "description": "Filter modules with fewer than 20 questions",
+            "schema": {
+              "type": "boolean"
+            }
           }
         ],
         "responses": {

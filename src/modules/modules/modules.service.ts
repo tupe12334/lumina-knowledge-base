@@ -117,7 +117,8 @@ export class ModulesService {
     // Check if we need to include question count for filtering
     const needsQuestionCount =
       this.shouldFilterByQuestionCount(filters) ||
-      filters?.hasQuestions !== undefined;
+      filters?.hasQuestions !== undefined ||
+      filters?.fewQuestions !== undefined;
 
     if (needsQuestionCount) {
       return this.findAllWithComplexFilters(filters!, baseInclude, whereClause);
@@ -275,6 +276,12 @@ export class ModulesService {
       if (filters.hasQuestions !== undefined) {
         const hasQuestions = questionCount > 0;
         if (hasQuestions !== filters.hasQuestions) return false;
+      }
+
+      // Few questions filter (fewer than 20 questions)
+      if (filters.fewQuestions !== undefined) {
+        const hasFewQuestions = questionCount < 20;
+        if (hasFewQuestions !== filters.fewQuestions) return false;
       }
 
       return true;

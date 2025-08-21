@@ -114,4 +114,16 @@ export class ModulesQueryDto {
     return value;
   })
   hasParentModules?: boolean;
+
+  @ApiPropertyOptional({ description: 'Filter modules with fewer than 20 questions' })
+  @IsOptional()
+  @IsBoolean()
+  @Type(() => Boolean)
+  @Transform(({ value }: { value: unknown }) => {
+    if (typeof value === 'string') {
+      return value.toLowerCase() === 'true';
+    }
+    return value;
+  })
+  fewQuestions?: boolean;
 }

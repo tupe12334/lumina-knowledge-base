@@ -284,6 +284,9 @@ input ModulesQueryInput {
   """Filter modules by exact number of questions"""
   exactQuestions: Int
 
+  """Filter modules with fewer than 20 questions"""
+  fewQuestions: Boolean
+
   """Filter modules that have parent modules"""
   hasParentModules: Boolean
 
