@@ -1773,8 +1773,7 @@ INSERT INTO Translation VALUES('6dfcb539-340b-44fe-84c7-bf6ce61cc72e','Convergen
 INSERT INTO Translation VALUES('ec4e8cf4-b46f-45e2-aaaa-12c6dcc6e0ef','Discrete Mathematics 1','מתמטיקה בדידה 1');
 INSERT INTO Translation VALUES('9a86f359-eaa2-4130-a7d6-7fea5650317b','מתמטיקה בדידה 1','מתמטיקה בדידה 1');
 INSERT INTO Translation VALUES('c155903b-a57c-44f5-bb8e-9321cc9287a1','מתמטיקה בדידה 2','מתמטיקה בדידה 2');
-INSERT INTO Translation VALUES('57df0c9b-8450-4832-929c-466633399279','Infinitesimal Calculus 2','חשבון אינפיניטסימלי 2');
-INSERT INTO Translation VALUES('4a999730-bc37-44af-b3b3-1f54bcc16c04','Infinitesimal Calculus 2','Infinitesimal Calculus 2');
+INSERT INTO Translation VALUES('4a999730-bc37-44af-b3b3-1f54bcc16c04','Infinitesimal Calculus 2','חשבון אינפיניטסימלי 2');
 CREATE TABLE IF NOT EXISTS "Question" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "validationStatus" TEXT NOT NULL DEFAULT 'ai_generated',
@@ -3460,7 +3459,6 @@ CREATE UNIQUE INDEX "Faculty_translationId_universityId_key" ON "Faculty"("trans
 CREATE UNIQUE INDEX "Course_translationId_universityId_key" ON "Course"("translationId", "universityId");
 CREATE UNIQUE INDEX "BlockRelationship_prerequisiteId_postrequisiteId_key" ON "BlockRelationship"("prerequisiteId", "postrequisiteId");
 CREATE UNIQUE INDEX "RelationshipMetadata_key_blockRelationshipId_key" ON "RelationshipMetadata"("key", "blockRelationshipId");
-CREATE UNIQUE INDEX "Translation_en_text_he_text_key" ON "Translation"("en_text", "he_text");
 CREATE UNIQUE INDEX "QuestionPart_questionId_order_key" ON "QuestionPart"("questionId", "order");
 CREATE UNIQUE INDEX "UnitAnswer_answerId_key" ON "UnitAnswer"("answerId");
 CREATE UNIQUE INDEX "NumberAnswer_answerId_key" ON "NumberAnswer"("answerId");
