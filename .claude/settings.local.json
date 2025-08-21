@@ -9,7 +9,8 @@
       "Bash(curl:*)",
       "Bash(pnpm install:*)",
       "Bash(pnpm add:*)",
-      "Bash(node:*)"
+      "Bash(node:*)",
+      "Bash(PORT=3002 pnpm run dev)"
     ],
     "deny": [],
     "ask": []
