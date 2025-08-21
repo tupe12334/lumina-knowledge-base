@@ -1802,6 +1802,30 @@ INSERT INTO Translation VALUES('f27921f6-0c8f-4ba4-a21b-7cc610888e59','For a par
 INSERT INTO Translation VALUES('ee224276-8645-4149-b427-4d2b95174166','Looking at a position vs. time graph, if the line has a slope of 5 m/s between t=0 and t=4s, what is the displacement during this time interval?','כשמסתכלים על גרף מיקום לעומת זמן, אם לקו יש שיפוע של 5 מ/ש בין t=0 ו-t=4 שניות, מה העקירה במהלך רווח זמן זה?');
 INSERT INTO Translation VALUES('38da4a50-d1ef-4201-9c79-070be4badb3c','A velocity vs. time graph shows a parabolic curve v(t) = 2t². Calculate the area under the curve from t=0 to t=3s and explain its physical meaning.','גרף מהירות לעומת זמן מראה עקומה פרבולית v(t) = 2t². חשב את השטח מתחת לעקומה מ-t=0 עד t=3 שניות והסבר את המשמעות הפיזיקלית שלו.');
 INSERT INTO Translation VALUES('f72561ef-1a5c-4e23-a799-585847048871','Analyze a complex acceleration vs. time graph with three distinct regions: constant positive acceleration (0-2s), zero acceleration (2-5s), and sinusoidal acceleration (5-8s). Determine the velocity and displacement functions for each region.','נתח גרף תאוצה לעומת זמן מורכב עם שלושה אזורים נפרדים: תאוצה חיובית קבועה (0-2 ש), אפס תאוצה (2-5 ש), ותאוצה סינוסואידית (5-8 ש). קבע את פונקציות המהירות והעקירה עבור כל אזור.');
+INSERT INTO Translation VALUES('874ca80e-26bf-47e5-8ed7-a7e41de17b1e','What does SI stand for in the SI system of units?','מה משמעות הראשי תיבות SI במערכת היחידות הבין לאומית?');
+INSERT INTO Translation VALUES('5ae82544-83b2-4d4e-a32c-caf3a1b5bbbd','Système International','מערכת בינלאומית');
+INSERT INTO Translation VALUES('380b46e5-c951-403a-818d-ce1bfadfbe34','Scientific International','מדעי בינלאומי');
+INSERT INTO Translation VALUES('02b7f30e-28c3-4403-9437-4acf3ef5f20a','Standard International','סטנדרט בינלאומי');
+INSERT INTO Translation VALUES('6e935aab-45d5-4b77-9a18-dc7abed4f265','System International','מערכת יחידות');
+INSERT INTO Translation VALUES('0fbb65cd-1ff5-4fee-9be0-210f07c72df8','How many base units are there in the SI system?','כמה יחידות בסיס יש במערכת SI?');
+INSERT INTO Translation VALUES('9213c47a-c375-42ce-a9fb-6f03c4c7f40f','Explain why the SI system is considered more coherent than other measurement systems.','הסבר מדוע מערכת SI נחשבת לקוהרנטית יותר ממערכות מדידה אחרות.');
+INSERT INTO Translation VALUES('14968a65-83b5-4643-8160-5652858442a2','Which of the following is a base SI unit for length?','איזה מהבאים הוא יחידת בסיס SI עבור אורך?');
+INSERT INTO Translation VALUES('b8659200-0b87-4d84-8f1a-a3302c362f04','meter','מטר');
+INSERT INTO Translation VALUES('b4308460-fb29-447f-8a54-95629fe9f652','centimeter','סנטימטר');
+INSERT INTO Translation VALUES('d2b72d8c-a3b9-4f5e-89e6-f1ef66cb8398','kilometer','קילומטר');
+INSERT INTO Translation VALUES('f2ee0a51-c08c-4897-b2b7-73b30ba255ad','millimeter','מילימטר');
+INSERT INTO Translation VALUES('b4db556d-4623-495f-9e19-2dce5d88aee8','Express 5000 grams in the base SI unit for mass.','הביע 5000 גרם ביחידת הבסיס SI עבור מסה.');
+INSERT INTO Translation VALUES('dff3de31-0545-4106-b847-65f8f6a1f46a','What is the SI derived unit for force?','מהי יחידת ה-SI הנגזרת עבור כוח?');
+INSERT INTO Translation VALUES('c2ae1798-adfb-4318-a6b1-0fb6128ff267','Newton (N)','ניוטון (N)');
+INSERT INTO Translation VALUES('484c6d65-0316-47fb-a4c7-b77a67b995e9','Joule (J)','ג׳ול (J)');
+INSERT INTO Translation VALUES('5361f396-03df-4653-84d6-fdc35d4cfa74','Watt (W)','ואט (W)');
+INSERT INTO Translation VALUES('937bfde1-b945-468a-bba9-ca1baa9fc874','Pascal (Pa)','פסקל (Pa)');
+INSERT INTO Translation VALUES('116346da-e6bf-47fc-a513-5f4f83cdb09c','In one-dimensional motion, which quantity describes the rate of change of velocity?','בתנועה חד מימדית, איזה גודל מתאר את קצב השינוי של המהירות?');
+INSERT INTO Translation VALUES('cafb357a-2e2d-4132-97cc-9ddc494d6efc','Acceleration','תאוצה');
+INSERT INTO Translation VALUES('cec8c03a-103c-4069-9d63-c125e1fe6273','Displacement','תזוזה');
+INSERT INTO Translation VALUES('3aefc702-b37d-40c9-baeb-139e36bbdf73','Speed','מהירות');
+INSERT INTO Translation VALUES('ddb02834-7c2f-40c9-8e60-f8683cbbe335','Distance','מרחק');
+INSERT INTO Translation VALUES('ee9d5944-0e25-4fe3-84d0-b8b818526d50','A car travels 100 meters in 5 seconds. What is its average velocity in m/s?','רכב נוסע 100 מטר ב-5 שניות. מהי המהירות הממוצעת שלו ב-m/s?');
 CREATE TABLE IF NOT EXISTS "Question" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "validationStatus" TEXT NOT NULL DEFAULT 'ai_generated',
@@ -2107,6 +2131,14 @@ INSERT INTO Question VALUES('aa698893-1ec2-4209-b323-babc641e56b5','ai_generated
 INSERT INTO Question VALUES('d868149c-d119-43de-be07-eb9c5cc0eb09','ai_generated','ee224276-8645-4149-b427-4d2b95174166','value');
 INSERT INTO Question VALUES('d98c7836-1dc0-43f4-a09b-3a4b4ffbadcb','ai_generated','38da4a50-d1ef-4201-9c79-070be4badb3c','value');
 INSERT INTO Question VALUES('5be15daf-aa8a-4740-8b84-c55f01398dcd','ai_generated','f72561ef-1a5c-4e23-a799-585847048871','value');
+INSERT INTO Question VALUES('204b2500-2f6d-4d17-8ba3-4acfd4654b9a','ai_generated','874ca80e-26bf-47e5-8ed7-a7e41de17b1e','selection');
+INSERT INTO Question VALUES('9a3265e9-b1a6-45ca-aeba-6ec228158112','ai_generated','0fbb65cd-1ff5-4fee-9be0-210f07c72df8','value');
+INSERT INTO Question VALUES('747f5478-01e4-4a04-ae7d-e16e3dd470ac','ai_generated','9213c47a-c375-42ce-a9fb-6f03c4c7f40f','void');
+INSERT INTO Question VALUES('1154bac9-a76a-479d-9325-62cb3a7ae510','ai_generated','14968a65-83b5-4643-8160-5652858442a2','selection');
+INSERT INTO Question VALUES('5ad3c498-ab9b-4529-b809-8ceb0b2dd1f3','ai_generated','b4db556d-4623-495f-9e19-2dce5d88aee8','value');
+INSERT INTO Question VALUES('2257a743-91b2-477b-8cb5-832a93edb737','ai_generated','dff3de31-0545-4106-b847-65f8f6a1f46a','selection');
+INSERT INTO Question VALUES('7e71bc47-285d-4f01-b0dc-f7f7fa7a6ae5','ai_generated','116346da-e6bf-47fc-a513-5f4f83cdb09c','selection');
+INSERT INTO Question VALUES('100c6193-793e-4090-b474-eeb95575da37','ai_generated','ee9d5944-0e25-4fe3-84d0-b8b818526d50','value');
 CREATE TABLE IF NOT EXISTS "QuestionPart" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "questionId" TEXT NOT NULL,
@@ -2424,6 +2456,13 @@ INSERT INTO Answer VALUES('ee3fad8a-b1f9-4c15-b15b-7b751c7ebee8','aa698893-1ec2-
 INSERT INTO Answer VALUES('066ea373-5fc9-47cd-b509-9633f4120942','d868149c-d119-43de-be07-eb9c5cc0eb09');
 INSERT INTO Answer VALUES('ecc572fe-b92b-44da-bb85-43170e4213f7','d98c7836-1dc0-43f4-a09b-3a4b4ffbadcb');
 INSERT INTO Answer VALUES('3267c606-b550-4e5c-8ad1-009bf4c4a67b','5be15daf-aa8a-4740-8b84-c55f01398dcd');
+INSERT INTO Answer VALUES('97f9549d-c704-48ff-b1d2-c56e630518cd','204b2500-2f6d-4d17-8ba3-4acfd4654b9a');
+INSERT INTO Answer VALUES('e382a4d6-3709-407a-a2c1-8fe5596be29f','9a3265e9-b1a6-45ca-aeba-6ec228158112');
+INSERT INTO Answer VALUES('7939ab10-6818-4829-a1dc-4b368aa86ed4','1154bac9-a76a-479d-9325-62cb3a7ae510');
+INSERT INTO Answer VALUES('a2fe4a29-4c96-447e-80b4-37ce150eea37','5ad3c498-ab9b-4529-b809-8ceb0b2dd1f3');
+INSERT INTO Answer VALUES('34f72f44-9c01-41fd-bfbb-41c4fbbd5313','2257a743-91b2-477b-8cb5-832a93edb737');
+INSERT INTO Answer VALUES('6513276e-c745-4e3d-87db-83ccb60e7dbb','7e71bc47-285d-4f01-b0dc-f7f7fa7a6ae5');
+INSERT INTO Answer VALUES('ccb6a827-6314-4faa-b1f2-c843f208869f','100c6193-793e-4090-b474-eeb95575da37');
 CREATE TABLE IF NOT EXISTS "SelectAnswer" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "isCorrect" BOOLEAN NOT NULL,
@@ -2699,6 +2738,22 @@ INSERT INTO SelectAnswer VALUES('fc9f562f-4cec-4b32-a290-fc20cd99f86a',0,'5ad96b
 INSERT INTO SelectAnswer VALUES('a34d7a4b-9f41-4739-becb-a920ec24f13c',0,'a34d7a4b-9f41-4739-becb-a920ec24f13c','df5c4ed7-7109-4c20-88dd-87e05833d16f');
 INSERT INTO SelectAnswer VALUES('3065e157-6f71-4c33-a682-5022723f8391',0,'AF770977-4B29-4444-B907-F819EF5D0BEA','df5c4ed7-7109-4c20-88dd-87e05833d16f');
 INSERT INTO SelectAnswer VALUES('ac218326-9512-4383-8945-4303931d7457',1,'EE38E69B-F2B3-477E-A06A-70EBB3E5F87D','df5c4ed7-7109-4c20-88dd-87e05833d16f');
+INSERT INTO SelectAnswer VALUES('a7c13227-7d28-4bce-bd24-45a28d0498d3',0,'6e935aab-45d5-4b77-9a18-dc7abed4f265','97f9549d-c704-48ff-b1d2-c56e630518cd');
+INSERT INTO SelectAnswer VALUES('0e28816b-52ae-4ef3-be1a-2db49e6ea8b0',0,'02b7f30e-28c3-4403-9437-4acf3ef5f20a','97f9549d-c704-48ff-b1d2-c56e630518cd');
+INSERT INTO SelectAnswer VALUES('5f9e3eef-8f86-4263-b3e9-38cfa22fd0c0',0,'380b46e5-c951-403a-818d-ce1bfadfbe34','97f9549d-c704-48ff-b1d2-c56e630518cd');
+INSERT INTO SelectAnswer VALUES('c235f058-30d0-4408-b28d-d47f2997c76a',1,'5ae82544-83b2-4d4e-a32c-caf3a1b5bbbd','97f9549d-c704-48ff-b1d2-c56e630518cd');
+INSERT INTO SelectAnswer VALUES('3cf227c5-65a1-4ab2-ba35-5e9186b04bcb',0,'f2ee0a51-c08c-4897-b2b7-73b30ba255ad','7939ab10-6818-4829-a1dc-4b368aa86ed4');
+INSERT INTO SelectAnswer VALUES('48065634-f3da-4c40-8a30-20ef22d9eb6a',0,'d2b72d8c-a3b9-4f5e-89e6-f1ef66cb8398','7939ab10-6818-4829-a1dc-4b368aa86ed4');
+INSERT INTO SelectAnswer VALUES('1b5155ab-138f-4ae8-a8ea-4cdffe060da7',0,'b4308460-fb29-447f-8a54-95629fe9f652','7939ab10-6818-4829-a1dc-4b368aa86ed4');
+INSERT INTO SelectAnswer VALUES('2b901b7b-8ccb-4cbf-9830-91999f9f8fcd',1,'b8659200-0b87-4d84-8f1a-a3302c362f04','7939ab10-6818-4829-a1dc-4b368aa86ed4');
+INSERT INTO SelectAnswer VALUES('e1bb4240-7841-43a0-9c77-6f391fe051bb',0,'937bfde1-b945-468a-bba9-ca1baa9fc874','34f72f44-9c01-41fd-bfbb-41c4fbbd5313');
+INSERT INTO SelectAnswer VALUES('3c979e36-b0fc-4487-99f2-5fd0a79b6b70',0,'5361f396-03df-4653-84d6-fdc35d4cfa74','34f72f44-9c01-41fd-bfbb-41c4fbbd5313');
+INSERT INTO SelectAnswer VALUES('a79f0cbc-60ae-4e1a-a81b-acb0a5966c4f',0,'484c6d65-0316-47fb-a4c7-b77a67b995e9','34f72f44-9c01-41fd-bfbb-41c4fbbd5313');
+INSERT INTO SelectAnswer VALUES('378fcbe2-dec6-46e7-a866-2258177d0475',1,'c2ae1798-adfb-4318-a6b1-0fb6128ff267','34f72f44-9c01-41fd-bfbb-41c4fbbd5313');
+INSERT INTO SelectAnswer VALUES('bb575e2c-b3b8-409f-89d1-f9c59aee5164',0,'ddb02834-7c2f-40c9-8e60-f8683cbbe335','6513276e-c745-4e3d-87db-83ccb60e7dbb');
+INSERT INTO SelectAnswer VALUES('e2b169a2-6b58-49a3-9103-5363a5b2d097',0,'3aefc702-b37d-40c9-baeb-139e36bbdf73','6513276e-c745-4e3d-87db-83ccb60e7dbb');
+INSERT INTO SelectAnswer VALUES('1fd19eeb-100a-4be5-8643-9d6748111294',0,'cec8c03a-103c-4069-9d63-c125e1fe6273','6513276e-c745-4e3d-87db-83ccb60e7dbb');
+INSERT INTO SelectAnswer VALUES('6435a6eb-db27-4f33-8290-a238942dbf71',1,'cafb357a-2e2d-4132-97cc-9ddc494d6efc','6513276e-c745-4e3d-87db-83ccb60e7dbb');
 CREATE TABLE IF NOT EXISTS "UnitAnswer" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "value" REAL NOT NULL,
@@ -2707,6 +2762,7 @@ CREATE TABLE IF NOT EXISTS "UnitAnswer" (
     CONSTRAINT "UnitAnswer_answerId_fkey" FOREIGN KEY ("answerId") REFERENCES "Answer" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
 );
 INSERT INTO UnitAnswer VALUES('85390d3a-b92b-41d6-877a-925ae6a93f32',0.959999999999999965,'meter','05fe080d-0020-4f11-828e-0aa87dfe2cdd');
+INSERT INTO UnitAnswer VALUES('fa109dda-dd1e-4bc9-9993-de68ba8afcf7',5.0,'kilogram','a2fe4a29-4c96-447e-80b4-37ce150eea37');
 CREATE TABLE IF NOT EXISTS "NumberAnswer" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "value" REAL NOT NULL,
@@ -2900,6 +2956,8 @@ INSERT INTO NumberAnswer VALUES('2fc7964e-5bf0-4156-84e7-0f7e97ef53c8',5.0,'ee3f
 INSERT INTO NumberAnswer VALUES('4c6e60c1-6dfa-4e57-b5a7-77e7479bb51a',20.0,'066ea373-5fc9-47cd-b509-9633f4120942');
 INSERT INTO NumberAnswer VALUES('7729f766-16b3-4ab6-9234-a26bf8059bca',18.0,'ecc572fe-b92b-44da-bb85-43170e4213f7');
 INSERT INTO NumberAnswer VALUES('5e095cf9-7bd4-4254-ad0d-0a9689b7a19c',3.0,'3267c606-b550-4e5c-8ad1-009bf4c4a67b');
+INSERT INTO NumberAnswer VALUES('69ee9785-4062-4f4f-9393-a80b33ddf3b0',7.0,'e382a4d6-3709-407a-a2c1-8fe5596be29f');
+INSERT INTO NumberAnswer VALUES('77e9b09d-5bca-47c7-905f-badb59b550c8',20.0,'ccb6a827-6314-4faa-b1f2-c843f208869f');
 CREATE TABLE IF NOT EXISTS "_CourseModules" (
     "A" TEXT NOT NULL,
     "B" TEXT NOT NULL,
@@ -3503,6 +3561,14 @@ INSERT INTO _ModuleToQuestion VALUES('4d32cda4-d5c6-4165-a987-a35b313e148e','aa6
 INSERT INTO _ModuleToQuestion VALUES('435bd8ba-3c4c-474d-9d04-3d55cbab9d6f','d868149c-d119-43de-be07-eb9c5cc0eb09');
 INSERT INTO _ModuleToQuestion VALUES('435bd8ba-3c4c-474d-9d04-3d55cbab9d6f','d98c7836-1dc0-43f4-a09b-3a4b4ffbadcb');
 INSERT INTO _ModuleToQuestion VALUES('435bd8ba-3c4c-474d-9d04-3d55cbab9d6f','5be15daf-aa8a-4740-8b84-c55f01398dcd');
+INSERT INTO _ModuleToQuestion VALUES('af0bd650-5f32-4dad-ba38-cea69f616692','204b2500-2f6d-4d17-8ba3-4acfd4654b9a');
+INSERT INTO _ModuleToQuestion VALUES('af0bd650-5f32-4dad-ba38-cea69f616692','9a3265e9-b1a6-45ca-aeba-6ec228158112');
+INSERT INTO _ModuleToQuestion VALUES('af0bd650-5f32-4dad-ba38-cea69f616692','747f5478-01e4-4a04-ae7d-e16e3dd470ac');
+INSERT INTO _ModuleToQuestion VALUES('62e38ada-eb92-4a9c-bd52-943f6ed49b17','1154bac9-a76a-479d-9325-62cb3a7ae510');
+INSERT INTO _ModuleToQuestion VALUES('62e38ada-eb92-4a9c-bd52-943f6ed49b17','5ad3c498-ab9b-4529-b809-8ceb0b2dd1f3');
+INSERT INTO _ModuleToQuestion VALUES('7f7b0380-8d2d-45f2-9a8a-645755fadf42','2257a743-91b2-477b-8cb5-832a93edb737');
+INSERT INTO _ModuleToQuestion VALUES('98c59241-27f0-4aec-9e33-84404d014b73','7e71bc47-285d-4f01-b0dc-f7f7fa7a6ae5');
+INSERT INTO _ModuleToQuestion VALUES('240c2395-db81-48fb-9f3a-e39081da6b9f','100c6193-793e-4090-b474-eeb95575da37');
 CREATE TABLE IF NOT EXISTS "Degree" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "translationId" TEXT NOT NULL,

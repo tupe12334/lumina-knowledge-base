@@ -2657,6 +2657,52 @@
         ]
       }
     },
+    "/translations/bulk": {
+      "post": {
+        "description": "Creates multiple translation records in a single operation.",
+        "operationId": "TranslationsController_createMany",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateManyTranslationsInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The number of translations created.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "number",
+                      "description": "Number of translations created",
+                      "example": 5
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Create multiple translations",
+        "tags": [
+          "translations"
+        ]
+      }
+    },
     "/translations/{id}": {
       "get": {
         "description": "Returns a single translation by its ID.",
@@ -3869,6 +3915,31 @@
         "required": [
           "en_text",
           "he_text"
+        ]
+      },
+      "CreateManyTranslationsInput": {
+        "type": "object",
+        "properties": {
+          "translations": {
+            "description": "Array of translation data to create",
+            "example": [
+              {
+                "en_text": "Hello",
+                "he_text": "שלום"
+              },
+              {
+                "en_text": "Goodbye",
+                "he_text": "להתראות"
+              }
+            ],
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateTranslationInput"
+            }
+          }
+        },
+        "required": [
+          "translations"
         ]
       },
       "CreateSelectAnswerInputItem": {
