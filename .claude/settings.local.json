@@ -13,7 +13,8 @@
       "Bash(PORT=3002 pnpm run dev)",
       "Bash(lsof:*)",
       "Bash(PORT=3333 pnpm run dev)",
-      "Bash(kill:*)"
+      "Bash(kill:*)",
+      "Bash(PORT=3333 pnpm run start:dev)"
     ],
     "deny": [],
     "ask": []
