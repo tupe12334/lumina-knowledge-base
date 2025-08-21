@@ -15,7 +15,8 @@
       "Bash(PORT=3333 pnpm run dev)",
       "Bash(kill:*)",
       "Bash(PORT=3333 pnpm run start:dev)",
-      "Bash(pnpm run:*)"
+      "Bash(pnpm run:*)",
+      "Bash(npm test:*)"
     ],
     "deny": [],
     "ask": []
