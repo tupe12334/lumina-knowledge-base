@@ -38,7 +38,7 @@
     "db:dump": "sqlite3 ./prisma/main.db .dump > dump.sql",
     "predb:dump:apply": "rm -rf ./prisma/main.db",
     "db:dump:apply": "sqlite3 ./prisma/main.db < dump.sql",
-    "generate-questions": "gemini --yolo --model='gemini-2.5-flash' -i='Boot the service in a separated terminal with the port of 3333 and use curl to communicate with the service, make a request for modules with the fewest questions and generate questions for them in a various levels of difficulties use the localhost:3333 only to change the data, you can use localhost:3333/openapi to see the api, do not create anything except questions and remember to create the answers as well according to the question type, after finishing run the db:dump command'"
+    "generate-questions": "gemini --yolo --model='gemini-2.5-flash' -i='Boot the service in a separated terminal with the port of 3333 or search for a process with the name Lumina Knowledge-base and use curl to communicate with the service, make a request for modules with the fewest questions and generate questions for them in a various levels of difficulties use the localhost:<service-port> only to change the data, you can use the /openapi path to see the api, do not create anything except questions and remember to create the answers as well according to the question type, after finishing run the db:dump command'"
   },
   "dependencies": {
     "@apollo/server": "^4.12.2",
