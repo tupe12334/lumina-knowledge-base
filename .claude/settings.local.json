@@ -7,6 +7,7 @@
       "Bash(PORT=3000 pnpm run dev)",
       "Bash(PORT=3001 pnpm run dev)",
       "Bash(curl:*)",
+      "Bash(curl *)",
       "Bash(pnpm install:*)",
       "Bash(pnpm add:*)",
       "Bash(node:*)",
