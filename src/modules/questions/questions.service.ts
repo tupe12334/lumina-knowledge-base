@@ -8,6 +8,7 @@ import { PrismaService } from '../../prisma/prisma.service';
 import { Question } from './models/Question.entity';
 import { QuestionsQueryDto } from './dto/question-query.dto';
 import { CreateQuestionInput } from './dto/create-question.input';
+import { CreateManyQuestionsInput } from './dto/create-many-questions.input';
 import { UpdateQuestionInput } from './dto/update-question.input';
 import { DeleteQuestionInput } from './dto/delete-question.input';
 
@@ -323,6 +324,36 @@ export class QuestionsService {
       Parts: Parts,
       PartOf: PartOf,
     };
+  }
+
+  /**
+   * Creates multiple questions in a single transaction.
+   * @param input - The data for creating multiple questions
+   * @returns The number of questions created
+   */
+  async createMany(input: CreateManyQuestionsInput) {
+    return this.prisma.$transaction(async (prisma) => {
+      let createdCount = 0;
+
+      for (const questionData of input.questions) {
+        const { translationId, moduleIds, ...rest } = questionData;
+
+        await prisma.question.create({
+          data: {
+            ...rest,
+            text: {
+              connect: { id: translationId },
+            },
+            Modules: {
+              connect: moduleIds?.map((id) => ({ id })),
+            },
+          },
+        });
+        createdCount++;
+      }
+
+      return { count: createdCount };
+    });
   }
 
   async update(data: UpdateQuestionInput): Promise<Question> {

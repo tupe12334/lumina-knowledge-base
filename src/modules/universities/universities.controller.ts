@@ -14,6 +14,7 @@ import {
 } from '@nestjs/common';
 import { UniversitiesService } from './universities.service';
 import { CreateUniversityInput } from './dto/create-university.input';
+import { CreateManyUniversitiesInput } from './dto/create-many-universities.input';
 import { UpdateUniversityInput } from './dto/update-university.input';
 import {
   ApiTags,
@@ -45,6 +46,30 @@ export class UniversitiesController {
   @ApiResponse({ status: 500, description: 'Internal Server Error.' })
   create(@Body() createUniversityDto: CreateUniversityInput) {
     return this.universitiesService.create(createUniversityDto);
+  }
+
+  @Post('bulk')
+  @ApiOperation({
+    summary: 'Create multiple universities',
+    description: 'Creates multiple university records in a single operation.',
+  })
+  @ApiCreatedResponse({
+    description: 'The number of universities created.',
+    schema: {
+      type: 'object',
+      properties: {
+        count: {
+          type: 'number',
+          description: 'Number of universities created',
+          example: 5,
+        },
+      },
+    },
+  })
+  @ApiResponse({ status: 400, description: 'Bad Request.' })
+  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
+  createMany(@Body() createManyUniversitiesDto: CreateManyUniversitiesInput) {
+    return this.universitiesService.createMany(createManyUniversitiesDto);
   }
 
   @Get()

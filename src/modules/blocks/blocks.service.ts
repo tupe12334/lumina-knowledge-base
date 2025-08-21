@@ -10,6 +10,7 @@ import { CreateBlockRelationshipInput } from './dto/create-block-relationship.in
 import { DeleteBlockRelationshipInput } from './dto/delete-block-relationship.input';
 import { BlockRelationshipResult } from './dto/block-relationship-result.type';
 import { CreateBlockInput } from './dto/create-block.input';
+import { CreateManyBlocksInput } from './dto/create-many-blocks.input';
 import { UpdateBlockInput } from './dto/update-block.input';
 
 /**
@@ -21,6 +22,21 @@ export class BlocksService {
 
   async create(createBlockInput: CreateBlockInput): Promise<Block> {
     return this.prisma.block.create({ data: createBlockInput });
+  }
+
+  /**
+   * Creates multiple blocks in a single operation.
+   * @param input - The data for creating multiple blocks
+   * @returns The number of blocks created
+   */
+  async createMany(input: CreateManyBlocksInput) {
+    const blockDataArray = input.blocks.map(() => ({}));
+
+    const result = await this.prisma.block.createMany({
+      data: blockDataArray,
+    });
+
+    return { count: result.count };
   }
 
   async findAll(): Promise<Block[]> {

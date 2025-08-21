@@ -4,8 +4,10 @@ import { QuestionsService } from './questions.service';
 import { Question } from './models/Question.entity';
 import { QuestionsQueryDto } from './dto/question-query.dto';
 import { CreateQuestionInput } from './dto/create-question.input';
+import { CreateManyQuestionsInput } from './dto/create-many-questions.input';
 import { UpdateQuestionInput } from './dto/update-question.input';
 import { DeleteQuestionInput } from './dto/delete-question.input';
+import { CreateManyResult } from '../common/create-many-result.type';
 
 /**
  * GraphQL resolver for question-related operations.
@@ -60,6 +62,16 @@ export class QuestionsResolver {
     @Args('input') input: CreateQuestionInput,
   ): Promise<Question> {
     return this.questionsService.create(input);
+  }
+
+  @Mutation(() => CreateManyResult, {
+    name: 'createManyQuestions',
+    description: 'Create multiple questions in bulk',
+  })
+  async createManyQuestions(
+    @Args('input') input: CreateManyQuestionsInput,
+  ): Promise<CreateManyResult> {
+    return this.questionsService.createMany(input);
   }
 
   @Mutation(() => Question, {

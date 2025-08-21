@@ -6,6 +6,7 @@ import {
 import { PrismaService } from '../../prisma/prisma.service';
 import { University } from './models/University.entity';
 import { CreateUniversityInput } from './dto/create-university.input';
+import { CreateManyUniversitiesInput } from './dto/create-many-universities.input';
 import { UpdateUniversityInput } from './dto/update-university.input';
 
 @Injectable()
@@ -76,6 +77,40 @@ export class UniversitiesService {
     });
 
     return university;
+  }
+
+  /**
+   * Creates multiple universities in a single transaction.
+   * @param input - The data for creating multiple universities
+   * @returns The number of universities created
+   */
+  async createMany(input: CreateManyUniversitiesInput) {
+    return this.prisma.$transaction(async (prisma) => {
+      let createdCount = 0;
+
+      for (const universityData of input.universities) {
+        const { en_text, he_text } = universityData;
+
+        // Create a new translation for each university name
+        const translation = await prisma.translation.create({
+          data: {
+            en_text,
+            he_text,
+          },
+        });
+
+        // Create the university, linking it to the translation
+        await prisma.university.create({
+          data: {
+            translationId: translation.id,
+          },
+        });
+
+        createdCount++;
+      }
+
+      return { count: createdCount };
+    });
   }
 
   async update(id: string, updateUniversityInput: UpdateUniversityInput) {

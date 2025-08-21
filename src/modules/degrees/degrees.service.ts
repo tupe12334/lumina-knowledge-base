@@ -7,6 +7,7 @@ import { PrismaService } from '../../prisma/prisma.service';
 import { Degree } from './models/Degree.entity';
 import { DegreesQueryDto } from './dto/degrees-query.dto';
 import { CreateDegreeInput } from './dto/create-degree.input';
+import { CreateManyDegreesInput } from './dto/create-many-degrees.input';
 import { UpdateDegreeInput } from './dto/update-degree.input';
 
 /**
@@ -37,6 +38,39 @@ export class DegreesService {
       include: {
         name: true,
       },
+    });
+  }
+
+  /**
+   * Creates multiple degrees in a single transaction.
+   * @param input - The data for creating multiple degrees
+   * @returns The number of degrees created
+   */
+  async createMany(input: CreateManyDegreesInput) {
+    return this.prisma.$transaction(async (prisma) => {
+      let createdCount = 0;
+
+      for (const degreeData of input.degrees) {
+        const { name, universityId } = degreeData;
+        await prisma.degree.create({
+          data: {
+            university: {
+              connect: {
+                id: universityId,
+              },
+            },
+            name: {
+              create: {
+                en_text: name,
+                he_text: name,
+              },
+            },
+          },
+        });
+        createdCount++;
+      }
+
+      return { count: createdCount };
     });
   }
 

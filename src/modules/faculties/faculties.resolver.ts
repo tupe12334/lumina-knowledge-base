@@ -12,7 +12,9 @@ import { Faculty } from './models/Faculty.entity';
 import { Degree } from '../degrees/models/Degree.entity';
 import { DegreesService } from '../degrees/degrees.service';
 import { CreateFacultyInput } from './dto/create-faculty.input';
+import { CreateManyFacultiesInput } from './dto/create-many-faculties.input';
 import { UpdateFacultyInput } from './dto/update-faculty.input';
+import { CreateManyResult } from '../common/create-many-result.type';
 
 /**
  * GraphQL resolver for faculty-related operations.
@@ -30,6 +32,16 @@ export class FacultiesResolver {
     @Args('createFacultyInput') createFacultyInput: CreateFacultyInput,
   ) {
     return this.facultiesService.create(createFacultyInput);
+  }
+
+  @Mutation(() => CreateManyResult, {
+    name: 'createManyFaculties',
+    description: 'Create multiple faculties in bulk',
+  })
+  createManyFaculties(
+    @Args('input') input: CreateManyFacultiesInput,
+  ): Promise<CreateManyResult> {
+    return this.facultiesService.createMany(input);
   }
 
   @Query(() => [Faculty], { name: 'faculties' })

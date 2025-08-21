@@ -2,7 +2,9 @@ import { Resolver, Query, Args, ID, Mutation } from '@nestjs/graphql';
 import { UniversitiesService } from './universities.service';
 import { University } from './models/University.entity';
 import { CreateUniversityInput } from './dto/create-university.input';
+import { CreateManyUniversitiesInput } from './dto/create-many-universities.input';
 import { UpdateUniversityInput } from './dto/update-university.input';
+import { CreateManyResult } from '../common/create-many-result.type';
 
 @Resolver(() => University)
 export class UniversitiesResolver {
@@ -33,6 +35,21 @@ export class UniversitiesResolver {
     @Args('input') input: CreateUniversityInput,
   ): Promise<University> {
     return this.universitiesService.create(input);
+  }
+
+  /**
+   * Creates multiple universities in bulk.
+   * @param input - The data for creating the universities
+   * @returns Promise<CreateManyResult> The result containing count of created universities
+   */
+  @Mutation(() => CreateManyResult, {
+    name: 'createManyUniversities',
+    description: 'Creates multiple universities in bulk',
+  })
+  async createManyUniversities(
+    @Args('input') input: CreateManyUniversitiesInput,
+  ): Promise<CreateManyResult> {
+    return this.universitiesService.createMany(input);
   }
 
   @Mutation(() => University)

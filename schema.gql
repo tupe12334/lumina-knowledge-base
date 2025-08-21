@@ -115,6 +115,11 @@ input CreateFacultyInput {
   universityId: String!
 }
 
+input CreateManyUniversitiesInput {
+  """Array of university data to create"""
+  universities: [CreateUniversityInput!]!
+}
+
 input CreateModuleInput {
   """ID of the course this module belongs to"""
   courseId: String!
@@ -330,6 +335,9 @@ type Mutation {
   createCourseRelationship(input: CreateCourseRelationshipInput!): CourseRelationshipResult!
   createDegree(createDegreeInput: CreateDegreeInput!): Degree!
   createFaculty(createFacultyInput: CreateFacultyInput!): Faculty!
+
+  """Creates multiple universities in bulk"""
+  createManyUniversities(input: CreateManyUniversitiesInput!): [University!]!
 
   """Creates a new module"""
   createModule(input: CreateModuleInput!): Module!

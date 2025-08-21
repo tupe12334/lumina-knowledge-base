@@ -20,6 +20,7 @@ import {
 } from '@nestjs/swagger';
 import { BlocksService } from './blocks.service';
 import { CreateBlockInput } from './dto/create-block.input';
+import { CreateManyBlocksInput } from './dto/create-many-blocks.input';
 import { UpdateBlockInput } from './dto/update-block.input';
 import { CreateBlockRelationshipInput } from './dto/create-block-relationship.input';
 import { DeleteBlockRelationshipInput } from './dto/delete-block-relationship.input';
@@ -41,6 +42,30 @@ export class BlocksController {
   @ApiResponse({ status: 500, description: 'Internal Server Error.' })
   create(@Body() createBlockDto: CreateBlockInput) {
     return this.blocksService.create(createBlockDto);
+  }
+
+  @Post('bulk')
+  @ApiOperation({
+    summary: 'Create multiple blocks',
+    description: 'Creates multiple block records in a single operation.',
+  })
+  @ApiCreatedResponse({
+    description: 'The number of blocks created.',
+    schema: {
+      type: 'object',
+      properties: {
+        count: {
+          type: 'number',
+          description: 'Number of blocks created',
+          example: 5,
+        },
+      },
+    },
+  })
+  @ApiResponse({ status: 400, description: 'Bad Request.' })
+  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
+  createMany(@Body() createManyBlocksDto: CreateManyBlocksInput) {
+    return this.blocksService.createMany(createManyBlocksDto);
   }
 
   @Get()

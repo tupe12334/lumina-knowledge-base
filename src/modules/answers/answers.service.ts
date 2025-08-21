@@ -1,6 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { PrismaService } from '../../prisma/prisma.service';
 import { CreateAnswerInput } from './dto/create-answer.input';
+import { CreateManyAnswersInput } from './dto/create-many-answers.input';
 import { UpdateAnswerInput } from './dto/update-answer.input';
 import { AnswersQueryDto } from './dto/answers-query.dto';
 
@@ -73,6 +74,62 @@ export class AnswersService {
     });
 
     return created;
+  }
+
+  /**
+   * Creates multiple answers in a single transaction.
+   * @param input - The data for creating multiple answers
+   * @returns The number of answers created
+   */
+  async createMany(input: CreateManyAnswersInput) {
+    return this.prisma.$transaction(async (prisma) => {
+      let createdCount = 0;
+
+      for (const answerData of input.answers) {
+        const { questionId, selectAnswers, unitValue, unit, numberAnswer } =
+          answerData;
+
+        // Ensure question exists
+        const question = await prisma.question.findUnique({
+          where: { id: questionId },
+        });
+        if (!question) {
+          throw new NotFoundException(
+            `Question with ID ${questionId} not found`,
+          );
+        }
+
+        await prisma.answer.create({
+          data: {
+            question: { connect: { id: questionId } },
+            SelectAnswer:
+              selectAnswers && selectAnswers.length > 0
+                ? {
+                    create: selectAnswers.map((s) => ({
+                      isCorrect: s.isCorrect,
+                      text: { connect: { id: s.translationId } },
+                    })),
+                  }
+                : undefined,
+            UnitAnswer:
+              unitValue != null && unit != null
+                ? {
+                    create: { value: unitValue, unit },
+                  }
+                : undefined,
+            NumberAnswer:
+              numberAnswer != null
+                ? {
+                    create: { value: numberAnswer },
+                  }
+                : undefined,
+          },
+        });
+        createdCount++;
+      }
+
+      return { count: createdCount };
+    });
   }
 
   async update(data: UpdateAnswerInput) {

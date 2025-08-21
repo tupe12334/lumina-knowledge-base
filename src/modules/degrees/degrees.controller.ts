@@ -25,6 +25,7 @@ import {
 } from '@nestjs/swagger';
 import { DegreesService } from './degrees.service';
 import { CreateDegreeInput } from './dto/create-degree.input';
+import { CreateManyDegreesInput } from './dto/create-many-degrees.input';
 import { UpdateDegreeInput } from './dto/update-degree.input';
 import { SetDegreeFacultyInput } from './dto/set-degree-faculty.input';
 import { AddCourseToDegreeInput } from './dto/add-course-to-degree.input';
@@ -49,6 +50,30 @@ export class DegreesController {
   @ApiResponse({ status: 500, description: 'Internal Server Error.' })
   create(@Body() createDegreeDto: CreateDegreeInput) {
     return this.degreesService.create(createDegreeDto);
+  }
+
+  @Post('bulk')
+  @ApiOperation({
+    summary: 'Create multiple degrees',
+    description: 'Creates multiple degree records in a single operation.',
+  })
+  @ApiCreatedResponse({
+    description: 'The number of degrees created.',
+    schema: {
+      type: 'object',
+      properties: {
+        count: {
+          type: 'number',
+          description: 'Number of degrees created',
+          example: 5,
+        },
+      },
+    },
+  })
+  @ApiResponse({ status: 400, description: 'Bad Request.' })
+  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
+  createMany(@Body() createManyDegreesDto: CreateManyDegreesInput) {
+    return this.degreesService.createMany(createManyDegreesDto);
   }
 
   @Get()

@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { CreateFacultyInput } from './dto/create-faculty.input';
+import { CreateManyFacultiesInput } from './dto/create-many-faculties.input';
 import { UpdateFacultyInput } from './dto/update-faculty.input';
 
 @Injectable()
@@ -33,6 +34,45 @@ export class FacultiesService {
         name: true,
         description: true,
       },
+    });
+  }
+
+  /**
+   * Creates multiple faculties in a single transaction.
+   * @param input - The data for creating multiple faculties
+   * @returns The number of faculties created
+   */
+  async createMany(input: CreateManyFacultiesInput) {
+    return this.prisma.$transaction(async (prisma) => {
+      let createdCount = 0;
+
+      for (const facultyData of input.faculties) {
+        const { name, description, universityId } = facultyData;
+        await prisma.faculty.create({
+          data: {
+            university: {
+              connect: {
+                id: universityId,
+              },
+            },
+            name: {
+              create: {
+                en_text: name,
+                he_text: name,
+              },
+            },
+            description: {
+              create: {
+                en_text: description,
+                he_text: description,
+              },
+            },
+          },
+        });
+        createdCount++;
+      }
+
+      return { count: createdCount };
     });
   }
 

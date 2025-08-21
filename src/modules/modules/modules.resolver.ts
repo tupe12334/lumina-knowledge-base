@@ -14,7 +14,9 @@ import { CreateModuleRelationshipInput } from './dto/create-module-relationship.
 import { DeleteModuleRelationshipInput } from './dto/delete-module-relationship.input';
 import { ModuleRelationshipResult } from './dto/module-relationship-result.type';
 import { CreateModuleInput } from './dto/create-module.input';
+import { CreateManyModulesInput } from './dto/create-many-modules.input';
 import { UpdateModuleInput } from './dto/update-module.input';
+import { CreateManyResult } from '../common/create-many-result.type';
 import { QuestionsService } from '../questions/questions.service';
 import { Question } from '../questions/models/Question.entity';
 import { QuestionsQueryDto } from '../questions/dto/question-query.dto';
@@ -105,6 +107,21 @@ export class ModulesResolver {
   })
   async createModule(@Args('input') input: CreateModuleInput): Promise<Module> {
     return this.modulesService.create(input);
+  }
+
+  /**
+   * Creates multiple modules in bulk.
+   * @param input - The data for creating the modules
+   * @returns Promise<CreateManyResult> The result containing count of created modules
+   */
+  @Mutation(() => CreateManyResult, {
+    name: 'createManyModules',
+    description: 'Creates multiple modules in bulk',
+  })
+  async createManyModules(
+    @Args('input') input: CreateManyModulesInput,
+  ): Promise<CreateManyResult> {
+    return this.modulesService.createMany(input);
   }
 
   @Mutation(() => Module)

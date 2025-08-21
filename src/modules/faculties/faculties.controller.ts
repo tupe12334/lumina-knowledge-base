@@ -20,6 +20,7 @@ import {
 } from '@nestjs/swagger';
 import { FacultiesService } from './faculties.service';
 import { CreateFacultyInput } from './dto/create-faculty.input';
+import { CreateManyFacultiesInput } from './dto/create-many-faculties.input';
 import { UpdateFacultyInput } from './dto/update-faculty.input';
 import { Faculty } from './models/Faculty.entity';
 
@@ -38,6 +39,30 @@ export class FacultiesController {
   @ApiResponse({ status: 500, description: 'Internal Server Error.' })
   create(@Body() createFacultyDto: CreateFacultyInput) {
     return this.facultiesService.create(createFacultyDto);
+  }
+
+  @Post('bulk')
+  @ApiOperation({
+    summary: 'Create multiple faculties',
+    description: 'Creates multiple faculty records in a single operation.',
+  })
+  @ApiCreatedResponse({
+    description: 'The number of faculties created.',
+    schema: {
+      type: 'object',
+      properties: {
+        count: {
+          type: 'number',
+          description: 'Number of faculties created',
+          example: 5,
+        },
+      },
+    },
+  })
+  @ApiResponse({ status: 400, description: 'Bad Request.' })
+  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
+  createMany(@Body() createManyFacultiesDto: CreateManyFacultiesInput) {
+    return this.facultiesService.createMany(createManyFacultiesDto);
   }
 
   @Get()

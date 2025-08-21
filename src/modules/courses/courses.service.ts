@@ -15,6 +15,7 @@ import { DeleteCourseResult } from './dto/delete-course-result.type';
 import { UpdateCourseInput } from './dto/update-course.input';
 import { SetCourseModulesInput } from './dto/set-course-modules.input';
 import { CreateCourseInput } from './dto/create-course.input';
+import { CreateManyCoursesInput } from './dto/create-many-courses.input';
 
 @Injectable()
 export class CoursesService {
@@ -42,6 +43,42 @@ export class CoursesService {
       include: {
         name: true,
       },
+    });
+  }
+
+  /**
+   * Creates multiple courses in a single transaction.
+   * @param input - The data for creating multiple courses
+   * @returns The number of courses created
+   */
+  async createMany(input: CreateManyCoursesInput) {
+    return this.prisma.$transaction(async (prisma) => {
+      let createdCount = 0;
+
+      for (const courseData of input.courses) {
+        const { name, universityId } = courseData;
+        await prisma.course.create({
+          data: {
+            university: {
+              connect: {
+                id: universityId,
+              },
+            },
+            name: {
+              create: {
+                en_text: name,
+                he_text: name,
+              },
+            },
+            Block: {
+              create: {},
+            },
+          },
+        });
+        createdCount++;
+      }
+
+      return { count: createdCount };
     });
   }
 

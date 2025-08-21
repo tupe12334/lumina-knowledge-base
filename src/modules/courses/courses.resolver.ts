@@ -17,6 +17,8 @@ import { DeleteCourseResult } from './dto/delete-course-result.type';
 import { UpdateCourseInput } from './dto/update-course.input';
 import { SetCourseModulesInput } from './dto/set-course-modules.input';
 import { CreateCourseInput } from './dto/create-course.input';
+import { CreateManyCoursesInput } from './dto/create-many-courses.input';
+import { CreateManyResult } from '../common/create-many-result.type';
 import { ModulesService } from '../modules/modules.service'; // Added import
 import { Module } from '../modules/models/Module.entity'; // Added import
 
@@ -47,6 +49,16 @@ export class CoursesResolver {
     @Args('createCourseInput') createCourseInput: CreateCourseInput,
   ): Promise<Course> {
     return this.coursesService.create(createCourseInput);
+  }
+
+  @Mutation(() => CreateManyResult, {
+    name: 'createManyCourses',
+    description: 'Create multiple courses in bulk',
+  })
+  createManyCourses(
+    @Args('input') input: CreateManyCoursesInput,
+  ): Promise<CreateManyResult> {
+    return this.coursesService.createMany(input);
   }
 
   /**

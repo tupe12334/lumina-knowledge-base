@@ -25,6 +25,7 @@ import {
 } from '@nestjs/swagger';
 import { QuestionsService } from './questions.service';
 import { CreateQuestionInput } from './dto/create-question.input';
+import { CreateManyQuestionsInput } from './dto/create-many-questions.input';
 import { UpdateQuestionInput } from './dto/update-question.input';
 import { QuestionsQueryDto } from './dto/question-query.dto';
 import { DeleteQuestionInput } from './dto/delete-question.input';
@@ -48,6 +49,30 @@ export class QuestionsController {
   @ApiResponse({ status: 500, description: 'Internal Server Error.' })
   create(@Body() createQuestionDto: CreateQuestionInput) {
     return this.questionsService.create(createQuestionDto);
+  }
+
+  @Post('bulk')
+  @ApiOperation({
+    summary: 'Create multiple questions',
+    description: 'Creates multiple question records in a single operation.',
+  })
+  @ApiCreatedResponse({
+    description: 'The number of questions created.',
+    schema: {
+      type: 'object',
+      properties: {
+        count: {
+          type: 'number',
+          description: 'Number of questions created',
+          example: 5,
+        },
+      },
+    },
+  })
+  @ApiResponse({ status: 400, description: 'Bad Request.' })
+  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
+  createMany(@Body() createManyQuestionsDto: CreateManyQuestionsInput) {
+    return this.questionsService.createMany(createManyQuestionsDto);
   }
 
   @Get()

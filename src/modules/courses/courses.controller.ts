@@ -24,6 +24,7 @@ import {
 } from '@nestjs/swagger';
 import { CoursesService } from './courses.service';
 import { CreateCourseInput } from './dto/create-course.input';
+import { CreateManyCoursesInput } from './dto/create-many-courses.input';
 import { UpdateCourseInput } from './dto/update-course.input';
 import { CreateCourseRelationshipInput } from './dto/create-course-relationship.input';
 import { DeleteCourseRelationshipInput } from './dto/delete-course-relationship.input';
@@ -50,6 +51,30 @@ export class CoursesController {
   @ApiResponse({ status: 500, description: 'Internal Server Error.' })
   create(@Body() createCourseDto: CreateCourseInput) {
     return this.coursesService.create(createCourseDto);
+  }
+
+  @Post('bulk')
+  @ApiOperation({
+    summary: 'Create multiple courses',
+    description: 'Creates multiple course records in a single operation.',
+  })
+  @ApiCreatedResponse({
+    description: 'The number of courses created.',
+    schema: {
+      type: 'object',
+      properties: {
+        count: {
+          type: 'number',
+          description: 'Number of courses created',
+          example: 5,
+        },
+      },
+    },
+  })
+  @ApiResponse({ status: 400, description: 'Bad Request.' })
+  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
+  createMany(@Body() createManyCoursesDto: CreateManyCoursesInput) {
+    return this.coursesService.createMany(createManyCoursesDto);
   }
 
   @Get()

@@ -624,6 +624,52 @@
         ]
       }
     },
+    "/universities/bulk": {
+      "post": {
+        "description": "Creates multiple university records in a single operation.",
+        "operationId": "UniversitiesController_createMany",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateManyUniversitiesInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The number of universities created.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "number",
+                      "description": "Number of universities created",
+                      "example": 5
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Create multiple universities",
+        "tags": [
+          "universities"
+        ]
+      }
+    },
     "/universities/{id}": {
       "get": {
         "description": "Returns a single university by its ID.",
@@ -836,6 +882,52 @@
           }
         },
         "summary": "Retrieve all courses",
+        "tags": [
+          "courses"
+        ]
+      }
+    },
+    "/courses/bulk": {
+      "post": {
+        "description": "Creates multiple course records in a single operation.",
+        "operationId": "CoursesController_createMany",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateManyCoursesInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The number of courses created.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "number",
+                      "description": "Number of courses created",
+                      "example": 5
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Create multiple courses",
         "tags": [
           "courses"
         ]
@@ -1267,6 +1359,52 @@
         ]
       }
     },
+    "/modules/bulk": {
+      "post": {
+        "description": "Creates multiple module records in a single operation.",
+        "operationId": "ModulesController_createMany",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateManyModulesInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The number of modules created.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "number",
+                      "description": "Number of modules created",
+                      "example": 5
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Create multiple modules",
+        "tags": [
+          "modules"
+        ]
+      }
+    },
     "/modules/questions-data": {
       "get": {
         "description": "Returns all modules with id, en_name, and questions_amount, sorted by question count (least questions first).",
@@ -1680,6 +1818,52 @@
         ]
       }
     },
+    "/questions/bulk": {
+      "post": {
+        "description": "Creates multiple question records in a single operation.",
+        "operationId": "QuestionsController_createMany",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateManyQuestionsInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The number of questions created.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "number",
+                      "description": "Number of questions created",
+                      "example": 5
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Create multiple questions",
+        "tags": [
+          "questions"
+        ]
+      }
+    },
     "/questions/{id}": {
       "get": {
         "description": "Returns a single question by its ID.",
@@ -1920,6 +2104,52 @@
           }
         },
         "summary": "Retrieve all degrees",
+        "tags": [
+          "degrees"
+        ]
+      }
+    },
+    "/degrees/bulk": {
+      "post": {
+        "description": "Creates multiple degree records in a single operation.",
+        "operationId": "DegreesController_createMany",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateManyDegreesInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The number of degrees created.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "number",
+                      "description": "Number of degrees created",
+                      "example": 5
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Create multiple degrees",
         "tags": [
           "degrees"
         ]
@@ -2226,6 +2456,52 @@
         ]
       }
     },
+    "/blocks/bulk": {
+      "post": {
+        "description": "Creates multiple block records in a single operation.",
+        "operationId": "BlocksController_createMany",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateManyBlocksInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The number of blocks created.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "number",
+                      "description": "Number of blocks created",
+                      "example": 5
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Create multiple blocks",
+        "tags": [
+          "blocks"
+        ]
+      }
+    },
     "/blocks/{id}": {
       "get": {
         "description": "Returns a single block by its ID.",
@@ -2475,6 +2751,52 @@
           }
         },
         "summary": "Retrieve all faculties",
+        "tags": [
+          "faculties"
+        ]
+      }
+    },
+    "/faculties/bulk": {
+      "post": {
+        "description": "Creates multiple faculty records in a single operation.",
+        "operationId": "FacultiesController_createMany",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateManyFacultiesInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The number of faculties created.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "number",
+                      "description": "Number of faculties created",
+                      "example": 5
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Create multiple faculties",
         "tags": [
           "faculties"
         ]
@@ -2922,6 +3244,52 @@
           }
         },
         "summary": "Retrieve all answers",
+        "tags": [
+          "answers"
+        ]
+      }
+    },
+    "/answers/bulk": {
+      "post": {
+        "description": "Creates multiple answer records in a single operation.",
+        "operationId": "AnswersController_createMany",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateManyAnswersInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The number of answers created.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "number",
+                      "description": "Number of answers created",
+                      "example": 5
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Create multiple answers",
         "tags": [
           "answers"
         ]
@@ -3628,6 +3996,31 @@
           "Block"
         ]
       },
+      "CreateManyUniversitiesInput": {
+        "type": "object",
+        "properties": {
+          "universities": {
+            "description": "Array of university data to create",
+            "example": [
+              {
+                "en_text": "Harvard University",
+                "he_text": "אוניברסיטת הרווארד"
+              },
+              {
+                "en_text": "MIT",
+                "he_text": "מכון הטכנולוגי של מסצ׳וסטס"
+              }
+            ],
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateUniversityInput"
+            }
+          }
+        },
+        "required": [
+          "universities"
+        ]
+      },
       "CreateCourseInput": {
         "type": "object",
         "properties": {
@@ -3644,6 +4037,31 @@
         "required": [
           "name",
           "universityId"
+        ]
+      },
+      "CreateManyCoursesInput": {
+        "type": "object",
+        "properties": {
+          "courses": {
+            "description": "Array of course data to create",
+            "example": [
+              {
+                "name": "Computer Science",
+                "universityId": "uuid1"
+              },
+              {
+                "name": "Mathematics",
+                "universityId": "uuid2"
+              }
+            ],
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateCourseInput"
+            }
+          }
+        },
+        "required": [
+          "courses"
         ]
       },
       "CreateCourseRelationshipInput": {
@@ -3708,6 +4126,33 @@
           "en_text",
           "he_text",
           "courseId"
+        ]
+      },
+      "CreateManyModulesInput": {
+        "type": "object",
+        "properties": {
+          "modules": {
+            "description": "Array of module data to create",
+            "example": [
+              {
+                "en_text": "Linear Algebra",
+                "he_text": "אלגברה לינארית",
+                "courseId": "uuid1"
+              },
+              {
+                "en_text": "Calculus",
+                "he_text": "חשבון אינפיניטסימלי",
+                "courseId": "uuid2"
+              }
+            ],
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateModuleInput"
+            }
+          }
+        },
+        "required": [
+          "modules"
         ]
       },
       "CreateModuleRelationshipInput": {
@@ -3810,6 +4255,37 @@
           "type"
         ]
       },
+      "CreateManyQuestionsInput": {
+        "type": "object",
+        "properties": {
+          "questions": {
+            "description": "Array of question data to create",
+            "example": [
+              {
+                "type": "selection",
+                "translationId": "uuid1",
+                "moduleIds": [
+                  "uuid1"
+                ]
+              },
+              {
+                "type": "value",
+                "translationId": "uuid2",
+                "moduleIds": [
+                  "uuid2"
+                ]
+              }
+            ],
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateQuestionInput"
+            }
+          }
+        },
+        "required": [
+          "questions"
+        ]
+      },
       "CreateDegreeInput": {
         "type": "object",
         "properties": {
@@ -3828,6 +4304,31 @@
           "universityId"
         ]
       },
+      "CreateManyDegreesInput": {
+        "type": "object",
+        "properties": {
+          "degrees": {
+            "description": "Array of degree data to create",
+            "example": [
+              {
+                "name": "Bachelor of Science",
+                "universityId": "uuid1"
+              },
+              {
+                "name": "Master of Arts",
+                "universityId": "uuid2"
+              }
+            ],
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateDegreeInput"
+            }
+          }
+        },
+        "required": [
+          "degrees"
+        ]
+      },
       "CreateBlockInput": {
         "type": "object",
         "properties": {
@@ -3843,6 +4344,31 @@
         "required": [
           "name",
           "moduleId"
+        ]
+      },
+      "CreateManyBlocksInput": {
+        "type": "object",
+        "properties": {
+          "blocks": {
+            "description": "Array of block data to create",
+            "example": [
+              {
+                "name": "Introduction",
+                "moduleId": "uuid1"
+              },
+              {
+                "name": "Advanced Topics",
+                "moduleId": "uuid2"
+              }
+            ],
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateBlockInput"
+            }
+          }
+        },
+        "required": [
+          "blocks"
         ]
       },
       "UpdateBlockInput": {
@@ -3938,6 +4464,33 @@
           "name",
           "description",
           "universityId"
+        ]
+      },
+      "CreateManyFacultiesInput": {
+        "type": "object",
+        "properties": {
+          "faculties": {
+            "description": "Array of faculty data to create",
+            "example": [
+              {
+                "name": "Computer Science",
+                "description": "CS Department",
+                "universityId": "uuid1"
+              },
+              {
+                "name": "Mathematics",
+                "description": "Math Department",
+                "universityId": "uuid2"
+              }
+            ],
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateFacultyInput"
+            }
+          }
+        },
+        "required": [
+          "faculties"
         ]
       },
       "CreateTranslationInput": {
@@ -4037,6 +4590,31 @@
         },
         "required": [
           "questionId"
+        ]
+      },
+      "CreateManyAnswersInput": {
+        "type": "object",
+        "properties": {
+          "answers": {
+            "description": "Array of answer data to create",
+            "example": [
+              {
+                "questionId": "uuid1",
+                "answerType": "selection"
+              },
+              {
+                "questionId": "uuid2",
+                "answerType": "unit"
+              }
+            ],
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateAnswerInput"
+            }
+          }
+        },
+        "required": [
+          "answers"
         ]
       }
     }

@@ -5,7 +5,9 @@ import { CreateBlockRelationshipInput } from './dto/create-block-relationship.in
 import { DeleteBlockRelationshipInput } from './dto/delete-block-relationship.input';
 import { BlockRelationshipResult } from './dto/block-relationship-result.type';
 import { CreateBlockInput } from './dto/create-block.input';
+import { CreateManyBlocksInput } from './dto/create-many-blocks.input';
 import { UpdateBlockInput } from './dto/update-block.input';
+import { CreateManyResult } from '../common/create-many-result.type';
 
 /**
  * GraphQL resolver for block-related operations.
@@ -18,6 +20,16 @@ export class BlocksResolver {
   @Mutation(() => Block)
   createBlock(@Args('createBlockInput') createBlockInput: CreateBlockInput) {
     return this.blocksService.create(createBlockInput);
+  }
+
+  @Mutation(() => CreateManyResult, {
+    name: 'createManyBlocks',
+    description: 'Create multiple blocks in bulk',
+  })
+  createManyBlocks(
+    @Args('input') input: CreateManyBlocksInput,
+  ): Promise<CreateManyResult> {
+    return this.blocksService.createMany(input);
   }
 
   @Query(() => [Block], { name: 'blocks' })

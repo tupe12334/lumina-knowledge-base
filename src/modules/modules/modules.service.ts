@@ -12,6 +12,7 @@ import { CreateModuleRelationshipInput } from './dto/create-module-relationship.
 import { DeleteModuleRelationshipInput } from './dto/delete-module-relationship.input';
 import { ModuleRelationshipResult } from './dto/module-relationship-result.type';
 import { CreateModuleInput } from './dto/create-module.input';
+import { CreateManyModulesInput } from './dto/create-many-modules.input';
 import { UpdateModuleInput } from './dto/update-module.input';
 
 @Injectable()
@@ -389,6 +390,58 @@ export class ModulesService {
     });
   }
 
+  /**
+   * Creates multiple modules in a single transaction.
+   * @param input - The data for creating multiple modules
+   * @returns The number of modules created
+   */
+  async createMany(input: CreateManyModulesInput) {
+    return this.prisma.$transaction(async (prisma) => {
+      let createdCount = 0;
+
+      for (const moduleData of input.modules) {
+        const { en_text, he_text, courseId } = moduleData;
+
+        // Validate that the course exists
+        const course = await prisma.course.findUnique({
+          where: { id: courseId },
+        });
+
+        if (!course) {
+          throw new NotFoundException(`Course with ID ${courseId} not found`);
+        }
+
+        // Create a new translation for the module name
+        const translation = await prisma.translation.create({
+          data: {
+            en_text,
+            he_text,
+          },
+        });
+
+        // Create a new block for the module
+        const block = await prisma.block.create({
+          data: {},
+        });
+
+        // Create the module, linking it to the translation, block, and course
+        await prisma.module.create({
+          data: {
+            translationId: translation.id,
+            blockId: block.id,
+            Course: {
+              connect: { id: courseId },
+            },
+          },
+        });
+
+        createdCount++;
+      }
+
+      return { count: createdCount };
+    });
+  }
+
   async delete(id: string) {
     return this.prisma.module.delete({ where: { id } });
   }
@@ -742,7 +795,9 @@ Postrequisites: ${postrequisites}`;
     }
   }
 
-  async getModulesSummary(): Promise<Array<{ id: string; en_name: string; questions_amount: number }>> {
+  async getModulesSummary(): Promise<
+    Array<{ id: string; en_name: string; questions_amount: number }>
+  > {
     const modules = await this.prisma.module.findMany({
       include: {
         name: true,

@@ -25,6 +25,7 @@ import {
 } from '@nestjs/swagger';
 import { ModulesService } from './modules.service';
 import { CreateModuleInput } from './dto/create-module.input';
+import { CreateManyModulesInput } from './dto/create-many-modules.input';
 import { UpdateModuleInput } from './dto/update-module.input';
 import { ModulesQueryDto } from './dto/modules-query.dto';
 import { CreateModuleRelationshipInput } from './dto/create-module-relationship.input';
@@ -52,10 +53,35 @@ export class ModulesController {
     return this.modulesService.create(createModuleDto);
   }
 
+  @Post('bulk')
+  @ApiOperation({
+    summary: 'Create multiple modules',
+    description: 'Creates multiple module records in a single operation.',
+  })
+  @ApiCreatedResponse({
+    description: 'The number of modules created.',
+    schema: {
+      type: 'object',
+      properties: {
+        count: {
+          type: 'number',
+          description: 'Number of modules created',
+          example: 5,
+        },
+      },
+    },
+  })
+  @ApiResponse({ status: 400, description: 'Bad Request.' })
+  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
+  createMany(@Body() createManyModulesDto: CreateManyModulesInput) {
+    return this.modulesService.createMany(createManyModulesDto);
+  }
+
   @Get('questions-data')
   @ApiOperation({
     summary: 'Get modules questions data',
-    description: 'Returns all modules with id, en_name, and questions_amount, sorted by question count (least questions first).',
+    description:
+      'Returns all modules with id, en_name, and questions_amount, sorted by question count (least questions first).',
   })
   @ApiOkResponse({
     description: 'A list of modules with their question counts.',
