@@ -820,9 +820,29 @@ export class CoursesService {
         )
         .join(', ');
 
-      // Build prerequisites and postrequisites (simplified for now)
-      const prerequisites = 'None';
-      const postrequisites = 'None';
+      // Build prerequisites (courses that are prerequisites for this course)
+      const prerequisites =
+        course.Block?.postrequisiteOf
+          ?.flatMap(
+            (rel) =>
+              rel.prerequisite.Course?.map(
+                (c) => c.name?.en_text || 'No English translation available',
+              ) || [],
+          )
+          .filter((name) => name !== 'No English translation available')
+          .join(', ') || 'None';
+
+      // Build postrequisites (courses that require this course as prerequisite)
+      const postrequisites =
+        course.Block?.prerequisiteFor
+          ?.flatMap(
+            (rel) =>
+              rel.postrequisite.Course?.map(
+                (c) => c.name?.en_text || 'No English translation available',
+              ) || [],
+          )
+          .filter((name) => name !== 'No English translation available')
+          .join(', ') || 'None';
 
       const summary = `Course: ${courseName}
 ID: ${course.id}

@@ -655,10 +655,11 @@ export class ModulesService {
       // Build prerequisites (modules that are prerequisites for this module)
       const prerequisites =
         module.Block?.postrequisiteOf
-          ?.map(
+          ?.flatMap(
             (rel) =>
-              rel.prerequisite.Module[0]?.name?.en_text ||
-              'No English translation available',
+              rel.prerequisite.Module?.map(
+                (m) => m.name?.en_text || 'No English translation available',
+              ) || [],
           )
           .filter((name) => name !== 'No English translation available')
           .join(', ') || 'None';
@@ -666,10 +667,11 @@ export class ModulesService {
       // Build postrequisites (modules that require this module as prerequisite)
       const postrequisites =
         module.Block?.prerequisiteFor
-          ?.map(
+          ?.flatMap(
             (rel) =>
-              rel.postrequisite.Module[0]?.name?.en_text ||
-              'No English translation available',
+              rel.postrequisite.Module?.map(
+                (m) => m.name?.en_text || 'No English translation available',
+              ) || [],
           )
           .filter((name) => name !== 'No English translation available')
           .join(', ') || 'None';
