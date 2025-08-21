@@ -4,7 +4,8 @@
       "Bash(sqlite3:*)",
       "Bash(pnpm test:*)",
       "Bash(pnpm type-check:*)",
-      "Bash(PORT=3000 pnpm run dev)"
+      "Bash(PORT=3000 pnpm run dev)",
+      "Bash(PORT=3001 pnpm run dev)"
     ],
     "deny": [],
     "ask": []
