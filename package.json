@@ -84,6 +84,11 @@
     "typescript-eslint": "^8.39.1",
     "vitest": "^3.2.4"
   },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "packageManager": "pnpm@10.14.0",
   "vitest": {
     "test": {
       "environment": "node",
