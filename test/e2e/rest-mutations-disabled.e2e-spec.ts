@@ -1,5 +1,13 @@
 import { Test } from '@nestjs/testing';
-import { INestApplication, Controller, Get, Post, Put, Delete, Body } from '@nestjs/common';
+import {
+  INestApplication,
+  Controller,
+  Get,
+  Post,
+  Put,
+  Delete,
+  Body,
+} from '@nestjs/common';
 import { APP_GUARD } from '@nestjs/core';
 import request from 'supertest';
 import { env } from '../../src/env';
@@ -35,7 +43,7 @@ describe('REST Mutations Disabled (e2e)', () => {
     env.ENABLE_MUTATIONS = false;
 
     const { MutationsGuard } = await import('../../src/guards/mutations.guard');
-    
+
     const moduleFixture = await Test.createTestingModule({
       controllers: [TestController],
       providers: [
