@@ -15,7 +15,6 @@ export class TranslationsService {
   async createMany(data: CreateManyTranslationsInput) {
     return this.prisma.translation.createMany({
       data: data.translations,
-      skipDuplicates: true,
     });
   }
 

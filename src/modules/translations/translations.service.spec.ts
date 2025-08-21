@@ -66,7 +66,6 @@ describe('TranslationsService', () => {
       );
       expect(prisma.translation.createMany).toHaveBeenCalledWith({
         data: createManyInput.translations,
-        skipDuplicates: true,
       });
     });
   });
