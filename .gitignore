@@ -58,3 +58,6 @@ generated/
 
 # SQLite database files
 *.db-journal
+
+
+tsconfig.build.tsbuildinfo
