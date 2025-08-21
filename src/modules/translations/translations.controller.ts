@@ -20,6 +20,7 @@ import {
 } from '@nestjs/swagger';
 import { TranslationsService } from './translations.service';
 import { CreateTranslationInput } from './dto/create-translation.input';
+import { CreateManyTranslationsInput } from './dto/create-many-translations.input';
 import { UpdateTranslationInput } from './dto/update-translation.input';
 import { Translation } from './models/Translation.entity';
 
@@ -41,6 +42,30 @@ export class TranslationsController {
   @ApiResponse({ status: 500, description: 'Internal Server Error.' })
   create(@Body() createTranslationDto: CreateTranslationInput) {
     return this.translationsService.create(createTranslationDto);
+  }
+
+  @Post('bulk')
+  @ApiOperation({
+    summary: 'Create multiple translations',
+    description: 'Creates multiple translation records in a single operation.',
+  })
+  @ApiCreatedResponse({
+    description: 'The number of translations created.',
+    schema: {
+      type: 'object',
+      properties: {
+        count: {
+          type: 'number',
+          description: 'Number of translations created',
+          example: 5,
+        },
+      },
+    },
+  })
+  @ApiResponse({ status: 400, description: 'Bad Request.' })
+  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
+  createMany(@Body() createManyTranslationsDto: CreateManyTranslationsInput) {
+    return this.translationsService.createMany(createManyTranslationsDto);
   }
 
   @Get()

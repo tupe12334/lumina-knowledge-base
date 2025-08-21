@@ -115,7 +115,9 @@ export class ModulesQueryDto {
   })
   hasParentModules?: boolean;
 
-  @ApiPropertyOptional({ description: 'Filter modules with fewer than 20 questions' })
+  @ApiPropertyOptional({
+    description: 'Filter modules with fewer than 20 questions',
+  })
   @IsOptional()
   @IsBoolean()
   @Type(() => Boolean)

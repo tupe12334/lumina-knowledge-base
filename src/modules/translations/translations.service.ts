@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from '../../prisma/prisma.service';
 import { CreateTranslationInput } from './dto/create-translation.input';
+import { CreateManyTranslationsInput } from './dto/create-many-translations.input';
 import { UpdateTranslationInput } from './dto/update-translation.input';
 
 @Injectable()
@@ -9,6 +10,13 @@ export class TranslationsService {
 
   async create(data: CreateTranslationInput) {
     return this.prisma.translation.create({ data });
+  }
+
+  async createMany(data: CreateManyTranslationsInput) {
+    return this.prisma.translation.createMany({
+      data: data.translations,
+      skipDuplicates: true,
+    });
   }
 
   async findAll() {

@@ -12,6 +12,7 @@ describe('TranslationsService', () => {
     prisma = {
       translation: {
         create: vi.fn(),
+        createMany: vi.fn(),
         findMany: vi.fn(),
         findUnique: vi.fn(),
         update: vi.fn(),
@@ -43,6 +44,29 @@ describe('TranslationsService', () => {
       );
       expect(prisma.translation.create).toHaveBeenCalledWith({
         data: createTranslationInput,
+      });
+    });
+  });
+
+  describe('createMany', () => {
+    it('should create multiple translations', async () => {
+      const createManyInput = {
+        translations: [
+          { en_text: 'Hello', he_text: 'שלום' },
+          { en_text: 'World', he_text: 'עולם' },
+        ],
+      };
+      const expectedResult = { count: 2 };
+      vi.spyOn(prisma.translation, 'createMany').mockResolvedValue(
+        expectedResult,
+      );
+
+      await expect(service.createMany(createManyInput)).resolves.toEqual(
+        expectedResult,
+      );
+      expect(prisma.translation.createMany).toHaveBeenCalledWith({
+        data: createManyInput.translations,
+        skipDuplicates: true,
       });
     });
   });

@@ -1149,7 +1149,6 @@
             "name": "minQuestions",
             "required": false,
             "in": "query",
-            "description": "Filter modules by minimum number of questions",
             "schema": {
               "type": "number"
             }
@@ -1158,7 +1157,6 @@
             "name": "maxQuestions",
             "required": false,
             "in": "query",
-            "description": "Filter modules by maximum number of questions",
             "schema": {
               "type": "number"
             }
@@ -1167,7 +1165,6 @@
             "name": "exactQuestions",
             "required": false,
             "in": "query",
-            "description": "Filter modules by exact number of questions",
             "schema": {
               "type": "number"
             }
@@ -1176,7 +1173,6 @@
             "name": "courseId",
             "required": false,
             "in": "query",
-            "description": "Filter modules by course ID",
             "schema": {
               "type": "string"
             }
@@ -1185,7 +1181,6 @@
             "name": "universityId",
             "required": false,
             "in": "query",
-            "description": "Filter modules by university ID",
             "schema": {
               "type": "string"
             }
@@ -1194,7 +1189,6 @@
             "name": "nameSearch",
             "required": false,
             "in": "query",
-            "description": "Search modules by name (partial match, case insensitive)",
             "schema": {
               "type": "string"
             }
@@ -1203,7 +1197,6 @@
             "name": "hasQuestions",
             "required": false,
             "in": "query",
-            "description": "Filter modules that have questions",
             "schema": {
               "type": "boolean"
             }
@@ -1212,7 +1205,6 @@
             "name": "hasPrerequisites",
             "required": false,
             "in": "query",
-            "description": "Filter modules that have prerequisites",
             "schema": {
               "type": "boolean"
             }
@@ -1221,7 +1213,6 @@
             "name": "hasPostrequisites",
             "required": false,
             "in": "query",
-            "description": "Filter modules that have postrequisites",
             "schema": {
               "type": "boolean"
             }
@@ -1230,7 +1221,6 @@
             "name": "hasSubModules",
             "required": false,
             "in": "query",
-            "description": "Filter modules that have sub-modules",
             "schema": {
               "type": "boolean"
             }
@@ -1239,7 +1229,6 @@
             "name": "hasParentModules",
             "required": false,
             "in": "query",
-            "description": "Filter modules that have parent modules",
             "schema": {
               "type": "boolean"
             }

@@ -26,7 +26,7 @@ import {
 import { ModulesService } from './modules.service';
 import { CreateModuleInput } from './dto/create-module.input';
 import { UpdateModuleInput } from './dto/update-module.input';
-import { ModulesQueryInput } from './dto/modules-query.input';
+import { ModulesQueryDto } from './dto/modules-query.dto';
 import { CreateModuleRelationshipInput } from './dto/create-module-relationship.input';
 import { DeleteModuleRelationshipInput } from './dto/delete-module-relationship.input';
 import { Module } from './models/Module.entity';
@@ -63,8 +63,54 @@ export class ModulesController {
     description: 'A list of modules.',
   })
   @ApiResponse({ status: 500, description: 'Internal Server Error.' })
-  findAll(@Query() query: ModulesQueryInput) {
-    return this.modulesService.findAll(query);
+  findAll(@Query() query: ModulesQueryDto) {
+    console.log(
+      'DEBUG: Controller received query:',
+      JSON.stringify(query, null, 2),
+    );
+    console.log(
+      'DEBUG: fewQuestions type:',
+      typeof query.fewQuestions,
+      'value:',
+      query.fewQuestions,
+    );
+
+    // Create a converted query object to handle string to boolean conversion
+    const convertedQuery = { ...query };
+
+    if (typeof query.fewQuestions === 'string') {
+      (convertedQuery as any).fewQuestions =
+        (query.fewQuestions as string).toLowerCase() === 'true';
+    }
+    if (typeof query.hasQuestions === 'string') {
+      (convertedQuery as any).hasQuestions =
+        (query.hasQuestions as string).toLowerCase() === 'true';
+    }
+    if (typeof query.hasPrerequisites === 'string') {
+      (convertedQuery as any).hasPrerequisites =
+        (query.hasPrerequisites as string).toLowerCase() === 'true';
+    }
+    if (typeof query.hasPostrequisites === 'string') {
+      (convertedQuery as any).hasPostrequisites =
+        (query.hasPostrequisites as string).toLowerCase() === 'true';
+    }
+    if (typeof query.hasSubModules === 'string') {
+      (convertedQuery as any).hasSubModules =
+        (query.hasSubModules as string).toLowerCase() === 'true';
+    }
+    if (typeof query.hasParentModules === 'string') {
+      (convertedQuery as any).hasParentModules =
+        (query.hasParentModules as string).toLowerCase() === 'true';
+    }
+
+    console.log(
+      'DEBUG: After conversion - fewQuestions type:',
+      typeof convertedQuery.fewQuestions,
+      'value:',
+      convertedQuery.fewQuestions,
+    );
+
+    return this.modulesService.findAll(convertedQuery);
   }
 
   @Get(':id')
