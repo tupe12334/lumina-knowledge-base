@@ -13,6 +13,7 @@ CREATE TABLE IF NOT EXISTS "_prisma_migrations" (
 INSERT INTO _prisma_migrations VALUES('0e99c277-4c9f-4c3c-955f-2e65c26c5c19','a74c67e51be21cbdf187094df092c1f730fd8b5e2a73f3d46e452d6b45e6f082',1755038254740,'20250806151822_init',NULL,NULL,1755038254733,1);
 INSERT INTO _prisma_migrations VALUES('a20865be-ac78-4468-893b-3fb5ff61edca','6cbb896effb94f66340e3fde6e917cd6090114b0df239d9159f0e0facb20a4b3',1755267929425,'20250815142529_add_degree_faculty_relation',NULL,NULL,1755267929423,1);
 INSERT INTO _prisma_migrations VALUES('43942327-c0c9-40a9-aa3b-b193c3e3cef3','423322b09f551e35201203ded9d9604ad7a15afb77146004b4114374975b10a2',1755458281242,'20250817191801_remove_learning_resources',NULL,NULL,1755458281236,1);
+INSERT INTO _prisma_migrations VALUES('daa98cea-2047-4064-aa15-56ca915f6c1d','41b000ece50df11a6afa166ddfb2154bfb6075723d9dd70e763cd6863e94b614',1755787509073,'20250821114951_remove_translation_constraint','',NULL,1755787509073,0);
 CREATE TABLE IF NOT EXISTS "University" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "translationId" TEXT NOT NULL,
@@ -1792,6 +1793,15 @@ INSERT INTO Translation VALUES('ec4e8cf4-b46f-45e2-aaaa-12c6dcc6e0ef','Discrete 
 INSERT INTO Translation VALUES('9a86f359-eaa2-4130-a7d6-7fea5650317b','מתמטיקה בדידה 1','מתמטיקה בדידה 1');
 INSERT INTO Translation VALUES('c155903b-a57c-44f5-bb8e-9321cc9287a1','מתמטיקה בדידה 2','מתמטיקה בדידה 2');
 INSERT INTO Translation VALUES('4a999730-bc37-44af-b3b3-1f54bcc16c04','Infinitesimal Calculus 2','חשבון אינפיניטסימלי 2');
+INSERT INTO Translation VALUES('aa5230d9-2b64-4b13-bad7-b0f4f03c968c','A car travels 120 km in 2 hours. What is its average velocity?','מכונית נוסעת 120 ק״מ ב-2 שעות. מה המהירות הממוצעת שלה?');
+INSERT INTO Translation VALUES('a0d39482-f60f-4a30-babf-a04dfaf71e50','A person walks 3 km east, then 4 km north. If the total time taken is 1.5 hours, what is the average velocity (magnitude and direction)?','אדם הולך 3 ק״מ מזרחה, ואז 4 ק״מ צפונה. אם הזמן הכולל שנדרש הוא 1.5 שעות, מה המהירות הממוצעת (גודל וכיוון)?');
+INSERT INTO Translation VALUES('bf50e9e0-f65a-4d13-a166-5fdd8e368497','A particle moves along a parabolic path described by y = x²/4 from (0,0) to (4,4). If it takes 8 seconds to complete this motion, find the average velocity vector and compare it to the average speed.','חלקיק נע לאורך מסלול פרבולי המתואר על ידי y = x²/4 מ-(0,0) ל-(4,4). אם נדרשות 8 שניות להשלמת תנועה זו, מצא את וקטור המהירות הממוצעת והשווה אותו למהירות הממוצעת.');
+INSERT INTO Translation VALUES('b08e3ad1-3823-4915-805d-9f8c6bc4561a','The position of a particle is given by x(t) = 3t² + 2t. Find the instantaneous velocity at t = 2 seconds.','מיקום של חלקיק נתון על ידי x(t) = 3t² + 2t. מצא את המהירות הרגעית ב-t = 2 שניות.');
+INSERT INTO Translation VALUES('c72aed52-c961-4ada-bcf3-79ea35c39f3c','A ball is thrown vertically upward with position y(t) = 20t - 5t². Find the instantaneous velocity when the ball reaches its maximum height.','כדור נזרק אנכית כלפי מעלה עם מיקום y(t) = 20t - 5t². מצא את המהירות הרגעית כשהכדור מגיע לגובה המרבי שלו.');
+INSERT INTO Translation VALUES('f27921f6-0c8f-4ba4-a21b-7cc610888e59','For a particle moving in 2D with position vector r(t) = (t³ - 3t, 2t² + t), find the instantaneous velocity and its magnitude at t = 1.','עבור חלקיק הנע במישור דו ממדי עם וקטור מיקום r(t) = (t³ - 3t, 2t² + t), מצא את המהירות הרגעית ואת הגודל שלה ב-t = 1.');
+INSERT INTO Translation VALUES('ee224276-8645-4149-b427-4d2b95174166','Looking at a position vs. time graph, if the line has a slope of 5 m/s between t=0 and t=4s, what is the displacement during this time interval?','כשמסתכלים על גרף מיקום לעומת זמן, אם לקו יש שיפוע של 5 מ/ש בין t=0 ו-t=4 שניות, מה העקירה במהלך רווח זמן זה?');
+INSERT INTO Translation VALUES('38da4a50-d1ef-4201-9c79-070be4badb3c','A velocity vs. time graph shows a parabolic curve v(t) = 2t². Calculate the area under the curve from t=0 to t=3s and explain its physical meaning.','גרף מהירות לעומת זמן מראה עקומה פרבולית v(t) = 2t². חשב את השטח מתחת לעקומה מ-t=0 עד t=3 שניות והסבר את המשמעות הפיזיקלית שלו.');
+INSERT INTO Translation VALUES('f72561ef-1a5c-4e23-a799-585847048871','Analyze a complex acceleration vs. time graph with three distinct regions: constant positive acceleration (0-2s), zero acceleration (2-5s), and sinusoidal acceleration (5-8s). Determine the velocity and displacement functions for each region.','נתח גרף תאוצה לעומת זמן מורכב עם שלושה אזורים נפרדים: תאוצה חיובית קבועה (0-2 ש), אפס תאוצה (2-5 ש), ותאוצה סינוסואידית (5-8 ש). קבע את פונקציות המהירות והעקירה עבור כל אזור.');
 CREATE TABLE IF NOT EXISTS "Question" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "validationStatus" TEXT NOT NULL DEFAULT 'ai_generated',
@@ -2088,6 +2098,15 @@ INSERT INTO Question VALUES('a717d79d-5a37-4bb6-a876-bb66b611178f','ai_generated
 INSERT INTO Question VALUES('091c829c-9f64-4206-b18a-a10f438c4a35','ai_generated','dee66e0f-60b1-40aa-832a-1106870a039c','selection');
 INSERT INTO Question VALUES('3868f16c-c4e5-4df1-9c2e-eeafe926473d','ai_generated','cb8ad153-c31b-4e22-91f6-c5e9e6f4637a','selection');
 INSERT INTO Question VALUES('0b289b7e-74f3-48af-8096-aa5601fceb1a','ai_generated','480ca700-a7ce-43a5-a81f-19ff3461f4b9','value');
+INSERT INTO Question VALUES('bd30bee1-2d4b-4fe0-a475-e3b88f00e200','ai_generated','aa5230d9-2b64-4b13-bad7-b0f4f03c968c','value');
+INSERT INTO Question VALUES('49e9a6e8-f5a3-4d68-9fc3-ca294b0d77d9','ai_generated','a0d39482-f60f-4a30-babf-a04dfaf71e50','value');
+INSERT INTO Question VALUES('93614402-9a34-470e-bcda-254a45067962','ai_generated','bf50e9e0-f65a-4d13-a166-5fdd8e368497','value');
+INSERT INTO Question VALUES('65beb059-173d-4f9d-8352-f8b6012bd0a8','ai_generated','b08e3ad1-3823-4915-805d-9f8c6bc4561a','value');
+INSERT INTO Question VALUES('479a28f7-3630-4bb4-b311-f4b24b975e50','ai_generated','c72aed52-c961-4ada-bcf3-79ea35c39f3c','value');
+INSERT INTO Question VALUES('aa698893-1ec2-4209-b323-babc641e56b5','ai_generated','f27921f6-0c8f-4ba4-a21b-7cc610888e59','value');
+INSERT INTO Question VALUES('d868149c-d119-43de-be07-eb9c5cc0eb09','ai_generated','ee224276-8645-4149-b427-4d2b95174166','value');
+INSERT INTO Question VALUES('d98c7836-1dc0-43f4-a09b-3a4b4ffbadcb','ai_generated','38da4a50-d1ef-4201-9c79-070be4badb3c','value');
+INSERT INTO Question VALUES('5be15daf-aa8a-4740-8b84-c55f01398dcd','ai_generated','f72561ef-1a5c-4e23-a799-585847048871','value');
 CREATE TABLE IF NOT EXISTS "QuestionPart" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "questionId" TEXT NOT NULL,
@@ -2396,6 +2415,15 @@ INSERT INTO Answer VALUES('09fd1b99-ecf4-46e4-ad20-4ecaab1654ac','a717d79d-5a37-
 INSERT INTO Answer VALUES('495d6418-471c-4b5e-92b9-f7ad44a1eeaa','091c829c-9f64-4206-b18a-a10f438c4a35');
 INSERT INTO Answer VALUES('df5c4ed7-7109-4c20-88dd-87e05833d16f','3868f16c-c4e5-4df1-9c2e-eeafe926473d');
 INSERT INTO Answer VALUES('05fe080d-0020-4f11-828e-0aa87dfe2cdd','0b289b7e-74f3-48af-8096-aa5601fceb1a');
+INSERT INTO Answer VALUES('39926ca3-a705-48b5-a8de-1d6e8c84656f','bd30bee1-2d4b-4fe0-a475-e3b88f00e200');
+INSERT INTO Answer VALUES('893bc709-6a9f-42d6-b707-be1de80c2b85','49e9a6e8-f5a3-4d68-9fc3-ca294b0d77d9');
+INSERT INTO Answer VALUES('9239582c-f860-4e6a-9aa5-72ae93477721','93614402-9a34-470e-bcda-254a45067962');
+INSERT INTO Answer VALUES('b86f3b10-e2e7-43f8-a613-e1bcc8562d68','65beb059-173d-4f9d-8352-f8b6012bd0a8');
+INSERT INTO Answer VALUES('1a5523c3-a61f-475a-b8af-ae822b8cdb97','479a28f7-3630-4bb4-b311-f4b24b975e50');
+INSERT INTO Answer VALUES('ee3fad8a-b1f9-4c15-b15b-7b751c7ebee8','aa698893-1ec2-4209-b323-babc641e56b5');
+INSERT INTO Answer VALUES('066ea373-5fc9-47cd-b509-9633f4120942','d868149c-d119-43de-be07-eb9c5cc0eb09');
+INSERT INTO Answer VALUES('ecc572fe-b92b-44da-bb85-43170e4213f7','d98c7836-1dc0-43f4-a09b-3a4b4ffbadcb');
+INSERT INTO Answer VALUES('3267c606-b550-4e5c-8ad1-009bf4c4a67b','5be15daf-aa8a-4740-8b84-c55f01398dcd');
 CREATE TABLE IF NOT EXISTS "SelectAnswer" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "isCorrect" BOOLEAN NOT NULL,
@@ -2863,6 +2891,15 @@ INSERT INTO NumberAnswer VALUES('2a354966-d47e-440a-9898-68d7618856b2',0.0,'ab95
 INSERT INTO NumberAnswer VALUES('96042ca2-8396-4f48-a4b3-460b4d8a3fc6',6.0,'0f71ce99-a90d-48ca-946d-c62708cf80f6');
 INSERT INTO NumberAnswer VALUES('57c6160e-d3f9-4099-af99-7f745cce66f1',-3.0,'d217eb00-074c-4ab2-86cd-1ecafcb97757');
 INSERT INTO NumberAnswer VALUES('b1579129-af23-4151-8a98-6ad102763cdf',-10.0,'56af6c05-db48-499c-b32d-174dcafe76a8');
+INSERT INTO NumberAnswer VALUES('3a922dd0-39ff-4491-b1de-b5007bf1c0f5',60.0,'39926ca3-a705-48b5-a8de-1d6e8c84656f');
+INSERT INTO NumberAnswer VALUES('53d839a7-c796-4848-a6d4-bd3e78b96246',3.330000000000000071,'893bc709-6a9f-42d6-b707-be1de80c2b85');
+INSERT INTO NumberAnswer VALUES('83b64bda-ddec-4b75-9718-7c9c8e268177',0.5,'9239582c-f860-4e6a-9aa5-72ae93477721');
+INSERT INTO NumberAnswer VALUES('5e33a7b8-cd63-465d-812f-7e50faafedad',14.0,'b86f3b10-e2e7-43f8-a613-e1bcc8562d68');
+INSERT INTO NumberAnswer VALUES('022a067c-46d2-4977-9d28-2dda13ba1d02',0.0,'1a5523c3-a61f-475a-b8af-ae822b8cdb97');
+INSERT INTO NumberAnswer VALUES('2fc7964e-5bf0-4156-84e7-0f7e97ef53c8',5.0,'ee3fad8a-b1f9-4c15-b15b-7b751c7ebee8');
+INSERT INTO NumberAnswer VALUES('4c6e60c1-6dfa-4e57-b5a7-77e7479bb51a',20.0,'066ea373-5fc9-47cd-b509-9633f4120942');
+INSERT INTO NumberAnswer VALUES('7729f766-16b3-4ab6-9234-a26bf8059bca',18.0,'ecc572fe-b92b-44da-bb85-43170e4213f7');
+INSERT INTO NumberAnswer VALUES('5e095cf9-7bd4-4254-ad0d-0a9689b7a19c',3.0,'3267c606-b550-4e5c-8ad1-009bf4c4a67b');
 CREATE TABLE IF NOT EXISTS "_CourseModules" (
     "A" TEXT NOT NULL,
     "B" TEXT NOT NULL,
@@ -3457,6 +3494,15 @@ INSERT INTO _ModuleToQuestion VALUES('0030cff5-5c9c-48db-ba6c-1c8fe12b9f7b','a71
 INSERT INTO _ModuleToQuestion VALUES('0030cff5-5c9c-48db-ba6c-1c8fe12b9f7b','091c829c-9f64-4206-b18a-a10f438c4a35');
 INSERT INTO _ModuleToQuestion VALUES('62e38ada-eb92-4a9c-bd52-943f6ed49b17','3868f16c-c4e5-4df1-9c2e-eeafe926473d');
 INSERT INTO _ModuleToQuestion VALUES('7f7b0380-8d2d-45f2-9a8a-645755fadf42','0b289b7e-74f3-48af-8096-aa5601fceb1a');
+INSERT INTO _ModuleToQuestion VALUES('240c2395-db81-48fb-9f3a-e39081da6b9f','bd30bee1-2d4b-4fe0-a475-e3b88f00e200');
+INSERT INTO _ModuleToQuestion VALUES('240c2395-db81-48fb-9f3a-e39081da6b9f','49e9a6e8-f5a3-4d68-9fc3-ca294b0d77d9');
+INSERT INTO _ModuleToQuestion VALUES('240c2395-db81-48fb-9f3a-e39081da6b9f','93614402-9a34-470e-bcda-254a45067962');
+INSERT INTO _ModuleToQuestion VALUES('4d32cda4-d5c6-4165-a987-a35b313e148e','65beb059-173d-4f9d-8352-f8b6012bd0a8');
+INSERT INTO _ModuleToQuestion VALUES('4d32cda4-d5c6-4165-a987-a35b313e148e','479a28f7-3630-4bb4-b311-f4b24b975e50');
+INSERT INTO _ModuleToQuestion VALUES('4d32cda4-d5c6-4165-a987-a35b313e148e','aa698893-1ec2-4209-b323-babc641e56b5');
+INSERT INTO _ModuleToQuestion VALUES('435bd8ba-3c4c-474d-9d04-3d55cbab9d6f','d868149c-d119-43de-be07-eb9c5cc0eb09');
+INSERT INTO _ModuleToQuestion VALUES('435bd8ba-3c4c-474d-9d04-3d55cbab9d6f','d98c7836-1dc0-43f4-a09b-3a4b4ffbadcb');
+INSERT INTO _ModuleToQuestion VALUES('435bd8ba-3c4c-474d-9d04-3d55cbab9d6f','5be15daf-aa8a-4740-8b84-c55f01398dcd');
 CREATE TABLE IF NOT EXISTS "Degree" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "translationId" TEXT NOT NULL,
