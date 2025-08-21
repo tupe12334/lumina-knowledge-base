@@ -17,7 +17,7 @@ import { env } from '../env';
 @Injectable()
 export class MutationsGuard implements CanActivate {
   canActivate(context: ExecutionContext): boolean {
-    const contextType = context.getType();
+    const contextType = context.getType<string>();
 
     if (contextType === 'graphql') {
       return this.handleGraphQLRequest(context);
@@ -50,7 +50,7 @@ export class MutationsGuard implements CanActivate {
 
   private handleHTTPRequest(context: ExecutionContext): boolean {
     const request = context.switchToHttp().getRequest();
-    const method = request.method?.toLowerCase();
+    const method = (request as { method?: string }).method?.toLowerCase();
 
     // Allow GET requests and other safe methods
     if (method === 'get' || method === 'head' || method === 'options') {
@@ -58,7 +58,12 @@ export class MutationsGuard implements CanActivate {
     }
 
     // Block mutation methods when mutations are disabled
-    if (method === 'post' || method === 'put' || method === 'delete' || method === 'patch') {
+    if (
+      method === 'post' ||
+      method === 'put' ||
+      method === 'delete' ||
+      method === 'patch'
+    ) {
       if (!env.ENABLE_MUTATIONS) {
         throw new ForbiddenException(
           'Mutations are disabled. Set ENABLE_MUTATIONS=true in environment variables to enable them.',
