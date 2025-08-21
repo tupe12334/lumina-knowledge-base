@@ -18,8 +18,7 @@ RUN pnpm install --frozen-lockfile
 COPY . .
 
 # Generate Prisma client for linux and build the app
-RUN cd apps/knowledge-base \
-    && pnpm exec prisma generate \
+RUN pnpm exec prisma generate \
     && pnpm run build
 
 # ---- Runtime image ----
@@ -39,10 +38,10 @@ WORKDIR /app
 
 # Copy only what we need to run
 COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/apps/knowledge-base/dist ./dist
-COPY --from=builder /app/apps/knowledge-base/prisma ./prisma
-COPY --from=builder /app/apps/knowledge-base/generated ./generated
-COPY --from=builder /app/apps/knowledge-base/package.json ./package.json
+COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/prisma ./prisma
+COPY --from=builder /app/generated ./generated
+COPY --from=builder /app/package.json ./package.json
 
 # Ensure the SQLite file directory exists (created at runtime if missing)
 RUN mkdir -p /app/prisma
