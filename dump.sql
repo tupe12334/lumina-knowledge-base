@@ -2176,6 +2176,39 @@ INSERT INTO Translation VALUES('00976d16-7285-47d7-adda-522484a84163','The avera
 INSERT INTO Translation VALUES('aff0805a-4967-488b-95b7-eb49b87af3dd','The derivative of a function','הנגזרת של פונקציה');
 INSERT INTO Translation VALUES('6bfb008e-a2fe-4ba2-9e42-5f05dda59f2b','dy/dx = (y - x²)/(y² - x)','dy/dx = (y - x²)/(y² - x)');
 INSERT INTO Translation VALUES('067d76aa-5fb4-4c1b-95a6-e9efe7b866b2','x·eˣ - eˣ + C = eˣ(x - 1) + C','x·eˣ - eˣ + C = eˣ(x - 1) + C');
+INSERT INTO Translation VALUES('5b729672-3b48-402c-a97a-7e0a65154b16','What is the fundamental theorem of calculus?','מהו המשפט היסודי של החשבון האינטגרלי?');
+INSERT INTO Translation VALUES('2a795afe-2679-46cd-988a-8f28c70aa1ef','Calculate the definite integral of f(x) = x² from 0 to 3','חשב את האינטגרל המסוים של f(x) = x² מ-0 עד 3');
+INSERT INTO Translation VALUES('4c3dd365-376e-4c1f-b932-38761c44818e','Find the area under the curve y = 2x + 1 from x = 1 to x = 4','מצא את השטח מתחת לעקומה y = 2x + 1 מ-x = 1 עד x = 4');
+INSERT INTO Translation VALUES('1d2d24a9-b06a-41e0-8bd9-3e1f60dd2df4','What is the relationship between upper sums and lower sums?','מה הקשר בין סכומים עליונים וסכומים תחתונים?');
+INSERT INTO Translation VALUES('2d9ff69a-c791-4a4b-9116-b1f7ac9a0513','For a bounded function f on [a,b], the upper sum is always greater than or equal to the lower sum','עבור פונקציה חסומה f על [a,b], הסכום העליון תמיד גדול או שווה לסכום התחתון');
+INSERT INTO Translation VALUES('cd2c5d52-af3f-4607-9292-d1a54b4acdb2','Calculate ∫(2x + 3)dx using integration by parts','חשב ∫(2x + 3)dx באמצעות אינטגרציה בחלקים');
+INSERT INTO Translation VALUES('b2e9ac1e-b2d2-4404-8e6c-a3c5c65a5552','Find dy/dx for the implicit function x² + y² = 25','מצא dy/dx עבור הפונקציה הסמויה x² + y² = 25');
+INSERT INTO Translation VALUES('afe33dda-a663-4afb-82b9-ceaaa245811d','State the implicit function theorem','נסח את משפט הפונקציה הסמויה');
+INSERT INTO Translation VALUES('cf3366b9-7316-400e-8b55-8ddebd789442','Which differentiation technique would you use for f(x) = ln(sin(x))?','איזו שיטת גזירה תשתמש עבור f(x) = ln(sin(x))?');
+INSERT INTO Translation VALUES('3c5d9d38-0c64-4bf8-af81-473689900b5e','The chain rule','כלל השרשרת');
+INSERT INTO Translation VALUES('1fd72a72-7777-449d-8472-4bc798077865','What is the fundamental theorem of calculus?','מהו המשפט היסודי של החשבון האינטגרלי?');
+INSERT INTO Translation VALUES('b7e0777e-b648-4bbc-b0b9-e0521c26c382','Calculate the definite integral of f(x) = x² from 0 to 3','חשב את האינטגרל המסוים של f(x) = x² מ-0 עד 3');
+INSERT INTO Translation VALUES('af8230c1-e3a3-44f1-8209-24697318ba28','Find the area under the curve y = 2x + 1 from x = 1 to x = 4','מצא את השטח מתחת לעקומה y = 2x + 1 מ-x = 1 עד x = 4');
+INSERT INTO Translation VALUES('f278eba9-3d74-4bc0-9372-187928525834','What is the relationship between upper sums and lower sums?','מה הקשר בין סכומים עליונים וסכומים תחתונים?');
+INSERT INTO Translation VALUES('eaaff878-8b8b-475e-8a00-06cb314f2ff1','For a bounded function f on [a,b], the upper sum is always greater than or equal to the lower sum','עבור פונקציה חסומה f על [a,b], הסכום העליון תמיד גדול או שווה לסכום התחתון');
+INSERT INTO Translation VALUES('fe0b16e9-9b3b-42bb-98ee-ac666511d799','Find dy/dx for the implicit function x² + y² = 25','מצא dy/dx עבור הפונקציה הסמויה x² + y² = 25');
+INSERT INTO Translation VALUES('5b74de7a-730d-4c82-83e5-981774bbfebe','State the implicit function theorem','נסח את משפט הפונקציה הסמויה');
+INSERT INTO Translation VALUES('3e19932c-3520-41d4-ace8-3e24c15d3068','Which differentiation technique would you use for f(x) = ln(sin(x))?','איזו שיטת גזירה תשתמש עבור f(x) = ln(sin(x))?');
+INSERT INTO Translation VALUES('72340cb9-6503-477f-af75-d9a687694c2d','The chain rule','כלל השרשרת');
+INSERT INTO Translation VALUES('ab3460ea-ce70-4b65-81da-7fa11b2ffeb3','Calculate ∫x²dx from 0 to 3','חשב ∫x²dx מ-0 עד 3');
+INSERT INTO Translation VALUES('7355cac6-d624-4c07-af8d-bcffec9ed99f','9','9');
+INSERT INTO Translation VALUES('f4ee4482-aa3e-4714-9577-d97a4f375d9d','Product rule','כלל המכפלה');
+INSERT INTO Translation VALUES('67837193-3b55-4f4f-9496-dbb47c026c3b','Power rule','כלל החזקה');
+INSERT INTO Translation VALUES('200dc574-31ca-4dd7-95af-b2970b6cd0f5','Chain rule','כלל השרשרת');
+INSERT INTO Translation VALUES('cdbe54f4-eaf8-406e-bf33-67fa8bc3cf9b','Quotient rule','כלל המנה');
+INSERT INTO Translation VALUES('07d66631-9977-4a03-8876-25f04cad0478','-2x/y','-2x/y');
+INSERT INTO Translation VALUES('b1754d9f-0232-4d15-aaf8-2858e7a9704d','What is the derivative of x³?','מהי הנגזרת של x³?');
+INSERT INTO Translation VALUES('cfea1f54-f3ce-42f9-893b-595aff360b7f','Evaluate ∫(3x² + 2x)dx','חשב ∫(3x² + 2x)dx');
+INSERT INTO Translation VALUES('f6187e5c-1acd-44e1-b272-6df52a03e3c9','What is a bounded function?','מהי פונקציה חסומה?');
+INSERT INTO Translation VALUES('caa02498-7f2c-4fc2-b7b7-6009ece00e6a','Calculate the upper sum for f(x) = x² on [0,2] with n=4 intervals','חשב את הסכום העליון עבור f(x) = x² על [0,2] עם n=4 מרווחים');
+INSERT INTO Translation VALUES('d65e1c62-d515-4ca1-85d4-073b1c0af35c','Find ∫xe^x dx using integration by parts','מצא ∫xe^x dx באמצעות אינטגרציה בחלקים');
+INSERT INTO Translation VALUES('52bdede2-3880-4441-af5b-68b4995fa0db','3x²','3x²');
+INSERT INTO Translation VALUES('f05f8062-4e9a-474b-b9b6-dc682a65f962','x³ + x² + C','x³ + x² + C');
 CREATE TABLE IF NOT EXISTS "Question" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "validationStatus" TEXT NOT NULL DEFAULT 'ai_generated',
@@ -2606,6 +2639,15 @@ INSERT INTO Question VALUES('0e480b4b-a774-4427-bada-4ef6a620ae6e','ai_generated
 INSERT INTO Question VALUES('76b7f25d-f8b4-42e6-907b-e49b33a7a36b','ai_generated','9ffa6e44-0131-4dde-9781-8647f64ec382','selection');
 INSERT INTO Question VALUES('06889a7f-f1bd-4809-a281-87e34c675a85','ai_generated','4281fefe-9625-4c77-aae2-c601af698c5b','value');
 INSERT INTO Question VALUES('169770cc-0371-47e2-9e29-2c01500d1f7a','ai_generated','710faafd-d926-4549-beae-717247c8d589','selection');
+INSERT INTO Question VALUES('1fcdeb94-16a0-4878-95d8-1f8aa0e7bf27','ai_generated','ab3460ea-ce70-4b65-81da-7fa11b2ffeb3','value');
+INSERT INTO Question VALUES('c5442383-3e05-492d-80f4-7aff0a990c67','ai_generated','3e19932c-3520-41d4-ace8-3e24c15d3068','selection');
+INSERT INTO Question VALUES('87b71f8b-3516-4d9c-9b0c-85411ea5b08d','ai_generated','fe0b16e9-9b3b-42bb-98ee-ac666511d799','value');
+INSERT INTO Question VALUES('238239e2-538f-4cbd-8478-9f22fff96b72','ai_generated','5b74de7a-730d-4c82-83e5-981774bbfebe','void');
+INSERT INTO Question VALUES('bb48fcaf-1646-44c8-81fb-5b4efe6b13f5','ai_generated','b1754d9f-0232-4d15-aaf8-2858e7a9704d','selection');
+INSERT INTO Question VALUES('ccff4eb0-9057-4d7f-aff6-704a06670127','ai_generated','cfea1f54-f3ce-42f9-893b-595aff360b7f','selection');
+INSERT INTO Question VALUES('0abe1d55-e29e-44af-bf00-9196232b08f7','ai_generated','f6187e5c-1acd-44e1-b272-6df52a03e3c9','void');
+INSERT INTO Question VALUES('cb45d708-94af-4e0e-9074-09c7340f0481','ai_generated','caa02498-7f2c-4fc2-b7b7-6009ece00e6a','value');
+INSERT INTO Question VALUES('82b6fa61-435d-43fb-a622-7fc3c8158e89','ai_generated','d65e1c62-d515-4ca1-85d4-073b1c0af35c','selection');
 CREATE TABLE IF NOT EXISTS "QuestionPart" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "questionId" TEXT NOT NULL,
@@ -3012,6 +3054,9 @@ INSERT INTO Answer VALUES('fbbfe99a-13a0-46b1-85c3-077d1c968b44','26176ddc-9a0d-
 INSERT INTO Answer VALUES('5e12aa55-ccc2-4741-9975-de384acbaf86','613ab5a3-6a19-4464-b8b0-8edf79f15df4');
 INSERT INTO Answer VALUES('31039eb0-2dc9-4f77-a10b-8c9dd36bd700','76b7f25d-f8b4-42e6-907b-e49b33a7a36b');
 INSERT INTO Answer VALUES('995f74d8-2c56-40ed-8506-435b8fe95d3a','169770cc-0371-47e2-9e29-2c01500d1f7a');
+INSERT INTO Answer VALUES('23262996-5171-457f-add9-6c48a79dc0ef','87b71f8b-3516-4d9c-9b0c-85411ea5b08d');
+INSERT INTO Answer VALUES('f1fcf764-b6c5-4da9-a277-95a4bb2c4fc2','c5442383-3e05-492d-80f4-7aff0a990c67');
+INSERT INTO Answer VALUES('350b95bc-160d-40a2-96d4-0f966bb9f049','1fcdeb94-16a0-4878-95d8-1f8aa0e7bf27');
 CREATE TABLE IF NOT EXISTS "SelectAnswer" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "isCorrect" BOOLEAN NOT NULL,
@@ -3532,6 +3577,10 @@ INSERT INTO SelectAnswer VALUES('8bf09a96-c0b1-4eb1-bbbd-f2f72c11c723',0,'aff080
 INSERT INTO SelectAnswer VALUES('f1824acf-b7e0-442c-9001-4f812c7d80a8',0,'00976d16-7285-47d7-adda-522484a84163','995f74d8-2c56-40ed-8506-435b8fe95d3a');
 INSERT INTO SelectAnswer VALUES('cb022cd8-0676-4379-9906-62ca729789cc',0,'969ee313-9aab-4eb8-90a3-937dcb7bbeb4','995f74d8-2c56-40ed-8506-435b8fe95d3a');
 INSERT INTO SelectAnswer VALUES('9bfb10e9-9bc7-42fc-906e-91e2b041a430',1,'9b939257-76ca-4ae3-936b-e81f326272b0','995f74d8-2c56-40ed-8506-435b8fe95d3a');
+INSERT INTO SelectAnswer VALUES('ca911231-b891-4b1e-a426-53d0247a77d1',0,'cdbe54f4-eaf8-406e-bf33-67fa8bc3cf9b','f1fcf764-b6c5-4da9-a277-95a4bb2c4fc2');
+INSERT INTO SelectAnswer VALUES('5c4598a6-b2f4-4b88-b531-956fd7e5e03f',1,'200dc574-31ca-4dd7-95af-b2970b6cd0f5','f1fcf764-b6c5-4da9-a277-95a4bb2c4fc2');
+INSERT INTO SelectAnswer VALUES('f377d12b-046a-41fe-b085-73546258c6c4',0,'67837193-3b55-4f4f-9496-dbb47c026c3b','f1fcf764-b6c5-4da9-a277-95a4bb2c4fc2');
+INSERT INTO SelectAnswer VALUES('0f8ca3ab-09a9-4399-a55f-410ab93de4b9',0,'f4ee4482-aa3e-4714-9577-d97a4f375d9d','f1fcf764-b6c5-4da9-a277-95a4bb2c4fc2');
 CREATE TABLE IF NOT EXISTS "UnitAnswer" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "value" REAL NOT NULL,
@@ -3753,6 +3802,8 @@ INSERT INTO NumberAnswer VALUES('ba1a5e5f-8ac7-49d6-8e89-fe297a100319',1.0,'c9a5
 INSERT INTO NumberAnswer VALUES('8d4d584d-985e-4a01-a2eb-4ae0d40f7ccd',2.0,'158c5206-3654-4bf3-935e-74ce7690f7bf');
 INSERT INTO NumberAnswer VALUES('39c02ee6-644d-4497-bcff-d37a5fccc6f3',32.0,'52b4a373-3183-4eff-ab8d-c13c4e436982');
 INSERT INTO NumberAnswer VALUES('2c058938-92fc-4e2f-9360-8b2a0a9e11e3',4.0,'12085c71-ab1a-4726-bbf7-8e54a7300d60');
+INSERT INTO NumberAnswer VALUES('4644c60e-9d4b-4ece-ab18-2036f1016872',9.0,'23262996-5171-457f-add9-6c48a79dc0ef');
+INSERT INTO NumberAnswer VALUES('003f8cd3-e22d-476a-a906-757b26f43c89',-2.0,'350b95bc-160d-40a2-96d4-0f966bb9f049');
 CREATE TABLE IF NOT EXISTS "_CourseModules" (
     "A" TEXT NOT NULL,
     "B" TEXT NOT NULL,
@@ -4481,6 +4532,15 @@ INSERT INTO _ModuleToQuestion VALUES('c451b387-fc0d-4c4c-bf72-41817c1b2e45','0e4
 INSERT INTO _ModuleToQuestion VALUES('97128d23-40d6-4045-a57d-ec1b08c3723e','76b7f25d-f8b4-42e6-907b-e49b33a7a36b');
 INSERT INTO _ModuleToQuestion VALUES('97128d23-40d6-4045-a57d-ec1b08c3723e','06889a7f-f1bd-4809-a281-87e34c675a85');
 INSERT INTO _ModuleToQuestion VALUES('28a65ee2-09c0-4a86-a920-34c5f2a0f0d7','169770cc-0371-47e2-9e29-2c01500d1f7a');
+INSERT INTO _ModuleToQuestion VALUES('7d8e9f01-2345-4567-890a-bcdef0123456','1fcdeb94-16a0-4878-95d8-1f8aa0e7bf27');
+INSERT INTO _ModuleToQuestion VALUES('b4de3329-f3af-4ae9-b67d-bf1c5d1a30fb','c5442383-3e05-492d-80f4-7aff0a990c67');
+INSERT INTO _ModuleToQuestion VALUES('c451b387-fc0d-4c4c-bf72-41817c1b2e45','87b71f8b-3516-4d9c-9b0c-85411ea5b08d');
+INSERT INTO _ModuleToQuestion VALUES('e4e3361c-9c9f-4d12-a9d6-8de53f794295','238239e2-538f-4cbd-8478-9f22fff96b72');
+INSERT INTO _ModuleToQuestion VALUES('b4de3329-f3af-4ae9-b67d-bf1c5d1a30fb','bb48fcaf-1646-44c8-81fb-5b4efe6b13f5');
+INSERT INTO _ModuleToQuestion VALUES('7d8e9f01-2345-4567-890a-bcdef0123456','ccff4eb0-9057-4d7f-aff6-704a06670127');
+INSERT INTO _ModuleToQuestion VALUES('c1f4a8e2-5d7b-4c9a-8f3e-2b6d9c1a4e7f','0abe1d55-e29e-44af-bf00-9196232b08f7');
+INSERT INTO _ModuleToQuestion VALUES('a1b2c3d4-5e6f-4a8b-9c0d-2e3f4a5b6c7d','cb45d708-94af-4e0e-9074-09c7340f0481');
+INSERT INTO _ModuleToQuestion VALUES('97128d23-40d6-4045-a57d-ec1b08c3723e','82b6fa61-435d-43fb-a622-7fc3c8158e89');
 CREATE TABLE IF NOT EXISTS "Degree" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "translationId" TEXT NOT NULL,
