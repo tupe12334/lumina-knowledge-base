@@ -2,7 +2,7 @@ import { ObjectType, Field, ID } from '@nestjs/graphql';
 import { ApiProperty } from '@nestjs/swagger';
 import { Type } from 'class-transformer';
 import { Translation } from '../../translations/models/Translation.entity';
-import { Block } from 'src/modules/blocks/models/Block.entity';
+import { Block } from '../../blocks/models/Block.entity';
 import { Question } from '../../questions/models/Question.entity';
 
 @ObjectType()
