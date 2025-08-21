@@ -147,7 +147,6 @@ INSERT INTO Course VALUES('09C42D4D-336B-47B6-AC63-3CB9FB10989E','F6B856CA-7849-
 INSERT INTO Course VALUES('605D7AB6-ACB6-43CA-9911-496C4469C5E9','F920D0C0-50E9-4A01-9B50-63F4E450C171','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL,'9631D994-C908-4CB1-9E67-9566CD1E94CD');
 INSERT INTO Course VALUES('4A8F2C6E-7B3D-4A5F-A4F8-2C6E7B3D5A9F','5B91BD52-22E5-4335-ADE5-1C3E21B12EB8','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL,'42F87231-0ED4-4420-ACF0-D59DFE484B0B');
 INSERT INTO Course VALUES('f3fd28f1-bbf3-4774-b331-9777c993d74e','3dda5826-8420-43a9-a99b-7376ae0e9f37','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL,'4ed24fa7-159f-460a-93aa-acb9f7fe098f');
-INSERT INTO Course VALUES('56928be3-a86d-47a3-b242-eeab52fa6904','afe0b12e-5dbf-45f3-9c91-17ae353e5f7a','92e73fb7-96de-45e4-aff3-4ca7b89be16c',NULL,'eef9193a-c3c8-4731-905d-294e9baafcc6');
 INSERT INTO Course VALUES('bb7f20ac-6cf9-4f4a-9136-a7dbed28d12a','9a86f359-eaa2-4130-a7d6-7fea5650317b','92e73fb7-96de-45e4-aff3-4ca7b89be16c',NULL,'66c74bfa-fbea-4973-8ec5-ccea8b91a5d7');
 INSERT INTO Course VALUES('3461147d-d1d6-4f9a-a30d-aa7c44a281bc','c155903b-a57c-44f5-bb8e-9321cc9287a1','92e73fb7-96de-45e4-aff3-4ca7b89be16c',NULL,'f7403989-dfff-4ccf-a717-091aef5635ac');
 CREATE TABLE IF NOT EXISTS "Block" (
@@ -488,7 +487,6 @@ INSERT INTO Block VALUES('d498ae32-8ec7-4a29-abd1-f101b35c7940');
 INSERT INTO Block VALUES('fdee6c6b-c4a4-46fc-a3b6-28fcf164a121');
 INSERT INTO Block VALUES('9b4a122c-14f6-45bd-b6f7-2d9012543bd2');
 INSERT INTO Block VALUES('04b9017a-2b47-42e9-92ec-8e172aabf80c');
-INSERT INTO Block VALUES('eef9193a-c3c8-4731-905d-294e9baafcc6');
 INSERT INTO Block VALUES('66c74bfa-fbea-4973-8ec5-ccea8b91a5d7');
 INSERT INTO Block VALUES('f7403989-dfff-4ccf-a717-091aef5635ac');
 CREATE TABLE IF NOT EXISTS "BlockRelationship" (
@@ -1778,7 +1776,6 @@ INSERT INTO Translation VALUES('99096b4a-7c7c-4037-adb8-8296c6edcaf5','Improper 
 INSERT INTO Translation VALUES('8cab1294-f77b-4c77-bc73-dc371abc1443','Improper integrals of unbounded functions','אינטגרלים לא אימפרופריים של פונקציות לא חסומות');
 INSERT INTO Translation VALUES('6dfcb539-340b-44fe-84c7-bf6ce61cc72e','Convergence tests for improper integrals','מבחני התכנסות לאינטגרלים לא אימפרופריים');
 INSERT INTO Translation VALUES('ec4e8cf4-b46f-45e2-aaaa-12c6dcc6e0ef','Discrete Mathematics 1','מתמטיקה בדידה 1');
-INSERT INTO Translation VALUES('afe0b12e-5dbf-45f3-9c91-17ae353e5f7a','ec4e8cf4-b46f-45e2-aaaa-12c6dcc6e0ef','ec4e8cf4-b46f-45e2-aaaa-12c6dcc6e0ef');
 INSERT INTO Translation VALUES('9a86f359-eaa2-4130-a7d6-7fea5650317b','מתמטיקה בדידה 1','מתמטיקה בדידה 1');
 INSERT INTO Translation VALUES('c155903b-a57c-44f5-bb8e-9321cc9287a1','מתמטיקה בדידה 2','מתמטיקה בדידה 2');
 CREATE TABLE IF NOT EXISTS "Question" (
