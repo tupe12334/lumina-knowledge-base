@@ -1267,6 +1267,46 @@
         ]
       }
     },
+    "/modules/questions-data": {
+      "get": {
+        "description": "Returns all modules with id, en_name, and questions_amount, sorted by question count (least questions first).",
+        "operationId": "ModulesController_getModulesQuestionsData",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "A list of modules with their question counts.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "en_name": {
+                        "type": "string"
+                      },
+                      "questions_amount": {
+                        "type": "number"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Get modules questions data",
+        "tags": [
+          "modules"
+        ]
+      }
+    },
     "/modules/{id}": {
       "get": {
         "description": "Returns a single module by its ID.",

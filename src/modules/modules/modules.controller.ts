@@ -52,6 +52,30 @@ export class ModulesController {
     return this.modulesService.create(createModuleDto);
   }
 
+  @Get('questions-data')
+  @ApiOperation({
+    summary: 'Get modules questions data',
+    description: 'Returns all modules with id, en_name, and questions_amount, sorted by question count (least questions first).',
+  })
+  @ApiOkResponse({
+    description: 'A list of modules with their question counts.',
+    schema: {
+      type: 'array',
+      items: {
+        type: 'object',
+        properties: {
+          id: { type: 'string' },
+          en_name: { type: 'string' },
+          questions_amount: { type: 'number' },
+        },
+      },
+    },
+  })
+  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
+  async getModulesQuestionsData() {
+    return this.modulesService.getModulesSummary();
+  }
+
   @Get()
   @ApiOperation({
     summary: 'Retrieve all modules',
