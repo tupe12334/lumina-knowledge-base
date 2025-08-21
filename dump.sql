@@ -1926,6 +1926,38 @@ INSERT INTO Translation VALUES('701c4271-4166-41c0-ad18-82380abbd80d','LIFO (Las
 INSERT INTO Translation VALUES('77e1234d-d0bc-4923-8f2a-b101c9080005','FIFO (First In, First Out)','FIFO (ראשון נכנס, ראשון יוצא)');
 INSERT INTO Translation VALUES('ab13ba0b-d2b0-4a3c-9403-69a8c1c6f775','Random access','גישה אקראית');
 INSERT INTO Translation VALUES('81b91766-5dd3-48f1-bbc3-fd58db858ab1','Sequential access','גישה רצופה');
+INSERT INTO Translation VALUES('b9c587df-c2cd-40d5-a320-f7d97745bcef','Which logical operator returns true only when both operands are true?','איזה אופרטור לוגי מחזיר אמת רק כאשר שני האופרנדים הם אמת?');
+INSERT INTO Translation VALUES('cb698b81-a8b4-43d0-904c-1a26611d3da5','What is the truth value of (true OR false)?','מה הוא ערך האמת של (אמת או שקר)?');
+INSERT INTO Translation VALUES('0498e9f7-a7b1-442d-a174-abecc20e1c1b','Evaluate the expression: NOT(true AND false)','העריכו את הביטוי: NOT(אמת וגם שקר)');
+INSERT INTO Translation VALUES('1e1992bf-40c7-4ffc-ab68-55d94cebb60f','Which logic gate outputs 1 only when both inputs are 1?','איזה שער לוגי מוציא 1 רק כאשר שני הקלטים הם 1?');
+INSERT INTO Translation VALUES('6e202b5c-5d46-417d-94dd-ddfdc469b8f7','What is the output of an OR gate with inputs 0 and 1?','מה הוא הפלט של שער OR עם קלטים 0 ו-1?');
+INSERT INTO Translation VALUES('c2f7312c-3947-4702-988c-59c60038edf3','Design a circuit that implements XOR using only NAND gates. How many NAND gates do you need?','תכננו מעגל שמיישם XOR באמצעות שערי NAND בלבד. כמה שערי NAND אתם צריכים?');
+INSERT INTO Translation VALUES('b997fe4b-d64b-4640-a84a-6f94cc522008','Complete the conditional statement: If x > 5, then ___','השלימו את המשפט התנאי: אם x > 5, אז ___');
+INSERT INTO Translation VALUES('851bcfc5-3454-44d1-81ed-57cb2fd00a75','What is the contrapositive of: If it rains, then the ground is wet?','מה הוא הקונטרפוזיטיב של: אם יורד גשם, אז הקרקע רטובה?');
+INSERT INTO Translation VALUES('ac2a4433-a9fb-41e9-b3e9-6fcb6131b7d1','Write a nested if-else statement to classify a number as positive, negative, or zero','כתבו הצהרת if-else מקוננת לסיווג מספר כחיובי, שלילי או אפס');
+INSERT INTO Translation VALUES('447b5e77-96a5-4900-884b-b966a65fed82','Which of the following pairs are logically equivalent? A) p → q and ¬p ∨ q','איזה מהזוגות הבאים הם שקולים לוגית? א) p → q ו-¬p ∨ q');
+INSERT INTO Translation VALUES('034754a1-42b1-459f-aa13-690466854c9c','Prove that p ∧ (q ∨ r) ≡ (p ∧ q) ∨ (p ∧ r) using truth tables','הוכיחו שp ∧ (q ∨ r) ≡ (p ∧ q) ∨ (p ∧ r) באמצעות טבלאות אמת');
+INSERT INTO Translation VALUES('4a8293b3-ad43-4942-9b37-47dc7b2abfc6','Simplify the expression: (p ∨ q) ∧ (p ∨ ¬q) ∧ (¬p ∨ q)','פשטו את הביטוי: (p ∨ q) ∧ (p ∨ ¬q) ∧ (¬p ∨ q)');
+INSERT INTO Translation VALUES('b328ff0f-4517-41b9-a703-cf09ed2fc22f','How many derangements are there of 4 objects?','כמה דה-רנג׳מנטים יש לארבעה אובייקטים?');
+INSERT INTO Translation VALUES('9b0a181f-c698-4e65-913b-9e74a150fd3a','Calculate D(5) where D(n) is the number of derangements of n objects','חשבו D(5) כאשר D(n) הוא מספר הדה-רנג׳מנטים של n אובייקטים');
+INSERT INTO Translation VALUES('11a37535-913e-4f21-a454-99f802f84c12','Prove that D(n) = (n-1)[D(n-1) + D(n-2)] for n ≥ 2','הוכיחו ש-D(n) = (n-1)[D(n-1) + D(n-2)] עבור n ≥ 2');
+INSERT INTO Translation VALUES('a3a2d31d-0208-45c3-97aa-657d9a1b44e9','AND','וגם');
+INSERT INTO Translation VALUES('13fb98e7-42df-49ba-90c0-7e2935189842','OR','או');
+INSERT INTO Translation VALUES('0c9c8c46-a0e2-4b47-adf0-8931421d31be','NOT','לא');
+INSERT INTO Translation VALUES('49c6442b-4fe6-4a4d-bb67-fa3114f8ca3b','XOR','או בלעדי');
+INSERT INTO Translation VALUES('c8d6bae4-f4c5-45fb-a8b5-4601355d5e9b','true','אמת');
+INSERT INTO Translation VALUES('286c2c9a-859f-44e4-8c0d-31ca3e254508','false','שקר');
+INSERT INTO Translation VALUES('0abc3954-ab11-4bab-ba5f-433017e5d86d','1','1');
+INSERT INTO Translation VALUES('335169b0-d7f2-4db9-928f-c288556ce20a','0','0');
+INSERT INTO Translation VALUES('143e91d8-c7c6-43d9-868e-1b170e19e510','AND gate','שער וגם');
+INSERT INTO Translation VALUES('a5bbe1db-e6cd-4a8c-a75e-0f9b0e388aa0','OR gate','שער או');
+INSERT INTO Translation VALUES('52e6678b-f5b8-4a6d-94c6-134b9024663d','NAND gate','שער לא-וגם');
+INSERT INTO Translation VALUES('a9d167e5-4721-44cc-925c-290ef5214701','NOR gate','שער לא-או');
+INSERT INTO Translation VALUES('5b75b562-897c-4d3b-9818-75272b26938f','If the ground is not wet, then it does not rain','אם הקרקע לא רטובה, אז לא יורד גשם');
+INSERT INTO Translation VALUES('a8eab2ec-3b12-4f9b-8a36-2fe7b91a21e2','If it does not rain, then the ground is not wet','אם לא יורד גשם, אז הקרקע לא רטובה');
+INSERT INTO Translation VALUES('a86ba923-4224-4d17-81e4-ddcfda467010','The statement is false','הטענה שקרית');
+INSERT INTO Translation VALUES('776530d1-e306-4692-83d2-b95673357871','Yes, they are logically equivalent','כן, הם שקולים לוגית');
+INSERT INTO Translation VALUES('611f03f5-b896-4584-be1e-bb8820b606e4','No, they are not logically equivalent','לא, הם לא שקולים לוגית');
 CREATE TABLE IF NOT EXISTS "Question" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "validationStatus" TEXT NOT NULL DEFAULT 'ai_generated',
@@ -2266,6 +2298,46 @@ INSERT INTO Question VALUES('f3ef5af4-1a30-4880-af60-20d69142e7ea','ai_generated
 INSERT INTO Question VALUES('bf9aa0a8-b1e6-459d-bd74-165db88f38f9','ai_generated','f2f85381-fa16-4b40-b64f-8e97d4de3404','selection');
 INSERT INTO Question VALUES('4a291814-9484-4dab-8c16-740aeb1afb4a','ai_generated','8a4aaef8-6935-4da6-a4a3-9eefeba1579b','selection');
 INSERT INTO Question VALUES('aa657e7c-c284-412b-a335-120c6e693032','ai_generated','58503f66-af42-4992-bdc1-79fc62c4a61f','selection');
+INSERT INTO Question VALUES('2a4e6b6c-87c0-48e6-b980-6b507752482a','ai_generated','a7b8c9da-1e2f-4a3b-ac5d-7e8f9aab1c2d','selection');
+INSERT INTO Question VALUES('e6232fda-504f-47d0-9b48-63f7971ccb86','ai_generated','b8c9daeb-2f3a-4b5c-ad7e-8f9aab1c2d3e','selection');
+INSERT INTO Question VALUES('05b2e1ab-c5d1-45d7-bc07-59a5560a04f1','ai_generated','c3d4e5f6-7a8b-4c9d-ae1f-3a4b5c6d7e8f','value');
+INSERT INTO Question VALUES('e626d4bb-2748-41c7-a0f6-f9f8e57b1ee5','ai_generated','c9dae1f2-3a4b-4c6d-ae8f-9aab1c2d3e4f','selection');
+INSERT INTO Question VALUES('74ede566-2d2d-487b-a830-20e2573e1c76','ai_generated','d4e5f6a7-8b9c-4dae-af2a-4b5c6d7e8f90','selection');
+INSERT INTO Question VALUES('5e49a9a0-126b-4c05-9633-4e9a6d68af36','ai_generated','e5f6a7b8-9cad-4e1f-aa3b-5c6d7e8f9aab','void');
+INSERT INTO Question VALUES('2f5d7b5c-7729-41a8-b483-601e4055ddfd','ai_generated','f6a7b8c9-ad1e-4f2a-ab4c-6d7e8f9aab1c','selection');
+INSERT INTO Question VALUES('ef589b43-18f3-4ad8-b268-d5ff4d84d8d0','ai_generated','9e5399fe-0617-4bf6-9c39-037987c4a092','value');
+INSERT INTO Question VALUES('c920756e-b455-48e7-a4d6-b3b821200082','ai_generated','a35ba03a-aedc-49c0-9b01-81826ec66d1a','selection');
+INSERT INTO Question VALUES('2964ebfb-6b58-423c-9b00-6f2102000ad4','ai_generated','58503f66-af42-4992-bdc1-79fc62c4a61f','value');
+INSERT INTO Question VALUES('6a22ec03-71b0-4e2e-b4f4-9811bfc7f29b','ai_generated','a7b8c9da-1e2f-4a3b-ac5d-7e8f9aab1c2d','void');
+INSERT INTO Question VALUES('6b90846e-cd47-4619-b3b5-18324b80f1b7','ai_generated','b8c9daeb-2f3a-4b5c-ad7e-8f9aab1c2d3e','selection');
+INSERT INTO Question VALUES('cad11d55-6169-476d-8916-ea5815a3d8de','ai_generated','c3d4e5f6-7a8b-4c9d-ae1f-3a4b5c6d7e8f','selection');
+INSERT INTO Question VALUES('e2be3333-fd8d-47ff-948a-af6bfe0ae094','ai_generated','c9dae1f2-3a4b-4c6d-ae8f-9aab1c2d3e4f','value');
+INSERT INTO Question VALUES('a6094502-b8bd-48e7-bae2-bb23749b4404','ai_generated','b9c587df-c2cd-40d5-a320-f7d97745bcef','selection');
+INSERT INTO Question VALUES('2811b2a4-ff6e-4cd2-873d-245662864a57','ai_generated','cb698b81-a8b4-43d0-904c-1a26611d3da5','selection');
+INSERT INTO Question VALUES('38e1f1bb-0f66-45b9-895e-9bc990e1918e','ai_generated','0498e9f7-a7b1-442d-a174-abecc20e1c1b','selection');
+INSERT INTO Question VALUES('e25a1238-ff26-4c10-bd0c-9f97a7f37d66','ai_generated','1e1992bf-40c7-4ffc-ab68-55d94cebb60f','selection');
+INSERT INTO Question VALUES('1ef8d60a-b00e-4011-a6a9-81866b8a0834','ai_generated','6e202b5c-5d46-417d-94dd-ddfdc469b8f7','selection');
+INSERT INTO Question VALUES('79a7aef0-3ca8-48ac-8c62-46434d2809fb','ai_generated','c2f7312c-3947-4702-988c-59c60038edf3','value');
+INSERT INTO Question VALUES('7586bcf5-44dc-473c-a60d-f21f7fb4fa31','ai_generated','b997fe4b-d64b-4640-a84a-6f94cc522008','void');
+INSERT INTO Question VALUES('8506cbd5-47a4-4d4e-ac88-91475a4c1dbd','ai_generated','851bcfc5-3454-44d1-81ed-57cb2fd00a75','selection');
+INSERT INTO Question VALUES('1018074e-02a8-4a83-9b35-64429a5bee66','ai_generated','ac2a4433-a9fb-41e9-b3e9-6fcb6131b7d1','void');
+INSERT INTO Question VALUES('f5d9f98a-9432-4412-bfd9-9e745a8f4e73','ai_generated','447b5e77-96a5-4900-884b-b966a65fed82','selection');
+INSERT INTO Question VALUES('e9e69934-b8da-4ed7-b443-8cc31106bcdb','ai_generated','034754a1-42b1-459f-aa13-690466854c9c','void');
+INSERT INTO Question VALUES('bb01a3df-f48a-47da-ad05-e38744c42875','ai_generated','4a8293b3-ad43-4942-9b37-47dc7b2abfc6','void');
+INSERT INTO Question VALUES('5ebb58bc-e565-4a0c-a187-0d122291155a','ai_generated','b328ff0f-4517-41b9-a703-cf09ed2fc22f','value');
+INSERT INTO Question VALUES('176c0c69-978a-4f34-9e69-d234629cf017','ai_generated','9b0a181f-c698-4e65-913b-9e74a150fd3a','value');
+INSERT INTO Question VALUES('5b74f4b4-1d10-4634-b77a-1688e1b932f0','ai_generated','11a37535-913e-4f21-a454-99f802f84c12','void');
+INSERT INTO Question VALUES('5c8655c8-6682-46af-a9d4-0e8cfca1707f','ai_generated','d4e5f6a7-8b9c-4dae-af2a-4b5c6d7e8f90','selection');
+INSERT INTO Question VALUES('06d18403-e377-4c6f-9173-9b92c4a562d1','ai_generated','e5f6a7b8-9cad-4e1f-aa3b-5c6d7e8f9aab','value');
+INSERT INTO Question VALUES('6b88eb91-9d72-4513-bf8e-81998b56e3bd','ai_generated','f6a7b8c9-ad1e-4f2a-ab4c-6d7e8f9aab1c','selection');
+INSERT INTO Question VALUES('35ec8acf-de9f-435e-b147-0d2833e8e7bc','ai_generated','9e5399fe-0617-4bf6-9c39-037987c4a092','void');
+INSERT INTO Question VALUES('d222dc70-0046-4a2e-8b40-9a1ae906ba2d','ai_generated','a35ba03a-aedc-49c0-9b01-81826ec66d1a','selection');
+INSERT INTO Question VALUES('34c49d8d-751d-4772-88d0-a9a2c373637b','ai_generated','58503f66-af42-4992-bdc1-79fc62c4a61f','selection');
+INSERT INTO Question VALUES('e19806e3-fd49-472d-98b2-250e8c482e27','ai_generated','a7b8c9da-1e2f-4a3b-ac5d-7e8f9aab1c2d','value');
+INSERT INTO Question VALUES('b6aab4c9-2f1b-4fb7-bc12-ed1511022335','ai_generated','b8c9daeb-2f3a-4b5c-ad7e-8f9aab1c2d3e','selection');
+INSERT INTO Question VALUES('f440eebc-9da9-4815-b7e1-056e1436e205','ai_generated','c3d4e5f6-7a8b-4c9d-ae1f-3a4b5c6d7e8f','void');
+INSERT INTO Question VALUES('349861e4-a213-45ea-a1a8-64d776f9d84d','ai_generated','c9dae1f2-3a4b-4c6d-ae8f-9aab1c2d3e4f','selection');
+INSERT INTO Question VALUES('0013b782-bad6-4242-9c5d-f5bdd4c14bce','ai_generated','d4e5f6a7-8b9c-4dae-af2a-4b5c6d7e8f90','value');
 CREATE TABLE IF NOT EXISTS "QuestionPart" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "questionId" TEXT NOT NULL,
@@ -2615,6 +2687,16 @@ INSERT INTO Answer VALUES('ffd27c54-2d34-4079-b09f-3ae5e9aeed34','eb0c4741-a417-
 INSERT INTO Answer VALUES('01e8b930-42b2-48b5-a4ef-c072510fdc4d','f3ef5af4-1a30-4880-af60-20d69142e7ea');
 INSERT INTO Answer VALUES('56512582-b3c2-4cde-8402-09ebe93ddce8','bf9aa0a8-b1e6-459d-bd74-165db88f38f9');
 INSERT INTO Answer VALUES('b4699d32-cafd-4f0d-8761-c773dd372601','4a291814-9484-4dab-8c16-740aeb1afb4a');
+INSERT INTO Answer VALUES('6f11c7c8-dcd4-4409-b605-27d9f98c445e','a6094502-b8bd-48e7-bae2-bb23749b4404');
+INSERT INTO Answer VALUES('16eccb89-85c1-4cbf-b18c-bdad55d836e2','2811b2a4-ff6e-4cd2-873d-245662864a57');
+INSERT INTO Answer VALUES('d29e7c17-fa19-4519-a9cf-798a21e098b2','38e1f1bb-0f66-45b9-895e-9bc990e1918e');
+INSERT INTO Answer VALUES('0302354f-f317-4835-9122-33effabd67e6','e25a1238-ff26-4c10-bd0c-9f97a7f37d66');
+INSERT INTO Answer VALUES('87d6c4ca-6ecd-4bb2-bc7b-980d97cbd67b','1ef8d60a-b00e-4011-a6a9-81866b8a0834');
+INSERT INTO Answer VALUES('3e1cc130-8c02-4de1-9870-2528fc11440b','79a7aef0-3ca8-48ac-8c62-46434d2809fb');
+INSERT INTO Answer VALUES('5cb67bb9-6e76-4f0e-9618-d91d98588b68','8506cbd5-47a4-4d4e-ac88-91475a4c1dbd');
+INSERT INTO Answer VALUES('629acc6c-10df-4d7e-a95a-98d155a148b7','f5d9f98a-9432-4412-bfd9-9e745a8f4e73');
+INSERT INTO Answer VALUES('14861d17-5cc8-4cb0-bdf0-8ee0e17ab207','5ebb58bc-e565-4a0c-a187-0d122291155a');
+INSERT INTO Answer VALUES('6808a817-994e-4a41-8660-470c4dea013f','176c0c69-978a-4f34-9e69-d234629cf017');
 CREATE TABLE IF NOT EXISTS "SelectAnswer" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "isCorrect" BOOLEAN NOT NULL,
@@ -2970,6 +3052,25 @@ INSERT INTO SelectAnswer VALUES('7f4dc887-fc96-47d6-ad68-ee66a4357bcc',0,'25d1cc
 INSERT INTO SelectAnswer VALUES('31cbd308-2cd3-4f72-b18a-f554c5b922c3',1,'9547c45c-7202-405d-87e8-f84bf5f99331','56512582-b3c2-4cde-8402-09ebe93ddce8');
 INSERT INTO SelectAnswer VALUES('a4cd7aaf-0a3c-4114-8653-f7317e206d2c',0,'77e1234d-d0bc-4923-8f2a-b101c9080005','b4699d32-cafd-4f0d-8761-c773dd372601');
 INSERT INTO SelectAnswer VALUES('aea27b26-8e1a-47b3-b22f-643376786765',1,'701c4271-4166-41c0-ad18-82380abbd80d','b4699d32-cafd-4f0d-8761-c773dd372601');
+INSERT INTO SelectAnswer VALUES('f324e404-986f-420c-9693-5f2c336742e4',0,'49c6442b-4fe6-4a4d-bb67-fa3114f8ca3b','6f11c7c8-dcd4-4409-b605-27d9f98c445e');
+INSERT INTO SelectAnswer VALUES('ed1e0dff-33c4-484b-8111-abac687d0f5e',0,'0c9c8c46-a0e2-4b47-adf0-8931421d31be','6f11c7c8-dcd4-4409-b605-27d9f98c445e');
+INSERT INTO SelectAnswer VALUES('20cf3a9c-2ae7-4a67-bc52-634f4e4039e2',0,'13fb98e7-42df-49ba-90c0-7e2935189842','6f11c7c8-dcd4-4409-b605-27d9f98c445e');
+INSERT INTO SelectAnswer VALUES('6cd34bdb-1c68-44d7-a922-0602b56e6e39',1,'a3a2d31d-0208-45c3-97aa-657d9a1b44e9','6f11c7c8-dcd4-4409-b605-27d9f98c445e');
+INSERT INTO SelectAnswer VALUES('8738a762-bbf9-4035-a408-75948a4b0d17',0,'286c2c9a-859f-44e4-8c0d-31ca3e254508','16eccb89-85c1-4cbf-b18c-bdad55d836e2');
+INSERT INTO SelectAnswer VALUES('1250adf7-3b9a-44b6-a969-f68f9fabf969',1,'c8d6bae4-f4c5-45fb-a8b5-4601355d5e9b','16eccb89-85c1-4cbf-b18c-bdad55d836e2');
+INSERT INTO SelectAnswer VALUES('ed169fa3-b0b4-4e81-886f-6d3f00f4cd61',0,'286c2c9a-859f-44e4-8c0d-31ca3e254508','d29e7c17-fa19-4519-a9cf-798a21e098b2');
+INSERT INTO SelectAnswer VALUES('79d0637e-fb23-4d9f-a5e9-5e9b5baee8b0',1,'c8d6bae4-f4c5-45fb-a8b5-4601355d5e9b','d29e7c17-fa19-4519-a9cf-798a21e098b2');
+INSERT INTO SelectAnswer VALUES('60a337ba-c7eb-40ea-83dd-dd5ed3c2a1e9',0,'a9d167e5-4721-44cc-925c-290ef5214701','0302354f-f317-4835-9122-33effabd67e6');
+INSERT INTO SelectAnswer VALUES('baec618c-e625-4c6c-927f-dff9dbfbbe4a',0,'52e6678b-f5b8-4a6d-94c6-134b9024663d','0302354f-f317-4835-9122-33effabd67e6');
+INSERT INTO SelectAnswer VALUES('b2007b8c-b0a9-4a46-b4ff-997c08cb90e3',0,'a5bbe1db-e6cd-4a8c-a75e-0f9b0e388aa0','0302354f-f317-4835-9122-33effabd67e6');
+INSERT INTO SelectAnswer VALUES('fa94c7e6-83ef-4d94-b0eb-65747ea26c6b',1,'143e91d8-c7c6-43d9-868e-1b170e19e510','0302354f-f317-4835-9122-33effabd67e6');
+INSERT INTO SelectAnswer VALUES('ce837eed-6541-4fde-a54b-2841d089b68b',0,'335169b0-d7f2-4db9-928f-c288556ce20a','87d6c4ca-6ecd-4bb2-bc7b-980d97cbd67b');
+INSERT INTO SelectAnswer VALUES('4120045a-e7bc-4a33-b090-0e55822a124e',1,'0abc3954-ab11-4bab-ba5f-433017e5d86d','87d6c4ca-6ecd-4bb2-bc7b-980d97cbd67b');
+INSERT INTO SelectAnswer VALUES('68890268-cbfb-4c26-866f-364eed1f1bb5',0,'a86ba923-4224-4d17-81e4-ddcfda467010','5cb67bb9-6e76-4f0e-9618-d91d98588b68');
+INSERT INTO SelectAnswer VALUES('2081abed-c1f2-44de-905f-5f4c2fd43232',0,'a8eab2ec-3b12-4f9b-8a36-2fe7b91a21e2','5cb67bb9-6e76-4f0e-9618-d91d98588b68');
+INSERT INTO SelectAnswer VALUES('be2f851b-5f0b-4512-81dd-ad9932859bbc',1,'5b75b562-897c-4d3b-9818-75272b26938f','5cb67bb9-6e76-4f0e-9618-d91d98588b68');
+INSERT INTO SelectAnswer VALUES('6caaa84f-6b0f-460b-a7b1-954a0b451b50',0,'611f03f5-b896-4584-be1e-bb8820b606e4','629acc6c-10df-4d7e-a95a-98d155a148b7');
+INSERT INTO SelectAnswer VALUES('219a1205-ef02-48ba-bed6-9a50eeabfcd9',1,'776530d1-e306-4692-83d2-b95673357871','629acc6c-10df-4d7e-a95a-98d155a148b7');
 CREATE TABLE IF NOT EXISTS "UnitAnswer" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "value" REAL NOT NULL,
@@ -3180,6 +3281,9 @@ INSERT INTO NumberAnswer VALUES('30ef3920-cc80-40fd-94f2-d84fa5bb0526',1.0,'a5a9
 INSERT INTO NumberAnswer VALUES('50ae0c72-2790-4acf-bc23-7a97056657dd',0.0,'e65d75ff-319c-4fe3-8403-877ce9ddfdca');
 INSERT INTO NumberAnswer VALUES('9babc550-9ea7-4bf9-b618-70460b8fd807',1.0,'509ec879-7844-45dd-a5d1-12fca2ea518a');
 INSERT INTO NumberAnswer VALUES('a4a0fbfd-2194-464a-a573-0699f7df2584',15600.0,'cceb8ffa-a382-4466-b9ec-2c19b64c287c');
+INSERT INTO NumberAnswer VALUES('277503e7-ec62-4397-8f1b-da03be4dcab5',4.0,'3e1cc130-8c02-4de1-9870-2528fc11440b');
+INSERT INTO NumberAnswer VALUES('ed8a0acc-c507-4e75-b7f5-ed6c0d542c89',9.0,'14861d17-5cc8-4cb0-bdf0-8ee0e17ab207');
+INSERT INTO NumberAnswer VALUES('17c4e97c-3090-401e-9932-b64a50c7db4b',44.0,'6808a817-994e-4a41-8660-470c4dea013f');
 CREATE TABLE IF NOT EXISTS "_CourseModules" (
     "A" TEXT NOT NULL,
     "B" TEXT NOT NULL,
@@ -3818,6 +3922,46 @@ INSERT INTO _ModuleToQuestion VALUES('9a45204a-d855-4558-b187-bb136002a9bb','f3e
 INSERT INTO _ModuleToQuestion VALUES('62a63596-9c68-44e0-a85d-169f2e96ce49','bf9aa0a8-b1e6-459d-bd74-165db88f38f9');
 INSERT INTO _ModuleToQuestion VALUES('c0c04721-11f0-4668-9e91-2fa94217663f','4a291814-9484-4dab-8c16-740aeb1afb4a');
 INSERT INTO _ModuleToQuestion VALUES('4e5f6a8b-9c0d-4f5e-a2ab-5c6d7e8f9a0b','aa657e7c-c284-412b-a335-120c6e693032');
+INSERT INTO _ModuleToQuestion VALUES('4e5f6a8b-9c0d-4f5e-a2ab-5c6d7e8f9a0b','2a4e6b6c-87c0-48e6-b980-6b507752482a');
+INSERT INTO _ModuleToQuestion VALUES('4e5f6a8b-9c0d-4f5e-a2ab-5c6d7e8f9a0b','e6232fda-504f-47d0-9b48-63f7971ccb86');
+INSERT INTO _ModuleToQuestion VALUES('4e5f6a8b-9c0d-4f5e-a2ab-5c6d7e8f9a0b','05b2e1ab-c5d1-45d7-bc07-59a5560a04f1');
+INSERT INTO _ModuleToQuestion VALUES('c1f4a8e2-5d7b-4c9a-8f3e-2b6d9c1a4e7f','e626d4bb-2748-41c7-a0f6-f9f8e57b1ee5');
+INSERT INTO _ModuleToQuestion VALUES('c1f4a8e2-5d7b-4c9a-8f3e-2b6d9c1a4e7f','74ede566-2d2d-487b-a830-20e2573e1c76');
+INSERT INTO _ModuleToQuestion VALUES('c1f4a8e2-5d7b-4c9a-8f3e-2b6d9c1a4e7f','5e49a9a0-126b-4c05-9633-4e9a6d68af36');
+INSERT INTO _ModuleToQuestion VALUES('1d2e3f4a-5b6c-4d7e-8f9a-0b1c2d3e4f5a','2f5d7b5c-7729-41a8-b483-601e4055ddfd');
+INSERT INTO _ModuleToQuestion VALUES('1d2e3f4a-5b6c-4d7e-8f9a-0b1c2d3e4f5a','ef589b43-18f3-4ad8-b268-d5ff4d84d8d0');
+INSERT INTO _ModuleToQuestion VALUES('a1b2c3d4-5e6f-4a8b-9c0d-2e3f4a5b6c7d','c920756e-b455-48e7-a4d6-b3b821200082');
+INSERT INTO _ModuleToQuestion VALUES('a1b2c3d4-5e6f-4a8b-9c0d-2e3f4a5b6c7d','2964ebfb-6b58-423c-9b00-6f2102000ad4');
+INSERT INTO _ModuleToQuestion VALUES('a1b2c3d4-5e6f-4a8b-9c0d-2e3f4a5b6c7d','6a22ec03-71b0-4e2e-b4f4-9811bfc7f29b');
+INSERT INTO _ModuleToQuestion VALUES('28a65ee2-09c0-4a86-a920-34c5f2a0f0d7','6b90846e-cd47-4619-b3b5-18324b80f1b7');
+INSERT INTO _ModuleToQuestion VALUES('28a65ee2-09c0-4a86-a920-34c5f2a0f0d7','cad11d55-6169-476d-8916-ea5815a3d8de');
+INSERT INTO _ModuleToQuestion VALUES('28a65ee2-09c0-4a86-a920-34c5f2a0f0d7','e2be3333-fd8d-47ff-948a-af6bfe0ae094');
+INSERT INTO _ModuleToQuestion VALUES('9c0d1e2f-3a4b-4c6d-87ef-9a0b1c2d3e4f','a6094502-b8bd-48e7-bae2-bb23749b4404');
+INSERT INTO _ModuleToQuestion VALUES('9c0d1e2f-3a4b-4c6d-87ef-9a0b1c2d3e4f','2811b2a4-ff6e-4cd2-873d-245662864a57');
+INSERT INTO _ModuleToQuestion VALUES('9c0d1e2f-3a4b-4c6d-87ef-9a0b1c2d3e4f','38e1f1bb-0f66-45b9-895e-9bc990e1918e');
+INSERT INTO _ModuleToQuestion VALUES('1e2f3a4b-5c6d-4e8f-a9ab-1c2d3e4f5a6b','e25a1238-ff26-4c10-bd0c-9f97a7f37d66');
+INSERT INTO _ModuleToQuestion VALUES('1e2f3a4b-5c6d-4e8f-a9ab-1c2d3e4f5a6b','1ef8d60a-b00e-4011-a6a9-81866b8a0834');
+INSERT INTO _ModuleToQuestion VALUES('1e2f3a4b-5c6d-4e8f-a9ab-1c2d3e4f5a6b','79a7aef0-3ca8-48ac-8c62-46434d2809fb');
+INSERT INTO _ModuleToQuestion VALUES('2f3a4b5c-6d7e-4f9a-a0bc-2d3e4f5a6b7c','7586bcf5-44dc-473c-a60d-f21f7fb4fa31');
+INSERT INTO _ModuleToQuestion VALUES('2f3a4b5c-6d7e-4f9a-a0bc-2d3e4f5a6b7c','8506cbd5-47a4-4d4e-ac88-91475a4c1dbd');
+INSERT INTO _ModuleToQuestion VALUES('2f3a4b5c-6d7e-4f9a-a0bc-2d3e4f5a6b7c','1018074e-02a8-4a83-9b35-64429a5bee66');
+INSERT INTO _ModuleToQuestion VALUES('3a4b5c6d-7e8f-409b-a1cd-3e4f5a6b7c8d','f5d9f98a-9432-4412-bfd9-9e745a8f4e73');
+INSERT INTO _ModuleToQuestion VALUES('3a4b5c6d-7e8f-409b-a1cd-3e4f5a6b7c8d','e9e69934-b8da-4ed7-b443-8cc31106bcdb');
+INSERT INTO _ModuleToQuestion VALUES('3a4b5c6d-7e8f-409b-a1cd-3e4f5a6b7c8d','bb01a3df-f48a-47da-ad05-e38744c42875');
+INSERT INTO _ModuleToQuestion VALUES('d55d4871-f7c6-47f8-94d7-ee4ada6bf45f','5ebb58bc-e565-4a0c-a187-0d122291155a');
+INSERT INTO _ModuleToQuestion VALUES('d55d4871-f7c6-47f8-94d7-ee4ada6bf45f','176c0c69-978a-4f34-9e69-d234629cf017');
+INSERT INTO _ModuleToQuestion VALUES('d55d4871-f7c6-47f8-94d7-ee4ada6bf45f','5b74f4b4-1d10-4634-b77a-1688e1b932f0');
+INSERT INTO _ModuleToQuestion VALUES('3987a98b-fcd0-4ddd-8a6f-0df30c2fa567','5c8655c8-6682-46af-a9d4-0e8cfca1707f');
+INSERT INTO _ModuleToQuestion VALUES('3987a98b-fcd0-4ddd-8a6f-0df30c2fa567','06d18403-e377-4c6f-9173-9b92c4a562d1');
+INSERT INTO _ModuleToQuestion VALUES('3f71c0d1-524f-44e3-b641-d8b1c045957c','6b88eb91-9d72-4513-bf8e-81998b56e3bd');
+INSERT INTO _ModuleToQuestion VALUES('3f71c0d1-524f-44e3-b641-d8b1c045957c','35ec8acf-de9f-435e-b147-0d2833e8e7bc');
+INSERT INTO _ModuleToQuestion VALUES('1b3bca4d-26e6-49e1-8f04-1d12b546d15c','d222dc70-0046-4a2e-8b40-9a1ae906ba2d');
+INSERT INTO _ModuleToQuestion VALUES('a12082d9-d591-4283-be13-7462fe402c81','34c49d8d-751d-4772-88d0-a9a2c373637b');
+INSERT INTO _ModuleToQuestion VALUES('99fbfae5-1a32-4344-87b3-46de3688dfc1','e19806e3-fd49-472d-98b2-250e8c482e27');
+INSERT INTO _ModuleToQuestion VALUES('2e240407-1245-4e12-97c4-2928d1d0b911','b6aab4c9-2f1b-4fb7-bc12-ed1511022335');
+INSERT INTO _ModuleToQuestion VALUES('72ea5883-4997-4777-94ff-74a6fe988f58','f440eebc-9da9-4815-b7e1-056e1436e205');
+INSERT INTO _ModuleToQuestion VALUES('43500bba-758d-43b5-9f4c-4fd6adf980f2','349861e4-a213-45ea-a1a8-64d776f9d84d');
+INSERT INTO _ModuleToQuestion VALUES('c7793a47-7dbd-466f-b3e3-688ec10d2138','0013b782-bad6-4242-9c5d-f5bdd4c14bce');
 CREATE TABLE IF NOT EXISTS "Degree" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "translationId" TEXT NOT NULL,
