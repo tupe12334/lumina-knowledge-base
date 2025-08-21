@@ -3103,6 +3103,7 @@ INSERT INTO _CourseToDegree VALUES('dcff9c44-0c67-40ea-af5a-b837efbaf297','c7a1e
 INSERT INTO _CourseToDegree VALUES('f3fd28f1-bbf3-4774-b331-9777c993d74e','73ef0be5-bd20-4181-aa70-52cf19ac5a9c');
 INSERT INTO _CourseToDegree VALUES('bb7f20ac-6cf9-4f4a-9136-a7dbed28d12a','c7a1e2b2-8e2d-4c1a-9e2a-1a2b3c4d5e6f');
 INSERT INTO _CourseToDegree VALUES('3461147d-d1d6-4f9a-a30d-aa7c44a281bc','c7a1e2b2-8e2d-4c1a-9e2a-1a2b3c4d5e6f');
+INSERT INTO _CourseToDegree VALUES('51127ee6-f67a-423c-94a9-7477b0c86220','c7a1e2b2-8e2d-4c1a-9e2a-1a2b3c4d5e6f');
 CREATE TABLE IF NOT EXISTS "_ModuleHierarchy" (
     "A" TEXT NOT NULL,
     "B" TEXT NOT NULL,
