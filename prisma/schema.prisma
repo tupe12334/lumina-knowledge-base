@@ -133,6 +133,7 @@ model Translation {
 enum QuestionType {
   selection
   value
+  boolean
   // If a question can't be answered so its don't have element in the Answer array
   void
 }
@@ -169,12 +170,13 @@ model QuestionPart {
 }
 
 model Answer {
-  id           String         @id @default(uuid())
-  questionId   String
-  question     Question       @relation(fields: [questionId], references: [id])
-  SelectAnswer SelectAnswer[]
-  UnitAnswer   UnitAnswer?
-  NumberAnswer NumberAnswer?
+  id            String          @id @default(uuid())
+  questionId    String
+  question      Question        @relation(fields: [questionId], references: [id])
+  SelectAnswer  SelectAnswer[]
+  UnitAnswer    UnitAnswer?
+  NumberAnswer  NumberAnswer?
+  BooleanAnswer BooleanAnswer?
 }
 
 model SelectAnswer {
@@ -199,6 +201,13 @@ model NumberAnswer {
   value    Float
   answerId String @unique
   answer   Answer @relation(fields: [answerId], references: [id])
+}
+
+model BooleanAnswer {
+  id       String  @id @default(uuid())
+  value    Boolean // The correct answer (true or false)
+  answerId String  @unique
+  answer   Answer  @relation(fields: [answerId], references: [id])
 }
 
 // SI units 

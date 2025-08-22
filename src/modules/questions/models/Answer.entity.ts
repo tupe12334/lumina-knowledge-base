@@ -60,6 +60,21 @@ export class NumberAnswer {
 }
 
 @ObjectType()
+export class BooleanAnswer {
+  @ApiProperty()
+  @Field(() => ID)
+  id!: string;
+
+  @ApiProperty()
+  @Field()
+  value!: boolean;
+
+  @ApiProperty()
+  @Field()
+  answerId!: string;
+}
+
+@ObjectType()
 export class Answer {
   @ApiProperty()
   @Field(() => ID)
@@ -80,4 +95,8 @@ export class Answer {
   @ApiProperty({ type: () => NumberAnswer, nullable: true })
   @Field(() => NumberAnswer, { nullable: true })
   NumberAnswer?: NumberAnswer | null;
+
+  @ApiProperty({ type: () => BooleanAnswer, nullable: true })
+  @Field(() => BooleanAnswer, { nullable: true })
+  BooleanAnswer?: BooleanAnswer | null;
 }

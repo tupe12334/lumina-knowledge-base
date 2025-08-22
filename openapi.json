@@ -3768,6 +3768,25 @@
           "answerId"
         ]
       },
+      "BooleanAnswer": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "value": {
+            "type": "boolean"
+          },
+          "answerId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "value",
+          "answerId"
+        ]
+      },
       "Answer": {
         "type": "object",
         "properties": {
@@ -3800,6 +3819,7 @@
         "enum": [
           "selection",
           "value",
+          "boolean",
           "void"
         ]
       },
@@ -4238,6 +4258,7 @@
             "enum": [
               "selection",
               "value",
+              "boolean",
               "void"
             ],
             "description": "The type of the question"

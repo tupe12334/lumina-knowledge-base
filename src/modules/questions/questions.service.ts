@@ -141,6 +141,7 @@ export class QuestionsService {
             SelectAnswer: { include: { text: true } },
             UnitAnswer: true,
             NumberAnswer: true,
+            BooleanAnswer: true,
           },
         },
         Parts: {
@@ -202,6 +203,7 @@ export class QuestionsService {
             SelectAnswer: { include: { text: true } },
             UnitAnswer: true,
             NumberAnswer: true,
+            BooleanAnswer: true,
           },
         },
         Parts: {
@@ -277,6 +279,7 @@ export class QuestionsService {
             SelectAnswer: { include: { text: true } },
             UnitAnswer: true,
             NumberAnswer: true,
+            BooleanAnswer: true,
           },
         },
         Parts: {
@@ -396,6 +399,7 @@ export class QuestionsService {
             SelectAnswer: { include: { text: true } },
             UnitAnswer: true,
             NumberAnswer: true,
+            BooleanAnswer: true,
           },
         },
         Parts: {
@@ -456,6 +460,7 @@ export class QuestionsService {
             SelectAnswer: true,
             UnitAnswer: true,
             NumberAnswer: true,
+            BooleanAnswer: true,
           },
         },
       },
@@ -477,6 +482,12 @@ export class QuestionsService {
       }
       if (answer.NumberAnswer) {
         await this.prisma.numberAnswer.delete({
+          where: { answerId: answer.id },
+        });
+      }
+      // Type assertion needed until Prisma types are fully updated
+      if ((answer as any).BooleanAnswer) {
+        await this.prisma.booleanAnswer.delete({
           where: { answerId: answer.id },
         });
       }
@@ -502,6 +513,7 @@ export class QuestionsService {
             SelectAnswer: { include: { text: true } },
             UnitAnswer: true,
             NumberAnswer: true,
+            BooleanAnswer: true,
           },
         },
         Parts: {
@@ -644,6 +656,18 @@ export class QuestionsService {
           .filter((a) => a)
           .join('; ');
         answerInfo = `Answer Options: ${answers}`;
+      } else if (question.type === 'boolean' && question.Answer.length > 0) {
+        const booleanAnswers = question.Answer.map((answer) => {
+          // Type assertion needed until Prisma types are fully updated
+          const booleanAnswer = (answer as any).BooleanAnswer;
+          if (booleanAnswer) {
+            return `Correct Answer: ${booleanAnswer.value ? 'Yes/True' : 'No/False'}`;
+          }
+          return '';
+        })
+          .filter((a) => a)
+          .join('; ');
+        answerInfo = `Boolean Answer: ${booleanAnswers}`;
       } else if (question.type === 'value' && question.Answer.length > 0) {
         const valueAnswers = question.Answer.map((answer) => {
           if (answer.UnitAnswer) {

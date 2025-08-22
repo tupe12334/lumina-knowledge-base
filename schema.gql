@@ -11,6 +11,7 @@ input AddCourseToDegreeInput {
 }
 
 type Answer {
+  BooleanAnswer: BooleanAnswer
   NumberAnswer: NumberAnswer
   SelectAnswer: [SelectAnswer!]
   UnitAnswer: UnitAnswer
@@ -46,6 +47,12 @@ type BlockRelationshipResult {
 
   """The prerequisite block"""
   prerequisite: Block!
+}
+
+type BooleanAnswer {
+  answerId: String!
+  id: ID!
+  value: Boolean!
 }
 
 type Course {
@@ -546,6 +553,7 @@ type QuestionPart {
 
 """The type of the question"""
 enum QuestionType {
+  boolean
   selection
   value
   void
