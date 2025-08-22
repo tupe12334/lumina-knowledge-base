@@ -20,7 +20,8 @@
       "Bash(npm test:*)",
       "Bash(pnpm db:dump:*)",
       "Bash(pgrep:*)",
-      "Bash(PORT=3333 pnpm run preview)"
+      "Bash(PORT=3333 pnpm run preview)",
+      "Bash(chmod:*)"
     ],
     "deny": [],
     "ask": []
