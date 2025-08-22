@@ -1,5 +1,14 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsArray, IsNotEmpty, ValidateNested, IsString, IsOptional, IsEnum, IsBoolean, IsNumber } from 'class-validator';
+import {
+  IsArray,
+  IsNotEmpty,
+  ValidateNested,
+  IsString,
+  IsOptional,
+  IsEnum,
+  IsBoolean,
+  IsNumber,
+} from 'class-validator';
 import { Type } from 'class-transformer';
 import { QuestionType } from '@prisma/client';
 
@@ -70,7 +79,11 @@ export class CreateCompleteQuestionInput {
   })
   @IsOptional()
   @IsEnum(['ai_generated', 'in_manual_review', 'approved', 'rejected'])
-  validationStatus?: 'ai_generated' | 'in_manual_review' | 'approved' | 'rejected';
+  validationStatus?:
+    | 'ai_generated'
+    | 'in_manual_review'
+    | 'approved'
+    | 'rejected';
 
   @ApiProperty({
     description: 'Answer options for selection type questions',
@@ -93,7 +106,8 @@ export class CreateCompleteQuestionInput {
   numberAnswer?: number;
 
   @ApiProperty({
-    description: 'Boolean answer for boolean type questions (true = 1, false = 0)',
+    description:
+      'Boolean answer for boolean type questions (true = 1, false = 0)',
     required: false,
     example: 1,
   })
@@ -113,12 +127,35 @@ export class CreateCompleteQuestionInput {
   @ApiProperty({
     description: 'Unit for unit-based answers',
     required: false,
-    enum: ['meter', 'kilogram', 'second', 'ampere', 'kelvin', 'mole', 'candela'],
+    enum: [
+      'meter',
+      'kilogram',
+      'second',
+      'ampere',
+      'kelvin',
+      'mole',
+      'candela',
+    ],
     example: 'meter',
   })
   @IsOptional()
-  @IsEnum(['meter', 'kilogram', 'second', 'ampere', 'kelvin', 'mole', 'candela'])
-  unit?: 'meter' | 'kilogram' | 'second' | 'ampere' | 'kelvin' | 'mole' | 'candela';
+  @IsEnum([
+    'meter',
+    'kilogram',
+    'second',
+    'ampere',
+    'kelvin',
+    'mole',
+    'candela',
+  ])
+  unit?:
+    | 'meter'
+    | 'kilogram'
+    | 'second'
+    | 'ampere'
+    | 'kelvin'
+    | 'mole'
+    | 'candela';
 }
 
 export class CreateCompleteQuestionsInput {

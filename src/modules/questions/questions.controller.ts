@@ -80,7 +80,8 @@ export class QuestionsController {
   @Post('bulk-complete')
   @ApiOperation({
     summary: 'Create complete questions with translations and answers',
-    description: 'Creates multiple complete question records with translations and answers in a single operation.',
+    description:
+      'Creates multiple complete question records with translations and answers in a single operation.',
   })
   @ApiCreatedResponse({
     description: 'The number of questions created.',
@@ -97,7 +98,9 @@ export class QuestionsController {
   })
   @ApiResponse({ status: 400, description: 'Bad Request.' })
   @ApiResponse({ status: 500, description: 'Internal Server Error.' })
-  createCompleteMany(@Body() createCompleteQuestionsDto: CreateCompleteQuestionsInput) {
+  createCompleteMany(
+    @Body() createCompleteQuestionsDto: CreateCompleteQuestionsInput,
+  ) {
     return this.questionsService.createCompleteMany(createCompleteQuestionsDto);
   }
 

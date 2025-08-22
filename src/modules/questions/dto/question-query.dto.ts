@@ -1,6 +1,14 @@
 import { InputType, Field, ID, Int } from '@nestjs/graphql';
 import { ApiPropertyOptional } from '@nestjs/swagger';
-import { IsUUID, IsOptional, IsEnum, IsBoolean, IsInt, Min, Max } from 'class-validator';
+import {
+  IsUUID,
+  IsOptional,
+  IsEnum,
+  IsBoolean,
+  IsInt,
+  Min,
+  Max,
+} from 'class-validator';
 import { QuestionType, QuestionValidationStatus } from '@prisma/client';
 
 @InputType()
@@ -44,7 +52,6 @@ export class QuestionsQueryDto {
   @ApiPropertyOptional()
   @Field(() => Boolean, {
     nullable: true,
-    defaultValue: true,
     description: 'Include submodules when filtering by module ID',
   })
   @IsBoolean()
@@ -85,10 +92,9 @@ export class QuestionsQueryDto {
   questionTypes?: QuestionType[];
 
   // Pagination fields
-  @ApiPropertyOptional({ minimum: 0, default: 0 })
+  @ApiPropertyOptional({ minimum: 0 })
   @Field(() => Int, {
     nullable: true,
-    defaultValue: 0,
     description: 'Number of records to skip for pagination',
   })
   @IsInt()
@@ -96,10 +102,9 @@ export class QuestionsQueryDto {
   @IsOptional()
   offset?: number;
 
-  @ApiPropertyOptional({ minimum: 1, maximum: 100, default: 20 })
+  @ApiPropertyOptional({ minimum: 1, maximum: 100 })
   @Field(() => Int, {
     nullable: true,
-    defaultValue: 20,
     description: 'Number of records to return (max 100)',
   })
   @IsInt()

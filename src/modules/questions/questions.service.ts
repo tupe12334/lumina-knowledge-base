@@ -51,7 +51,9 @@ export class QuestionsService {
   /**
    * Build where clause for question filtering
    */
-  private async buildWhereClause(filters?: QuestionsQueryDto): Promise<Prisma.QuestionWhereInput> {
+  private async buildWhereClause(
+    filters?: QuestionsQueryDto,
+  ): Promise<Prisma.QuestionWhereInput> {
     const where: Prisma.QuestionWhereInput = {};
 
     // Handle specific question IDs filter
@@ -91,8 +93,8 @@ export class QuestionsService {
     let moduleIds =
       filters?.moduleIds || (filters?.moduleId ? [filters.moduleId] : []);
 
-    // If module filtering is requested and includeSubmodules is enabled (default: true), expand to include all submodules
-    const includeSubmodules = filters?.includeSubmodules !== false; // Default to true
+    // If module filtering is requested and includeSubmodules is enabled, expand to include all submodules
+    const includeSubmodules = filters?.includeSubmodules === true;
     if (moduleIds.length > 0 && includeSubmodules) {
       const expandedModuleIds = new Set(moduleIds);
 
@@ -180,14 +182,31 @@ export class QuestionsService {
   /**
    * Get questions with pagination
    */
-  async findAllPaginated(filters?: QuestionsQueryDto): Promise<PaginatedQuestionsResponse> {
-    const offset = parseInt(String(filters?.offset ?? 0), 10);
-    const limit = Math.min(parseInt(String(filters?.limit ?? 20), 10), 100); // Cap at 100
+  async findAllPaginated(
+    filters?: QuestionsQueryDto,
+  ): Promise<PaginatedQuestionsResponse> {
+    if (!filters) {
+      throw new Error('Filters are required for paginated queries');
+    }
+    if (filters.offset === undefined || filters.offset === null) {
+      throw new Error('Offset is required for paginated queries');
+    }
+    if (filters.limit === undefined || filters.limit === null) {
+      throw new Error('Limit is required for paginated queries');
+    }
+    const offset = parseInt(String(filters.offset), 10);
+    const limit = Math.min(parseInt(String(filters.limit), 10), 100); // Cap at 100
 
     const where = await this.buildWhereClause(filters);
 
-    console.log('🔍 Paginated query - filters:', JSON.stringify(filters, null, 2));
-    console.log('🔍 Paginated query - where clause:', JSON.stringify(where, null, 2));
+    console.log(
+      '🔍 Paginated query - filters:',
+      JSON.stringify(filters, null, 2),
+    );
+    console.log(
+      '🔍 Paginated query - where clause:',
+      JSON.stringify(where, null, 2),
+    );
 
     // Get total count and questions in parallel for better performance
     const [totalCount, questions] = await Promise.all([
@@ -248,15 +267,19 @@ export class QuestionsService {
       }),
     ]);
 
-    console.log(`🔍 Paginated query returned ${questions.length} of ${totalCount} questions`);
+    console.log(
+      `🔍 Paginated query returned ${questions.length} of ${totalCount} questions`,
+    );
 
-    const mappedQuestions = questions.map(({ Answer, Modules, Parts, PartOf, ...question }) => ({
-      ...question,
-      Modules: Modules,
-      Answer: Answer,
-      Parts: Parts,
-      PartOf: PartOf,
-    }));
+    const mappedQuestions = questions.map(
+      ({ Answer, Modules, Parts, PartOf, ...question }) => ({
+        ...question,
+        Modules: Modules,
+        Answer: Answer,
+        Parts: Parts,
+        PartOf: PartOf,
+      }),
+    );
 
     return {
       questions: mappedQuestions,
@@ -516,13 +539,17 @@ export class QuestionsService {
           he_text,
           type,
           moduleIds,
-          validationStatus = 'ai_generated',
+          validationStatus,
           selectAnswers,
           numberAnswer,
           booleanAnswer,
           unitValue,
           unit,
         } = questionData;
+
+        if (!validationStatus) {
+          throw new Error('validationStatus is required for question creation');
+        }
 
         // 1. Create the question translation
         const translation = await prisma.translation.create({
@@ -556,8 +583,8 @@ export class QuestionsService {
                   en_text: answer.en_text,
                   he_text: answer.he_text,
                 },
-              })
-            )
+              }),
+            ),
           );
 
           // Create the answer with select options

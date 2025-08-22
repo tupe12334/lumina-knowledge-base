@@ -1828,7 +1828,6 @@
             "in": "query",
             "schema": {
               "minimum": 0,
-              "default": 0,
               "type": "number"
             }
           },
@@ -1839,7 +1838,6 @@
             "schema": {
               "minimum": 1,
               "maximum": 100,
-              "default": 20,
               "type": "number"
             }
           },
@@ -2084,7 +2082,6 @@
             "in": "query",
             "schema": {
               "minimum": 0,
-              "default": 0,
               "type": "number"
             }
           },
@@ -2095,7 +2092,6 @@
             "schema": {
               "minimum": 1,
               "maximum": 100,
-              "default": 20,
               "type": "number"
             }
           },

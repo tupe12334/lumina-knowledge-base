@@ -198,7 +198,7 @@ input CreateQuestionInput {
 
   """The type of the question"""
   type: QuestionType!
-  validationStatus: QuestionValidationStatus! = ai_generated
+  validationStatus: QuestionValidationStatus
 }
 
 input CreateTranslationInput {
@@ -251,8 +251,8 @@ input DeleteCourseInput {
   """The ID of the course to delete"""
   courseId: ID!
 
-  """Force deletion and cleanup of all related data (default: true)"""
-  force: Boolean! = true
+  """Force deletion and cleanup of all related data"""
+  force: Boolean
 }
 
 input DeleteCourseRelationshipInput {
@@ -602,10 +602,10 @@ input QuestionsQueryDto {
   ids: [ID!]
 
   """Include submodules when filtering by module ID"""
-  includeSubmodules: Boolean = true
+  includeSubmodules: Boolean
 
   """Number of records to return (max 100)"""
-  limit: Int = 20
+  limit: Int
 
   """Filter by module ID"""
   moduleId: ID
@@ -614,7 +614,7 @@ input QuestionsQueryDto {
   moduleIds: [ID!]
 
   """Number of records to skip for pagination"""
-  offset: Int = 0
+  offset: Int
 
   """Filter by question type"""
   questionType: QuestionType
@@ -744,7 +744,7 @@ input UpdateQuestionInput {
 
   """The type of the question"""
   type: QuestionType
-  validationStatus: QuestionValidationStatus = ai_generated
+  validationStatus: QuestionValidationStatus
 }
 
 input UpdateTranslationInput {

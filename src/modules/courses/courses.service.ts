@@ -105,12 +105,20 @@ export class CoursesService {
     if (sortByDegree && (universityId || degreeId)) {
       return courses.sort((a, b) => {
         // Check if course belongs to user's degree
-        const aInDegree = degreeId ? a.Degree?.some(d => d.id === degreeId) : false;
-        const bInDegree = degreeId ? b.Degree?.some(d => d.id === degreeId) : false;
-        
+        const aInDegree = degreeId
+          ? a.Degree?.some((d) => d.id === degreeId)
+          : false;
+        const bInDegree = degreeId
+          ? b.Degree?.some((d) => d.id === degreeId)
+          : false;
+
         // Check if course belongs to user's university
-        const aInUniversity = universityId ? a.universityId === universityId : false;
-        const bInUniversity = universityId ? b.universityId === universityId : false;
+        const aInUniversity = universityId
+          ? a.universityId === universityId
+          : false;
+        const bInUniversity = universityId
+          ? b.universityId === universityId
+          : false;
 
         // Priority scoring: degree = 3, university = 2, other = 1
         const aScore = aInDegree ? 3 : aInUniversity ? 2 : 1;

@@ -10,7 +10,7 @@ export class CreateQuestionInput {
     description: 'The validation status of the question',
   })
   @Field(() => QuestionValidationStatus, {
-    defaultValue: QuestionValidationStatus.ai_generated,
+    nullable: true,
   })
   @IsEnum(QuestionValidationStatus)
   @IsOptional()

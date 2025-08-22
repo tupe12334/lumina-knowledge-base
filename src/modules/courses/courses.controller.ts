@@ -82,7 +82,8 @@ export class CoursesController {
   @Get()
   @ApiOperation({
     summary: 'Retrieve all courses',
-    description: 'Returns a list of all courses. Optionally filter by university or degree.',
+    description:
+      'Returns a list of all courses. Optionally filter by university or degree.',
   })
   @ApiOkResponse({
     type: Course,

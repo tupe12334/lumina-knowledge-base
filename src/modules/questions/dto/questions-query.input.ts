@@ -66,8 +66,7 @@ export class QuestionsQueryInput {
   @Field(() => Boolean, {
     nullable: true,
     description:
-      'Whether to include questions from submodules when filtering by module (default: true)',
-    defaultValue: true,
+      'Whether to include questions from submodules when filtering by module',
   })
   @IsOptional()
   @IsBoolean()

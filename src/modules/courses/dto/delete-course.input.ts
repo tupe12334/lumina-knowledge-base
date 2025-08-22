@@ -31,9 +31,8 @@ export class DeleteCourseInput {
       'Optional flag to force deletion even if there are dependencies.',
   })
   @Field(() => Boolean, {
-    description:
-      'Force deletion and cleanup of all related data (default: true)',
-    defaultValue: true,
+    description: 'Force deletion and cleanup of all related data',
+    nullable: true,
   })
-  force?: boolean = true;
+  force?: boolean;
 }
