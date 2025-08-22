@@ -11,6 +11,7 @@ import {
   ParseUUIDPipe,
   NotFoundException,
   Header,
+  Query,
 } from '@nestjs/common';
 import {
   ApiTags,
@@ -32,6 +33,7 @@ import { SetCourseModulesInput } from './dto/set-course-modules.input';
 import { DeleteCourseInput } from './dto/delete-course.input';
 import { Course } from './models/Course.entity';
 import { CourseRelationshipResult } from './dto/course-relationship-result.type';
+import { CoursesQueryInput } from './dto/courses-query.input';
 
 @ApiTags('courses')
 @Controller('courses')
@@ -80,7 +82,7 @@ export class CoursesController {
   @Get()
   @ApiOperation({
     summary: 'Retrieve all courses',
-    description: 'Returns a list of all courses.',
+    description: 'Returns a list of all courses. Optionally filter by university or degree.',
   })
   @ApiOkResponse({
     type: Course,
@@ -88,8 +90,8 @@ export class CoursesController {
     description: 'A list of courses.',
   })
   @ApiResponse({ status: 500, description: 'Internal Server Error.' })
-  findAll() {
-    return this.coursesService.findAll();
+  findAll(@Query() query: CoursesQueryInput) {
+    return this.coursesService.findAll(query);
   }
 
   @Get(':id')

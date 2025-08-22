@@ -16,6 +16,7 @@ import { UpdateCourseInput } from './dto/update-course.input';
 import { SetCourseModulesInput } from './dto/set-course-modules.input';
 import { CreateCourseInput } from './dto/create-course.input';
 import { CreateManyCoursesInput } from './dto/create-many-courses.input';
+import { CoursesQueryInput } from './dto/courses-query.input';
 
 @Injectable()
 export class CoursesService {
@@ -82,7 +83,10 @@ export class CoursesService {
     });
   }
 
-  async findAll(): Promise<Course[]> {
+  async findAll(query?: CoursesQueryInput): Promise<Course[]> {
+    const { universityId, degreeId, sortByDegree } = query || {};
+
+    // Always fetch ALL courses, no filtering by where clause
     const courses = await this.prisma.course.findMany({
       include: {
         university: { include: { name: true } },
@@ -93,8 +97,28 @@ export class CoursesService {
             prerequisiteFor: true,
           },
         },
+        Degree: true, // Include degrees to check if course belongs to user's degree
       },
     });
+
+    // Sort courses in priority order: degree courses, then university courses, then rest
+    if (sortByDegree && (universityId || degreeId)) {
+      return courses.sort((a, b) => {
+        // Check if course belongs to user's degree
+        const aInDegree = degreeId ? a.Degree?.some(d => d.id === degreeId) : false;
+        const bInDegree = degreeId ? b.Degree?.some(d => d.id === degreeId) : false;
+        
+        // Check if course belongs to user's university
+        const aInUniversity = universityId ? a.universityId === universityId : false;
+        const bInUniversity = universityId ? b.universityId === universityId : false;
+
+        // Priority scoring: degree = 3, university = 2, other = 1
+        const aScore = aInDegree ? 3 : aInUniversity ? 2 : 1;
+        const bScore = bInDegree ? 3 : bInUniversity ? 2 : 1;
+
+        return bScore - aScore; // Sort in descending order (higher score first)
+      });
+    }
 
     return courses;
   }
