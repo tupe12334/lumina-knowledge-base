@@ -11,6 +11,9 @@ while true; do
     
     pnpm generate-questions-claude
     
+    echo "Adding generated files to git stage..."
+    git add .
+    
     echo "Iteration $counter completed at $(date)"
     echo "Waiting 5 seconds before next iteration..."
     sleep 5
