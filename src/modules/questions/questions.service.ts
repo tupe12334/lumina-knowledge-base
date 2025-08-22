@@ -9,6 +9,7 @@ import { Question } from './models/Question.entity';
 import { QuestionsQueryDto } from './dto/question-query.dto';
 import { CreateQuestionInput } from './dto/create-question.input';
 import { CreateManyQuestionsInput } from './dto/create-many-questions.input';
+import { CreateCompleteQuestionsInput } from './dto/create-complete-questions.input';
 import { UpdateQuestionInput } from './dto/update-question.input';
 import { DeleteQuestionInput } from './dto/delete-question.input';
 
@@ -352,6 +353,113 @@ export class QuestionsService {
             },
           },
         });
+        createdCount++;
+      }
+
+      return { count: createdCount };
+    });
+  }
+
+  /**
+   * Creates multiple complete questions with translations and answers in a single transaction.
+   * @param input - The data for creating complete questions
+   * @returns The number of questions created
+   */
+  async createCompleteMany(input: CreateCompleteQuestionsInput) {
+    return this.prisma.$transaction(async (prisma) => {
+      let createdCount = 0;
+
+      for (const questionData of input.questions) {
+        const {
+          en_text,
+          he_text,
+          type,
+          moduleIds,
+          validationStatus = 'ai_generated',
+          selectAnswers,
+          numberAnswer,
+          booleanAnswer,
+          unitValue,
+          unit,
+        } = questionData;
+
+        // 1. Create the question translation
+        const translation = await prisma.translation.create({
+          data: {
+            en_text,
+            he_text,
+          },
+        });
+
+        // 2. Create the question
+        const question = await prisma.question.create({
+          data: {
+            type,
+            validationStatus,
+            text: {
+              connect: { id: translation.id },
+            },
+            Modules: {
+              connect: moduleIds?.map((id) => ({ id })),
+            },
+          },
+        });
+
+        // 3. Create answers based on question type
+        if (type === 'selection' && selectAnswers && selectAnswers.length > 0) {
+          // Create translations for answer options
+          const answerTranslations = await Promise.all(
+            selectAnswers.map((answer) =>
+              prisma.translation.create({
+                data: {
+                  en_text: answer.en_text,
+                  he_text: answer.he_text,
+                },
+              })
+            )
+          );
+
+          // Create the answer with select options
+          await prisma.answer.create({
+            data: {
+              question: { connect: { id: question.id } },
+              SelectAnswer: {
+                create: selectAnswers.map((answer, index) => ({
+                  isCorrect: answer.is_correct,
+                  text: { connect: { id: answerTranslations[index].id } },
+                })),
+              },
+            },
+          });
+        } else if (type === 'boolean' && booleanAnswer !== undefined) {
+          await prisma.answer.create({
+            data: {
+              question: { connect: { id: question.id } },
+              NumberAnswer: {
+                create: { value: booleanAnswer },
+              },
+            },
+          });
+        } else if (type === 'value') {
+          const answerData: any = {
+            question: { connect: { id: question.id } },
+          };
+
+          if (unitValue !== undefined && unit) {
+            answerData.UnitAnswer = {
+              create: { value: unitValue, unit },
+            };
+          } else if (numberAnswer !== undefined) {
+            answerData.NumberAnswer = {
+              create: { value: numberAnswer },
+            };
+          }
+
+          if (answerData.UnitAnswer || answerData.NumberAnswer) {
+            await prisma.answer.create({ data: answerData });
+          }
+        }
+
         createdCount++;
       }
 

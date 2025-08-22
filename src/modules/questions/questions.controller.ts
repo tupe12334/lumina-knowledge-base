@@ -26,6 +26,7 @@ import {
 import { QuestionsService } from './questions.service';
 import { CreateQuestionInput } from './dto/create-question.input';
 import { CreateManyQuestionsInput } from './dto/create-many-questions.input';
+import { CreateCompleteQuestionsInput } from './dto/create-complete-questions.input';
 import { UpdateQuestionInput } from './dto/update-question.input';
 import { QuestionsQueryDto } from './dto/question-query.dto';
 import { DeleteQuestionInput } from './dto/delete-question.input';
@@ -73,6 +74,30 @@ export class QuestionsController {
   @ApiResponse({ status: 500, description: 'Internal Server Error.' })
   createMany(@Body() createManyQuestionsDto: CreateManyQuestionsInput) {
     return this.questionsService.createMany(createManyQuestionsDto);
+  }
+
+  @Post('bulk-complete')
+  @ApiOperation({
+    summary: 'Create complete questions with translations and answers',
+    description: 'Creates multiple complete question records with translations and answers in a single operation.',
+  })
+  @ApiCreatedResponse({
+    description: 'The number of questions created.',
+    schema: {
+      type: 'object',
+      properties: {
+        count: {
+          type: 'number',
+          description: 'Number of questions created',
+          example: 5,
+        },
+      },
+    },
+  })
+  @ApiResponse({ status: 400, description: 'Bad Request.' })
+  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
+  createCompleteMany(@Body() createCompleteQuestionsDto: CreateCompleteQuestionsInput) {
+    return this.questionsService.createCompleteMany(createCompleteQuestionsDto);
   }
 
   @Get()

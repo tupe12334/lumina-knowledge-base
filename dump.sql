@@ -2424,6 +2424,11 @@ INSERT INTO Translation VALUES('a4c8f1ed-9976-4599-867c-513c0bcacbc7','The bound
 INSERT INTO Translation VALUES('2eac6d2a-e814-4625-9944-999c788e2618','A function that is not bounded is called unbounded','פונקציה שאינה חסומה נקראת לא חסומה');
 INSERT INTO Translation VALUES('d273f5a1-91da-46f8-8835-652e43123f42','Which property ensures a function is bounded on a compact set?','איזה תכונה מבטיחה שפונקציה חסומה על קבוצה קומפקטית?');
 INSERT INTO Translation VALUES('85c86449-57f2-4075-91bf-2be7cf1f3a2d','The sum of two bounded functions is always bounded','הסכום של שתי פונקציות חסומות תמיד חסום');
+INSERT INTO Translation VALUES('7344cbab-bafb-45ee-9861-06c2527f4dd9','What is the fundamental concept of limits in calculus?','מה המושג הבסיסי של גבולות בחשבון אינפיניטסימלי?');
+INSERT INTO Translation VALUES('d51e561a-3742-41a6-8e27-a3dd41ede2da','The value that a function approaches','הערך שאליו מתקרבת פונקציה');
+INSERT INTO Translation VALUES('9dfc478e-2551-4a90-b77b-027b5b7122f7','The maximum value of a function','הערך המקסימלי של פונקציה');
+INSERT INTO Translation VALUES('a0b68555-52ad-4b57-8590-3fa723838e53','The derivative of a function','הנגזרת של פונקציה');
+INSERT INTO Translation VALUES('98dab6b8-3ded-4883-83df-8b932247bb86','A bounded function has both upper and lower bounds','לפונקציה חסומה יש גם חסמים עליונים וגם חסמים תחתונים');
 CREATE TABLE IF NOT EXISTS "Question" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "validationStatus" TEXT NOT NULL DEFAULT 'ai_generated',
@@ -2947,6 +2952,8 @@ INSERT INTO Question VALUES('cf771a9e-10d4-4734-a0fd-ee20ed33ee41','ai_generated
 INSERT INTO Question VALUES('6103df4b-127a-4ff1-a752-94a337c77543','ai_generated','2eac6d2a-e814-4625-9944-999c788e2618','boolean');
 INSERT INTO Question VALUES('01520cbb-1ed1-453e-b640-6094ccf8ec6f','ai_generated','d273f5a1-91da-46f8-8835-652e43123f42','selection');
 INSERT INTO Question VALUES('0300a4c8-c071-4d89-9e2b-a3086a9ea739','ai_generated','85c86449-57f2-4075-91bf-2be7cf1f3a2d','boolean');
+INSERT INTO Question VALUES('c3278ad2-6dc8-4ea8-a982-5de5e8b85c5d','ai_generated','7344cbab-bafb-45ee-9861-06c2527f4dd9','selection');
+INSERT INTO Question VALUES('286343aa-eb25-4229-b5a2-2ad2e608c181','ai_generated','98dab6b8-3ded-4883-83df-8b932247bb86','boolean');
 CREATE TABLE IF NOT EXISTS "QuestionPart" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "questionId" TEXT NOT NULL,
@@ -3416,6 +3423,8 @@ INSERT INTO Answer VALUES('c7f0955f-2cc8-46d5-b6e8-e0ea03283e7c','c52c5ed0-d2c6-
 INSERT INTO Answer VALUES('f850e0ed-b6fd-46bc-8f40-a697aae509f1','8b6f67ff-c814-4388-8be0-6487d31d4d7a');
 INSERT INTO Answer VALUES('86546555-b7f3-4446-9552-8f2f27106a4d','b2c55e04-9aa4-4bde-af1e-4c39a7388265');
 INSERT INTO Answer VALUES('45e839cf-b08b-4d79-be6e-52a073c8b6c3','f8c7aa6e-f57a-4a35-87fb-090ba24fa2ef');
+INSERT INTO Answer VALUES('7d62135b-c41a-4bf6-b9e8-4cd2a63620cf','c3278ad2-6dc8-4ea8-a982-5de5e8b85c5d');
+INSERT INTO Answer VALUES('f3ccfb60-3e46-4162-b61d-7632a9784a27','286343aa-eb25-4229-b5a2-2ad2e608c181');
 CREATE TABLE IF NOT EXISTS "SelectAnswer" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "isCorrect" BOOLEAN NOT NULL,
@@ -3888,6 +3897,9 @@ INSERT INTO SelectAnswer VALUES('4375e529-7873-40d8-ba14-8872e151c371',0,'225ca4
 INSERT INTO SelectAnswer VALUES('c1815a5e-4c29-4420-8c5d-4150052c4fd6',0,'17304877-46fd-4153-850f-13810a37249a','f114826c-aa13-4fce-914c-e2aedf6ed931');
 INSERT INTO SelectAnswer VALUES('51e7a6e0-5795-40d1-97f1-4b4a3d8a4bfd',0,'6debd3b9-0c0f-4b76-b86d-d3e7d4b44920','f114826c-aa13-4fce-914c-e2aedf6ed931');
 INSERT INTO SelectAnswer VALUES('8d85198a-3c74-4e55-9ba5-077884058e16',1,'81307f6f-5025-4aba-af86-c0dd9f84a13b','f114826c-aa13-4fce-914c-e2aedf6ed931');
+INSERT INTO SelectAnswer VALUES('779bfebe-3e5c-4990-af6a-f80b23c01d32',0,'a0b68555-52ad-4b57-8590-3fa723838e53','7d62135b-c41a-4bf6-b9e8-4cd2a63620cf');
+INSERT INTO SelectAnswer VALUES('37029f12-0127-465d-8a5b-836f449f2891',0,'9dfc478e-2551-4a90-b77b-027b5b7122f7','7d62135b-c41a-4bf6-b9e8-4cd2a63620cf');
+INSERT INTO SelectAnswer VALUES('5b2c57b3-c65a-4af9-8484-1537cd033cac',1,'d51e561a-3742-41a6-8e27-a3dd41ede2da','7d62135b-c41a-4bf6-b9e8-4cd2a63620cf');
 CREATE TABLE IF NOT EXISTS "UnitAnswer" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "value" REAL NOT NULL,
@@ -4139,6 +4151,7 @@ INSERT INTO NumberAnswer VALUES('e5011f33-caf9-4433-9805-61149cc0dad2',1.0,'c7f0
 INSERT INTO NumberAnswer VALUES('a108fe09-bdd9-41e4-9530-44ecd393a5eb',1.0,'f850e0ed-b6fd-46bc-8f40-a697aae509f1');
 INSERT INTO NumberAnswer VALUES('9924eb6e-b72d-4c25-806d-449e3a6c071c',1.0,'86546555-b7f3-4446-9552-8f2f27106a4d');
 INSERT INTO NumberAnswer VALUES('37917179-2832-41ad-bf0c-cb885b20ee2e',1.0,'45e839cf-b08b-4d79-be6e-52a073c8b6c3');
+INSERT INTO NumberAnswer VALUES('66672400-ed89-47fe-8377-e24b4c8f4fd1',1.0,'f3ccfb60-3e46-4162-b61d-7632a9784a27');
 CREATE TABLE IF NOT EXISTS "_CourseModules" (
     "A" TEXT NOT NULL,
     "B" TEXT NOT NULL,
@@ -4960,6 +4973,8 @@ INSERT INTO _ModuleToQuestion VALUES('c1f4a8e2-5d7b-4c9a-8f3e-2b6d9c1a4e7f','cf7
 INSERT INTO _ModuleToQuestion VALUES('c1f4a8e2-5d7b-4c9a-8f3e-2b6d9c1a4e7f','6103df4b-127a-4ff1-a752-94a337c77543');
 INSERT INTO _ModuleToQuestion VALUES('c1f4a8e2-5d7b-4c9a-8f3e-2b6d9c1a4e7f','01520cbb-1ed1-453e-b640-6094ccf8ec6f');
 INSERT INTO _ModuleToQuestion VALUES('c1f4a8e2-5d7b-4c9a-8f3e-2b6d9c1a4e7f','0300a4c8-c071-4d89-9e2b-a3086a9ea739');
+INSERT INTO _ModuleToQuestion VALUES('4e5f6a8b-9c0d-4f5e-a2ab-5c6d7e8f9a0b','c3278ad2-6dc8-4ea8-a982-5de5e8b85c5d');
+INSERT INTO _ModuleToQuestion VALUES('c1f4a8e2-5d7b-4c9a-8f3e-2b6d9c1a4e7f','286343aa-eb25-4229-b5a2-2ad2e608c181');
 CREATE TABLE IF NOT EXISTS "Degree" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "translationId" TEXT NOT NULL,

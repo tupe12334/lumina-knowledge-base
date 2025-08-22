@@ -1864,6 +1864,52 @@
         ]
       }
     },
+    "/questions/bulk-complete": {
+      "post": {
+        "description": "Creates multiple complete question records with translations and answers in a single operation.",
+        "operationId": "QuestionsController_createCompleteMany",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCompleteQuestionsInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The number of questions created.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "number",
+                      "description": "Number of questions created",
+                      "example": 5
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Create complete questions with translations and answers",
+        "tags": [
+          "questions"
+        ]
+      }
+    },
     "/questions/{id}": {
       "get": {
         "description": "Returns a single question by its ID.",
@@ -4300,6 +4346,160 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/CreateQuestionInput"
+            }
+          }
+        },
+        "required": [
+          "questions"
+        ]
+      },
+      "CreateCompleteSelectAnswerInput": {
+        "type": "object",
+        "properties": {
+          "en_text": {
+            "type": "string",
+            "description": "English text for the answer option",
+            "example": "The derivative of a function"
+          },
+          "he_text": {
+            "type": "string",
+            "description": "Hebrew text for the answer option",
+            "example": "הנגזרת של פונקציה"
+          },
+          "is_correct": {
+            "type": "boolean",
+            "description": "Whether this answer option is correct",
+            "example": true
+          }
+        },
+        "required": [
+          "en_text",
+          "he_text",
+          "is_correct"
+        ]
+      },
+      "CreateCompleteQuestionInput": {
+        "type": "object",
+        "properties": {
+          "en_text": {
+            "type": "string",
+            "description": "English text for the question",
+            "example": "What is the primary concept in differential calculus?"
+          },
+          "he_text": {
+            "type": "string",
+            "description": "Hebrew text for the question",
+            "example": "מה המושג העיקרי בחשבון דיפרנציאלי?"
+          },
+          "type": {
+            "type": "string",
+            "description": "Type of the question",
+            "enum": [
+              "selection",
+              "value",
+              "boolean",
+              "void"
+            ],
+            "example": "selection"
+          },
+          "moduleIds": {
+            "description": "Array of module IDs this question belongs to",
+            "example": [
+              "uuid-1",
+              "uuid-2"
+            ],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "validationStatus": {
+            "type": "string",
+            "description": "Validation status of the question",
+            "enum": [
+              "ai_generated",
+              "in_manual_review",
+              "approved",
+              "rejected"
+            ],
+            "example": "ai_generated",
+            "default": "ai_generated"
+          },
+          "selectAnswers": {
+            "description": "Answer options for selection type questions",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateCompleteSelectAnswerInput"
+            }
+          },
+          "numberAnswer": {
+            "type": "number",
+            "description": "Numeric answer for value type questions",
+            "example": 42
+          },
+          "booleanAnswer": {
+            "type": "number",
+            "description": "Boolean answer for boolean type questions (true = 1, false = 0)",
+            "example": 1
+          },
+          "unitValue": {
+            "type": "number",
+            "description": "Unit value for unit-based answers",
+            "example": 9.8
+          },
+          "unit": {
+            "type": "string",
+            "description": "Unit for unit-based answers",
+            "enum": [
+              "meter",
+              "kilogram",
+              "second",
+              "ampere",
+              "kelvin",
+              "mole",
+              "candela"
+            ],
+            "example": "meter"
+          }
+        },
+        "required": [
+          "en_text",
+          "he_text",
+          "type",
+          "moduleIds",
+          "validationStatus"
+        ]
+      },
+      "CreateCompleteQuestionsInput": {
+        "type": "object",
+        "properties": {
+          "questions": {
+            "description": "Array of complete questions to create",
+            "example": [
+              {
+                "en_text": "What is calculus?",
+                "he_text": "מה זה חשבון אינפיניטסימלי?",
+                "type": "selection",
+                "moduleIds": [
+                  "uuid-1"
+                ],
+                "selectAnswers": [
+                  {
+                    "en_text": "A branch of mathematics",
+                    "he_text": "ענף במתמטיקה",
+                    "is_correct": true
+                  },
+                  {
+                    "en_text": "A type of calculator",
+                    "he_text": "סוג של מחשבון",
+                    "is_correct": false
+                  }
+                ]
+              }
+            ],
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateCompleteQuestionInput"
             }
           }
         },
