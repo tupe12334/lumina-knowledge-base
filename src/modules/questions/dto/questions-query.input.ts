@@ -56,7 +56,7 @@ export class QuestionsQueryInput {
   })
   @IsOptional()
   @IsArray()
-  @IsIn(['selection', 'value', 'void'], { each: true })
+  @IsIn(['selection', 'value', 'boolean', 'void'], { each: true })
   questionTypes?: QuestionType[];
 
   @ApiPropertyOptional({
@@ -109,6 +109,6 @@ export class QuestionsQueryInput {
       'Filter questions by question type (deprecated, use questionTypes)',
   })
   @IsOptional()
-  @IsIn(['selection', 'value', 'void'])
+  @IsIn(['selection', 'value', 'boolean', 'void'])
   questionType?: QuestionType;
 }
