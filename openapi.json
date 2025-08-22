@@ -860,9 +860,38 @@
         ]
       },
       "get": {
-        "description": "Returns a list of all courses.",
+        "description": "Returns a list of all courses. Optionally filter by university or degree.",
         "operationId": "CoursesController_findAll",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "universityId",
+            "required": false,
+            "in": "query",
+            "description": "Filter courses by university ID",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "degreeId",
+            "required": false,
+            "in": "query",
+            "description": "Filter courses by degree ID",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortByDegree",
+            "required": false,
+            "in": "query",
+            "description": "Sort courses to prioritize degree courses first",
+            "schema": {
+              "default": false,
+              "type": "boolean"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "A list of courses.",
