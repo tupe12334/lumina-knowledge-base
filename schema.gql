@@ -470,6 +470,23 @@ type NumberAnswer {
   value: Float!
 }
 
+type PaginatedQuestionsResponse {
+  """Whether there are more questions available"""
+  hasMore: Boolean!
+
+  """Number of questions returned in this batch"""
+  limit: Int!
+
+  """Current offset (starting position)"""
+  offset: Int!
+
+  """List of questions"""
+  questions: [Question!]!
+
+  """Total number of questions matching the criteria"""
+  totalCount: Int!
+}
+
 type Query {
   """Get a specific block by ID"""
   block(
@@ -526,6 +543,9 @@ type Query {
 
   """Get all questions with optional filtering"""
   questions(input: QuestionsQueryDto): [Question!]!
+
+  """Get questions with pagination support for infinite scroll"""
+  questionsPaginated(input: QuestionsQueryDto): PaginatedQuestionsResponse!
   translation(id: ID!): Translation
   translations: [Translation!]!
   universities: [University!]!
@@ -573,10 +593,19 @@ input QuestionsQueryDto {
 
   """Filter by multiple course IDs"""
   courseIds: [ID!]
+
+  """Filter questions that have parts"""
+  hasParts: Boolean
   id: ID
+
+  """Filter by specific question IDs"""
+  ids: [ID!]
 
   """Include submodules when filtering by module ID"""
   includeSubmodules: Boolean = true
+
+  """Number of records to return (max 100)"""
+  limit: Int = 20
 
   """Filter by module ID"""
   moduleId: ID
@@ -584,11 +613,17 @@ input QuestionsQueryDto {
   """Filter by multiple module IDs"""
   moduleIds: [ID!]
 
+  """Number of records to skip for pagination"""
+  offset: Int = 0
+
   """Filter by question type"""
   questionType: QuestionType
 
   """Filter by multiple question types"""
   questionTypes: [QuestionType!]
+
+  """Search in question text"""
+  textSearch: String
   type: QuestionType
   validationStatus: QuestionValidationStatus
 }

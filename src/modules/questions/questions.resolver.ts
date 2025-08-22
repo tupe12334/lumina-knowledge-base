@@ -8,6 +8,7 @@ import { CreateManyQuestionsInput } from './dto/create-many-questions.input';
 import { UpdateQuestionInput } from './dto/update-question.input';
 import { DeleteQuestionInput } from './dto/delete-question.input';
 import { CreateManyResult } from '../common/create-many-result.type';
+import { PaginatedQuestionsResponse } from './dto/paginated-questions-response.dto';
 
 /**
  * GraphQL resolver for question-related operations.
@@ -31,6 +32,22 @@ export class QuestionsResolver {
     input?: QuestionsQueryDto,
   ): Promise<Question[]> {
     return this.questionsService.findAll(input);
+  }
+
+  /**
+   * Retrieves questions with pagination support for infinite scroll.
+   * @param input - Optional filtering and pagination parameters
+   * @returns Promise<PaginatedQuestionsResponse> Paginated questions with metadata
+   */
+  @Query(() => PaginatedQuestionsResponse, {
+    name: 'questionsPaginated',
+    description: 'Get questions with pagination support for infinite scroll',
+  })
+  async getQuestionsPaginated(
+    @Args('input', { type: () => QuestionsQueryDto, nullable: true })
+    input?: QuestionsQueryDto,
+  ): Promise<PaginatedQuestionsResponse> {
+    return this.questionsService.findAllPaginated(input);
   }
 
   /**

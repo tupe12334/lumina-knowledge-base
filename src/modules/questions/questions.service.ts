@@ -12,6 +12,7 @@ import { CreateManyQuestionsInput } from './dto/create-many-questions.input';
 import { CreateCompleteQuestionsInput } from './dto/create-complete-questions.input';
 import { UpdateQuestionInput } from './dto/update-question.input';
 import { DeleteQuestionInput } from './dto/delete-question.input';
+import { PaginatedQuestionsResponse } from './dto/paginated-questions-response.dto';
 
 @Injectable()
 export class QuestionsService {
@@ -47,9 +48,44 @@ export class QuestionsService {
     return Array.from(submoduleIds);
   }
 
-  async findAll(filters?: QuestionsQueryDto): Promise<Question[]> {
-    // Build where clause based on filters
+  /**
+   * Build where clause for question filtering
+   */
+  private async buildWhereClause(filters?: QuestionsQueryDto): Promise<Prisma.QuestionWhereInput> {
     const where: Prisma.QuestionWhereInput = {};
+
+    // Handle specific question IDs filter
+    if (filters?.ids && filters.ids.length > 0) {
+      where.id = { in: filters.ids };
+      return where; // If specific IDs are provided, ignore other filters
+    }
+
+    // Handle single ID filter
+    if (filters?.id) {
+      where.id = filters.id;
+      return where;
+    }
+
+    // Handle text search (SQLite doesn't support mode: 'insensitive')
+    if (filters?.textSearch && filters.textSearch.trim().length > 0) {
+      const searchTerm = filters.textSearch.trim();
+      where.OR = [
+        {
+          text: {
+            en_text: {
+              contains: searchTerm,
+            },
+          },
+        },
+        {
+          text: {
+            he_text: {
+              contains: searchTerm,
+            },
+          },
+        },
+      ];
+    }
 
     // Handle both array and single module filtering
     let moduleIds =
@@ -67,22 +103,11 @@ export class QuestionsService {
       }
 
       moduleIds = Array.from(expandedModuleIds);
-      console.log(
-        `🔍 Expanded module filtering: original ${filters?.moduleIds?.length || (filters?.moduleId ? 1 : 0)} modules to ${moduleIds.length} modules (including submodules)`,
-      );
-    } else if (moduleIds.length > 0) {
-      console.log(
-        `🔍 Module filtering: using ${moduleIds.length} modules (submodules excluded)`,
-      );
     }
 
     // Handle both array and single course filtering
     const courseIds =
       filters?.courseIds || (filters?.courseId ? [filters.courseId] : []);
-
-    // Debug: log the filters and where clause
-    console.log('🔍 Service filters:', JSON.stringify(filters, null, 2));
-    console.log('🔍 Service moduleIds (final):', moduleIds);
 
     // Build Module filter combining both module and course filters
     if (moduleIds.length > 0 || courseIds.length > 0) {
@@ -115,6 +140,15 @@ export class QuestionsService {
       where.type = { in: questionTypes };
     }
 
+    // Handle hasParts filter
+    if (filters?.hasParts !== undefined) {
+      if (filters.hasParts) {
+        where.Parts = { some: {} };
+      } else {
+        where.Parts = { none: {} };
+      }
+    }
+
     // Always exclude questions that are part of other questions
     const partQuestionIds = await this.prisma.questionPart.findMany({
       select: { partQuestionId: true, questionId: true },
@@ -127,9 +161,116 @@ export class QuestionsService {
       .map((part) => part.partQuestionId);
 
     if (idsToExclude.length > 0) {
-      where.id = { notIn: idsToExclude };
+      const existingIdCondition = where.id;
+      if (existingIdCondition) {
+        // If there's already an ID condition, combine with AND
+        where.AND = [
+          { id: existingIdCondition },
+          { id: { notIn: idsToExclude } },
+        ];
+        delete where.id;
+      } else {
+        where.id = { notIn: idsToExclude };
+      }
     }
 
+    return where;
+  }
+
+  /**
+   * Get questions with pagination
+   */
+  async findAllPaginated(filters?: QuestionsQueryDto): Promise<PaginatedQuestionsResponse> {
+    const offset = parseInt(String(filters?.offset ?? 0), 10);
+    const limit = Math.min(parseInt(String(filters?.limit ?? 20), 10), 100); // Cap at 100
+
+    const where = await this.buildWhereClause(filters);
+
+    console.log('🔍 Paginated query - filters:', JSON.stringify(filters, null, 2));
+    console.log('🔍 Paginated query - where clause:', JSON.stringify(where, null, 2));
+
+    // Get total count and questions in parallel for better performance
+    const [totalCount, questions] = await Promise.all([
+      this.prisma.question.count({ where }),
+      this.prisma.question.findMany({
+        where,
+        skip: offset,
+        take: limit,
+        orderBy: { id: 'asc' }, // Consistent ordering for pagination
+        include: {
+          text: true,
+          Modules: { include: { name: true } },
+          Answer: {
+            include: {
+              SelectAnswer: { include: { text: true } },
+              UnitAnswer: true,
+              NumberAnswer: true,
+              BooleanAnswer: true,
+            },
+          },
+          Parts: {
+            orderBy: { order: 'asc' },
+            include: {
+              partQuestion: {
+                include: {
+                  text: true,
+                  Answer: {
+                    include: {
+                      SelectAnswer: { include: { text: true } },
+                      UnitAnswer: true,
+                      NumberAnswer: true,
+                      BooleanAnswer: true,
+                    },
+                  },
+                },
+              },
+            },
+          },
+          PartOf: {
+            orderBy: { order: 'asc' },
+            include: {
+              question: {
+                include: {
+                  text: true,
+                  Answer: {
+                    include: {
+                      SelectAnswer: { include: { text: true } },
+                      UnitAnswer: true,
+                      NumberAnswer: true,
+                      BooleanAnswer: true,
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      }),
+    ]);
+
+    console.log(`🔍 Paginated query returned ${questions.length} of ${totalCount} questions`);
+
+    const mappedQuestions = questions.map(({ Answer, Modules, Parts, PartOf, ...question }) => ({
+      ...question,
+      Modules: Modules,
+      Answer: Answer,
+      Parts: Parts,
+      PartOf: PartOf,
+    }));
+
+    return {
+      questions: mappedQuestions,
+      totalCount,
+      offset,
+      limit,
+      hasMore: offset + limit < totalCount,
+    };
+  }
+
+  async findAll(filters?: QuestionsQueryDto): Promise<Question[]> {
+    const where = await this.buildWhereClause(filters);
+
+    console.log('🔍 Service filters:', JSON.stringify(filters, null, 2));
     console.log('🔍 Final where clause:', JSON.stringify(where, null, 2));
 
     const questions = await this.prisma.question.findMany({

@@ -31,6 +31,7 @@ import { UpdateQuestionInput } from './dto/update-question.input';
 import { QuestionsQueryDto } from './dto/question-query.dto';
 import { DeleteQuestionInput } from './dto/delete-question.input';
 import { Question } from './models/Question.entity';
+import { PaginatedQuestionsResponse } from './dto/paginated-questions-response.dto';
 
 @ApiTags('questions')
 @Controller('questions')
@@ -113,6 +114,20 @@ export class QuestionsController {
   @ApiResponse({ status: 500, description: 'Internal Server Error.' })
   findAll(@Query() query: QuestionsQueryDto) {
     return this.questionsService.findAll(query);
+  }
+
+  @Get('paginated')
+  @ApiOperation({
+    summary: 'Retrieve paginated questions',
+    description: 'Returns paginated questions for infinite scroll.',
+  })
+  @ApiOkResponse({
+    type: PaginatedQuestionsResponse,
+    description: 'Paginated questions with metadata.',
+  })
+  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
+  findAllPaginated(@Query() query: QuestionsQueryDto) {
+    return this.questionsService.findAllPaginated(query);
   }
 
   @Get(':id')

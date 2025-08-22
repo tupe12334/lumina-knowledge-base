@@ -1,6 +1,6 @@
-import { InputType, Field, ID } from '@nestjs/graphql';
+import { InputType, Field, ID, Int } from '@nestjs/graphql';
 import { ApiPropertyOptional } from '@nestjs/swagger';
-import { IsUUID, IsOptional, IsEnum, IsBoolean } from 'class-validator';
+import { IsUUID, IsOptional, IsEnum, IsBoolean, IsInt, Min, Max } from 'class-validator';
 import { QuestionType, QuestionValidationStatus } from '@prisma/client';
 
 @InputType()
@@ -83,4 +83,55 @@ export class QuestionsQueryDto {
   @IsEnum(QuestionType, { each: true })
   @IsOptional()
   questionTypes?: QuestionType[];
+
+  // Pagination fields
+  @ApiPropertyOptional({ minimum: 0, default: 0 })
+  @Field(() => Int, {
+    nullable: true,
+    defaultValue: 0,
+    description: 'Number of records to skip for pagination',
+  })
+  @IsInt()
+  @Min(0)
+  @IsOptional()
+  offset?: number;
+
+  @ApiPropertyOptional({ minimum: 1, maximum: 100, default: 20 })
+  @Field(() => Int, {
+    nullable: true,
+    defaultValue: 20,
+    description: 'Number of records to return (max 100)',
+  })
+  @IsInt()
+  @Min(1)
+  @Max(100)
+  @IsOptional()
+  limit?: number;
+
+  // Additional fields for advanced filtering
+  @ApiPropertyOptional()
+  @Field(() => [ID], {
+    nullable: true,
+    description: 'Filter by specific question IDs',
+  })
+  @IsUUID('4', { each: true })
+  @IsOptional()
+  ids?: string[];
+
+  @ApiPropertyOptional()
+  @Field(() => String, {
+    nullable: true,
+    description: 'Search in question text',
+  })
+  @IsOptional()
+  textSearch?: string;
+
+  @ApiPropertyOptional()
+  @Field(() => Boolean, {
+    nullable: true,
+    description: 'Filter questions that have parts',
+  })
+  @IsBoolean()
+  @IsOptional()
+  hasParts?: boolean;
 }
