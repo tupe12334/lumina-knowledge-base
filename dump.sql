@@ -2363,6 +2363,14 @@ INSERT INTO Translation VALUES('bcb298ad-c9bd-44e5-821b-20f2b80502a5','Which is 
 INSERT INTO Translation VALUES('2de4d40d-1f78-442e-8c93-270370eee08b','Differentiation and integration are inverse operations','גזירה ואינטגרציה הן פעולות הפוכות');
 INSERT INTO Translation VALUES('52fe0056-8805-4002-862e-aad3548995c3','Every continuous function has an antiderivative','לכל פונקציה רציפה יש אינטגרל לא מסוים');
 INSERT INTO Translation VALUES('a91c47cc-5e85-49d8-937d-e5ae314f6c49','All functions are integrable','כל הפונקציות ניתנות לאינטגרציה');
+INSERT INTO Translation VALUES('a707d1c5-b088-426a-8e58-df7c6f9e70c1','What does the definite integral represent geometrically?','מה האינטגרל המסוים מייצג גיאומטרית?');
+INSERT INTO Translation VALUES('ed25915a-9b95-44f0-9c93-9ed92e4c87b9','What does the definite integral represent geometrically?','מה האינטגרל המסוים מייצג גיאומטרית?');
+INSERT INTO Translation VALUES('f149ca5f-3996-480e-a169-36f8bbf5286d','The definite integral ∫[a,b] f(x)dx can be negative.','האינטגרל המסוים ∫[a,b] f(x)dx יכול להיות שלילי.');
+INSERT INTO Translation VALUES('5d542a30-b60c-40e5-b309-f3e9cb31d379','Calculate ∫[0,2] x dx','חשב ∫[0,2] x dx');
+INSERT INTO Translation VALUES('21aff66d-0ce6-451f-98de-cbfb547e3623','The signed area under a curve','השטח המסומן מתחת לעקומה');
+INSERT INTO Translation VALUES('a875a849-7773-4a47-885f-d80df2364f42','The slope of a tangent line','השיפוע של קו משיק');
+INSERT INTO Translation VALUES('eb8c92ba-c032-4b55-8a69-0031c869e18b','The maximum value of a function','הערך המקסימלי של פונקציה');
+INSERT INTO Translation VALUES('ada0f700-ebed-4c93-b174-1ebb2d4931c7','The rate of change at a point','קצב השינוי בנקודה');
 CREATE TABLE IF NOT EXISTS "Question" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "validationStatus" TEXT NOT NULL DEFAULT 'ai_generated',
