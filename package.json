@@ -38,7 +38,7 @@
     "db:dump": "sqlite3 ./prisma/main.db .dump > dump.sql",
     "predb:dump:apply": "rm -rf ./prisma/main.db",
     "db:dump:apply": "sqlite3 ./prisma/main.db < dump.sql",
-    "generate-questions-claude": "claude -p --dangerously-skip-permissions 'Boot the service with pnpm preview in a separated terminal with the port of 3333 and use curl to communicate with the service, make a request for modules with the fewest questions and generate questions for them in a various levels of difficulties use the localhost:<service-port>/bulk-complete only to change the data and try to use the bulk endpoints, you can use the /openapi path to see the api, do not create anything except questions and remember to create the answers as well according to the question type, after finishing run the db:dump command'",
+    "generate-questions-claude": "claude -p --dangerously-skip-permissions 'Boot the service with pnpm preview in a separated terminal with the port of 3333 and use curl to communicate with the service, make a request for modules with the fewest questions and generate 23 questions for them in a various levels of difficulties use the localhost:<service-port>/bulk-complete only to change the data and try to use the bulk endpoints, you can use the /openapi path to see the api, do not create anything except questions and remember to create the answers as well according to the question type, after finishing run the db:dump command'",
     "migrate:boolean-questions": "tsx scripts/migrate-boolean-questions.ts"
   },
   "dependencies": {
