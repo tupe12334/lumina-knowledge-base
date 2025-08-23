@@ -253,27 +253,14 @@ export class ModulesService {
       },
     });
 
-    console.log('DEBUG: Applied filters:', JSON.stringify(filters, null, 2));
-    console.log(`DEBUG: Total modules to filter: ${modules.length}`);
-
     const filteredModules = modules.filter((module) => {
       const questionCount = (
         module as unknown as { _count: { Questions: number } }
       )._count.Questions;
 
-      console.log(
-        `DEBUG: Processing module ${module.id} - questionCount: ${questionCount}`,
-      );
-
       // Question count filters
       if (filters.exactQuestions !== undefined) {
-        console.log(
-          `DEBUG: exactQuestions filter: ${filters.exactQuestions}, questionCount: ${questionCount}`,
-        );
         if (questionCount !== filters.exactQuestions) {
-          console.log(
-            `DEBUG: Module ${module.id} filtered out by exactQuestions`,
-          );
           return false;
         }
       } else {
@@ -286,9 +273,6 @@ export class ModulesService {
           questionCount <= filters.maxQuestions;
 
         if (!meetsMinRequirement || !meetsMaxRequirement) {
-          console.log(
-            `DEBUG: Module ${module.id} filtered out by min/max questions`,
-          );
           return false;
         }
       }
@@ -296,13 +280,7 @@ export class ModulesService {
       // Has questions filter
       if (filters.hasQuestions !== undefined) {
         const hasQuestions = questionCount > 0;
-        console.log(
-          `DEBUG: hasQuestions filter: ${filters.hasQuestions}, hasQuestions: ${hasQuestions}`,
-        );
         if (hasQuestions !== filters.hasQuestions) {
-          console.log(
-            `DEBUG: Module ${module.id} filtered out by hasQuestions`,
-          );
           return false;
         }
       }
@@ -311,18 +289,11 @@ export class ModulesService {
       if (filters.fewQuestions !== undefined) {
         const hasFewQuestions = questionCount < 20;
         const fewQuestionsFilter = filters.fewQuestions;
-        console.log(
-          `DEBUG: fewQuestions filter: ${filters.fewQuestions} (${typeof filters.fewQuestions}), converted: ${fewQuestionsFilter}, hasFewQuestions: ${hasFewQuestions}`,
-        );
         if (hasFewQuestions !== fewQuestionsFilter) {
-          console.log(
-            `DEBUG: Module ${module.id} filtered out by fewQuestions`,
-          );
           return false;
         }
       }
 
-      console.log(`DEBUG: Module ${module.id} PASSED all filters`);
       return true;
     });
 

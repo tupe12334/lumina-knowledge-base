@@ -114,17 +114,6 @@ export class ModulesController {
   })
   @ApiResponse({ status: 500, description: 'Internal Server Error.' })
   findAll(@Query() query: ModulesQueryDto) {
-    console.log(
-      'DEBUG: Controller received query:',
-      JSON.stringify(query, null, 2),
-    );
-    console.log(
-      'DEBUG: fewQuestions type:',
-      typeof query.fewQuestions,
-      'value:',
-      query.fewQuestions,
-    );
-
     // Create a converted query object to handle string to boolean conversion
     const convertedQuery = { ...query };
 
@@ -152,13 +141,6 @@ export class ModulesController {
       (convertedQuery as any).hasParentModules =
         (query.hasParentModules as string).toLowerCase() === 'true';
     }
-
-    console.log(
-      'DEBUG: After conversion - fewQuestions type:',
-      typeof convertedQuery.fewQuestions,
-      'value:',
-      convertedQuery.fewQuestions,
-    );
 
     return this.modulesService.findAll(convertedQuery);
   }
