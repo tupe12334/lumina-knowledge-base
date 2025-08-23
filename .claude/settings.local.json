@@ -22,7 +22,9 @@
       "Bash(pgrep:*)",
       "Bash(PORT=3333 pnpm run preview)",
       "Bash(chmod:*)",
-      "Bash(npx ts-node:*)"
+      "Bash(npx ts-node:*)",
+      "Bash(pnpm validate:ai:*)",
+      "Bash(pnpm knip:*)"
     ],
     "deny": [],
     "ask": []
