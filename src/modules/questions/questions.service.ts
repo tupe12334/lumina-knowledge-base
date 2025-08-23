@@ -92,6 +92,10 @@ export class QuestionsService {
     // Handle both array and single module filtering
     let moduleIds =
       filters?.moduleIds || (filters?.moduleId ? [filters.moduleId] : []);
+    // Handle case where query parameter comes as a single string instead of array
+    if (typeof moduleIds === 'string') {
+      moduleIds = [moduleIds];
+    }
 
     // If module filtering is requested and includeSubmodules is enabled, expand to include all submodules
     const includeSubmodules = filters?.includeSubmodules === true;
@@ -108,8 +112,11 @@ export class QuestionsService {
     }
 
     // Handle both array and single course filtering
-    const courseIds =
-      filters?.courseIds || (filters?.courseId ? [filters.courseId] : []);
+    let courseIds = filters?.courseIds || (filters?.courseId ? [filters.courseId] : []);
+    // Handle case where query parameter comes as a single string instead of array
+    if (typeof courseIds === 'string') {
+      courseIds = [courseIds];
+    }
 
     // Build Module filter combining both module and course filters
     if (moduleIds.length > 0 || courseIds.length > 0) {
@@ -129,15 +136,19 @@ export class QuestionsService {
 
       where.Modules = {
         some: {
-          AND: moduleConditions,
+          OR: moduleConditions,
         },
       };
     }
 
     // Handle both array and single question type filtering
-    const questionTypes =
+    let questionTypes =
       filters?.questionTypes ||
       (filters?.questionType ? [filters.questionType] : []);
+    // Handle case where query parameter comes as a single string instead of array
+    if (typeof questionTypes === 'string') {
+      questionTypes = [questionTypes];
+    }
     if (questionTypes.length > 0) {
       where.type = { in: questionTypes };
     }
