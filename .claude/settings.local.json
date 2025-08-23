@@ -21,7 +21,8 @@
       "Bash(pnpm db:dump:*)",
       "Bash(pgrep:*)",
       "Bash(PORT=3333 pnpm run preview)",
-      "Bash(chmod:*)"
+      "Bash(chmod:*)",
+      "Bash(npx ts-node:*)"
     ],
     "deny": [],
     "ask": []
