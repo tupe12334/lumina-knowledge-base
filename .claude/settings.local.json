@@ -25,7 +25,8 @@
       "Bash(npx ts-node:*)",
       "Bash(pnpm validate:ai:*)",
       "Bash(pnpm knip:*)",
-      "WebFetch(domain:*)"
+      "WebFetch(domain:*)",
+      "Bash(npm run check-translations:*)"
     ],
     "deny": [],
     "ask": []
