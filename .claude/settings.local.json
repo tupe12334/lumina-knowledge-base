@@ -24,7 +24,8 @@
       "Bash(chmod:*)",
       "Bash(npx ts-node:*)",
       "Bash(pnpm validate:ai:*)",
-      "Bash(pnpm knip:*)"
+      "Bash(pnpm knip:*)",
+      "WebFetch(domain:*)"
     ],
     "deny": [],
     "ask": []
