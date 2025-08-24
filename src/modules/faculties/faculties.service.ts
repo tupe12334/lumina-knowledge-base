@@ -12,7 +12,7 @@ export class FacultiesService {
     const { name, description, universityId } = createFacultyInput;
     return this.prisma.faculty.create({
       data: {
-        university: {
+        institution: {
           connect: {
             id: universityId,
           },
@@ -50,7 +50,7 @@ export class FacultiesService {
         const { name, description, universityId } = facultyData;
         await prisma.faculty.create({
           data: {
-            university: {
+            institution: {
               connect: {
                 id: universityId,
               },
@@ -85,10 +85,10 @@ export class FacultiesService {
     });
   }
 
-  async getFacultiesByUniversity(universityId: string) {
+  async getFacultiesByInstitution(institutionId: string) {
     return this.prisma.faculty.findMany({
       where: {
-        universityId,
+        institutionId,
       },
       include: {
         name: true,
@@ -113,7 +113,7 @@ export class FacultiesService {
       where: { id },
       data: {
         ...(universityId
-          ? { university: { connect: { id: universityId } } }
+          ? { institution: { connect: { id: universityId } } }
           : {}),
         ...(name ? { name: { update: { en_text: name, he_text: name } } } : {}),
         ...(description

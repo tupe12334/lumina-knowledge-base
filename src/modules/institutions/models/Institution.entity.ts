@@ -5,8 +5,8 @@ import { Course } from '../../courses/models/Course.entity';
 import { Degree } from '../../degrees/models/Degree.entity';
 import { Translation } from '../../translations/models/Translation.entity';
 
-@ObjectType()
-export class University {
+@ObjectType('University')
+export class Institution {
   @ApiProperty()
   @Field(() => ID)
   id!: string;

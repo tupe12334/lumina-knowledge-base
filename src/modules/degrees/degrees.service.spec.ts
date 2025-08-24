@@ -23,7 +23,7 @@ describe('DegreesService', () => {
     const degree = {
       id: 'deg1',
       name: { en_text: 'Computer Science', he_text: 'מדעי המחשב' },
-      university: {
+      institution: {
         name: {
           en_text: 'University of Technology',
           he_text: 'האוניברסיטה הטכנולוגית',
@@ -36,7 +36,7 @@ describe('DegreesService', () => {
 
     expect(result).toHaveLength(1);
     expect(result[0].name.en_text).toBe('Computer Science');
-    expect(result[0].university?.name.en_text).toBe('University of Technology');
+    expect(result[0].institution?.name.en_text).toBe('University of Technology');
   });
 
   describe('generateSummary', () => {
@@ -51,7 +51,7 @@ describe('DegreesService', () => {
           en_text: 'Comprehensive CS program',
           he_text: 'תכנית מקיפה במדעי המחשב',
         },
-        university: {
+        institution: {
           name: {
             en_text: 'Harvard University',
             he_text: 'אוניברסיטת הרווארד',
@@ -79,7 +79,7 @@ describe('DegreesService', () => {
 
       expect(result).toContain('Degree: Bachelor of Computer Science');
       expect(result).toContain('ID: degree-123');
-      expect(result).toContain('University: Harvard University');
+      expect(result).toContain('Institution: Harvard University');
       expect(result).toContain('Faculty: Computer Science Faculty');
       expect(result).toContain(
         'Associated Courses: 2 courses - Algorithms, Data Structures',

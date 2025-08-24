@@ -2,8 +2,8 @@ import { InputType, Field } from '@nestjs/graphql';
 import { IsString, IsNotEmpty } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 
-@InputType()
-export class CreateUniversityInput {
+@InputType('CreateUniversityInput')
+export class CreateInstitutionInput {
   @ApiProperty({ description: 'English name of the university' })
   @Field(() => String, { description: 'English name of the university' })
   @IsString()

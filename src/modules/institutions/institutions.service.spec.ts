@@ -1,40 +1,40 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { UniversitiesService } from './universities.service';
+import { InstitutionsService } from './institutions.service';
 import { PrismaService } from '../../prisma/prisma.service';
 import {
   NotFoundException,
   InternalServerErrorException,
 } from '@nestjs/common';
 
-describe('UniversitiesService', () => {
-  let service: UniversitiesService;
+describe('InstitutionsService', () => {
+  let service: InstitutionsService;
   const mockPrismaService = {
-    university: {
+    institution: {
       findMany: vi.fn(),
       findUnique: vi.fn(),
     },
   };
 
   beforeEach(() => {
-    service = new UniversitiesService(
+    service = new InstitutionsService(
       mockPrismaService as unknown as PrismaService,
     );
   });
 
-  it('returns universities from prisma', async () => {
-    const university = {
+  it('returns institutions from prisma', async () => {
+    const institution = {
       id: '1',
       name: { en_text: 'test', he_text: 'טסט' },
       courses: [
         {
           id: 'c1',
           name: { en_text: 'course', he_text: 'קורס' },
-          universityId: '1',
+          institutionId: '1',
           publishedAt: new Date(),
         },
       ],
     };
-    mockPrismaService.university.findMany.mockResolvedValue([university]);
+    mockPrismaService.institution.findMany.mockResolvedValue([institution]);
 
     const result = await service.findAll();
 
@@ -45,9 +45,9 @@ describe('UniversitiesService', () => {
   });
 
   describe('generateSummary', () => {
-    it('should generate a comprehensive university summary', async () => {
-      const mockUniversity = {
-        id: 'uni-123',
+    it('should generate a comprehensive institution summary', async () => {
+      const mockInstitution = {
+        id: 'inst-123',
         name: { en_text: 'Harvard University', he_text: 'אוניברסיטת הרווארד' },
         Faculty: [
           { name: { en_text: 'Computer Science', he_text: 'מדעי המחשב' } },
@@ -70,12 +70,12 @@ describe('UniversitiesService', () => {
         ],
       };
 
-      mockPrismaService.university.findUnique.mockResolvedValue(mockUniversity);
+      mockPrismaService.institution.findUnique.mockResolvedValue(mockInstitution);
 
-      const result = await service.generateSummary('uni-123');
+      const result = await service.generateSummary('inst-123');
 
-      expect(result).toContain('University: Harvard University');
-      expect(result).toContain('ID: uni-123');
+      expect(result).toContain('Institution: Harvard University');
+      expect(result).toContain('ID: inst-123');
       expect(result).toContain(
         'Faculties: 2 faculties including Computer Science, Mathematics',
       );
@@ -86,63 +86,63 @@ describe('UniversitiesService', () => {
       expect(result).toContain('- Mathematics');
     });
 
-    it('should handle university with no faculties', async () => {
-      const mockUniversity = {
-        id: 'uni-456',
+    it('should handle institution with no faculties', async () => {
+      const mockInstitution = {
+        id: 'inst-456',
         name: { en_text: 'Small College', he_text: 'מכללה קטנה' },
         Faculty: [],
         Degree: [],
         courses: [],
       };
 
-      mockPrismaService.university.findUnique.mockResolvedValue(mockUniversity);
+      mockPrismaService.institution.findUnique.mockResolvedValue(mockInstitution);
 
-      const result = await service.generateSummary('uni-456');
+      const result = await service.generateSummary('inst-456');
 
-      expect(result).toContain('University: Small College');
+      expect(result).toContain('Institution: Small College');
       expect(result).toContain('Faculties: 0 faculties including none');
       expect(result).toContain('Faculty Details:\nNo faculties available');
     });
 
     it('should handle missing English translations gracefully', async () => {
-      const mockUniversity = {
-        id: 'uni-789',
+      const mockInstitution = {
+        id: 'inst-789',
         name: { en_text: '', he_text: 'אוניברסיטה בעברית' },
         Faculty: [{ name: { en_text: '', he_text: 'פקולטה בעברית' } }],
         Degree: [],
         courses: [],
       };
 
-      mockPrismaService.university.findUnique.mockResolvedValue(mockUniversity);
+      mockPrismaService.institution.findUnique.mockResolvedValue(mockInstitution);
 
-      const result = await service.generateSummary('uni-789');
+      const result = await service.generateSummary('inst-789');
 
-      expect(result).toContain('University: No English translation available');
+      expect(result).toContain('Institution: No English translation available');
       expect(result).toContain(
         'Faculties: 1 faculties including No English translation available',
       );
     });
 
-    it('should throw NotFoundException when university does not exist', async () => {
-      mockPrismaService.university.findUnique.mockResolvedValue(null);
+    it('should throw NotFoundException when institution does not exist', async () => {
+      mockPrismaService.institution.findUnique.mockResolvedValue(null);
 
       await expect(service.generateSummary('non-existent')).rejects.toThrow(
         NotFoundException,
       );
       await expect(service.generateSummary('non-existent')).rejects.toThrow(
-        'University with ID non-existent not found',
+        'Institution with ID non-existent not found',
       );
     });
 
     it('should throw InternalServerErrorException on database error', async () => {
       const dbError = new Error('Database connection failed');
-      mockPrismaService.university.findUnique.mockRejectedValue(dbError);
+      mockPrismaService.institution.findUnique.mockRejectedValue(dbError);
 
-      await expect(service.generateSummary('uni-123')).rejects.toThrow(
+      await expect(service.generateSummary('inst-123')).rejects.toThrow(
         InternalServerErrorException,
       );
-      await expect(service.generateSummary('uni-123')).rejects.toThrow(
-        'Failed to generate university summary',
+      await expect(service.generateSummary('inst-123')).rejects.toThrow(
+        'Failed to generate institution summary',
       );
     });
   });

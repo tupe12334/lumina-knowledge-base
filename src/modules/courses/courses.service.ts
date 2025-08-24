@@ -26,7 +26,7 @@ export class CoursesService {
     const { name, universityId } = createCourseInput;
     return this.prisma.course.create({
       data: {
-        university: {
+        institution: {
           connect: {
             id: universityId,
           },
@@ -60,7 +60,7 @@ export class CoursesService {
         const { name, universityId } = courseData;
         await prisma.course.create({
           data: {
-            university: {
+            institution: {
               connect: {
                 id: universityId,
               },
@@ -89,7 +89,7 @@ export class CoursesService {
     // Always fetch ALL courses, no filtering by where clause
     const courses = await this.prisma.course.findMany({
       include: {
-        university: { include: { name: true } },
+        institution: { include: { name: true } },
         name: true,
         Block: {
           include: {
@@ -114,10 +114,10 @@ export class CoursesService {
 
         // Check if course belongs to user's university
         const aInUniversity = universityId
-          ? a.universityId === universityId
+          ? a.institutionId === universityId
           : false;
         const bInUniversity = universityId
-          ? b.universityId === universityId
+          ? b.institutionId === universityId
           : false;
 
         // Priority scoring: degree = 3, university = 2, other = 1
@@ -135,7 +135,7 @@ export class CoursesService {
     const course = await this.prisma.course.findUnique({
       where: { id },
       include: {
-        university: { include: { name: true } },
+        institution: { include: { name: true } },
         name: true,
         Block: {
           include: {
@@ -640,7 +640,7 @@ export class CoursesService {
       where: { id: courseId },
       include: {
         name: true,
-        university: { include: { name: true } },
+        institution: { include: { name: true } },
         Block: true,
         modules: {
           include: {
@@ -675,7 +675,7 @@ export class CoursesService {
         await tx.course.update({
           where: { id: courseId },
           data: {
-            ...(typeof universityId === 'string' ? { universityId } : {}),
+            ...(typeof universityId === 'string' ? { institutionId: universityId } : {}),
             ...(publishedAt !== undefined ? { publishedAt } : {}),
           },
         });
@@ -686,7 +686,7 @@ export class CoursesService {
     const updated = await this.prisma.course.findUnique({
       where: { id: courseId },
       include: {
-        university: { include: { name: true } },
+        institution: { include: { name: true } },
         name: true,
         Block: {
           include: {
@@ -768,7 +768,7 @@ export class CoursesService {
     const updated = await this.prisma.course.findUnique({
       where: { id: courseId },
       include: {
-        university: { include: { name: true } },
+        institution: { include: { name: true } },
         name: true,
         Block: {
           include: {
@@ -818,7 +818,7 @@ export class CoursesService {
         where: { id },
         include: {
           name: true,
-          university: {
+          institution: {
             include: {
               name: true,
             },
@@ -873,7 +873,7 @@ export class CoursesService {
       const courseName =
         course.name?.en_text || 'No English translation available';
       const universityName =
-        course.university?.name?.en_text || 'No English translation available';
+        course.institution?.name?.en_text || 'No English translation available';
 
       // Build associated degrees
       const degreeNames = course.Degree.map(
@@ -915,7 +915,7 @@ export class CoursesService {
 
       const summary = `Course: ${courseName}
 ID: ${course.id}
-University: ${universityName}
+Institution: ${universityName}
 Associated Degrees: ${degreeNames || 'None'}
 Modules: ${moduleCount} modules - ${moduleNames || 'None'}
 Prerequisites: ${prerequisites}

@@ -62,7 +62,7 @@ export class FacultiesResolver {
     @Args('universityId', { type: () => ID, description: 'University ID' })
     universityId: string,
   ): Promise<Faculty[]> {
-    return this.facultiesService.getFacultiesByUniversity(universityId);
+    return this.facultiesService.getFacultiesByInstitution(universityId);
   }
 
   /**

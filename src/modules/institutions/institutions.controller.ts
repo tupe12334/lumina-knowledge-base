@@ -12,10 +12,10 @@ import {
   NotFoundException,
   Header,
 } from '@nestjs/common';
-import { UniversitiesService } from './universities.service';
-import { CreateUniversityInput } from './dto/create-university.input';
-import { CreateManyUniversitiesInput } from './dto/create-many-universities.input';
-import { UpdateUniversityInput } from './dto/update-university.input';
+import { InstitutionsService } from './institutions.service';
+import { CreateInstitutionInput } from './dto/create-institution.input';
+import { CreateManyInstitutionsInput } from './dto/create-many-institutions.input';
+import { UpdateInstitutionInput } from './dto/update-institution.input';
 import {
   ApiTags,
   ApiCreatedResponse,
@@ -26,12 +26,12 @@ import {
   ApiParam,
   ApiProduces,
 } from '@nestjs/swagger';
-import { University } from './models/University.entity';
+import { Institution } from './models/Institution.entity';
 
 @ApiTags('universities')
 @Controller('universities')
-export class UniversitiesController {
-  constructor(private readonly universitiesService: UniversitiesService) {}
+export class InstitutionsController {
+  constructor(private readonly institutionsService: InstitutionsService) {}
 
   @Post()
   @ApiOperation({
@@ -39,13 +39,13 @@ export class UniversitiesController {
     description: 'Creates a new university record.',
   })
   @ApiCreatedResponse({
-    type: University,
+    type: Institution,
     description: 'The newly created university.',
   })
   @ApiResponse({ status: 400, description: 'Bad Request.' })
   @ApiResponse({ status: 500, description: 'Internal Server Error.' })
-  create(@Body() createUniversityDto: CreateUniversityInput) {
-    return this.universitiesService.create(createUniversityDto);
+  create(@Body() createUniversityDto: CreateInstitutionInput) {
+    return this.institutionsService.create(createUniversityDto);
   }
 
   @Post('bulk')
@@ -68,8 +68,8 @@ export class UniversitiesController {
   })
   @ApiResponse({ status: 400, description: 'Bad Request.' })
   @ApiResponse({ status: 500, description: 'Internal Server Error.' })
-  createMany(@Body() createManyUniversitiesDto: CreateManyUniversitiesInput) {
-    return this.universitiesService.createMany(createManyUniversitiesDto);
+  createMany(@Body() createManyUniversitiesDto: CreateManyInstitutionsInput) {
+    return this.institutionsService.createMany(createManyUniversitiesDto);
   }
 
   @Get()
@@ -78,13 +78,13 @@ export class UniversitiesController {
     description: 'Returns a list of all universities.',
   })
   @ApiOkResponse({
-    type: University,
+    type: Institution,
     isArray: true,
     description: 'A list of universities.',
   })
   @ApiResponse({ status: 500, description: 'Internal Server Error.' })
   findAll() {
-    return this.universitiesService.findAll();
+    return this.institutionsService.findAll();
   }
 
   @Get(':id')
@@ -98,13 +98,13 @@ export class UniversitiesController {
     type: String,
   })
   @ApiOkResponse({
-    type: University,
+    type: Institution,
     description: 'The university with the specified ID.',
   })
   @ApiResponse({ status: 404, description: 'University not found.' })
   @ApiResponse({ status: 500, description: 'Internal Server Error.' })
   findOne(@Param('id') id: string) {
-    return this.universitiesService.findUnique(id);
+    return this.institutionsService.findUnique(id);
   }
 
   @Put(':id')
@@ -117,15 +117,15 @@ export class UniversitiesController {
     description: 'The ID of the university',
     type: String,
   })
-  @ApiOkResponse({ type: University, description: 'The updated university.' })
+  @ApiOkResponse({ type: Institution, description: 'The updated university.' })
   @ApiResponse({ status: 400, description: 'Bad Request.' })
   @ApiResponse({ status: 404, description: 'University not found.' })
   @ApiResponse({ status: 500, description: 'Internal Server Error.' })
   update(
     @Param('id') id: string,
-    @Body() updateUniversityDto: Omit<UpdateUniversityInput, 'id'>,
+    @Body() updateUniversityDto: Omit<UpdateInstitutionInput, 'id'>,
   ) {
-    return this.universitiesService.update(id, { ...updateUniversityDto, id });
+    return this.institutionsService.update(id, { ...updateUniversityDto, id });
   }
 
   @Delete(':id')
@@ -143,7 +143,7 @@ export class UniversitiesController {
   @ApiResponse({ status: 404, description: 'University not found.' })
   @ApiResponse({ status: 500, description: 'Internal Server Error.' })
   remove(@Param('id') id: string) {
-    return this.universitiesService.remove(id);
+    return this.institutionsService.remove(id);
   }
 
   @Get(':id/summary')
@@ -170,7 +170,7 @@ export class UniversitiesController {
     @Param('id', new ParseUUIDPipe({ version: '4' })) id: string,
   ): Promise<string> {
     try {
-      return await this.universitiesService.generateSummary(id);
+      return await this.institutionsService.generateSummary(id);
     } catch (err: unknown) {
       if (err instanceof NotFoundException) throw err;
       const message = err instanceof Error ? err.message : String(err);

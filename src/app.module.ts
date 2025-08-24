@@ -13,7 +13,7 @@ import { FacultiesModule } from './modules/faculties/faculties.module';
 import { HealthModule } from './system/health/health.module';
 import { ModulesModule } from './modules/modules/modules.module';
 import { QuestionsModule } from './modules/questions/questions.module';
-import { UniversitiesModule } from './modules/universities/universities.module';
+import { InstitutionsModule } from './modules/institutions/institutions.module';
 import { TranslationsModule } from './modules/translations/translations.module';
 import { PrismaModule } from './prisma/prisma.module';
 import { MutationsGuard } from './guards/mutations.guard';
@@ -39,7 +39,7 @@ import { DataHashModule } from 'src/system/data-hash/data-hash.module';
     PrismaModule,
     HealthModule,
     DatabaseModule,
-    UniversitiesModule,
+    InstitutionsModule,
     CoursesModule,
     DegreesModule,
     QuestionsModule,

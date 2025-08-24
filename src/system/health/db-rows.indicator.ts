@@ -11,7 +11,7 @@ interface CountableDelegate {
 }
 
 export interface PrismaCountClient {
-  university: CountableDelegate;
+  institution: CountableDelegate;
   faculty: CountableDelegate;
   degree: CountableDelegate;
   course: CountableDelegate;
@@ -39,7 +39,7 @@ export class DbRowsHealthIndicator extends HealthIndicator {
     minRows = 100,
   ): Promise<HealthIndicatorResult> {
     const delegates: CountableDelegate[] = [
-      this.prisma.university,
+      this.prisma.institution,
       this.prisma.faculty,
       this.prisma.degree,
       this.prisma.course,

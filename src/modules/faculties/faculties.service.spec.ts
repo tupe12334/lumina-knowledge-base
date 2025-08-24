@@ -17,13 +17,13 @@ describe('FacultiesService', () => {
     service = new FacultiesService(prisma as unknown as PrismaService);
   });
 
-  it('getFacultiesByUniversity queries prisma with includes', async () => {
+  it('getFacultiesByInstitution queries prisma with includes', async () => {
     const data = [{ id: 'f1' }];
     prisma.faculty.findMany.mockResolvedValue(data);
-    const res = await service.getFacultiesByUniversity('u1');
+    const res = await service.getFacultiesByInstitution('i1');
     expect(res).toBe(data);
     expect(prisma.faculty.findMany).toHaveBeenCalledWith({
-      where: { universityId: 'u1' },
+      where: { institutionId: 'i1' },
       include: { name: true, description: true },
     });
   });

@@ -3,7 +3,7 @@ import { ApiProperty } from '@nestjs/swagger';
 import { Type } from 'class-transformer';
 import { Course } from '../../courses/models/Course.entity';
 import { Translation } from '../../translations/models/Translation.entity';
-import { University } from '../../universities/models/University.entity';
+import { Institution } from '../../institutions/models/Institution.entity';
 import { Faculty } from '../../faculties/models/Faculty.entity';
 
 @ObjectType()
@@ -19,11 +19,11 @@ export class Degree {
 
   @ApiProperty()
   @Field()
-  universityId!: string;
+  institutionId!: string;
 
-  @ApiProperty({ type: () => University, nullable: true })
-  @Field(() => University, { nullable: true })
-  university?: University;
+  @ApiProperty({ type: () => Institution, nullable: true })
+  @Field(() => Institution, { nullable: true })
+  institution?: Institution;
 
   @ApiProperty({ type: () => [Course], nullable: true })
   @Field(() => [Course], { nullable: true })

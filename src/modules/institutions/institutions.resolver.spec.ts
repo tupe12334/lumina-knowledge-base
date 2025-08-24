@@ -1,18 +1,18 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { UniversitiesResolver } from './universities.resolver';
-import { UniversitiesService } from './universities.service';
-import { University } from './models/University.entity';
+import { InstitutionsResolver } from './institutions.resolver';
+import { InstitutionsService } from './institutions.service';
+import { Institution } from './models/Institution.entity';
 
-describe('UniversitiesResolver', () => {
-  let resolver: UniversitiesResolver;
-  const mockUniversitiesService = {
+describe('InstitutionsResolver', () => {
+  let resolver: InstitutionsResolver;
+  const mockInstitutionsService = {
     findAll: vi.fn(),
     findUnique: vi.fn(),
   };
 
   beforeEach(() => {
-    resolver = new UniversitiesResolver(
-      mockUniversitiesService as unknown as UniversitiesService,
+    resolver = new InstitutionsResolver(
+      mockInstitutionsService as unknown as InstitutionsService,
     );
   });
 
@@ -26,14 +26,14 @@ describe('UniversitiesResolver', () => {
         {
           id: '1',
         },
-      ] as University[];
+      ] as Institution[];
 
-      mockUniversitiesService.findAll.mockResolvedValue(mockUniversities);
+      mockInstitutionsService.findAll.mockResolvedValue(mockUniversities);
 
       const result = await resolver.getUniversities();
 
       expect(result).toEqual(mockUniversities);
-      expect(mockUniversitiesService.findAll).toHaveBeenCalled();
+      expect(mockInstitutionsService.findAll).toHaveBeenCalled();
     });
   });
 
@@ -41,23 +41,23 @@ describe('UniversitiesResolver', () => {
     it('should return a university by id', async () => {
       const mockUniversity = {
         id: '1',
-      } as University;
+      } as Institution;
 
-      mockUniversitiesService.findUnique.mockResolvedValue(mockUniversity);
+      mockInstitutionsService.findUnique.mockResolvedValue(mockUniversity);
 
       const result = await resolver.getUniversity('1');
 
       expect(result).toEqual(mockUniversity);
-      expect(mockUniversitiesService.findUnique).toHaveBeenCalledWith('1');
+      expect(mockInstitutionsService.findUnique).toHaveBeenCalledWith('1');
     });
 
     it('should return null if university not found', async () => {
-      mockUniversitiesService.findUnique.mockResolvedValue(null);
+      mockInstitutionsService.findUnique.mockResolvedValue(null);
 
       const result = await resolver.getUniversity('non-existent');
 
       expect(result).toBeNull();
-      expect(mockUniversitiesService.findUnique).toHaveBeenCalledWith(
+      expect(mockInstitutionsService.findUnique).toHaveBeenCalledWith(
         'non-existent',
       );
     });

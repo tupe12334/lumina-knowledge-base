@@ -844,7 +844,7 @@ export class QuestionsService {
     const translationUsage = await this.prisma.translation.findUnique({
       where: { id: question.translationId },
       include: {
-        University: true,
+        Institution: true,
         Course: true,
         Module: true,
         Question: true,

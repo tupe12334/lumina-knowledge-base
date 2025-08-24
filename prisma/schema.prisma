@@ -12,13 +12,15 @@ datasource db {
   url      = "file:./main.db"
 }
 
-model University {
+model Institution {
   id            String      @id @default(uuid())
   name          Translation @relation(fields: [translationId], references: [id])
   courses       Course[]
   translationId String
   Degree        Degree[]
   Faculty       Faculty[]
+
+  @@map("University")
 }
 
 model Faculty {
@@ -27,19 +29,19 @@ model Faculty {
   description   Translation @relation("FacultyDescription", fields: [descriptionId], references: [id])
   descriptionId String
   translationId String
-  universityId  String
-  university    University  @relation(fields: [universityId], references: [id])
+  institutionId String      @map("universityId")
+  institution   Institution @relation(fields: [institutionId], references: [id])
   Degree        Degree[]
 
-  @@unique([translationId, universityId])
+  @@unique([translationId, institutionId])
 }
 
 model Degree {
   id            String      @id @default(uuid())
   name          Translation @relation(fields: [translationId], references: [id])
   translationId String
-  universityId  String
-  university    University  @relation(fields: [universityId], references: [id])
+  institutionId String      @map("universityId")
+  institution   Institution @relation(fields: [institutionId], references: [id])
   courses       Course[]
   // Optional relation to a Faculty. When null, degree is not assigned to a specific faculty.
   facultyId     String?
@@ -50,15 +52,15 @@ model Course {
   id            String      @id @default(uuid())
   name          Translation @relation(fields: [translationId], references: [id])
   translationId String
-  universityId  String
-  university    University  @relation(fields: [universityId], references: [id])
+  institutionId String      @map("universityId")
+  institution   Institution @relation(fields: [institutionId], references: [id])
   modules       Module[]    @relation("CourseModules")
   publishedAt   DateTime?
   blockId       String
   Block         Block       @relation(fields: [blockId], references: [id])
   Degree        Degree[]
 
-  @@unique([translationId, universityId])
+  @@unique([translationId, institutionId])
 }
 
 model Block {
@@ -120,7 +122,7 @@ model Translation {
   he_text String
 
   // Relations
-  University         University[]
+  Institution        Institution[]
   Course             Course[]
   Module             Module[]
   Question           Question[]

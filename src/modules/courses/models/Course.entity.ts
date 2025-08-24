@@ -1,7 +1,7 @@
 import { ObjectType, Field, ID } from '@nestjs/graphql';
 import { ApiProperty } from '@nestjs/swagger';
 import { Type } from 'class-transformer';
-import { University } from '../../universities/models/University.entity';
+import { Institution } from '../../institutions/models/Institution.entity';
 import { Translation } from '../../translations/models/Translation.entity';
 import { Module } from '../../modules/models/Module.entity';
 import { Block } from 'src/modules/blocks/models/Block.entity';
@@ -19,11 +19,11 @@ export class Course {
 
   @ApiProperty()
   @Field()
-  universityId!: string;
+  institutionId!: string;
 
-  @ApiProperty({ type: () => University, nullable: true })
-  @Field(() => University, { nullable: true })
-  university?: University;
+  @ApiProperty({ type: () => Institution, nullable: true })
+  @Field(() => Institution, { nullable: true })
+  institution?: Institution;
 
   @ApiProperty({ type: () => [Module], nullable: true })
   @Field(() => [Module], { nullable: true })

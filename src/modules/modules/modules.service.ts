@@ -158,7 +158,7 @@ export class ModulesService {
     if (filters.universityId) {
       where.Course = {
         some: {
-          universityId: filters.universityId,
+          institutionId: filters.universityId,
         },
       };
     }

@@ -1,10 +1,10 @@
 import { Field, InputType, PartialType } from '@nestjs/graphql';
 import { IsNotEmpty, IsString } from 'class-validator';
-import { CreateUniversityInput } from './create-university.input';
+import { CreateInstitutionInput } from './create-institution.input';
 import { ApiProperty } from '@nestjs/swagger';
 
-@InputType()
-export class UpdateUniversityInput extends PartialType(CreateUniversityInput) {
+@InputType('UpdateUniversityInput')
+export class UpdateInstitutionInput extends PartialType(CreateInstitutionInput) {
   @ApiProperty({ description: 'University id' })
   @Field()
   @IsString()

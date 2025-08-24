@@ -23,7 +23,7 @@ export class DegreesService {
     const { name, universityId } = createDegreeInput;
     return this.prisma.degree.create({
       data: {
-        university: {
+        institution: {
           connect: {
             id: universityId,
           },
@@ -54,7 +54,7 @@ export class DegreesService {
         const { name, universityId } = degreeData;
         await prisma.degree.create({
           data: {
-            university: {
+            institution: {
               connect: {
                 id: universityId,
               },
@@ -92,11 +92,11 @@ export class DegreesService {
             }
           : {}),
         ...(query?.facultyId ? { facultyId: query.facultyId } : {}),
-        ...(query?.universityId ? { universityId: query.universityId } : {}),
+        ...(query?.universityId ? { institutionId: query.universityId } : {}),
       },
       include: {
         name: true,
-        university: {
+        institution: {
           include: {
             name: true,
           },
@@ -129,7 +129,7 @@ export class DegreesService {
       where: { id },
       include: {
         name: true,
-        university: {
+        institution: {
           include: {
             name: true,
           },
@@ -170,7 +170,7 @@ export class DegreesService {
       where: { id },
       data: {
         ...(universityId
-          ? { university: { connect: { id: universityId } } }
+          ? { institution: { connect: { id: universityId } } }
           : {}),
         ...(name ? { name: { update: { en_text: name, he_text: name } } } : {}),
       },
@@ -185,7 +185,7 @@ export class DegreesService {
       where: { id },
       include: {
         name: true,
-        university: { include: { name: true } },
+        institution: { include: { name: true } },
         faculty: { include: { name: true, description: true } },
         courses: { include: { name: true } },
       },
@@ -197,12 +197,12 @@ export class DegreesService {
    * @param universityId - The unique identifier of the university
    * @returns Promise<Degree[]> Array of degrees for the specified university
    */
-  async findByUniversityId(universityId: string): Promise<Degree[]> {
+  async findByUniversityId(institutionId: string): Promise<Degree[]> {
     const degrees = await this.prisma.degree.findMany({
-      where: { universityId },
+      where: { institutionId },
       include: {
         name: true,
-        university: {
+        institution: {
           include: {
             name: true,
           },
@@ -240,7 +240,7 @@ export class DegreesService {
       where: { facultyId },
       include: {
         name: true,
-        university: {
+        institution: {
           include: {
             name: true,
           },
@@ -287,7 +287,7 @@ export class DegreesService {
       where: { id: degreeId },
       include: {
         name: true,
-        university: { include: { name: true } },
+        institution: { include: { name: true } },
         faculty: { include: { name: true, description: true } },
         courses: { include: { name: true } },
       },
@@ -340,7 +340,7 @@ export class DegreesService {
       where: { id: degreeId },
       include: {
         name: true,
-        university: { include: { name: true } },
+        institution: { include: { name: true } },
         faculty: { include: { name: true, description: true } },
         courses: { include: { name: true } },
       },
@@ -366,7 +366,7 @@ export class DegreesService {
         where: { id },
         include: {
           name: true,
-          university: {
+          institution: {
             include: {
               name: true,
             },
@@ -391,7 +391,7 @@ export class DegreesService {
       const degreeName =
         degree.name?.en_text || 'No English translation available';
       const universityName =
-        degree.university?.name?.en_text || 'No English translation available';
+        degree.institution?.name?.en_text || 'No English translation available';
       const facultyName =
         degree.faculty?.name?.en_text || 'Not assigned to specific faculty';
 
@@ -406,7 +406,7 @@ export class DegreesService {
 
       const summary = `Degree: ${degreeName}
 ID: ${degree.id}
-University: ${universityName}
+Institution: ${universityName}
 Faculty: ${facultyName}
 Associated Courses: ${courseCount} courses - ${courseNames || 'None'}`;
 

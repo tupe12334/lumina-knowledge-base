@@ -58,11 +58,11 @@ type BooleanAnswer {
 type Course {
   Block: Block
   id: ID!
+  institution: University
+  institutionId: String!
   modules: [Module!]
   name: Translation!
   publishedAt: DateTime
-  university: University
-  universityId: String!
 }
 
 type CourseRelationshipResult {
@@ -227,9 +227,9 @@ type Degree {
   faculty: Faculty
   facultyId: String
   id: ID!
+  institution: University
+  institutionId: String!
   name: Translation!
-  university: University
-  universityId: String!
 }
 
 input DegreesQueryDto {

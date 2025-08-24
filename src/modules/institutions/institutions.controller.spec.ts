@@ -1,9 +1,9 @@
 import 'reflect-metadata';
 import { describe, it, beforeEach, expect, vi } from 'vitest';
-import { UniversitiesController } from './universities.controller';
-import { UniversitiesService } from './universities.service';
-describe('UniversitiesController (REST)', () => {
-  let controller: UniversitiesController;
+import { InstitutionsController } from './institutions.controller';
+import { InstitutionsService } from './institutions.service';
+describe('InstitutionsController (REST)', () => {
+  let controller: InstitutionsController;
   let service: {
     create: ReturnType<typeof vi.fn>;
     findAll: ReturnType<typeof vi.fn>;
@@ -20,8 +20,8 @@ describe('UniversitiesController (REST)', () => {
       update: vi.fn(),
       remove: vi.fn(),
     };
-    controller = new UniversitiesController(
-      service as unknown as UniversitiesService,
+    controller = new InstitutionsController(
+      service as unknown as InstitutionsService,
     );
   });
 

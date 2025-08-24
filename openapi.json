@@ -561,14 +561,14 @@
     "/universities": {
       "post": {
         "description": "Creates a new university record.",
-        "operationId": "UniversitiesController_create",
+        "operationId": "InstitutionsController_create",
         "parameters": [],
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateUniversityInput"
+                "$ref": "#/components/schemas/CreateInstitutionInput"
               }
             }
           }
@@ -579,7 +579,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/University"
+                  "$ref": "#/components/schemas/Institution"
                 }
               }
             }
@@ -598,7 +598,7 @@
       },
       "get": {
         "description": "Returns a list of all universities.",
-        "operationId": "UniversitiesController_findAll",
+        "operationId": "InstitutionsController_findAll",
         "parameters": [],
         "responses": {
           "200": {
@@ -608,7 +608,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/University"
+                    "$ref": "#/components/schemas/Institution"
                   }
                 }
               }
@@ -627,14 +627,14 @@
     "/universities/bulk": {
       "post": {
         "description": "Creates multiple university records in a single operation.",
-        "operationId": "UniversitiesController_createMany",
+        "operationId": "InstitutionsController_createMany",
         "parameters": [],
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateManyUniversitiesInput"
+                "$ref": "#/components/schemas/CreateManyInstitutionsInput"
               }
             }
           }
@@ -673,7 +673,7 @@
     "/universities/{id}": {
       "get": {
         "description": "Returns a single university by its ID.",
-        "operationId": "UniversitiesController_findOne",
+        "operationId": "InstitutionsController_findOne",
         "parameters": [
           {
             "name": "id",
@@ -691,7 +691,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/University"
+                  "$ref": "#/components/schemas/Institution"
                 }
               }
             }
@@ -710,7 +710,7 @@
       },
       "put": {
         "description": "Updates an existing university record.",
-        "operationId": "UniversitiesController_update",
+        "operationId": "InstitutionsController_update",
         "parameters": [
           {
             "name": "id",
@@ -728,7 +728,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/University"
+                  "$ref": "#/components/schemas/Institution"
                 }
               }
             }
@@ -750,7 +750,7 @@
       },
       "delete": {
         "description": "Deletes a university record by its ID.",
-        "operationId": "UniversitiesController_remove",
+        "operationId": "InstitutionsController_remove",
         "parameters": [
           {
             "name": "id",
@@ -782,7 +782,7 @@
     "/universities/{id}/summary": {
       "get": {
         "description": "Returns a human-readable plain text summary for the specified university.",
-        "operationId": "UniversitiesController_getSummary",
+        "operationId": "InstitutionsController_getSummary",
         "parameters": [
           {
             "name": "id",
@@ -3711,7 +3711,7 @@
   "servers": [],
   "components": {
     "schemas": {
-      "CreateUniversityInput": {
+      "CreateInstitutionInput": {
         "type": "object",
         "properties": {
           "en_text": {
@@ -3783,14 +3783,14 @@
           "name": {
             "$ref": "#/components/schemas/Translation"
           },
-          "universityId": {
+          "institutionId": {
             "type": "string"
           },
-          "university": {
+          "institution": {
             "nullable": true,
             "allOf": [
               {
-                "$ref": "#/components/schemas/University"
+                "$ref": "#/components/schemas/Institution"
               }
             ]
           },
@@ -3817,14 +3817,14 @@
         "required": [
           "id",
           "name",
-          "universityId",
-          "university",
+          "institutionId",
+          "institution",
           "courses",
           "facultyId",
           "faculty"
         ]
       },
-      "University": {
+      "Institution": {
         "type": "object",
         "properties": {
           "id": {
@@ -4254,14 +4254,14 @@
           "name": {
             "$ref": "#/components/schemas/Translation"
           },
-          "universityId": {
+          "institutionId": {
             "type": "string"
           },
-          "university": {
+          "institution": {
             "nullable": true,
             "allOf": [
               {
-                "$ref": "#/components/schemas/University"
+                "$ref": "#/components/schemas/Institution"
               }
             ]
           },
@@ -4289,14 +4289,14 @@
         "required": [
           "id",
           "name",
-          "universityId",
-          "university",
+          "institutionId",
+          "institution",
           "modules",
           "publishedAt",
           "Block"
         ]
       },
-      "CreateManyUniversitiesInput": {
+      "CreateManyInstitutionsInput": {
         "type": "object",
         "properties": {
           "universities": {
@@ -4313,7 +4313,7 @@
             ],
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/CreateUniversityInput"
+              "$ref": "#/components/schemas/CreateInstitutionInput"
             }
           }
         },

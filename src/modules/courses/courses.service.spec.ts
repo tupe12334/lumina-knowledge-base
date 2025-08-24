@@ -31,11 +31,11 @@ describe('CoursesService', () => {
     const course = {
       id: '1',
       name: { en_text: 'course', he_text: 'קורס' },
-      universityId: 'u1',
+      institutionId: 'i1',
       publishedAt: new Date(),
-      university: {
-        id: 'u1',
-        name: { en_text: 'uni', he_text: 'אוני' },
+      institution: {
+        id: 'i1',
+        name: { en_text: 'institution', he_text: 'מוסד' },
       },
     };
     mockPrismaService.course.findMany.mockResolvedValue([course]);
@@ -44,8 +44,8 @@ describe('CoursesService', () => {
 
     expect(result).toHaveLength(1);
     expect(result[0].name.en_text).toBe('course');
-    expect(result[0].university).toBeDefined();
-    expect(result[0].university!.name.en_text).toBe('uni');
+    expect(result[0].institution).toBeDefined();
+    expect(result[0].institution!.name.en_text).toBe('institution');
   });
 
   describe('generateSummary', () => {
@@ -58,7 +58,7 @@ describe('CoursesService', () => {
         },
         description: { en_text: 'Fundamental concepts', he_text: 'מושגי יסוד' },
         creditPoints: 4.5,
-        university: {
+        institution: {
           name: {
             en_text: 'Harvard University',
             he_text: 'אוניברסיטת הרווארד',
@@ -89,7 +89,7 @@ describe('CoursesService', () => {
 
       expect(result).toContain('Course: Introduction to Computer Science');
       expect(result).toContain('ID: course-123');
-      expect(result).toContain('University: Harvard University');
+      expect(result).toContain('Institution: Harvard University');
       expect(result).toContain('Associated Degrees: Bachelor of CS');
       expect(result).toContain(
         'Modules: 2 modules - Algorithms, Data Structures',
@@ -102,7 +102,7 @@ describe('CoursesService', () => {
         name: { en_text: 'Simple Course', he_text: 'קורס פשוט' },
         description: { en_text: 'Basic course', he_text: 'קורס בסיסי' },
         creditPoints: 2.0,
-        university: {
+        institution: {
           name: { en_text: 'Small College', he_text: 'מכללה קטנה' },
         },
         Degree: [],

@@ -115,7 +115,7 @@ export class FacultiesController {
   @ApiResponse({ status: 404, description: 'University not found.' })
   @ApiResponse({ status: 500, description: 'Internal Server Error.' })
   findByUniversity(@Param('universityId') universityId: string) {
-    return this.facultiesService.getFacultiesByUniversity(universityId);
+    return this.facultiesService.getFacultiesByInstitution(universityId);
   }
 
   @Put(':id')

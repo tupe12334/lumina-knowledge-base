@@ -43,7 +43,7 @@ export class DatabaseService {
       ] = await Promise.all([
         this.prisma.course.count(),
         this.prisma.module.count(),
-        this.prisma.university.count(),
+        this.prisma.institution.count(),
         this.prisma.degree.count(),
         this.prisma.question.count(),
         this.prisma.block.count(),

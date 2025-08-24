@@ -7,7 +7,7 @@ const mockDelegate = (count: number) => ({
 });
 
 type PrismaPickMock = Record<string, { count: () => Promise<number> }> & {
-  university: { count: () => Promise<number> };
+  institution: { count: () => Promise<number> };
   faculty: { count: () => Promise<number> };
   degree: { count: () => Promise<number> };
   course: { count: () => Promise<number> };
@@ -27,7 +27,7 @@ type PrismaPickMock = Record<string, { count: () => Promise<number> }> & {
 describe('DbRowsHealthIndicator', () => {
   it('returns up when total rows > min', async () => {
     const indicator = new DbRowsHealthIndicator({
-      university: mockDelegate(10),
+      institution: mockDelegate(10),
       faculty: mockDelegate(10),
       degree: mockDelegate(10),
       course: mockDelegate(10),
@@ -53,7 +53,7 @@ describe('DbRowsHealthIndicator', () => {
 
   it('throws HealthCheckError when total rows <= min', async () => {
     const indicator = new DbRowsHealthIndicator({
-      university: mockDelegate(1),
+      institution: mockDelegate(1),
       faculty: mockDelegate(1),
       degree: mockDelegate(1),
       course: mockDelegate(1),
