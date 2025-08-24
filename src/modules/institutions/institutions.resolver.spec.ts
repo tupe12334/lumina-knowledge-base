@@ -21,37 +21,37 @@ describe('InstitutionsResolver', () => {
   });
 
   describe('getUniversities', () => {
-    it('should return an array of universities', async () => {
-      const mockUniversities = [
+    it('should return an array of institutions', async () => {
+      const mockInstitutions = [
         {
           id: '1',
         },
       ] as Institution[];
 
-      mockInstitutionsService.findAll.mockResolvedValue(mockUniversities);
+      mockInstitutionsService.findAll.mockResolvedValue(mockInstitutions);
 
       const result = await resolver.getUniversities();
 
-      expect(result).toEqual(mockUniversities);
+      expect(result).toEqual(mockInstitutions);
       expect(mockInstitutionsService.findAll).toHaveBeenCalled();
     });
   });
 
   describe('getUniversity', () => {
-    it('should return a university by id', async () => {
-      const mockUniversity = {
+    it('should return an institution by id', async () => {
+      const mockInstitution = {
         id: '1',
       } as Institution;
 
-      mockInstitutionsService.findUnique.mockResolvedValue(mockUniversity);
+      mockInstitutionsService.findUnique.mockResolvedValue(mockInstitution);
 
       const result = await resolver.getUniversity('1');
 
-      expect(result).toEqual(mockUniversity);
+      expect(result).toEqual(mockInstitution);
       expect(mockInstitutionsService.findUnique).toHaveBeenCalledWith('1');
     });
 
-    it('should return null if university not found', async () => {
+    it('should return null if institution not found', async () => {
       mockInstitutionsService.findUnique.mockResolvedValue(null);
 
       const result = await resolver.getUniversity('non-existent');

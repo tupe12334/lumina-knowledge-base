@@ -17,10 +17,10 @@ export class UpdateCourseInput {
   heText?: string | null;
 
   // Additional optional course fields (extend safely later as needed)
-  @ApiPropertyOptional({ description: 'University ID of the course' })
+  @ApiPropertyOptional({ description: 'Institution ID of the course' })
   @Field(() => String, {
     nullable: true,
-    description: 'University ID of the course',
+    description: 'Institution ID of the course',
   })
   universityId?: string | null;
 

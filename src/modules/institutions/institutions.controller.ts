@@ -35,12 +35,12 @@ export class InstitutionsController {
 
   @Post()
   @ApiOperation({
-    summary: 'Create a new university',
-    description: 'Creates a new university record.',
+    summary: 'Create a new institution',
+    description: 'Creates a new institution record.',
   })
   @ApiCreatedResponse({
     type: Institution,
-    description: 'The newly created university.',
+    description: 'The newly created institution.',
   })
   @ApiResponse({ status: 400, description: 'Bad Request.' })
   @ApiResponse({ status: 500, description: 'Internal Server Error.' })
@@ -50,17 +50,17 @@ export class InstitutionsController {
 
   @Post('bulk')
   @ApiOperation({
-    summary: 'Create multiple universities',
-    description: 'Creates multiple university records in a single operation.',
+    summary: 'Create multiple institutions',
+    description: 'Creates multiple institution records in a single operation.',
   })
   @ApiCreatedResponse({
-    description: 'The number of universities created.',
+    description: 'The number of institutions created.',
     schema: {
       type: 'object',
       properties: {
         count: {
           type: 'number',
-          description: 'Number of universities created',
+          description: 'Number of institutions created',
           example: 5,
         },
       },
@@ -74,13 +74,13 @@ export class InstitutionsController {
 
   @Get()
   @ApiOperation({
-    summary: 'Retrieve all universities',
-    description: 'Returns a list of all universities.',
+    summary: 'Retrieve all institutions',
+    description: 'Returns a list of all institutions.',
   })
   @ApiOkResponse({
     type: Institution,
     isArray: true,
-    description: 'A list of universities.',
+    description: 'A list of institutions.',
   })
   @ApiResponse({ status: 500, description: 'Internal Server Error.' })
   findAll() {
@@ -89,19 +89,19 @@ export class InstitutionsController {
 
   @Get(':id')
   @ApiOperation({
-    summary: 'Retrieve a university by ID',
-    description: 'Returns a single university by its ID.',
+    summary: 'Retrieve an institution by ID',
+    description: 'Returns a single institution by its ID.',
   })
   @ApiParam({
     name: 'id',
-    description: 'The ID of the university',
+    description: 'The ID of the institution',
     type: String,
   })
   @ApiOkResponse({
     type: Institution,
-    description: 'The university with the specified ID.',
+    description: 'The institution with the specified ID.',
   })
-  @ApiResponse({ status: 404, description: 'University not found.' })
+  @ApiResponse({ status: 404, description: 'Institution not found.' })
   @ApiResponse({ status: 500, description: 'Internal Server Error.' })
   findOne(@Param('id') id: string) {
     return this.institutionsService.findUnique(id);
@@ -109,17 +109,17 @@ export class InstitutionsController {
 
   @Put(':id')
   @ApiOperation({
-    summary: 'Update a university by ID',
-    description: 'Updates an existing university record.',
+    summary: 'Update an institution by ID',
+    description: 'Updates an existing institution record.',
   })
   @ApiParam({
     name: 'id',
-    description: 'The ID of the university',
+    description: 'The ID of the institution',
     type: String,
   })
-  @ApiOkResponse({ type: Institution, description: 'The updated university.' })
+  @ApiOkResponse({ type: Institution, description: 'The updated institution.' })
   @ApiResponse({ status: 400, description: 'Bad Request.' })
-  @ApiResponse({ status: 404, description: 'University not found.' })
+  @ApiResponse({ status: 404, description: 'Institution not found.' })
   @ApiResponse({ status: 500, description: 'Internal Server Error.' })
   update(
     @Param('id') id: string,
@@ -130,17 +130,17 @@ export class InstitutionsController {
 
   @Delete(':id')
   @ApiOperation({
-    summary: 'Delete a university by ID',
-    description: 'Deletes a university record by its ID.',
+    summary: 'Delete an institution by ID',
+    description: 'Deletes an institution record by its ID.',
   })
   @ApiParam({
     name: 'id',
-    description: 'The ID of the university',
+    description: 'The ID of the institution',
     type: String,
   })
   @HttpCode(HttpStatus.NO_CONTENT)
-  @ApiNoContentResponse({ description: 'University successfully deleted.' })
-  @ApiResponse({ status: 404, description: 'University not found.' })
+  @ApiNoContentResponse({ description: 'Institution successfully deleted.' })
+  @ApiResponse({ status: 404, description: 'Institution not found.' })
   @ApiResponse({ status: 500, description: 'Internal Server Error.' })
   remove(@Param('id') id: string) {
     return this.institutionsService.remove(id);
@@ -148,18 +148,18 @@ export class InstitutionsController {
 
   @Get(':id/summary')
   @ApiOperation({
-    summary: 'Get university summary',
+    summary: 'Get institution summary',
     description:
-      'Returns a human-readable plain text summary for the specified university.',
+      'Returns a human-readable plain text summary for the specified institution.',
   })
   @ApiParam({
     name: 'id',
-    description: 'The ID of the university',
+    description: 'The ID of the institution',
     type: String,
   })
   @ApiProduces('text/plain')
   @ApiOkResponse({
-    description: 'Plain text summary of the university',
+    description: 'Plain text summary of the institution',
     schema: { type: 'string' },
   })
   @ApiResponse({ status: 400, description: 'Invalid ID format' })

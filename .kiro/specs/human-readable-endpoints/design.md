@@ -2,7 +2,7 @@
 
 ## Overview
 
-This design implements human-readable REST endpoints that provide natural language summaries of academic entities for AI consumption. The endpoints return plain text responses containing contextual information about universities, courses, modules, questions, and degrees based on the existing Prisma database schema.
+This design implements human-readable REST endpoints that provide natural language summaries of academic entities for AI consumption. The endpoints return plain text responses containing contextual information about institutions, courses, modules, questions, and degrees based on the existing Prisma database schema.
 
 ## Architecture
 
@@ -15,7 +15,7 @@ This design implements human-readable REST endpoints that provide natural langua
 
 ### Supported Endpoints
 
-1. `GET /api/universities/{id}/summary`
+1. `GET /api/institutions/{id}/summary`
 2. `GET /api/courses/{id}/summary`
 3. `GET /api/modules/{id}/summary`
 4. `GET /api/questions/{id}/summary`
@@ -27,7 +27,7 @@ This design implements human-readable REST endpoints that provide natural langua
 
 Each existing controller will be extended with a new summary endpoint:
 
-- `UniversitiesController.getSummary(id: string)`
+- `InstitutionsController.getSummary(id: string)`
 - `CoursesController.getSummary(id: string)`
 - `ModulesController.getSummary(id: string)`
 - `QuestionsController.getSummary(id: string)`
@@ -37,7 +37,7 @@ Each existing controller will be extended with a new summary endpoint:
 
 Each service will implement a summary generation method:
 
-- `UniversitiesService.generateSummary(id: string): Promise<string>`
+- `InstitutionsService.generateSummary(id: string): Promise<string>`
 - `CoursesService.generateSummary(id: string): Promise<string>`
 - `ModulesService.generateSummary(id: string): Promise<string>`
 - `QuestionsService.generateSummary(id: string): Promise<string>`
@@ -53,11 +53,11 @@ interface SummaryGenerator {
 
 ## Data Models
 
-### University Summary Format
+### Institution Summary Format
 
 ```
-University: [name from en_text]
-ID: [university_id]
+Institution: [name from en_text]
+ID: [institution_id]
 Faculties: [count] faculties including [faculty names from en_text]
 Degrees: [count] degree programs
 Courses: [count] courses offered
@@ -69,7 +69,7 @@ Faculty Details: [faculty descriptions from en_text where available]
 ```
 Course: [name from en_text]
 ID: [course_id]
-University: [university name from en_text]
+Institution: [institution name from en_text]
 Associated Degrees: [degree names from en_text]
 Modules: [count] modules - [module names from en_text]
 Prerequisites: [prerequisite courses via Block relationships]
@@ -107,7 +107,7 @@ Question Parts: [if composite question - part question texts]
 ```
 Degree: [name from en_text]
 ID: [degree_id]
-University: [university name from en_text]
+Institution: [institution name from en_text]
 Faculty: [faculty name from en_text if assigned, otherwise "Not assigned to specific faculty"]
 Associated Courses: [count] courses - [course names from en_text]
 ```
@@ -126,7 +126,7 @@ Associated Courses: [count] courses - [course names from en_text]
 Plain text error messages:
 
 ```
-Error: University with ID [id] not found
+Error: Institution with ID [id] not found
 Error: Invalid ID format provided
 Error: Unable to generate summary due to server error
 ```
@@ -160,11 +160,11 @@ Error: Unable to generate summary due to server error
 
 Each summary generator will use Prisma's `include` option to fetch related data:
 
-- University: include faculties, degrees, courses with translations
-- Course: include university, degrees, modules, block relationships with translations
+- Institution: include faculties, degrees, courses with translations
+- Course: include institution, degrees, modules, block relationships with translations
 - Module: include courses, questions, parent/sub-modules, block relationships with translations
 - Question: include modules, answers, question parts with translations
-- Degree: include university, faculty, courses with translations
+- Degree: include institution, faculty, courses with translations
 
 ### Translation Handling
 

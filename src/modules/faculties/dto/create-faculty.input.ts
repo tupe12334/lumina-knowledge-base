@@ -16,7 +16,7 @@ export class CreateFacultyInput {
   @IsNotEmpty()
   description: string;
 
-  @ApiProperty({ description: 'ID of the university this faculty belongs to' })
+  @ApiProperty({ description: 'ID of the institution this faculty belongs to' })
   @Field()
   @IsUUID()
   universityId: string;

@@ -56,10 +56,10 @@ export class ModulesQueryInput {
   @IsUUID()
   courseId?: string;
 
-  @ApiPropertyOptional({ description: 'Filter modules by university ID' })
+  @ApiPropertyOptional({ description: 'Filter modules by institution ID' })
   @Field(() => ID, {
     nullable: true,
-    description: 'Filter modules by university ID',
+    description: 'Filter modules by institution ID',
   })
   @IsOptional()
   @IsUUID()

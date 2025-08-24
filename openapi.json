@@ -560,7 +560,7 @@
     },
     "/universities": {
       "post": {
-        "description": "Creates a new university record.",
+        "description": "Creates a new institution record.",
         "operationId": "InstitutionsController_create",
         "parameters": [],
         "requestBody": {
@@ -575,7 +575,7 @@
         },
         "responses": {
           "201": {
-            "description": "The newly created university.",
+            "description": "The newly created institution.",
             "content": {
               "application/json": {
                 "schema": {
@@ -591,18 +591,18 @@
             "description": "Internal Server Error."
           }
         },
-        "summary": "Create a new university",
+        "summary": "Create a new institution",
         "tags": [
           "universities"
         ]
       },
       "get": {
-        "description": "Returns a list of all universities.",
+        "description": "Returns a list of all institutions.",
         "operationId": "InstitutionsController_findAll",
         "parameters": [],
         "responses": {
           "200": {
-            "description": "A list of universities.",
+            "description": "A list of institutions.",
             "content": {
               "application/json": {
                 "schema": {
@@ -618,7 +618,7 @@
             "description": "Internal Server Error."
           }
         },
-        "summary": "Retrieve all universities",
+        "summary": "Retrieve all institutions",
         "tags": [
           "universities"
         ]
@@ -626,7 +626,7 @@
     },
     "/universities/bulk": {
       "post": {
-        "description": "Creates multiple university records in a single operation.",
+        "description": "Creates multiple institution records in a single operation.",
         "operationId": "InstitutionsController_createMany",
         "parameters": [],
         "requestBody": {
@@ -641,7 +641,7 @@
         },
         "responses": {
           "201": {
-            "description": "The number of universities created.",
+            "description": "The number of institutions created.",
             "content": {
               "application/json": {
                 "schema": {
@@ -649,7 +649,7 @@
                   "properties": {
                     "count": {
                       "type": "number",
-                      "description": "Number of universities created",
+                      "description": "Number of institutions created",
                       "example": 5
                     }
                   }
@@ -664,7 +664,7 @@
             "description": "Internal Server Error."
           }
         },
-        "summary": "Create multiple universities",
+        "summary": "Create multiple institutions",
         "tags": [
           "universities"
         ]
@@ -672,14 +672,14 @@
     },
     "/universities/{id}": {
       "get": {
-        "description": "Returns a single university by its ID.",
+        "description": "Returns a single institution by its ID.",
         "operationId": "InstitutionsController_findOne",
         "parameters": [
           {
             "name": "id",
             "required": true,
             "in": "path",
-            "description": "The ID of the university",
+            "description": "The ID of the institution",
             "schema": {
               "type": "string"
             }
@@ -687,7 +687,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The university with the specified ID.",
+            "description": "The institution with the specified ID.",
             "content": {
               "application/json": {
                 "schema": {
@@ -697,26 +697,26 @@
             }
           },
           "404": {
-            "description": "University not found."
+            "description": "Institution not found."
           },
           "500": {
             "description": "Internal Server Error."
           }
         },
-        "summary": "Retrieve a university by ID",
+        "summary": "Retrieve an institution by ID",
         "tags": [
           "universities"
         ]
       },
       "put": {
-        "description": "Updates an existing university record.",
+        "description": "Updates an existing institution record.",
         "operationId": "InstitutionsController_update",
         "parameters": [
           {
             "name": "id",
             "required": true,
             "in": "path",
-            "description": "The ID of the university",
+            "description": "The ID of the institution",
             "schema": {
               "type": "string"
             }
@@ -724,7 +724,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The updated university.",
+            "description": "The updated institution.",
             "content": {
               "application/json": {
                 "schema": {
@@ -737,26 +737,26 @@
             "description": "Bad Request."
           },
           "404": {
-            "description": "University not found."
+            "description": "Institution not found."
           },
           "500": {
             "description": "Internal Server Error."
           }
         },
-        "summary": "Update a university by ID",
+        "summary": "Update an institution by ID",
         "tags": [
           "universities"
         ]
       },
       "delete": {
-        "description": "Deletes a university record by its ID.",
+        "description": "Deletes an institution record by its ID.",
         "operationId": "InstitutionsController_remove",
         "parameters": [
           {
             "name": "id",
             "required": true,
             "in": "path",
-            "description": "The ID of the university",
+            "description": "The ID of the institution",
             "schema": {
               "type": "string"
             }
@@ -764,16 +764,16 @@
         ],
         "responses": {
           "204": {
-            "description": "University successfully deleted."
+            "description": "Institution successfully deleted."
           },
           "404": {
-            "description": "University not found."
+            "description": "Institution not found."
           },
           "500": {
             "description": "Internal Server Error."
           }
         },
-        "summary": "Delete a university by ID",
+        "summary": "Delete an institution by ID",
         "tags": [
           "universities"
         ]
@@ -781,14 +781,14 @@
     },
     "/universities/{id}/summary": {
       "get": {
-        "description": "Returns a human-readable plain text summary for the specified university.",
+        "description": "Returns a human-readable plain text summary for the specified institution.",
         "operationId": "InstitutionsController_getSummary",
         "parameters": [
           {
             "name": "id",
             "required": true,
             "in": "path",
-            "description": "The ID of the university",
+            "description": "The ID of the institution",
             "schema": {
               "type": "string"
             }
@@ -796,7 +796,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Plain text summary of the university",
+            "description": "Plain text summary of the institution",
             "content": {
               "text/plain": {
                 "schema": {
@@ -815,7 +815,7 @@
             "description": "Internal Server Error"
           }
         },
-        "summary": "Get university summary",
+        "summary": "Get institution summary",
         "tags": [
           "universities"
         ]
@@ -867,7 +867,7 @@
             "name": "universityId",
             "required": false,
             "in": "query",
-            "description": "Filter courses by university ID",
+            "description": "Filter courses by institution ID",
             "schema": {
               "type": "string"
             }
@@ -2359,7 +2359,7 @@
             "name": "universityId",
             "required": false,
             "in": "query",
-            "description": "Filter by university id",
+            "description": "Filter by institution id",
             "schema": {
               "type": "string"
             }
@@ -3716,11 +3716,11 @@
         "properties": {
           "en_text": {
             "type": "string",
-            "description": "English name of the university"
+            "description": "English name of the institution"
           },
           "he_text": {
             "type": "string",
-            "description": "Hebrew name of the university"
+            "description": "Hebrew name of the institution"
           }
         },
         "required": [
@@ -4300,7 +4300,7 @@
         "type": "object",
         "properties": {
           "universities": {
-            "description": "Array of university data to create",
+            "description": "Array of institution data to create",
             "example": [
               {
                 "en_text": "Harvard University",
@@ -4330,7 +4330,7 @@
           },
           "universityId": {
             "type": "string",
-            "description": "Owning university id",
+            "description": "Owning institution id",
             "format": "uuid"
           }
         },
@@ -4754,7 +4754,7 @@
           },
           "universityId": {
             "type": "string",
-            "description": "Owning university id",
+            "description": "Owning institution id",
             "format": "uuid"
           }
         },
@@ -4916,7 +4916,7 @@
           },
           "universityId": {
             "type": "string",
-            "description": "ID of the university this faculty belongs to"
+            "description": "ID of the institution this faculty belongs to"
           }
         },
         "required": [

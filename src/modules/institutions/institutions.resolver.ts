@@ -23,13 +23,13 @@ export class InstitutionsResolver {
   }
 
   /**
-   * Creates a new university.
-   * @param input - The data for creating the university
-   * @returns Promise<University> The newly created university
+   * Creates a new institution.
+   * @param input - The data for creating the institution
+   * @returns Promise<Institution> The newly created institution
    */
   @Mutation(() => Institution, {
     name: 'createUniversity',
-    description: 'Creates a new university',
+    description: 'Creates a new institution',
   })
   async createUniversity(
     @Args('input') input: CreateInstitutionInput,
@@ -38,13 +38,13 @@ export class InstitutionsResolver {
   }
 
   /**
-   * Creates multiple universities in bulk.
-   * @param input - The data for creating the universities
-   * @returns Promise<CreateManyResult> The result containing count of created universities
+   * Creates multiple institutions in bulk.
+   * @param input - The data for creating the institutions
+   * @returns Promise<CreateManyResult> The result containing count of created institutions
    */
   @Mutation(() => CreateManyResult, {
     name: 'createManyUniversities',
-    description: 'Creates multiple universities in bulk',
+    description: 'Creates multiple institutions in bulk',
   })
   async createManyUniversities(
     @Args('input') input: CreateManyInstitutionsInput,

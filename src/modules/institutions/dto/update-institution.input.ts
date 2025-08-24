@@ -5,7 +5,7 @@ import { ApiProperty } from '@nestjs/swagger';
 
 @InputType('UpdateUniversityInput')
 export class UpdateInstitutionInput extends PartialType(CreateInstitutionInput) {
-  @ApiProperty({ description: 'University id' })
+  @ApiProperty({ description: 'Institution id' })
   @Field()
   @IsString()
   @IsNotEmpty()

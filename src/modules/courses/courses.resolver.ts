@@ -150,7 +150,7 @@ export class CoursesResolver {
   @Mutation(() => Course, {
     name: 'updateCourse',
     description:
-      "Update a course's fields (e.g., name translation, university, publishedAt)",
+      "Update a course's fields (e.g., name translation, institution, publishedAt)",
   })
   updateCourse(@Args('input') input: UpdateCourseInput): Promise<Course> {
     return this.coursesService.updateCourse(input);

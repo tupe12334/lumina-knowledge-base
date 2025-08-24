@@ -4,7 +4,7 @@ import { Transform } from 'class-transformer';
 
 export class CoursesQueryInput {
   @ApiPropertyOptional({
-    description: 'Filter courses by university ID',
+    description: 'Filter courses by institution ID',
     type: String,
   })
   @IsOptional()

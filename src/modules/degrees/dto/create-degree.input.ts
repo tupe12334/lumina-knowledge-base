@@ -10,7 +10,7 @@ export class CreateDegreeInput {
   @IsNotEmpty()
   name: string;
 
-  @ApiProperty({ description: 'Owning university id', format: 'uuid' })
+  @ApiProperty({ description: 'Owning institution id', format: 'uuid' })
   @Field()
   @IsUUID()
   universityId: string;

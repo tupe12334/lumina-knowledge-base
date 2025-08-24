@@ -11,7 +11,7 @@ export class DegreesQueryDto {
   @Field(() => String, { nullable: true })
   facultyId?: string;
 
-  @ApiPropertyOptional({ description: 'Filter by university id' })
+  @ApiPropertyOptional({ description: 'Filter by institution id' })
   @Field(() => String, { nullable: true })
   universityId?: string;
 }

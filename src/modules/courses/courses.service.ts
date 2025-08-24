@@ -101,7 +101,7 @@ export class CoursesService {
       },
     });
 
-    // Sort courses in priority order: degree courses, then university courses, then rest
+    // Sort courses in priority order: degree courses, then institution courses, then rest
     if (sortByDegree && (universityId || degreeId)) {
       return courses.sort((a, b) => {
         // Check if course belongs to user's degree
@@ -112,7 +112,7 @@ export class CoursesService {
           ? b.Degree?.some((d) => d.id === degreeId)
           : false;
 
-        // Check if course belongs to user's university
+        // Check if course belongs to user's institution
         const aInUniversity = universityId
           ? a.institutionId === universityId
           : false;
@@ -120,7 +120,7 @@ export class CoursesService {
           ? b.institutionId === universityId
           : false;
 
-        // Priority scoring: degree = 3, university = 2, other = 1
+        // Priority scoring: degree = 3, institution = 2, other = 1
         const aScore = aInDegree ? 3 : aInUniversity ? 2 : 1;
         const bScore = bInDegree ? 3 : bInUniversity ? 2 : 1;
 

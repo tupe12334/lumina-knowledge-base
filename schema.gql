@@ -163,7 +163,7 @@ input CreateManyTranslationsInput {
 }
 
 input CreateManyUniversitiesInput {
-  """Array of university data to create"""
+  """Array of institution data to create"""
   universities: [CreateUniversityInput!]!
 }
 
@@ -210,10 +210,10 @@ input CreateTranslationInput {
 }
 
 input CreateUniversityInput {
-  """English name of the university"""
+  """English name of the institution"""
   en_text: String!
 
-  """Hebrew name of the university"""
+  """Hebrew name of the institution"""
   he_text: String!
 }
 
@@ -363,7 +363,7 @@ input ModulesQueryInput {
   """Search modules by name (partial match, case insensitive)"""
   nameSearch: String
 
-  """Filter modules by university ID"""
+  """Filter modules by institution ID"""
   universityId: ID
 }
 
@@ -404,7 +404,7 @@ type Mutation {
   """Create multiple translations in bulk"""
   createManyTranslations(input: CreateManyTranslationsInput!): CreateManyResult!
 
-  """Creates multiple universities in bulk"""
+  """Creates multiple institutions in bulk"""
   createManyUniversities(input: CreateManyUniversitiesInput!): CreateManyResult!
 
   """Creates a new module"""
@@ -417,7 +417,7 @@ type Mutation {
   createQuestion(input: CreateQuestionInput!): Question!
   createTranslation(createTranslationInput: CreateTranslationInput!): Translation!
 
-  """Creates a new university"""
+  """Creates a new institution"""
   createUniversity(input: CreateUniversityInput!): University!
 
   """Delete a prerequisite/postrequisite relationship between blocks"""
@@ -451,7 +451,7 @@ type Mutation {
   updateBlock(updateBlockInput: UpdateBlockInput!): Block!
 
   """
-  Update a course's fields (e.g., name translation, university, publishedAt)
+  Update a course's fields (e.g., name translation, institution, publishedAt)
   """
   updateCourse(input: UpdateCourseInput!): Course!
   updateDegree(updateDegreeInput: UpdateDegreeInput!): Degree!
@@ -704,7 +704,7 @@ input UpdateCourseInput {
   """Published at timestamp (UTC)"""
   publishedAt: DateTime
 
-  """University ID of the course"""
+  """Institution ID of the course"""
   universityId: String
 }
 
@@ -759,10 +759,10 @@ input UpdateTranslationInput {
 }
 
 input UpdateUniversityInput {
-  """English name of the university"""
+  """English name of the institution"""
   en_text: String
 
-  """Hebrew name of the university"""
+  """Hebrew name of the institution"""
   he_text: String
   id: String!
 }

@@ -7,7 +7,7 @@ import { CreateInstitutionInput } from './create-institution.input';
 @InputType('CreateManyUniversitiesInput')
 export class CreateManyInstitutionsInput {
   @ApiProperty({
-    description: 'Array of university data to create',
+    description: 'Array of institution data to create',
     type: [CreateInstitutionInput],
     example: [
       { en_text: 'Harvard University', he_text: 'אוניברסיטת הרווארד' },
@@ -15,10 +15,10 @@ export class CreateManyInstitutionsInput {
     ],
   })
   @Field(() => [CreateInstitutionInput], {
-    description: 'Array of university data to create',
+    description: 'Array of institution data to create',
   })
   @IsArray()
-  @ArrayMinSize(1, { message: 'At least one university must be provided' })
+  @ArrayMinSize(1, { message: 'At least one institution must be provided' })
   @ValidateNested({ each: true })
   @Type(() => CreateInstitutionInput)
   universities!: CreateInstitutionInput[];

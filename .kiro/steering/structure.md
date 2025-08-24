@@ -35,7 +35,7 @@ Each domain module follows consistent structure:
 
 #### Domain Modules
 
-- `universities/` - University management
+- `institutions/` - Institution management
 - `faculties/` - Faculty management
 - `degrees/` - Degree program management
 - `courses/` - Course management

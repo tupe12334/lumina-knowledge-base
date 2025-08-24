@@ -25,7 +25,7 @@ describe('InstitutionsController (REST)', () => {
     );
   });
 
-  it('create() should call service and return created university', async () => {
+  it('create() should call service and return created institution', async () => {
     const body = {
       en_text: 'Tel Aviv University',
       he_text: 'אוניברסיטת תל אביב',
@@ -54,7 +54,7 @@ describe('InstitutionsController (REST)', () => {
     expect(service.findAll).toHaveBeenCalled();
   });
 
-  it('findOne() should return specific university', async () => {
+  it('findOne() should return specific institution', async () => {
     const uni = { id: 'u1', name: { en_text: 'One', he_text: 'אחד' } };
     service.findUnique.mockResolvedValue(uni);
     const res = await controller.findOne('u1');
