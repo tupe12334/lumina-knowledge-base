@@ -49,7 +49,7 @@ export class HealthController {
       () => this.prismaHealth.pingCheck('database', this.prisma),
       () => this.dbRows.isHealthy('db_rows', 100),
       () => this.memoryHealth.checkHeap('memory_heap', 150 * 1024 * 1024),
-      () => this.memoryHealth.checkRSS('memory_rss', 150 * 1024 * 1024),
+      () => this.memoryHealth.checkRSS('memory_rss', 200 * 1024 * 1024),
     ]);
   }
 
