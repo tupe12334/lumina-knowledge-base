@@ -37306,7 +37306,6 @@ INSERT INTO _CourseToDegree VALUES('504badae-acc5-4d40-b66b-cbb6dcfc009d','43eae
 INSERT INTO _CourseToDegree VALUES('f7bfbd82-8b62-4e6d-a6dc-20755151ac3b','43eae81a-0c42-4e5c-894d-bd803334f0cd');
 INSERT INTO _CourseToDegree VALUES('7b6523b1-5740-4f10-8303-773cdca0619d','43eae81a-0c42-4e5c-894d-bd803334f0cd');
 INSERT INTO _CourseToDegree VALUES('8a032019-3923-485b-8ef2-1c8c99494038','43eae81a-0c42-4e5c-894d-bd803334f0cd');
-INSERT INTO _CourseToDegree VALUES('ea2a8249-c9af-4f62-8e3f-7f16b1b01d7a','43eae81a-0c42-4e5c-894d-bd803334f0cd');
 INSERT INTO _CourseToDegree VALUES('18f17e49-ac1b-451e-a21e-732c7bb0fea8','43eae81a-0c42-4e5c-894d-bd803334f0cd');
 INSERT INTO _CourseToDegree VALUES('3e624b22-dabf-422c-82c2-64a6538faf4f','73ef0be5-bd20-4181-aa70-52cf19ac5a9c');
 INSERT INTO _CourseToDegree VALUES('48153e85-e200-4b72-8c9e-2ea63775bfdd','73ef0be5-bd20-4181-aa70-52cf19ac5a9c');
