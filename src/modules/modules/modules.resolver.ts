@@ -153,7 +153,7 @@ export class ModulesResolver {
     // Discard any external moduleIds to enforce this field is scoped to the current module
     const rest = ((args: QuestionsQueryDto | undefined): QuestionsQueryDto => {
       if (!args) return {} as QuestionsQueryDto;
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
       const { moduleIds, ...other } = args as QuestionsQueryDto & {
         moduleIds?: string[];
       };

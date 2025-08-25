@@ -58,7 +58,7 @@ describe('Mutations E2E (Disabled)', () => {
   });
 
   it('should block mutations when ENABLE_MUTATIONS is false', async () => {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+
     return request(app.getHttpAdapter().getInstance())
       .post('/graphql')
       .send({

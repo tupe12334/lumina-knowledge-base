@@ -300,7 +300,7 @@ export class ModulesService {
     // Remove the _count property before returning
     console.log(`DEBUG: Filtered modules count: ${filteredModules.length}`);
     return filteredModules.map((module) => {
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
       const { _count, ...moduleWithoutCount } = module;
       return moduleWithoutCount;
     }) as unknown as ModuleEntity[];

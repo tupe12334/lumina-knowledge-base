@@ -49,7 +49,7 @@ export class DeleteCourseResult {
   orphanedQuestions: number;
 
   /**
-   
+
 
   /**
    * Whether the deletion was successful.
