@@ -1,0 +1,38 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sqlite3:*)",
+      "Bash(pnpm test:*)",
+      "Bash(pnpm type-check:*)",
+      "Bash(PORT=3000 pnpm run dev)",
+      "Bash(PORT=3001 pnpm run dev)",
+      "Bash(curl:*)",
+      "Bash(curl *)",
+      "Bash(pnpm install:*)",
+      "Bash(pnpm add:*)",
+      "Bash(node:*)",
+      "Bash(PORT=3002 pnpm run dev)",
+      "Bash(lsof:*)",
+      "Bash(PORT=3333 pnpm run dev)",
+      "Bash(kill:*)",
+      "Bash(PORT=3333 pnpm run start:dev)",
+      "Bash(pnpm run:*)",
+      "Bash(npm test:*)",
+      "Bash(pnpm db:dump:*)",
+      "Bash(pgrep:*)",
+      "Bash(PORT=3333 pnpm run preview)",
+      "Bash(chmod:*)",
+      "Bash(npx ts-node:*)",
+      "Bash(pnpm validate:ai:*)",
+      "Bash(pnpm knip:*)",
+      "WebFetch(domain:*)",
+      "Bash(npm run check-translations:*)",
+      "Bash(grep:*)",
+      "Bash(uuidgen)",
+      "Bash(pnpm update:*)",
+      "WebSearch"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
