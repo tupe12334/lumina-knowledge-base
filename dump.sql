@@ -16750,6 +16750,37 @@ INSERT INTO Translation VALUES('107dee73-60ad-47d5-97e4-02bf5e79e553','Plasma Wa
 INSERT INTO Translation VALUES('f3381ad3-1ca3-4b4a-89b2-f7d7b9de3397','Controlled Nuclear Fusion','איחוי גרעיני מבוקר');
 INSERT INTO Translation VALUES('c7522f0b-41e6-49fb-a064-6eac9f2891ac','Astrophysical Plasmas','פלסמות אסטרופיסיות');
 INSERT INTO Translation VALUES('3a68e7af-aa90-4337-b9b0-49afd65ce700','פיסיקה','פיסיקה');
+INSERT INTO Translation VALUES('1a7b31d2-741d-4311-a4b0-8cad3653d460','History','היסטוריה');
+INSERT INTO Translation VALUES('c36381c3-b023-463b-ace7-edd616c9802f','Literature','ספרות');
+INSERT INTO Translation VALUES('a846f431-1998-4346-bece-668c382f7d0c','Philosophy','פילוסופיה');
+INSERT INTO Translation VALUES('b17e623b-0320-447d-98ab-48d1e25b74a5','Cinema Studies','לימודי קולנוע');
+INSERT INTO Translation VALUES('70d0b609-8070-4446-86b2-15f320c9fbde','Music','מוזיקה');
+INSERT INTO Translation VALUES('6c01b6ee-0f21-4467-977b-fbae400d982c','Art History','תולדות האמנות');
+INSERT INTO Translation VALUES('0a78ee19-2dc5-48e7-819b-2d38732cceda','Theater','תיאטרון');
+INSERT INTO Translation VALUES('aa58d146-6c8f-4fc4-bc81-687b591e1716','Linguistics and Hebrew Language','בלשנות ושפה עברית');
+INSERT INTO Translation VALUES('d4fba9a5-1fa9-41f9-8723-e907d39b72c7','Multidisciplinary Arts','אמנויות רב תחומי');
+INSERT INTO Translation VALUES('b54c9f08-aad7-4a7d-91bb-8254160ecf51','Management','ניהול');
+INSERT INTO Translation VALUES('71054935-7e29-411e-ad4c-be6f049892d2','Accounting','חשבונאות');
+INSERT INTO Translation VALUES('9fcfb6c9-d81d-4b84-8f9c-31965cb05531','Sociology and Anthropology','סוציולוגיה ואנתרופולוגיה');
+INSERT INTO Translation VALUES('adc269a4-54e9-4209-b947-e299af6af1b6','Communication','תקשורת');
+INSERT INTO Translation VALUES('965a9b0c-4870-4f84-a03b-a64fc3c8aca4','Political Science and International Relations','מדע המדינה ויחסים בינלאומיים');
+INSERT INTO Translation VALUES('c0c35d55-03b0-421c-b8a1-be9e46b2685c','Education','חינוך');
+INSERT INTO Translation VALUES('e289a66e-2cc7-4247-8457-c01123ccd925','Software Engineering','הנדסת תוכנה');
+INSERT INTO Translation VALUES('208c2f93-00c9-45a6-8baf-2a71226f34b5','Industrial Engineering','הנדסה תעשייתית');
+INSERT INTO Translation VALUES('a5a7c9df-96e5-4c7d-803a-5694f41e19ad','Physics','פיזיקה');
+INSERT INTO Translation VALUES('982199e3-820c-4a59-b57e-584f5c18c11c','Chemistry','כימיה');
+INSERT INTO Translation VALUES('26a6b875-5f98-4a53-82ee-6ad177e6d756','Life Sciences','מדעי החיים');
+INSERT INTO Translation VALUES('337565e5-d404-414f-8643-4e0918d211a7','Earth Sciences','מדעי כדור הארץ');
+INSERT INTO Translation VALUES('c1ccdc15-54b4-4051-87e1-2ea62f56dac9','Culture Studies','לימודי תרבות');
+INSERT INTO Translation VALUES('9b2b8ea1-a113-47bb-947c-74bb35e25309','Democracy Studies','לימודי דמוקרטיה');
+INSERT INTO Translation VALUES('4ebef0c7-a82f-4f03-8340-8387fac999f8','Public Policy and Government','מדיניות ציבורית וממשל');
+INSERT INTO Translation VALUES('398a2139-f279-4c34-98ae-a046aa8330e6','Business Administration (MBA)','ניהול עסקים (MBA)');
+INSERT INTO Translation VALUES('6d51f5ef-6b3b-42b8-af5b-1af7844352d1','Social Psychology','פסיכולוגיה חברתית');
+INSERT INTO Translation VALUES('dd9b8bd0-9c42-4f51-96d3-f23cbb40aadb','Cognitive Psychology','פסיכולוגיה קוגניטיבית');
+INSERT INTO Translation VALUES('710ed1b5-c30f-490f-8092-d0e455cbfbe0','Education (with Technology focus)','חינוך (עם התמחות בטכנולוגיה)');
+INSERT INTO Translation VALUES('e2c65c17-5f17-4133-8a5a-a2bc88ba5058','Astrophysics','אסטרופיזיקה');
+INSERT INTO Translation VALUES('33fc8968-0350-42fa-b036-5d630f8e5cb4','Biological Thought','מחשבה ביולוגית');
+INSERT INTO Translation VALUES('247bb49e-4884-4336-a591-f98f403fc3d2','Leadership in Education','מנהיגות בחינוך');
 CREATE TABLE IF NOT EXISTS "Question" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "validationStatus" TEXT NOT NULL DEFAULT 'ai_generated',
@@ -41866,6 +41897,37 @@ INSERT INTO Degree VALUES('73ef0be5-bd20-4181-aa70-52cf19ac5a9c','63e95b0b-85de-
 INSERT INTO Degree VALUES('c7a1e2b2-8e2d-4c1a-9e2a-1a2b3c4d5e6f','63e95b0b-85de-4c54-b6af-face80091bb4','92e73fb7-96de-45e4-aff3-4ca7b89be16c','7e3f2c1b-9a8d-4f6e-8c5b-2d3e4f5a6b7c');
 INSERT INTO Degree VALUES('fe63f747-f7c8-4c63-bb5b-904f503cd23e','25800af4-b146-4cd0-83c0-dc64729dcc7f','42e9a858-0a22-482d-ab1d-65f7a00ceb4c','f1a2b3c4-d5e6-7f8g-9h0i-j1k2l3m4n5o6');
 INSERT INTO Degree VALUES('432f03b9-3497-4012-9f8f-7d1d34cab6e1','24b5a671-ea76-4c9b-8fd2-97e09f958f39','3856bd36-8082-4821-8b1d-9ce806403ab2','c65fa3bd-2f3a-40d8-b192-3be77adc7802');
+INSERT INTO Degree VALUES('a6d03cb1-d591-46bd-845f-0f7cf1ecbaeb','1a7b31d2-741d-4311-a4b0-8cad3653d460','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL);
+INSERT INTO Degree VALUES('f8aead41-cb51-4d36-9bb8-6b20bac99bf3','c36381c3-b023-463b-ace7-edd616c9802f','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL);
+INSERT INTO Degree VALUES('089def90-2315-4a0d-9d58-54bdd3fa30b8','a846f431-1998-4346-bece-668c382f7d0c','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL);
+INSERT INTO Degree VALUES('4fee3d48-ee07-4ef9-8287-4ece6f05fc19','b17e623b-0320-447d-98ab-48d1e25b74a5','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL);
+INSERT INTO Degree VALUES('7dc820a1-c40b-4bb9-8ad1-16e90ad5737e','70d0b609-8070-4446-86b2-15f320c9fbde','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL);
+INSERT INTO Degree VALUES('10989e9c-df9a-4c82-89ce-0c74b81db27a','6c01b6ee-0f21-4467-977b-fbae400d982c','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL);
+INSERT INTO Degree VALUES('0e1d5b97-627e-4504-9af2-65d029041bc4','0a78ee19-2dc5-48e7-819b-2d38732cceda','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL);
+INSERT INTO Degree VALUES('74256ac6-f254-49d8-b712-87918c6b92ea','aa58d146-6c8f-4fc4-bc81-687b591e1716','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL);
+INSERT INTO Degree VALUES('36653137-fd8a-485f-ab16-a4c07d245647','d4fba9a5-1fa9-41f9-8723-e907d39b72c7','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL);
+INSERT INTO Degree VALUES('c4cfc97f-cabf-42c4-bcb6-7788cf794248','b54c9f08-aad7-4a7d-91bb-8254160ecf51','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL);
+INSERT INTO Degree VALUES('90371e02-6b49-412e-818c-43577b9176fe','71054935-7e29-411e-ad4c-be6f049892d2','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL);
+INSERT INTO Degree VALUES('27faf782-61c5-4556-9c7c-38176f1527ae','9fcfb6c9-d81d-4b84-8f9c-31965cb05531','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL);
+INSERT INTO Degree VALUES('e073cc7b-3387-46b1-8806-72f74885a27a','adc269a4-54e9-4209-b947-e299af6af1b6','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL);
+INSERT INTO Degree VALUES('d39992f2-66b7-4e08-a9ef-c7823565a795','965a9b0c-4870-4f84-a03b-a64fc3c8aca4','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL);
+INSERT INTO Degree VALUES('ce9ecd09-7fb3-429f-a695-217634df32fb','c0c35d55-03b0-421c-b8a1-be9e46b2685c','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL);
+INSERT INTO Degree VALUES('0f9998d5-c3d6-4cb6-b3f1-52f66cf22b98','e289a66e-2cc7-4247-8457-c01123ccd925','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL);
+INSERT INTO Degree VALUES('818c3954-3988-4390-aad9-f56108663213','208c2f93-00c9-45a6-8baf-2a71226f34b5','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL);
+INSERT INTO Degree VALUES('ffe84602-7f08-482b-8ec0-a69be8615c14','a5a7c9df-96e5-4c7d-803a-5694f41e19ad','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL);
+INSERT INTO Degree VALUES('1a8dcc17-3b10-43c6-985a-5cfd550bf149','982199e3-820c-4a59-b57e-584f5c18c11c','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL);
+INSERT INTO Degree VALUES('4fe1f439-9f74-449f-a41a-29ee69303aa6','26a6b875-5f98-4a53-82ee-6ad177e6d756','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL);
+INSERT INTO Degree VALUES('2feff7b0-e2cf-4d4e-9eb3-f0f544bc3569','337565e5-d404-414f-8643-4e0918d211a7','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL);
+INSERT INTO Degree VALUES('4fdc52b7-7baa-477f-83be-b0b9aabccf25','c1ccdc15-54b4-4051-87e1-2ea62f56dac9','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL);
+INSERT INTO Degree VALUES('c6c246e5-6c45-4b1a-b532-14d0ce3e6248','9b2b8ea1-a113-47bb-947c-74bb35e25309','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL);
+INSERT INTO Degree VALUES('a103fbf6-8ebf-488e-90e1-cb79e56d904d','4ebef0c7-a82f-4f03-8340-8387fac999f8','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL);
+INSERT INTO Degree VALUES('245e96a5-f560-4474-a6ad-9f2e6ae3201b','398a2139-f279-4c34-98ae-a046aa8330e6','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL);
+INSERT INTO Degree VALUES('13c794de-d292-42af-b2d0-0544d765b86b','6d51f5ef-6b3b-42b8-af5b-1af7844352d1','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL);
+INSERT INTO Degree VALUES('e45e661f-021f-4ca0-8df8-59cd398349c7','dd9b8bd0-9c42-4f51-96d3-f23cbb40aadb','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL);
+INSERT INTO Degree VALUES('4ab81081-2200-4a0d-9031-0aafb44987ee','710ed1b5-c30f-490f-8092-d0e455cbfbe0','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL);
+INSERT INTO Degree VALUES('658ec2e4-a87a-460a-a1c3-5d97df1c1cc6','e2c65c17-5f17-4133-8a5a-a2bc88ba5058','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL);
+INSERT INTO Degree VALUES('8e2b8baf-8054-4072-b4e9-17fe55ff99cc','33fc8968-0350-42fa-b036-5d630f8e5cb4','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL);
+INSERT INTO Degree VALUES('a15ea865-e9ee-41bb-a994-d23d78b7806a','247bb49e-4884-4336-a591-f98f403fc3d2','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL);
 CREATE TABLE IF NOT EXISTS "BooleanAnswer" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "value" BOOLEAN NOT NULL,
