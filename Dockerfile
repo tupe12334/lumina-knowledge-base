@@ -1,4 +1,4 @@
-# syntax=docker/dockerfile:1
+# syntax=docker/dockerfile:1.4
 
 # ---- Base builder image ----
 FROM node:22-bookworm-slim AS builder
@@ -8,11 +8,24 @@ FROM node:22-bookworm-slim AS builder
 # Enable corepack to use pnpm
 RUN corepack enable
 
+# Configure pnpm store for caching
+ENV PNPM_HOME=/pnpm
+ENV PATH=$PNPM_HOME:$PATH
+RUN pnpm config set store-dir /pnpm/store
+
 WORKDIR /app
 
-# Install dependencies first (better layer caching)
+# Copy package files for better layer caching
 COPY pnpm-lock.yaml package.json pnpm-workspace.yaml ./
-RUN pnpm install --frozen-lockfile
+
+# Fetch dependencies to cache (without installing)
+RUN --mount=type=cache,id=pnpm-store,target=/pnpm/store,sharing=locked \
+    pnpm fetch --frozen-lockfile
+
+# Install dependencies from cache
+RUN --mount=type=cache,id=pnpm-store,target=/pnpm/store,sharing=locked \
+    --mount=type=cache,id=pnpm-modules,target=/app/node_modules/.pnpm,sharing=locked \
+    pnpm install --offline --frozen-lockfile
 
 # Copy the rest of the source
 COPY . .
