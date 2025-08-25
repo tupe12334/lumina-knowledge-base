@@ -73,6 +73,7 @@ The system includes a specialized command for AI-generated questions:
 - Prefer bulk endpoints for creating multiple entities
 - Use `/bulk-complete` endpoint for comprehensive question creation (questions + answers)
 - Export/import data using `pnpm run db:dump` and `pnpm run db:dump:apply`
+- **IMPORTANT**: Always run `pnpm run db:dump` after making any changes to the database to keep dump.sql current
 
 ### Module Structure
 
