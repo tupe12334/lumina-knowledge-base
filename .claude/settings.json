@@ -30,7 +30,8 @@
       "Bash(grep:*)",
       "Bash(uuidgen)",
       "Bash(pnpm update:*)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(PORT=3333 ENABLE_MUTATIONS=true pnpm run preview)"
     ],
     "deny": [],
     "ask": []
