@@ -12,15 +12,20 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   setupSwagger(app);
-  // Configure CORS only if CORS_ORIGIN is provided via env
-  if (env.CORS_ORIGIN) {
-    app.enableCors({
-      origin: env.CORS_ORIGIN,
-      credentials: true,
-      methods: ['GET', 'POST'],
-      allowedHeaders: ['Content-Type', 'Authorization', 'Accept'],
-    });
-  }
+  // Configure CORS - always enable with production and development origins
+  const allowedOrigins = env.CORS_ORIGIN || [
+    'https://app.lumina.study',
+    'https://lumina.study',
+    'https://www.lumina.study',
+    'http://localhost:5173', // Development
+  ];
+
+  app.enableCors({
+    origin: allowedOrigins,
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'Accept'],
+  });
 
   await app.listen(env.PORT);
 }

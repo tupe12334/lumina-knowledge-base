@@ -25,7 +25,7 @@ RUN --mount=type=cache,id=pnpm-store,target=/pnpm/store,sharing=locked \
 # Install dependencies from cache
 RUN --mount=type=cache,id=pnpm-store,target=/pnpm/store,sharing=locked \
     --mount=type=cache,id=pnpm-modules,target=/app/node_modules/.pnpm,sharing=locked \
-    pnpm install --offline --frozen-lockfile
+    pnpm install --frozen-lockfile
 
 # Copy the rest of the source
 COPY . .
