@@ -28,7 +28,9 @@
       "WebFetch(domain:*)",
       "Bash(npm run check-translations:*)",
       "Bash(grep:*)",
-      "Bash(uuidgen)"
+      "Bash(uuidgen)",
+      "Bash(pnpm update:*)",
+      "WebSearch",
     ],
     "deny": [],
     "ask": []
