@@ -171,7 +171,10 @@ export class AnswersService {
         } else {
           await this.prisma.selectAnswer.create({
             data: {
-              isCorrect: s.isCorrect ?? false,
+              isCorrect:
+                s.isCorrect !== null && s.isCorrect !== undefined
+                  ? s.isCorrect
+                  : false,
               text: { connect: { id: s.translationId! } },
               answer: { connect: { id } },
             },

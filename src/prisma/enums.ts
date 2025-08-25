@@ -1,7 +1,7 @@
 import type { $Enums } from '@prisma/client';
 
 // GraphQL/runtime enums matching Prisma schema enums
-export const QuestionType = {
+export const QuestionTypeValues = {
   selection: 'selection',
   value: 'value',
   boolean: 'boolean',
@@ -10,7 +10,7 @@ export const QuestionType = {
 
 export type QuestionType = $Enums.QuestionType;
 
-export const QuestionValidationStatus = {
+export const QuestionValidationStatusValues = {
   ai_generated: 'ai_generated',
   in_manual_review: 'in_manual_review',
   approved: 'approved',
@@ -22,7 +22,7 @@ export const QuestionValidationStatus = {
 
 export type QuestionValidationStatus = $Enums.QuestionValidationStatus;
 
-export const Units = {
+export const UnitsValues = {
   meter: 'meter',
   kilogram: 'kilogram',
   second: 'second',
