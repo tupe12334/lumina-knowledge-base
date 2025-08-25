@@ -157,7 +157,9 @@ export class DegreesController {
   ) {
     return this.degreesService.setFacultyForDegree(
       id,
-      setDegreeFacultyDto.facultyId ?? null,
+      setDegreeFacultyDto.facultyId !== null && setDegreeFacultyDto.facultyId !== undefined
+        ? setDegreeFacultyDto.facultyId
+        : null,
     );
   }
 

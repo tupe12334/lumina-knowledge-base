@@ -280,7 +280,10 @@ export class DegreesService {
   ): Promise<Degree> {
     await this.prisma.degree.update({
       where: { id: degreeId },
-      data: { facultyId: facultyId ?? null },
+      data: {
+        facultyId:
+          facultyId !== null && facultyId !== undefined ? facultyId : null,
+      },
     });
 
     const updated = await this.prisma.degree.findUnique({

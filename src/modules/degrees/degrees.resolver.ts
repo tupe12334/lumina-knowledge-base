@@ -93,7 +93,10 @@ export class DegreesResolver {
     input: SetDegreeFacultyInput,
   ): Promise<Degree> {
     const { degreeId, facultyId } = input;
-    return this.degreesService.setFacultyForDegree(degreeId, facultyId ?? null);
+    return this.degreesService.setFacultyForDegree(
+      degreeId,
+      facultyId !== null && facultyId !== undefined ? facultyId : null,
+    );
   }
 
   /**

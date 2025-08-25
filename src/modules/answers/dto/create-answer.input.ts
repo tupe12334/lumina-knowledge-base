@@ -10,7 +10,7 @@ import {
   ValidateNested,
 } from 'class-validator';
 import { Type } from 'class-transformer';
-import { Units } from '../../../prisma/enums';
+import { Units, UnitsValues } from '../../../prisma/enums';
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 
 @InputType()
@@ -51,11 +51,11 @@ export class CreateAnswerInput {
   @IsNumber()
   unitValue?: number;
 
-  @ApiPropertyOptional({ enum: Units })
+  @ApiPropertyOptional({ enum: UnitsValues })
   @Field({ nullable: true })
   @IsOptional()
   @ValidateIf((o: CreateAnswerInput) => o.numberAnswer == null)
-  @IsEnum(Units)
+  @IsEnum(UnitsValues)
   unit?: Units;
 
   @ApiPropertyOptional({ description: 'Numeric answer (when not unit based)' })
