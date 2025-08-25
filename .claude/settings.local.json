@@ -26,7 +26,9 @@
       "Bash(pnpm validate:ai:*)",
       "Bash(pnpm knip:*)",
       "WebFetch(domain:*)",
-      "Bash(npm run check-translations:*)"
+      "Bash(npm run check-translations:*)",
+      "Bash(grep:*)",
+      "Bash(uuidgen)"
     ],
     "deny": [],
     "ask": []
