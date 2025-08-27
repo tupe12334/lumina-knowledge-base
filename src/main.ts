@@ -18,6 +18,11 @@ async function bootstrap() {
     'https://lumina.study',
     'https://www.lumina.study',
     'http://localhost:5173', // Development
+    'http://localhost:5174', // Development fallback
+    'http://localhost:5175', // Development fallback
+    'http://192.168.1.21:5173', // LAN access
+    'http://192.168.1.21:5174', // LAN access fallback
+    'http://192.168.1.21:5175', // LAN access fallback
   ];
 
   app.enableCors({
@@ -27,7 +32,7 @@ async function bootstrap() {
     allowedHeaders: ['Content-Type', 'Authorization', 'Accept'],
   });
 
-  await app.listen(env.PORT);
+  await app.listen(env.PORT, '0.0.0.0');
 }
 
 void bootstrap();
