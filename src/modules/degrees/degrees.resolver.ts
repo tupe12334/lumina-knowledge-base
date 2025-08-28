@@ -5,7 +5,6 @@ import { DegreesQueryDto } from './dto/degrees-query.dto';
 import { SetDegreeFacultyInput } from './dto/set-degree-faculty.input';
 import { AddCourseToDegreeInput } from './dto/add-course-to-degree.input';
 import { CreateManyDegreesInput } from './dto/create-many-degrees.input';
-import { UpdateDegreeInput } from './dto/update-degree.input';
 import { CreateManyResult } from '../common/create-many-result.type';
 
 /**
@@ -56,13 +55,6 @@ export class DegreesResolver {
     @Args('id', { type: () => ID, description: 'Degree ID' }) id: string,
   ): Promise<Degree | null> {
     return this.degreesService.findUnique(id);
-  }
-
-  @Mutation(() => Degree)
-  updateDegree(
-    @Args('updateDegreeInput') updateDegreeInput: UpdateDegreeInput,
-  ) {
-    return this.degreesService.update(updateDegreeInput.id, updateDegreeInput);
   }
 
   /**

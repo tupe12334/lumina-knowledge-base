@@ -452,7 +452,6 @@ type Mutation {
   Update a course's fields (e.g., name translation, institution, publishedAt)
   """
   updateCourse(input: UpdateCourseInput!): Course!
-  updateDegree(updateDegreeInput: UpdateDegreeInput!): Degree!
   updateFaculty(updateFacultyInput: UpdateFacultyInput!): Faculty!
   updateModule(updateModuleInput: UpdateModuleInput!): Module!
 
@@ -703,12 +702,6 @@ input UpdateCourseInput {
   publishedAt: DateTime
 
   """Institution ID of the course"""
-  universityId: String
-}
-
-input UpdateDegreeInput {
-  id: String!
-  name: String
   universityId: String
 }
 
