@@ -79,11 +79,6 @@ type CourseRelationshipResult {
   prerequisite: Block!
 }
 
-input CreateBlockInput {
-  moduleId: String!
-  name: String!
-}
-
 input CreateBlockRelationshipInput {
   """Optional metadata for the relationship (JSON string)"""
   metadata: String
@@ -111,11 +106,6 @@ input CreateCourseRelationshipInput {
   prerequisiteCourseId: ID!
 }
 
-input CreateManyBlocksInput {
-  """Array of block data to create"""
-  blocks: [CreateBlockInput!]!
-}
-
 input CreateManyCoursesInput {
   """Array of course data to create"""
   courses: [CreateCourseInput!]!
@@ -129,11 +119,6 @@ input CreateManyModulesInput {
 type CreateManyResult {
   """The number of records created"""
   count: Int!
-}
-
-input CreateManyTranslationsInput {
-  """Array of translation data to create"""
-  translations: [CreateTranslationInput!]!
 }
 
 input CreateModuleInput {
@@ -156,14 +141,6 @@ input CreateModuleRelationshipInput {
 
   """The ID of the prerequisite module"""
   prerequisiteModuleId: ID!
-}
-
-input CreateTranslationInput {
-  """English text"""
-  en_text: String!
-
-  """Hebrew text"""
-  he_text: String!
 }
 
 """
@@ -315,7 +292,6 @@ input ModulesQueryInput {
 type Mutation {
   """Adds a course to a degree"""
   addCourseToDegree(input: AddCourseToDegreeInput!): Degree!
-  createBlock(createBlockInput: CreateBlockInput!): Block!
 
   """Create a prerequisite/postrequisite relationship between blocks"""
   createBlockRelationship(input: CreateBlockRelationshipInput!): BlockRelationshipResult!
@@ -326,24 +302,17 @@ type Mutation {
   """Create a prerequisite/postrequisite relationship between courses"""
   createCourseRelationship(input: CreateCourseRelationshipInput!): CourseRelationshipResult!
 
-  """Create multiple blocks in bulk"""
-  createManyBlocks(input: CreateManyBlocksInput!): CreateManyResult!
-
   """Create multiple courses in bulk"""
   createManyCourses(input: CreateManyCoursesInput!): CreateManyResult!
 
   """Creates multiple modules in bulk"""
   createManyModules(input: CreateManyModulesInput!): CreateManyResult!
 
-  """Create multiple translations in bulk"""
-  createManyTranslations(input: CreateManyTranslationsInput!): CreateManyResult!
-
   """Creates a new module"""
   createModule(input: CreateModuleInput!): Module!
 
   """Create a prerequisite/postrequisite relationship between modules"""
   createModuleRelationship(input: CreateModuleRelationshipInput!): ModuleRelationshipResult!
-  createTranslation(createTranslationInput: CreateTranslationInput!): Translation!
 
   """Delete a prerequisite/postrequisite relationship between blocks"""
   deleteBlockRelationship(input: DeleteBlockRelationshipInput!): BlockRelationshipResult!
@@ -356,9 +325,7 @@ type Mutation {
 
   """Delete a prerequisite/postrequisite relationship between modules"""
   deleteModuleRelationship(input: DeleteModuleRelationshipInput!): ModuleRelationshipResult!
-  removeBlock(id: ID!): Block!
   removeModule(id: ID!): Module!
-  removeTranslation(id: ID!): Translation!
 
   """Replace a course's modules with the provided module IDs"""
   setCourseModules(input: SetCourseModulesInput!): Course!
@@ -367,14 +334,12 @@ type Mutation {
   Assign a faculty to a degree or clear the assignment when facultyId is null
   """
   setDegreeFaculty(input: SetDegreeFacultyInput!): Degree!
-  updateBlock(updateBlockInput: UpdateBlockInput!): Block!
 
   """
   Update a course's fields (e.g., name translation, institution, publishedAt)
   """
   updateCourse(input: UpdateCourseInput!): Course!
   updateModule(updateModuleInput: UpdateModuleInput!): Module!
-  updateTranslation(updateTranslationInput: UpdateTranslationInput!): Translation!
 }
 
 type NumberAnswer {
@@ -598,12 +563,6 @@ type University {
   name: Translation!
 }
 
-input UpdateBlockInput {
-  id: String!
-  moduleId: String
-  name: String
-}
-
 input UpdateCourseInput {
   """Course ID"""
   courseId: ID!
@@ -631,15 +590,4 @@ input UpdateModuleInput {
   """Hebrew name of the module"""
   he_text: String
   id: String!
-}
-
-input UpdateTranslationInput {
-  """English text"""
-  en_text: String
-
-  """Hebrew text"""
-  he_text: String
-
-  """Translation ID"""
-  id: ID!
 }
