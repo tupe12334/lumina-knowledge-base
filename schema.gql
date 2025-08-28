@@ -111,11 +111,6 @@ input CreateCourseRelationshipInput {
   prerequisiteCourseId: ID!
 }
 
-input CreateDegreeInput {
-  name: String!
-  universityId: String!
-}
-
 input CreateFacultyInput {
   description: String!
   name: String!
@@ -130,11 +125,6 @@ input CreateManyBlocksInput {
 input CreateManyCoursesInput {
   """Array of course data to create"""
   courses: [CreateCourseInput!]!
-}
-
-input CreateManyDegreesInput {
-  """Array of degree data to create"""
-  degrees: [CreateDegreeInput!]!
 }
 
 input CreateManyFacultiesInput {
@@ -387,9 +377,6 @@ type Mutation {
 
   """Create multiple courses in bulk"""
   createManyCourses(input: CreateManyCoursesInput!): CreateManyResult!
-
-  """Create multiple degrees in bulk"""
-  createManyDegrees(input: CreateManyDegreesInput!): CreateManyResult!
 
   """Create multiple faculties in bulk"""
   createManyFaculties(input: CreateManyFacultiesInput!): CreateManyResult!

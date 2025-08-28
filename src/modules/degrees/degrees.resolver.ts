@@ -4,8 +4,6 @@ import { Degree } from './models/Degree.entity';
 import { DegreesQueryDto } from './dto/degrees-query.dto';
 import { SetDegreeFacultyInput } from './dto/set-degree-faculty.input';
 import { AddCourseToDegreeInput } from './dto/add-course-to-degree.input';
-import { CreateManyDegreesInput } from './dto/create-many-degrees.input';
-import { CreateManyResult } from '../common/create-many-result.type';
 
 /**
  * GraphQL resolver for degree-related operations.
@@ -14,16 +12,6 @@ import { CreateManyResult } from '../common/create-many-result.type';
 @Resolver(() => Degree)
 export class DegreesResolver {
   constructor(private readonly degreesService: DegreesService) {}
-
-  @Mutation(() => CreateManyResult, {
-    name: 'createManyDegrees',
-    description: 'Create multiple degrees in bulk',
-  })
-  createManyDegrees(
-    @Args('input') input: CreateManyDegreesInput,
-  ): Promise<CreateManyResult> {
-    return this.degreesService.createMany(input);
-  }
 
   /**
    * Retrieves all degrees with optional filtering.
