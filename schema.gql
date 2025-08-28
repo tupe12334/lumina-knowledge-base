@@ -380,7 +380,6 @@ type Mutation {
 
   """Create a prerequisite/postrequisite relationship between courses"""
   createCourseRelationship(input: CreateCourseRelationshipInput!): CourseRelationshipResult!
-  createDegree(createDegreeInput: CreateDegreeInput!): Degree!
   createFaculty(createFacultyInput: CreateFacultyInput!): Faculty!
 
   """Create multiple blocks in bulk"""

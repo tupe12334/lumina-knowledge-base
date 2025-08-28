@@ -4,7 +4,6 @@ import { Degree } from './models/Degree.entity';
 import { DegreesQueryDto } from './dto/degrees-query.dto';
 import { SetDegreeFacultyInput } from './dto/set-degree-faculty.input';
 import { AddCourseToDegreeInput } from './dto/add-course-to-degree.input';
-import { CreateDegreeInput } from './dto/create-degree.input';
 import { CreateManyDegreesInput } from './dto/create-many-degrees.input';
 import { UpdateDegreeInput } from './dto/update-degree.input';
 import { CreateManyResult } from '../common/create-many-result.type';
@@ -16,13 +15,6 @@ import { CreateManyResult } from '../common/create-many-result.type';
 @Resolver(() => Degree)
 export class DegreesResolver {
   constructor(private readonly degreesService: DegreesService) {}
-
-  @Mutation(() => Degree)
-  createDegree(
-    @Args('createDegreeInput') createDegreeInput: CreateDegreeInput,
-  ) {
-    return this.degreesService.create(createDegreeInput);
-  }
 
   @Mutation(() => CreateManyResult, {
     name: 'createManyDegrees',
