@@ -434,7 +434,6 @@ type Mutation {
   """Delete a question"""
   deleteQuestion(input: DeleteQuestionInput!): Question!
   removeBlock(id: ID!): Block!
-  removeDegree(id: ID!): Degree!
   removeFaculty(id: ID!): Faculty!
   removeModule(id: ID!): Module!
   removeTranslation(id: ID!): Translation!

@@ -65,11 +65,6 @@ export class DegreesResolver {
     return this.degreesService.update(updateDegreeInput.id, updateDegreeInput);
   }
 
-  @Mutation(() => Degree)
-  removeDegree(@Args('id', { type: () => ID }) id: string) {
-    return this.degreesService.delete(id);
-  }
-
   /**
    * Sets or clears the faculty for a degree.
    * @param input - Degree ID and optional faculty ID (null to clear)
