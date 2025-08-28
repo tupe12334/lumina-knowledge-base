@@ -111,12 +111,6 @@ input CreateCourseRelationshipInput {
   prerequisiteCourseId: ID!
 }
 
-input CreateFacultyInput {
-  description: String!
-  name: String!
-  universityId: String!
-}
-
 input CreateManyBlocksInput {
   """Array of block data to create"""
   blocks: [CreateBlockInput!]!
@@ -127,19 +121,9 @@ input CreateManyCoursesInput {
   courses: [CreateCourseInput!]!
 }
 
-input CreateManyFacultiesInput {
-  """Array of faculty data to create"""
-  faculties: [CreateFacultyInput!]!
-}
-
 input CreateManyModulesInput {
   """Array of module data to create"""
   modules: [CreateModuleInput!]!
-}
-
-input CreateManyQuestionsInput {
-  """Array of question data to create"""
-  questions: [CreateQuestionInput!]!
 }
 
 type CreateManyResult {
@@ -150,11 +134,6 @@ type CreateManyResult {
 input CreateManyTranslationsInput {
   """Array of translation data to create"""
   translations: [CreateTranslationInput!]!
-}
-
-input CreateManyUniversitiesInput {
-  """Array of institution data to create"""
-  universities: [CreateUniversityInput!]!
 }
 
 input CreateModuleInput {
@@ -179,31 +158,11 @@ input CreateModuleRelationshipInput {
   prerequisiteModuleId: ID!
 }
 
-input CreateQuestionInput {
-  """Optional list of module IDs this question belongs to"""
-  moduleIds: [String!]
-
-  """The ID of the translation for the question text"""
-  translationId: String!
-
-  """The type of the question"""
-  type: QuestionType!
-  validationStatus: QuestionValidationStatus
-}
-
 input CreateTranslationInput {
   """English text"""
   en_text: String!
 
   """Hebrew text"""
-  he_text: String!
-}
-
-input CreateUniversityInput {
-  """English name of the institution"""
-  en_text: String!
-
-  """Hebrew name of the institution"""
   he_text: String!
 }
 
@@ -283,10 +242,6 @@ input DeleteModuleRelationshipInput {
 
   """The ID of the prerequisite module"""
   prerequisiteModuleId: ID!
-}
-
-input DeleteQuestionInput {
-  id: String!
 }
 
 type Faculty {
@@ -370,7 +325,6 @@ type Mutation {
 
   """Create a prerequisite/postrequisite relationship between courses"""
   createCourseRelationship(input: CreateCourseRelationshipInput!): CourseRelationshipResult!
-  createFaculty(createFacultyInput: CreateFacultyInput!): Faculty!
 
   """Create multiple blocks in bulk"""
   createManyBlocks(input: CreateManyBlocksInput!): CreateManyResult!
@@ -378,33 +332,18 @@ type Mutation {
   """Create multiple courses in bulk"""
   createManyCourses(input: CreateManyCoursesInput!): CreateManyResult!
 
-  """Create multiple faculties in bulk"""
-  createManyFaculties(input: CreateManyFacultiesInput!): CreateManyResult!
-
   """Creates multiple modules in bulk"""
   createManyModules(input: CreateManyModulesInput!): CreateManyResult!
 
-  """Create multiple questions in bulk"""
-  createManyQuestions(input: CreateManyQuestionsInput!): CreateManyResult!
-
   """Create multiple translations in bulk"""
   createManyTranslations(input: CreateManyTranslationsInput!): CreateManyResult!
-
-  """Creates multiple institutions in bulk"""
-  createManyUniversities(input: CreateManyUniversitiesInput!): CreateManyResult!
 
   """Creates a new module"""
   createModule(input: CreateModuleInput!): Module!
 
   """Create a prerequisite/postrequisite relationship between modules"""
   createModuleRelationship(input: CreateModuleRelationshipInput!): ModuleRelationshipResult!
-
-  """Create a new question"""
-  createQuestion(input: CreateQuestionInput!): Question!
   createTranslation(createTranslationInput: CreateTranslationInput!): Translation!
-
-  """Creates a new institution"""
-  createUniversity(input: CreateUniversityInput!): University!
 
   """Delete a prerequisite/postrequisite relationship between blocks"""
   deleteBlockRelationship(input: DeleteBlockRelationshipInput!): BlockRelationshipResult!
@@ -417,14 +356,9 @@ type Mutation {
 
   """Delete a prerequisite/postrequisite relationship between modules"""
   deleteModuleRelationship(input: DeleteModuleRelationshipInput!): ModuleRelationshipResult!
-
-  """Delete a question"""
-  deleteQuestion(input: DeleteQuestionInput!): Question!
   removeBlock(id: ID!): Block!
-  removeFaculty(id: ID!): Faculty!
   removeModule(id: ID!): Module!
   removeTranslation(id: ID!): Translation!
-  removeUniversity(id: ID!): University!
 
   """Replace a course's modules with the provided module IDs"""
   setCourseModules(input: SetCourseModulesInput!): Course!
@@ -439,13 +373,8 @@ type Mutation {
   Update a course's fields (e.g., name translation, institution, publishedAt)
   """
   updateCourse(input: UpdateCourseInput!): Course!
-  updateFaculty(updateFacultyInput: UpdateFacultyInput!): Faculty!
   updateModule(updateModuleInput: UpdateModuleInput!): Module!
-
-  """Update an existing question"""
-  updateQuestion(input: UpdateQuestionInput!): Question!
   updateTranslation(updateTranslationInput: UpdateTranslationInput!): Translation!
-  updateUniversity(updateUniversityInput: UpdateUniversityInput!): University!
 }
 
 type NumberAnswer {
@@ -692,13 +621,6 @@ input UpdateCourseInput {
   universityId: String
 }
 
-input UpdateFacultyInput {
-  description: String
-  id: String!
-  name: String
-  universityId: String
-}
-
 input UpdateModuleInput {
   """ID of the course this module belongs to"""
   courseId: String
@@ -711,20 +633,6 @@ input UpdateModuleInput {
   id: String!
 }
 
-input UpdateQuestionInput {
-  id: String!
-
-  """Optional list of module IDs this question belongs to"""
-  moduleIds: [String!]
-
-  """The ID of the translation for the question text"""
-  translationId: String
-
-  """The type of the question"""
-  type: QuestionType
-  validationStatus: QuestionValidationStatus
-}
-
 input UpdateTranslationInput {
   """English text"""
   en_text: String
@@ -734,13 +642,4 @@ input UpdateTranslationInput {
 
   """Translation ID"""
   id: ID!
-}
-
-input UpdateUniversityInput {
-  """English name of the institution"""
-  en_text: String
-
-  """Hebrew name of the institution"""
-  he_text: String
-  id: String!
 }

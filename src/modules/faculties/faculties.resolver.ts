@@ -5,16 +5,11 @@ import {
   ID,
   ResolveField,
   Parent,
-  Mutation,
 } from '@nestjs/graphql';
 import { FacultiesService } from './faculties.service';
 import { Faculty } from './models/Faculty.entity';
 import { Degree } from '../degrees/models/Degree.entity';
 import { DegreesService } from '../degrees/degrees.service';
-import { CreateFacultyInput } from './dto/create-faculty.input';
-import { CreateManyFacultiesInput } from './dto/create-many-faculties.input';
-import { UpdateFacultyInput } from './dto/update-faculty.input';
-import { CreateManyResult } from '../common/create-many-result.type';
 
 /**
  * GraphQL resolver for faculty-related operations.
@@ -26,23 +21,6 @@ export class FacultiesResolver {
     private readonly facultiesService: FacultiesService,
     private readonly degreesService: DegreesService,
   ) {}
-
-  @Mutation(() => Faculty)
-  createFaculty(
-    @Args('createFacultyInput') createFacultyInput: CreateFacultyInput,
-  ) {
-    return this.facultiesService.create(createFacultyInput);
-  }
-
-  @Mutation(() => CreateManyResult, {
-    name: 'createManyFaculties',
-    description: 'Create multiple faculties in bulk',
-  })
-  createManyFaculties(
-    @Args('input') input: CreateManyFacultiesInput,
-  ): Promise<CreateManyResult> {
-    return this.facultiesService.createMany(input);
-  }
 
   @Query(() => [Faculty], { name: 'faculties' })
   findAll() {
@@ -79,21 +57,6 @@ export class FacultiesResolver {
     @Args('id', { type: () => ID, description: 'Faculty ID' }) id: string,
   ): Promise<Faculty | null> {
     return this.facultiesService.getFacultyById(id);
-  }
-
-  @Mutation(() => Faculty)
-  updateFaculty(
-    @Args('updateFacultyInput') updateFacultyInput: UpdateFacultyInput,
-  ) {
-    return this.facultiesService.update(
-      updateFacultyInput.id,
-      updateFacultyInput,
-    );
-  }
-
-  @Mutation(() => Faculty)
-  removeFaculty(@Args('id', { type: () => ID }) id: string) {
-    return this.facultiesService.delete(id);
   }
 
   /**
