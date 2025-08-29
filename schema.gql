@@ -366,13 +366,6 @@ type PaginatedQuestionsResponse {
 }
 
 type Query {
-  """Get a specific block by ID"""
-  block(
-    """Block ID"""
-    id: ID!
-  ): Block
-  blocks: [Block!]!
-
   """Get a specific course by ID"""
   course(
     """Course ID"""
@@ -390,19 +383,12 @@ type Query {
 
   """Get all degrees with optional filtering"""
   degrees(query: DegreesQueryDto): [Degree!]!
-  faculties: [Faculty!]!
 
   """Get faculties by university ID"""
   facultiesByUniversity(
     """University ID"""
     universityId: ID!
   ): [Faculty!]!
-
-  """Get a specific faculty by ID"""
-  faculty(
-    """Faculty ID"""
-    id: ID!
-  ): Faculty
 
   """Get a specific module by ID"""
   module(
@@ -424,8 +410,6 @@ type Query {
 
   """Get questions with pagination support for infinite scroll"""
   questionsPaginated(input: QuestionsQueryDto): PaginatedQuestionsResponse!
-  translation(id: ID!): Translation
-  translations: [Translation!]!
   universities: [University!]!
   university(id: ID!): University
 }
