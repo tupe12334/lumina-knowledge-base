@@ -688,6 +688,12 @@ INSERT INTO Block VALUES('ae1f2a8d-171f-454a-b341-3cf31eca950c');
 INSERT INTO Block VALUES('c7ee80d6-e9a9-455c-8dbe-d91963aa6e64');
 INSERT INTO Block VALUES('00ddd2da-f624-4ffb-b905-c7c6a0034625');
 INSERT INTO Block VALUES('4df6f737-1e99-4eb2-a6db-fa4e45085b5d');
+INSERT INTO Block VALUES('a6fadab2-462f-4a0e-b1b6-bb848b4db0a7');
+INSERT INTO Block VALUES('be1335d5-b04a-4e0b-92bd-9c5d0008859d');
+INSERT INTO Block VALUES('08ead7f5-c1cb-44c6-98a2-451955f71067');
+INSERT INTO Block VALUES('56a08c3b-aab6-4bb7-b607-b1f4b2ff808a');
+INSERT INTO Block VALUES('343e449c-4f04-46e9-a03b-96f9958f97ee');
+INSERT INTO Block VALUES('71f1d016-504a-4464-90b4-672705161181');
 CREATE TABLE IF NOT EXISTS "BlockRelationship" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "prerequisiteId" TEXT NOT NULL,
@@ -1336,6 +1342,12 @@ INSERT INTO Module VALUES('dd224d01-e908-4249-880a-d11441977d2b','5719f956-b3a6-
 INSERT INTO Module VALUES('bd734ec1-feea-4931-9e49-7a1e3928a8f5','6de1a6d2-bf55-4b41-bf9a-c9defb1a5078','c7ee80d6-e9a9-455c-8dbe-d91963aa6e64');
 INSERT INTO Module VALUES('6586a641-284b-4ed8-aaee-a332abaf115f','d943e827-77c4-45f8-b54a-407b16e15ffd','00ddd2da-f624-4ffb-b905-c7c6a0034625');
 INSERT INTO Module VALUES('acb27e9f-4ea1-4f65-9fd6-97720b548713','44db3dd5-b90b-4741-91bd-101c03017003','4df6f737-1e99-4eb2-a6db-fa4e45085b5d');
+INSERT INTO Module VALUES('cd820cfd-d662-43d3-859f-761e580be912','c06cc8a3-b497-4776-b9c0-56ae00b1789f','a6fadab2-462f-4a0e-b1b6-bb848b4db0a7');
+INSERT INTO Module VALUES('382c0f6e-5696-4145-b4c7-d587b45736c8','7d598dac-72ff-42a5-93f5-36c4a6c78ec0','be1335d5-b04a-4e0b-92bd-9c5d0008859d');
+INSERT INTO Module VALUES('505ec045-60ac-4c08-aca5-3b4538d6f9a9','a2127b41-c08b-4140-a600-04d3aed16f44','08ead7f5-c1cb-44c6-98a2-451955f71067');
+INSERT INTO Module VALUES('81c8a738-eee6-4280-b490-39bf71001fdb','3418f146-0a46-4145-8288-9041d286d061','56a08c3b-aab6-4bb7-b607-b1f4b2ff808a');
+INSERT INTO Module VALUES('85da426f-d54e-4448-89bf-85ff45edaf0d','69788ad1-bc62-4f71-b422-41dc8f019139','343e449c-4f04-46e9-a03b-96f9958f97ee');
+INSERT INTO Module VALUES('bee97e05-11a9-4019-be70-29e62f98869e','c1914385-e523-4401-a35a-1dbcda3788e9','71f1d016-504a-4464-90b4-672705161181');
 CREATE TABLE IF NOT EXISTS "Translation" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "en_text" TEXT NOT NULL,
@@ -16830,6 +16842,12 @@ INSERT INTO Translation VALUES('5719f956-b3a6-44e1-ba8e-62bc7227afc3','Number of
 INSERT INTO Translation VALUES('6de1a6d2-bf55-4b41-bf9a-c9defb1a5078','Homogeneous Systems','מערכות הומוגניות');
 INSERT INTO Translation VALUES('d943e827-77c4-45f8-b54a-407b16e15ffd','Systems of Order n x n','מערכות מסדר n x n');
 INSERT INTO Translation VALUES('44db3dd5-b90b-4741-91bd-101c03017003','The Space Fn','המרחב Fn');
+INSERT INTO Translation VALUES('c06cc8a3-b497-4776-b9c0-56ae00b1789f','The Space Fn from an Algebraic Perspective','המרחב Fn במבט אלגברי');
+INSERT INTO Translation VALUES('7d598dac-72ff-42a5-93f5-36c4a6c78ec0','The Spaces R2, R3 from a Geometric Perspective','המרחבים R2, R3 במבט גאומרי');
+INSERT INTO Translation VALUES('a2127b41-c08b-4140-a600-04d3aed16f44','Parametric Presentations in Spaces R2, R3','הצגות פרמטריות במרחבים R2,R3');
+INSERT INTO Translation VALUES('3418f146-0a46-4145-8288-9041d286d061','Linear Combinations','צירופים לינאריים');
+INSERT INTO Translation VALUES('69788ad1-bc62-4f71-b422-41dc8f019139','Linear Dependence','תלות לינארית');
+INSERT INTO Translation VALUES('c1914385-e523-4401-a35a-1dbcda3788e9','Bases for Fn','בסיסים לFn');
 CREATE TABLE IF NOT EXISTS "Question" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "validationStatus" TEXT NOT NULL DEFAULT 'ai_generated',
@@ -37334,6 +37352,12 @@ INSERT INTO _CourseModules VALUES('15ec6466-6b06-49d0-b544-faba02ad791e','dd224d
 INSERT INTO _CourseModules VALUES('15ec6466-6b06-49d0-b544-faba02ad791e','bd734ec1-feea-4931-9e49-7a1e3928a8f5');
 INSERT INTO _CourseModules VALUES('15ec6466-6b06-49d0-b544-faba02ad791e','6586a641-284b-4ed8-aaee-a332abaf115f');
 INSERT INTO _CourseModules VALUES('15ec6466-6b06-49d0-b544-faba02ad791e','acb27e9f-4ea1-4f65-9fd6-97720b548713');
+INSERT INTO _CourseModules VALUES('15ec6466-6b06-49d0-b544-faba02ad791e','cd820cfd-d662-43d3-859f-761e580be912');
+INSERT INTO _CourseModules VALUES('15ec6466-6b06-49d0-b544-faba02ad791e','382c0f6e-5696-4145-b4c7-d587b45736c8');
+INSERT INTO _CourseModules VALUES('15ec6466-6b06-49d0-b544-faba02ad791e','505ec045-60ac-4c08-aca5-3b4538d6f9a9');
+INSERT INTO _CourseModules VALUES('15ec6466-6b06-49d0-b544-faba02ad791e','81c8a738-eee6-4280-b490-39bf71001fdb');
+INSERT INTO _CourseModules VALUES('15ec6466-6b06-49d0-b544-faba02ad791e','85da426f-d54e-4448-89bf-85ff45edaf0d');
+INSERT INTO _CourseModules VALUES('15ec6466-6b06-49d0-b544-faba02ad791e','bee97e05-11a9-4019-be70-29e62f98869e');
 CREATE TABLE IF NOT EXISTS "_CourseToDegree" (
     "A" TEXT NOT NULL,
     "B" TEXT NOT NULL,
