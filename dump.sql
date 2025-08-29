@@ -38,7 +38,7 @@ INSERT INTO Faculty VALUES('c65fa3bd-2f3a-40d8-b192-3be77adc7802','39ae54f0-57f9
 INSERT INTO Faculty VALUES('8f2e1d4c-5b3a-4e8f-9c7d-1a2b3c4d5e6f','461c044e-c567-4d6b-bf11-a42b73cb6525','369f5ce8-05f1-4d30-820e-baeb8bfb4e93','3856bd36-8082-4821-8b1d-9ce806403ab2');
 INSERT INTO Faculty VALUES('5ab28f7a-c455-47a8-b891-d9076c46d673','401d30ef-cc8d-42d9-97b4-c81d5f390146','1b1daa8c-4cc3-4715-b876-908c29dba6a4','3856bd36-8082-4821-8b1d-9ce806403ab2');
 INSERT INTO Faculty VALUES('7e3f2c1b-9a8d-4f6e-8c5b-2d3e4f5a6b7c','39ae54f0-57f9-473d-82c9-785dce83f328','ca18e408-bc40-4f5c-8460-9be7bad1e78c','92e73fb7-96de-45e4-aff3-4ca7b89be16c');
-INSERT INTO Faculty VALUES('f1a2b3c4-d5e6-7f8g-9h0i-j1k2l3m4n5o6','461c044e-c567-4d6b-bf11-a42b73cb6525','369f5ce8-05f1-4d30-820e-baeb8bfb4e93','42e9a858-0a22-482d-ab1d-65f7a00ceb4c');
+INSERT INTO Faculty VALUES('2e68a606-3a63-4986-b3ea-22d273e99513','461c044e-c567-4d6b-bf11-a42b73cb6525','369f5ce8-05f1-4d30-820e-baeb8bfb4e93','42e9a858-0a22-482d-ab1d-65f7a00ceb4c');
 CREATE TABLE IF NOT EXISTS "Course" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "translationId" TEXT NOT NULL,
@@ -723,7 +723,7 @@ INSERT INTO BlockRelationship VALUES('c908742e-aee1-48fd-a4e9-a106d8c35202','9c8
 INSERT INTO BlockRelationship VALUES('b3c4d5e6-f7a8-4890-b123-cdef56789012','82da973e-a84a-44f4-b33f-bcf907961eb3','e1367766-2b1a-42f9-a725-58d092bbc080');
 INSERT INTO BlockRelationship VALUES('2a72095d-41a6-472b-b5ad-c6e01c726885','81BE3915-2C63-470E-85FE-55C1062DEFF3','4f5a6b7c-8d9e-4012-a456-789abc123def');
 INSERT INTO BlockRelationship VALUES('27a0eab8-6102-4020-a147-b5cfee9a2d76','78123942-6F56-4C66-8881-B49BC26E107D','5a6b7c8d-9e0f-4123-b567-89abcd234eff');
-INSERT INTO BlockRelationship VALUES('','81BE3915-2C63-470E-85FE-55C1062DEFF3','37d15e78-fcf2-49a0-bbde-b4dbffd904a7');
+INSERT INTO BlockRelationship VALUES('a425a29e-bbce-4ca8-90b3-ab35f6e98d20','81BE3915-2C63-470E-85FE-55C1062DEFF3','37d15e78-fcf2-49a0-bbde-b4dbffd904a7');
 INSERT INTO BlockRelationship VALUES('a1b2c3d4-e5f6-4789-a012-bcdef3456789','81BE3915-2C63-470E-85FE-55C1062DEFF3','bd8947e7-bd42-4ea0-976b-639ec22fe2ea');
 INSERT INTO BlockRelationship VALUES('49ade8d5-78a1-4d66-a62a-4a1cebb3d80d','b4de3329-f3af-4ae9-b67d-bf1c5d1a30fb','c451b387-fc0d-4c4c-bf72-41817c1b2e45');
 INSERT INTO BlockRelationship VALUES('ceea03d8-cf5a-4297-a204-ee661c993ee2','c451b387-fc0d-4c4c-bf72-41817c1b2e45','e4e3361c-9c9f-4d12-a9d6-8de53f794295');
@@ -887,7 +887,7 @@ CREATE TABLE IF NOT EXISTS "RelationshipMetadata" (
     CONSTRAINT "RelationshipMetadata_blockRelationshipId_fkey" FOREIGN KEY ("blockRelationshipId") REFERENCES "BlockRelationship" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
 );
 INSERT INTO RelationshipMetadata VALUES('dcfacec9-32f8-4001-b1a9-ed2270e26df1','TYPE','hard','504a8133-8c3f-40b9-a874-11ebdeb76917');
-INSERT INTO RelationshipMetadata VALUES('','TYPE','hard','c28b0006-13a2-422d-ae56-b75ddc686087');
+INSERT INTO RelationshipMetadata VALUES('ce875f13-de87-44ff-a759-5ec5a871c327','TYPE','hard','c28b0006-13a2-422d-ae56-b75ddc686087');
 INSERT INTO RelationshipMetadata VALUES('68c57ee8-118a-4008-92d7-119c35cf1a87','TYPE','hard','b4a907e5-c49a-4368-9c50-fd625540285f');
 INSERT INTO RelationshipMetadata VALUES('7af77c38-a123-420c-a7f1-b685b54d64bd','TYPE','hard','7d8e9f01-1234-4345-a789-abcdef456012');
 INSERT INTO RelationshipMetadata VALUES('9aa0cc26-2d07-4ec7-b3b7-a10440362909','TYPE','hard','8e9f0123-2345-4456-a89a-bcdef0567123');
@@ -920,7 +920,7 @@ INSERT INTO RelationshipMetadata VALUES('32474139-6904-4D6B-A0D1-171D45B2D472','
 INSERT INTO RelationshipMetadata VALUES('8AF641E8-DC79-45C3-A4D1-2702EDB7F060','REASON','Numerical Analysis 1 is a prerequisite for Numerical Analysis 2.','24F98AFD-0968-407F-BECA-859C40EA47F2');
 INSERT INTO RelationshipMetadata VALUES('D2AF1634-542F-467C-AC33-5F5B5B79FBFB','TYPE','hard','24F98AFD-0968-407F-BECA-859C40EA47F2');
 INSERT INTO RelationshipMetadata VALUES('E1D2C3B4-A5F6-4789-B0C1-D2E3F4A5B6C7','TYPE','hard','A7D2FBC1-6E3A-4E28-8A6F-4D6B1C3E9F20');
-INSERT INTO RelationshipMetadata VALUES('F8E7D6C5-B4A3-29C1-0D2E-3F4A5B6C7D8E','REASON','Discrete Mathematics is a prerequisite for Database Systems.','A7D2FBC1-6E3A-4E28-8A6F-4D6B1C3E9F20');
+INSERT INTO RelationshipMetadata VALUES('69e3a58c-a8de-43c2-a012-e8f43d4cc56f','REASON','Discrete Mathematics is a prerequisite for Database Systems.','A7D2FBC1-6E3A-4E28-8A6F-4D6B1C3E9F20');
 INSERT INTO RelationshipMetadata VALUES('0A1B2C3D-4E5F-6071-8293-A4B5C6D7E8F9','TYPE','hard','B91E3F27-2C8D-4B7A-9E1F-0A2B3C4D5E6F');
 INSERT INTO RelationshipMetadata VALUES('11111111-2222-4333-8444-555566667770','TYPE','hard','D2A1C3B4-E5F6-47A8-9B0C-1D2E3F4A5B6C');
 INSERT INTO RelationshipMetadata VALUES('11111111-2222-4333-8444-555566667771','REASON','Discrete Mathematics is a prerequisite for Algorithms.','D2A1C3B4-E5F6-47A8-9B0C-1D2E3F4A5B6C');
@@ -943,12 +943,12 @@ INSERT INTO RelationshipMetadata VALUES('e7f6d5c4-b3a2-4c1d-9e8f-7a6b5c4d3e2f','
 INSERT INTO RelationshipMetadata VALUES('a9b8c7d6-e5f4-4a3b-9c8d-7e6f5a4b3c2d','REASON','Data Structures and Introduction to Algorithms is a prerequisite for Computational Models.','6b5c3d12-9af3-4c1b-9f2e-8a7b6c5d4e3f');
 INSERT INTO RelationshipMetadata VALUES('d1e2f3a4-b5c6-4d7e-8f9a-0b1c2d3e4f5a','TYPE','hard','1a2b3c4d-5e6f-4a7b-8c9d-0e1f2a3b4c5d');
 INSERT INTO RelationshipMetadata VALUES('c3d4e5f6-a7b8-4c9d-8e0f-1a2b3c4d5e6f','REASON','Data Structures and Introduction to Algorithms is a prerequisite for Computational Models.','1a2b3c4d-5e6f-4a7b-8c9d-0e1f2a3b4c5d');
-INSERT INTO RelationshipMetadata VALUES('meta001','REASON','Natural learning progression - derivatives are foundation for integration','12345678-1234-4567-890a-123456789001');
-INSERT INTO RelationshipMetadata VALUES('meta002','TYPE','hard','12345678-1234-4567-890a-123456789001');
-INSERT INTO RelationshipMetadata VALUES('meta003','REASON','Integration techniques needed before series analysis','12345678-1234-4567-890a-123456789002');
-INSERT INTO RelationshipMetadata VALUES('meta004','TYPE','hard','12345678-1234-4567-890a-123456789002');
-INSERT INTO RelationshipMetadata VALUES('meta005','REASON','Sequence convergence understanding required for series','12345678-1234-4567-890a-123456789003');
-INSERT INTO RelationshipMetadata VALUES('meta006','TYPE','hard','12345678-1234-4567-890a-123456789003');
+INSERT INTO RelationshipMetadata VALUES('fde30b6a-6e56-467d-80c9-9ba5c28c2145','REASON','Natural learning progression - derivatives are foundation for integration','12345678-1234-4567-890a-123456789001');
+INSERT INTO RelationshipMetadata VALUES('6b792f66-4cda-411f-a42b-af8021d598e8','TYPE','hard','12345678-1234-4567-890a-123456789001');
+INSERT INTO RelationshipMetadata VALUES('21394d74-225c-4d6d-8ddb-93d84d8f50fb','REASON','Integration techniques needed before series analysis','12345678-1234-4567-890a-123456789002');
+INSERT INTO RelationshipMetadata VALUES('abb91340-7d3c-4653-a68f-9457c77287b9','TYPE','hard','12345678-1234-4567-890a-123456789002');
+INSERT INTO RelationshipMetadata VALUES('f25606c0-0b12-43f2-8618-37ed93578b39','REASON','Sequence convergence understanding required for series','12345678-1234-4567-890a-123456789003');
+INSERT INTO RelationshipMetadata VALUES('6805372e-d342-43c7-accc-d980f3cf3e10','TYPE','hard','12345678-1234-4567-890a-123456789003');
 CREATE TABLE IF NOT EXISTS "Module" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "translationId" TEXT NOT NULL,
@@ -18242,7 +18242,6 @@ INSERT INTO Question VALUES('d8a8de1e-6487-44f0-9c14-1e2c37db41a0','ai_generated
 INSERT INTO Question VALUES('b2a98fb1-a906-428d-aa4c-e6bfee06a002','ai_generated','f00761bc-3dbe-41c0-bbf2-965d1b49af03','selection');
 INSERT INTO Question VALUES('07dab7f2-c528-4f1d-b97a-13bc6a08a65b','ai_generated','83ea8e94-670d-475d-9fa4-e646c70fae6e','boolean');
 INSERT INTO Question VALUES('7d77428f-a6c7-4663-9512-e6c198b89388','ai_generated','ecee5ae8-739a-448d-a32f-8e6e5e7b08c9','void');
-INSERT INTO Question VALUES('q4','ai_generated','753629f8-45f1-4aff-976b-135ac788b1df','void');
 INSERT INTO Question VALUES('e8180adb-1150-49f5-ae9a-81ad00472021','ai_generated','fc684f26-2cfd-4a9c-9fc0-91e848d6add2','selection');
 INSERT INTO Question VALUES('d8e3e56a-729f-4ff3-9036-a339ed4c713c','ai_generated','422334c4-aad4-4a20-8608-7c60f8ce3571','selection');
 INSERT INTO Question VALUES('37e2b828-1101-4a41-9fd6-872bc9ce6621','ai_generated','c4e6cb71-fb70-4590-8b24-df6452258914','boolean');
@@ -21296,6 +21295,7 @@ INSERT INTO Question VALUES('3b5e9907-4def-4d34-93a9-e6289e8856e3','ai_generated
 INSERT INTO Question VALUES('f88fe091-ed63-4615-a719-6707b2796543','ai_generated','294082e3-430b-4777-a9b7-6fd40ddc065b','selection');
 INSERT INTO Question VALUES('53e773ef-c4fc-4f54-a9cc-e2ce63416547','ai_generated','bd4cb19c-d6c3-4e81-9b81-33a9e38f8f21','selection');
 INSERT INTO Question VALUES('a40509d6-64d6-47ad-8ffd-39ad1a179d34','ai_generated','be0aa9d3-1185-4ce0-af67-a8641a185eac','boolean');
+INSERT INTO Question VALUES('4d687db2-16b8-40b0-a6d3-e726f30c106b','ai_generated','753629f8-45f1-4aff-976b-135ac788b1df','void');
 CREATE TABLE IF NOT EXISTS "QuestionPart" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "questionId" TEXT NOT NULL,
@@ -21304,9 +21304,9 @@ CREATE TABLE IF NOT EXISTS "QuestionPart" (
     CONSTRAINT "QuestionPart_questionId_fkey" FOREIGN KEY ("questionId") REFERENCES "Question" ("id") ON DELETE RESTRICT ON UPDATE CASCADE,
     CONSTRAINT "QuestionPart_partQuestionId_fkey" FOREIGN KEY ("partQuestionId") REFERENCES "Question" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
 );
-INSERT INTO QuestionPart VALUES('A5-PART1-2024-EXAM-GRAPH-ANALYSIS','31d7aac7-1e5d-42c1-bcf8-f08fc0858fc9','be6ec990-7712-4661-8834-db370180553f',1);
-INSERT INTO QuestionPart VALUES('A5-PART2-2024-EXAM-GRAPH-ANALYSIS','31d7aac7-1e5d-42c1-bcf8-f08fc0858fc9','31d7aac7-1e5d-42c1-bcf8-f08fc0858fc9',2);
-INSERT INTO QuestionPart VALUES('A5-PART3-2024-EXAM-GRAPH-ANALYSIS','31d7aac7-1e5d-42c1-bcf8-f08fc0858fc9','c9b96835-2bf2-4116-ace1-1f7e058dab4d',3);
+INSERT INTO QuestionPart VALUES('bad142f0-fdd3-4a94-85b6-26ce17817984','31d7aac7-1e5d-42c1-bcf8-f08fc0858fc9','be6ec990-7712-4661-8834-db370180553f',1);
+INSERT INTO QuestionPart VALUES('68f05f4e-038e-4ef4-974b-0139e0cd50bb','31d7aac7-1e5d-42c1-bcf8-f08fc0858fc9','31d7aac7-1e5d-42c1-bcf8-f08fc0858fc9',2);
+INSERT INTO QuestionPart VALUES('20f4302a-8010-4d6c-a597-5925ce050ace','31d7aac7-1e5d-42c1-bcf8-f08fc0858fc9','c9b96835-2bf2-4116-ace1-1f7e058dab4d',3);
 INSERT INTO QuestionPart VALUES('78ccd73c-5b22-4d2e-9950-c026e0a02bdc','91c2fd31-eb88-4804-ad59-8415a3044955','75397d4b-9e65-4d97-a31f-4db89a56c64f',1);
 INSERT INTO QuestionPart VALUES('2642c752-22da-49ee-901b-33d6bc739b9e','91c2fd31-eb88-4804-ad59-8415a3044955','4c98a837-8f70-4c66-85b0-079eb780c57d',2);
 CREATE TABLE IF NOT EXISTS "Answer" (
@@ -25315,7 +25315,7 @@ INSERT INTO Answer VALUES('9e32c10b-fe44-4c68-ad59-afde9fc861e1','c9b96835-2bf2-
 INSERT INTO Answer VALUES('e542657e-44f4-4bd8-9b89-6380dd4e3d3d','31d7aac7-1e5d-42c1-bcf8-f08fc0858fc9');
 INSERT INTO Answer VALUES('f3fcf8dd-1413-4fc6-b2a0-67455bd0b2fd','D0920552-1AFA-493D-9019-4FFDBE079A32');
 INSERT INTO Answer VALUES('54355967-91a9-4cb6-8597-ea2b7dbeacd1','9C030140-9A43-46ED-9B57-9E7A17ABEB41');
-INSERT INTO Answer VALUES('4abd7b20-81d8-46ec-818f-ce016841b9d1','q4');
+INSERT INTO Answer VALUES('4abd7b20-81d8-46ec-818f-ce016841b9d1','4d687db2-16b8-40b0-a6d3-e726f30c106b');
 INSERT INTO Answer VALUES('0cec020f-c7a5-4e62-be73-c523c3f4a2a3','4ecc1a61-5a9d-4eaf-959b-0c58414b0abf');
 INSERT INTO Answer VALUES('b91fa987-4180-41f1-ae7a-eb5b09e95d74','ebc8e5e0-7c50-47a7-95b9-6934014f0b51');
 INSERT INTO Answer VALUES('124f8f85-363e-4381-b796-8dc56cf3863a','8db2aedc-6b2d-4044-a318-ad46bec05113');
@@ -35744,8 +35744,8 @@ CREATE TABLE IF NOT EXISTS "NumberAnswer" (
     "answerId" TEXT NOT NULL,
     CONSTRAINT "NumberAnswer_answerId_fkey" FOREIGN KEY ("answerId") REFERENCES "Answer" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
 );
-INSERT INTO NumberAnswer VALUES('f6a7b8c9-ad1e-4f2a-3b4c-number4444444',2.0,'29b8b553-e5ce-45e4-b585-aab06127db7c');
-INSERT INTO NumberAnswer VALUES('a7b8c9da-1e2f-4a3b-4c5d-number5555555',0.0,'1c3bb5ac-43c9-447f-925b-462fb94313fb');
+INSERT INTO NumberAnswer VALUES('ae0e48a7-c729-4c95-a862-1f197c08b3d6',2.0,'29b8b553-e5ce-45e4-b585-aab06127db7c');
+INSERT INTO NumberAnswer VALUES('2520915b-b5ec-44f2-97d1-46e1955295b2',0.0,'1c3bb5ac-43c9-447f-925b-462fb94313fb');
 INSERT INTO NumberAnswer VALUES('7711ec4b-750b-4a0c-a28c-2a2d5f161e4a',1500625.0,'a73521cc-1565-4d86-8719-c26456aaeb9d');
 INSERT INTO NumberAnswer VALUES('ad39d2ef-8ba8-41b2-b19d-dcd4a24d2a59',919602.0,'71ab66ac-28a2-4a66-a331-5131519ef454');
 INSERT INTO NumberAnswer VALUES('252e9f47-f4bc-41d5-a874-833382d06df2',7.0,'ce178537-7265-4713-ab70-ae7e2a2f57b3');
@@ -35771,8 +35771,8 @@ INSERT INTO NumberAnswer VALUES('b4099679-9aeb-447f-a80f-03cfc28f4ca5',10.0,'00c
 INSERT INTO NumberAnswer VALUES('9e314539-d0ae-4342-86db-43c3cb5e050b',9.0,'79959a55-6ee3-431f-bf42-de64d822dd0b');
 INSERT INTO NumberAnswer VALUES('db91b513-9e85-4a0e-852c-6827ab6dc877',12.0,'0119d10c-89a2-4f4a-90c2-f64dbde97558');
 INSERT INTO NumberAnswer VALUES('bd264741-e9f4-4e92-847d-8a6ee7ea8ed0',12.0,'1e7deeb9-e88c-4c91-a95c-79536c6be7cd');
-INSERT INTO NumberAnswer VALUES('D0920552-1AFA-493D-9019-4FFDBE079A32-number-answer',60.0,'f3fcf8dd-1413-4fc6-b2a0-67455bd0b2fd');
-INSERT INTO NumberAnswer VALUES('9C030140-9A43-46ED-9B57-9E7A17ABEB41-number-answer',34650.0,'54355967-91a9-4cb6-8597-ea2b7dbeacd1');
+INSERT INTO NumberAnswer VALUES('5bb7233c-76b5-40ed-93b0-4a7b8d0ad73f',60.0,'f3fcf8dd-1413-4fc6-b2a0-67455bd0b2fd');
+INSERT INTO NumberAnswer VALUES('45b92de7-6546-449e-9e87-5ab88e6e0fb5',34650.0,'54355967-91a9-4cb6-8597-ea2b7dbeacd1');
 INSERT INTO NumberAnswer VALUES('2846288c-849a-48f1-84f6-cfdd641a143c',120.0,'ec73a468-679d-4997-a29e-99cf84d98e7a');
 INSERT INTO NumberAnswer VALUES('5e190214-b2d2-45bf-b2d8-d0ebc451a80b',211926.0,'1821e0aa-3ee5-4b41-8084-876b59401015');
 INSERT INTO NumberAnswer VALUES('ce79c2bd-dfeb-4c6f-9c5e-9c2f56d72835',285.0,'f35b76ba-4d11-4978-868c-854c1a3c521d');
@@ -38913,7 +38913,6 @@ INSERT INTO _ModuleToQuestion VALUES('bf914508-16c4-4305-a0d9-827968fcb440','d8a
 INSERT INTO _ModuleToQuestion VALUES('1014a51e-14f9-4c75-a7c7-854ebda8bdf9','b2a98fb1-a906-428d-aa4c-e6bfee06a002');
 INSERT INTO _ModuleToQuestion VALUES('1014a51e-14f9-4c75-a7c7-854ebda8bdf9','07dab7f2-c528-4f1d-b97a-13bc6a08a65b');
 INSERT INTO _ModuleToQuestion VALUES('511dfe62-d597-47be-af7d-d04c413647ed','7d77428f-a6c7-4663-9512-e6c198b89388');
-INSERT INTO _ModuleToQuestion VALUES('58de3110-ab3d-46d3-bd82-6b3725268ce6','q4');
 INSERT INTO _ModuleToQuestion VALUES('e326dbc3-42dd-4c3b-bcb1-ad4cc59121ac','e8180adb-1150-49f5-ae9a-81ad00472021');
 INSERT INTO _ModuleToQuestion VALUES('e326dbc3-42dd-4c3b-bcb1-ad4cc59121ac','d8e3e56a-729f-4ff3-9036-a339ed4c713c');
 INSERT INTO _ModuleToQuestion VALUES('e326dbc3-42dd-4c3b-bcb1-ad4cc59121ac','37e2b828-1101-4a41-9fd6-872bc9ce6621');
@@ -41967,6 +41966,7 @@ INSERT INTO _ModuleToQuestion VALUES('C88926ED-D288-43DF-A56E-5389F49A6474','3b5
 INSERT INTO _ModuleToQuestion VALUES('C88926ED-D288-43DF-A56E-5389F49A6474','f88fe091-ed63-4615-a719-6707b2796543');
 INSERT INTO _ModuleToQuestion VALUES('C88926ED-D288-43DF-A56E-5389F49A6474','53e773ef-c4fc-4f54-a9cc-e2ce63416547');
 INSERT INTO _ModuleToQuestion VALUES('C88926ED-D288-43DF-A56E-5389F49A6474','a40509d6-64d6-47ad-8ffd-39ad1a179d34');
+INSERT INTO _ModuleToQuestion VALUES('58de3110-ab3d-46d3-bd82-6b3725268ce6','4d687db2-16b8-40b0-a6d3-e726f30c106b');
 CREATE TABLE IF NOT EXISTS "Degree" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "translationId" TEXT NOT NULL,
@@ -42106,11 +42106,11 @@ INSERT INTO BooleanAnswer VALUES('c7616138-3e22-4336-8d3d-5ea8243d0adf',1,'495d6
 INSERT INTO BooleanAnswer VALUES('95404f36-294f-4321-af6d-4bcb8ccd1610',1,'5dfda78e-883a-41fe-a10a-d3c33ee77999');
 INSERT INTO BooleanAnswer VALUES('92d1f4b8-352c-4fc9-99be-3bdc34887f03',1,'d29e7c17-fa19-4519-a9cf-798a21e098b2');
 INSERT INTO BooleanAnswer VALUES('866ece8b-c2dd-4af3-aaa4-d1acac9fe52a',0,'5f670f62-ac79-4ec6-ac0a-114b3ee2ceeb');
-INSERT INTO BooleanAnswer VALUES('ba1-q7',1,'cbcfeea7-72ed-4b89-8d98-2f261c42201e');
-INSERT INTO BooleanAnswer VALUES('ga-ba1-q8',0,'16d072f2-9173-40b4-89b7-0a54ef5d2d90');
-INSERT INTO BooleanAnswer VALUES('ds-ba1-q13',1,'e9aee5fa-5873-4af4-aab7-3587f753f2b7');
-INSERT INTO BooleanAnswer VALUES('sort-ba1-q13',0,'63145972-ab0f-44f6-a006-585e7ba0cb45');
-INSERT INTO BooleanAnswer VALUES('rec-ba1-q12',1,'b94e24cc-8567-40f5-a667-022032c44a53');
+INSERT INTO BooleanAnswer VALUES('98f76bcb-8adc-4222-ae2a-360174f6401b',1,'cbcfeea7-72ed-4b89-8d98-2f261c42201e');
+INSERT INTO BooleanAnswer VALUES('ee6b98b6-89b3-42ab-a479-803bf7a24490',0,'16d072f2-9173-40b4-89b7-0a54ef5d2d90');
+INSERT INTO BooleanAnswer VALUES('34c6225f-5e12-4cfe-a813-0c9453c392e9',1,'e9aee5fa-5873-4af4-aab7-3587f753f2b7');
+INSERT INTO BooleanAnswer VALUES('5667241d-4b70-4aeb-aacb-47f891155176',0,'63145972-ab0f-44f6-a006-585e7ba0cb45');
+INSERT INTO BooleanAnswer VALUES('b6c5c9bb-f120-4331-843e-b56422b00a1d',1,'b94e24cc-8567-40f5-a667-022032c44a53');
 CREATE UNIQUE INDEX "Faculty_translationId_universityId_key" ON "Faculty"("translationId", "universityId");
 CREATE UNIQUE INDEX "Course_translationId_universityId_key" ON "Course"("translationId", "universityId");
 CREATE UNIQUE INDEX "BlockRelationship_prerequisiteId_postrequisiteId_key" ON "BlockRelationship"("prerequisiteId", "postrequisiteId");
