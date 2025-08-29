@@ -28,8 +28,8 @@ import { CreateDegreeInput } from './dto/create-degree.input';
 import { CreateManyDegreesInput } from './dto/create-many-degrees.input';
 import { UpdateDegreeInput } from './dto/update-degree.input';
 import { SetDegreeFacultyInput } from './dto/set-degree-faculty.input';
-import { AddCourseToDegreeInput } from './dto/add-course-to-degree.input';
 import { DegreesQueryDto } from './dto/degrees-query.dto';
+import { AddCourseDto } from './dto/add-course.dto';
 import { Degree } from './models/Degree.entity';
 
 @ApiTags('degrees')
@@ -178,9 +178,9 @@ export class DegreesController {
   @ApiResponse({ status: 500, description: 'Internal Server Error.' })
   addCourse(
     @Param('id') id: string,
-    @Body() addCourseToDegreeDto: Omit<AddCourseToDegreeInput, 'degreeId'>,
+    @Body() addCourseDto: AddCourseDto,
   ) {
-    return this.degreesService.addCourse(id, addCourseToDegreeDto.courseId);
+    return this.degreesService.addCourse(id, addCourseDto.courseId);
   }
 
   @Get(':id/courses')
