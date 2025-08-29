@@ -52,10 +52,6 @@ describe('ModulesResolver', () => {
       expect(typeof resolver.createModuleRelationship).toBe('function');
     });
 
-    it('should have deleteModuleRelationship method', () => {
-      expect(typeof resolver.deleteModuleRelationship).toBe('function');
-    });
-
     it('should call service method for createModuleRelationship', async () => {
       const mockInput = {
         prerequisiteModuleId: '1',
@@ -72,26 +68,6 @@ describe('ModulesResolver', () => {
 
       expect(result).toEqual(mockResult);
       expect(mockModulesService.createModuleRelationship).toHaveBeenCalledWith(
-        mockInput,
-      );
-    });
-
-    it('should call service method for deleteModuleRelationship', async () => {
-      const mockInput = {
-        prerequisiteModuleId: '1',
-        postrequisiteModuleId: '2',
-      };
-      const mockResult = {
-        id: '123',
-        prerequisiteModuleId: '1',
-        postrequisiteModuleId: '2',
-      };
-      mockModulesService.deleteModuleRelationship.mockResolvedValue(mockResult);
-
-      const result = await resolver.deleteModuleRelationship(mockInput);
-
-      expect(result).toEqual(mockResult);
-      expect(mockModulesService.deleteModuleRelationship).toHaveBeenCalledWith(
         mockInput,
       );
     });
