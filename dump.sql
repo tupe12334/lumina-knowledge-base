@@ -1975,8 +1975,8 @@ INSERT INTO Translation VALUES('793b0e27-6145-4647-b508-eb766d192bb8','Monotonic
 INSERT INTO Translation VALUES('9700e35b-7176-4f36-944b-6e0cc4ca0050','Rolle''s Theorem','משפט רול');
 INSERT INTO Translation VALUES('3dda5826-8420-43a9-a99b-7376ae0e9f37','Infinitesimal Calculus 1 (OU)','חשבון אינפיניטסימלי 1');
 INSERT INTO Translation VALUES('142765fb-70dc-40d9-b323-55f838ab1b44','Definition of the derivative','Definition of the derivative');
-INSERT INTO Translation VALUES('ddc06c1f-3f29-4af0-83da-60de9b563dd1','Basic differentiation rules','Basic differentiation rules');
-INSERT INTO Translation VALUES('c23e686c-0cb1-46c0-86cd-0a11b872394e','Differentiability and continuity','Differentiability and continuity');
+INSERT INTO Translation VALUES('ddc06c1f-3f29-4af0-83da-60de9b563dd1','Basic differentiation rules','כללי גזירה בסיסיים');
+INSERT INTO Translation VALUES('c23e686c-0cb1-46c0-86cd-0a11b872394e','Differentiability and continuity','גזירות ורציפות');
 INSERT INTO Translation VALUES('ab902356-89d8-40ab-b3dc-db884c616569','One-sided derivatives','One-sided derivatives');
 INSERT INTO Translation VALUES('3eef13f1-c93f-4f0d-b50e-f310bb2f6001','Types of non-differentiability','Types of non-differentiability');
 INSERT INTO Translation VALUES('f53a603d-d145-495d-a6f6-7f0f40795eee','Higher-order derivatives','Higher-order derivatives');
