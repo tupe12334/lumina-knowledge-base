@@ -169,7 +169,7 @@ describe('QuestionsService', () => {
           where: expect.objectContaining({
             Modules: {
               some: {
-                AND: [
+                OR: [
                   {
                     id: {
                       in: expect.arrayContaining([
@@ -197,7 +197,7 @@ describe('QuestionsService', () => {
           where: expect.objectContaining({
             Modules: {
               some: {
-                AND: [{ id: { in: ['parent-module'] } }],
+                OR: [{ id: { in: ['parent-module'] } }],
               },
             },
           }),
@@ -234,7 +234,7 @@ describe('QuestionsService', () => {
           where: expect.objectContaining({
             Modules: {
               some: {
-                AND: [
+                OR: [
                   {
                     id: {
                       in: expect.arrayContaining([
