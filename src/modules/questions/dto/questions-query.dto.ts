@@ -31,4 +31,17 @@ export class QuestionsQueryDto {
     return undefined;
   })
   excludePartQuestions?: boolean;
+
+  @ApiPropertyOptional({
+    description: 'Whether to include questions from submodules when filtering by module'
+  })
+  @IsOptional()
+  @IsBoolean()
+  @Transform(({ value }: { value: unknown }) => {
+    if (value === 'true') return true;
+    if (value === 'false') return false;
+    if (typeof value === 'boolean') return value;
+    return undefined;
+  })
+  includeSubmodules?: boolean;
 }

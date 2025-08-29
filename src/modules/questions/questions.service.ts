@@ -98,7 +98,7 @@ export class QuestionsService {
     }
 
     // If module filtering is requested and includeSubmodules is enabled, expand to include all submodules
-    const includeSubmodules = filters?.includeSubmodules === true;
+    const includeSubmodules = filters?.includeSubmodules !== false; // Default to true
     if (moduleIds.length > 0 && includeSubmodules) {
       const expandedModuleIds = new Set(moduleIds);
 
