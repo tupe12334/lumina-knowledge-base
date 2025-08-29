@@ -22,11 +22,6 @@ export class FacultiesResolver {
     private readonly degreesService: DegreesService,
   ) {}
 
-  @Query(() => [Faculty], { name: 'faculties' })
-  findAll() {
-    return this.facultiesService.findAll();
-  }
-
   /**
    * Retrieves faculties for a specific university.
    * @param universityId - The unique identifier of the university
@@ -41,22 +36,6 @@ export class FacultiesResolver {
     universityId: string,
   ): Promise<Faculty[]> {
     return this.facultiesService.getFacultiesByInstitution(universityId);
-  }
-
-  /**
-   * Retrieves a specific faculty by its ID.
-   * @param id - The unique identifier of the faculty
-   * @returns Promise<Faculty | null> The faculty if found, null otherwise
-   */
-  @Query(() => Faculty, {
-    name: 'faculty',
-    nullable: true,
-    description: 'Get a specific faculty by ID',
-  })
-  async getFaculty(
-    @Args('id', { type: () => ID, description: 'Faculty ID' }) id: string,
-  ): Promise<Faculty | null> {
-    return this.facultiesService.getFacultyById(id);
   }
 
   /**

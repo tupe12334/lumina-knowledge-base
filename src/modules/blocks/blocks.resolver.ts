@@ -1,4 +1,4 @@
-import { Resolver, Query, Args, ID, Mutation } from '@nestjs/graphql';
+import { Resolver, Args, Mutation } from '@nestjs/graphql';
 import { BlocksService } from './blocks.service';
 import { Block } from './models/Block.entity';
 import { CreateBlockRelationshipInput } from './dto/create-block-relationship.input';
@@ -12,27 +12,6 @@ import { BlockRelationshipResult } from './dto/block-relationship-result.type';
 @Resolver(() => Block)
 export class BlocksResolver {
   constructor(private readonly blocksService: BlocksService) {}
-
-  @Query(() => [Block], { name: 'blocks' })
-  findAll() {
-    return this.blocksService.findAll();
-  }
-
-  /**
-   * Retrieves a specific block by its ID.
-   * @param id - The unique identifier of the block
-   * @returns Promise<Block | null> The block if found, null otherwise
-   */
-  @Query(() => Block, {
-    name: 'block',
-    nullable: true,
-    description: 'Get a specific block by ID',
-  })
-  async getBlock(
-    @Args('id', { type: () => ID, description: 'Block ID' }) id: string,
-  ): Promise<Block | null> {
-    return this.blocksService.findUnique(id);
-  }
 
   /**
    * Creates a prerequisite/postrequisite relationship between two blocks.
