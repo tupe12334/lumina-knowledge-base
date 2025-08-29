@@ -183,6 +183,29 @@ export class DegreesController {
     return this.degreesService.addCourse(id, addCourseToDegreeDto.courseId);
   }
 
+  @Get(':id/courses')
+  @ApiOperation({
+    summary: 'Get courses for a degree',
+    description: 'Returns all courses associated with the specified degree.',
+  })
+  @ApiParam({
+    name: 'id',
+    description: 'The ID of the degree',
+    type: String,
+  })
+  @ApiOkResponse({
+    description: 'List of courses for the degree',
+    isArray: true,
+  })
+  @ApiResponse({ status: 400, description: 'Invalid ID format' })
+  @ApiResponse({ status: 404, description: 'Degree not found' })
+  @ApiResponse({ status: 500, description: 'Internal Server Error' })
+  async getCourses(
+    @Param('id', new ParseUUIDPipe({ version: '4' })) id: string,
+  ) {
+    return this.degreesService.getCoursesByDegreeId(id);
+  }
+
   @Get(':id/summary')
   @ApiOperation({
     summary: 'Get degree summary',

@@ -357,6 +357,31 @@ export class DegreesService {
   }
 
   /**
+   * Gets all courses associated with a specific degree.
+   * @param degreeId - The degree ID
+   * @returns Array of courses for the degree
+   * @throws NotFoundException if the degree doesn't exist
+   */
+  async getCoursesByDegreeId(degreeId: string) {
+    const degree = await this.prisma.degree.findUnique({
+      where: { id: degreeId },
+      include: {
+        courses: {
+          include: {
+            name: true,
+          },
+        },
+      },
+    });
+
+    if (!degree) {
+      throw new NotFoundException(`Degree with ID ${degreeId} not found`);
+    }
+
+    return degree.courses;
+  }
+
+  /**
    * Generates a human-readable summary of a degree including its university, faculty, and courses.
    * @param id - The degree ID
    * @returns A plain text summary of the degree

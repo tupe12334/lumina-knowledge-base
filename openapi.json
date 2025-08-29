@@ -2626,6 +2626,39 @@
         "tags": [
           "degrees"
         ]
+      },
+      "get": {
+        "description": "Returns all courses associated with the specified degree.",
+        "operationId": "DegreesController_getCourses",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "The ID of the degree",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of courses for the degree"
+          },
+          "400": {
+            "description": "Invalid ID format"
+          },
+          "404": {
+            "description": "Degree not found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "summary": "Get courses for a degree",
+        "tags": [
+          "degrees"
+        ]
       }
     },
     "/degrees/{id}/summary": {
