@@ -186,6 +186,11 @@ INSERT INTO Course VALUES('1b183c55-2d3c-467a-89fb-9de114ca116b','d901135c-f22e-
 INSERT INTO Course VALUES('677b428c-3cff-4642-800d-209eb7089796','7bc922e1-6811-4b2f-a73a-52fdf648f4a2','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL,'38cc909a-9b04-49d8-be86-449f6e429e73');
 INSERT INTO Course VALUES('58b9e503-3262-41cf-9a1f-7402bcb57a13','9d21be03-3fd1-462b-975e-046d54065000','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL,'57a3a0ce-f5e2-4509-94b7-64a5c34deb52');
 INSERT INTO Course VALUES('fe23b73a-f175-4df8-8a5f-719515973f80','1ca7a180-44ea-4d98-b549-9d38898236be','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL,'1264b0a9-a72b-4a5f-8f86-90ce103d59ea');
+INSERT INTO Course VALUES('e723c5bc-a746-4b37-8f36-61bda11f17fc','9e83bf5a-a440-40e4-acde-7f19190d7981','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL,'02d411f8-5335-4dd9-976d-adaace9baa3d');
+INSERT INTO Course VALUES('f2470f4b-c0ac-41aa-86da-a1a34fd48f18','c36993f7-2667-438c-b4be-2a14dc3ed469','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL,'da527bc7-0fe1-4573-a1f4-dc16ca38e41e');
+INSERT INTO Course VALUES('1bf9a6b8-9a61-430f-9936-f8be5b3bc2e7','73a82931-c3bc-4c4e-95bb-5f95dc3cdda4','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL,'ab03c48f-0d85-4202-9bc4-2e60c6aa58a9');
+INSERT INTO Course VALUES('e9e786cd-9d9d-4682-950f-a81c0a9fb410','4f3c5af5-f9a0-4aef-8046-4e90ba84369e','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL,'671f6bf8-d202-4a3f-879d-ee59f9234996');
+INSERT INTO Course VALUES('28a4598d-bea6-4d99-83d6-d8add58ca759','1e3e45a2-b66a-47c1-a280-4c2aaa091a75','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL,'70bc30e7-ec8f-4ba5-b2bd-14f725884c0c');
 CREATE TABLE IF NOT EXISTS "Block" (
     "id" TEXT NOT NULL PRIMARY KEY
 );
@@ -717,6 +722,11 @@ INSERT INTO Block VALUES('09fbf4fd-2e2b-4ff6-bdaa-052f80fc0815');
 INSERT INTO Block VALUES('38cc909a-9b04-49d8-be86-449f6e429e73');
 INSERT INTO Block VALUES('57a3a0ce-f5e2-4509-94b7-64a5c34deb52');
 INSERT INTO Block VALUES('1264b0a9-a72b-4a5f-8f86-90ce103d59ea');
+INSERT INTO Block VALUES('02d411f8-5335-4dd9-976d-adaace9baa3d');
+INSERT INTO Block VALUES('da527bc7-0fe1-4573-a1f4-dc16ca38e41e');
+INSERT INTO Block VALUES('ab03c48f-0d85-4202-9bc4-2e60c6aa58a9');
+INSERT INTO Block VALUES('671f6bf8-d202-4a3f-879d-ee59f9234996');
+INSERT INTO Block VALUES('70bc30e7-ec8f-4ba5-b2bd-14f725884c0c');
 CREATE TABLE IF NOT EXISTS "BlockRelationship" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "prerequisiteId" TEXT NOT NULL,
@@ -16887,6 +16897,11 @@ INSERT INTO Translation VALUES('d901135c-f22e-41bc-af17-4422dac36e9c','Introduct
 INSERT INTO Translation VALUES('7bc922e1-6811-4b2f-a73a-52fdf648f4a2','Measure Theory','תורת המידה');
 INSERT INTO Translation VALUES('9d21be03-3fd1-462b-975e-046d54065000','Partial Differential Equations','משוואות דיפרנציאליות חלקיות');
 INSERT INTO Translation VALUES('1ca7a180-44ea-4d98-b549-9d38898236be','Ordinary Differential Equations 2','משוואות דיפרנציאליות רגילות 2');
+INSERT INTO Translation VALUES('9e83bf5a-a440-40e4-acde-7f19190d7981','Mathematical Logic','לוגיקה מתמטית');
+INSERT INTO Translation VALUES('c36993f7-2667-438c-b4be-2a14dc3ed469','Field Extensions and Galois Theory','הרחבת שדות ותורת גלואה');
+INSERT INTO Translation VALUES('73a82931-c3bc-4c4e-95bb-5f95dc3cdda4','Coding Theory','תורת הקודים');
+INSERT INTO Translation VALUES('4f3c5af5-f9a0-4aef-8046-4e90ba84369e','Elementary Number Theory','תורת המספרים האלמנטרית');
+INSERT INTO Translation VALUES('1e3e45a2-b66a-47c1-a280-4c2aaa091a75','History of Mathematics','תולדות המתמטיקה');
 CREATE TABLE IF NOT EXISTS "Question" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "validationStatus" TEXT NOT NULL DEFAULT 'ai_generated',
@@ -37530,6 +37545,11 @@ INSERT INTO _CourseToDegree VALUES('1b183c55-2d3c-467a-89fb-9de114ca116b','43eae
 INSERT INTO _CourseToDegree VALUES('677b428c-3cff-4642-800d-209eb7089796','43eae81a-0c42-4e5c-894d-bd803334f0cd');
 INSERT INTO _CourseToDegree VALUES('58b9e503-3262-41cf-9a1f-7402bcb57a13','43eae81a-0c42-4e5c-894d-bd803334f0cd');
 INSERT INTO _CourseToDegree VALUES('fe23b73a-f175-4df8-8a5f-719515973f80','43eae81a-0c42-4e5c-894d-bd803334f0cd');
+INSERT INTO _CourseToDegree VALUES('e723c5bc-a746-4b37-8f36-61bda11f17fc','43eae81a-0c42-4e5c-894d-bd803334f0cd');
+INSERT INTO _CourseToDegree VALUES('f2470f4b-c0ac-41aa-86da-a1a34fd48f18','43eae81a-0c42-4e5c-894d-bd803334f0cd');
+INSERT INTO _CourseToDegree VALUES('1bf9a6b8-9a61-430f-9936-f8be5b3bc2e7','43eae81a-0c42-4e5c-894d-bd803334f0cd');
+INSERT INTO _CourseToDegree VALUES('e9e786cd-9d9d-4682-950f-a81c0a9fb410','43eae81a-0c42-4e5c-894d-bd803334f0cd');
+INSERT INTO _CourseToDegree VALUES('28a4598d-bea6-4d99-83d6-d8add58ca759','43eae81a-0c42-4e5c-894d-bd803334f0cd');
 CREATE TABLE IF NOT EXISTS "_ModuleHierarchy" (
     "A" TEXT NOT NULL,
     "B" TEXT NOT NULL,
