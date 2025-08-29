@@ -2661,6 +2661,57 @@
         ]
       }
     },
+    "/degrees/{id}/courses/{courseId}": {
+      "delete": {
+        "description": "Removes a course from the specified degree.",
+        "operationId": "DegreesController_removeCourse",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "The ID of the degree",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "courseId",
+            "required": true,
+            "in": "path",
+            "description": "The ID of the course to remove",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The degree with the course removed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Degree"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "404": {
+            "description": "Degree or Course not found, or Course not associated with Degree."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Remove a course from a degree",
+        "tags": [
+          "degrees"
+        ]
+      }
+    },
     "/degrees/{id}/summary": {
       "get": {
         "description": "Returns a human-readable plain text summary for the specified degree.",

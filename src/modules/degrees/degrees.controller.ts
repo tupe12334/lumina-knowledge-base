@@ -206,6 +206,34 @@ export class DegreesController {
     return this.degreesService.getCoursesByDegreeId(id);
   }
 
+  @Delete(':id/courses/:courseId')
+  @ApiOperation({
+    summary: 'Remove a course from a degree',
+    description: 'Removes a course from the specified degree.',
+  })
+  @ApiParam({ name: 'id', description: 'The ID of the degree', type: String })
+  @ApiParam({
+    name: 'courseId',
+    description: 'The ID of the course to remove',
+    type: String,
+  })
+  @ApiOkResponse({
+    type: Degree,
+    description: 'The degree with the course removed.',
+  })
+  @ApiResponse({ status: 400, description: 'Bad Request.' })
+  @ApiResponse({
+    status: 404,
+    description: 'Degree or Course not found, or Course not associated with Degree.',
+  })
+  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
+  removeCourse(
+    @Param('id', new ParseUUIDPipe({ version: '4' })) id: string,
+    @Param('courseId', new ParseUUIDPipe({ version: '4' })) courseId: string,
+  ) {
+    return this.degreesService.removeCourse(id, courseId);
+  }
+
   @Get(':id/summary')
   @ApiOperation({
     summary: 'Get degree summary',
