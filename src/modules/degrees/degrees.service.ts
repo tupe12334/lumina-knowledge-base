@@ -357,6 +357,62 @@ export class DegreesService {
   }
 
   /**
+   * Removes a course from a degree.
+   * @param degreeId - The ID of the degree to remove the course from.
+   * @param courseId - The ID of the course to remove.
+   * @returns The updated degree with the course removed.
+   */
+  async removeCourse(degreeId: string, courseId: string): Promise<Degree> {
+    // Validate that the degree exists
+    const degree = await this.prisma.degree.findUnique({
+      where: { id: degreeId },
+      include: {
+        courses: {
+          where: { id: courseId },
+        },
+      },
+    });
+
+    if (!degree) {
+      throw new NotFoundException(`Degree with ID ${degreeId} not found`);
+    }
+
+    // Check if the course is actually connected to this degree
+    if (degree.courses.length === 0) {
+      throw new NotFoundException(
+        `Course with ID ${courseId} is not associated with degree ${degreeId}`
+      );
+    }
+
+    // Disconnect the course from the degree
+    await this.prisma.degree.update({
+      where: { id: degreeId },
+      data: {
+        courses: {
+          disconnect: { id: courseId },
+        },
+      },
+    });
+
+    // Fetch the updated degree with all its relations
+    const updatedDegree = await this.prisma.degree.findUnique({
+      where: { id: degreeId },
+      include: {
+        name: true,
+        institution: { include: { name: true } },
+        faculty: { include: { name: true, description: true } },
+        courses: { include: { name: true } },
+      },
+    });
+
+    if (!updatedDegree) {
+      throw new Error('Degree not found after update'); // Should not happen if degree was found initially
+    }
+
+    return updatedDegree;
+  }
+
+  /**
    * Gets all courses associated with a specific degree.
    * @param degreeId - The degree ID
    * @returns Array of courses for the degree

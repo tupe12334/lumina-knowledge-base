@@ -2601,6 +2601,16 @@
             }
           }
         ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddCourseDto"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "The degree with the added course.",
@@ -2656,6 +2666,57 @@
           }
         },
         "summary": "Get courses for a degree",
+        "tags": [
+          "degrees"
+        ]
+      }
+    },
+    "/degrees/{id}/courses/{courseId}": {
+      "delete": {
+        "description": "Removes a course from the specified degree.",
+        "operationId": "DegreesController_removeCourse",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "The ID of the degree",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "courseId",
+            "required": true,
+            "in": "path",
+            "description": "The ID of the course to remove",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The degree with the course removed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Degree"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "404": {
+            "description": "Degree or Course not found, or Course not associated with Degree."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Remove a course from a degree",
         "tags": [
           "degrees"
         ]
@@ -4819,6 +4880,18 @@
         },
         "required": [
           "degrees"
+        ]
+      },
+      "AddCourseDto": {
+        "type": "object",
+        "properties": {
+          "courseId": {
+            "type": "string",
+            "description": "ID of the course to add"
+          }
+        },
+        "required": [
+          "courseId"
         ]
       },
       "CreateBlockInput": {

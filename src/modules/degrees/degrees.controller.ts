@@ -28,8 +28,8 @@ import { CreateDegreeInput } from './dto/create-degree.input';
 import { CreateManyDegreesInput } from './dto/create-many-degrees.input';
 import { UpdateDegreeInput } from './dto/update-degree.input';
 import { SetDegreeFacultyInput } from './dto/set-degree-faculty.input';
-import { AddCourseToDegreeInput } from './dto/add-course-to-degree.input';
 import { DegreesQueryDto } from './dto/degrees-query.dto';
+import { AddCourseDto } from './dto/add-course.dto';
 import { Degree } from './models/Degree.entity';
 
 @ApiTags('degrees')
@@ -178,9 +178,9 @@ export class DegreesController {
   @ApiResponse({ status: 500, description: 'Internal Server Error.' })
   addCourse(
     @Param('id') id: string,
-    @Body() addCourseToDegreeDto: Omit<AddCourseToDegreeInput, 'degreeId'>,
+    @Body() addCourseDto: AddCourseDto,
   ) {
-    return this.degreesService.addCourse(id, addCourseToDegreeDto.courseId);
+    return this.degreesService.addCourse(id, addCourseDto.courseId);
   }
 
   @Get(':id/courses')
@@ -204,6 +204,34 @@ export class DegreesController {
     @Param('id', new ParseUUIDPipe({ version: '4' })) id: string,
   ) {
     return this.degreesService.getCoursesByDegreeId(id);
+  }
+
+  @Delete(':id/courses/:courseId')
+  @ApiOperation({
+    summary: 'Remove a course from a degree',
+    description: 'Removes a course from the specified degree.',
+  })
+  @ApiParam({ name: 'id', description: 'The ID of the degree', type: String })
+  @ApiParam({
+    name: 'courseId',
+    description: 'The ID of the course to remove',
+    type: String,
+  })
+  @ApiOkResponse({
+    type: Degree,
+    description: 'The degree with the course removed.',
+  })
+  @ApiResponse({ status: 400, description: 'Bad Request.' })
+  @ApiResponse({
+    status: 404,
+    description: 'Degree or Course not found, or Course not associated with Degree.',
+  })
+  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
+  removeCourse(
+    @Param('id', new ParseUUIDPipe({ version: '4' })) id: string,
+    @Param('courseId', new ParseUUIDPipe({ version: '4' })) courseId: string,
+  ) {
+    return this.degreesService.removeCourse(id, courseId);
   }
 
   @Get(':id/summary')
