@@ -71,17 +71,6 @@ type CourseRelationshipResult {
   prerequisite: Block!
 }
 
-input CreateBlockRelationshipInput {
-  """Optional metadata for the relationship (JSON string)"""
-  metadata: String
-
-  """The ID of the postrequisite block"""
-  postrequisiteBlockId: ID!
-
-  """The ID of the prerequisite block"""
-  prerequisiteBlockId: ID!
-}
-
 input CreateCourseInput {
   name: String!
   universityId: String!
@@ -276,9 +265,6 @@ input ModulesQueryInput {
 }
 
 type Mutation {
-  """Create a prerequisite/postrequisite relationship between blocks"""
-  createBlockRelationship(input: CreateBlockRelationshipInput!): BlockRelationshipResult!
-
   """Create a new course"""
   createCourse(createCourseInput: CreateCourseInput!): Course!
 
