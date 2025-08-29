@@ -11,7 +11,6 @@ import { ModulesService } from './modules.service';
 import { Module } from './models/Module.entity';
 import { ModulesQueryInput } from './dto/modules-query.input';
 import { CreateModuleRelationshipInput } from './dto/create-module-relationship.input';
-import { DeleteModuleRelationshipInput } from './dto/delete-module-relationship.input';
 import { ModuleRelationshipResult } from './dto/module-relationship-result.type';
 import { CreateModuleInput } from './dto/create-module.input';
 import { CreateManyModulesInput } from './dto/create-many-modules.input';
@@ -78,22 +77,6 @@ export class ModulesResolver {
     @Args('input') input: CreateModuleRelationshipInput,
   ): Promise<ModuleRelationshipResult> {
     return this.modulesService.createModuleRelationship(input);
-  }
-
-  /**
-   * Deletes a prerequisite/postrequisite relationship between two modules.
-   * @param input - The relationship deletion data
-   * @returns Promise<ModuleRelationshipResult> The result of the operation
-   */
-  @Mutation(() => ModuleRelationshipResult, {
-    name: 'deleteModuleRelationship',
-    description:
-      'Delete a prerequisite/postrequisite relationship between modules',
-  })
-  async deleteModuleRelationship(
-    @Args('input') input: DeleteModuleRelationshipInput,
-  ): Promise<ModuleRelationshipResult> {
-    return this.modulesService.deleteModuleRelationship(input);
   }
 
   /**

@@ -2,7 +2,6 @@ import { describe, it, expect, vi, beforeEach, type Mock } from 'vitest';
 import { CoursesResolver } from './courses.resolver';
 import { CoursesService } from './courses.service';
 import { CreateCourseRelationshipInput } from './dto/create-course-relationship.input';
-import { DeleteCourseRelationshipInput } from './dto/delete-course-relationship.input';
 import { UpdateCourseInput } from './dto/update-course.input';
 import { SetCourseModulesInput } from './dto/set-course-modules.input';
 import { ModulesService } from '../modules/modules.service';
@@ -89,33 +88,6 @@ describe('CoursesResolver', () => {
       expect(
         mockCoursesService.createCourseRelationship as unknown as Mock,
       ).toHaveBeenCalledWith(input);
-    });
-  });
-
-  describe('deleteCourseRelationship', () => {
-    it('should delete a course relationship', async () => {
-      const input: DeleteCourseRelationshipInput = {
-        prerequisiteCourseId: 'course-1',
-        postrequisiteCourseId: 'course-2',
-      };
-
-      const mockResult = {
-        id: 'relationship-1',
-        prerequisite: { id: 'block-1' },
-        postrequisite: { id: 'block-2' },
-        metadata: '{"type":"hard"}',
-      };
-
-      (
-        mockCoursesService.deleteCourseRelationship as unknown as Mock
-      ).mockResolvedValue(mockResult);
-
-      const result = await resolver.deleteCourseRelationship(input);
-
-      expect(result).toBe(mockResult);
-      expect(mockCoursesService.deleteCourseRelationship).toHaveBeenCalledWith(
-        input,
-      );
     });
   });
 

@@ -10,7 +10,6 @@ import {
 import { CoursesService } from './courses.service';
 import { Course } from './models/Course.entity';
 import { CreateCourseRelationshipInput } from './dto/create-course-relationship.input';
-import { DeleteCourseRelationshipInput } from './dto/delete-course-relationship.input';
 import { CourseRelationshipResult } from './dto/course-relationship-result.type';
 import { DeleteCourseInput } from './dto/delete-course.input';
 import { DeleteCourseResult } from './dto/delete-course-result.type';
@@ -103,22 +102,6 @@ export class CoursesResolver {
     @Args('input') input: CreateCourseRelationshipInput,
   ): Promise<CourseRelationshipResult> {
     return this.coursesService.createCourseRelationship(input);
-  }
-
-  /**
-   * Deletes a prerequisite/postrequisite relationship between two courses.
-   * @param input - The relationship deletion data
-   * @returns Promise<CourseRelationshipResult> The result of the operation
-   */
-  @Mutation(() => CourseRelationshipResult, {
-    name: 'deleteCourseRelationship',
-    description:
-      'Delete a prerequisite/postrequisite relationship between courses',
-  })
-  async deleteCourseRelationship(
-    @Args('input') input: DeleteCourseRelationshipInput,
-  ): Promise<CourseRelationshipResult> {
-    return this.coursesService.deleteCourseRelationship(input);
   }
 
   /**

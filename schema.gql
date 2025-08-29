@@ -156,14 +156,6 @@ input DeleteCourseInput {
   force: Boolean
 }
 
-input DeleteCourseRelationshipInput {
-  """The ID of the postrequisite course"""
-  postrequisiteCourseId: ID!
-
-  """The ID of the prerequisite course"""
-  prerequisiteCourseId: ID!
-}
-
 """Result of a course deletion operation with cleanup details"""
 type DeleteCourseResult {
   """The ID of the deleted course"""
@@ -186,14 +178,6 @@ type DeleteCourseResult {
 
   """Whether the deletion was successful"""
   success: Boolean!
-}
-
-input DeleteModuleRelationshipInput {
-  """The ID of the postrequisite module"""
-  postrequisiteModuleId: ID!
-
-  """The ID of the prerequisite module"""
-  prerequisiteModuleId: ID!
 }
 
 type Faculty {
@@ -288,12 +272,6 @@ type Mutation {
 
   """Delete a course and clean up all related data from the database"""
   deleteCourse(input: DeleteCourseInput!): DeleteCourseResult!
-
-  """Delete a prerequisite/postrequisite relationship between courses"""
-  deleteCourseRelationship(input: DeleteCourseRelationshipInput!): CourseRelationshipResult!
-
-  """Delete a prerequisite/postrequisite relationship between modules"""
-  deleteModuleRelationship(input: DeleteModuleRelationshipInput!): ModuleRelationshipResult!
   removeModule(id: ID!): Module!
 
   """Replace a course's modules with the provided module IDs"""
