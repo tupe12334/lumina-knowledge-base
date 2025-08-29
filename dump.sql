@@ -178,6 +178,10 @@ INSERT INTO Course VALUES('67fa43a9-66aa-43a2-95ab-f87b26c1bdc8','8e3dda15-7574-
 INSERT INTO Course VALUES('5e1efa67-1bf9-4585-af97-8dc308f1491a','aebf5d5a-cb3b-4e9e-bfcb-4566e38e49fe','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL,'1a86b5b8-1ef2-4e57-82ff-3cbd19bc851b');
 INSERT INTO Course VALUES('441d3090-9882-4d6c-a683-a0598bfc273b','6e91e0e3-17c7-438e-823a-cf9db59ebcfe','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL,'028af7ec-3233-42a3-91c9-52bb7939a28d');
 INSERT INTO Course VALUES('7fbc2066-85a6-4a53-a4c9-c9f356dbc6e2','77f0d611-a0ae-4b80-ab9f-9e167b807df6','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL,'2b3741ee-efba-44d8-a389-f1fd88254fd2');
+INSERT INTO Course VALUES('6fd18949-6892-48f4-9ed0-8e7de1450393','d2d94ff6-7d04-4e46-981e-80bac485fea7','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL,'a180f6b7-7f83-4eb5-8206-ec7f89accb87');
+INSERT INTO Course VALUES('7cccee11-f73b-402b-8f38-d2e2f32cf27f','4beda93c-fc96-4c6c-90c5-d7ce62180941','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL,'ea817608-4a21-4c19-8a0f-c2bc806ed2db');
+INSERT INTO Course VALUES('1f4079a0-c0b6-4b2f-8519-3a8d9c859f42','52e7411e-aeca-4edb-a857-3af4f4c6b507','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL,'2ffc7f55-07ad-4d50-b5da-01df3f7ac4fb');
+INSERT INTO Course VALUES('f492a541-ffcd-4382-8a42-9be9ee7edde0','5420c722-6a4b-4701-8f0e-971089887ef1','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL,'2c78b543-96cb-403e-a0a1-78082011def7');
 CREATE TABLE IF NOT EXISTS "Block" (
     "id" TEXT NOT NULL PRIMARY KEY
 );
@@ -701,6 +705,10 @@ INSERT INTO Block VALUES('5df55b76-019e-4a2c-b762-e8cde4d78c9b');
 INSERT INTO Block VALUES('1a86b5b8-1ef2-4e57-82ff-3cbd19bc851b');
 INSERT INTO Block VALUES('028af7ec-3233-42a3-91c9-52bb7939a28d');
 INSERT INTO Block VALUES('2b3741ee-efba-44d8-a389-f1fd88254fd2');
+INSERT INTO Block VALUES('a180f6b7-7f83-4eb5-8206-ec7f89accb87');
+INSERT INTO Block VALUES('ea817608-4a21-4c19-8a0f-c2bc806ed2db');
+INSERT INTO Block VALUES('2ffc7f55-07ad-4d50-b5da-01df3f7ac4fb');
+INSERT INTO Block VALUES('2c78b543-96cb-403e-a0a1-78082011def7');
 CREATE TABLE IF NOT EXISTS "BlockRelationship" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "prerequisiteId" TEXT NOT NULL,
@@ -16863,6 +16871,10 @@ INSERT INTO Translation VALUES('8e3dda15-7574-4202-a5d6-57d6fd9c4f63','Ordinary 
 INSERT INTO Translation VALUES('aebf5d5a-cb3b-4e9e-bfcb-4566e38e49fe','Complex Functions','פונקציות מרוכבות');
 INSERT INTO Translation VALUES('6e91e0e3-17c7-438e-823a-cf9db59ebcfe','Algebraic Structures','מבנים אלגבריים');
 INSERT INTO Translation VALUES('77f0d611-a0ae-4b80-ab9f-9e167b807df6','Set Theory','תורת הקבוצות');
+INSERT INTO Translation VALUES('d2d94ff6-7d04-4e46-981e-80bac485fea7','Probability Theory','תורת ההסתברות');
+INSERT INTO Translation VALUES('4beda93c-fc96-4c6c-90c5-d7ce62180941','Graph Theory','תורת הגרפים');
+INSERT INTO Translation VALUES('52e7411e-aeca-4edb-a857-3af4f4c6b507','Game Theory','תורת המשחקים');
+INSERT INTO Translation VALUES('5420c722-6a4b-4701-8f0e-971089887ef1','Set Topology','טופולוגיה קבוצתית');
 CREATE TABLE IF NOT EXISTS "Question" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "validationStatus" TEXT NOT NULL DEFAULT 'ai_generated',
@@ -37498,6 +37510,10 @@ INSERT INTO _CourseToDegree VALUES('67fa43a9-66aa-43a2-95ab-f87b26c1bdc8','43eae
 INSERT INTO _CourseToDegree VALUES('5e1efa67-1bf9-4585-af97-8dc308f1491a','43eae81a-0c42-4e5c-894d-bd803334f0cd');
 INSERT INTO _CourseToDegree VALUES('441d3090-9882-4d6c-a683-a0598bfc273b','43eae81a-0c42-4e5c-894d-bd803334f0cd');
 INSERT INTO _CourseToDegree VALUES('7fbc2066-85a6-4a53-a4c9-c9f356dbc6e2','43eae81a-0c42-4e5c-894d-bd803334f0cd');
+INSERT INTO _CourseToDegree VALUES('6fd18949-6892-48f4-9ed0-8e7de1450393','43eae81a-0c42-4e5c-894d-bd803334f0cd');
+INSERT INTO _CourseToDegree VALUES('7cccee11-f73b-402b-8f38-d2e2f32cf27f','43eae81a-0c42-4e5c-894d-bd803334f0cd');
+INSERT INTO _CourseToDegree VALUES('1f4079a0-c0b6-4b2f-8519-3a8d9c859f42','43eae81a-0c42-4e5c-894d-bd803334f0cd');
+INSERT INTO _CourseToDegree VALUES('f492a541-ffcd-4382-8a42-9be9ee7edde0','43eae81a-0c42-4e5c-894d-bd803334f0cd');
 CREATE TABLE IF NOT EXISTS "_ModuleHierarchy" (
     "A" TEXT NOT NULL,
     "B" TEXT NOT NULL,
