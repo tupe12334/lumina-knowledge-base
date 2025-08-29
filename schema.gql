@@ -150,12 +150,6 @@ type Degree {
   name: Translation!
 }
 
-input DegreesQueryDto {
-  facultyId: String
-  name: String
-  universityId: String
-}
-
 input DeleteBlockRelationshipInput {
   """The ID of the postrequisite block"""
   postrequisiteBlockId: ID!
@@ -214,7 +208,7 @@ input DeleteModuleRelationshipInput {
 }
 
 type Faculty {
-  degrees: [Degree!]!
+  degrees: [Degree]
   description: Translation!
   id: ID!
   name: Translation!
@@ -369,15 +363,6 @@ type Query {
     """Degree ID"""
     id: ID!
   ): Degree
-
-  """Get all degrees with optional filtering"""
-  degrees(query: DegreesQueryDto): [Degree!]!
-
-  """Get faculties by university ID"""
-  facultiesByUniversity(
-    """University ID"""
-    universityId: ID!
-  ): [Faculty!]!
 
   """Get a specific module by ID"""
   module(

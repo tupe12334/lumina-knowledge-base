@@ -13,22 +13,6 @@ export class DegreesResolver {
   constructor(private readonly degreesService: DegreesService) {}
 
   /**
-   * Retrieves all degrees with optional filtering.
-   * @param query - Optional filtering parameters
-   * @returns Promise<Degree[]> Array of degrees matching the criteria
-   */
-  @Query(() => [Degree], {
-    name: 'degrees',
-    description: 'Get all degrees with optional filtering',
-  })
-  async getDegrees(
-    @Args('query', { type: () => DegreesQueryDto, nullable: true })
-    query?: DegreesQueryDto,
-  ): Promise<Degree[]> {
-    return this.degreesService.findAll(query);
-  }
-
-  /**
    * Retrieves a specific degree by its ID.
    * @param id - The unique identifier of the degree
    * @returns Promise<Degree | null> The degree if found, null otherwise
@@ -64,5 +48,4 @@ export class DegreesResolver {
       facultyId !== null && facultyId !== undefined ? facultyId : null,
     );
   }
-
 }
