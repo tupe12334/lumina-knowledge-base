@@ -175,6 +175,7 @@ INSERT INTO Course VALUES('4d1e0132-eebb-45cf-a9b7-105bcce6c6c0','b1f9f6ce-fe1f-
 INSERT INTO Course VALUES('1bd5857d-6d06-4201-afc7-2ad3236dd1c0','56fb7f61-1976-413f-8be3-2e676a0e69f8','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL,'6cd31699-9456-48db-afa8-3f6430fa5f54');
 INSERT INTO Course VALUES('4d292fa4-d52f-4eb1-be27-9419ab5012c9','975aa06a-085c-43fa-8b83-094a5dde6428','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL,'d0dbf105-5fb4-4d07-ad21-061ceb8ae981');
 INSERT INTO Course VALUES('67fa43a9-66aa-43a2-95ab-f87b26c1bdc8','8e3dda15-7574-4202-a5d6-57d6fd9c4f63','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL,'5df55b76-019e-4a2c-b762-e8cde4d78c9b');
+INSERT INTO Course VALUES('5e1efa67-1bf9-4585-af97-8dc308f1491a','aebf5d5a-cb3b-4e9e-bfcb-4566e38e49fe','3856bd36-8082-4821-8b1d-9ce806403ab2',NULL,'1a86b5b8-1ef2-4e57-82ff-3cbd19bc851b');
 CREATE TABLE IF NOT EXISTS "Block" (
     "id" TEXT NOT NULL PRIMARY KEY
 );
@@ -695,6 +696,7 @@ INSERT INTO Block VALUES('56a08c3b-aab6-4bb7-b607-b1f4b2ff808a');
 INSERT INTO Block VALUES('343e449c-4f04-46e9-a03b-96f9958f97ee');
 INSERT INTO Block VALUES('71f1d016-504a-4464-90b4-672705161181');
 INSERT INTO Block VALUES('5df55b76-019e-4a2c-b762-e8cde4d78c9b');
+INSERT INTO Block VALUES('1a86b5b8-1ef2-4e57-82ff-3cbd19bc851b');
 CREATE TABLE IF NOT EXISTS "BlockRelationship" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "prerequisiteId" TEXT NOT NULL,
@@ -16854,6 +16856,7 @@ INSERT INTO Translation VALUES('541f7508-77f1-43e6-8a72-c41e58d2126f','When usin
 INSERT INTO Translation VALUES('1c5ce368-78cf-4f90-88ff-5c4d95f418be','When working with arrays','כאשר עובדים עם מערכים');
 INSERT INTO Translation VALUES('be0aa9d3-1185-4ce0-af67-a8641a185eac','Can every recursive algorithm be converted to an iterative one?','האם ניתן להמיר כל אלגוריתם רקורסיבי לאיטרטיבי?');
 INSERT INTO Translation VALUES('8e3dda15-7574-4202-a5d6-57d6fd9c4f63','Ordinary Differential Equations 1','משוואות דיפרנציאליות רגילות 1');
+INSERT INTO Translation VALUES('aebf5d5a-cb3b-4e9e-bfcb-4566e38e49fe','Complex Functions','פונקציות מרוכבות');
 CREATE TABLE IF NOT EXISTS "Question" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "validationStatus" TEXT NOT NULL DEFAULT 'ai_generated',
@@ -37486,6 +37489,7 @@ INSERT INTO _CourseToDegree VALUES('1bd5857d-6d06-4201-afc7-2ad3236dd1c0','432f0
 INSERT INTO _CourseToDegree VALUES('4d292fa4-d52f-4eb1-be27-9419ab5012c9','432f03b9-3497-4012-9f8f-7d1d34cab6e1');
 INSERT INTO _CourseToDegree VALUES('f3fd28f1-bbf3-4774-b331-9777c993d74e','43eae81a-0c42-4e5c-894d-bd803334f0cd');
 INSERT INTO _CourseToDegree VALUES('67fa43a9-66aa-43a2-95ab-f87b26c1bdc8','43eae81a-0c42-4e5c-894d-bd803334f0cd');
+INSERT INTO _CourseToDegree VALUES('5e1efa67-1bf9-4585-af97-8dc308f1491a','43eae81a-0c42-4e5c-894d-bd803334f0cd');
 CREATE TABLE IF NOT EXISTS "_ModuleHierarchy" (
     "A" TEXT NOT NULL,
     "B" TEXT NOT NULL,
