@@ -17,6 +17,8 @@ async function bootstrap() {
     'https://app.lumina.study',
     'https://lumina.study',
     'https://www.lumina.study',
+    'http://localhost:3000', // Knowledge base admin
+    'http://localhost:3001', // Knowledge base admin fallback
     'http://localhost:5173', // Development
     'http://localhost:5174', // Development fallback
     'http://localhost:5175', // Development fallback
