@@ -118,27 +118,27 @@ export class ModulesController {
     const convertedQuery = { ...query };
 
     if (typeof query.fewQuestions === 'string') {
-      (convertedQuery as any).fewQuestions =
+      (convertedQuery as Record<string, unknown>).fewQuestions =
         (query.fewQuestions as string).toLowerCase() === 'true';
     }
     if (typeof query.hasQuestions === 'string') {
-      (convertedQuery as any).hasQuestions =
+      (convertedQuery as Record<string, unknown>).hasQuestions =
         (query.hasQuestions as string).toLowerCase() === 'true';
     }
     if (typeof query.hasPrerequisites === 'string') {
-      (convertedQuery as any).hasPrerequisites =
+      (convertedQuery as Record<string, unknown>).hasPrerequisites =
         (query.hasPrerequisites as string).toLowerCase() === 'true';
     }
     if (typeof query.hasPostrequisites === 'string') {
-      (convertedQuery as any).hasPostrequisites =
+      (convertedQuery as Record<string, unknown>).hasPostrequisites =
         (query.hasPostrequisites as string).toLowerCase() === 'true';
     }
     if (typeof query.hasSubModules === 'string') {
-      (convertedQuery as any).hasSubModules =
+      (convertedQuery as Record<string, unknown>).hasSubModules =
         (query.hasSubModules as string).toLowerCase() === 'true';
     }
     if (typeof query.hasParentModules === 'string') {
-      (convertedQuery as any).hasParentModules =
+      (convertedQuery as Record<string, unknown>).hasParentModules =
         (query.hasParentModules as string).toLowerCase() === 'true';
     }
 

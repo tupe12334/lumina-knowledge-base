@@ -9,8 +9,8 @@ import { createHash } from 'crypto';
 import { stableStringify } from 'src/system/data-hash/stable-stringify';
 
 export interface PrismaQueryable {
-  $queryRaw<T = unknown>(...args: any[]): Promise<T>;
-  $queryRawUnsafe<T = unknown>(query: string, ...params: any[]): Promise<T>;
+  $queryRaw<T = unknown>(...args: unknown[]): Promise<T>;
+  $queryRawUnsafe<T = unknown>(query: string, ...params: unknown[]): Promise<T>;
 }
 
 @Injectable()

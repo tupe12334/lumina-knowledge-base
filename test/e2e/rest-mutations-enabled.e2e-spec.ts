@@ -1,3 +1,4 @@
+import { describe, it, beforeAll, afterAll } from 'vitest';
 import { Test } from '@nestjs/testing';
 import {
   INestApplication,
@@ -20,12 +21,12 @@ class TestController {
   }
 
   @Post()
-  post(@Body() body: any) {
+  post(@Body() body: unknown) {
     return { message: 'POST allowed', data: body };
   }
 
   @Put(':id')
-  put(@Body() body: any) {
+  put(@Body() body: unknown) {
     return { message: 'PUT allowed', data: body };
   }
 

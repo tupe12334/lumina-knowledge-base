@@ -31,7 +31,7 @@ const createMutationsGuardTestSetup = () => {
   return { guard, mockGqlContext, mockHttpContext };
 };
 
-const setupGraphQLContext = async (mockGqlContext: any) => {
+const setupGraphQLContext = async (mockGqlContext: unknown) => {
   const { env } = await import('../env');
   vi.mocked(env).ENABLE_MUTATIONS = false;
 
@@ -40,7 +40,7 @@ const setupGraphQLContext = async (mockGqlContext: any) => {
   } as unknown as ExecutionContext;
 };
 
-const setupHttpContext = async (mockHttpContext: any) => {
+const setupHttpContext = async (mockHttpContext: unknown) => {
   const { env } = await import('../env');
   vi.mocked(env).ENABLE_MUTATIONS = false;
 

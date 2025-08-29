@@ -620,7 +620,7 @@ export class QuestionsService {
             },
           });
         } else if (type === 'value') {
-          const answerData: any = {
+          const answerData: Prisma.AnswerCreateInput = {
             question: { connect: { id: question.id } },
           };
 
@@ -773,7 +773,7 @@ export class QuestionsService {
         });
       }
       // Type assertion needed until Prisma types are fully updated
-      if ((answer as any).BooleanAnswer) {
+      if ((answer as Record<string, unknown>).BooleanAnswer) {
         await this.prisma.booleanAnswer.delete({
           where: { answerId: answer.id },
         });
@@ -946,8 +946,8 @@ export class QuestionsService {
       } else if (question.type === 'boolean' && question.Answer.length > 0) {
         const booleanAnswers = question.Answer.map((answer) => {
           // Type assertion needed until Prisma types are fully updated
-          const booleanAnswer = (answer as any).BooleanAnswer;
-          if (booleanAnswer) {
+          const booleanAnswer = (answer as Record<string, unknown>).BooleanAnswer as { value?: boolean } | undefined;
+          if (booleanAnswer && booleanAnswer.value !== undefined) {
             return `Correct Answer: ${booleanAnswer.value ? 'Yes/True' : 'No/False'}`;
           }
           return '';
