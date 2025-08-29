@@ -1980,7 +1980,7 @@ INSERT INTO Translation VALUES('c23e686c-0cb1-46c0-86cd-0a11b872394e','Different
 INSERT INTO Translation VALUES('ab902356-89d8-40ab-b3dc-db884c616569','One-sided derivatives','One-sided derivatives');
 INSERT INTO Translation VALUES('3eef13f1-c93f-4f0d-b50e-f310bb2f6001','Types of non-differentiability','Types of non-differentiability');
 INSERT INTO Translation VALUES('f53a603d-d145-495d-a6f6-7f0f40795eee','Higher-order derivatives','Higher-order derivatives');
-INSERT INTO Translation VALUES('4b14a9bd-9585-4a30-88a5-14bc10f146ed','Derivatives of trigonometric functions','Derivatives of trigonometric functions');
+INSERT INTO Translation VALUES('4b14a9bd-9585-4a30-88a5-14bc10f146ed','Derivatives of trigonometric functions','נגזרות של פונקציות טריגונומטריות');
 INSERT INTO Translation VALUES('e19e4e0a-7523-464f-96ef-aee440ef6641','Differentiation of composite functions – Chain rule','Differentiation of composite functions – Chain rule');
 INSERT INTO Translation VALUES('e3c10a08-f38e-4d5e-9381-8dab916575e9','Implicit differentiation','Implicit differentiation');
 INSERT INTO Translation VALUES('260c9367-7152-4510-8163-4965a305ddba','Derivatives of inverse functions','Derivatives of inverse functions');
