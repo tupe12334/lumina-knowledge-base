@@ -67,31 +67,4 @@ describe('QuestionsResolver', () => {
       expect(result).toEqual(mockQuestions);
     });
   });
-
-  describe('getQuestion', () => {
-    it('returns question from service', async () => {
-      const mockQuestion = {
-        id: 'q1',
-        text: { en_text: 'Q', he_text: 'ש' },
-        modules: [{ id: 'm1', name: { en_text: 'mod', he_text: 'מודול' } }],
-        answers: [],
-        parts: [],
-      };
-      serviceMock.findUnique.mockResolvedValue(mockQuestion);
-
-      const result = await resolver.getQuestion('q1');
-
-      expect(serviceMock.findUnique).toHaveBeenCalledWith('q1');
-      expect(result).toEqual(mockQuestion);
-    });
-
-    it('throws NotFoundException when question not found', async () => {
-      serviceMock.findUnique.mockResolvedValue(null);
-
-      await expect(resolver.getQuestion('q1')).rejects.toThrow(
-        NotFoundException,
-      );
-      expect(serviceMock.findUnique).toHaveBeenCalledWith('q1');
-    });
-  });
 });

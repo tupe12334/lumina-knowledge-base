@@ -373,12 +373,6 @@ type Query {
   """Get all modules with optional filtering"""
   modules(input: ModulesQueryInput): [Module!]!
 
-  """Get a specific question by ID"""
-  question(
-    """Question ID"""
-    id: ID!
-  ): Question
-
   """Get all questions with optional filtering"""
   questions(input: QuestionsQueryDto): [Question!]!
 
