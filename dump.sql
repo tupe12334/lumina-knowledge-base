@@ -672,6 +672,7 @@ INSERT INTO Block VALUES('15af9629-8c94-4b64-bf91-f227e9faf2ed');
 INSERT INTO Block VALUES('ba470aaf-2079-4862-a2fa-b575fa0fd8c7');
 INSERT INTO Block VALUES('3a15b774-8262-44c5-8069-a69b7e43e462');
 INSERT INTO Block VALUES('f2fe282a-dc61-4a89-a033-1b9f23d6d3f8');
+INSERT INTO Block VALUES('bd48959f-ff70-422c-a285-428cb7a2f208');
 CREATE TABLE IF NOT EXISTS "BlockRelationship" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "prerequisiteId" TEXT NOT NULL,
@@ -1304,6 +1305,7 @@ INSERT INTO Module VALUES('fc2ee73f-1743-46ea-9f20-ce930652feb3','aedc303e-38e0-
 INSERT INTO Module VALUES('15fa8056-fb9e-44d9-84f1-9a87815c1592','107dee73-60ad-47d5-97e4-02bf5e79e553','ba470aaf-2079-4862-a2fa-b575fa0fd8c7');
 INSERT INTO Module VALUES('a4b77a95-b532-4a92-86c2-3ab9ca172de3','f3381ad3-1ca3-4b4a-89b2-f7d7b9de3397','3a15b774-8262-44c5-8069-a69b7e43e462');
 INSERT INTO Module VALUES('9d2c4bb6-60bc-4063-9ebb-7281a86a34a1','c7522f0b-41e6-49fb-a064-6eac9f2891ac','f2fe282a-dc61-4a89-a033-1b9f23d6d3f8');
+INSERT INTO Module VALUES('04e0438c-6072-43f7-853e-a351bd5f5a0c','66200ee4-4f8d-4c00-a392-3fcf1975dce6','bd48959f-ff70-422c-a285-428cb7a2f208');
 CREATE TABLE IF NOT EXISTS "Translation" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "en_text" TEXT NOT NULL,
@@ -16782,6 +16784,7 @@ INSERT INTO Translation VALUES('710ed1b5-c30f-490f-8092-d0e455cbfbe0','Education
 INSERT INTO Translation VALUES('e2c65c17-5f17-4133-8a5a-a2bc88ba5058','Astrophysics','אסטרופיזיקה');
 INSERT INTO Translation VALUES('33fc8968-0350-42fa-b036-5d630f8e5cb4','Biological Thought','מחשבה ביולוגית');
 INSERT INTO Translation VALUES('247bb49e-4884-4336-a591-f98f403fc3d2','Leadership in Education','מנהיגות בחינוך');
+INSERT INTO Translation VALUES('66200ee4-4f8d-4c00-a392-3fcf1975dce6','Systems of Linear Equations','מערכות משוואות לינאריות');
 CREATE TABLE IF NOT EXISTS "Question" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "validationStatus" TEXT NOT NULL DEFAULT 'ai_generated',
@@ -37270,6 +37273,7 @@ INSERT INTO _CourseModules VALUES('56d08cf6-dce7-4eff-83bd-3143cf1910da','fc2ee7
 INSERT INTO _CourseModules VALUES('56d08cf6-dce7-4eff-83bd-3143cf1910da','15fa8056-fb9e-44d9-84f1-9a87815c1592');
 INSERT INTO _CourseModules VALUES('56d08cf6-dce7-4eff-83bd-3143cf1910da','a4b77a95-b532-4a92-86c2-3ab9ca172de3');
 INSERT INTO _CourseModules VALUES('56d08cf6-dce7-4eff-83bd-3143cf1910da','9d2c4bb6-60bc-4063-9ebb-7281a86a34a1');
+INSERT INTO _CourseModules VALUES('15ec6466-6b06-49d0-b544-faba02ad791e','04e0438c-6072-43f7-853e-a351bd5f5a0c');
 CREATE TABLE IF NOT EXISTS "_CourseToDegree" (
     "A" TEXT NOT NULL,
     "B" TEXT NOT NULL,
