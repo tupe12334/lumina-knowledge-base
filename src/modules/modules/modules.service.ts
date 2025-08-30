@@ -277,10 +277,7 @@ export class ModulesService {
     });
 
     const filteredModules = modules.filter((module) => {
-      const questionCount = (
-
-        module as unknown as { _count: { Questions: number } }
-      )._count.Questions;
+      const questionCount = module._count.Questions;
 
       // Question count filters
       if (filters.exactQuestions !== undefined) {
