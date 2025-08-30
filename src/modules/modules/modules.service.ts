@@ -278,7 +278,7 @@ export class ModulesService {
 
     const filteredModules = modules.filter((module) => {
       const questionCount = (
-        // eslint-disable-next-line no-restricted-syntax
+
         module as unknown as { _count: { Questions: number } }
       )._count.Questions;
 
