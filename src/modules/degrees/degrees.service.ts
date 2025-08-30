@@ -95,6 +95,13 @@ export class DegreesService {
           : {}),
         ...(query && query.facultyId ? { facultyId: query.facultyId } : {}),
         ...(query && query.universityId ? { institutionId: query.universityId } : {}),
+        ...(query && query.minCourseCount !== undefined && query.minCourseCount > 0
+          ? {
+              courses: {
+                some: {},
+              },
+            }
+          : {}),
       },
       include: {
         name: true,
@@ -116,6 +123,11 @@ export class DegreesService {
         },
       },
     });
+
+    // For minCourseCount > 1, filter the results after querying
+    if (query && query.minCourseCount !== undefined && query.minCourseCount > 1) {
+      return degrees.filter(degree => degree.courses.length >= query.minCourseCount!);
+    }
 
     return degrees;
   }

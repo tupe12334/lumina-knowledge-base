@@ -2363,6 +2363,15 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "minCourseCount",
+            "required": false,
+            "in": "query",
+            "description": "Filter by minimum course count",
+            "schema": {
+              "type": "number"
+            }
           }
         ],
         "responses": {

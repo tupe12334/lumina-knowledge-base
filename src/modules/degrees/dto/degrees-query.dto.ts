@@ -14,4 +14,8 @@ export class DegreesQueryDto {
   @ApiPropertyOptional({ description: 'Filter by institution id' })
   @Field(() => String, { nullable: true })
   universityId?: string;
+
+  @ApiPropertyOptional({ description: 'Filter by minimum course count' })
+  @Field(() => Number, { nullable: true })
+  minCourseCount?: number;
 }
