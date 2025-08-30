@@ -6,8 +6,8 @@ import { UpdateCourseInput } from './dto/update-course.input';
 import { SetCourseModulesInput } from './dto/set-course-modules.input';
 import { ModulesService } from '../modules/modules.service';
 
-describe('CoursesResolver', () => {
-  let resolver: CoursesResolver;
+// Test setup helpers
+const createMockServices = () => {
   const mockCoursesService = {
     findAll: vi.fn(),
     findUnique: vi.fn(),
@@ -18,13 +18,28 @@ describe('CoursesResolver', () => {
   };
   const mockModulesService = {
     findModulesByCourseId: vi.fn(),
-  } as unknown as ModulesService;
+  } satisfies Partial<ModulesService>;
+
+  return { mockCoursesService, mockModulesService };
+};
+
+const setupResolver = (mockCoursesService: unknown, mockModulesService: ModulesService) => {
+  return new CoursesResolver(
+    mockCoursesService satisfies Partial<CoursesService>,
+    mockModulesService,
+  );
+};
+
+describe('CoursesResolver', () => {
+  let resolver: CoursesResolver;
+  let mockCoursesService: ReturnType<typeof createMockServices>['mockCoursesService'];
+  let mockModulesService: ModulesService;
 
   beforeEach(() => {
-    resolver = new CoursesResolver(
-      mockCoursesService as unknown as CoursesService,
-      mockModulesService,
-    );
+    const services = createMockServices();
+    mockCoursesService = services.mockCoursesService;
+    mockModulesService = services.mockModulesService satisfies ModulesService;
+    resolver = setupResolver(mockCoursesService, mockModulesService);
   });
 
   describe('getCourses', () => {
@@ -35,9 +50,7 @@ describe('CoursesResolver', () => {
           name: { en_text: 'Course 1', he_text: 'קורס 1' },
         },
       ];
-      (mockCoursesService.findAll as unknown as Mock).mockResolvedValue(
-        mockCourses,
-      );
+      vi.mocked(mockCoursesService.findAll).mockResolvedValue(mockCourses);
 
       const result = await resolver.getCourses();
 
@@ -52,9 +65,7 @@ describe('CoursesResolver', () => {
         id: '1',
         name: { en_text: 'Course 1', he_text: 'קורס 1' },
       };
-      (mockCoursesService.findUnique as unknown as Mock).mockResolvedValue(
-        mockCourse,
-      );
+      vi.mocked(mockCoursesService.findUnique).mockResolvedValue(mockCourse);
 
       const result = await resolver.getCourse('1');
 
@@ -69,7 +80,7 @@ describe('CoursesResolver', () => {
         prerequisiteCourseId: 'course-1',
         postrequisiteCourseId: 'course-2',
         metadata: { type: 'hard' },
-      } as unknown as CreateCourseRelationshipInput;
+      } satisfies CreateCourseRelationshipInput;
 
       const mockResult = {
         id: 'relationship-1',
@@ -78,16 +89,12 @@ describe('CoursesResolver', () => {
         metadata: '{"type":"hard"}',
       };
 
-      (
-        mockCoursesService.createCourseRelationship as unknown as Mock
-      ).mockResolvedValue(mockResult);
+      vi.mocked(mockCoursesService.createCourseRelationship).mockResolvedValue(mockResult);
 
       const result = await resolver.createCourseRelationship(input);
 
       expect(result).toBe(mockResult);
-      expect(
-        mockCoursesService.createCourseRelationship as unknown as Mock,
-      ).toHaveBeenCalledWith(input);
+      expect(mockCoursesService.createCourseRelationship).toHaveBeenCalledWith(input);
     });
   });
 
@@ -97,19 +104,15 @@ describe('CoursesResolver', () => {
         id: 'c1',
         name: { en_text: 'A', he_text: 'א' },
       };
-      (mockCoursesService.updateCourse as unknown as Mock).mockResolvedValue(
-        mockCourse,
-      );
+      vi.mocked(mockCoursesService.updateCourse).mockResolvedValue(mockCourse);
 
       const result = await resolver.updateCourse({
         courseId: 'c1',
         enText: 'B',
-      } as unknown as UpdateCourseInput);
+      } satisfies UpdateCourseInput);
 
       expect(result).toBe(mockCourse);
-      expect(
-        mockCoursesService.updateCourse as unknown as Mock,
-      ).toHaveBeenCalledWith({
+      expect(mockCoursesService.updateCourse).toHaveBeenCalledWith({
         courseId: 'c1',
         enText: 'B',
       });
@@ -119,19 +122,15 @@ describe('CoursesResolver', () => {
   describe('setCourseModules', () => {
     it('delegates to service and returns course', async () => {
       const mockCourse = { id: 'c1', name: { en_text: 'A', he_text: 'א' } };
-      (
-        mockCoursesService.setCourseModules as unknown as Mock
-      ).mockResolvedValue(mockCourse);
+      vi.mocked(mockCoursesService.setCourseModules).mockResolvedValue(mockCourse);
 
       const result = await resolver.setCourseModules({
         courseId: 'c1',
         moduleIds: ['m1', 'm2'],
-      } as unknown as SetCourseModulesInput);
+      } satisfies SetCourseModulesInput);
 
       expect(result).toBe(mockCourse);
-      expect(
-        mockCoursesService.setCourseModules as unknown as Mock,
-      ).toHaveBeenCalledWith({
+      expect(mockCoursesService.setCourseModules).toHaveBeenCalledWith({
         courseId: 'c1',
         moduleIds: ['m1', 'm2'],
       });

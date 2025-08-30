@@ -61,7 +61,9 @@ describe('REST Mutations Disabled (e2e)', () => {
 
   afterAll(async () => {
     env.ENABLE_MUTATIONS = true; // Reset for other tests
-    await app?.close();
+    if (app) {
+      await app.close();
+    }
   });
 
   it('should allow GET requests when mutations are disabled', () => {

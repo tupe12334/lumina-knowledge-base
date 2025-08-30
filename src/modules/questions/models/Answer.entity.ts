@@ -2,6 +2,10 @@ import { ObjectType, Field, ID, Float } from '@nestjs/graphql';
 import { ApiProperty } from '@nestjs/swagger';
 import { Translation } from '../../translations/models/Translation.entity';
 
+type OptionalUnitAnswer = UnitAnswer | null;
+type OptionalNumberAnswer = NumberAnswer | null;
+type OptionalBooleanAnswer = BooleanAnswer | null;
+
 @ObjectType()
 export class SelectAnswer {
   @ApiProperty()
@@ -90,13 +94,13 @@ export class Answer {
 
   @ApiProperty({ type: () => UnitAnswer, nullable: true })
   @Field(() => UnitAnswer, { nullable: true })
-  UnitAnswer?: UnitAnswer | null;
+  UnitAnswer?: OptionalUnitAnswer;
 
   @ApiProperty({ type: () => NumberAnswer, nullable: true })
   @Field(() => NumberAnswer, { nullable: true })
-  NumberAnswer?: NumberAnswer | null;
+  NumberAnswer?: OptionalNumberAnswer;
 
   @ApiProperty({ type: () => BooleanAnswer, nullable: true })
   @Field(() => BooleanAnswer, { nullable: true })
-  BooleanAnswer?: BooleanAnswer | null;
+  BooleanAnswer?: OptionalBooleanAnswer;
 }

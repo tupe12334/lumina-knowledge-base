@@ -5,6 +5,8 @@ import {
 } from '@nestjs/common';
 import { PrismaService } from '../../prisma/prisma.service';
 import { Degree } from './models/Degree.entity';
+
+type OptionalString = string | null;
 import { DegreesQueryDto } from './dto/degrees-query.dto';
 import { CreateDegreeInput } from './dto/create-degree.input';
 import { CreateManyDegreesInput } from './dto/create-many-degrees.input';
@@ -82,17 +84,17 @@ export class DegreesService {
   async findAll(query?: DegreesQueryDto): Promise<Degree[]> {
     const degrees = await this.prisma.degree.findMany({
       where: {
-        ...(query?.name
+        ...(query && query.name
           ? {
               name: {
                 en_text: {
-                  contains: query?.name,
+                  contains: query.name,
                 },
               },
             }
           : {}),
-        ...(query?.facultyId ? { facultyId: query.facultyId } : {}),
-        ...(query?.universityId ? { institutionId: query.universityId } : {}),
+        ...(query && query.facultyId ? { facultyId: query.facultyId } : {}),
+        ...(query && query.universityId ? { institutionId: query.universityId } : {}),
       },
       include: {
         name: true,
@@ -276,7 +278,7 @@ export class DegreesService {
    */
   async setFacultyForDegree(
     degreeId: string,
-    facultyId: string | null,
+    facultyId: OptionalString,
   ): Promise<Degree> {
     await this.prisma.degree.update({
       where: { id: degreeId },
@@ -473,18 +475,18 @@ export class DegreesService {
       }
 
       const degreeName =
-        degree.name?.en_text || 'No English translation available';
+        (degree.name && degree.name.en_text) || 'No English translation available';
       const universityName =
-        degree.institution?.name?.en_text || 'No English translation available';
+        (degree.institution && degree.institution.name && degree.institution.name.en_text) || 'No English translation available';
       const facultyName =
-        degree.faculty?.name?.en_text || 'Not assigned to specific faculty';
+        (degree.faculty && degree.faculty.name && degree.faculty.name.en_text) || 'Not assigned to specific faculty';
 
       // Build associated courses
       const courseCount = degree.courses.length;
       const courseNames = degree.courses
         .map(
           (course) =>
-            course.name?.en_text || 'No English translation available',
+            (course.name && course.name.en_text) || 'No English translation available',
         )
         .join(', ');
 

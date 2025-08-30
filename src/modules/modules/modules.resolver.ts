@@ -20,6 +20,9 @@ import { QuestionsService } from '../questions/questions.service';
 import { Question } from '../questions/models/Question.entity';
 import { QuestionsQueryDto } from '../questions/dto/question-query.dto';
 
+type OptionalModule = Module | null;
+type OptionalQuestionsQuery = QuestionsQueryDto | undefined;
+
 /**
  * GraphQL resolver for module-related operations.
  * Provides GraphQL queries for retrieving module information.
@@ -43,14 +46,14 @@ export class ModulesResolver {
   async getModules(
     @Args('input', { type: () => ModulesQueryInput, nullable: true })
     input?: ModulesQueryInput,
-  ): Promise<Module[]> {
+  ) {
     return this.modulesService.findAll(input);
   }
 
   /**
    * Retrieves a specific module by its ID.
    * @param id - The unique identifier of the module
-   * @returns Promise<Module | null> The module if found, null otherwise
+   * @returns Promise<OptionalModule> The module if found, null otherwise
    */
   @Query(() => Module, {
     name: 'module',
@@ -59,7 +62,7 @@ export class ModulesResolver {
   })
   async getModule(
     @Args('id', { type: () => ID, description: 'Module ID' }) id: string,
-  ): Promise<Module | null> {
+  ): Promise<OptionalModule> {
     return this.modulesService.findUnique(id);
   }
 
@@ -134,13 +137,13 @@ export class ModulesResolver {
     input?: QuestionsQueryDto,
   ): Promise<Question[]> {
     // Discard any external moduleIds to enforce this field is scoped to the current module
-    const rest = ((args: QuestionsQueryDto | undefined): QuestionsQueryDto => {
-      if (!args) return {} as QuestionsQueryDto;
+    const rest = ((args: OptionalQuestionsQuery): QuestionsQueryDto => {
+      if (!args) return {};
 
-      const { moduleIds, ...other } = args as QuestionsQueryDto & {
+      const { moduleIds, ...other } = args satisfies QuestionsQueryDto & {
         moduleIds?: string[];
       };
-      return other as QuestionsQueryDto;
+      return other;
     })(input);
     const effectiveInput: QuestionsQueryDto = {
       ...rest,

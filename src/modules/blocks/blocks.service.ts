@@ -3,7 +3,26 @@ import {
   NotFoundException,
   BadRequestException,
 } from '@nestjs/common';
-import { RelationshipMetadataKey } from '@prisma/client';
+import { RelationshipMetadataKey, Prisma } from '@prisma/client';
+
+function createValidMetadataEntries(metadata: Record<string, unknown>) {
+  const validEntries: Array<{ key: RelationshipMetadataKey; value: string }> = [];
+  for (const [key, value] of Object.entries(metadata)) {
+    if (key === RelationshipMetadataKey.REASON ||
+        key === RelationshipMetadataKey.TYPE ||
+        key === RelationshipMetadataKey.DESCRIPTION) {
+      const typedKey = key === RelationshipMetadataKey.REASON ? RelationshipMetadataKey.REASON :
+                      key === RelationshipMetadataKey.TYPE ? RelationshipMetadataKey.TYPE :
+                      RelationshipMetadataKey.DESCRIPTION;
+      validEntries.push({ key: typedKey, value: String(value) });
+    }
+  }
+  return validEntries;
+}
+
+type RelationshipWithIncludes = Prisma.BlockRelationshipGetPayload<{
+  include: { prerequisite: true; postrequisite: true; metadata: true };
+}>;
 import { PrismaService } from '../../prisma/prisma.service';
 import { Block } from './models/Block.entity';
 import { CreateBlockRelationshipInput } from './dto/create-block-relationship.input';
@@ -145,10 +164,7 @@ export class BlocksService {
         postrequisiteId: postrequisiteBlockId,
         metadata: metadata
           ? {
-              create: Object.entries(metadata).map(([key, value]) => ({
-                key: key as RelationshipMetadataKey,
-                value: String(value),
-              })),
+              create: createValidMetadataEntries(metadata),
             }
           : undefined,
       },
@@ -161,13 +177,13 @@ export class BlocksService {
 
     // Format metadata for response
     const formattedMetadata =
-      relationship.metadata?.reduce(
+      relationship.metadata ? relationship.metadata.reduce(
         (acc, meta) => {
           acc[meta.key] = meta.value;
           return acc;
         },
-        {} as Record<string, string>,
-      ) || {};
+        {} satisfies Record<string, string>,
+      ) : {};
 
     return {
       id: relationship.id,
@@ -234,13 +250,13 @@ export class BlocksService {
 
     // Format metadata for response before deletion
     const formattedMetadata =
-      existingRelationship.metadata?.reduce(
+      existingRelationship.metadata ? existingRelationship.metadata.reduce(
         (acc, meta) => {
           acc[meta.key] = meta.value;
           return acc;
         },
-        {} as Record<string, string>,
-      ) || {};
+        {} satisfies Record<string, string>,
+      ) : {};
 
     // Delete the relationship
     await this.prisma.blockRelationship.delete({

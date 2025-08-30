@@ -19,8 +19,102 @@ const isHttpServer = (value: unknown): value is Server => {
   return (
     !!value &&
     typeof value === 'object' &&
-    typeof (value as Partial<Server>).listen === 'function'
+    typeof (value as const as Partial<Server>).listen === 'function'
   );
+};
+
+// Helper function for health endpoint test
+const createHealthEndpointTest = (app: INestApplication) => {
+  it('GET /health returns ok with expected indicators', async () => {
+    const unknownServer: unknown = app.getHttpServer();
+    if (!isHttpServer(unknownServer)) {
+      throw new Error('HTTP server not started');
+    }
+    const res = await request(unknownServer).get('/health').expect(200);
+    const BodySchema = z.object({
+      status: z.literal('ok'),
+      info: z.object({
+        database: z.object({ status: z.string() }),
+        db_rows: z.object({
+          status: z.string(),
+          totalRows: z.number().optional(),
+        }),
+        memory_heap: z.object({ status: z.string() }),
+        memory_rss: z.object({ status: z.string() }),
+      }),
+    });
+    const body = BodySchema.parse(res.body);
+    expect(body).toMatchObject({
+      status: 'ok',
+      info: {
+        database: { status: 'up' },
+        db_rows: { status: 'up' },
+        memory_heap: { status: 'up' },
+        memory_rss: { status: 'up' },
+      },
+    });
+  });
+};
+
+// Helper function for liveness endpoint test
+const createLivenessEndpointTest = (app: INestApplication) => {
+  it('GET /health/liveness returns ok with memory indicators', async () => {
+    const unknownServer: unknown = app.getHttpServer();
+    if (!isHttpServer(unknownServer)) {
+      throw new Error('HTTP server not started');
+    }
+    const res = await request(unknownServer)
+      .get('/health/liveness')
+      .expect(200);
+    const BodySchema = z.object({
+      status: z.literal('ok'),
+      info: z.object({
+        memory_heap: z.object({ status: z.string() }),
+        memory_rss: z.object({ status: z.string() }),
+      }),
+    });
+    const body = BodySchema.parse(res.body);
+    expect(body).toMatchObject({
+      status: 'ok',
+      info: {
+        memory_heap: { status: 'up' },
+        memory_rss: { status: 'up' },
+      },
+    });
+  });
+};
+
+// Helper function for readiness endpoint test
+const createReadinessEndpointTest = (app: INestApplication) => {
+  it('GET /health/readiness returns ok with db rows and storage', async () => {
+    const unknownServer: unknown = app.getHttpServer();
+    if (!isHttpServer(unknownServer)) {
+      throw new Error('HTTP server not started');
+    }
+    const res = await request(unknownServer)
+      .get('/health/readiness')
+      .expect(200);
+    const BodySchema = z.object({
+      status: z.literal('ok'),
+      info: z.object({
+        database: z.object({ status: z.string() }),
+        db_rows: z.object({
+          status: z.string(),
+          totalRows: z.number().optional(),
+        }),
+        storage: z.object({ status: z.string() }),
+      }),
+    });
+    const body = BodySchema.parse(res.body);
+    expect(body).toMatchObject({
+      status: 'ok',
+      info: {
+        database: { status: 'up' },
+        db_rows: { status: 'up' },
+        storage: { status: 'up' },
+      },
+    });
+  });
 };
 
 describe('Health E2E', () => {
@@ -82,7 +176,9 @@ describe('Health E2E', () => {
   });
 
   afterAll(async () => {
-    await app?.close();
+    if (app) {
+      await app.close();
+    }
   });
 
   it('GET /health returns ok with expected indicators', async () => {

@@ -8,11 +8,11 @@ import { NotFoundException } from '@nestjs/common';
 vi.mock('../../../generated/client', async () => {
   const actual = (await vi.importActual(
     '../../../generated/client',
-  )) as unknown as typeof client;
+  )) satisfies typeof client;
 
   return {
     ...actual,
-    PrismaClient: createPrismock(actual.Prisma) as typeof client.PrismaClient,
+    PrismaClient: createPrismock(actual.Prisma) satisfies typeof client.PrismaClient,
   };
 });
 
@@ -42,8 +42,8 @@ describe('ModulesService', () => {
 
       const result = await service.findUnique('m1');
 
-      expect(result?.id).toBe('m1');
-      expect(result?.name.en_text).toBe('module');
+      expect(result && result.id).toBe('m1');
+      expect(result && result.name.en_text).toBe('module');
     });
   });
 

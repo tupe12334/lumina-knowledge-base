@@ -9,25 +9,25 @@ import { PrismaService } from '../../prisma/prisma.service';
 import { CreateCourseRelationshipInput } from './dto/create-course-relationship.input';
 import { DeleteCourseRelationshipInput } from './dto/delete-course-relationship.input';
 
-describe('CoursesService', () => {
-  let service: CoursesService;
-  const mockPrismaService = {
-    course: {
-      findMany: vi.fn(),
-      findUnique: vi.fn(),
-    },
-    blockRelationship: {
-      findUnique: vi.fn(),
-      create: vi.fn(),
-      delete: vi.fn(),
-    },
-  };
+// Test helpers
+const createMockPrismaService = () => ({
+  course: {
+    findMany: vi.fn(),
+    findUnique: vi.fn(),
+  },
+  blockRelationship: {
+    findUnique: vi.fn(),
+    create: vi.fn(),
+    delete: vi.fn(),
+  },
+});
 
-  beforeEach(() => {
-    service = new CoursesService(mockPrismaService as unknown as PrismaService);
-  });
+const createServiceForTests = (mockPrisma: ReturnType<typeof createMockPrismaService>) => {
+  return new CoursesService(mockPrisma satisfies PrismaService);
+};
 
-  it('returns courses from prisma', async () => {
+const createBasicCourseTests = (service: CoursesService, mockPrisma: ReturnType<typeof createMockPrismaService>) => ({
+  testReturnsCoursesFromPrisma: async () => {
     const course = {
       id: '1',
       name: { en_text: 'course', he_text: 'קורס' },
@@ -38,7 +38,7 @@ describe('CoursesService', () => {
         name: { en_text: 'institution', he_text: 'מוסד' },
       },
     };
-    mockPrismaService.course.findMany.mockResolvedValue([course]);
+    mockPrisma.course.findMany.mockResolvedValue([course]);
 
     const result = await service.findAll();
 
@@ -46,8 +46,26 @@ describe('CoursesService', () => {
     expect(result[0].name.en_text).toBe('course');
     expect(result[0].institution).toBeDefined();
     expect(result[0].institution!.name.en_text).toBe('institution');
+  },
+});
+
+
+describe('CoursesService', () => {
+  let service: CoursesService;
+  let mockPrismaService: ReturnType<typeof createMockPrismaService>;
+  let basicTests: ReturnType<typeof createBasicCourseTests>;
+
+  beforeEach(() => {
+    mockPrismaService = createMockPrismaService();
+    service = createServiceForTests(mockPrismaService);
+    basicTests = createBasicCourseTests(service, mockPrismaService);
   });
 
+  it('returns courses from prisma', async () => {
+    await basicTests.testReturnsCoursesFromPrisma();
+  });
+
+  // Call setup functions after beforeEach has run
   describe('generateSummary', () => {
     it('should generate a comprehensive course summary', async () => {
       const mockCourse = {

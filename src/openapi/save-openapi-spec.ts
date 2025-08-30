@@ -2,6 +2,9 @@ import { OpenAPIObject } from '@nestjs/swagger';
 import { writeFile } from 'fs/promises';
 import { resolve } from 'path';
 
+type OptionalDocument = OpenAPIObject | undefined;
+type OptionalFilePath = string | undefined;
+
 /**
  * Write the OpenAPI specification to a file.
  *
@@ -9,8 +12,8 @@ import { resolve } from 'path';
  * @param filePath - Path to the output file.
  */
 export const saveOpenapiSpec = async (
-  document: OpenAPIObject | undefined,
-  filePath: string | undefined,
+  document: OptionalDocument,
+  filePath: OptionalFilePath,
 ): Promise<void> => {
   if (!document || !filePath) {
     return;

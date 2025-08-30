@@ -7,7 +7,7 @@ vi.mock('@nestjs/swagger', async () => {
   return {
     ...actual,
     SwaggerModule: {
-      createDocument: vi.fn(() => ({}) as OpenAPIObject),
+      createDocument: vi.fn(() => ({} satisfies OpenAPIObject)),
       setup: vi.fn(),
     },
   };
@@ -23,8 +23,8 @@ const saveOpenapiSpecMock = vi.mocked(saveOpenapiSpec);
 
 describe('setupSwagger', () => {
   it('configures swagger module', () => {
-    const app = { getHttpAdapter: vi.fn() } as unknown as INestApplication;
-    const document = {} as unknown as OpenAPIObject;
+    const app = { getHttpAdapter: vi.fn() } as const as unknown as INestApplication;
+    const document = {} satisfies OpenAPIObject;
     const createDocumentSpy = vi
       .spyOn(SwaggerModule, 'createDocument')
       .mockReturnValue(document);

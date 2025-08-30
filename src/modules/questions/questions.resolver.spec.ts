@@ -16,7 +16,7 @@ describe('QuestionsResolver', () => {
       findUnique: vi.fn(),
     };
     resolver = new QuestionsResolver(
-      serviceMock as unknown as QuestionsService,
+      serviceMock as const as unknown as QuestionsService,
     );
   });
 

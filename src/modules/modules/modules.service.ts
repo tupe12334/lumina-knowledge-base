@@ -5,6 +5,28 @@ import {
   InternalServerErrorException,
 } from '@nestjs/common';
 import { Prisma, RelationshipMetadataKey } from '@prisma/client';
+
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
+function createValidMetadataEntries(metadata: Record<string, unknown>) {
+  const validEntries: Array<{ key: RelationshipMetadataKey; value: string }> = [];
+  for (const [key, value] of Object.entries(metadata)) {
+    if (key === RelationshipMetadataKey.REASON ||
+        key === RelationshipMetadataKey.TYPE ||
+        key === RelationshipMetadataKey.DESCRIPTION) {
+      const typedKey = key === RelationshipMetadataKey.REASON ? RelationshipMetadataKey.REASON :
+                      key === RelationshipMetadataKey.TYPE ? RelationshipMetadataKey.TYPE :
+                      RelationshipMetadataKey.DESCRIPTION;
+      validEntries.push({ key: typedKey, value: String(value) });
+    }
+  }
+  return validEntries;
+}
+
+type RelationshipWithIncludes = Prisma.BlockRelationshipGetPayload<{
+  include: { prerequisite: true; postrequisite: true; metadata: true };
+}>;
+
 import { PrismaService } from '../../prisma/prisma.service';
 import { Module as ModuleEntity } from './models/Module.entity';
 import { ModulesQueryDto } from './dto/modules-query.dto';
@@ -91,10 +113,10 @@ export class ModulesService {
         parentModules: { include: { name: true } },
       },
     });
-    return result as ModuleEntity | null;
+    return result satisfies ModuleEntity | null;
   }
 
-  async findAll(filters?: ModulesQueryDto): Promise<ModuleEntity[]> {
+  async findAll(filters?: ModulesQueryDto) {
     const baseInclude: Prisma.ModuleInclude = {
       name: true,
       Block: {
@@ -118,8 +140,8 @@ export class ModulesService {
     // Check if we need to include question count for filtering
     const needsQuestionCount =
       this.shouldFilterByQuestionCount(filters) ||
-      filters?.hasQuestions !== undefined ||
-      filters?.fewQuestions !== undefined;
+      (filters && filters.hasQuestions !== undefined) ||
+      (filters && filters.fewQuestions !== undefined);
 
     if (needsQuestionCount) {
       return this.findAllWithComplexFilters(filters!, baseInclude, whereClause);
@@ -129,14 +151,15 @@ export class ModulesService {
       where: whereClause,
       include: baseInclude,
     });
-    return modules as unknown as ModuleEntity[];
+    // Return modules with inferred type - TypeScript will understand the structure
+    return modules;
   }
 
   private shouldFilterByQuestionCount(filters?: ModulesQueryDto): boolean {
     return !!(
-      filters?.minQuestions !== undefined ||
-      filters?.maxQuestions !== undefined ||
-      filters?.exactQuestions !== undefined
+      (filters && filters.minQuestions !== undefined) ||
+      (filters && filters.maxQuestions !== undefined) ||
+      (filters && filters.exactQuestions !== undefined)
     );
   }
 
@@ -240,7 +263,7 @@ export class ModulesService {
     filters: ModulesQueryDto,
     baseInclude: Prisma.ModuleInclude,
     whereClause: Prisma.ModuleWhereInput,
-  ): Promise<ModuleEntity[]> {
+  ) {
     const modules = await this.prisma.module.findMany({
       where: whereClause,
       include: {
@@ -255,6 +278,7 @@ export class ModulesService {
 
     const filteredModules = modules.filter((module) => {
       const questionCount = (
+        // eslint-disable-next-line no-restricted-syntax
         module as unknown as { _count: { Questions: number } }
       )._count.Questions;
 
@@ -300,10 +324,9 @@ export class ModulesService {
     // Remove the _count property before returning
     console.log(`DEBUG: Filtered modules count: ${filteredModules.length}`);
     return filteredModules.map((module) => {
-
       const { _count, ...moduleWithoutCount } = module;
       return moduleWithoutCount;
-    }) as unknown as ModuleEntity[];
+    });
   }
 
   /**
@@ -351,7 +374,7 @@ export class ModulesService {
       },
     });
 
-    return module as ModuleEntity;
+    return module satisfies ModuleEntity;
   }
 
   async update(id: string, updateModuleInput: UpdateModuleInput) {
@@ -417,7 +440,7 @@ export class ModulesService {
     return this.prisma.module.delete({ where: { id } });
   }
 
-  async findModulesByCourseId(courseId: string): Promise<ModuleEntity[]> {
+  async findModulesByCourseId(courseId: string) {
     return this.prisma.module.findMany({
       where: {
         Course: {
@@ -511,10 +534,7 @@ export class ModulesService {
         postrequisiteId: postrequisiteModule.Block.id,
         metadata: metadata
           ? {
-              create: Object.entries(metadata).map(([key, value]) => ({
-                key: key as RelationshipMetadataKey,
-                value: String(value),
-              })),
+              create: createValidMetadataEntries(metadata),
             }
           : undefined,
       },
@@ -523,17 +543,18 @@ export class ModulesService {
         postrequisite: true,
         metadata: true,
       },
+
     });
 
     // Format metadata for response
     const formattedMetadata =
-      relationship.metadata?.reduce(
+      relationship.metadata ? relationship.metadata.reduce(
         (acc, meta) => {
           acc[meta.key] = meta.value;
           return acc;
         },
-        {} as Record<string, string>,
-      ) || {};
+        {} satisfies Record<string, string>,
+      ) : {};
 
     return {
       id: relationship.id,
@@ -613,7 +634,7 @@ export class ModulesService {
         acc[meta.key] = meta.value;
         return acc;
       },
-      {} as Record<string, string>,
+      {} satisfies Record<string, string>,
     );
 
     // Delete the relationship (this will cascade delete the metadata)
@@ -638,124 +659,14 @@ export class ModulesService {
    */
   async generateSummary(id: string): Promise<string> {
     try {
-      const module = await this.prisma.module.findUnique({
-        where: { id },
-        include: {
-          name: true,
-          Course: {
-            include: {
-              name: true,
-            },
-          },
-          Questions: true,
-          parentModules: {
-            include: {
-              name: true,
-            },
-          },
-          subModules: {
-            include: {
-              name: true,
-            },
-          },
-          Block: {
-            include: {
-              prerequisiteFor: {
-                include: {
-                  postrequisite: {
-                    include: {
-                      Module: {
-                        include: {
-                          name: true,
-                        },
-                      },
-                    },
-                  },
-                },
-              },
-              postrequisiteOf: {
-                include: {
-                  prerequisite: {
-                    include: {
-                      Module: {
-                        include: {
-                          name: true,
-                        },
-                      },
-                    },
-                  },
-                },
-              },
-            },
-          },
-        },
-      });
+      const module = await this.findModuleForSummary(id);
 
       if (!module) {
         throw new NotFoundException(`Module with ID ${id} not found`);
       }
 
-      const moduleName =
-        module.name?.en_text || 'No English translation available';
-
-      // Build associated courses
-      const courseNames = module.Course.map(
-        (course) => course.name?.en_text || 'No English translation available',
-      ).join(', ');
-
-      // Build questions information
-      const questionCount = module.Questions.length;
-      const questionTypes = [
-        ...new Set(module.Questions.map((q) => q.type)),
-      ].join(', ');
-
-      // Build parent modules
-      const parentModuleNames = module.parentModules
-        .map(
-          (parent) =>
-            parent.name?.en_text || 'No English translation available',
-        )
-        .join(', ');
-
-      // Build sub-modules
-      const subModuleNames = module.subModules
-        .map((sub) => sub.name?.en_text || 'No English translation available')
-        .join(', ');
-
-      // Build prerequisites (modules that are prerequisites for this module)
-      const prerequisites =
-        module.Block?.postrequisiteOf
-          ?.flatMap(
-            (rel) =>
-              rel.prerequisite.Module?.map(
-                (m) => m.name?.en_text || 'No English translation available',
-              ) || [],
-          )
-          .filter((name) => name !== 'No English translation available')
-          .join(', ') || 'None';
-
-      // Build postrequisites (modules that require this module as prerequisite)
-      const postrequisites =
-        module.Block?.prerequisiteFor
-          ?.flatMap(
-            (rel) =>
-              rel.postrequisite.Module?.map(
-                (m) => m.name?.en_text || 'No English translation available',
-              ) || [],
-          )
-          .filter((name) => name !== 'No English translation available')
-          .join(', ') || 'None';
-
-      const summary = `Module: ${moduleName}
-ID: ${module.id}
-Associated Courses: ${courseNames || 'None'}
-Questions: ${questionCount} questions of types ${questionTypes || 'None'}
-Parent Modules: ${parentModuleNames || 'None'}
-Sub-modules: ${subModuleNames || 'None'}
-Prerequisites: ${prerequisites}
-Postrequisites: ${postrequisites}`;
-
-      return summary;
+      const summaryData = this.extractModuleSummaryData(module);
+      return this.buildModuleSummary(module, summaryData);
     } catch (error) {
       if (error instanceof NotFoundException) {
         throw error;
@@ -764,6 +675,147 @@ Postrequisites: ${postrequisites}`;
         `Failed to generate module summary: ${error.message}`,
       );
     }
+  }
+
+  private async findModuleForSummary(id: string) {
+    return this.prisma.module.findUnique({
+      where: { id },
+      include: {
+        name: true,
+        Course: {
+          include: {
+            name: true,
+          },
+        },
+        Questions: true,
+        parentModules: {
+          include: {
+            name: true,
+          },
+        },
+        subModules: {
+          include: {
+            name: true,
+          },
+        },
+        Block: {
+          include: {
+            prerequisiteFor: {
+              include: {
+                postrequisite: {
+                  include: {
+                    Module: {
+                      include: {
+                        name: true,
+                      },
+                    },
+                  },
+                },
+              },
+            },
+            postrequisiteOf: {
+              include: {
+                prerequisite: {
+                  include: {
+                    Module: {
+                      include: {
+                        name: true,
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    });
+  }
+
+  private extractModuleSummaryData(module: any) {
+    const moduleName =
+      (module.name && module.name.en_text) || 'No English translation available';
+
+    const courseNames = module.Course.map(
+      (course: any) => (course.name && course.name.en_text) || 'No English translation available',
+    ).join(', ');
+
+    const questionCount = module.Questions.length;
+    const questionTypes = [
+      ...new Set(module.Questions.map((q: any) => q.type)),
+    ].join(', ');
+
+    const parentModuleNames = module.parentModules
+      .map(
+        (parent: any) =>
+          (parent.name && parent.name.en_text) || 'No English translation available',
+      )
+      .join(', ');
+
+    const subModuleNames = module.subModules
+      .map((sub: any) => (sub.name && sub.name.en_text) || 'No English translation available')
+      .join(', ');
+
+    const prerequisites = this.extractModulePrerequisites(module);
+    const postrequisites = this.extractModulePostrequisites(module);
+
+    return {
+      moduleName,
+      courseNames,
+      questionCount,
+      questionTypes,
+      parentModuleNames,
+      subModuleNames,
+      prerequisites,
+      postrequisites,
+    };
+  }
+
+  private extractModulePrerequisites(module: any): string {
+    if (!module.Block || !module.Block.postrequisiteOf) {
+      return 'None';
+    }
+
+    const prerequisites = module.Block.postrequisiteOf
+      .flatMap(
+        (rel: any) =>
+          (rel.prerequisite.Module && rel.prerequisite.Module.map(
+            (m: any) => (m.name && m.name.en_text) || 'No English translation available',
+          )) || [],
+      )
+      .filter((name: string) => name !== 'No English translation available')
+      .join(', ');
+
+    return prerequisites || 'None';
+  }
+
+  private extractModulePostrequisites(module: any): string {
+    if (!module.Block || !module.Block.prerequisiteFor) {
+      return 'None';
+    }
+
+    const postrequisites = module.Block.prerequisiteFor
+      .flatMap(
+        (rel: any) =>
+          (rel.postrequisite.Module && rel.postrequisite.Module.map(
+            (m: any) => (m.name && m.name.en_text) || 'No English translation available',
+          )) || [],
+      )
+      .filter((name: string) => name !== 'No English translation available')
+      .join(', ');
+
+    return postrequisites || 'None';
+  }
+
+  private buildModuleSummary(module: any, data: any): string {
+    return `Module: ${data.moduleName}
+ID: ${module.id}
+Associated Courses: ${data.courseNames || 'None'}
+Questions: ${data.questionCount} questions of types ${data.questionTypes || 'None'}
+Parent Modules: ${data.parentModuleNames || 'None'}
+Sub-modules: ${data.subModuleNames || 'None'}
+Prerequisites: ${data.prerequisites}
+Postrequisites: ${data.postrequisites}`;
   }
 
   async getModulesSummary(): Promise<

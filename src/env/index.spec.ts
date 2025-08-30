@@ -15,22 +15,25 @@ describe('env/loadEnv', () => {
   });
 
   it('applies default PORT and ENABLE_MUTATIONS when missing', () => {
-    const env = loadEnv({} as NodeJS.ProcessEnv);
+    const emptyEnv: NodeJS.ProcessEnv = {};
+    const env = loadEnv(emptyEnv);
     expect(env.PORT).toBe(3000);
     expect(env.ENABLE_MUTATIONS).toBe(false);
     expect(env.CORS_ORIGIN).toBeUndefined();
   });
 
   it('throws on invalid PORT value', () => {
-    expect(() => loadEnv({ PORT: '0' } as NodeJS.ProcessEnv)).toThrowError();
+    const invalidPortEnv: NodeJS.ProcessEnv = { PORT: '0' };
+    expect(() => loadEnv(invalidPortEnv)).toThrowError();
     expect(() =>
-      loadEnv({ PORT: '70000' } as NodeJS.ProcessEnv),
+      loadEnv({ PORT: '70000' } satisfies Partial<NodeJS.ProcessEnv>),
     ).toThrowError();
   });
   it('parses CORS_ORIGIN with zod into string[] when set', () => {
-    const env = loadEnv({
+    const corsEnv: NodeJS.ProcessEnv = {
       CORS_ORIGIN: 'http://a.com, http://b.com,https://c.com ',
-    } as NodeJS.ProcessEnv);
+    };
+    const env = loadEnv(corsEnv);
     expect(env.CORS_ORIGIN).toEqual([
       'http://a.com',
       'http://b.com',

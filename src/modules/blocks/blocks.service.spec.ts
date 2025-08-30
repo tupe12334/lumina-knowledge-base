@@ -8,13 +8,12 @@ import { DeleteBlockRelationshipInput } from './dto/delete-block-relationship.in
 import { BadRequestException, NotFoundException } from '@nestjs/common';
 
 vi.mock('@prisma/client', async () => {
-  const actual = (await vi.importActual(
-    '@prisma/client',
-  )) as unknown as typeof client;
+  const actual = await vi.importActual('@prisma/client');
+  const actualClient = actual satisfies typeof client;
 
   return {
-    ...actual,
-    PrismaClient: createPrismock(actual.Prisma) as typeof client.PrismaClient,
+    ...actualClient,
+    PrismaClient: createPrismock(actualClient.Prisma),
   };
 });
 
@@ -26,41 +25,55 @@ beforeEach(() => {
   service = new BlocksService(prisma);
 });
 
+// Test helper functions
+const setupBlockTestData = async () => {
+  const moduleName = await prisma.translation.create({
+    data: { en_text: 'Module', he_text: 'מודול' },
+  });
+
+  const block = await prisma.block.create({ data: { id: 'b1' } });
+  await prisma.block.create({ data: { id: 'b2' } });
+  await prisma.block.update({
+    where: { id: 'b1' },
+    data: { postrequisiteOf: { connect: { id: 'b2' } } },
+  });
+
+  await prisma.module.create({
+    data: { id: 'm1', translationId: moduleName.id, blockId: block.id },
+  });
+
+  return { moduleName, block };
+};
+
+const validateBlockResult = (result: unknown) => {
+  expect(result).toBeDefined();
+
+  type WithModule = typeof result & {
+    id?: string;
+    Module?: Array<{
+      id: string;
+      name: { en_text: string; he_text: string };
+    }>;
+    prerequisiteFor?: unknown[];
+    postrequisiteOf?: unknown[];
+  };
+
+  const withModule = result satisfies WithModule;
+
+  expect(withModule && withModule.id).toBe('b1');
+  expect(withModule && withModule.Module).toHaveLength(1);
+  expect(withModule && withModule.Module && withModule.Module[0] && withModule.Module[0].id).toBe('m1');
+  expect(withModule && withModule.Module && withModule.Module[0] && withModule.Module[0].name && withModule.Module[0].name.en_text).toBe('Module');
+  expect(withModule && withModule.Module && withModule.Module[0] && withModule.Module[0].name && withModule.Module[0].name.he_text).toBe('מודול');
+  expect(withModule && withModule.prerequisiteFor).toEqual([]);
+  expect(withModule && withModule.postrequisiteOf).toEqual([]);
+};
+
 describe('BlocksService', () => {
   it('returns block from prisma', async () => {
-    const moduleName = await prisma.translation.create({
-      data: { en_text: 'Module', he_text: 'מודול' },
-    });
-
-    const block = await prisma.block.create({ data: { id: 'b1' } });
-    await prisma.block.create({ data: { id: 'b2' } });
-    await prisma.block.update({
-      where: { id: 'b1' },
-      data: { postrequisiteOf: { connect: { id: 'b2' } } },
-    });
-
-    await prisma.module.create({
-      data: { id: 'm1', translationId: moduleName.id, blockId: block.id },
-    });
-
+    await setupBlockTestData();
     const result = await service.findUnique('b1');
-
-    expect(result).toBeDefined();
-    expect(result?.id).toBe('b1');
-    // Module is the actual property name from Prisma (capital M)
-    type WithModule = typeof result & {
-      Module?: Array<{
-        id: string;
-        name: { en_text: string; he_text: string };
-      }>;
-    };
-    const withModule = result as unknown as WithModule;
-    expect(withModule?.Module).toHaveLength(1);
-    expect(withModule?.Module?.[0]?.id).toBe('m1');
-    expect(withModule?.Module?.[0]?.name?.en_text).toBe('Module');
-    expect(withModule?.Module?.[0]?.name?.he_text).toBe('מודול');
-    expect(result?.prerequisiteFor).toEqual([]);
-    expect(result?.postrequisiteOf).toEqual([]);
+    validateBlockResult(result);
   });
 
   describe('createBlockRelationship', () => {

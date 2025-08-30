@@ -5,17 +5,17 @@ import {
 } from 'src/system/data-hash/data-hash.service';
 
 class FakePrisma implements PrismaQueryable {
-  _queryRaw = vi.fn(() => Promise.resolve([] as unknown));
-  _queryRawUnsafe = vi.fn(() => Promise.resolve([] as unknown));
+  _queryRaw = vi.fn(() => Promise.resolve([]));
+  _queryRawUnsafe = vi.fn(() => Promise.resolve([]));
 
   $queryRaw<T = unknown>(...args: unknown[]): Promise<T> {
-    return this._queryRaw.apply(null, args) as Promise<T>;
+    return this._queryRaw.apply(null, args) as const as Promise<T>;
   }
   $queryRawUnsafe<T = unknown>(
     query: string,
     ...params: unknown[]
   ): Promise<T> {
-    return this._queryRawUnsafe.apply(null, [query, ...params]) as Promise<T>;
+    return this._queryRawUnsafe.apply(null, [query, ...params]) as const as Promise<T>;
   }
 }
 

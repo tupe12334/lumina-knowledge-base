@@ -25,7 +25,7 @@ export class DatabaseService {
       return stdout;
     } catch (error) {
       throw new Error(
-        `Failed to create database dump: ${(error as Error).message}`,
+        `Failed to create database dump: ${error instanceof Error ? error.message : String(error)}`,
       );
     }
   }
@@ -82,7 +82,7 @@ export class DatabaseService {
       };
     } catch (error) {
       throw new Error(
-        `Failed to get database info: ${(error as Error).message}`,
+        `Failed to get database info: ${error instanceof Error ? error.message : String(error)}`,
       );
     }
   }

@@ -42,9 +42,9 @@ describe('DbRowsHealthIndicator', () => {
       selectAnswer: mockDelegate(10),
       unitAnswer: mockDelegate(10),
       numberAnswer: mockDelegate(10),
-    } as PrismaPickMock as unknown as PrismaService);
+    } satisfies PrismaPickMock as const as unknown as PrismaService);
 
-    const res = (await indicator.isHealthy('db_rows', 100)) as unknown as {
+    const res = (await indicator.isHealthy('db_rows', 100)) as const as unknown as {
       db_rows: { status: string; totalRows: number };
     };
     expect(res.db_rows.status).toBe('up');
@@ -68,7 +68,7 @@ describe('DbRowsHealthIndicator', () => {
       selectAnswer: mockDelegate(1),
       unitAnswer: mockDelegate(1),
       numberAnswer: mockDelegate(1),
-    } as PrismaPickMock as unknown as PrismaService);
+    } satisfies PrismaPickMock as const as unknown as PrismaService);
 
     await expect(indicator.isHealthy('db_rows', 100)).rejects.toMatchObject({
       message: 'db_rows',

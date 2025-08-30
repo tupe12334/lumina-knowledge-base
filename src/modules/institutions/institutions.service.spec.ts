@@ -6,44 +6,22 @@ import {
   InternalServerErrorException,
 } from '@nestjs/common';
 
-describe('InstitutionsService', () => {
-  let service: InstitutionsService;
-  const mockPrismaService = {
-    institution: {
-      findMany: vi.fn(),
-      findUnique: vi.fn(),
-    },
-  };
+// Test helpers
+const createMockInstitutionsPrisma = () => ({
+  institution: {
+    findMany: vi.fn(),
+    findUnique: vi.fn(),
+  },
+});
 
-  beforeEach(() => {
-    service = new InstitutionsService(
-      mockPrismaService as unknown as PrismaService,
-    );
-  });
+const createInstitutionsService = (mockPrisma: ReturnType<typeof createMockInstitutionsPrisma>) => {
+  return new InstitutionsService(
+    mockPrisma satisfies PrismaService,
+  );
+};
 
-  it('returns institutions from prisma', async () => {
-    const institution = {
-      id: '1',
-      name: { en_text: 'test', he_text: 'טסט' },
-      courses: [
-        {
-          id: 'c1',
-          name: { en_text: 'course', he_text: 'קורס' },
-          institutionId: '1',
-          publishedAt: new Date(),
-        },
-      ],
-    };
-    mockPrismaService.institution.findMany.mockResolvedValue([institution]);
-
-    const result = await service.findAll();
-
-    expect(result).toHaveLength(1);
-    expect(result[0].name.en_text).toBe('test');
-    expect(result[0].courses).toHaveLength(1);
-    expect(result[0].courses?.[0]?.name.en_text).toBe('course');
-  });
-
+// Helper function to create generateSummary tests
+const createGenerateSummaryTests = (service: InstitutionsService, mockPrismaService: ReturnType<typeof createMockInstitutionsPrisma>) => {
   describe('generateSummary', () => {
     it('should generate a comprehensive institution summary', async () => {
       const mockInstitution = {
@@ -146,4 +124,39 @@ describe('InstitutionsService', () => {
       );
     });
   });
+};
+
+describe('InstitutionsService', () => {
+  let service: InstitutionsService;
+  let mockPrismaService: ReturnType<typeof createMockInstitutionsPrisma>;
+
+  beforeEach(() => {
+    mockPrismaService = createMockInstitutionsPrisma();
+    service = createInstitutionsService(mockPrismaService);
+  });
+
+  it('returns institutions from prisma', async () => {
+    const institution = {
+      id: '1',
+      name: { en_text: 'test', he_text: 'טסט' },
+      courses: [
+        {
+          id: 'c1',
+          name: { en_text: 'course', he_text: 'קורס' },
+          institutionId: '1',
+          publishedAt: new Date(),
+        },
+      ],
+    };
+    mockPrismaService.institution.findMany.mockResolvedValue([institution]);
+
+    const result = await service.findAll();
+
+    expect(result).toHaveLength(1);
+    expect(result[0].name.en_text).toBe('test');
+    expect(result[0].courses).toHaveLength(1);
+    expect(result[0].courses && result[0].courses[0] && result[0].courses[0].name.en_text).toBe('course');
+  });
+
+  createGenerateSummaryTests(service, mockPrismaService);
 });

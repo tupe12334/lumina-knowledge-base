@@ -13,10 +13,10 @@ export class Answer implements PrismaAnswer {
   SelectAnswer?: SelectAnswer[];
 
   @ApiProperty({ type: () => UnitAnswer, required: false })
-  UnitAnswer?: UnitAnswer | null;
+  UnitAnswer?: OptionalUnitAnswer;
 
   @ApiProperty({ type: () => NumberAnswer, required: false })
-  NumberAnswer?: NumberAnswer | null;
+  NumberAnswer?: OptionalNumberAnswer;
 }
 
 export class SelectAnswer {
@@ -60,3 +60,7 @@ export class NumberAnswer {
   @ApiProperty()
   answerId!: string;
 }
+
+type OptionalUnitAnswer = UnitAnswer | null;
+type OptionalNumberAnswer = NumberAnswer | null;
+

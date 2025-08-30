@@ -33,6 +33,15 @@ import { DeleteModuleRelationshipInput } from './dto/delete-module-relationship.
 import { Module } from './models/Module.entity';
 import { ModuleRelationshipResult } from './dto/module-relationship-result.dto';
 
+// Type declarations for query parameter conversions
+type BooleanOrString = boolean | string;
+type FewQuestionsQuery = { fewQuestions?: BooleanOrString };
+type HasQuestionsQuery = { hasQuestions?: BooleanOrString };
+type HasPrerequisitesQuery = { hasPrerequisites?: BooleanOrString };
+type HasPostrequisitesQuery = { hasPostrequisites?: BooleanOrString };
+type HasSubModulesQuery = { hasSubModules?: BooleanOrString };
+type HasParentModulesQuery = { hasParentModules?: BooleanOrString };
+
 @ApiTags('modules')
 @Controller('modules')
 export class ModulesController {
@@ -118,28 +127,28 @@ export class ModulesController {
     const convertedQuery = { ...query };
 
     if (typeof query.fewQuestions === 'string') {
-      (convertedQuery as Record<string, unknown>).fewQuestions =
-        (query.fewQuestions as string).toLowerCase() === 'true';
+      const typedQuery = convertedQuery satisfies FewQuestionsQuery;
+      typedQuery.fewQuestions = String(query.fewQuestions).toLowerCase() === 'true';
     }
     if (typeof query.hasQuestions === 'string') {
-      (convertedQuery as Record<string, unknown>).hasQuestions =
-        (query.hasQuestions as string).toLowerCase() === 'true';
+      const typedQuery = convertedQuery satisfies HasQuestionsQuery;
+      typedQuery.hasQuestions = String(query.hasQuestions).toLowerCase() === 'true';
     }
     if (typeof query.hasPrerequisites === 'string') {
-      (convertedQuery as Record<string, unknown>).hasPrerequisites =
-        (query.hasPrerequisites as string).toLowerCase() === 'true';
+      const typedQuery = convertedQuery satisfies HasPrerequisitesQuery;
+      typedQuery.hasPrerequisites = String(query.hasPrerequisites).toLowerCase() === 'true';
     }
     if (typeof query.hasPostrequisites === 'string') {
-      (convertedQuery as Record<string, unknown>).hasPostrequisites =
-        (query.hasPostrequisites as string).toLowerCase() === 'true';
+      const typedQuery = convertedQuery satisfies HasPostrequisitesQuery;
+      typedQuery.hasPostrequisites = String(query.hasPostrequisites).toLowerCase() === 'true';
     }
     if (typeof query.hasSubModules === 'string') {
-      (convertedQuery as Record<string, unknown>).hasSubModules =
-        (query.hasSubModules as string).toLowerCase() === 'true';
+      const typedQuery = convertedQuery satisfies HasSubModulesQuery;
+      typedQuery.hasSubModules = String(query.hasSubModules).toLowerCase() === 'true';
     }
     if (typeof query.hasParentModules === 'string') {
-      (convertedQuery as Record<string, unknown>).hasParentModules =
-        (query.hasParentModules as string).toLowerCase() === 'true';
+      const typedQuery = convertedQuery satisfies HasParentModulesQuery;
+      typedQuery.hasParentModules = String(query.hasParentModules).toLowerCase() === 'true';
     }
 
     return this.modulesService.findAll(convertedQuery);

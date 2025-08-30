@@ -8,52 +8,56 @@ import {
   InternalServerErrorException,
 } from '@nestjs/common';
 
-describe('QuestionsService', () => {
-  let service: QuestionsService;
-  let mockPrismaService: {
+// Mock service type
+type MockPrismaService = {
+  question: {
+    findMany: ReturnType<typeof vi.fn>;
+    findUnique: ReturnType<typeof vi.fn>;
+  };
+  questionPart: {
+    findMany: ReturnType<typeof vi.fn>;
+  };
+  module: {
+    findUnique: ReturnType<typeof vi.fn>;
+  };
+};
+
+// Helper function to create and configure the service
+const createQuestionsServiceForTests = async () => {
+  const mockPrismaService: MockPrismaService = {
     question: {
-      findMany: ReturnType<typeof vi.fn>;
-      findUnique: ReturnType<typeof vi.fn>;
-    };
+      findMany: vi.fn(),
+      findUnique: vi.fn(),
+    },
     questionPart: {
-      findMany: ReturnType<typeof vi.fn>;
-    };
+      findMany: vi.fn(),
+    },
     module: {
-      findUnique: ReturnType<typeof vi.fn>;
-    };
+      findUnique: vi.fn(),
+    },
   };
 
-  beforeEach(async () => {
-    mockPrismaService = {
-      question: {
-        findMany: vi.fn(),
-        findUnique: vi.fn(),
+  const module: TestingModule = await Test.createTestingModule({
+    providers: [
+      QuestionsService,
+      {
+        provide: PrismaService,
+        useValue: mockPrismaService,
       },
-      questionPart: {
-        findMany: vi.fn(),
-      },
-      module: {
-        findUnique: vi.fn(),
-      },
-    };
+    ],
+  }).compile();
 
-    const module: TestingModule = await Test.createTestingModule({
-      providers: [
-        QuestionsService,
-        {
-          provide: PrismaService,
-          useValue: mockPrismaService,
-        },
-      ],
-    }).compile();
+  const service = module.get<QuestionsService>(QuestionsService);
 
-    service = module.get<QuestionsService>(QuestionsService);
+  // Manually set the prisma property since NestJS DI might not work properly in tests
+  (service as const as unknown as { prisma: MockPrismaService }).prisma =
+    mockPrismaService;
 
-    // Manually set the prisma property since NestJS DI might not work properly in tests
-    (service as unknown as { prisma: typeof mockPrismaService }).prisma =
-      mockPrismaService;
-  });
+  return { service, mockPrismaService };
+};
 
+// Helper function for basic findAll tests
+const createBasicFindAllTests = (service: QuestionsService, mockPrismaService: MockPrismaService) => {
   it('returns questions from prisma', async () => {
     const question = {
       id: 'q1',
@@ -78,9 +82,12 @@ describe('QuestionsService', () => {
 
     expect(result).toHaveLength(1);
     expect(result[0].text.en_text).toBe('Q');
-    expect(result[0].Modules?.[0]?.name.en_text).toBe('mod');
+    expect(result[0].Modules && result[0].Modules[0] && result[0].Modules[0].name.en_text).toBe('mod');
   });
+};
 
+// Helper function for getAllSubmoduleIds tests
+const createGetAllSubmoduleIdsTests = (service: QuestionsService, mockPrismaService: MockPrismaService) => {
   describe('getAllSubmoduleIds', () => {
     it('should return empty array when module has no submodules', async () => {
       mockPrismaService.module.findUnique.mockResolvedValue({
@@ -89,7 +96,7 @@ describe('QuestionsService', () => {
       });
 
       const result = await (
-        service as unknown as {
+        service as const as unknown as {
           getAllSubmoduleIds: (id: string) => Promise<string[]>;
         }
       ).getAllSubmoduleIds('module-1');
@@ -117,7 +124,7 @@ describe('QuestionsService', () => {
         });
 
       const result = await (
-        service as unknown as {
+        service as const as unknown as {
           getAllSubmoduleIds: (id: string) => Promise<string[]>;
         }
       ).getAllSubmoduleIds('module-1');
@@ -140,7 +147,7 @@ describe('QuestionsService', () => {
         });
 
       const result = await (
-        service as unknown as {
+        service as const as unknown as {
           getAllSubmoduleIds: (id: string) => Promise<string[]>;
         }
       ).getAllSubmoduleIds('module-1');
@@ -149,7 +156,10 @@ describe('QuestionsService', () => {
       expect(Array.isArray(result) && !result.includes('module-1')).toBe(false); // The original module shouldn't be included
     });
   });
+};
 
+// Helper function for findAll with includeSubmodules tests
+const createIncludeSubmodulesTests = (service: QuestionsService, mockPrismaService: MockPrismaService) => {
   describe('findAll with includeSubmodules', () => {
     beforeEach(() => {
       mockPrismaService.question.findMany.mockResolvedValue([]);
@@ -253,7 +263,10 @@ describe('QuestionsService', () => {
       );
     });
   });
+};
 
+// Helper function for generateSummary tests
+const createGenerateSummaryTests = (service: QuestionsService, mockPrismaService: MockPrismaService) => {
   describe('generateSummary', () => {
     it('should generate a comprehensive question summary', async () => {
       const mockQuestion = {
@@ -327,4 +340,20 @@ describe('QuestionsService', () => {
       );
     });
   });
+};
+
+describe('QuestionsService', () => {
+  let service: QuestionsService;
+  let mockPrismaService: MockPrismaService;
+
+  beforeEach(async () => {
+    const testSetup = await createQuestionsServiceForTests();
+    service = testSetup.service;
+    mockPrismaService = testSetup.mockPrismaService;
+  });
+
+  createBasicFindAllTests(service, mockPrismaService);
+  createGetAllSubmoduleIdsTests(service, mockPrismaService);
+  createIncludeSubmodulesTests(service, mockPrismaService);
+  createGenerateSummaryTests(service, mockPrismaService);
 });

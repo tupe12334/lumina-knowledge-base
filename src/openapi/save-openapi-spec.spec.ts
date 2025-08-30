@@ -14,7 +14,7 @@ describe('saveOpenapiSpec', () => {
   });
 
   it('writes the document to the given path', async () => {
-    const document = {} as OpenAPIObject;
+    const document = {} satisfies OpenAPIObject;
     const path = 'openapi.json';
 
     await saveOpenapiSpec(document, path);

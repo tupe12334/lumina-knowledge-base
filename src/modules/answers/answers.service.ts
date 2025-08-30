@@ -11,7 +11,7 @@ export class AnswersService {
 
   async findAll(query?: AnswersQueryDto) {
     return this.prisma.answer.findMany({
-      where: { ...(query?.questionId ? { questionId: query.questionId } : {}) },
+      where: { ...(query && query.questionId ? { questionId: query.questionId } : {}) },
       include: {
         SelectAnswer: { include: { text: true } },
         UnitAnswer: true,

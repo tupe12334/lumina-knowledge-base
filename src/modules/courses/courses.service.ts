@@ -4,7 +4,25 @@ import {
   BadRequestException,
   InternalServerErrorException,
 } from '@nestjs/common';
-import { RelationshipMetadataKey } from '@prisma/client';
+import { RelationshipMetadataKey, Prisma } from '@prisma/client';
+
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
+function createValidMetadataEntries(metadata: Record<string, unknown>) {
+  const validEntries: Array<{ key: RelationshipMetadataKey; value: string }> = [];
+  for (const [key, value] of Object.entries(metadata)) {
+    if (key === RelationshipMetadataKey.REASON ||
+        key === RelationshipMetadataKey.TYPE ||
+        key === RelationshipMetadataKey.DESCRIPTION) {
+      const typedKey = key === RelationshipMetadataKey.REASON ? RelationshipMetadataKey.REASON :
+                      key === RelationshipMetadataKey.TYPE ? RelationshipMetadataKey.TYPE :
+                      RelationshipMetadataKey.DESCRIPTION;
+      validEntries.push({ key: typedKey, value: String(value) });
+    }
+  }
+  return validEntries;
+}
+
 import { PrismaService } from '../../prisma/prisma.service';
 import { Course } from './models/Course.entity';
 import { CreateCourseRelationshipInput } from './dto/create-course-relationship.input';
@@ -106,10 +124,10 @@ export class CoursesService {
       return courses.sort((a, b) => {
         // Check if course belongs to user's degree
         const aInDegree = degreeId
-          ? a.Degree?.some((d) => d.id === degreeId)
+          ? (a.Degree && a.Degree.some((d) => d.id === degreeId))
           : false;
         const bInDegree = degreeId
-          ? b.Degree?.some((d) => d.id === degreeId)
+          ? (b.Degree && b.Degree.some((d) => d.id === degreeId))
           : false;
 
         // Check if course belongs to user's institution
@@ -245,10 +263,7 @@ export class CoursesService {
         postrequisiteId: postrequisiteCourse.Block.id,
         metadata: metadata
           ? {
-              create: Object.entries(metadata).map(([key, value]) => ({
-                key: key as RelationshipMetadataKey,
-                value: String(value),
-              })),
+              create: createValidMetadataEntries(metadata),
             }
           : undefined,
       },
@@ -257,17 +272,18 @@ export class CoursesService {
         postrequisite: true,
         metadata: true,
       },
+
     });
 
     // Format metadata for response
     const formattedMetadata =
-      relationship.metadata?.reduce(
+      relationship.metadata ? relationship.metadata.reduce(
         (acc, meta) => {
           acc[meta.key] = meta.value;
           return acc;
         },
-        {} as Record<string, string>,
-      ) || {};
+        {} satisfies Record<string, string>,
+      ) : {};
 
     return {
       id: relationship.id,
@@ -336,13 +352,13 @@ export class CoursesService {
 
     // Format metadata for response before deletion
     const formattedMetadata =
-      existingRelationship.metadata?.reduce(
+      existingRelationship.metadata ? existingRelationship.metadata.reduce(
         (acc, meta) => {
           acc[meta.key] = meta.value;
           return acc;
         },
-        {} as Record<string, string>,
-      ) || {};
+        {} satisfies Record<string, string>,
+      ) : {};
 
     // Delete the relationship
     await this.prisma.blockRelationship.delete({
@@ -377,7 +393,29 @@ export class CoursesService {
   ): Promise<DeleteCourseResult> {
     const { courseId, force = true } = deleteData;
 
-    // First, verify the course exists and get all related data
+    const course = await this.findCourseWithAllRelatedData(courseId);
+    this.validateCourseDeletion(course, force);
+
+    const result = await this.prisma.$transaction(async (tx) => {
+      const counters = { deletedRelationships: 0, orphanedModules: 0, orphanedQuestions: 0 };
+
+      await this.deleteCourseRelationships(tx, course, counters);
+      await this.handleCourseModules(tx, course, courseId, counters);
+      await this.deleteCourseAndBlock(tx, course, courseId);
+
+      return {
+        courseId,
+        courseName: course.name.en_text || course.name.he_text,
+        ...counters,
+        success: true,
+        message: `Successfully deleted course "${course.name.en_text || course.name.he_text}" and cleaned up ${counters.orphanedModules} modules, ${counters.orphanedQuestions} questions, ${counters.deletedRelationships} relationships.`,
+      };
+    });
+
+    return result;
+  }
+
+  private async findCourseWithAllRelatedData(courseId: string) {
     const course = await this.prisma.course.findUnique({
       where: { id: courseId },
       include: {
@@ -426,7 +464,7 @@ export class CoursesService {
                 },
               },
             },
-            Course: true, // To check if modules are used by other courses
+            Course: true,
           },
         },
       },
@@ -436,13 +474,16 @@ export class CoursesService {
       throw new NotFoundException(`Course with ID ${courseId} not found`);
     }
 
-    // Check if we should proceed without force flag
+    return course;
+  }
+
+  private validateCourseDeletion(course: any, force: boolean) {
     if (!force) {
       const hasRelationships =
         course.Block.prerequisiteFor.length > 0 ||
         course.Block.postrequisiteOf.length > 0;
       const hasModulesWithQuestions = course.modules.some(
-        (module) => module.Questions.length > 0,
+        (module: any) => module.Questions.length > 0,
       );
 
       if (hasRelationships || hasModulesWithQuestions) {
@@ -451,173 +492,161 @@ export class CoursesService {
         );
       }
     }
+  }
 
-    // Start the deletion process in a transaction
-    const result = await this.prisma.$transaction(async (tx) => {
-      let deletedRelationships = 0;
-      let orphanedModules = 0;
-      let orphanedQuestions = 0;
-
-      // 1. Delete all course relationships (prerequisites/postrequisites)
-      const courseRelationships = await tx.blockRelationship.findMany({
-        where: {
-          OR: [
-            { prerequisiteId: course.Block.id },
-            { postrequisiteId: course.Block.id },
-          ],
-        },
-        include: {
-          metadata: true,
-        },
-      });
-
-      for (const relationship of courseRelationships) {
-        // Delete relationship metadata first
-        await tx.relationshipMetadata.deleteMany({
-          where: { blockRelationshipId: relationship.id },
-        });
-
-        // Delete the relationship
-        await tx.blockRelationship.delete({
-          where: { id: relationship.id },
-        });
-
-        deletedRelationships++;
-      }
-
-      // 2. Handle modules and their data
-      for (const module of course.modules) {
-        // Check if this module is used by other courses
-        const otherCourseModules = module.Course.filter(
-          (c) => c.id !== courseId,
-        );
-
-        if (otherCourseModules.length === 0) {
-          // Module is only used by this course, we can delete it
-          orphanedModules++;
-
-          // Delete questions associated with this module
-          for (const question of module.Questions) {
-            // Delete question parts relationships
-            await tx.questionPart.deleteMany({
-              where: {
-                OR: [
-                  { questionId: question.id },
-                  { partQuestionId: question.id },
-                ],
-              },
-            });
-
-            // Delete answers and their sub-answers
-            for (const answer of question.Answer) {
-              await tx.selectAnswer.deleteMany({
-                where: { answerId: answer.id },
-              });
-              await tx.unitAnswer.deleteMany({
-                where: { answerId: answer.id },
-              });
-              await tx.numberAnswer.deleteMany({
-                where: { answerId: answer.id },
-              });
-              await tx.answer.delete({
-                where: { id: answer.id },
-              });
-            }
-
-            // Delete the question
-            await tx.question.delete({
-              where: { id: question.id },
-            });
-
-            orphanedQuestions++;
-          }
-
-          // Delete module relationships
-          const moduleRelationships = await tx.blockRelationship.findMany({
-            where: {
-              OR: [
-                { prerequisiteId: module.Block.id },
-                { postrequisiteId: module.Block.id },
-              ],
-            },
-            include: {
-              metadata: true,
-            },
-          });
-
-          for (const relationship of moduleRelationships) {
-            await tx.relationshipMetadata.deleteMany({
-              where: { blockRelationshipId: relationship.id },
-            });
-            await tx.blockRelationship.delete({
-              where: { id: relationship.id },
-            });
-          }
-
-          // Delete the module
-          await tx.module.delete({
-            where: { id: module.id },
-          });
-
-          // Delete module's block
-          await tx.block.delete({
-            where: { id: module.Block.id },
-          });
-
-          // Delete module's translation if not used elsewhere
-          const translationUsage = await tx.module.findFirst({
-            where: { translationId: module.translationId },
-          });
-          if (!translationUsage) {
-            await tx.translation.delete({
-              where: { id: module.translationId },
-            });
-          }
-        } else {
-          // Module is used by other courses, just remove the relationship
-          await tx.course.update({
-            where: { id: courseId },
-            data: {
-              modules: {
-                disconnect: { id: module.id },
-              },
-            },
-          });
-        }
-      }
-
-      // 3. Delete the course itself
-      await tx.course.delete({
-        where: { id: courseId },
-      });
-
-      // 4. Delete course's block
-      await tx.block.delete({
-        where: { id: course.Block.id },
-      });
-
-      // 5. Delete course's translation if not used elsewhere
-      const translationUsage = await tx.course.findFirst({
-        where: { translationId: course.translationId },
-      });
-      if (!translationUsage) {
-        await tx.translation.delete({
-          where: { id: course.translationId },
-        });
-      }
-
-      return {
-        courseId,
-        courseName: course.name.en_text || course.name.he_text,
-        deletedRelationships,
-        orphanedModules,
-        orphanedQuestions,
-        success: true,
-        message: `Successfully deleted course "${course.name.en_text || course.name.he_text}" and cleaned up ${orphanedModules} modules, ${orphanedQuestions} questions, ${deletedRelationships} relationships.`,
-      };
+  private async deleteCourseRelationships(tx: any, course: any, counters: any) {
+    const courseRelationships = await tx.blockRelationship.findMany({
+      where: {
+        OR: [
+          { prerequisiteId: course.Block.id },
+          { postrequisiteId: course.Block.id },
+        ],
+      },
+      include: {
+        metadata: true,
+      },
     });
 
-    return result;
+    for (const relationship of courseRelationships) {
+      await tx.relationshipMetadata.deleteMany({
+        where: { blockRelationshipId: relationship.id },
+      });
+      await tx.blockRelationship.delete({
+        where: { id: relationship.id },
+      });
+      counters.deletedRelationships++;
+    }
+  }
+
+  private async handleCourseModules(tx: any, course: any, courseId: string, counters: any) {
+    for (const module of course.modules) {
+      const otherCourseModules = module.Course.filter(
+        (c: any) => c.id !== courseId,
+      );
+
+      if (otherCourseModules.length === 0) {
+        await this.deleteOrphanedModule(tx, module, counters);
+      } else {
+        await this.disconnectModuleFromCourse(tx, courseId, module.id);
+      }
+    }
+  }
+
+  private async deleteOrphanedModule(tx: any, module: any, counters: any) {
+    counters.orphanedModules++;
+
+    await this.deleteModuleQuestions(tx, module, counters);
+    await this.deleteModuleRelationships(tx, module);
+    await this.deleteModuleAndBlock(tx, module);
+    await this.deleteModuleTranslationIfUnused(tx, module);
+  }
+
+  private async deleteModuleQuestions(tx: any, module: any, counters: any) {
+    for (const question of module.Questions) {
+      await tx.questionPart.deleteMany({
+        where: {
+          OR: [
+            { questionId: question.id },
+            { partQuestionId: question.id },
+          ],
+        },
+      });
+
+      await this.deleteQuestionAnswers(tx, question);
+      await tx.question.delete({
+        where: { id: question.id },
+      });
+      counters.orphanedQuestions++;
+    }
+  }
+
+  private async deleteQuestionAnswers(tx: any, question: any) {
+    for (const answer of question.Answer) {
+      await tx.selectAnswer.deleteMany({
+        where: { answerId: answer.id },
+      });
+      await tx.unitAnswer.deleteMany({
+        where: { answerId: answer.id },
+      });
+      await tx.numberAnswer.deleteMany({
+        where: { answerId: answer.id },
+      });
+      await tx.answer.delete({
+        where: { id: answer.id },
+      });
+    }
+  }
+
+  private async deleteModuleRelationships(tx: any, module: any) {
+    const moduleRelationships = await tx.blockRelationship.findMany({
+      where: {
+        OR: [
+          { prerequisiteId: module.Block.id },
+          { postrequisiteId: module.Block.id },
+        ],
+      },
+      include: {
+        metadata: true,
+      },
+    });
+
+    for (const relationship of moduleRelationships) {
+      await tx.relationshipMetadata.deleteMany({
+        where: { blockRelationshipId: relationship.id },
+      });
+      await tx.blockRelationship.delete({
+        where: { id: relationship.id },
+      });
+    }
+  }
+
+  private async deleteModuleAndBlock(tx: any, module: any) {
+    await tx.module.delete({
+      where: { id: module.id },
+    });
+    await tx.block.delete({
+      where: { id: module.Block.id },
+    });
+  }
+
+  private async deleteModuleTranslationIfUnused(tx: any, module: any) {
+    const translationUsage = await tx.module.findFirst({
+      where: { translationId: module.translationId },
+    });
+    if (!translationUsage) {
+      await tx.translation.delete({
+        where: { id: module.translationId },
+      });
+    }
+  }
+
+  private async disconnectModuleFromCourse(tx: any, courseId: string, moduleId: string) {
+    await tx.course.update({
+      where: { id: courseId },
+      data: {
+        modules: {
+          disconnect: { id: moduleId },
+        },
+      },
+    });
+  }
+
+  private async deleteCourseAndBlock(tx: any, course: any, courseId: string) {
+    await tx.course.delete({
+      where: { id: courseId },
+    });
+    await tx.block.delete({
+      where: { id: course.Block.id },
+    });
+
+    const translationUsage = await tx.course.findFirst({
+      where: { translationId: course.translationId },
+    });
+    if (!translationUsage) {
+      await tx.translation.delete({
+        where: { id: course.translationId },
+      });
+    }
   }
 
   /**
@@ -814,114 +843,14 @@ export class CoursesService {
    */
   async generateSummary(id: string): Promise<string> {
     try {
-      const course = await this.prisma.course.findUnique({
-        where: { id },
-        include: {
-          name: true,
-          institution: {
-            include: {
-              name: true,
-            },
-          },
-          Degree: {
-            include: {
-              name: true,
-            },
-          },
-          modules: {
-            include: {
-              name: true,
-            },
-          },
-          Block: {
-            include: {
-              prerequisiteFor: {
-                include: {
-                  postrequisite: {
-                    include: {
-                      Course: {
-                        include: {
-                          name: true,
-                        },
-                      },
-                    },
-                  },
-                },
-              },
-              postrequisiteOf: {
-                include: {
-                  prerequisite: {
-                    include: {
-                      Course: {
-                        include: {
-                          name: true,
-                        },
-                      },
-                    },
-                  },
-                },
-              },
-            },
-          },
-        },
-      });
+      const course = await this.findCourseForSummary(id);
 
       if (!course) {
         throw new NotFoundException(`Course with ID ${id} not found`);
       }
 
-      const courseName =
-        course.name?.en_text || 'No English translation available';
-      const universityName =
-        course.institution?.name?.en_text || 'No English translation available';
-
-      // Build associated degrees
-      const degreeNames = course.Degree.map(
-        (degree) => degree.name?.en_text || 'No English translation available',
-      ).join(', ');
-
-      // Build modules information
-      const moduleCount = course.modules.length;
-      const moduleNames = course.modules
-        .map(
-          (module) =>
-            module.name?.en_text || 'No English translation available',
-        )
-        .join(', ');
-
-      // Build prerequisites (courses that are prerequisites for this course)
-      const prerequisites =
-        course.Block?.postrequisiteOf
-          ?.flatMap(
-            (rel) =>
-              rel.prerequisite.Course?.map(
-                (c) => c.name?.en_text || 'No English translation available',
-              ) || [],
-          )
-          .filter((name) => name !== 'No English translation available')
-          .join(', ') || 'None';
-
-      // Build postrequisites (courses that require this course as prerequisite)
-      const postrequisites =
-        course.Block?.prerequisiteFor
-          ?.flatMap(
-            (rel) =>
-              rel.postrequisite.Course?.map(
-                (c) => c.name?.en_text || 'No English translation available',
-              ) || [],
-          )
-          .filter((name) => name !== 'No English translation available')
-          .join(', ') || 'None';
-
-      const summary = `Course: ${courseName}
-ID: ${course.id}
-Institution: ${universityName}
-Associated Degrees: ${degreeNames || 'None'}
-Modules: ${moduleCount} modules - ${moduleNames || 'None'}
-Prerequisites: ${prerequisites}
-Postrequisites: ${postrequisites}`;
-
-      return summary;
+      const summaryData = this.extractCourseSummaryData(course);
+      return this.buildCourseSummary(course, summaryData);
     } catch (error) {
       if (error instanceof NotFoundException) {
         throw error;
@@ -930,5 +859,139 @@ Postrequisites: ${postrequisites}`;
         `Failed to generate course summary: ${error.message}`,
       );
     }
+  }
+
+  private async findCourseForSummary(id: string) {
+    return this.prisma.course.findUnique({
+      where: { id },
+      include: {
+        name: true,
+        institution: {
+          include: {
+            name: true,
+          },
+        },
+        Degree: {
+          include: {
+            name: true,
+          },
+        },
+        modules: {
+          include: {
+            name: true,
+          },
+        },
+        Block: {
+          include: {
+            prerequisiteFor: {
+              include: {
+                postrequisite: {
+                  include: {
+                    Course: {
+                      include: {
+                        name: true,
+                      },
+                    },
+                  },
+                },
+              },
+            },
+            postrequisiteOf: {
+              include: {
+                prerequisite: {
+                  include: {
+                    Course: {
+                      include: {
+                        name: true,
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    });
+  }
+
+  private extractCourseSummaryData(course: any) {
+    const courseName =
+      (course.name && course.name.en_text) || 'No English translation available';
+    const universityName =
+      (course.institution && course.institution.name && course.institution.name.en_text) || 'No English translation available';
+
+    // Build associated degrees
+    const degreeNames = course.Degree.map(
+      (degree: any) => (degree.name && degree.name.en_text) || 'No English translation available',
+    ).join(', ');
+
+    // Build modules information
+    const moduleCount = course.modules.length;
+    const moduleNames = course.modules
+      .map(
+        (module: any) =>
+          (module.name && module.name.en_text) || 'No English translation available',
+      )
+      .join(', ');
+
+    const prerequisites = this.extractPrerequisites(course);
+    const postrequisites = this.extractPostrequisites(course);
+
+    return {
+      courseName,
+      universityName,
+      degreeNames,
+      moduleCount,
+      moduleNames,
+      prerequisites,
+      postrequisites,
+    };
+  }
+
+  private extractPrerequisites(course: any): string {
+    if (!course.Block || !course.Block.postrequisiteOf) {
+      return 'None';
+    }
+
+    const prerequisites = course.Block.postrequisiteOf
+      .flatMap(
+        (rel: any) =>
+          (rel.prerequisite.Course && rel.prerequisite.Course.map(
+            (c: any) => (c.name && c.name.en_text) || 'No English translation available',
+          )) || [],
+      )
+      .filter((name: string) => name !== 'No English translation available')
+      .join(', ');
+
+    return prerequisites || 'None';
+  }
+
+  private extractPostrequisites(course: any): string {
+    if (!course.Block || !course.Block.prerequisiteFor) {
+      return 'None';
+    }
+
+    const postrequisites = course.Block.prerequisiteFor
+      .flatMap(
+        (rel: any) =>
+          (rel.postrequisite.Course && rel.postrequisite.Course.map(
+            (c: any) => (c.name && c.name.en_text) || 'No English translation available',
+          )) || [],
+      )
+      .filter((name: string) => name !== 'No English translation available')
+      .join(', ');
+
+    return postrequisites || 'None';
+  }
+
+  private buildCourseSummary(course: any, data: any): string {
+    return `Course: ${data.courseName}
+ID: ${course.id}
+Institution: ${data.universityName}
+Associated Degrees: ${data.degreeNames || 'None'}
+Modules: ${data.moduleCount} modules - ${data.moduleNames || 'None'}
+Prerequisites: ${data.prerequisites}
+Postrequisites: ${data.postrequisites}`;
   }
 }

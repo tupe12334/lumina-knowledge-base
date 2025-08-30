@@ -8,6 +8,8 @@ import { PrismaService } from 'src/prisma/prisma.service';
 import { createHash } from 'crypto';
 import { stableStringify } from 'src/system/data-hash/stable-stringify';
 
+type OptionalString = string | null;
+
 export interface PrismaQueryable {
   $queryRaw<T = unknown>(...args: unknown[]): Promise<T>;
   $queryRawUnsafe<T = unknown>(query: string, ...params: unknown[]): Promise<T>;
@@ -16,7 +18,7 @@ export interface PrismaQueryable {
 @Injectable()
 export class DataHashService implements OnApplicationBootstrap {
   private static readonly logger = new Logger(DataHashService.name);
-  private hash: string | null = null;
+  private hash: OptionalString = null;
 
   constructor(
     @Inject(PrismaService) private readonly prisma: PrismaQueryable,
@@ -29,12 +31,12 @@ export class DataHashService implements OnApplicationBootstrap {
     } catch (err) {
       DataHashService.logger.error(
         'Failed computing database hash',
-        err as Error,
+        err,
       );
     }
   }
 
-  getHash(): string | null {
+  getHash(): OptionalString {
     return this.hash;
   }
 

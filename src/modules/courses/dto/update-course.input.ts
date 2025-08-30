@@ -1,6 +1,9 @@
 import { InputType, Field, ID } from '@nestjs/graphql';
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 
+type OptionalString = string | null;
+type OptionalDate = Date | null;
+
 @InputType()
 export class UpdateCourseInput {
   @ApiProperty({ description: 'Course ID' })
@@ -10,11 +13,11 @@ export class UpdateCourseInput {
   // Translation updates (optional)
   @ApiPropertyOptional({ description: 'English name text' })
   @Field(() => String, { nullable: true, description: 'English name text' })
-  enText?: string | null;
+  enText?: OptionalString;
 
   @ApiPropertyOptional({ description: 'Hebrew name text' })
   @Field(() => String, { nullable: true, description: 'Hebrew name text' })
-  heText?: string | null;
+  heText?: OptionalString;
 
   // Additional optional course fields (extend safely later as needed)
   @ApiPropertyOptional({ description: 'Institution ID of the course' })
@@ -22,12 +25,12 @@ export class UpdateCourseInput {
     nullable: true,
     description: 'Institution ID of the course',
   })
-  universityId?: string | null;
+  universityId?: OptionalString;
 
   @ApiPropertyOptional({ description: 'Published at timestamp (UTC)' })
   @Field(() => Date, {
     nullable: true,
     description: 'Published at timestamp (UTC)',
   })
-  publishedAt?: Date | null;
+  publishedAt?: OptionalDate;
 }

@@ -66,7 +66,9 @@ describe('Mutations E2E (Enabled)', () => {
   });
 
   afterAll(async () => {
-    await app?.close();
+    if (app) {
+      await app.close();
+    }
   });
 
   it('should allow mutations when ENABLE_MUTATIONS is true', async () => {

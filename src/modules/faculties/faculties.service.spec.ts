@@ -14,7 +14,7 @@ describe('FacultiesService', () => {
   beforeEach(() => {
     prisma.faculty.findMany.mockReset();
     prisma.faculty.findUnique.mockReset();
-    service = new FacultiesService(prisma as unknown as PrismaService);
+    service = new FacultiesService(prisma satisfies PrismaService);
   });
 
   it('getFacultiesByInstitution queries prisma with includes', async () => {

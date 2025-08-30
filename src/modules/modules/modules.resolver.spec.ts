@@ -16,11 +16,11 @@ describe('ModulesResolver', () => {
   };
   const mockQuestionsService = {
     findAll: vi.fn(),
-  } as unknown as QuestionsService;
+  } satisfies Partial<QuestionsService>;
 
   beforeEach(() => {
     resolver = new ModulesResolver(
-      mockModulesService as unknown as ModulesService,
+      mockModulesService satisfies Partial<ModulesService>,
       mockQuestionsService,
     );
   });
@@ -76,13 +76,14 @@ describe('ModulesResolver', () => {
   describe('resolve fields', () => {
     it('should resolve questions for a module with input passthrough', async () => {
       const moduleArg: Pick<ModuleType, 'id'> = { id: 'module-1' };
-      const input = {} as QuestionsQueryDto;
+      const input = {} satisfies QuestionsQueryDto;
       const expected: Question[] = [];
       const findAll = vi.fn().mockResolvedValue(expected);
-      (mockQuestionsService as unknown as { findAll: typeof findAll }).findAll =
+      const typedService = mockQuestionsService satisfies { findAll: typeof findAll };
+      typedService.findAll =
         findAll;
 
-      const result = await resolver.questions(moduleArg as ModuleType, input);
+      const result = await resolver.questions(moduleArg satisfies ModuleType, input);
 
       expect(findAll).toHaveBeenCalledWith({
         ...input,

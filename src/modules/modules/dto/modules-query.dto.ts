@@ -15,7 +15,7 @@ export class ModulesQueryDto {
   @IsInt()
   @Min(0)
   @Transform(({ value }: { value: unknown }) => {
-    const parsed = parseInt(value as string, 10);
+    const parsed = parseInt(String(value), 10);
     return isNaN(parsed) ? undefined : parsed;
   })
   minQuestions?: number;
@@ -25,7 +25,7 @@ export class ModulesQueryDto {
   @IsInt()
   @Min(0)
   @Transform(({ value }: { value: unknown }) => {
-    const parsed = parseInt(value as string, 10);
+    const parsed = parseInt(String(value), 10);
     return isNaN(parsed) ? undefined : parsed;
   })
   maxQuestions?: number;
@@ -35,7 +35,7 @@ export class ModulesQueryDto {
   @IsInt()
   @Min(0)
   @Transform(({ value }: { value: unknown }) => {
-    const parsed = parseInt(value as string, 10);
+    const parsed = parseInt(String(value), 10);
     return isNaN(parsed) ? undefined : parsed;
   })
   exactQuestions?: number;

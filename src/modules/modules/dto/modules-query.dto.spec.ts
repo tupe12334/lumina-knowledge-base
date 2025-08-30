@@ -21,7 +21,7 @@ describe('ModulesQueryDto', () => {
       const errors = await validate(dto);
 
       expect(errors).toHaveLength(1);
-      expect(errors[0]?.property).toBe('minQuestions');
+      expect(errors[0] && errors[0].property).toBe('minQuestions');
     });
 
     it('should transform string to number', () => {
@@ -49,7 +49,7 @@ describe('ModulesQueryDto', () => {
       const errors = await validate(dto);
 
       expect(errors).toHaveLength(1);
-      expect(errors[0]?.property).toBe('maxQuestions');
+      expect(errors[0] && errors[0].property).toBe('maxQuestions');
     });
   });
 

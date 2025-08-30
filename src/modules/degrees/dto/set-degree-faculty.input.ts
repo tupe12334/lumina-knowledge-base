@@ -2,6 +2,8 @@ import { InputType, Field, ID } from '@nestjs/graphql';
 import { IsUUID, IsOptional } from 'class-validator';
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 
+type OptionalString = string | null;
+
 /**
  * Input for setting or clearing a degree's faculty.
  */
@@ -20,5 +22,5 @@ export class SetDegreeFacultyInput {
   })
   @IsOptional()
   @IsUUID()
-  facultyId?: string | null;
+  facultyId?: OptionalString;
 }

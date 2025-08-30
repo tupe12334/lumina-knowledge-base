@@ -12,7 +12,7 @@ describe('DegreesResolver', () => {
 
   beforeEach(() => {
     resolver = new DegreesResolver(
-      mockDegreesService as unknown as DegreesService,
+      mockDegreesService satisfies Partial<DegreesService>,
     );
   });
 
@@ -30,12 +30,12 @@ describe('DegreesResolver', () => {
 
   describe('setDegreeFaculty', () => {
     it('should call the service with provided IDs', async () => {
-      const updated = { id: 'deg1' } as unknown as Record<string, unknown>;
+      const updated = { id: 'deg1' } satisfies Record<string, unknown>;
       mockDegreesService.setFacultyForDegree.mockResolvedValue(updated);
       const result = await resolver.setDegreeFaculty({
         degreeId: 'deg1',
         facultyId: 'fac1',
-      } as unknown as import('./dto/set-degree-faculty.input').SetDegreeFacultyInput);
+      } satisfies import('./dto/set-degree-faculty.input').SetDegreeFacultyInput);
       expect(mockDegreesService.setFacultyForDegree).toHaveBeenCalledWith(
         'deg1',
         'fac1',
@@ -44,12 +44,12 @@ describe('DegreesResolver', () => {
     });
 
     it('should clear faculty when facultyId is null', async () => {
-      const updated = { id: 'deg1' } as unknown as Record<string, unknown>;
+      const updated = { id: 'deg1' } satisfies Record<string, unknown>;
       mockDegreesService.setFacultyForDegree.mockResolvedValue(updated);
       await resolver.setDegreeFaculty({
         degreeId: 'deg1',
         facultyId: null,
-      } as unknown as import('./dto/set-degree-faculty.input').SetDegreeFacultyInput);
+      } satisfies import('./dto/set-degree-faculty.input').SetDegreeFacultyInput);
       expect(mockDegreesService.setFacultyForDegree).toHaveBeenCalledWith(
         'deg1',
         null,

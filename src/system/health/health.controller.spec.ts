@@ -32,7 +32,7 @@ interface MockHealthService {
 
 describe('HealthController', () => {
   let controller: HealthController;
-  const prisma = {} as unknown as PrismaService;
+  const prisma = {} satisfies Partial<PrismaService> as const as unknown as PrismaService;
 
   let prismaHealth: MockPrismaHealth;
   let memoryHealth: MockMemoryHealth;
@@ -64,12 +64,12 @@ describe('HealthController', () => {
     diskHealth.checkStorage.mockResolvedValue({ storage: { status: 'up' } });
 
     controller = new HealthController(
-      health as unknown as HealthCheckService,
-      prismaHealth as unknown as PrismaHealthIndicator,
-      memoryHealth as unknown as MemoryHealthIndicator,
-      diskHealth as unknown as DiskHealthIndicator,
+      health satisfies Partial<HealthCheckService> as const as unknown as HealthCheckService,
+      prismaHealth satisfies Partial<PrismaHealthIndicator> as const as unknown as PrismaHealthIndicator,
+      memoryHealth satisfies Partial<MemoryHealthIndicator> as const as unknown as MemoryHealthIndicator,
+      diskHealth satisfies Partial<DiskHealthIndicator> as const as unknown as DiskHealthIndicator,
       prisma,
-      dbRows as unknown as DbRowsHealthIndicator,
+      dbRows satisfies Partial<DbRowsHealthIndicator> as const as unknown as DbRowsHealthIndicator,
     );
   });
 

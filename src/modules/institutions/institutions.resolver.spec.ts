@@ -12,7 +12,7 @@ describe('InstitutionsResolver', () => {
 
   beforeEach(() => {
     resolver = new InstitutionsResolver(
-      mockInstitutionsService as unknown as InstitutionsService,
+      mockInstitutionsService satisfies Partial<InstitutionsService>,
     );
   });
 
@@ -26,7 +26,7 @@ describe('InstitutionsResolver', () => {
         {
           id: '1',
         },
-      ] as Institution[];
+      ] satisfies Institution[];
 
       mockInstitutionsService.findAll.mockResolvedValue(mockInstitutions);
 
@@ -41,7 +41,7 @@ describe('InstitutionsResolver', () => {
     it('should return an institution by id', async () => {
       const mockInstitution = {
         id: '1',
-      } as Institution;
+      } satisfies Institution;
 
       mockInstitutionsService.findUnique.mockResolvedValue(mockInstitution);
 

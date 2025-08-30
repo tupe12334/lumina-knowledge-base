@@ -40,7 +40,7 @@ export class DatabaseController {
       return dumpContent;
     } catch (error) {
       throw new HttpException(
-        `Failed to create database dump: ${(error as Error).message}`,
+        `Failed to create database dump: ${error instanceof Error ? error.message : String(error)}`,
         HttpStatus.INTERNAL_SERVER_ERROR,
       );
     }
@@ -61,7 +61,7 @@ export class DatabaseController {
       return await this.databaseService.getDatabaseInfo();
     } catch (error) {
       throw new HttpException(
-        `Failed to get database info: ${(error as Error).message}`,
+        `Failed to get database info: ${error instanceof Error ? error.message : String(error)}`,
         HttpStatus.INTERNAL_SERVER_ERROR,
       );
     }

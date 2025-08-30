@@ -82,8 +82,8 @@ importers:
         specifier: ^1.13.3
         version: 1.13.3
       '@tupe12334/eslint-config':
-        specifier: ^1.0.3
-        version: 1.0.3(@eslint/eslintrc@3.3.1)(@eslint/js@9.33.0)(@typescript-eslint/eslint-plugin@8.39.1(@typescript-eslint/parser@8.39.1(eslint@9.33.0(jiti@2.5.1))(typescript@5.9.2))(eslint@9.33.0(jiti@2.5.1))(typescript@5.9.2))(@typescript-eslint/parser@8.39.1(eslint@9.33.0(jiti@2.5.1))(typescript@5.9.2))(eslint-plugin-react-hooks@5.2.0(eslint@9.33.0(jiti@2.5.1)))(eslint-plugin-react@7.37.5(eslint@9.33.0(jiti@2.5.1)))(eslint@9.33.0(jiti@2.5.1))(globals@16.3.0)(typescript-eslint@8.39.1(eslint@9.33.0(jiti@2.5.1))(typescript@5.9.2))
+        specifier: ^1.0.5
+        version: 1.0.5(@eslint/eslintrc@3.3.1)(@eslint/js@9.33.0)(@typescript-eslint/eslint-plugin@8.39.1(@typescript-eslint/parser@8.39.1(eslint@9.33.0(jiti@2.5.1))(typescript@5.9.2))(eslint@9.33.0(jiti@2.5.1))(typescript@5.9.2))(@typescript-eslint/parser@8.39.1(eslint@9.33.0(jiti@2.5.1))(typescript@5.9.2))(eslint-plugin-react-hooks@5.2.0(eslint@9.33.0(jiti@2.5.1)))(eslint-plugin-react@7.37.5(eslint@9.33.0(jiti@2.5.1)))(eslint@9.33.0(jiti@2.5.1))(globals@16.3.0)(typescript-eslint@8.39.1(eslint@9.33.0(jiti@2.5.1))(typescript@5.9.2))
       '@types/lodash':
         specifier: ^4.17.20
         version: 4.17.20
@@ -1399,8 +1399,8 @@ packages:
   '@tokenizer/token@0.3.0':
     resolution: {integrity: sha512-OvjF+z51L3ov0OyAU0duzsYuvO01PH7x4t6DJx+guahgTnBHkhJdG7soQeTSFLWN3efnHyibZ4Z8l2EuWwJN3A==}
 
-  '@tupe12334/eslint-config@1.0.3':
-    resolution: {integrity: sha512-26CB3wzJnBdHCYxnfQg36g4GBeUqH2pesmLGmqcoCgjrxn6AdIfqeC/7YPlNsgq+yaLnNnZClUoeMwsbWiEhBg==}
+  '@tupe12334/eslint-config@1.0.5':
+    resolution: {integrity: sha512-5mArqDREnQ1/uOjP7ahC/YbzUNLIX2eqLIW/eeGRZ7hpni7RWvOKWHSAOmfLjxQd9//siIhGJ4eq/XE2cWD0EA==}
     peerDependencies:
       '@eslint/eslintrc': ^3.3.1
       '@eslint/js': ^9.34.0
@@ -5465,7 +5465,7 @@ snapshots:
 
   '@tokenizer/token@0.3.0': {}
 
-  '@tupe12334/eslint-config@1.0.3(@eslint/eslintrc@3.3.1)(@eslint/js@9.33.0)(@typescript-eslint/eslint-plugin@8.39.1(@typescript-eslint/parser@8.39.1(eslint@9.33.0(jiti@2.5.1))(typescript@5.9.2))(eslint@9.33.0(jiti@2.5.1))(typescript@5.9.2))(@typescript-eslint/parser@8.39.1(eslint@9.33.0(jiti@2.5.1))(typescript@5.9.2))(eslint-plugin-react-hooks@5.2.0(eslint@9.33.0(jiti@2.5.1)))(eslint-plugin-react@7.37.5(eslint@9.33.0(jiti@2.5.1)))(eslint@9.33.0(jiti@2.5.1))(globals@16.3.0)(typescript-eslint@8.39.1(eslint@9.33.0(jiti@2.5.1))(typescript@5.9.2))':
+  '@tupe12334/eslint-config@1.0.5(@eslint/eslintrc@3.3.1)(@eslint/js@9.33.0)(@typescript-eslint/eslint-plugin@8.39.1(@typescript-eslint/parser@8.39.1(eslint@9.33.0(jiti@2.5.1))(typescript@5.9.2))(eslint@9.33.0(jiti@2.5.1))(typescript@5.9.2))(@typescript-eslint/parser@8.39.1(eslint@9.33.0(jiti@2.5.1))(typescript@5.9.2))(eslint-plugin-react-hooks@5.2.0(eslint@9.33.0(jiti@2.5.1)))(eslint-plugin-react@7.37.5(eslint@9.33.0(jiti@2.5.1)))(eslint@9.33.0(jiti@2.5.1))(globals@16.3.0)(typescript-eslint@8.39.1(eslint@9.33.0(jiti@2.5.1))(typescript@5.9.2))':
     dependencies:
       '@eslint/eslintrc': 3.3.1
       '@eslint/js': 9.33.0

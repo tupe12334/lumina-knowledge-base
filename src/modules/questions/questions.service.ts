@@ -4,6 +4,12 @@ import {
   InternalServerErrorException,
 } from '@nestjs/common';
 import { Prisma } from '@prisma/client';
+
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
+type QuestionWhereInputOrNull = Prisma.QuestionWhereInput | null;
+type AnswerWhereInputOrNull = Prisma.AnswerWhereInput | null;
+type QuestionsQueryDtoOrUndefined = QuestionsQueryDto | undefined;
 import { PrismaService } from '../../prisma/prisma.service';
 import { Question } from './models/Question.entity';
 import { QuestionsQueryDto } from './dto/question-query.dto';
@@ -34,7 +40,7 @@ export class QuestionsService {
         },
       });
 
-      if (module?.subModules) {
+      if (module && module.subModules) {
         for (const subModule of module.subModules) {
           if (!submoduleIds.has(subModule.id)) {
             submoduleIds.add(subModule.id);
@@ -56,20 +62,44 @@ export class QuestionsService {
   ): Promise<Prisma.QuestionWhereInput> {
     const where: Prisma.QuestionWhereInput = {};
 
-    // Handle specific question IDs filter
-    if (filters?.ids && filters.ids.length > 0) {
-      where.id = { in: filters.ids };
-      return where; // If specific IDs are provided, ignore other filters
+    // Handle ID-based filters first (they take precedence)
+    const idBasedFilter = this.buildIdBasedFilters(filters);
+    if (idBasedFilter) {
+      return idBasedFilter;
     }
 
-    // Handle single ID filter
-    if (filters?.id) {
-      where.id = filters.id;
-      return where;
+    // Build text search filter
+    this.buildTextSearchFilter(filters, where);
+
+    // Build module-based filters
+    await this.buildModuleFilters(filters, where);
+
+    // Build question type filter
+    this.buildQuestionTypeFilter(filters, where);
+
+    // Build parts filter
+    this.buildPartsFilter(filters, where);
+
+    // Exclude part questions
+    await this.excludePartQuestions(where);
+
+    return where;
+  }
+
+  private buildIdBasedFilters(filters?: QuestionsQueryDto): QuestionWhereInputOrNull {
+    if (filters && filters.ids && filters.ids.length > 0) {
+      return { id: { in: filters.ids } };
     }
 
-    // Handle text search (SQLite doesn't support mode: 'insensitive')
-    if (filters?.textSearch && filters.textSearch.trim().length > 0) {
+    if (filters && filters.id) {
+      return { id: filters.id };
+    }
+
+    return null;
+  }
+
+  private buildTextSearchFilter(filters: QuestionsQueryDtoOrUndefined, where: Prisma.QuestionWhereInput) {
+    if (filters && filters.textSearch && filters.textSearch.trim().length > 0) {
       const searchTerm = filters.textSearch.trim();
       where.OR = [
         {
@@ -88,37 +118,12 @@ export class QuestionsService {
         },
       ];
     }
+  }
 
-    // Handle both array and single module filtering
-    let moduleIds =
-      filters?.moduleIds || (filters?.moduleId ? [filters.moduleId] : []);
-    // Handle case where query parameter comes as a single string instead of array
-    if (typeof moduleIds === 'string') {
-      moduleIds = [moduleIds];
-    }
+  private async buildModuleFilters(filters: QuestionsQueryDtoOrUndefined, where: Prisma.QuestionWhereInput) {
+    const moduleIds = await this.resolveModuleIds(filters);
+    const courseIds = this.resolveCourseIds(filters);
 
-    // If module filtering is requested and includeSubmodules is enabled, expand to include all submodules
-    const includeSubmodules = filters?.includeSubmodules !== false; // Default to true
-    if (moduleIds.length > 0 && includeSubmodules) {
-      const expandedModuleIds = new Set(moduleIds);
-
-      // For each module, get all its submodules recursively
-      for (const moduleId of moduleIds) {
-        const submoduleIds = await this.getAllSubmoduleIds(moduleId);
-        submoduleIds.forEach((id) => expandedModuleIds.add(id));
-      }
-
-      moduleIds = Array.from(expandedModuleIds);
-    }
-
-    // Handle both array and single course filtering
-    let courseIds = filters?.courseIds || (filters?.courseId ? [filters.courseId] : []);
-    // Handle case where query parameter comes as a single string instead of array
-    if (typeof courseIds === 'string') {
-      courseIds = [courseIds];
-    }
-
-    // Build Module filter combining both module and course filters
     if (moduleIds.length > 0 || courseIds.length > 0) {
       const moduleConditions: Prisma.ModuleWhereInput[] = [];
 
@@ -140,35 +145,71 @@ export class QuestionsService {
         },
       };
     }
+  }
 
-    // Handle both array and single question type filtering
+  private async resolveModuleIds(filters: QuestionsQueryDtoOrUndefined): Promise<string[]> {
+    let moduleIds =
+      (filters && filters.moduleIds) || (filters && filters.moduleId ? [filters.moduleId] : []);
+
+    if (typeof moduleIds === 'string') {
+      moduleIds = [moduleIds];
+    }
+
+    const includeSubmodules = filters && filters.includeSubmodules !== false;
+    if (moduleIds.length > 0 && includeSubmodules) {
+      const expandedModuleIds = new Set(moduleIds);
+
+      for (const moduleId of moduleIds) {
+        const submoduleIds = await this.getAllSubmoduleIds(moduleId);
+        submoduleIds.forEach((id) => expandedModuleIds.add(id));
+      }
+
+      moduleIds = Array.from(expandedModuleIds);
+    }
+
+    return moduleIds;
+  }
+
+  private resolveCourseIds(filters: QuestionsQueryDtoOrUndefined): string[] {
+    let courseIds = (filters && filters.courseIds) || (filters && filters.courseId ? [filters.courseId] : []);
+
+    if (typeof courseIds === 'string') {
+      courseIds = [courseIds];
+    }
+
+    return courseIds;
+  }
+
+  private buildQuestionTypeFilter(filters: QuestionsQueryDtoOrUndefined, where: Prisma.QuestionWhereInput) {
     let questionTypes =
-      filters?.questionTypes ||
-      (filters?.questionType ? [filters.questionType] : []);
-    // Handle case where query parameter comes as a single string instead of array
+      (filters && filters.questionTypes) ||
+      (filters && filters.questionType ? [filters.questionType] : []);
+
     if (typeof questionTypes === 'string') {
       questionTypes = [questionTypes];
     }
+
     if (questionTypes.length > 0) {
       where.type = { in: questionTypes };
     }
+  }
 
-    // Handle hasParts filter
-    if (filters?.hasParts !== undefined) {
+  private buildPartsFilter(filters: QuestionsQueryDtoOrUndefined, where: Prisma.QuestionWhereInput) {
+    if (filters && filters.hasParts !== undefined) {
       if (filters.hasParts) {
         where.Parts = { some: {} };
       } else {
         where.Parts = { none: {} };
       }
     }
+  }
 
-    // Always exclude questions that are part of other questions
+  private async excludePartQuestions(where: Prisma.QuestionWhereInput) {
     const partQuestionIds = await this.prisma.questionPart.findMany({
       select: { partQuestionId: true, questionId: true },
       distinct: ['partQuestionId'],
     });
 
-    // Only exclude questions that are parts of OTHER questions (not themselves)
     const idsToExclude = partQuestionIds
       .filter((part) => part.partQuestionId !== part.questionId)
       .map((part) => part.partQuestionId);
@@ -176,7 +217,6 @@ export class QuestionsService {
     if (idsToExclude.length > 0) {
       const existingIdCondition = where.id;
       if (existingIdCondition) {
-        // If there's already an ID condition, combine with AND
         where.AND = [
           { id: existingIdCondition },
           { id: { notIn: idsToExclude } },
@@ -186,8 +226,6 @@ export class QuestionsService {
         where.id = { notIn: idsToExclude };
       }
     }
-
-    return where;
   }
 
   /**
@@ -444,7 +482,7 @@ export class QuestionsService {
           connect: { id: translationId },
         },
         Modules: {
-          connect: moduleIds?.map((id) => ({ id })),
+          connect: moduleIds ? moduleIds.map((id) => ({ id })) : undefined,
         },
       },
       include: {
@@ -524,7 +562,7 @@ export class QuestionsService {
               connect: { id: translationId },
             },
             Modules: {
-              connect: moduleIds?.map((id) => ({ id })),
+              connect: moduleIds ? moduleIds.map((id) => ({ id })) : undefined,
             },
           },
         });
@@ -579,7 +617,7 @@ export class QuestionsService {
               connect: { id: translation.id },
             },
             Modules: {
-              connect: moduleIds?.map((id) => ({ id })),
+              connect: moduleIds ? moduleIds.map((id) => ({ id })) : undefined,
             },
           },
         });
@@ -659,14 +697,15 @@ export class QuestionsService {
     }
 
     const disconnectModules = existingQuestion.Modules.filter(
-      (module) => !moduleIds?.includes(module.id),
+      (module) => !(moduleIds && moduleIds.includes(module.id)),
     ).map((module) => ({ id: module.id }));
 
     const connectModules = moduleIds
-      ?.filter(
+      ? moduleIds.filter(
         (id) => !existingQuestion.Modules.some((module) => module.id === id),
       )
-      .map((id) => ({ id }));
+      .map((id) => ({ id }))
+      : undefined;
 
     const question = await this.prisma.question.update({
       where: { id },
@@ -739,7 +778,22 @@ export class QuestionsService {
   async remove(data: DeleteQuestionInput): Promise<Question> {
     const { id } = data;
 
-    const questionToDelete = await this.prisma.question.findUnique({
+    const questionToDelete = await this.findQuestionForDeletion(id);
+
+    if (!questionToDelete) {
+      throw new NotFoundException(`Question with ID ${id} not found`);
+    }
+
+    await this.deleteQuestionAnswers(questionToDelete.Answer);
+    await this.disconnectQuestionFromModules(id);
+    const question = await this.deleteQuestionWithIncludes(id);
+    await this.cleanupUnusedTranslation(question.translationId);
+
+    return this.formatDeletedQuestion(question);
+  }
+
+  private async findQuestionForDeletion(id: string) {
+    return this.prisma.question.findUnique({
       where: { id },
       include: {
         Answer: {
@@ -752,45 +806,47 @@ export class QuestionsService {
         },
       },
     });
+  }
 
-    if (!questionToDelete) {
-      throw new NotFoundException(`Question with ID ${id} not found`);
-    }
-
-    // Delete related answers first
-    for (const answer of questionToDelete.Answer) {
-      if (answer.SelectAnswer) {
-        await this.prisma.selectAnswer.deleteMany({
-          where: { answerId: answer.id },
-        });
-      }
-      if (answer.UnitAnswer) {
-        await this.prisma.unitAnswer.delete({ where: { answerId: answer.id } });
-      }
-      if (answer.NumberAnswer) {
-        await this.prisma.numberAnswer.delete({
-          where: { answerId: answer.id },
-        });
-      }
-      // Type assertion needed until Prisma types are fully updated
-      if ((answer as Record<string, unknown>).BooleanAnswer) {
-        await this.prisma.booleanAnswer.delete({
-          where: { answerId: answer.id },
-        });
-      }
+  private async deleteQuestionAnswers(answers: any[]) {
+    for (const answer of answers) {
+      await this.deleteAnswerSubTypes(answer);
       await this.prisma.answer.delete({ where: { id: answer.id } });
     }
+  }
 
-    // Disconnect from modules
+  private async deleteAnswerSubTypes(answer: any) {
+    if (answer.SelectAnswer) {
+      await this.prisma.selectAnswer.deleteMany({
+        where: { answerId: answer.id },
+      });
+    }
+    if (answer.UnitAnswer) {
+      await this.prisma.unitAnswer.delete({ where: { answerId: answer.id } });
+    }
+    if (answer.NumberAnswer) {
+      await this.prisma.numberAnswer.delete({
+        where: { answerId: answer.id },
+      });
+    }
+    if (answer.BooleanAnswer) {
+      await this.prisma.booleanAnswer.delete({
+        where: { answerId: answer.id },
+      });
+    }
+  }
+
+  private async disconnectQuestionFromModules(id: string) {
     await this.prisma.question.update({
       where: { id },
       data: {
         Modules: { set: [] },
       },
     });
+  }
 
-    // Delete the question itself
-    const question = await this.prisma.question.delete({
+  private async deleteQuestionWithIncludes(id: string) {
+    return this.prisma.question.delete({
       where: { id },
       include: {
         text: true,
@@ -839,10 +895,11 @@ export class QuestionsService {
         },
       },
     });
+  }
 
-    // Delete the associated translation if it's no longer used by other entities
+  private async cleanupUnusedTranslation(translationId: string) {
     const translationUsage = await this.prisma.translation.findUnique({
-      where: { id: question.translationId },
+      where: { id: translationId },
       include: {
         Institution: true,
         Course: true,
@@ -861,10 +918,12 @@ export class QuestionsService {
 
     if (!isTranslationUsed) {
       await this.prisma.translation.delete({
-        where: { id: question.translationId },
+        where: { id: translationId },
       });
     }
+  }
 
+  private formatDeletedQuestion(question: any) {
     const { Answer, Modules, Parts, PartOf, ...questionRest } = question;
     return {
       ...questionRest,
@@ -884,114 +943,14 @@ export class QuestionsService {
    */
   async generateSummary(id: string): Promise<string> {
     try {
-      const question = await this.prisma.question.findUnique({
-        where: { id },
-        include: {
-          text: true,
-          Modules: {
-            include: {
-              name: true,
-            },
-          },
-          Answer: {
-            include: {
-              SelectAnswer: {
-                include: {
-                  text: true,
-                },
-              },
-              UnitAnswer: true,
-              NumberAnswer: true,
-            },
-          },
-          Parts: {
-            orderBy: { order: 'asc' },
-            include: {
-              partQuestion: {
-                include: {
-                  text: true,
-                },
-              },
-            },
-          },
-        },
-      });
+      const question = await this.findQuestionForSummary(id);
 
       if (!question) {
         throw new NotFoundException(`Question with ID ${id} not found`);
       }
 
-      const questionText =
-        question.text?.en_text || 'No English translation available';
-      const validationStatus = question.validationStatus || 'Unknown';
-
-      // Build associated modules
-      const moduleNames = question.Modules.map(
-        (module) => module.name?.en_text || 'No English translation available',
-      ).join(', ');
-
-      // Build answer information based on question type
-      let answerInfo = '';
-      if (question.type === 'selection' && question.Answer.length > 0) {
-        const answers = question.Answer.map((answer) => {
-          const selectAnswers = answer.SelectAnswer.map(
-            (sa) =>
-              `${sa.text?.en_text || 'No English translation available'}${sa.isCorrect ? ' (correct)' : ''}`,
-          ).join(', ');
-          return selectAnswers;
-        })
-          .filter((a) => a)
-          .join('; ');
-        answerInfo = `Answer Options: ${answers}`;
-      } else if (question.type === 'boolean' && question.Answer.length > 0) {
-        const booleanAnswers = question.Answer.map((answer) => {
-          // Type assertion needed until Prisma types are fully updated
-          const booleanAnswer = (answer as Record<string, unknown>).BooleanAnswer as { value?: boolean } | undefined;
-          if (booleanAnswer && booleanAnswer.value !== undefined) {
-            return `Correct Answer: ${booleanAnswer.value ? 'Yes/True' : 'No/False'}`;
-          }
-          return '';
-        })
-          .filter((a) => a)
-          .join('; ');
-        answerInfo = `Boolean Answer: ${booleanAnswers}`;
-      } else if (question.type === 'value' && question.Answer.length > 0) {
-        const valueAnswers = question.Answer.map((answer) => {
-          if (answer.UnitAnswer) {
-            return `Unit: ${answer.UnitAnswer.unit}, Value: ${answer.UnitAnswer.value}`;
-          } else if (answer.NumberAnswer) {
-            return `Number, Value: ${answer.NumberAnswer.value}`;
-          }
-          return '';
-        })
-          .filter((a) => a)
-          .join('; ');
-        answerInfo = `Answer Type: ${valueAnswers}`;
-      } else if (question.type === 'void') {
-        answerInfo = 'Answer Type: No specific answer required (void type)';
-      } else {
-        answerInfo = 'Answer Type: No answers defined';
-      }
-
-      // Build question parts information
-      const questionParts =
-        question.Parts.length > 0
-          ? question.Parts.map(
-              (part) =>
-                part.partQuestion?.text?.en_text ||
-                'No English translation available',
-            ).join('; ')
-          : 'None';
-
-      const summary = `Question: ${questionText}
-ID: ${question.id}
-Type: ${question.type}
-Validation Status: ${validationStatus}
-Associated Modules: ${moduleNames || 'None'}
-${answerInfo}
-Question Parts: ${questionParts}`;
-
-      return summary;
+      const summaryData = this.extractQuestionSummaryData(question);
+      return this.buildQuestionSummary(question, summaryData);
     } catch (error) {
       if (error instanceof NotFoundException) {
         throw error;
@@ -1000,5 +959,136 @@ Question Parts: ${questionParts}`;
         `Failed to generate question summary: ${error.message}`,
       );
     }
+  }
+
+  private async findQuestionForSummary(id: string) {
+    return this.prisma.question.findUnique({
+      where: { id },
+      include: {
+        text: true,
+        Modules: {
+          include: {
+            name: true,
+          },
+        },
+        Answer: {
+          include: {
+            SelectAnswer: {
+              include: {
+                text: true,
+              },
+            },
+            UnitAnswer: true,
+            NumberAnswer: true,
+            BooleanAnswer: true,
+          },
+        },
+        Parts: {
+          orderBy: { order: 'asc' },
+          include: {
+            partQuestion: {
+              include: {
+                text: true,
+              },
+            },
+          },
+        },
+      },
+    });
+  }
+
+  private extractQuestionSummaryData(question: any) {
+    const questionText =
+      (question.text && question.text.en_text) || 'No English translation available';
+    const validationStatus = question.validationStatus || 'Unknown';
+
+    const moduleNames = question.Modules.map(
+      (module: any) => (module.name && module.name.en_text) || 'No English translation available',
+    ).join(', ');
+
+    const answerInfo = this.buildAnswerInfo(question);
+    const questionParts = this.buildQuestionParts(question);
+
+    return {
+      questionText,
+      validationStatus,
+      moduleNames,
+      answerInfo,
+      questionParts,
+    };
+  }
+
+  private buildAnswerInfo(question: any): string {
+    if (question.type === 'selection' && question.Answer.length > 0) {
+      return this.buildSelectionAnswerInfo(question.Answer);
+    } else if (question.type === 'boolean' && question.Answer.length > 0) {
+      return this.buildBooleanAnswerInfo(question.Answer);
+    } else if (question.type === 'value' && question.Answer.length > 0) {
+      return this.buildValueAnswerInfo(question.Answer);
+    } else if (question.type === 'void') {
+      return 'Answer Type: No specific answer required (void type)';
+    } else {
+      return 'Answer Type: No answers defined';
+    }
+  }
+
+  private buildSelectionAnswerInfo(answers: any[]): string {
+    const answerStrings = answers.map((answer) => {
+      const selectAnswers = answer.SelectAnswer.map(
+        (sa: any) =>
+          `${(sa.text && sa.text.en_text) || 'No English translation available'}${sa.isCorrect ? ' (correct)' : ''}`,
+      ).join(', ');
+      return selectAnswers;
+    })
+      .filter((a) => a)
+      .join('; ');
+    return `Answer Options: ${answerStrings}`;
+  }
+
+  private buildBooleanAnswerInfo(answers: any[]): string {
+    const booleanAnswers = answers.map((answer) => {
+      const booleanAnswer = answer.BooleanAnswer;
+      if (booleanAnswer && booleanAnswer.value !== undefined) {
+        return `Correct Answer: ${booleanAnswer.value ? 'Yes/True' : 'No/False'}`;
+      }
+      return '';
+    })
+      .filter((a) => a)
+      .join('; ');
+    return `Boolean Answer: ${booleanAnswers}`;
+  }
+
+  private buildValueAnswerInfo(answers: any[]): string {
+    const valueAnswers = answers.map((answer) => {
+      if (answer.UnitAnswer) {
+        return `Unit: ${answer.UnitAnswer.unit}, Value: ${answer.UnitAnswer.value}`;
+      } else if (answer.NumberAnswer) {
+        return `Number, Value: ${answer.NumberAnswer.value}`;
+      }
+      return '';
+    })
+      .filter((a) => a)
+      .join('; ');
+    return `Answer Type: ${valueAnswers}`;
+  }
+
+  private buildQuestionParts(question: any): string {
+    return question.Parts.length > 0
+      ? question.Parts.map(
+          (part: any) =>
+            (part.partQuestion && part.partQuestion.text && part.partQuestion.text.en_text) ||
+            'No English translation available',
+        ).join('; ')
+      : 'None';
+  }
+
+  private buildQuestionSummary(question: any, data: any): string {
+    return `Question: ${data.questionText}
+ID: ${question.id}
+Type: ${question.type}
+Validation Status: ${data.validationStatus}
+Associated Modules: ${data.moduleNames || 'None'}
+${data.answerInfo}
+Question Parts: ${data.questionParts}`;
   }
 }

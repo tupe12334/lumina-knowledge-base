@@ -54,7 +54,9 @@ describe('Mutations E2E (Disabled)', () => {
 
   afterAll(async () => {
     env.ENABLE_MUTATIONS = true; // Reset for other tests
-    await app?.close();
+    if (app) {
+      await app.close();
+    }
   });
 
   it('should block mutations when ENABLE_MUTATIONS is false', async () => {

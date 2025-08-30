@@ -35,7 +35,7 @@ export class MutationsGuard implements CanActivate {
     const info: GraphQLResolveInfo = gqlContext.getInfo();
 
     // Only check mutations, allow queries and subscriptions
-    if (info?.operation?.operation !== OperationTypeNode.MUTATION) {
+    if (!info || !info.operation || info.operation.operation !== OperationTypeNode.MUTATION) {
       return true;
     }
 
@@ -50,7 +50,8 @@ export class MutationsGuard implements CanActivate {
 
   private handleHTTPRequest(context: ExecutionContext): boolean {
     const request = context.switchToHttp().getRequest();
-    const method = (request as { method?: string }).method?.toLowerCase();
+    const requestWithMethod: { method?: string } = request;
+    const method = requestWithMethod.method ? requestWithMethod.method.toLowerCase() : undefined;
 
     // Allow GET requests and other safe methods
     if (method === 'get' || method === 'head' || method === 'options') {

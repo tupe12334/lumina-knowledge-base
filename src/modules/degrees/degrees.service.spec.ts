@@ -16,7 +16,7 @@ describe('DegreesService', () => {
   };
 
   beforeEach(() => {
-    service = new DegreesService(mockPrismaService as unknown as PrismaService);
+    service = new DegreesService(mockPrismaService satisfies PrismaService);
   });
 
   it('returns degrees from prisma', async () => {
@@ -36,7 +36,7 @@ describe('DegreesService', () => {
 
     expect(result).toHaveLength(1);
     expect(result[0].name.en_text).toBe('Computer Science');
-    expect(result[0].institution?.name.en_text).toBe('University of Technology');
+    expect(result[0].institution && result[0].institution.name.en_text).toBe('University of Technology');
   });
 
   describe('generateSummary', () => {

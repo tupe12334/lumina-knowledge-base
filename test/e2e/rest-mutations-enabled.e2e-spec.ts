@@ -60,7 +60,9 @@ describe('REST Mutations Enabled (e2e)', () => {
   });
 
   afterAll(async () => {
-    await app?.close();
+    if (app) {
+      await app.close();
+    }
   });
 
   it('should allow GET requests when mutations are enabled', () => {

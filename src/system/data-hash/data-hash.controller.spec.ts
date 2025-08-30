@@ -3,12 +3,14 @@ import { DataHashController } from './data-hash.controller';
 import { DataHashService } from './data-hash.service';
 import { ServiceUnavailableException } from '@nestjs/common';
 
+type OptionalString = string | null;
+
 class MockDataHashService implements Pick<DataHashService, 'getHash'> {
-  private value: string | null = null;
-  set(hash: string | null) {
+  private value: OptionalString = null;
+  set(hash: OptionalString) {
     this.value = hash;
   }
-  getHash(): string | null {
+  getHash(): OptionalString {
     return this.value;
   }
 }
@@ -19,7 +21,7 @@ describe('DataHashController', () => {
 
   beforeEach(() => {
     service = new MockDataHashService();
-    controller = new DataHashController(service as unknown as DataHashService);
+    controller = new DataHashController(service as const as unknown as DataHashService);
   });
 
   it('returns hash when available', () => {

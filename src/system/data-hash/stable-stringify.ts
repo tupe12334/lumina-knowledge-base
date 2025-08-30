@@ -4,6 +4,10 @@
  * - Dates are converted to ISO strings.
  * - Buffers are converted to hex strings.
  */
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === 'object' && value !== null && !Array.isArray(value) && !(value instanceof Date);
+}
+
 export const stableStringify = (input: unknown): string => {
   const seen = new WeakSet<object>();
 
@@ -32,16 +36,21 @@ export const stableStringify = (input: unknown): string => {
     seen.add(value);
 
     if (Array.isArray(value)) {
-      return (value as unknown[]).map((v) => normalize(v));
+      const arrayValue: unknown[] = value;
+      return arrayValue.map((v) => normalize(v));
     }
 
-    const obj = value as Record<string, unknown>;
-    const sortedKeys = Object.keys(obj).sort();
-    const out: Record<string, unknown> = {};
-    for (const k of sortedKeys) {
-      out[k] = normalize(obj[k]);
+    // At this point, value is a non-null object that's not an array or Date or Buffer
+    if (isRecord(value)) {
+      const sortedKeys = Object.keys(value).sort();
+      const out: Record<string, unknown> = {};
+      for (const k of sortedKeys) {
+        out[k] = normalize(value[k]);
+      }
+      return out;
     }
-    return out;
+    // Fallback for unknown object types
+    return value;
   };
 
   return JSON.stringify(normalize(input));

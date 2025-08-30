@@ -3,31 +3,8 @@ import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { TranslationsService } from './translations.service';
 import { PrismaService } from '../../prisma/prisma.service';
 
-describe('TranslationsService', () => {
-  let service: TranslationsService;
-  let prisma: PrismaService; // mocked PrismaService
-
-  beforeEach(() => {
-    // Mock PrismaService API used by TranslationsService
-    prisma = {
-      translation: {
-        create: vi.fn(),
-        createMany: vi.fn(),
-        findMany: vi.fn(),
-        findUnique: vi.fn(),
-        update: vi.fn(),
-        delete: vi.fn(),
-      },
-    } as unknown as PrismaService;
-
-    // Instantiate service directly with mocked prisma
-    service = new TranslationsService(prisma);
-  });
-
-  it('should be defined', () => {
-    expect(service).toBeDefined();
-  });
-
+// Helper function for create tests
+const createCreateTests = (service: TranslationsService, prisma: PrismaService) => {
   describe('create', () => {
     it('should create a translation', async () => {
       const createTranslationInput = { en_text: 'Hello', he_text: 'שלום' };
@@ -47,7 +24,10 @@ describe('TranslationsService', () => {
       });
     });
   });
+};
 
+// Helper function for createMany tests
+const createCreateManyTests = (service: TranslationsService, prisma: PrismaService) => {
   describe('createMany', () => {
     it('should create multiple translations', async () => {
       const createManyInput = {
@@ -69,7 +49,10 @@ describe('TranslationsService', () => {
       });
     });
   });
+};
 
+// Helper function for findAll tests
+const createFindAllTests = (service: TranslationsService, prisma: PrismaService) => {
   describe('findAll', () => {
     it('should return an array of translations', async () => {
       const expectedTranslations = [
@@ -84,7 +67,10 @@ describe('TranslationsService', () => {
       expect(prisma.translation.findMany).toHaveBeenCalled();
     });
   });
+};
 
+// Helper function for findOne tests
+const createFindOneTests = (service: TranslationsService, prisma: PrismaService) => {
   describe('findOne', () => {
     it('should return a single translation', async () => {
       const id = 'some-uuid';
@@ -109,7 +95,10 @@ describe('TranslationsService', () => {
       });
     });
   });
+};
 
+// Helper function for update tests
+const createUpdateTests = (service: TranslationsService, prisma: PrismaService) => {
   describe('update', () => {
     it('should update a translation', async () => {
       const id = 'some-uuid';
@@ -123,15 +112,17 @@ describe('TranslationsService', () => {
         expectedTranslation,
       );
       expect(
-        (prisma as unknown as { translation: { update: unknown } }).translation
-          .update,
+        prisma.translation.update,
       ).toHaveBeenCalledWith({
         where: { id },
         data: updateTranslationInput,
       });
     });
   });
+};
 
+// Helper function for remove tests
+const createRemoveTests = (service: TranslationsService, prisma: PrismaService) => {
   describe('remove', () => {
     it('should remove a translation', async () => {
       const id = 'some-uuid';
@@ -142,11 +133,43 @@ describe('TranslationsService', () => {
 
       await expect(service.remove(id)).resolves.toEqual(expectedTranslation);
       expect(
-        (prisma as unknown as { translation: { delete: unknown } }).translation
-          .delete,
+        prisma.translation.delete,
       ).toHaveBeenCalledWith({
         where: { id },
       });
     });
   });
+};
+
+describe('TranslationsService', () => {
+  let service: TranslationsService;
+  let prisma: PrismaService; // mocked PrismaService
+
+  beforeEach(() => {
+    // Mock PrismaService API used by TranslationsService
+    prisma = {
+      translation: {
+        create: vi.fn(),
+        createMany: vi.fn(),
+        findMany: vi.fn(),
+        findUnique: vi.fn(),
+        update: vi.fn(),
+        delete: vi.fn(),
+      },
+    } satisfies Partial<PrismaService> as const as PrismaService;
+
+    // Instantiate service directly with mocked prisma
+    service = new TranslationsService(prisma);
+  });
+
+  it('should be defined', () => {
+    expect(service).toBeDefined();
+  });
+
+  createCreateTests(service, prisma);
+  createCreateManyTests(service, prisma);
+  createFindAllTests(service, prisma);
+  createFindOneTests(service, prisma);
+  createUpdateTests(service, prisma);
+  createRemoveTests(service, prisma);
 });

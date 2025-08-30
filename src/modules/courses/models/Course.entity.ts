@@ -31,9 +31,11 @@ export class Course {
 
   @ApiProperty({ type: () => Date, nullable: true })
   @Field(() => Date, { nullable: true })
-  publishedAt!: Date | null;
+  publishedAt!: OptionalDate;
 
   @ApiProperty({ type: () => Block, nullable: true })
   @Field(() => Block, { nullable: true })
   Block?: Block;
 }
+
+type OptionalDate = Date | null;

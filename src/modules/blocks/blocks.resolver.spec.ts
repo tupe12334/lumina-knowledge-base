@@ -14,9 +14,8 @@ describe('BlocksResolver', () => {
       deleteBlockRelationship: vi.fn(),
     };
 
-    resolver = new BlocksResolver(
-      mockBlocksService as unknown as BlocksService,
-    );
+    const typedMockService = mockBlocksService satisfies BlocksService;
+    resolver = new BlocksResolver(typedMockService);
   });
 
   it('should be defined', () => {

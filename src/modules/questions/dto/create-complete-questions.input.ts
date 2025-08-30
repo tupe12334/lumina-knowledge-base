@@ -12,6 +12,21 @@ import {
 import { Type } from 'class-transformer';
 import { QuestionType } from '@prisma/client';
 
+type ValidationStatusType =
+  | 'ai_generated'
+  | 'in_manual_review'
+  | 'approved'
+  | 'rejected';
+
+type UnitType =
+  | 'meter'
+  | 'kilogram'
+  | 'second'
+  | 'ampere'
+  | 'kelvin'
+  | 'mole'
+  | 'candela';
+
 export class CreateCompleteSelectAnswerInput {
   @ApiProperty({
     description: 'English text for the answer option',
@@ -79,11 +94,7 @@ export class CreateCompleteQuestionInput {
   })
   @IsOptional()
   @IsEnum(['ai_generated', 'in_manual_review', 'approved', 'rejected'])
-  validationStatus?:
-    | 'ai_generated'
-    | 'in_manual_review'
-    | 'approved'
-    | 'rejected';
+  validationStatus?: ValidationStatusType;
 
   @ApiProperty({
     description: 'Answer options for selection type questions',
@@ -148,14 +159,7 @@ export class CreateCompleteQuestionInput {
     'mole',
     'candela',
   ])
-  unit?:
-    | 'meter'
-    | 'kilogram'
-    | 'second'
-    | 'ampere'
-    | 'kelvin'
-    | 'mole'
-    | 'candela';
+  unit?: UnitType;
 }
 
 export class CreateCompleteQuestionsInput {

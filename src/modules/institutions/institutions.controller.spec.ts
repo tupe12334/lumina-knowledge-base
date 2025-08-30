@@ -21,7 +21,7 @@ describe('InstitutionsController (REST)', () => {
       remove: vi.fn(),
     };
     controller = new InstitutionsController(
-      service as unknown as InstitutionsService,
+      service satisfies Partial<InstitutionsService>,
     );
   });
 

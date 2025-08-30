@@ -148,12 +148,12 @@ export class InstitutionsService {
       }
 
       const institutionName =
-        institution.name?.en_text || 'No English translation available';
+        (institution.name && institution.name.en_text) || 'No English translation available';
 
       // Build faculty information
       const facultyCount = institution.Faculty.length;
       const facultyNames = institution.Faculty.map(
-        (f) => f.name?.en_text || 'No English translation available',
+        (f) => (f.name && f.name.en_text) || 'No English translation available',
       ).join(', ');
 
       // Build degree and course counts
@@ -165,7 +165,7 @@ export class InstitutionsService {
         institution.Faculty.length > 0
           ? institution.Faculty.map(
               (f) =>
-                `- ${f.name?.en_text || 'No English translation available'}`,
+                `- ${(f.name && f.name.en_text) || 'No English translation available'}`,
             ).join('\n')
           : 'No faculties available';
 
