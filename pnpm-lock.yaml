@@ -103,8 +103,8 @@ importers:
         specifier: ^9.34.0
         version: 9.34.0(jiti@2.5.1)
       eslint-config-agent:
-        specifier: ^1.0.0
-        version: 1.0.6(@eslint/eslintrc@3.3.1)(@eslint/js@9.34.0)(@typescript-eslint/eslint-plugin@8.41.0(@typescript-eslint/parser@8.41.0(eslint@9.34.0(jiti@2.5.1))(typescript@5.9.2))(eslint@9.34.0(jiti@2.5.1))(typescript@5.9.2))(@typescript-eslint/parser@8.41.0(eslint@9.34.0(jiti@2.5.1))(typescript@5.9.2))(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.41.0(eslint@9.34.0(jiti@2.5.1))(typescript@5.9.2))(eslint@9.34.0(jiti@2.5.1)))(eslint-plugin-react-hooks@5.2.0(eslint@9.34.0(jiti@2.5.1)))(eslint-plugin-react@7.37.5(eslint@9.34.0(jiti@2.5.1)))(eslint@9.34.0(jiti@2.5.1))(globals@16.3.0)(typescript-eslint@8.41.0(eslint@9.34.0(jiti@2.5.1))(typescript@5.9.2))
+        specifier: ^1.0.10
+        version: 1.0.10(@eslint/eslintrc@3.3.1)(@eslint/js@9.34.0)(@typescript-eslint/eslint-plugin@8.41.0(@typescript-eslint/parser@8.41.0(eslint@9.34.0(jiti@2.5.1))(typescript@5.9.2))(eslint@9.34.0(jiti@2.5.1))(typescript@5.9.2))(@typescript-eslint/parser@8.41.0(eslint@9.34.0(jiti@2.5.1))(typescript@5.9.2))(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.41.0(eslint@9.34.0(jiti@2.5.1))(typescript@5.9.2))(eslint@9.34.0(jiti@2.5.1)))(eslint-plugin-react-hooks@5.2.0(eslint@9.34.0(jiti@2.5.1)))(eslint-plugin-react@7.37.5(eslint@9.34.0(jiti@2.5.1)))(eslint@9.34.0(jiti@2.5.1))(globals@16.3.0)(typescript-eslint@8.41.0(eslint@9.34.0(jiti@2.5.1))(typescript@5.9.2))
       eslint-config-prettier:
         specifier: ^10.1.8
         version: 10.1.8(eslint@9.34.0(jiti@2.5.1))
@@ -2337,8 +2337,9 @@ packages:
     resolution: {integrity: sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==}
     engines: {node: '>=10'}
 
-  eslint-config-agent@1.0.6:
-    resolution: {integrity: sha512-giyAiS3UcoJN57HNSsXOBoWNN6d/z0Tw+KVUSMXBDne7NaltWcpQqP/tdaP9IdIIWaNGix0vHpWjhaf47TC0Vw==}
+  eslint-config-agent@1.0.10:
+    resolution: {integrity: sha512-xcT/Ul43Q+1BRDNBFZ94gqVLEJ9KmhnuHYuYNmrhucJjyknIfu6PSnmGoLKpsKp70qsE12rDwLrzcpSX93b+Xg==}
+    engines: {node: '>=18.0.0'}
     peerDependencies:
       '@eslint/eslintrc': ^3.3.1
       '@eslint/js': ^9.34.0
@@ -6715,7 +6716,7 @@ snapshots:
 
   escape-string-regexp@4.0.0: {}
 
-  eslint-config-agent@1.0.6(@eslint/eslintrc@3.3.1)(@eslint/js@9.34.0)(@typescript-eslint/eslint-plugin@8.41.0(@typescript-eslint/parser@8.41.0(eslint@9.34.0(jiti@2.5.1))(typescript@5.9.2))(eslint@9.34.0(jiti@2.5.1))(typescript@5.9.2))(@typescript-eslint/parser@8.41.0(eslint@9.34.0(jiti@2.5.1))(typescript@5.9.2))(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.41.0(eslint@9.34.0(jiti@2.5.1))(typescript@5.9.2))(eslint@9.34.0(jiti@2.5.1)))(eslint-plugin-react-hooks@5.2.0(eslint@9.34.0(jiti@2.5.1)))(eslint-plugin-react@7.37.5(eslint@9.34.0(jiti@2.5.1)))(eslint@9.34.0(jiti@2.5.1))(globals@16.3.0)(typescript-eslint@8.41.0(eslint@9.34.0(jiti@2.5.1))(typescript@5.9.2)):
+  eslint-config-agent@1.0.10(@eslint/eslintrc@3.3.1)(@eslint/js@9.34.0)(@typescript-eslint/eslint-plugin@8.41.0(@typescript-eslint/parser@8.41.0(eslint@9.34.0(jiti@2.5.1))(typescript@5.9.2))(eslint@9.34.0(jiti@2.5.1))(typescript@5.9.2))(@typescript-eslint/parser@8.41.0(eslint@9.34.0(jiti@2.5.1))(typescript@5.9.2))(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.41.0(eslint@9.34.0(jiti@2.5.1))(typescript@5.9.2))(eslint@9.34.0(jiti@2.5.1)))(eslint-plugin-react-hooks@5.2.0(eslint@9.34.0(jiti@2.5.1)))(eslint-plugin-react@7.37.5(eslint@9.34.0(jiti@2.5.1)))(eslint@9.34.0(jiti@2.5.1))(globals@16.3.0)(typescript-eslint@8.41.0(eslint@9.34.0(jiti@2.5.1))(typescript@5.9.2)):
     dependencies:
       '@eslint/eslintrc': 3.3.1
       '@eslint/js': 9.34.0
