@@ -18,14 +18,8 @@ WORKDIR /app
 # Copy package files for better layer caching
 COPY pnpm-lock.yaml package.json pnpm-workspace.yaml ./
 
-# Fetch dependencies to cache (without installing)
-RUN --mount=type=cache,id=pnpm-store,target=/pnpm/store,sharing=locked \
-    pnpm fetch --frozen-lockfile
-
-# Install dependencies from cache
-RUN --mount=type=cache,id=pnpm-store,target=/pnpm/store,sharing=locked \
-    --mount=type=cache,id=pnpm-modules,target=/app/node_modules/.pnpm,sharing=locked \
-    pnpm install --frozen-lockfile
+# Fetch and install dependencies (without caching)
+RUN pnpm fetch --frozen-lockfile && pnpm install --frozen-lockfile
 
 # Copy the rest of the source
 COPY . .
