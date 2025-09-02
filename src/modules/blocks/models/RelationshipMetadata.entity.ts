@@ -1,19 +1,6 @@
-import { ObjectType, Field, ID, registerEnumType } from '@nestjs/graphql';
+import { ObjectType, Field, ID } from '@nestjs/graphql';
 import { ApiProperty } from '@nestjs/swagger';
-import type { RelationshipMetadataKey as PrismaRelationshipMetadataKey } from '@prisma/client';
-
-export const RelationshipMetadataKey = {
-  REASON: 'REASON',
-  TYPE: 'TYPE',
-  DESCRIPTION: 'DESCRIPTION',
-} as const satisfies Record<
-  keyof typeof PrismaRelationshipMetadataKey,
-  PrismaRelationshipMetadataKey
->;
-
-registerEnumType(RelationshipMetadataKey, {
-  name: 'RelationshipMetadataKey',
-});
+import { RelationshipMetadataKey } from './RelationshipMetadataKey.enum';
 
 @ObjectType()
 export class RelationshipMetadata {
