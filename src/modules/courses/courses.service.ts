@@ -5,6 +5,18 @@ import {
   InternalServerErrorException,
 } from '@nestjs/common';
 import { RelationshipMetadataKey, Prisma } from '@prisma/client';
+import { PrismaService } from '../../prisma/prisma.service';
+import { Course } from './models/Course.entity';
+import { CreateCourseRelationshipInput } from './dto/create-course-relationship.input';
+import { DeleteCourseRelationshipInput } from './dto/delete-course-relationship.input';
+import { CourseRelationshipResult } from './dto/course-relationship-result.type';
+import { DeleteCourseInput } from './dto/delete-course.input';
+import { DeleteCourseResult } from './dto/delete-course-result.type';
+import { UpdateCourseInput } from './dto/update-course.input';
+import { SetCourseModulesInput } from './dto/set-course-modules.input';
+import { CreateCourseInput } from './dto/create-course.input';
+import { CreateManyCoursesInput } from './dto/create-many-courses.input';
+import { CoursesQueryInput } from './dto/courses-query.input';
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
@@ -22,19 +34,6 @@ function createValidMetadataEntries(metadata: Record<string, unknown>) {
   }
   return validEntries;
 }
-
-import { PrismaService } from '../../prisma/prisma.service';
-import { Course } from './models/Course.entity';
-import { CreateCourseRelationshipInput } from './dto/create-course-relationship.input';
-import { DeleteCourseRelationshipInput } from './dto/delete-course-relationship.input';
-import { CourseRelationshipResult } from './dto/course-relationship-result.type';
-import { DeleteCourseInput } from './dto/delete-course.input';
-import { DeleteCourseResult } from './dto/delete-course-result.type';
-import { UpdateCourseInput } from './dto/update-course.input';
-import { SetCourseModulesInput } from './dto/set-course-modules.input';
-import { CreateCourseInput } from './dto/create-course.input';
-import { CreateManyCoursesInput } from './dto/create-many-courses.input';
-import { CoursesQueryInput } from './dto/courses-query.input';
 
 @Injectable()
 export class CoursesService {

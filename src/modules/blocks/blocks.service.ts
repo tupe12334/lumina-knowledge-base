@@ -4,6 +4,14 @@ import {
   BadRequestException,
 } from '@nestjs/common';
 import { RelationshipMetadataKey, Prisma } from '@prisma/client';
+import { PrismaService } from '../../prisma/prisma.service';
+import { Block } from './models/Block.entity';
+import { CreateBlockRelationshipInput } from './dto/create-block-relationship.input';
+import { DeleteBlockRelationshipInput } from './dto/delete-block-relationship.input';
+import { BlockRelationshipResult } from './dto/block-relationship-result.type';
+import { CreateBlockInput } from './dto/create-block.input';
+import { CreateManyBlocksInput } from './dto/create-many-blocks.input';
+import { UpdateBlockInput } from './dto/update-block.input';
 
 function createValidMetadataEntries(metadata: Record<string, unknown>) {
   const validEntries: Array<{ key: RelationshipMetadataKey; value: string }> = [];
@@ -23,14 +31,6 @@ function createValidMetadataEntries(metadata: Record<string, unknown>) {
 type RelationshipWithIncludes = Prisma.BlockRelationshipGetPayload<{
   include: { prerequisite: true; postrequisite: true; metadata: true };
 }>;
-import { PrismaService } from '../../prisma/prisma.service';
-import { Block } from './models/Block.entity';
-import { CreateBlockRelationshipInput } from './dto/create-block-relationship.input';
-import { DeleteBlockRelationshipInput } from './dto/delete-block-relationship.input';
-import { BlockRelationshipResult } from './dto/block-relationship-result.type';
-import { CreateBlockInput } from './dto/create-block.input';
-import { CreateManyBlocksInput } from './dto/create-many-blocks.input';
-import { UpdateBlockInput } from './dto/update-block.input';
 
 /**
  * Service handling block retrieval and relationship logic.

@@ -5,12 +5,12 @@ import {
 } from '@nestjs/common';
 import { PrismaService } from '../../prisma/prisma.service';
 import { Degree } from './models/Degree.entity';
-
-type OptionalString = string | null;
 import { DegreesQueryDto } from './dto/degrees-query.dto';
 import { CreateDegreeInput } from './dto/create-degree.input';
 import { CreateManyDegreesInput } from './dto/create-many-degrees.input';
 import { UpdateDegreeInput } from './dto/update-degree.input';
+
+type OptionalString = string | null;
 
 /**
  * Service for managing degree operations.
