@@ -1,33 +1,14 @@
 import { Field, InputType } from '@nestjs/graphql';
 import {
   IsArray,
-  IsBoolean,
-  IsEnum,
   IsNumber,
   IsOptional,
   IsUUID,
-  ValidateIf,
   ValidateNested,
 } from 'class-validator';
 import { Type } from 'class-transformer';
-import { Units, UnitsValues } from '../../../prisma/enums';
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-
-@InputType()
-export class CreateSelectAnswerInputItem {
-  @ApiProperty({ description: 'Whether the answer item is correct' })
-  @Field()
-  @IsBoolean()
-  isCorrect!: boolean;
-
-  @ApiProperty({
-    description: 'Translation id for answer text',
-    format: 'uuid',
-  })
-  @Field()
-  @IsUUID()
-  translationId!: string;
-}
+import { CreateSelectAnswerInputItem } from './create-select-answer-input-item';
 
 @InputType()
 export class CreateAnswerInput {
@@ -44,24 +25,14 @@ export class CreateAnswerInput {
   @Type(() => CreateSelectAnswerInputItem)
   selectAnswers?: CreateSelectAnswerInputItem[];
 
-  @ApiPropertyOptional({ description: 'Unit value for unit-based answers' })
-  @Field({ nullable: true })
-  @IsOptional()
-  @ValidateIf((o: CreateAnswerInput) => o.numberAnswer == null)
-  @IsNumber()
-  unitValue?: number;
+  // Unit value field removed as it was unused
 
-  @ApiPropertyOptional({ enum: UnitsValues })
-  @Field({ nullable: true })
-  @IsOptional()
-  @ValidateIf((o: CreateAnswerInput) => o.numberAnswer == null)
-  @IsEnum(UnitsValues)
-  unit?: Units;
+  // Unit field removed as it was unused
 
   @ApiPropertyOptional({ description: 'Numeric answer (when not unit based)' })
   @Field({ nullable: true })
   @IsOptional()
-  @ValidateIf((o: CreateAnswerInput) => o.unitValue == null && o.unit == null)
+  @IsOptional()
   @IsNumber()
   numberAnswer?: number;
 }
