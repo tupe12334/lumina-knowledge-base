@@ -6,9 +6,6 @@ import { Translation } from '../../translations/models/Translation.entity';
 import { Institution } from '../../institutions/models/Institution.entity';
 import { Faculty } from '../../faculties/models/Faculty.entity';
 
-type OptionalString = string | null;
-type OptionalFaculty = Faculty | null;
-
 @ObjectType()
 export class Degree {
   @ApiProperty()
@@ -34,9 +31,9 @@ export class Degree {
 
   @ApiProperty({ type: () => String, nullable: true })
   @Field(() => String, { nullable: true })
-  facultyId?: OptionalString;
+  facultyId?: string | null;
 
   @ApiProperty({ type: () => Faculty, nullable: true })
   @Field(() => Faculty, { nullable: true })
-  faculty?: OptionalFaculty;
+  faculty?: Faculty | null;
 }
