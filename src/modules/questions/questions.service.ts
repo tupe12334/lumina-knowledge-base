@@ -4,12 +4,6 @@ import {
   InternalServerErrorException,
 } from '@nestjs/common';
 import { Prisma } from '@prisma/client';
-
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
-type QuestionWhereInputOrNull = Prisma.QuestionWhereInput | null;
-type AnswerWhereInputOrNull = Prisma.AnswerWhereInput | null;
-type QuestionsQueryDtoOrUndefined = QuestionsQueryDto | undefined;
 import { PrismaService } from '../../prisma/prisma.service';
 import { Question } from './models/Question.entity';
 import { QuestionsQueryDto } from './dto/question-query.dto';
@@ -19,6 +13,12 @@ import { CreateCompleteQuestionsInput } from './dto/create-complete-questions.in
 import { UpdateQuestionInput } from './dto/update-question.input';
 import { DeleteQuestionInput } from './dto/delete-question.input';
 import { PaginatedQuestionsResponse } from './dto/paginated-questions-response.dto';
+
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
+type QuestionWhereInputOrNull = Prisma.QuestionWhereInput | null;
+type AnswerWhereInputOrNull = Prisma.AnswerWhereInput | null;
+type QuestionsQueryDtoOrUndefined = QuestionsQueryDto | undefined;
 
 @Injectable()
 export class QuestionsService {

@@ -5,6 +5,15 @@ import {
   InternalServerErrorException,
 } from '@nestjs/common';
 import { Prisma, RelationshipMetadataKey } from '@prisma/client';
+import { PrismaService } from '../../prisma/prisma.service';
+import { Module as ModuleEntity } from './models/Module.entity';
+import { ModulesQueryDto } from './dto/modules-query.dto';
+import { CreateModuleRelationshipInput } from './dto/create-module-relationship.input';
+import { DeleteModuleRelationshipInput } from './dto/delete-module-relationship.input';
+import { ModuleRelationshipResult } from './dto/module-relationship-result.type';
+import { CreateModuleInput } from './dto/create-module.input';
+import { CreateManyModulesInput } from './dto/create-many-modules.input';
+import { UpdateModuleInput } from './dto/update-module.input';
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
@@ -26,16 +35,6 @@ function createValidMetadataEntries(metadata: Record<string, unknown>) {
 type RelationshipWithIncludes = Prisma.BlockRelationshipGetPayload<{
   include: { prerequisite: true; postrequisite: true; metadata: true };
 }>;
-
-import { PrismaService } from '../../prisma/prisma.service';
-import { Module as ModuleEntity } from './models/Module.entity';
-import { ModulesQueryDto } from './dto/modules-query.dto';
-import { CreateModuleRelationshipInput } from './dto/create-module-relationship.input';
-import { DeleteModuleRelationshipInput } from './dto/delete-module-relationship.input';
-import { ModuleRelationshipResult } from './dto/module-relationship-result.type';
-import { CreateModuleInput } from './dto/create-module.input';
-import { CreateManyModulesInput } from './dto/create-many-modules.input';
-import { UpdateModuleInput } from './dto/update-module.input';
 
 @Injectable()
 export class ModulesService {
