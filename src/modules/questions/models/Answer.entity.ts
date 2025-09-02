@@ -1,82 +1,13 @@
-import { ObjectType, Field, ID, Float } from '@nestjs/graphql';
+import { ObjectType, Field, ID } from '@nestjs/graphql';
 import { ApiProperty } from '@nestjs/swagger';
-import { Translation } from '../../translations/models/Translation.entity';
+import { SelectAnswer } from './SelectAnswer.entity';
+import { UnitAnswer } from './UnitAnswer.entity';
+import { NumberAnswer } from './NumberAnswer.entity';
+import { BooleanAnswer } from './BooleanAnswer.entity';
 
 type OptionalUnitAnswer = UnitAnswer | null;
 type OptionalNumberAnswer = NumberAnswer | null;
 type OptionalBooleanAnswer = BooleanAnswer | null;
-
-@ObjectType()
-export class SelectAnswer {
-  @ApiProperty()
-  @Field(() => ID)
-  id!: string;
-
-  @ApiProperty()
-  @Field()
-  isCorrect!: boolean;
-
-  @ApiProperty()
-  @Field()
-  translationId!: string;
-
-  @ApiProperty({ type: () => Translation })
-  @Field(() => Translation)
-  text!: Translation;
-
-  @ApiProperty()
-  @Field()
-  answerId!: string;
-}
-
-@ObjectType()
-export class UnitAnswer {
-  @ApiProperty()
-  @Field(() => ID)
-  id!: string;
-
-  @ApiProperty()
-  @Field(() => Float)
-  value!: number;
-
-  @ApiProperty()
-  @Field()
-  unit!: string;
-
-  @ApiProperty()
-  @Field()
-  answerId!: string;
-}
-
-@ObjectType()
-export class NumberAnswer {
-  @ApiProperty()
-  @Field(() => ID)
-  id!: string;
-
-  @ApiProperty()
-  @Field(() => Float)
-  value!: number;
-
-  @ApiProperty()
-  @Field()
-  answerId!: string;
-}
-
-@ObjectType()
-export class BooleanAnswer {
-  @ApiProperty()
-  @Field(() => ID)
-  id!: string;
-
-  @ApiProperty()
-  @Field()
-  value!: boolean;
-
-  @ApiProperty()
-  @Field()
-  answerId!: string;
-}
 
 @ObjectType()
 export class Answer {
