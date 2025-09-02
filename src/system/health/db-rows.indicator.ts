@@ -10,7 +10,7 @@ interface CountableDelegate {
   count: () => Promise<number>;
 }
 
-export interface PrismaCountClient {
+interface PrismaCountClient {
   institution: CountableDelegate;
   faculty: CountableDelegate;
   degree: CountableDelegate;

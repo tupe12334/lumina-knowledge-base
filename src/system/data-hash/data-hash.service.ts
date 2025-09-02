@@ -10,7 +10,7 @@ import { stableStringify } from 'src/system/data-hash/stable-stringify';
 
 type OptionalString = string | null;
 
-export interface PrismaQueryable {
+interface PrismaQueryable {
   $queryRaw<T = unknown>(...args: unknown[]): Promise<T>;
   $queryRawUnsafe<T = unknown>(query: string, ...params: unknown[]): Promise<T>;
 }
@@ -71,3 +71,4 @@ export class DataHashService implements OnApplicationBootstrap {
     return hash.digest('hex');
   }
 }
+
