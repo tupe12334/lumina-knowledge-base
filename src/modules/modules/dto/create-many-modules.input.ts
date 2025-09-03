@@ -1,10 +1,7 @@
-import { InputType, Field } from '@nestjs/graphql';
 import { Type } from 'class-transformer';
 import { IsArray, ValidateNested, ArrayMinSize } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 import { CreateModuleInput } from './create-module.input';
-
-@InputType()
 export class CreateManyModulesInput {
   @ApiProperty({
     description: 'Array of module data to create',
@@ -21,9 +18,6 @@ export class CreateManyModulesInput {
         courseId: 'uuid2',
       },
     ],
-  })
-  @Field(() => [CreateModuleInput], {
-    description: 'Array of module data to create',
   })
   @IsArray()
   @ArrayMinSize(1, { message: 'At least one module must be provided' })

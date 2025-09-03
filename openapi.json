@@ -4948,6 +4948,14 @@
       "UpdateBlockInput": {
         "type": "object",
         "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of the block"
+          },
+          "moduleId": {
+            "type": "string",
+            "description": "ID of the module this block belongs to"
+          },
           "id": {
             "type": "string",
             "description": "Block ID"

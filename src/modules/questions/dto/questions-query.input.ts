@@ -1,4 +1,3 @@
-import { InputType, Field, registerEnumType } from '@nestjs/graphql';
 import {
   IsOptional,
   IsString,
@@ -10,19 +9,9 @@ import {
 import { QuestionType } from '../models/question-type.enum';
 import { ApiPropertyOptional } from '@nestjs/swagger';
 
-registerEnumType(QuestionType, {
-  name: 'QuestionType',
-  description: 'The type of question',
-});
-
-@InputType()
 export class QuestionsQueryInput {
   @ApiPropertyOptional({
     type: [String],
-    description: 'Filter questions by module IDs',
-  })
-  @Field(() => [String], {
-    nullable: true,
     description: 'Filter questions by module IDs',
   })
   @IsOptional()
@@ -33,10 +22,6 @@ export class QuestionsQueryInput {
 
   @ApiPropertyOptional({
     type: [String],
-    description: 'Filter questions by course IDs',
-  })
-  @Field(() => [String], {
-    nullable: true,
     description: 'Filter questions by course IDs',
   })
   @IsOptional()
@@ -50,10 +35,6 @@ export class QuestionsQueryInput {
     isArray: true,
     description: 'Filter questions by question types',
   })
-  @Field(() => [QuestionType], {
-    nullable: true,
-    description: 'Filter questions by question types',
-  })
   @IsOptional()
   @IsArray()
   @IsIn(['selection', 'value', 'boolean', 'void'], { each: true })
@@ -63,21 +44,12 @@ export class QuestionsQueryInput {
     description:
       'Whether to include questions from submodules when filtering by module (default: true)',
   })
-  @Field(() => Boolean, {
-    nullable: true,
-    description:
-      'Whether to include questions from submodules when filtering by module',
-  })
   @IsOptional()
   @IsBoolean()
   includeSubmodules?: boolean;
 
   // Keep the old single-value fields for backward compatibility
   @ApiPropertyOptional({
-    description: 'Filter questions by module ID (deprecated, use moduleIds)',
-  })
-  @Field({
-    nullable: true,
     description: 'Filter questions by module ID (deprecated, use moduleIds)',
   })
   @IsOptional()
@@ -88,10 +60,6 @@ export class QuestionsQueryInput {
   @ApiPropertyOptional({
     description: 'Filter questions by course ID (deprecated, use courseIds)',
   })
-  @Field({
-    nullable: true,
-    description: 'Filter questions by course ID (deprecated, use courseIds)',
-  })
   @IsOptional()
   @IsString()
   @IsUUID()
@@ -99,11 +67,6 @@ export class QuestionsQueryInput {
 
   @ApiPropertyOptional({
     enum: QuestionType,
-    description:
-      'Filter questions by question type (deprecated, use questionTypes)',
-  })
-  @Field(() => QuestionType, {
-    nullable: true,
     description:
       'Filter questions by question type (deprecated, use questionTypes)',
   })

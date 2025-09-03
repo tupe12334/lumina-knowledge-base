@@ -1,4 +1,3 @@
-import { Field, InputType } from '@nestjs/graphql';
 import {
   IsArray,
   IsEnum,
@@ -12,15 +11,12 @@ import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 import { CreateSelectAnswerInputItem } from './create-select-answer-input-item';
 import { Units } from '@prisma/client';
 
-@InputType()
 export class CreateAnswerInput {
   @ApiProperty({ description: 'Question id', format: 'uuid' })
-  @Field()
   @IsUUID()
   questionId!: string;
 
   @ApiPropertyOptional({ type: [CreateSelectAnswerInputItem] })
-  @Field(() => [CreateSelectAnswerInputItem], { nullable: true })
   @IsOptional()
   @IsArray()
   @ValidateNested({ each: true })
@@ -28,24 +24,20 @@ export class CreateAnswerInput {
   selectAnswers?: CreateSelectAnswerInputItem[];
 
   @ApiPropertyOptional({ description: 'Unit value for unit-based answers', example: 9.8 })
-  @Field({ nullable: true })
   @IsOptional()
   @IsNumber()
   unitValue?: number;
 
-  @ApiPropertyOptional({ 
-    description: 'Unit for unit-based answers', 
+  @ApiPropertyOptional({
+    description: 'Unit for unit-based answers',
     enum: Units,
-    example: Units.meter 
+    example: Units.meter
   })
-  @Field(() => String, { nullable: true })
   @IsOptional()
   @IsEnum(Units)
   unit?: Units;
 
   @ApiPropertyOptional({ description: 'Numeric answer (when not unit based)' })
-  @Field({ nullable: true })
-  @IsOptional()
   @IsOptional()
   @IsNumber()
   numberAnswer?: number;

@@ -1,9 +1,6 @@
-import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
-import { GraphQLModule } from '@nestjs/graphql';
 import { APP_GUARD } from '@nestjs/core';
-import { join } from 'path';
 import { serverEnvSchema } from './env/schema';
 import { BlocksModule } from './modules/blocks/blocks.module';
 import { CoursesModule } from './modules/courses/courses.module';
@@ -25,16 +22,6 @@ import { DataHashModule } from 'src/system/data-hash/data-hash.module';
     ConfigModule.forRoot({
       isGlobal: true,
       validate: (config) => serverEnvSchema.parse(config),
-    }),
-    GraphQLModule.forRoot<ApolloDriverConfig>({
-      driver: ApolloDriver,
-      playground: true,
-      introspection: true,
-      sortSchema: true,
-      buildSchemaOptions: {
-        numberScalarMode: 'integer',
-      },
-      autoSchemaFile: join(process.cwd(), 'schema.gql'),
     }),
     PrismaModule,
     HealthModule,
