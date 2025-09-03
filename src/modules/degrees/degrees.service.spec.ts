@@ -39,6 +39,75 @@ describe('DegreesService', () => {
     expect(result[0].institution && result[0].institution.name.en_text).toBe('University of Technology');
   });
 
+  describe('findAll with search query', () => {
+    it('should search degrees by English name', async () => {
+      const degree = {
+        id: 'deg1',
+        name: { en_text: 'Computer Science', he_text: 'מדעי המחשב' },
+        institution: {
+          name: {
+            en_text: 'University of Technology',
+            he_text: 'האוניברסיטה הטכנולוגית',
+          },
+        },
+      };
+      mockPrismaService.degree.findMany.mockResolvedValue([degree]);
+
+      await service.findAll({ name: 'Computer' });
+
+      expect(mockPrismaService.degree.findMany).toHaveBeenCalledWith({
+        where: {
+          name: {
+            OR: [
+              { en_text: { contains: 'Computer' } },
+              { he_text: { contains: 'Computer' } },
+            ],
+          },
+        },
+        include: expect.any(Object),
+      });
+    });
+
+    it('should search degrees by Hebrew name', async () => {
+      const degree = {
+        id: 'deg1',
+        name: { en_text: 'Computer Science', he_text: 'מדעי המחשב' },
+        institution: {
+          name: {
+            en_text: 'University of Technology',
+            he_text: 'האוניברסיטה הטכנולוגית',
+          },
+        },
+      };
+      mockPrismaService.degree.findMany.mockResolvedValue([degree]);
+
+      await service.findAll({ name: 'מדעי' });
+
+      expect(mockPrismaService.degree.findMany).toHaveBeenCalledWith({
+        where: {
+          name: {
+            OR: [
+              { en_text: { contains: 'מדעי' } },
+              { he_text: { contains: 'מדעי' } },
+            ],
+          },
+        },
+        include: expect.any(Object),
+      });
+    });
+
+    it('should not apply name filter when no search term provided', async () => {
+      mockPrismaService.degree.findMany.mockResolvedValue([]);
+
+      await service.findAll({});
+
+      expect(mockPrismaService.degree.findMany).toHaveBeenCalledWith({
+        where: {},
+        include: expect.any(Object),
+      });
+    });
+  });
+
   describe('generateSummary', () => {
     it('should generate a comprehensive degree summary', async () => {
       const mockDegree = {

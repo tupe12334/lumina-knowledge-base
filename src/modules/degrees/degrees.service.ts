@@ -87,9 +87,18 @@ export class DegreesService {
         ...(query && query.name
           ? {
               name: {
-                en_text: {
-                  contains: query.name,
-                },
+                OR: [
+                  {
+                    en_text: {
+                      contains: query.name,
+                    },
+                  },
+                  {
+                    he_text: {
+                      contains: query.name,
+                    },
+                  },
+                ],
               },
             }
           : {}),
