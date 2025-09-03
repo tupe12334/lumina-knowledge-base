@@ -5143,10 +5143,12 @@
           },
           "unitValue": {
             "type": "number",
-            "description": "Unit value for unit-based answers"
+            "description": "Unit value for unit-based answers",
+            "example": 9.8
           },
           "unit": {
             "type": "string",
+            "description": "Unit for unit-based answers",
             "enum": [
               "meter",
               "kilogram",
@@ -5155,7 +5157,8 @@
               "kelvin",
               "mole",
               "candela"
-            ]
+            ],
+            "example": "meter"
           },
           "numberAnswer": {
             "type": "number",
