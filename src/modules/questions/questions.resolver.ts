@@ -2,7 +2,6 @@ import { Resolver, Query, Args } from '@nestjs/graphql';
 import { QuestionsService } from './questions.service';
 import { Question } from './models/Question.entity';
 import { QuestionsQueryDto } from './dto/question-query.dto';
-import { PaginatedQuestionsResponse } from './dto/paginated-questions-response.dto';
 
 /**
  * GraphQL resolver for question-related operations.
@@ -28,20 +27,5 @@ export class QuestionsResolver {
     return this.questionsService.findAll(input);
   }
 
-  /**
-   * Retrieves questions with pagination support for infinite scroll.
-   * @param input - Optional filtering and pagination parameters
-   * @returns Promise<PaginatedQuestionsResponse> Paginated questions with metadata
-   */
-  @Query(() => PaginatedQuestionsResponse, {
-    name: 'questionsPaginated',
-    description: 'Get questions with pagination support for infinite scroll',
-  })
-  async getQuestionsPaginated(
-    @Args('input', { type: () => QuestionsQueryDto, nullable: true })
-    input?: QuestionsQueryDto,
-  ): Promise<PaginatedQuestionsResponse> {
-    return this.questionsService.findAllPaginated(input);
-  }
 
 }
