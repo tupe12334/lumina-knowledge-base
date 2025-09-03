@@ -295,23 +295,6 @@ type NumberAnswer {
   value: Float!
 }
 
-type PaginatedQuestionsResponse {
-  """Whether there are more questions available"""
-  hasMore: Boolean!
-
-  """Number of questions returned in this batch"""
-  limit: Int!
-
-  """Current offset (starting position)"""
-  offset: Int!
-
-  """List of questions"""
-  questions: [Question!]!
-
-  """Total number of questions matching the criteria"""
-  totalCount: Int!
-}
-
 type Query {
   """Get a specific course by ID"""
   course(
@@ -333,9 +316,6 @@ type Query {
 
   """Get all questions with optional filtering"""
   questions(input: QuestionsQueryDto): [Question!]!
-
-  """Get questions with pagination support for infinite scroll"""
-  questionsPaginated(input: QuestionsQueryDto): PaginatedQuestionsResponse!
   universities: [University!]!
   university(id: ID!): University
 }
