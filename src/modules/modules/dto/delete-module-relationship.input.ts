@@ -2,8 +2,8 @@ import { IsUUID } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 
 /**
- * GraphQL input type for deleting prerequisite/postrequisite relationships between modules.
- * Used in GraphQL mutations to specify which relationship to remove.
+ * Input type for deleting prerequisite/postrequisite relationships between modules.
+ * Used to specify which relationship to remove.
  */
 export class DeleteModuleRelationshipInput {
   /**

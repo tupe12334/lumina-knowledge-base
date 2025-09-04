@@ -82,7 +82,7 @@ One-time path to establish the canonical Postgres dump:
 
 ## Read-only enforcement
 
-- Application: GraphQL mutations are guarded (`MutationsGuard`) and disabled via env.
+- Application: Mutations are guarded (`MutationsGuard`) and disabled via env.
 - Database:
   - App user lacks INSERT/UPDATE/DELETE privileges.
   - Optional: Row-level security with read-only policies.

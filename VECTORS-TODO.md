@@ -66,8 +66,8 @@ Rationale: anchor embeddings on Translation-first, covering most domain text (na
 - services/
   - embedding.service.ts — indexing pipeline (chunk + embed + upsert)
   - embedding-search.service.ts — semantic search orchestration
-- graphql/
-  - search.resolver.ts — Query semanticSearch
+- controllers/
+  - search.controller.ts — REST endpoint semanticSearch
   - types.ts — SearchResult shape/union
 - tests — \*.spec.ts colocated in each folder
 
@@ -87,9 +87,9 @@ Rationale: anchor embeddings on Translation-first, covering most domain text (na
 
 ## Search API shape
 
-GraphQL Query:
+REST API:
 
-- `semanticSearch(input: { query: String!, language: String, sourceTypes: [SourceType!], limit: Int = 10 }) -> [SearchResult!]`
+- `POST /search/semantic` with body: { query: string, language?: string, sourceTypes?: SourceType[], limit?: number } -> SearchResult[]
 - Return: { sourceType, sourceId, score, snippet, model }
 - Optionally resolve parent entity for convenience.
 
@@ -109,7 +109,7 @@ GraphQL Query:
 - [ ] Embeddings module scaffolded (providers, chunker, repo, services)
 - [ ] Indexing pipeline on `Translation` changes
 - [ ] Backfill script implemented and documented
-- [ ] GraphQL `semanticSearch` implemented with vector ranking
+- [ ] REST API `semanticSearch` implemented with vector ranking
 - [ ] Tests: unit (chunker, provider), integration (vector search) — use Testcontainers or local PG
 - [ ] Docs: runbook for local PG, envs, backfill, and tuning
 

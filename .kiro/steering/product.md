@@ -15,8 +15,7 @@ Lumina Knowledge Base is a stateless microservice backend that manages academic 
 - **Prerequisite Management**: Block-based system for managing course and module prerequisites/postrequisites
 - **Multilingual Support**: Built-in translation system supporting English and Hebrew
 - **Question System**: Support for multiple question types (selection, value, void) with validation workflow
-- **GraphQL API**: Primary interface for data access and manipulation
-- **REST API**: OpenAPI/Swagger documentation available for REST endpoints
+- **REST API**: Primary interface for data access and manipulation with OpenAPI/Swagger documentation
 
 ## Key Entities
 

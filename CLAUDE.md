@@ -42,7 +42,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Architecture
 
-This is a NestJS-based knowledge base API that provides both REST and GraphQL endpoints for managing educational content and questions. The application uses SQLite with Prisma ORM and follows Domain-Driven Design principles.
+This is a NestJS-based knowledge base API that provides REST endpoints for managing educational content and questions. The application uses SQLite with Prisma ORM and follows Domain-Driven Design principles.
 
 ### Core Data Model
 
@@ -55,7 +55,6 @@ The system models educational hierarchy: **Institutions → Faculties → Degree
 1. **Boot the service**: Use `PORT=3333 pnpm run preview` to start the service on port 3333
 2. **Access APIs**:
    - REST API with Swagger: `http://localhost:3333/docs`
-   - GraphQL Playground: `http://localhost:3333/graphql`
    - OpenAPI spec: `http://localhost:3333/openapi`
 3. **Enable mutations**: Set `ENABLE_MUTATIONS=true` environment variable to allow data modifications
 
@@ -80,7 +79,6 @@ The system includes a specialized command for AI-generated questions:
 Each domain module follows NestJS patterns with:
 
 - **Controllers**: REST endpoints (`*.controller.ts`)
-- **Resolvers**: GraphQL endpoints (`*.resolver.ts`)
 - **Services**: Business logic (`*.service.ts`)
 - **Models**: Entity definitions (`models/`)
 - **DTOs**: Data transfer objects (`dto/`)
@@ -88,7 +86,7 @@ Each domain module follows NestJS patterns with:
 ### Key Features
 
 - **Mutations Guard**: Global guard that blocks mutations unless `ENABLE_MUTATIONS=true` is set
-- **Dual API**: Both REST (Swagger at `/docs`) and GraphQL (at `/graphql`) interfaces
+- **REST API**: REST interface with Swagger documentation at `/docs`
 - **Translation Support**: Bilingual content (English/Hebrew) via Translation entities
 - **Question System**: Multiple question types (selection, value, boolean, void) with validation status
 - **Block Relationships**: Complex prerequisite system with metadata

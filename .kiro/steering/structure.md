@@ -29,8 +29,8 @@ Each domain module follows consistent structure:
 
 - `{module}.module.ts` - NestJS module definition
 - `{module}.service.ts` - Business logic and data access
-- `{module}.resolver.ts` - GraphQL resolver (queries/mutations)
-- `models/` - Entity definitions with GraphQL and Swagger decorators
+- `{module}.controller.ts` - REST endpoint definitions
+- `models/` - Entity definitions with Swagger decorators
 - `dto/` - Data Transfer Objects for inputs and outputs
 
 #### Domain Modules
@@ -71,7 +71,7 @@ Each module follows NestJS conventions:
 
 1. **Module** - Defines dependencies and exports
 2. **Service** - Contains business logic and database operations
-3. **Resolver** - GraphQL endpoint definitions
+3. **Controller** - REST endpoint definitions
 4. **Models** - Entity definitions with decorators
 5. **DTOs** - Input/output type definitions
 

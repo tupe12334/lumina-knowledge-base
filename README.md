@@ -47,7 +47,6 @@ $ pnpm run start:prod
 
 Once the application is running, the Swagger UI is available at `http://localhost:3000/docs` and the raw OpenAPI JSON is served from `http://localhost:3000/openapi`.
 The UI provides an **Authorize** button that accepts a JWT so you can test secured endpoints directly from the browser.
-Additionally, a GraphQL endpoint is exposed at `http://localhost:3000/graphql` for query-based access.
 
 ## Run tests
 

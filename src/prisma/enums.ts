@@ -1,6 +1,6 @@
 import type { $Enums } from '@prisma/client';
 
-// GraphQL/runtime enums matching Prisma schema enums
+// Runtime enums matching Prisma schema enums
 
 export const QuestionTypeValues = {
   selection: 'selection',

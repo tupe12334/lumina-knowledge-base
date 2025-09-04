@@ -2,8 +2,8 @@ import { IsUUID, IsOptional, IsObject } from 'class-validator';
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 
 /**
- * GraphQL input type for creating prerequisite/postrequisite relationships between modules.
- * Used in GraphQL mutations to specify the relationship data.
+ * Input type for creating prerequisite/postrequisite relationships between modules.
+ * Used to specify the relationship data.
  */
 export class CreateModuleRelationshipInput {
   /**

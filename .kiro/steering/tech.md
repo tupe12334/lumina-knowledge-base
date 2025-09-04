@@ -13,9 +13,7 @@
 
 ## API Technologies
 
-- **GraphQL**: Primary API interface using Apollo Server
-- **REST API**: OpenAPI/Swagger documentation
-- **Apollo Server**: GraphQL server implementation
+- **REST API**: Primary API interface with OpenAPI/Swagger documentation
 
 ## Package Management
 
