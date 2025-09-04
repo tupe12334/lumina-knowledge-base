@@ -12,9 +12,4 @@ export default defineProject({
     },
     include: ['src/**/*.spec.ts', 'test/**/*.e2e-spec.ts'],
   },
-  resolve: {
-    alias: {
-      '@prisma/client': resolve(__dirname, './generated/client'),
-    },
-  },
 });
