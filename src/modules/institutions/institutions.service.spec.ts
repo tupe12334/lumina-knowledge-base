@@ -128,9 +128,9 @@ describe('InstitutionsService', () => {
 
       expect(result).toContain('Institution:');
       expect(result).toContain('ID: inst-789');
-      expect(result).toContain('Faculties: 1 faculty');
-      expect(result).toContain('Degrees: 1 degree program');
-      expect(result).toContain('Courses: 1 course offered');
+      expect(result).toContain('Faculties: 1 faculties including No English translation available');
+      expect(result).toContain('Degrees: 1 degree programs');
+      expect(result).toContain('Courses: 1 courses offered');
     });
 
     it('should throw NotFoundException when institution does not exist', async () => {

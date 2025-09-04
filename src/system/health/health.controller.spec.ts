@@ -86,7 +86,7 @@ describe('HealthController', () => {
     );
     expect(memoryHealth.checkRSS).toHaveBeenCalledWith(
       'memory_rss',
-      150 * 1024 * 1024,
+      200 * 1024 * 1024,
     );
   });
 
