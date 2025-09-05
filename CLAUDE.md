@@ -8,7 +8,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 - `pnpm run dev` - Start development server with watch mode
 - `pnpm run start:dev` - Alias for dev command
-- `pnpm run start:e2e` - Start server for e2e testing (port 3333 recommended)
+- `pnpm run start:e2e` - Start server for e2e testing
 - `pnpm run preview` - Build and run production preview
 
 ### Database
@@ -52,10 +52,10 @@ The system models educational hierarchy: **Institutions → Faculties → Degree
 
 #### Service Setup for Data Operations
 
-1. **Boot the service**: Use `PORT=3333 pnpm run preview` to start the service on port 3333
+1. **Boot the service**: Use `PORT=3333 pnpm run preview` to start the service
 2. **Access APIs**:
-   - REST API with Swagger: `http://localhost:3333/docs`
-   - OpenAPI spec: `http://localhost:3333/openapi`
+   - REST API with Swagger: `/docs`
+   - OpenAPI spec: `/openapi`
 3. **Enable mutations**: Set `ENABLE_MUTATIONS=true` environment variable to allow data modifications
 
 #### Question Generation Workflow
