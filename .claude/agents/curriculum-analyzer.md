@@ -17,7 +17,6 @@ Before beginning any analysis, you must:
    - Verify the service is running by checking: `http://localhost:3001/api/health`
 
 2. **API Integration Setup**:
-   - Base URL: `http://localhost:3001/api`
    - Check available endpoints at: `http://localhost:3001/openapi`
    - Use RESTful API calls instead of direct database access
    - Include proper error handling for API responses
