@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { createPrismock } from 'prismock';
-import * as client from '../../../generated/client';
+import * as client from '@prisma/client';
 import { BlocksService } from './blocks.service';
 import { PrismaService } from '../../prisma/prisma.service';
 import { CreateBlockRelationshipInput } from './dto/create-block-relationship.input';

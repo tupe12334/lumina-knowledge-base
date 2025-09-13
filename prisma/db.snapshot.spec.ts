@@ -1,6 +1,6 @@
 import { execSync } from 'child_process';
 import { describe, expect, it } from 'vitest';
-import { PrismaClient } from '../generated/client';
+import { PrismaClient } from '@prisma/client';
 
 // Normalize data for deterministic snapshotting
 const normalize = (value: unknown): unknown => {
