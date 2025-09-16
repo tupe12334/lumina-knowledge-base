@@ -61,3 +61,5 @@ generated/
 
 
 tsconfig.build.tsbuildinfo
+
+.local/
