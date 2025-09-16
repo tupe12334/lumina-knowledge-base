@@ -89,8 +89,8 @@ export class QuestionsService {
   }
 
   async findAllPaginated(query?: QuestionsQueryDto): Promise<PaginatedQuestionsResponse> {
-    const page = query?.page || 1;
-    const limit = Math.min(query?.limit || 20, 100);
+    const page = (query && query.page) || 1;
+    const limit = Math.min((query && query.limit) || 20, 100);
     const skip = (page - 1) * limit;
 
     const where = query ? QuestionQueryBuilder.buildWhereClause(query) : {};
