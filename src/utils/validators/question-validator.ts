@@ -1,6 +1,16 @@
 import { PrismaClient } from '@prisma/client';
 import { BaseUuidValidator, ValidationResult } from './base-uuid-validator';
 
+interface QuestionWithRelations {
+  id: string;
+  validationStatus: string;
+  translationId: string | null;
+  type: string;
+  Modules: Array<{ id: string }>;
+  Parts: Array<{ id: string }>;
+  PartOf: Array<{ id: string }>;
+}
+
 export class QuestionValidator extends BaseUuidValidator {
   constructor() {
     super();
@@ -78,7 +88,7 @@ export class QuestionValidator extends BaseUuidValidator {
     ]);
   }
 
-  private async updateQuestionRelationships(tx: PrismaClient, question: any, newId: string) {
+  private async updateQuestionRelationships(tx: PrismaClient, question: QuestionWithRelations, newId: string) {
     if (question.Parts && question.Parts.length > 0) {
       await tx.questionPart.updateMany({
         where: { questionId: question.id },
