@@ -17,7 +17,7 @@ interface PrismaQueryable {
 
 @Injectable()
 export class DataHashService implements OnApplicationBootstrap {
-  private static readonly logger: Logger;
+  private static logger: Logger;
   private hash: OptionalString;
 
   constructor(
