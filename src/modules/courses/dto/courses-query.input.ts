@@ -31,5 +31,5 @@ export class CoursesQueryInput {
     if (value === 'false' || value === false) return false;
     return false;
   })
-  sortByDegree?: boolean = false;
+  sortByDegree?: boolean;
 }

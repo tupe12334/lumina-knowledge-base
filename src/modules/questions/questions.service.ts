@@ -641,10 +641,16 @@ export class QuestionsService {
             data: {
               question: { connect: { id: question.id } },
               SelectAnswer: {
-                create: selectAnswers.map((answer, index) => ({
-                  isCorrect: answer.is_correct,
-                  text: { connect: { id: answerTranslations[index].id } },
-                })),
+                create: selectAnswers.map((answer, index) => {
+                  const translation = answerTranslations[index];
+                  if (!translation) {
+                    throw new Error(`Missing translation for answer at index ${index}`);
+                  }
+                  return {
+                    isCorrect: answer.is_correct,
+                    text: { connect: { id: translation.id } },
+                  };
+                }),
               },
             },
           });

@@ -94,6 +94,10 @@ export class DatabaseService {
     const sizes = ['Bytes', 'KB', 'MB', 'GB'];
     const i = Math.floor(Math.log(bytes) / Math.log(k));
 
-    return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+    // Ensure we don't access out of bounds
+    const sizeIndex = Math.min(Math.max(0, i), sizes.length - 1);
+    const unit = sizes.at(sizeIndex) || 'GB';
+
+    return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + unit;
   }
 }

@@ -14,6 +14,15 @@ vi.mock('../../generated/client', () => {
   return { PrismaClient: PrismaClientMock };
 });
 
+export class PrismaClientMock {
+  async $connect(): Promise<void> {
+    return Promise.resolve();
+  }
+  async $disconnect(): Promise<void> {
+    return Promise.resolve();
+  }
+}
+
 describe('PrismaService', () => {
   it('should be defined', async () => {
     const module = await Test.createTestingModule({

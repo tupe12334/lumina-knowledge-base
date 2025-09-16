@@ -8,7 +8,12 @@ export class PrismaService
   extends PrismaClient
   implements OnModuleInit, OnModuleDestroy
 {
-  private readonly logger = new Logger(PrismaService.name);
+  private readonly logger: Logger;
+
+  constructor() {
+    super();
+    this.logger = new Logger(PrismaService.name);
+  }
 
   async onModuleInit(): Promise<void> {
     await this.$connect();

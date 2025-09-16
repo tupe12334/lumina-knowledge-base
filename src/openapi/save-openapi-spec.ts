@@ -19,6 +19,11 @@ export const saveOpenapiSpec = async (
     return;
   }
 
+  // Validate file path to prevent directory traversal
+  if (filePath.includes('..') || !filePath.endsWith('.json')) {
+    throw new Error('Invalid file path provided');
+  }
+
   const targetPath = resolve(filePath);
   await writeFile(targetPath, JSON.stringify(document, null, 2), {
     encoding: 'utf8',
