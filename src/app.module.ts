@@ -12,7 +12,7 @@ import { QuestionsModule } from './modules/questions/questions.module';
 import { InstitutionsModule } from './modules/institutions/institutions.module';
 import { TranslationsModule } from './modules/translations/translations.module';
 import { PrismaModule } from './prisma/prisma.module';
-import { MutationsGuardModule } from 'nestjs-mutations-guard';
+import { MutationsGuardModule, EnvConfigFactory } from 'nestjs-mutations-guard';
 import { AnswersModule } from './modules/answers/answers.module';
 import { DataHashModule } from 'src/system/data-hash/data-hash.module';
 
@@ -35,7 +35,7 @@ import { DataHashModule } from 'src/system/data-hash/data-hash.module';
     TranslationsModule,
     AnswersModule,
     DataHashModule,
-    MutationsGuardModule.register(),
+    MutationsGuardModule.register({ configFactory: new EnvConfigFactory() }),
   ],
   controllers: [],
   providers: [],

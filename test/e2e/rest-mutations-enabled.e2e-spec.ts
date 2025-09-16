@@ -12,7 +12,7 @@ import {
 import { Reflector } from '@nestjs/core';
 import request from 'supertest';
 import { env } from '../../src/env';
-import { MutationsGuardModule } from 'nestjs-mutations-guard';
+import { MutationsGuardModule, EnvConfigFactory } from 'nestjs-mutations-guard';
 
 @Controller('test')
 export class TestController {
@@ -45,7 +45,7 @@ describe('REST Mutations Enabled (e2e)', () => {
     env.BLOCK_MUTATIONS = false;
 
     const moduleFixture = await Test.createTestingModule({
-      imports: [MutationsGuardModule.register()],
+      imports: [MutationsGuardModule.register({ configFactory: new EnvConfigFactory() })],
       controllers: [TestController],
       providers: [Reflector],
     }).compile();
