@@ -17,12 +17,18 @@ interface PrismaQueryable {
 
 @Injectable()
 export class DataHashService implements OnApplicationBootstrap {
-  private static readonly logger = new Logger(DataHashService.name);
-  private hash: OptionalString = null;
+  private static readonly logger: Logger;
+  private hash: OptionalString;
 
   constructor(
     @Inject(PrismaService) private readonly prisma: PrismaQueryable,
-  ) {}
+  ) {
+    this.hash = null;
+  }
+
+  static {
+    DataHashService.logger = new Logger(DataHashService.name);
+  }
 
   async onApplicationBootstrap(): Promise<void> {
     try {
