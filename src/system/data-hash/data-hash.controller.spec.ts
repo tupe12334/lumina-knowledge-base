@@ -5,8 +5,13 @@ import { ServiceUnavailableException } from '@nestjs/common';
 
 type OptionalString = string | null;
 
-class MockDataHashService implements Pick<DataHashService, 'getHash'> {
-  private value: OptionalString = null;
+export class MockDataHashService implements Pick<DataHashService, 'getHash'> {
+  private value: OptionalString;
+
+  constructor() {
+    this.value = null;
+  }
+
   set(hash: OptionalString) {
     this.value = hash;
   }

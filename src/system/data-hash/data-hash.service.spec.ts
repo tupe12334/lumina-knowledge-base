@@ -4,9 +4,14 @@ import {
   PrismaQueryable,
 } from 'src/system/data-hash/data-hash.service';
 
-class FakePrisma implements PrismaQueryable {
-  _queryRaw = vi.fn(() => Promise.resolve([]));
-  _queryRawUnsafe = vi.fn(() => Promise.resolve([]));
+export class FakePrisma implements PrismaQueryable {
+  _queryRaw: any;
+  _queryRawUnsafe: any;
+
+  constructor() {
+    this._queryRaw = vi.fn(() => Promise.resolve([]));
+    this._queryRawUnsafe = vi.fn(() => Promise.resolve([]));
+  }
 
   $queryRaw<T = unknown>(...args: unknown[]): Promise<T> {
     return this._queryRaw.apply(null, args) as const as Promise<T>;
