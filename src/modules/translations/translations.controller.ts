@@ -15,8 +15,6 @@ import {
   ApiOkResponse,
   ApiNoContentResponse,
   ApiOperation,
-  ApiResponse,
-  ApiParam,
 } from '@nestjs/swagger';
 import { TranslationsService } from './translations.service';
 import { CreateTranslationInput } from './dto/create-translation.input';
@@ -30,114 +28,47 @@ export class TranslationsController {
   constructor(private readonly translationsService: TranslationsService) {}
 
   @Post()
-  @ApiOperation({
-    summary: 'Create a new translation',
-    description: 'Creates a new translation record.',
-  })
-  @ApiCreatedResponse({
-    type: Translation,
-    description: 'The newly created translation.',
-  })
-  @ApiResponse({ status: 400, description: 'Bad Request.' })
-  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
+  @ApiOperation({ summary: 'Create a new translation' })
+  @ApiCreatedResponse({ type: Translation })
   create(@Body() createTranslationDto: CreateTranslationInput) {
     return this.translationsService.create(createTranslationDto);
   }
 
   @Post('bulk')
-  @ApiOperation({
-    summary: 'Create multiple translations',
-    description: 'Creates multiple translation records in a single operation.',
-  })
-  @ApiCreatedResponse({
-    description: 'The number of translations created.',
-    schema: {
-      type: 'object',
-      properties: {
-        count: {
-          type: 'number',
-          description: 'Number of translations created',
-          example: 5,
-        },
-      },
-    },
-  })
-  @ApiResponse({ status: 400, description: 'Bad Request.' })
-  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
+  @ApiOperation({ summary: 'Create multiple translations' })
+  @ApiCreatedResponse({ description: 'Number of translations created' })
   createMany(@Body() createManyTranslationsDto: CreateManyTranslationsInput) {
     return this.translationsService.createMany(createManyTranslationsDto);
   }
 
   @Get()
-  @ApiOperation({
-    summary: 'Retrieve all translations',
-    description: 'Returns a list of all translations.',
-  })
-  @ApiOkResponse({
-    type: Translation,
-    isArray: true,
-    description: 'A list of translations.',
-  })
-  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
+  @ApiOperation({ summary: 'Retrieve all translations' })
+  @ApiOkResponse({ type: Translation, isArray: true })
   findAll() {
     return this.translationsService.findAll();
   }
 
   @Get(':id')
-  @ApiOperation({
-    summary: 'Retrieve a translation by ID',
-    description: 'Returns a single translation by its ID.',
-  })
-  @ApiParam({
-    name: 'id',
-    description: 'The ID of the translation',
-    type: String,
-  })
-  @ApiOkResponse({
-    type: Translation,
-    description: 'The translation with the specified ID.',
-  })
-  @ApiResponse({ status: 404, description: 'Translation not found.' })
-  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
+  @ApiOperation({ summary: 'Retrieve a translation by ID' })
+  @ApiOkResponse({ type: Translation })
   findOne(@Param('id') id: string) {
-    return this.translationsService.findOne(id);
+    return this.translationsService.findUnique(id);
   }
 
   @Put(':id')
-  @ApiOperation({
-    summary: 'Update a translation by ID',
-    description: 'Updates an existing translation record.',
-  })
-  @ApiParam({
-    name: 'id',
-    description: 'The ID of the translation',
-    type: String,
-  })
-  @ApiOkResponse({ type: Translation, description: 'The updated translation.' })
-  @ApiResponse({ status: 400, description: 'Bad Request.' })
-  @ApiResponse({ status: 404, description: 'Translation not found.' })
-  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
+  @ApiOperation({ summary: 'Update a translation by ID' })
+  @ApiOkResponse({ type: Translation })
   update(
     @Param('id') id: string,
-    @Body() updateTranslationDto: Omit<UpdateTranslationInput, 'id'>,
+    @Body() updateTranslationDto: UpdateTranslationInput,
   ) {
-    return this.translationsService.update(id, { ...updateTranslationDto, id });
+    return this.translationsService.update(id, updateTranslationDto);
   }
 
   @Delete(':id')
-  @ApiOperation({
-    summary: 'Delete a translation by ID',
-    description: 'Deletes a translation record by its ID.',
-  })
-  @ApiParam({
-    name: 'id',
-    description: 'The ID of the translation',
-    type: String,
-  })
+  @ApiOperation({ summary: 'Delete a translation by ID' })
   @HttpCode(HttpStatus.NO_CONTENT)
-  @ApiNoContentResponse({ description: 'Translation successfully deleted.' })
-  @ApiResponse({ status: 404, description: 'Translation not found.' })
-  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
+  @ApiNoContentResponse()
   remove(@Param('id') id: string) {
     return this.translationsService.remove(id);
   }

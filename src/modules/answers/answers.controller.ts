@@ -32,85 +32,36 @@ export class AnswersController {
   constructor(private readonly answersService: AnswersService) {}
 
   @Post()
-  @ApiOperation({
-    summary: 'Create a new answer',
-    description: 'Creates a new answer record.',
-  })
-  @ApiCreatedResponse({
-    type: Answer,
-    description: 'The newly created answer.',
-  })
-  @ApiResponse({ status: 400, description: 'Bad Request.' })
-  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
+  @ApiOperation({ summary: 'Create a new answer' })
+  @ApiCreatedResponse({ type: Answer })
   create(@Body() createDto: CreateAnswerInput) {
     return this.answersService.create(createDto);
   }
 
   @Post('bulk')
-  @ApiOperation({
-    summary: 'Create multiple answers',
-    description: 'Creates multiple answer records in a single operation.',
-  })
-  @ApiCreatedResponse({
-    description: 'The number of answers created.',
-    schema: {
-      type: 'object',
-      properties: {
-        count: {
-          type: 'number',
-          description: 'Number of answers created',
-          example: 5,
-        },
-      },
-    },
-  })
-  @ApiResponse({ status: 400, description: 'Bad Request.' })
-  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
+  @ApiOperation({ summary: 'Create multiple answers' })
+  @ApiCreatedResponse({ description: 'Number of answers created' })
   createMany(@Body() createManyAnswersDto: CreateManyAnswersInput) {
     return this.answersService.createMany(createManyAnswersDto);
   }
 
   @Get()
-  @ApiOperation({
-    summary: 'Retrieve all answers',
-    description: 'Returns a list of all answers.',
-  })
-  @ApiOkResponse({
-    type: Answer,
-    isArray: true,
-    description: 'A list of answers.',
-  })
-  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
+  @ApiOperation({ summary: 'Retrieve all answers' })
+  @ApiOkResponse({ type: Answer, isArray: true })
   findAll(@Query() query: AnswersQueryDto) {
     return this.answersService.findAll(query);
   }
 
   @Get(':id')
-  @ApiOperation({
-    summary: 'Retrieve an answer by ID',
-    description: 'Returns a single answer by its ID.',
-  })
-  @ApiParam({ name: 'id', description: 'The ID of the answer', type: String })
-  @ApiOkResponse({
-    type: Answer,
-    description: 'The answer with the specified ID.',
-  })
-  @ApiResponse({ status: 404, description: 'Answer not found.' })
-  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
+  @ApiOperation({ summary: 'Retrieve an answer by ID' })
+  @ApiOkResponse({ type: Answer })
   findOne(@Param('id') id: string) {
     return this.answersService.findUnique(id);
   }
 
   @Put(':id')
-  @ApiOperation({
-    summary: 'Update an answer by ID',
-    description: 'Updates an existing answer record.',
-  })
-  @ApiParam({ name: 'id', description: 'The ID of the answer', type: String })
-  @ApiOkResponse({ type: Answer, description: 'The updated answer.' })
-  @ApiResponse({ status: 400, description: 'Bad Request.' })
-  @ApiResponse({ status: 404, description: 'Answer not found.' })
-  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
+  @ApiOperation({ summary: 'Update an answer by ID' })
+  @ApiOkResponse({ type: Answer })
   update(
     @Param('id') id: string,
     @Body() updateDto: Omit<UpdateAnswerInput, 'id'>,
@@ -119,15 +70,9 @@ export class AnswersController {
   }
 
   @Delete(':id')
-  @ApiOperation({
-    summary: 'Delete an answer by ID',
-    description: 'Deletes an answer record by its ID.',
-  })
-  @ApiParam({ name: 'id', description: 'The ID of the answer', type: String })
+  @ApiOperation({ summary: 'Delete an answer by ID' })
   @HttpCode(HttpStatus.NO_CONTENT)
-  @ApiNoContentResponse({ description: 'Answer successfully deleted.' })
-  @ApiResponse({ status: 404, description: 'Answer not found.' })
-  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
+  @ApiNoContentResponse()
   remove(@Param('id') id: string) {
     return this.answersService.remove(id);
   }
