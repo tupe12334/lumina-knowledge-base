@@ -15,7 +15,7 @@ export const serverEnvSchema = z.object({
     )
     .pipe(z.array(z.string()).min(1))
     .optional(),
-  ENABLE_MUTATIONS: z
+  BLOCK_MUTATIONS: z
     .preprocess((val) => val === true || val === 'true', z.boolean())
-    .default(false),
+    .default(true),
 });

@@ -15,8 +15,8 @@ export class PrismaService
     await this.$executeRaw`PRAGMA foreign_keys = ON;`;
 
     // Validate and fix UUIDs in the database on startup
-    if (env.ENABLE_MUTATIONS) {
-      this.logger.log('Starting database UUID validation (ENABLE_MUTATIONS=true)...');
+    if (!env.BLOCK_MUTATIONS) {
+      this.logger.log('Starting database UUID validation (BLOCK_MUTATIONS=false)...');
       try {
         const results = await validateAndFixAllDatabaseUUIDs(this, true);
 
@@ -34,12 +34,12 @@ export class PrismaService
         this.logger.error('Failed to validate database UUIDs:', error);
       }
     } else {
-      this.logger.log('Checking database UUIDs (ENABLE_MUTATIONS=false)...');
+      this.logger.log('Checking database UUIDs (BLOCK_MUTATIONS=true)...');
       try {
         const results = await validateAndFixAllDatabaseUUIDs(this, false);
 
         if (results.length > 0) {
-          this.logger.warn('Invalid UUIDs found in database (not fixed due to ENABLE_MUTATIONS=false):');
+          this.logger.warn('Invalid UUIDs found in database (not fixed due to BLOCK_MUTATIONS=true):');
           results.forEach(result => {
             this.logger.warn(`  ${result.tableName}: ${result.invalidCount} invalid UUIDs`);
           });

@@ -9,9 +9,10 @@ import {
   Delete,
   Body,
 } from '@nestjs/common';
-import { APP_GUARD } from '@nestjs/core';
+import { Reflector } from '@nestjs/core';
 import request from 'supertest';
 import { env } from '../../src/env';
+import { MutationsGuardModule } from 'nestjs-mutations-guard';
 
 @Controller('test')
 class TestController {
@@ -41,18 +42,12 @@ describe('REST Mutations Disabled (e2e)', () => {
 
   beforeAll(async () => {
     // Ensure mutations are disabled for this test
-    env.ENABLE_MUTATIONS = false;
-
-    const { MutationsGuard } = await import('../../src/guards/mutations.guard');
+    env.BLOCK_MUTATIONS = true;
 
     const moduleFixture = await Test.createTestingModule({
+      imports: [MutationsGuardModule.register()],
       controllers: [TestController],
-      providers: [
-        {
-          provide: APP_GUARD,
-          useClass: MutationsGuard,
-        },
-      ],
+      providers: [Reflector],
     }).compile();
 
     app = moduleFixture.createNestApplication();
@@ -60,7 +55,7 @@ describe('REST Mutations Disabled (e2e)', () => {
   });
 
   afterAll(async () => {
-    env.ENABLE_MUTATIONS = true; // Reset for other tests
+    env.BLOCK_MUTATIONS = false; // Reset for other tests
     if (app) {
       await app.close();
     }
@@ -80,7 +75,7 @@ describe('REST Mutations Disabled (e2e)', () => {
       .expect(403)
       .expect((res) => {
         expect(res.body.message).toBe(
-          'Mutations are disabled. Set ENABLE_MUTATIONS=true in environment variables to enable them.',
+          'HTTP POST mutations are currently blocked.',
         );
       });
   });
@@ -92,7 +87,7 @@ describe('REST Mutations Disabled (e2e)', () => {
       .expect(403)
       .expect((res) => {
         expect(res.body.message).toBe(
-          'Mutations are disabled. Set ENABLE_MUTATIONS=true in environment variables to enable them.',
+          'HTTP PUT mutations are currently blocked.',
         );
       });
   });
@@ -103,7 +98,7 @@ describe('REST Mutations Disabled (e2e)', () => {
       .expect(403)
       .expect((res) => {
         expect(res.body.message).toBe(
-          'Mutations are disabled. Set ENABLE_MUTATIONS=true in environment variables to enable them.',
+          'HTTP DELETE mutations are currently blocked.',
         );
       });
   });

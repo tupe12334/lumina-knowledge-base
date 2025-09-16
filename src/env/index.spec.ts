@@ -5,20 +5,20 @@ describe('env/loadEnv', () => {
   it('provides defaults and coercions (happy path)', () => {
     const fakeEnv: NodeJS.ProcessEnv = {
       PORT: '8080',
-      ENABLE_MUTATIONS: 'true',
+      BLOCK_MUTATIONS: 'false',
       NODE_ENV: 'test',
     };
     const env = loadEnv(fakeEnv);
     expect(env.PORT).toBe(8080);
-    expect(env.ENABLE_MUTATIONS).toBe(true);
+    expect(env.BLOCK_MUTATIONS).toBe(false);
     expect(env.NODE_ENV).toBe('test');
   });
 
-  it('applies default PORT and ENABLE_MUTATIONS when missing', () => {
+  it('applies default PORT and BLOCK_MUTATIONS when missing', () => {
     const emptyEnv: NodeJS.ProcessEnv = {};
     const env = loadEnv(emptyEnv);
     expect(env.PORT).toBe(3000);
-    expect(env.ENABLE_MUTATIONS).toBe(false);
+    expect(env.BLOCK_MUTATIONS).toBe(true);
     expect(env.CORS_ORIGIN).toBeUndefined();
   });
 

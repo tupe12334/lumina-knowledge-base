@@ -9,9 +9,10 @@ import {
   Delete,
   Body,
 } from '@nestjs/common';
-import { APP_GUARD } from '@nestjs/core';
+import { Reflector } from '@nestjs/core';
 import request from 'supertest';
 import { env } from '../../src/env';
+import { MutationsGuardModule } from 'nestjs-mutations-guard';
 
 @Controller('test')
 class TestController {
@@ -41,18 +42,12 @@ describe('REST Mutations Enabled (e2e)', () => {
 
   beforeAll(async () => {
     // Ensure mutations are enabled for this test
-    env.ENABLE_MUTATIONS = true;
-
-    const { MutationsGuard } = await import('../../src/guards/mutations.guard');
+    env.BLOCK_MUTATIONS = false;
 
     const moduleFixture = await Test.createTestingModule({
+      imports: [MutationsGuardModule.register()],
       controllers: [TestController],
-      providers: [
-        {
-          provide: APP_GUARD,
-          useClass: MutationsGuard,
-        },
-      ],
+      providers: [Reflector],
     }).compile();
 
     app = moduleFixture.createNestApplication();

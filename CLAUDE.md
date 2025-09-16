@@ -56,7 +56,7 @@ The system models educational hierarchy: **Institutions → Faculties → Degree
 2. **Access APIs**:
    - REST API with Swagger: `/docs`
    - OpenAPI spec: `/openapi`
-3. **Enable mutations**: Set `ENABLE_MUTATIONS=true` environment variable to allow data modifications
+3. **Enable mutations**: Set `BLOCK_MUTATIONS=false` environment variable to allow data modifications
 
 #### Question Generation Workflow
 
@@ -85,7 +85,7 @@ Each domain module follows NestJS patterns with:
 
 ### Key Features
 
-- **Mutations Guard**: Global guard that blocks mutations unless `ENABLE_MUTATIONS=true` is set
+- **Mutations Guard**: Uses nestjs-mutations-guard package that blocks mutations when `BLOCK_MUTATIONS=true` is set
 - **REST API**: REST interface with Swagger documentation at `/docs`
 - **Translation Support**: Bilingual content (English/Hebrew) via Translation entities
 - **Question System**: Multiple question types (selection, value, boolean, void) with validation status
@@ -94,7 +94,7 @@ Each domain module follows NestJS patterns with:
 ### Environment Configuration
 
 - Environment variables validated using Zod schema (`src/env/schema`)
-- Mutations disabled by default for safety
+- Mutations blocked by default for safety (`BLOCK_MUTATIONS=true`)
 - Database: SQLite (`prisma/main.db`)
 
 ### Testing Setup

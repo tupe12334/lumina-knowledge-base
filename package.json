@@ -53,6 +53,7 @@
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.2",
     "lodash": "^4.17.21",
+    "nestjs-mutations-guard": "^1.1.0",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.2",
     "uuid": "^11.1.0",
