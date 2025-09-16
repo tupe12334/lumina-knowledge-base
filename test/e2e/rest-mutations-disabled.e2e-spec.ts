@@ -48,7 +48,10 @@ describe('REST Mutations Disabled (e2e)', () => {
       imports: [MutationsGuardModule.register({ configFactory: new EnvConfigFactory() })],
       controllers: [TestController],
       providers: [Reflector],
-    }).compile();
+    })
+    .overrideProvider(Reflector)
+    .useValue(new Reflector())
+    .compile();
 
     app = moduleFixture.createNestApplication();
     await app.init();
