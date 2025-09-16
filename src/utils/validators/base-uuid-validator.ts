@@ -10,7 +10,11 @@ export interface ValidationResult {
 }
 
 export abstract class BaseUuidValidator {
-  protected logger = new Logger('UUIDValidator');
+  protected logger: Logger;
+
+  constructor() {
+    this.logger = new Logger('UUIDValidator');
+  }
 
   protected isValidUuid(id: string): boolean {
     return uuidValidate(id);
