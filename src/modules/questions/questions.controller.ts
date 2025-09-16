@@ -177,8 +177,7 @@ export class QuestionsController {
   @ApiResponse({ status: 404, description: 'Question not found.' })
   @ApiResponse({ status: 500, description: 'Internal Server Error.' })
   remove(@Param('id') id: string) {
-    const deleteQuestionInput: DeleteQuestionInput = { id };
-    return this.questionsService.remove(deleteQuestionInput);
+    return this.questionsService.remove(id);
   }
 
   @Get(':id/summary')
