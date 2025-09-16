@@ -2,6 +2,10 @@ import { PrismaClient } from '@prisma/client';
 import { BaseUuidValidator, ValidationResult } from './base-uuid-validator';
 
 export class ModuleValidator extends BaseUuidValidator {
+  constructor() {
+    super();
+  }
+
   async validate(prisma: PrismaClient, enableMutations: boolean): Promise<ValidationResult> {
     const result = this.createResult('Module');
 
