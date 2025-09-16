@@ -52,7 +52,7 @@ export class TranslationsController {
   @ApiOperation({ summary: 'Retrieve a translation by ID' })
   @ApiOkResponse({ type: Translation })
   findOne(@Param('id') id: string) {
-    return this.translationsService.findUnique(id);
+    return this.translationsService.findOne(id);
   }
 
   @Put(':id')
