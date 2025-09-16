@@ -2,6 +2,10 @@ import { PrismaClient } from '@prisma/client';
 import { BaseUuidValidator, ValidationResult } from './base-uuid-validator';
 
 export class AnswerValidator extends BaseUuidValidator {
+  constructor() {
+    super();
+  }
+
   async validate(prisma: PrismaClient, enableMutations: boolean): Promise<ValidationResult> {
     const result = this.createResult('Answer');
 
@@ -52,7 +56,7 @@ export class AnswerValidator extends BaseUuidValidator {
     return result;
   }
 
-  private async updateAnswerReferences(tx: any, oldId: string, newId: string) {
+  private async updateAnswerReferences(tx: PrismaClient, oldId: string, newId: string) {
     await Promise.all([
       tx.selectAnswer.updateMany({
         where: { answerId: oldId },
