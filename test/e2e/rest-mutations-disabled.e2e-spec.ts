@@ -15,7 +15,7 @@ import { env } from '../../src/env';
 import { MutationsGuardModule } from 'nestjs-mutations-guard';
 
 @Controller('test')
-class TestController {
+export class TestController {
   @Get()
   get() {
     return { message: 'GET allowed' };
