@@ -1,6 +1,10 @@
 import { INestApplication } from '@nestjs/common';
 import { describe, expect, it, vi } from 'vitest';
 
+import { SwaggerModule, OpenAPIObject } from '@nestjs/swagger';
+import { setupSwagger } from './setup-swagger';
+import { saveOpenapiSpec } from '../openapi/save-openapi-spec';
+
 vi.mock('@nestjs/swagger', async () => {
   const actual =
     await vi.importActual<typeof import('@nestjs/swagger')>('@nestjs/swagger');
@@ -12,13 +16,9 @@ vi.mock('@nestjs/swagger', async () => {
     },
   };
 });
-
-import { SwaggerModule, OpenAPIObject } from '@nestjs/swagger';
-import { setupSwagger } from './setup-swagger';
 vi.mock('../openapi/save-openapi-spec', () => ({
   saveOpenapiSpec: vi.fn(),
 }));
-import { saveOpenapiSpec } from '../openapi/save-openapi-spec';
 const saveOpenapiSpecMock = vi.mocked(saveOpenapiSpec);
 
 describe('setupSwagger', () => {
