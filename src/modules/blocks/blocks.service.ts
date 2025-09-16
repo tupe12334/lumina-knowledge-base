@@ -105,68 +105,64 @@ export class BlocksService {
    * @param relationshipData - The relationship data containing block IDs and optional metadata
    * @returns The created relationship with full details
    */
-  async createBlockRelationship(
-    relationshipData: CreateBlockRelationshipInput,
-  ): Promise<BlockRelationshipResult> {
-    const { prerequisiteBlockId, postrequisiteBlockId, metadata } =
-      relationshipData;
 
-    if (prerequisiteBlockId === postrequisiteBlockId) {
-      throw new BadRequestException(
-        'A block cannot be a prerequisite to itself',
-      );
-    }
-
-    // Validate that both blocks exist
+  private async validateBlocksExist(prerequisiteBlockId: string, postrequisiteBlockId: string) {
     const [prerequisiteBlock, postrequisiteBlock] = await Promise.all([
-      this.prisma.block.findUnique({
-        where: { id: prerequisiteBlockId },
-      }),
-      this.prisma.block.findUnique({
-        where: { id: postrequisiteBlockId },
-      }),
+      this.prisma.block.findUnique({ where: { id: prerequisiteBlockId } }),
+      this.prisma.block.findUnique({ where: { id: postrequisiteBlockId } }),
     ]);
 
     if (!prerequisiteBlock) {
-      throw new NotFoundException(
-        `Prerequisite block with ID ${prerequisiteBlockId} not found`,
-      );
+      throw new NotFoundException(`Prerequisite block with ID ${prerequisiteBlockId} not found`);
     }
 
     if (!postrequisiteBlock) {
-      throw new NotFoundException(
-        `Postrequisite block with ID ${postrequisiteBlockId} not found`,
-      );
+      throw new NotFoundException(`Postrequisite block with ID ${postrequisiteBlockId} not found`);
     }
+  }
 
-    // Check if relationship already exists
-    const existingRelationship = await this.prisma.blockRelationship.findUnique(
-      {
-        where: {
-          prerequisiteId_postrequisiteId: {
-            prerequisiteId: prerequisiteBlockId,
-            postrequisiteId: postrequisiteBlockId,
-          },
+  private async checkExistingRelationship(prerequisiteBlockId: string, postrequisiteBlockId: string) {
+    const existingRelationship = await this.prisma.blockRelationship.findUnique({
+      where: {
+        prerequisiteId_postrequisiteId: {
+          prerequisiteId: prerequisiteBlockId,
+          postrequisiteId: postrequisiteBlockId,
         },
       },
-    );
+    });
 
     if (existingRelationship) {
-      throw new BadRequestException(
-        'Relationship already exists between these blocks',
-      );
+      throw new BadRequestException('Relationship already exists between these blocks');
+    }
+  }
+
+  private formatRelationshipMetadata(metadata: any[] | undefined) {
+    return metadata ? metadata.reduce(
+      (acc, meta) => {
+        acc[meta.key] = meta.value;
+        return acc;
+      },
+      {} satisfies Record<string, string>,
+    ) : {};
+  }
+
+  async createBlockRelationship(
+    relationshipData: CreateBlockRelationshipInput,
+  ): Promise<BlockRelationshipResult> {
+    const { prerequisiteBlockId, postrequisiteBlockId, metadata } = relationshipData;
+
+    if (prerequisiteBlockId === postrequisiteBlockId) {
+      throw new BadRequestException('A block cannot be a prerequisite to itself');
     }
 
-    // Create the relationship
+    await this.validateBlocksExist(prerequisiteBlockId, postrequisiteBlockId);
+    await this.checkExistingRelationship(prerequisiteBlockId, postrequisiteBlockId);
+
     const relationship = await this.prisma.blockRelationship.create({
       data: {
         prerequisiteId: prerequisiteBlockId,
         postrequisiteId: postrequisiteBlockId,
-        metadata: metadata
-          ? {
-              create: createValidMetadataEntries(metadata),
-            }
-          : undefined,
+        metadata: metadata ? { create: createValidMetadataEntries(metadata) } : undefined,
       },
       include: {
         prerequisite: true,
@@ -175,15 +171,7 @@ export class BlocksService {
       },
     });
 
-    // Format metadata for response
-    const formattedMetadata =
-      relationship.metadata ? relationship.metadata.reduce(
-        (acc, meta) => {
-          acc[meta.key] = meta.value;
-          return acc;
-        },
-        {} satisfies Record<string, string>,
-      ) : {};
+    const formattedMetadata = this.formatRelationshipMetadata(relationship.metadata);
 
     return {
       id: relationship.id,
