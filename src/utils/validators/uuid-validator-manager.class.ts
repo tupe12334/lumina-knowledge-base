@@ -1,6 +1,6 @@
 import { Logger } from '@nestjs/common';
 import { PrismaClient } from '@prisma/client';
-import { ValidationResult } from './base-uuid-validator';
+import { ValidationResult, BaseUuidValidator } from './base-uuid-validator';
 import { TranslationValidator } from './translation-validator';
 import { QuestionValidator } from './question-validator';
 import { ModuleValidator } from './module-validator';
@@ -8,7 +8,7 @@ import { AnswerValidator } from './answer-validator';
 
 export class UuidValidatorManager {
   private logger: Logger;
-  private validators: any[];
+  private validators: BaseUuidValidator[];
 
   constructor() {
     this.logger = new Logger('UUIDValidatorManager');

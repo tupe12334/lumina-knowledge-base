@@ -16,7 +16,7 @@ describe('InstitutionsService', () => {
         findMany: vi.fn(),
         findUnique: vi.fn(),
       },
-    } as any;
+    };
     service = new InstitutionsService(mockPrismaService as PrismaService);
   });
 

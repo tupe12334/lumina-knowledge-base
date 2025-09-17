@@ -4,6 +4,7 @@ import { PrismaService } from '../../prisma/prisma.service';
 import { CreateAnswerInput } from './dto/create-answer.input';
 import { CreateManyAnswersInput } from './dto/create-many-answers.input';
 import { UpdateAnswerInput } from './dto/update-answer.input';
+import { UpdateSelectAnswerInputItem } from './dto/update-select-answer-input-item';
 import { AnswersQueryDto } from './dto/answers-query.dto';
 
 @Injectable()
@@ -144,7 +145,7 @@ export class AnswersService {
     }
   }
 
-  private async updateSelectAnswers(answerId: string, selectAnswers: any[]) {
+  private async updateSelectAnswers(answerId: string, selectAnswers: UpdateSelectAnswerInputItem[]) {
     const current = await this.prisma.selectAnswer.findMany({
       where: { answerId },
     });
@@ -184,7 +185,7 @@ export class AnswersService {
     }
   }
 
-  private async updateUnitAnswer(answerId: string, unitValue?: number, unit?: string) {
+  private async updateUnitAnswer(answerId: string, unitValue?: number, unit?: Units) {
     await this.prisma.numberAnswer.deleteMany({ where: { answerId } });
     const existingUnit = await this.prisma.unitAnswer.findUnique({
       where: { answerId },
@@ -194,12 +195,12 @@ export class AnswersService {
         where: { answerId },
         data: {
           ...(unitValue != null ? { value: unitValue } : {}),
-          ...(unit != null ? { unit: unit as Units } : {}),
+          ...(unit != null ? { unit: unit } : {}),
         },
       });
     } else if (unitValue != null && unit != null) {
       await this.prisma.unitAnswer.create({
-        data: { value: unitValue, unit: unit as Units, answerId },
+        data: { value: unitValue, unit: unit, answerId },
       });
     }
   }

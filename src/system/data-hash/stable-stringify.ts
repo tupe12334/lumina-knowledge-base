@@ -45,9 +45,12 @@ export const stableStringify = (input: unknown): string => {
       const sortedKeys = Object.keys(value).sort();
       const out: Record<string, unknown> = {};
       for (const k of sortedKeys) {
-        // Safe property access using hasOwnProperty check
+        // Safe property access with additional security checks
         if (Object.prototype.hasOwnProperty.call(value, k)) {
-          out[k] = normalize(value[k]);
+          const descriptor = Object.getOwnPropertyDescriptor(value, k);
+          if (descriptor && descriptor.enumerable && typeof k === 'string') {
+            out[k] = normalize(value[k]);
+          }
         }
       }
       return out;

@@ -6,6 +6,7 @@ import {
 import { RelationshipMetadataKey, Prisma } from '@prisma/client';
 import { PrismaService } from '../../prisma/prisma.service';
 import { Block } from './models/Block.entity';
+import { RelationshipMetadata } from './models/RelationshipMetadata.entity';
 import { CreateBlockRelationshipInput } from './dto/create-block-relationship.input';
 import { DeleteBlockRelationshipInput } from './dto/delete-block-relationship.input';
 import { BlockRelationshipResult } from './dto/block-relationship-result.type';
@@ -136,7 +137,7 @@ export class BlocksService {
     }
   }
 
-  private formatRelationshipMetadata(metadata: any[] | undefined) {
+  private formatRelationshipMetadata(metadata: RelationshipMetadata[] | undefined) {
     return metadata ? metadata.reduce(
       (acc, meta) => {
         acc[meta.key] = meta.value;

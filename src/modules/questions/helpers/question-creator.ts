@@ -1,4 +1,4 @@
-import { Prisma, PrismaClient } from '@prisma/client';
+import { Prisma, PrismaClient, Units } from '@prisma/client';
 import { PrismaService } from '../../../prisma/prisma.service';
 import { CreateCompleteQuestionsInput } from '../dto/create-complete-questions.input';
 import { CreateCompleteQuestionInput } from '../dto/create-complete-question.input';
@@ -71,7 +71,7 @@ export class QuestionCreator {
       numberAnswer?: number;
       booleanAnswer?: number;
       unitValue?: number;
-      unit?: string;
+      unit?: Units;
     }
   ) {
     const { type, selectAnswers, numberAnswer, booleanAnswer, unitValue, unit } = answerData;
@@ -102,6 +102,9 @@ export class QuestionCreator {
         question: { connect: { id: questionId } },
         SelectAnswer: {
           create: selectAnswers.map((answer, index) => {
+            if (index < 0 || index >= answerTranslations.length) {
+              throw new Error(`Invalid index ${index} for answerTranslations array`);
+            }
             const translation = answerTranslations[index];
             if (!translation) {
               throw new Error(`Missing translation for answer at index ${index}`);
@@ -131,7 +134,7 @@ export class QuestionCreator {
     prisma: Prisma.TransactionClient,
     questionId: string,
     unitValue?: number,
-    unit?: string,
+    unit?: Units,
     numberAnswer?: number
   ) {
     const answerData: Prisma.AnswerCreateInput = {
@@ -140,7 +143,7 @@ export class QuestionCreator {
 
     if (unitValue !== undefined && unit) {
       answerData.UnitAnswer = {
-        create: { value: unitValue, unit: unit as any },
+        create: { value: unitValue, unit: unit },
       };
     } else if (numberAnswer !== undefined) {
       answerData.NumberAnswer = {

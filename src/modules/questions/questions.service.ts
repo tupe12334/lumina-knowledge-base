@@ -193,11 +193,11 @@ export class QuestionsService {
       }
 
       return `Question Summary for ${id}:
-        Text: ${question.text?.en_text || 'No text available'}
+        Text: ${question.text && question.text.en_text ? question.text.en_text : 'No text available'}
         Type: ${question.type}
         Validation Status: ${question.validationStatus}
-        Modules: ${question.Modules?.map(m => m.name?.en_text).join(', ') || 'None'}
-        Answers: ${question.Answer?.length || 0} answer(s)`;
+        Modules: ${question.Modules && question.Modules.length > 0 ? question.Modules.map(m => m.name && m.name.en_text ? m.name.en_text : 'Unnamed').join(', ') : 'None'}
+        Answers: ${question.Answer && question.Answer.length ? question.Answer.length : 0} answer(s)`;
     } catch (error) {
       if (error instanceof NotFoundException) {
         throw error;
