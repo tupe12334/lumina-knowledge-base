@@ -65,20 +65,24 @@ export class ModuleValidator extends BaseUuidValidator {
     oldId: string,
     newId: string,
   ) {
-    // Update question-module relationships
-    const questionModules = await tx.questionModule.findMany({
-      where: { moduleId: oldId },
+    // Update question-module relationships via the Question model
+    const questionsWithModule = await tx.question.findMany({
+      where: {
+        Modules: {
+          some: { id: oldId },
+        },
+      },
     });
 
-    for (const qm of questionModules) {
-      await tx.questionModule.update({
-        where: {
-          questionId_moduleId: {
-            questionId: qm.questionId,
-            moduleId: oldId,
+    for (const question of questionsWithModule) {
+      await tx.question.update({
+        where: { id: question.id },
+        data: {
+          Modules: {
+            disconnect: { id: oldId },
+            connect: { id: newId },
           },
         },
-        data: { moduleId: newId },
       });
     }
   }

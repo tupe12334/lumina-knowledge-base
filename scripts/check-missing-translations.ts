@@ -146,7 +146,7 @@ async function getRelatedEntities(translationId: string) {
       prisma.selectAnswer.findMany({ where: { translationId } }),
     ]);
 
-    const relations = [];
+    const relations: string[] = [];
     if (institutions.length > 0) {
       relations.push(`Institution: ${institutions.map((i) => i.id).join(', ')}`);
     }
