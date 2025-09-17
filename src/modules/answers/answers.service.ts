@@ -1,4 +1,5 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
+import { Units } from '@prisma/client';
 import { PrismaService } from '../../prisma/prisma.service';
 import { CreateAnswerInput } from './dto/create-answer.input';
 import { CreateManyAnswersInput } from './dto/create-many-answers.input';
@@ -193,12 +194,12 @@ export class AnswersService {
         where: { answerId },
         data: {
           ...(unitValue != null ? { value: unitValue } : {}),
-          ...(unit != null ? { unit } : {}),
+          ...(unit != null ? { unit: unit as Units } : {}),
         },
       });
     } else if (unitValue != null && unit != null) {
       await this.prisma.unitAnswer.create({
-        data: { value: unitValue, unit, answerId },
+        data: { value: unitValue, unit: unit as Units, answerId },
       });
     }
   }
