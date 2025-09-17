@@ -27,18 +27,15 @@ export class QuestionsService {
     this.moduleHelper = new ModuleHierarchyHelper(prisma);
   }
 
-  async create(createQuestionInput: CreateQuestionInput): Promise<Question> {
-    const { text, type, moduleIds, validationStatus } = createQuestionInput;
+  async create(createQuestionInput: CreateQuestionInput) {
+    const { translationId, type, moduleIds, validationStatus } = createQuestionInput;
 
     return this.prisma.question.create({
       data: {
         type,
         validationStatus,
         text: {
-          create: {
-            en_text: text.en_text || '',
-            he_text: text.he_text || '',
-          },
+          connect: { id: translationId },
         },
         Modules: moduleIds
           ? { connect: moduleIds.map((id) => ({ id })) }
@@ -58,10 +55,7 @@ export class QuestionsService {
             type: questionData.type,
             validationStatus: questionData.validationStatus,
             text: {
-              create: {
-                en_text: questionData.text.en_text || '',
-                he_text: questionData.text.he_text || '',
-              },
+              connect: { id: questionData.translationId },
             },
             Modules: questionData.moduleIds
               ? { connect: questionData.moduleIds.map((id) => ({ id })) }
@@ -79,7 +73,7 @@ export class QuestionsService {
     return this.questionCreator.createCompleteMany(input);
   }
 
-  async findAll(query?: QuestionsQueryDto): Promise<Question[]> {
+  async findAll(query?: QuestionsQueryDto) {
     const where = query ? QuestionQueryBuilder.buildWhereClause(query) : {};
     const include = QuestionQueryBuilder.buildInclude();
     const orderBy = QuestionQueryBuilder.buildOrderBy();
@@ -199,5 +193,28 @@ export class QuestionsService {
 
   async getModulesWithFewestQuestions() {
     return this.moduleHelper.getModulesWithFewestQuestions();
+  }
+
+  async generateSummary(id: string): Promise<string> {
+    try {
+      const question = await this.findOne(id);
+      if (!question) {
+        throw new NotFoundException(`Question with ID ${id} not found`);
+      }
+
+      return `Question Summary for ${id}:
+        Text: ${question.text?.en_text || 'No text available'}
+        Type: ${question.type}
+        Validation Status: ${question.validationStatus}
+        Modules: ${question.Modules?.map(m => m.name?.en_text).join(', ') || 'None'}
+        Answers: ${question.Answer?.length || 0} answer(s)`;
+    } catch (error) {
+      if (error instanceof NotFoundException) {
+        throw error;
+      }
+      throw new InternalServerErrorException(
+        `Failed to generate summary for question ${id}: ${error}`,
+      );
+    }
   }
 }

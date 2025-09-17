@@ -20,6 +20,8 @@ import {
   ApiNoContentResponse,
   ApiOperation,
   ApiProduces,
+  ApiResponse,
+  ApiParam,
 } from '@nestjs/swagger';
 import { QuestionsService } from './questions.service';
 import { CreateQuestionInput } from './dto/create-question.input';

@@ -24,11 +24,11 @@ export class QuestionQueryBuilder {
     if (query.hasAnswers !== undefined) {
       if (query.hasAnswers) {
         where.Answer = {
-          isNot: null,
+          some: {},
         };
       } else {
         where.Answer = {
-          is: null,
+          none: {},
         };
       }
     }
@@ -49,18 +49,19 @@ export class QuestionQueryBuilder {
       };
     }
 
-    if (query.validationStatus) {
-      where.question = {
-        ...where.question,
-        validationStatus: query.validationStatus,
-      };
-    }
+    if (query.validationStatus || query.type) {
+      const questionWhere: Prisma.QuestionWhereInput = {};
+      if (query.validationStatus) {
+        questionWhere.validationStatus = query.validationStatus;
+      }
+      if (query.type) {
+        questionWhere.type = query.type;
+      }
 
-    if (query.type) {
-      where.question = {
+      where.question = where.question ? {
         ...where.question,
-        type: query.type,
-      };
+        ...questionWhere,
+      } : questionWhere;
     }
 
     return where;
@@ -76,12 +77,20 @@ export class QuestionQueryBuilder {
       },
       Parts: {
         include: {
-          text: true,
+          partQuestion: {
+            include: {
+              text: true,
+            },
+          },
         },
       },
       PartOf: {
         include: {
-          text: true,
+          question: {
+            include: {
+              text: true,
+            },
+          },
         },
       },
       Answer: {

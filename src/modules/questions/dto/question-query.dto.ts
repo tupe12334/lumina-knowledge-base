@@ -92,4 +92,9 @@ export class QuestionsQueryDto {
   @IsBoolean()
   @IsOptional()
   hasParts?: boolean;
+
+  @ApiPropertyOptional()
+  @IsBoolean()
+  @IsOptional()
+  hasAnswers?: boolean;
 }

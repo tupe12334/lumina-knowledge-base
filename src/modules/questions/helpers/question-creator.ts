@@ -1,6 +1,7 @@
 import { Prisma, PrismaClient } from '@prisma/client';
 import { PrismaService } from '../../../prisma/prisma.service';
-import { CreateCompleteQuestionsInput, CreateCompleteQuestionInput } from '../dto/create-complete-questions.input';
+import { CreateCompleteQuestionsInput } from '../dto/create-complete-questions.input';
+import { CreateCompleteQuestionInput } from '../dto/create-complete-question.input';
 
 export class QuestionCreator {
   constructor(private readonly prisma: PrismaService) {}
@@ -18,7 +19,7 @@ export class QuestionCreator {
     });
   }
 
-  private async createSingleCompleteQuestion(prisma: PrismaClient, questionData: CreateCompleteQuestionInput) {
+  private async createSingleCompleteQuestion(prisma: Prisma.TransactionClient, questionData: CreateCompleteQuestionInput) {
     const {
       en_text,
       he_text,
@@ -61,7 +62,18 @@ export class QuestionCreator {
     });
   }
 
-  private async createAnswersForQuestion(prisma: PrismaClient, questionId: string, answerData: CreateCompleteQuestionInput) {
+  private async createAnswersForQuestion(
+    prisma: Prisma.TransactionClient,
+    questionId: string,
+    answerData: {
+      type: string;
+      selectAnswers?: Array<{ en_text: string; he_text: string; is_correct: boolean }>;
+      numberAnswer?: number;
+      booleanAnswer?: number;
+      unitValue?: number;
+      unit?: string;
+    }
+  ) {
     const { type, selectAnswers, numberAnswer, booleanAnswer, unitValue, unit } = answerData;
 
     if (type === 'selection' && selectAnswers && selectAnswers.length > 0) {
@@ -73,7 +85,7 @@ export class QuestionCreator {
     }
   }
 
-  private async createSelectAnswers(prisma: PrismaClient, questionId: string, selectAnswers: Array<{ en_text: string; he_text: string; is_correct: boolean }>) {
+  private async createSelectAnswers(prisma: Prisma.TransactionClient, questionId: string, selectAnswers: Array<{ en_text: string; he_text: string; is_correct: boolean }>) {
     const answerTranslations = await Promise.all(
       selectAnswers.map((answer) =>
         prisma.translation.create({
@@ -104,19 +116,19 @@ export class QuestionCreator {
     });
   }
 
-  private async createBooleanAnswer(prisma: PrismaClient, questionId: string, booleanAnswer: boolean) {
+  private async createBooleanAnswer(prisma: Prisma.TransactionClient, questionId: string, booleanAnswer: number) {
     await prisma.answer.create({
       data: {
         question: { connect: { id: questionId } },
-        NumberAnswer: {
-          create: { value: booleanAnswer },
+        BooleanAnswer: {
+          create: { value: Boolean(booleanAnswer) },
         },
       },
     });
   }
 
   private async createValueAnswer(
-    prisma: PrismaClient,
+    prisma: Prisma.TransactionClient,
     questionId: string,
     unitValue?: number,
     unit?: string,
@@ -128,7 +140,7 @@ export class QuestionCreator {
 
     if (unitValue !== undefined && unit) {
       answerData.UnitAnswer = {
-        create: { value: unitValue, unit },
+        create: { value: unitValue, unit: unit as any },
       };
     } else if (numberAnswer !== undefined) {
       answerData.NumberAnswer = {
