@@ -1,6 +1,6 @@
-import { Prisma } from '@prisma/client';
+import { Prisma, PrismaClient } from '@prisma/client';
 import { PrismaService } from '../../../prisma/prisma.service';
-import { CreateCompleteQuestionsInput } from '../dto/create-complete-questions.input';
+import { CreateCompleteQuestionsInput, CreateCompleteQuestionInput } from '../dto/create-complete-questions.input';
 
 export class QuestionCreator {
   constructor(private readonly prisma: PrismaService) {}
@@ -18,7 +18,7 @@ export class QuestionCreator {
     });
   }
 
-  private async createSingleCompleteQuestion(prisma: any, questionData: any) {
+  private async createSingleCompleteQuestion(prisma: PrismaClient, questionData: CreateCompleteQuestionInput) {
     const {
       en_text,
       he_text,
@@ -61,7 +61,7 @@ export class QuestionCreator {
     });
   }
 
-  private async createAnswersForQuestion(prisma: any, questionId: string, answerData: any) {
+  private async createAnswersForQuestion(prisma: PrismaClient, questionId: string, answerData: CreateCompleteQuestionInput) {
     const { type, selectAnswers, numberAnswer, booleanAnswer, unitValue, unit } = answerData;
 
     if (type === 'selection' && selectAnswers && selectAnswers.length > 0) {
@@ -73,7 +73,7 @@ export class QuestionCreator {
     }
   }
 
-  private async createSelectAnswers(prisma: any, questionId: string, selectAnswers: any[]) {
+  private async createSelectAnswers(prisma: PrismaClient, questionId: string, selectAnswers: Array<{ en_text: string; he_text: string; is_correct: boolean }>) {
     const answerTranslations = await Promise.all(
       selectAnswers.map((answer) =>
         prisma.translation.create({
@@ -104,7 +104,7 @@ export class QuestionCreator {
     });
   }
 
-  private async createBooleanAnswer(prisma: any, questionId: string, booleanAnswer: boolean) {
+  private async createBooleanAnswer(prisma: PrismaClient, questionId: string, booleanAnswer: boolean) {
     await prisma.answer.create({
       data: {
         question: { connect: { id: questionId } },
@@ -116,7 +116,7 @@ export class QuestionCreator {
   }
 
   private async createValueAnswer(
-    prisma: any,
+    prisma: PrismaClient,
     questionId: string,
     unitValue?: number,
     unit?: string,

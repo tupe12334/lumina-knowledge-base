@@ -19,8 +19,6 @@ import {
   ApiOkResponse,
   ApiNoContentResponse,
   ApiOperation,
-  ApiResponse,
-  ApiParam,
   ApiProduces,
 } from '@nestjs/swagger';
 import { QuestionsService } from './questions.service';
