@@ -1867,6 +1867,23 @@
             "schema": {
               "type": "boolean"
             }
+          },
+          {
+            "name": "hasAnswers",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "page",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "minimum": 1,
+              "type": "number"
+            }
           }
         ],
         "responses": {
@@ -2120,6 +2137,23 @@
             "in": "query",
             "schema": {
               "type": "boolean"
+            }
+          },
+          {
+            "name": "hasAnswers",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "page",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "minimum": 1,
+              "type": "number"
             }
           }
         ],
@@ -2775,7 +2809,6 @@
     },
     "/blocks": {
       "post": {
-        "description": "Creates a new block record.",
         "operationId": "BlocksController_create",
         "parameters": [],
         "requestBody": {
@@ -2790,7 +2823,7 @@
         },
         "responses": {
           "201": {
-            "description": "The newly created block.",
+            "description": "",
             "content": {
               "application/json": {
                 "schema": {
@@ -2798,12 +2831,6 @@
                 }
               }
             }
-          },
-          "400": {
-            "description": "Bad Request."
-          },
-          "500": {
-            "description": "Internal Server Error."
           }
         },
         "summary": "Create a new block",
@@ -2812,12 +2839,11 @@
         ]
       },
       "get": {
-        "description": "Returns a list of all blocks.",
         "operationId": "BlocksController_findAll",
         "parameters": [],
         "responses": {
           "200": {
-            "description": "A list of blocks.",
+            "description": "",
             "content": {
               "application/json": {
                 "schema": {
@@ -2828,9 +2854,6 @@
                 }
               }
             }
-          },
-          "500": {
-            "description": "Internal Server Error."
           }
         },
         "summary": "Retrieve all blocks",
@@ -2841,7 +2864,6 @@
     },
     "/blocks/bulk": {
       "post": {
-        "description": "Creates multiple block records in a single operation.",
         "operationId": "BlocksController_createMany",
         "parameters": [],
         "requestBody": {
@@ -2856,27 +2878,7 @@
         },
         "responses": {
           "201": {
-            "description": "The number of blocks created.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "count": {
-                      "type": "number",
-                      "description": "Number of blocks created",
-                      "example": 5
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request."
-          },
-          "500": {
-            "description": "Internal Server Error."
+            "description": "Number of blocks created"
           }
         },
         "summary": "Create multiple blocks",
@@ -2887,14 +2889,12 @@
     },
     "/blocks/{id}": {
       "get": {
-        "description": "Returns a single block by its ID.",
         "operationId": "BlocksController_findOne",
         "parameters": [
           {
             "name": "id",
             "required": true,
             "in": "path",
-            "description": "The ID of the block",
             "schema": {
               "type": "string"
             }
@@ -2902,7 +2902,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The block with the specified ID.",
+            "description": "",
             "content": {
               "application/json": {
                 "schema": {
@@ -2910,12 +2910,6 @@
                 }
               }
             }
-          },
-          "404": {
-            "description": "Block not found."
-          },
-          "500": {
-            "description": "Internal Server Error."
           }
         },
         "summary": "Retrieve a block by ID",
@@ -2924,14 +2918,12 @@
         ]
       },
       "put": {
-        "description": "Updates an existing block record.",
         "operationId": "BlocksController_update",
         "parameters": [
           {
             "name": "id",
             "required": true,
             "in": "path",
-            "description": "The ID of the block",
             "schema": {
               "type": "string"
             }
@@ -2949,7 +2941,7 @@
         },
         "responses": {
           "200": {
-            "description": "The updated block.",
+            "description": "",
             "content": {
               "application/json": {
                 "schema": {
@@ -2957,15 +2949,6 @@
                 }
               }
             }
-          },
-          "400": {
-            "description": "Bad Request."
-          },
-          "404": {
-            "description": "Block not found."
-          },
-          "500": {
-            "description": "Internal Server Error."
           }
         },
         "summary": "Update a block by ID",
@@ -2974,14 +2957,12 @@
         ]
       },
       "delete": {
-        "description": "Deletes a block record by its ID.",
         "operationId": "BlocksController_remove",
         "parameters": [
           {
             "name": "id",
             "required": true,
             "in": "path",
-            "description": "The ID of the block",
             "schema": {
               "type": "string"
             }
@@ -2989,13 +2970,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Block successfully deleted."
-          },
-          "404": {
-            "description": "Block not found."
-          },
-          "500": {
-            "description": "Internal Server Error."
+            "description": ""
           }
         },
         "summary": "Delete a block by ID",
@@ -3006,7 +2981,6 @@
     },
     "/blocks/relationship": {
       "post": {
-        "description": "Creates a new relationship between blocks.",
         "operationId": "BlocksController_createRelationship",
         "parameters": [],
         "requestBody": {
@@ -3021,7 +2995,7 @@
         },
         "responses": {
           "201": {
-            "description": "The newly created block relationship.",
+            "description": "",
             "content": {
               "application/json": {
                 "schema": {
@@ -3029,12 +3003,6 @@
                 }
               }
             }
-          },
-          "400": {
-            "description": "Bad Request."
-          },
-          "500": {
-            "description": "Internal Server Error."
           }
         },
         "summary": "Create a block relationship",
@@ -3043,7 +3011,6 @@
         ]
       },
       "delete": {
-        "description": "Deletes an existing relationship between blocks.",
         "operationId": "BlocksController_deleteRelationship",
         "parameters": [],
         "requestBody": {
@@ -3058,13 +3025,7 @@
         },
         "responses": {
           "204": {
-            "description": "Block relationship successfully deleted."
-          },
-          "404": {
-            "description": "Block relationship not found."
-          },
-          "500": {
-            "description": "Internal Server Error."
+            "description": ""
           }
         },
         "summary": "Delete a block relationship",
@@ -3338,7 +3299,6 @@
     },
     "/translations": {
       "post": {
-        "description": "Creates a new translation record.",
         "operationId": "TranslationsController_create",
         "parameters": [],
         "requestBody": {
@@ -3353,7 +3313,7 @@
         },
         "responses": {
           "201": {
-            "description": "The newly created translation.",
+            "description": "",
             "content": {
               "application/json": {
                 "schema": {
@@ -3361,12 +3321,6 @@
                 }
               }
             }
-          },
-          "400": {
-            "description": "Bad Request."
-          },
-          "500": {
-            "description": "Internal Server Error."
           }
         },
         "summary": "Create a new translation",
@@ -3375,12 +3329,11 @@
         ]
       },
       "get": {
-        "description": "Returns a list of all translations.",
         "operationId": "TranslationsController_findAll",
         "parameters": [],
         "responses": {
           "200": {
-            "description": "A list of translations.",
+            "description": "",
             "content": {
               "application/json": {
                 "schema": {
@@ -3391,9 +3344,6 @@
                 }
               }
             }
-          },
-          "500": {
-            "description": "Internal Server Error."
           }
         },
         "summary": "Retrieve all translations",
@@ -3404,7 +3354,6 @@
     },
     "/translations/bulk": {
       "post": {
-        "description": "Creates multiple translation records in a single operation.",
         "operationId": "TranslationsController_createMany",
         "parameters": [],
         "requestBody": {
@@ -3419,27 +3368,7 @@
         },
         "responses": {
           "201": {
-            "description": "The number of translations created.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "count": {
-                      "type": "number",
-                      "description": "Number of translations created",
-                      "example": 5
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request."
-          },
-          "500": {
-            "description": "Internal Server Error."
+            "description": "Number of translations created"
           }
         },
         "summary": "Create multiple translations",
@@ -3450,14 +3379,12 @@
     },
     "/translations/{id}": {
       "get": {
-        "description": "Returns a single translation by its ID.",
         "operationId": "TranslationsController_findOne",
         "parameters": [
           {
             "name": "id",
             "required": true,
             "in": "path",
-            "description": "The ID of the translation",
             "schema": {
               "type": "string"
             }
@@ -3465,7 +3392,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The translation with the specified ID.",
+            "description": "",
             "content": {
               "application/json": {
                 "schema": {
@@ -3473,12 +3400,6 @@
                 }
               }
             }
-          },
-          "404": {
-            "description": "Translation not found."
-          },
-          "500": {
-            "description": "Internal Server Error."
           }
         },
         "summary": "Retrieve a translation by ID",
@@ -3487,22 +3408,30 @@
         ]
       },
       "put": {
-        "description": "Updates an existing translation record.",
         "operationId": "TranslationsController_update",
         "parameters": [
           {
             "name": "id",
             "required": true,
             "in": "path",
-            "description": "The ID of the translation",
             "schema": {
               "type": "string"
             }
           }
         ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTranslationInput"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
-            "description": "The updated translation.",
+            "description": "",
             "content": {
               "application/json": {
                 "schema": {
@@ -3510,15 +3439,6 @@
                 }
               }
             }
-          },
-          "400": {
-            "description": "Bad Request."
-          },
-          "404": {
-            "description": "Translation not found."
-          },
-          "500": {
-            "description": "Internal Server Error."
           }
         },
         "summary": "Update a translation by ID",
@@ -3527,14 +3447,12 @@
         ]
       },
       "delete": {
-        "description": "Deletes a translation record by its ID.",
         "operationId": "TranslationsController_remove",
         "parameters": [
           {
             "name": "id",
             "required": true,
             "in": "path",
-            "description": "The ID of the translation",
             "schema": {
               "type": "string"
             }
@@ -3542,13 +3460,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Translation successfully deleted."
-          },
-          "404": {
-            "description": "Translation not found."
-          },
-          "500": {
-            "description": "Internal Server Error."
+            "description": ""
           }
         },
         "summary": "Delete a translation by ID",
@@ -3559,7 +3471,6 @@
     },
     "/answers": {
       "post": {
-        "description": "Creates a new answer record.",
         "operationId": "AnswersController_create",
         "parameters": [],
         "requestBody": {
@@ -3574,7 +3485,7 @@
         },
         "responses": {
           "201": {
-            "description": "The newly created answer.",
+            "description": "",
             "content": {
               "application/json": {
                 "schema": {
@@ -3582,12 +3493,6 @@
                 }
               }
             }
-          },
-          "400": {
-            "description": "Bad Request."
-          },
-          "500": {
-            "description": "Internal Server Error."
           }
         },
         "summary": "Create a new answer",
@@ -3596,7 +3501,6 @@
         ]
       },
       "get": {
-        "description": "Returns a list of all answers.",
         "operationId": "AnswersController_findAll",
         "parameters": [
           {
@@ -3610,7 +3514,7 @@
         ],
         "responses": {
           "200": {
-            "description": "A list of answers.",
+            "description": "",
             "content": {
               "application/json": {
                 "schema": {
@@ -3621,9 +3525,6 @@
                 }
               }
             }
-          },
-          "500": {
-            "description": "Internal Server Error."
           }
         },
         "summary": "Retrieve all answers",
@@ -3634,7 +3535,6 @@
     },
     "/answers/bulk": {
       "post": {
-        "description": "Creates multiple answer records in a single operation.",
         "operationId": "AnswersController_createMany",
         "parameters": [],
         "requestBody": {
@@ -3649,27 +3549,7 @@
         },
         "responses": {
           "201": {
-            "description": "The number of answers created.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "count": {
-                      "type": "number",
-                      "description": "Number of answers created",
-                      "example": 5
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request."
-          },
-          "500": {
-            "description": "Internal Server Error."
+            "description": "Number of answers created"
           }
         },
         "summary": "Create multiple answers",
@@ -3680,14 +3560,12 @@
     },
     "/answers/{id}": {
       "get": {
-        "description": "Returns a single answer by its ID.",
         "operationId": "AnswersController_findOne",
         "parameters": [
           {
             "name": "id",
             "required": true,
             "in": "path",
-            "description": "The ID of the answer",
             "schema": {
               "type": "string"
             }
@@ -3695,7 +3573,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The answer with the specified ID.",
+            "description": "",
             "content": {
               "application/json": {
                 "schema": {
@@ -3703,12 +3581,6 @@
                 }
               }
             }
-          },
-          "404": {
-            "description": "Answer not found."
-          },
-          "500": {
-            "description": "Internal Server Error."
           }
         },
         "summary": "Retrieve an answer by ID",
@@ -3717,14 +3589,12 @@
         ]
       },
       "put": {
-        "description": "Updates an existing answer record.",
         "operationId": "AnswersController_update",
         "parameters": [
           {
             "name": "id",
             "required": true,
             "in": "path",
-            "description": "The ID of the answer",
             "schema": {
               "type": "string"
             }
@@ -3732,7 +3602,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The updated answer.",
+            "description": "",
             "content": {
               "application/json": {
                 "schema": {
@@ -3740,15 +3610,6 @@
                 }
               }
             }
-          },
-          "400": {
-            "description": "Bad Request."
-          },
-          "404": {
-            "description": "Answer not found."
-          },
-          "500": {
-            "description": "Internal Server Error."
           }
         },
         "summary": "Update an answer by ID",
@@ -3757,14 +3618,12 @@
         ]
       },
       "delete": {
-        "description": "Deletes an answer record by its ID.",
         "operationId": "AnswersController_remove",
         "parameters": [
           {
             "name": "id",
             "required": true,
             "in": "path",
-            "description": "The ID of the answer",
             "schema": {
               "type": "string"
             }
@@ -3772,13 +3631,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Answer successfully deleted."
-          },
-          "404": {
-            "description": "Answer not found."
-          },
-          "500": {
-            "description": "Internal Server Error."
+            "description": ""
           }
         },
         "summary": "Delete an answer by ID",
@@ -5115,6 +4968,26 @@
         },
         "required": [
           "translations"
+        ]
+      },
+      "UpdateTranslationInput": {
+        "type": "object",
+        "properties": {
+          "en_text": {
+            "type": "string",
+            "description": "English text"
+          },
+          "he_text": {
+            "type": "string",
+            "description": "Hebrew text"
+          },
+          "id": {
+            "type": "string",
+            "description": "Translation ID"
+          }
+        },
+        "required": [
+          "id"
         ]
       },
       "CreateSelectAnswerInputItem": {
