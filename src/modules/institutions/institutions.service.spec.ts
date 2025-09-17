@@ -17,7 +17,7 @@ describe('InstitutionsService', () => {
         findUnique: vi.fn(),
       },
     };
-    service = new InstitutionsService(mockPrismaService as PrismaService);
+    service = new InstitutionsService(mockPrismaService as const as PrismaService);
   });
 
   it('returns institutions from prisma', async () => {

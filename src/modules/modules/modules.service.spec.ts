@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { createPrismock } from 'prismock';
-import * as client from '@prisma/client';
+import { PrismaClient } from '@prisma/client';
 import { ModulesService } from './modules.service';
 import { PrismaService } from '../../prisma/prisma.service';
 import { NotFoundException } from '@nestjs/common';
@@ -8,11 +8,11 @@ import { NotFoundException } from '@nestjs/common';
 vi.mock('@prisma/client', async () => {
   const actual = (await vi.importActual(
     '@prisma/client',
-  )) satisfies typeof client;
+  )) satisfies typeof import('@prisma/client');
 
   return {
     ...actual,
-    PrismaClient: createPrismock(actual.Prisma) satisfies typeof client.PrismaClient,
+    PrismaClient: createPrismock(actual.Prisma) satisfies typeof PrismaClient,
   };
 });
 
