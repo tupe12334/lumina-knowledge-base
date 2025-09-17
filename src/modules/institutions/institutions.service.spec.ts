@@ -17,7 +17,7 @@ describe('InstitutionsService', () => {
         findUnique: vi.fn(),
       },
     };
-    service = new InstitutionsService(mockPrismaService as PrismaService);
+    service = new InstitutionsService(mockPrismaService);
   });
 
   it('returns institutions from prisma', async () => {
@@ -33,14 +33,16 @@ describe('InstitutionsService', () => {
         },
       ],
     };
-    (mockPrismaService.institution?.findMany as any)?.mockResolvedValue([institution]);
+    if (mockPrismaService.institution && mockPrismaService.institution.findMany) {
+      (mockPrismaService.institution.findMany as unknown as ReturnType<typeof vi.fn>).mockResolvedValue([institution]);
+    }
 
     const result = await service.findAll();
 
     expect(result).toHaveLength(1);
     expect(result[0].name.en_text).toBe('test');
     expect(result[0].courses).toHaveLength(1);
-    expect(result[0].courses && result[0].courses[0] && result[0].courses[0].name.en_text).toBe('course');
+    expect(result[0].courses && result[0].courses.length > 0 && result[0].courses[0].name.en_text).toBe('course');
   });
 
   describe('generateSummary', () => {
@@ -69,7 +71,9 @@ describe('InstitutionsService', () => {
         ],
       };
 
-      (mockPrismaService.institution?.findUnique as any)?.mockResolvedValue(mockInstitution);
+      if (mockPrismaService.institution && mockPrismaService.institution.findUnique) {
+        (mockPrismaService.institution.findUnique as unknown as ReturnType<typeof vi.fn>).mockResolvedValue(mockInstitution);
+      }
 
       const result = await service.generateSummary('inst-123');
 
@@ -94,7 +98,9 @@ describe('InstitutionsService', () => {
         courses: [],
       };
 
-      (mockPrismaService.institution?.findUnique as any)?.mockResolvedValue(mockInstitution);
+      if (mockPrismaService.institution && mockPrismaService.institution.findUnique) {
+        (mockPrismaService.institution.findUnique as unknown as ReturnType<typeof vi.fn>).mockResolvedValue(mockInstitution);
+      }
 
       const result = await service.generateSummary('inst-456');
 
@@ -122,7 +128,9 @@ describe('InstitutionsService', () => {
         ],
       };
 
-      (mockPrismaService.institution?.findUnique as any)?.mockResolvedValue(mockInstitution);
+      if (mockPrismaService.institution && mockPrismaService.institution.findUnique) {
+        (mockPrismaService.institution.findUnique as unknown as ReturnType<typeof vi.fn>).mockResolvedValue(mockInstitution);
+      }
 
       const result = await service.generateSummary('inst-789');
 
