@@ -108,15 +108,11 @@ export class QuestionsService {
     ]);
 
     return {
-      data: questions,
-      pagination: {
-        page,
-        limit,
-        total,
-        totalPages: Math.ceil(total / limit),
-        hasNext: page * limit < total,
-        hasPrev: page > 1,
-      },
+      questions: questions,
+      totalCount: total,
+      offset: (page - 1) * limit,
+      limit: limit,
+      hasMore: (page - 1) * limit + questions.length < total,
     };
   }
 
@@ -134,7 +130,7 @@ export class QuestionsService {
   }
 
   async update(updateQuestionInput: UpdateQuestionInput): Promise<Question> {
-    const { id, text, type, moduleIds, validationStatus } = updateQuestionInput;
+    const { id, translationId, type, moduleIds, validationStatus } = updateQuestionInput;
 
     const exists = await this.prisma.question.findUnique({ where: { id } });
     if (!exists) {
@@ -143,17 +139,8 @@ export class QuestionsService {
 
     const updateData: Prisma.QuestionUpdateInput = {};
 
-    if (text) {
-      if (text.translationId) {
-        updateData.text = { connect: { id: text.translationId } };
-      } else {
-        updateData.text = {
-          update: {
-            en_text: text.en_text || '',
-            he_text: text.he_text || '',
-          },
-        };
-      }
+    if (translationId) {
+      updateData.text = { connect: { id: translationId } };
     }
 
     if (type) updateData.type = type;
@@ -186,6 +173,9 @@ export class QuestionsService {
     const { id } = input;
 
     const question = await this.findUnique(id);
+    if (!question) {
+      throw new NotFoundException(`Question with ID ${id} not found`);
+    }
     await this.remove(id);
 
     return { deletedQuestion: question };
@@ -197,7 +187,7 @@ export class QuestionsService {
 
   async generateSummary(id: string): Promise<string> {
     try {
-      const question = await this.findOne(id);
+      const question = await this.findUnique(id);
       if (!question) {
         throw new NotFoundException(`Question with ID ${id} not found`);
       }

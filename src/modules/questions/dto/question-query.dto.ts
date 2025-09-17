@@ -97,4 +97,10 @@ export class QuestionsQueryDto {
   @IsBoolean()
   @IsOptional()
   hasAnswers?: boolean;
+
+  @ApiPropertyOptional({ minimum: 1 })
+  @IsInt()
+  @Min(1)
+  @IsOptional()
+  page?: number;
 }
