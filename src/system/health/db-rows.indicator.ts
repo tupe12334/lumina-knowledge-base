@@ -1,8 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import {
-  HealthCheckError,
-  HealthIndicator,
   HealthIndicatorResult,
+  HealthIndicatorService,
 } from '@nestjs/terminus';
 import { PrismaService } from 'src/prisma/prisma.service';
 
@@ -29,15 +28,18 @@ interface PrismaCountClient {
 }
 
 @Injectable()
-export class DbRowsHealthIndicator extends HealthIndicator {
-  constructor(private readonly prisma: PrismaService) {
-    super();
-  }
+export class DbRowsHealthIndicator {
+  constructor(
+    private readonly prisma: PrismaService,
+    private readonly healthIndicatorService: HealthIndicatorService,
+  ) {}
 
   async isHealthy(
     key = 'db_rows',
     minRows = 100,
   ): Promise<HealthIndicatorResult> {
+    const indicator = this.healthIndicatorService.check(key);
+
     const delegates: CountableDelegate[] = [
       this.prisma.institution,
       this.prisma.faculty,
@@ -60,11 +62,17 @@ export class DbRowsHealthIndicator extends HealthIndicator {
     const totalRows = counts.reduce((a, b) => a + b, 0);
 
     const isUp = totalRows > minRows;
-    const result = this.getStatus(key, isUp, {
+
+    if (isUp) {
+      return indicator.up({
+        totalRows,
+        minRequired: minRows,
+      });
+    }
+
+    return indicator.down({
       totalRows,
       minRequired: minRows,
     });
-    if (isUp) return result;
-    throw new HealthCheckError(key, result);
   }
 }
