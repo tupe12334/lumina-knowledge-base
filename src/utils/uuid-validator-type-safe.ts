@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client';
-import { validateAndFixAllDatabaseUUIDs as validateUUIDs, UuidValidatorManager } from './validators/uuid-validator-manager';
+import { validateAndFixAllDatabaseUUIDs as validateUUIDs, UuidValidatorManager } from './validators';
 
 export interface ValidationResult {
   tableName: string;
