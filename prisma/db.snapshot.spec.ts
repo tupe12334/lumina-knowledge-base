@@ -22,7 +22,7 @@ const normalize = (value: unknown): unknown => {
 
 const fetchAllData = async (prisma: PrismaClient) => ({
   translation: await prisma.translation.findMany({ orderBy: { id: 'asc' } }),
-  university: await prisma.university.findMany({ orderBy: { id: 'asc' } }),
+  institution: await prisma.institution.findMany({ orderBy: { id: 'asc' } }),
   faculty: await prisma.faculty.findMany({ orderBy: { id: 'asc' } }),
   degree: await prisma.degree.findMany({ orderBy: { id: 'asc' } }),
   course: await prisma.course.findMany({ orderBy: { id: 'asc' } }),

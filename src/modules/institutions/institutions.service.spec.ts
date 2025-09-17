@@ -16,8 +16,8 @@ describe('InstitutionsService', () => {
         findMany: vi.fn(),
         findUnique: vi.fn(),
       },
-    };
-    service = new InstitutionsService(mockPrismaService as const as PrismaService);
+    } as any;
+    service = new InstitutionsService(mockPrismaService as PrismaService);
   });
 
   it('returns institutions from prisma', async () => {
@@ -33,7 +33,7 @@ describe('InstitutionsService', () => {
         },
       ],
     };
-    mockPrismaService.institution.findMany.mockResolvedValue([institution]);
+    (mockPrismaService.institution?.findMany as any)?.mockResolvedValue([institution]);
 
     const result = await service.findAll();
 
@@ -69,7 +69,7 @@ describe('InstitutionsService', () => {
         ],
       };
 
-      mockPrismaService.institution.findUnique.mockResolvedValue(mockInstitution);
+      (mockPrismaService.institution?.findUnique as any)?.mockResolvedValue(mockInstitution);
 
       const result = await service.generateSummary('inst-123');
 
@@ -94,7 +94,7 @@ describe('InstitutionsService', () => {
         courses: [],
       };
 
-      mockPrismaService.institution.findUnique.mockResolvedValue(mockInstitution);
+      (mockPrismaService.institution?.findUnique as any)?.mockResolvedValue(mockInstitution);
 
       const result = await service.generateSummary('inst-456');
 
@@ -122,7 +122,7 @@ describe('InstitutionsService', () => {
         ],
       };
 
-      mockPrismaService.institution.findUnique.mockResolvedValue(mockInstitution);
+      (mockPrismaService.institution?.findUnique as any)?.mockResolvedValue(mockInstitution);
 
       const result = await service.generateSummary('inst-789');
 
