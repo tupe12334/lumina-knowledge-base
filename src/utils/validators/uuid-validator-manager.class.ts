@@ -22,38 +22,31 @@ export class UuidValidatorManager {
 
   async validateAndFixAllDatabaseUUIDs(
     prisma: PrismaClient,
-    enableMutations: boolean
+    enableMutations: boolean,
   ): Promise<ValidationResult[]> {
     this.logger.log('Starting database UUID validation (type-safe mode)...');
     const results: ValidationResult[] = [];
 
-    const validationTasks = this.validators.map(validator =>
-      validator.validate(prisma, enableMutations)
+    const validationTasks = this.validators.map((validator) =>
+      validator.validate(prisma, enableMutations),
     );
 
     const allResults = await Promise.all(validationTasks);
-    results.push(...allResults.filter(r => r.invalidCount > 0));
+    results.push(...allResults.filter((r) => r.invalidCount > 0));
 
     const totalInvalid = results.reduce((sum, r) => sum + r.invalidCount, 0);
     const totalFixed = results.reduce((sum, r) => sum + r.fixedCount, 0);
 
     if (enableMutations && totalFixed > 0) {
-      this.logger.log(`✅ Fixed ${totalFixed}/${totalInvalid} invalid UUIDs in the database`);
+      this.logger.log(
+        `✅ Fixed ${totalFixed}/${totalInvalid} invalid UUIDs in the database`,
+      );
     } else if (totalInvalid > 0) {
-      this.logger.warn(`⚠️  Found ${totalInvalid} invalid UUIDs in the database (mutations disabled, not fixing)`);
+      this.logger.warn(
+        `⚠️  Found ${totalInvalid} invalid UUIDs in the database (mutations disabled, not fixing)`,
+      );
     }
 
     return results;
   }
 }
-
-// Re-export the main function for backward compatibility
-const validateAndFixAllDatabaseUUIDs = async (
-  prisma: PrismaClient,
-  enableMutations: boolean
-): Promise<ValidationResult[]> => {
-  const manager = new UuidValidatorManager();
-  return manager.validateAndFixAllDatabaseUUIDs(prisma, enableMutations);
-};
-
-export { UuidValidatorManager, validateAndFixAllDatabaseUUIDs };
