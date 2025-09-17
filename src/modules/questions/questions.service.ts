@@ -40,7 +40,9 @@ export class QuestionsService {
             he_text: text.he_text || '',
           },
         },
-        Modules: moduleIds ? { connect: moduleIds.map(id => ({ id })) } : undefined,
+        Modules: moduleIds
+          ? { connect: moduleIds.map((id) => ({ id })) }
+          : undefined,
       },
       include: QuestionQueryBuilder.buildInclude(),
     });
@@ -61,8 +63,9 @@ export class QuestionsService {
                 he_text: questionData.text.he_text || '',
               },
             },
-            Modules: questionData.moduleIds ?
-              { connect: questionData.moduleIds.map(id => ({ id })) } : undefined,
+            Modules: questionData.moduleIds
+              ? { connect: questionData.moduleIds.map((id) => ({ id })) }
+              : undefined,
           },
         });
         createdCount++;
@@ -88,7 +91,9 @@ export class QuestionsService {
     });
   }
 
-  async findAllPaginated(query?: QuestionsQueryDto): Promise<PaginatedQuestionsResponse> {
+  async findAllPaginated(
+    query?: QuestionsQueryDto,
+  ): Promise<PaginatedQuestionsResponse> {
     const page = (query && query.page) || 1;
     const limit = Math.min((query && query.limit) || 20, 100);
     const skip = (page - 1) * limit;
@@ -161,7 +166,7 @@ export class QuestionsService {
     if (validationStatus) updateData.validationStatus = validationStatus;
     if (moduleIds) {
       updateData.Modules = {
-        set: moduleIds.map(id => ({ id })),
+        set: moduleIds.map((id) => ({ id })),
       };
     }
 
@@ -181,11 +186,13 @@ export class QuestionsService {
     await this.prisma.question.delete({ where: { id } });
   }
 
-  async deleteQuestion(input: DeleteQuestionInput): Promise<{ deletedQuestion: Question }> {
-    const { questionId } = input;
+  async deleteQuestion(
+    input: DeleteQuestionInput,
+  ): Promise<{ deletedQuestion: Question }> {
+    const { id } = input;
 
-    const question = await this.findUnique(questionId);
-    await this.remove(questionId);
+    const question = await this.findUnique(id);
+    await this.remove(id);
 
     return { deletedQuestion: question };
   }
