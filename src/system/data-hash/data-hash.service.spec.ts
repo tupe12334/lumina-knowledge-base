@@ -5,8 +5,8 @@ import {
 } from 'src/system/data-hash/data-hash.service';
 
 export class FakePrisma implements PrismaQueryable {
-  _queryRaw: any;
-  _queryRawUnsafe: any;
+  _queryRaw: unknown;
+  _queryRawUnsafe: unknown;
 
   constructor() {
     this._queryRaw = vi.fn(() => Promise.resolve([]));
