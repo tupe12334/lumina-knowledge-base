@@ -1,4 +1,4 @@
-import { PrismaClient } from '@prisma/client';
+import { Prisma, PrismaClient } from '@prisma/client';
 import { BaseUuidValidator, ValidationResult } from './base-uuid-validator';
 
 export class TranslationValidator extends BaseUuidValidator {
@@ -6,7 +6,10 @@ export class TranslationValidator extends BaseUuidValidator {
     super();
   }
 
-  async validate(prisma: PrismaClient, enableMutations: boolean): Promise<ValidationResult> {
+  async validate(
+    prisma: PrismaClient,
+    enableMutations: boolean,
+  ): Promise<ValidationResult> {
     const result = this.createResult('Translation');
 
     try {
@@ -34,10 +37,17 @@ export class TranslationValidator extends BaseUuidValidator {
               });
 
               result.fixedCount++;
-              this.logger.log(`Fixed Translation UUID: "${translation.id}" → "${newId}"`);
+              this.logger.log(
+                `Fixed Translation UUID: "${translation.id}" → "${newId}"`,
+              );
             } catch (error) {
-              result.errors.push(`Failed to fix Translation ${translation.id}: ${error}`);
-              this.logger.error(`Failed to fix Translation ${translation.id}:`, error);
+              result.errors.push(
+                `Failed to fix Translation ${translation.id}: ${error}`,
+              );
+              this.logger.error(
+                `Failed to fix Translation ${translation.id}:`,
+                error,
+              );
             }
           }
         }
@@ -50,7 +60,11 @@ export class TranslationValidator extends BaseUuidValidator {
     return result;
   }
 
-  private async updateAllReferences(tx: PrismaClient, oldId: string, newId: string) {
+  private async updateAllReferences(
+    tx: Prisma.TransactionClient,
+    oldId: string,
+    newId: string,
+  ) {
     await Promise.all([
       tx.institution.updateMany({
         where: { translationId: oldId },

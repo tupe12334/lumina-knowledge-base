@@ -1,4 +1,4 @@
-import { PrismaClient } from '@prisma/client';
+import { Prisma, PrismaClient } from '@prisma/client';
 import { BaseUuidValidator, ValidationResult } from './base-uuid-validator';
 
 export class ModuleValidator extends BaseUuidValidator {
@@ -6,7 +6,10 @@ export class ModuleValidator extends BaseUuidValidator {
     super();
   }
 
-  async validate(prisma: PrismaClient, enableMutations: boolean): Promise<ValidationResult> {
+  async validate(
+    prisma: PrismaClient,
+    enableMutations: boolean,
+  ): Promise<ValidationResult> {
     const result = this.createResult('Module');
 
     try {
@@ -31,7 +34,7 @@ export class ModuleValidator extends BaseUuidValidator {
                     translationId: module.translationId,
                     blockId: module.blockId,
                     Questions: {
-                      connect: module.Questions.map(q => ({ id: q.id })),
+                      connect: module.Questions.map((q) => ({ id: q.id })),
                     },
                   },
                 });
@@ -57,7 +60,11 @@ export class ModuleValidator extends BaseUuidValidator {
     return result;
   }
 
-  private async updateModuleReferences(tx: PrismaClient, oldId: string, newId: string) {
+  private async updateModuleReferences(
+    tx: Prisma.TransactionClient,
+    oldId: string,
+    newId: string,
+  ) {
     // Update question-module relationships
     const questionModules = await tx.questionModule.findMany({
       where: { moduleId: oldId },

@@ -1,4 +1,4 @@
-import { PrismaClient } from '@prisma/client';
+import { Prisma, PrismaClient } from '@prisma/client';
 import { BaseUuidValidator, ValidationResult } from './base-uuid-validator';
 
 interface QuestionWithRelations {
@@ -16,7 +16,10 @@ export class QuestionValidator extends BaseUuidValidator {
     super();
   }
 
-  async validate(prisma: PrismaClient, enableMutations: boolean): Promise<ValidationResult> {
+  async validate(
+    prisma: PrismaClient,
+    enableMutations: boolean,
+  ): Promise<ValidationResult> {
     const result = this.createResult('Question');
 
     try {
@@ -44,7 +47,7 @@ export class QuestionValidator extends BaseUuidValidator {
                     translationId: question.translationId,
                     type: question.type,
                     Modules: {
-                      connect: question.Modules.map(m => ({ id: m.id })),
+                      connect: question.Modules.map((m) => ({ id: m.id })),
                     },
                   },
                 });
@@ -55,10 +58,17 @@ export class QuestionValidator extends BaseUuidValidator {
               });
 
               result.fixedCount++;
-              this.logger.log(`Fixed Question UUID: "${question.id}" → "${newId}"`);
+              this.logger.log(
+                `Fixed Question UUID: "${question.id}" → "${newId}"`,
+              );
             } catch (error) {
-              result.errors.push(`Failed to fix Question ${question.id}: ${error}`);
-              this.logger.error(`Failed to fix Question ${question.id}:`, error);
+              result.errors.push(
+                `Failed to fix Question ${question.id}: ${error}`,
+              );
+              this.logger.error(
+                `Failed to fix Question ${question.id}:`,
+                error,
+              );
             }
           }
         }
@@ -71,7 +81,11 @@ export class QuestionValidator extends BaseUuidValidator {
     return result;
   }
 
-  private async updateQuestionReferences(tx: PrismaClient, oldId: string, newId: string) {
+  private async updateQuestionReferences(
+    tx: Prisma.TransactionClient,
+    oldId: string,
+    newId: string,
+  ) {
     await Promise.all([
       tx.answer.updateMany({
         where: { questionId: oldId },
@@ -82,13 +96,17 @@ export class QuestionValidator extends BaseUuidValidator {
         data: { questionId: newId },
       }),
       tx.questionPart.updateMany({
-        where: { partOfId: oldId },
-        data: { partOfId: newId },
+        where: { partQuestionId: oldId },
+        data: { partQuestionId: newId },
       }),
     ]);
   }
 
-  private async updateQuestionRelationships(tx: PrismaClient, question: QuestionWithRelations, newId: string) {
+  private async updateQuestionRelationships(
+    tx: Prisma.TransactionClient,
+    question: QuestionWithRelations,
+    newId: string,
+  ) {
     if (question.Parts && question.Parts.length > 0) {
       await tx.questionPart.updateMany({
         where: { questionId: question.id },
@@ -98,8 +116,8 @@ export class QuestionValidator extends BaseUuidValidator {
 
     if (question.PartOf && question.PartOf.length > 0) {
       await tx.questionPart.updateMany({
-        where: { partOfId: question.id },
-        data: { partOfId: newId },
+        where: { partQuestionId: question.id },
+        data: { partQuestionId: newId },
       });
     }
   }
