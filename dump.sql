@@ -747,6 +747,8 @@ INSERT INTO Block VALUES('73c822f1-9289-46f8-b5fb-3b209f6590ba');
 INSERT INTO Block VALUES('982bc396-4b05-4334-a3db-161dceb83744');
 INSERT INTO Block VALUES('f02d4b33-ad51-4e84-9faa-1b2950461057');
 INSERT INTO Block VALUES('7b1067ea-e077-453c-a962-278e46142b03');
+INSERT INTO Block VALUES('5b46ac4d-5ba3-418e-aa09-b26b053871f6');
+INSERT INTO Block VALUES('9c339567-0f98-463c-8547-7dd7231dd4b0');
 CREATE TABLE IF NOT EXISTS "BlockRelationship" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "prerequisiteId" TEXT NOT NULL,
@@ -1443,6 +1445,8 @@ INSERT INTO Module VALUES('80c32c39-fd8c-474d-a6e1-99e01cff40b6','046fb2f1-9dfa-
 INSERT INTO Module VALUES('4466954b-008a-4e4f-aa82-c59f11c13314','f7943ca8-9c0c-4a23-b43d-cbd10c22fab2','982bc396-4b05-4334-a3db-161dceb83744');
 INSERT INTO Module VALUES('dbc849d7-4ecf-48f8-a0f4-db0f7b5a42f6','57de1f75-3337-44e6-a57f-8564eefde142','f02d4b33-ad51-4e84-9faa-1b2950461057');
 INSERT INTO Module VALUES('14712ef9-fb7e-403c-baea-b9abdd99e37e','f4a65773-5f0b-45c2-a232-e05fd505d90f','7b1067ea-e077-453c-a962-278e46142b03');
+INSERT INTO Module VALUES('a6bc155b-e1ae-4b04-a7b0-97b846a06774','91132bd5-eb86-4097-b957-d732793ef3c2','5b46ac4d-5ba3-418e-aa09-b26b053871f6');
+INSERT INTO Module VALUES('b4572b4f-2e6e-4cf6-b7b4-678e1482f044','ed1360a0-c343-419a-9be7-e57d45142ad7','9c339567-0f98-463c-8547-7dd7231dd4b0');
 CREATE TABLE IF NOT EXISTS "Translation" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "en_text" TEXT NOT NULL,
@@ -16980,6 +16984,8 @@ INSERT INTO Translation VALUES('046fb2f1-9dfa-4689-9006-aea316908e48','Relations
 INSERT INTO Translation VALUES('f7943ca8-9c0c-4a23-b43d-cbd10c22fab2','Functions','פונקציות');
 INSERT INTO Translation VALUES('57de1f75-3337-44e6-a57f-8564eefde142','Cardinalities','עוצמות');
 INSERT INTO Translation VALUES('f4a65773-5f0b-45c2-a232-e05fd505d90f','Sets','קבוצות');
+INSERT INTO Translation VALUES('91132bd5-eb86-4097-b957-d732793ef3c2','Mathematical Induction','אינדוקציה מתמטית');
+INSERT INTO Translation VALUES('ed1360a0-c343-419a-9be7-e57d45142ad7','Well-Ordering Principle','עקרון המינימום');
 CREATE TABLE IF NOT EXISTS "Question" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "validationStatus" TEXT NOT NULL DEFAULT 'ai_generated',
@@ -37510,6 +37516,8 @@ INSERT INTO _CourseModules VALUES('cc8fe111-8b1b-41d2-9299-6a68f2cca395','80c32c
 INSERT INTO _CourseModules VALUES('cc8fe111-8b1b-41d2-9299-6a68f2cca395','4466954b-008a-4e4f-aa82-c59f11c13314');
 INSERT INTO _CourseModules VALUES('cc8fe111-8b1b-41d2-9299-6a68f2cca395','dbc849d7-4ecf-48f8-a0f4-db0f7b5a42f6');
 INSERT INTO _CourseModules VALUES('cc8fe111-8b1b-41d2-9299-6a68f2cca395','14712ef9-fb7e-403c-baea-b9abdd99e37e');
+INSERT INTO _CourseModules VALUES('cc8fe111-8b1b-41d2-9299-6a68f2cca395','a6bc155b-e1ae-4b04-a7b0-97b846a06774');
+INSERT INTO _CourseModules VALUES('cc8fe111-8b1b-41d2-9299-6a68f2cca395','b4572b4f-2e6e-4cf6-b7b4-678e1482f044');
 CREATE TABLE IF NOT EXISTS "_CourseToDegree" (
     "A" TEXT NOT NULL,
     "B" TEXT NOT NULL,
@@ -37705,6 +37713,8 @@ INSERT INTO _ModuleHierarchy VALUES('80c32c39-fd8c-474d-a6e1-99e01cff40b6','6e19
 INSERT INTO _ModuleHierarchy VALUES('4466954b-008a-4e4f-aa82-c59f11c13314','6e19169a-959d-4f5d-a475-de09ca9ba8cd');
 INSERT INTO _ModuleHierarchy VALUES('dbc849d7-4ecf-48f8-a0f4-db0f7b5a42f6','6e19169a-959d-4f5d-a475-de09ca9ba8cd');
 INSERT INTO _ModuleHierarchy VALUES('14712ef9-fb7e-403c-baea-b9abdd99e37e','6e19169a-959d-4f5d-a475-de09ca9ba8cd');
+INSERT INTO _ModuleHierarchy VALUES('a6bc155b-e1ae-4b04-a7b0-97b846a06774','d4117288-a981-4b80-98d1-e17a242efcfb');
+INSERT INTO _ModuleHierarchy VALUES('b4572b4f-2e6e-4cf6-b7b4-678e1482f044','d4117288-a981-4b80-98d1-e17a242efcfb');
 CREATE TABLE IF NOT EXISTS "_ModuleToQuestion" (
     "A" TEXT NOT NULL,
     "B" TEXT NOT NULL,
