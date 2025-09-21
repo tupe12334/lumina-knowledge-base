@@ -808,6 +808,25 @@ INSERT INTO Block VALUES('b2945e84-5ec5-4f0d-9428-201e48e6a95b');
 INSERT INTO Block VALUES('cdcfa7d2-c193-4cb2-9bd1-dc801d3ba801');
 INSERT INTO Block VALUES('57f5acd2-11e7-4115-b0aa-fceb095dfafb');
 INSERT INTO Block VALUES('81c35ea8-d863-4acd-bc95-4e32a4f21163');
+INSERT INTO Block VALUES('032ec505-5241-4cb3-9cde-e92ccb274540');
+INSERT INTO Block VALUES('a66ec35f-ce55-47ac-b696-cdb8a67b2895');
+INSERT INTO Block VALUES('356ba71d-9454-463f-b076-98d6e642238d');
+INSERT INTO Block VALUES('1986b111-3431-4243-9475-efb1bdf0da71');
+INSERT INTO Block VALUES('ee2a471f-d1ba-42d0-b3a9-8edf9a12ba95');
+INSERT INTO Block VALUES('95643205-d99a-4e18-b9fe-84fc4c994114');
+INSERT INTO Block VALUES('c128d1d2-b1de-4003-91b6-c426323be5ab');
+INSERT INTO Block VALUES('c6567013-25fc-42d9-9f1b-31efdd0563d2');
+INSERT INTO Block VALUES('c7c6aa66-cf21-40d4-9223-bd3fd635042b');
+INSERT INTO Block VALUES('feacd14a-92b7-4478-ae19-19dcf8fa535b');
+INSERT INTO Block VALUES('00d83329-6634-467b-8bd7-2d4cb98d0351');
+INSERT INTO Block VALUES('aba2472c-b951-42b2-8d2f-f3739ea0c1bc');
+INSERT INTO Block VALUES('b48c33db-edce-45d5-8fee-2bb1ad3f2805');
+INSERT INTO Block VALUES('62caf27f-97d4-4cd8-bfd8-a2250bfba2a1');
+INSERT INTO Block VALUES('48c54973-fc8b-4fc2-9b95-64abb0279204');
+INSERT INTO Block VALUES('e0a30e60-c75f-4a29-bf5f-e25352bf702b');
+INSERT INTO Block VALUES('f602a509-3037-46cd-b697-a9977e057ca6');
+INSERT INTO Block VALUES('dd48a968-6e8e-497e-b575-d6a0e14e3756');
+INSERT INTO Block VALUES('27cd4793-e6fc-4b30-86d8-ca03f60a2b72');
 CREATE TABLE IF NOT EXISTS "BlockRelationship" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "prerequisiteId" TEXT NOT NULL,
@@ -1072,6 +1091,26 @@ INSERT INTO BlockRelationship VALUES('e102805c-e581-4466-b0ee-63edddc42932','d4a
 INSERT INTO BlockRelationship VALUES('78b84f7c-f23f-40ed-9d15-e487fd87dfc1','d4aa8f44-fa2e-4b76-adb1-3ba6ec0ff38c','cdcfa7d2-c193-4cb2-9bd1-dc801d3ba801');
 INSERT INTO BlockRelationship VALUES('5cc9e1bc-6c64-41da-b08d-f32ee701692f','cdcfa7d2-c193-4cb2-9bd1-dc801d3ba801','57f5acd2-11e7-4115-b0aa-fceb095dfafb');
 INSERT INTO BlockRelationship VALUES('55b9e73c-a8ec-4944-b226-0f32d821df44','cdcfa7d2-c193-4cb2-9bd1-dc801d3ba801','81c35ea8-d863-4acd-bc95-4e32a4f21163');
+INSERT INTO BlockRelationship VALUES('73c196a4-ed2f-4a40-a9c5-1948b53e3707','032ec505-5241-4cb3-9cde-e92ccb274540','a66ec35f-ce55-47ac-b696-cdb8a67b2895');
+INSERT INTO BlockRelationship VALUES('ee9527bd-ef6f-4f23-b0e8-fd2edcbf71ca','a66ec35f-ce55-47ac-b696-cdb8a67b2895','356ba71d-9454-463f-b076-98d6e642238d');
+INSERT INTO BlockRelationship VALUES('ee773202-5ade-45f5-85bf-73e4162619ee','a66ec35f-ce55-47ac-b696-cdb8a67b2895','1986b111-3431-4243-9475-efb1bdf0da71');
+INSERT INTO BlockRelationship VALUES('08794b6a-74b1-4e0d-b7f2-bbf56dfa84dd','356ba71d-9454-463f-b076-98d6e642238d','ee2a471f-d1ba-42d0-b3a9-8edf9a12ba95');
+INSERT INTO BlockRelationship VALUES('1ab373be-5787-4fd2-919e-8c4c0fe7f4b6','356ba71d-9454-463f-b076-98d6e642238d','95643205-d99a-4e18-b9fe-84fc4c994114');
+INSERT INTO BlockRelationship VALUES('b797a136-84e2-4e6c-8b23-9758365206b6','356ba71d-9454-463f-b076-98d6e642238d','c128d1d2-b1de-4003-91b6-c426323be5ab');
+INSERT INTO BlockRelationship VALUES('dc4e104f-af76-427b-9357-d755f977cd8c','356ba71d-9454-463f-b076-98d6e642238d','c6567013-25fc-42d9-9f1b-31efdd0563d2');
+INSERT INTO BlockRelationship VALUES('a2755baa-5dc5-46af-af3f-2a64608624c2','ee2a471f-d1ba-42d0-b3a9-8edf9a12ba95','c7c6aa66-cf21-40d4-9223-bd3fd635042b');
+INSERT INTO BlockRelationship VALUES('0ff25258-7851-406c-bd18-ef66afc79457','a66ec35f-ce55-47ac-b696-cdb8a67b2895','00d83329-6634-467b-8bd7-2d4cb98d0351');
+INSERT INTO BlockRelationship VALUES('77475d07-38d2-4fe8-9f39-ff4f0375daee','00d83329-6634-467b-8bd7-2d4cb98d0351','aba2472c-b951-42b2-8d2f-f3739ea0c1bc');
+INSERT INTO BlockRelationship VALUES('371671c1-9c94-4f76-8b2b-861edb96e747','00d83329-6634-467b-8bd7-2d4cb98d0351','b48c33db-edce-45d5-8fee-2bb1ad3f2805');
+INSERT INTO BlockRelationship VALUES('c73e9559-ac1b-4ef5-b4bb-6ec11414a341','b48c33db-edce-45d5-8fee-2bb1ad3f2805','62caf27f-97d4-4cd8-bfd8-a2250bfba2a1');
+INSERT INTO BlockRelationship VALUES('5e2dc2e1-87a3-4035-8ad1-3d62c5612250','a66ec35f-ce55-47ac-b696-cdb8a67b2895','feacd14a-92b7-4478-ae19-19dcf8fa535b');
+INSERT INTO BlockRelationship VALUES('e1427a7b-2c84-4178-85d5-6ef988cf1fff','a66ec35f-ce55-47ac-b696-cdb8a67b2895','48c54973-fc8b-4fc2-9b95-64abb0279204');
+INSERT INTO BlockRelationship VALUES('72ecdc69-9732-492e-b0e7-b15bfffc815e','48c54973-fc8b-4fc2-9b95-64abb0279204','e0a30e60-c75f-4a29-bf5f-e25352bf702b');
+INSERT INTO BlockRelationship VALUES('ebcaa02c-ece3-464c-968c-339835fe6c8b','48c54973-fc8b-4fc2-9b95-64abb0279204','f602a509-3037-46cd-b697-a9977e057ca6');
+INSERT INTO BlockRelationship VALUES('8926cb42-345d-4e07-b716-4b591e816927','48c54973-fc8b-4fc2-9b95-64abb0279204','dd48a968-6e8e-497e-b575-d6a0e14e3756');
+INSERT INTO BlockRelationship VALUES('9039f4df-1d29-4e23-ac95-81fd7e899e2b','ee2a471f-d1ba-42d0-b3a9-8edf9a12ba95','27cd4793-e6fc-4b30-86d8-ca03f60a2b72');
+INSERT INTO BlockRelationship VALUES('5f4f30eb-bd56-45b0-afe3-131e9823d2da','aba2472c-b951-42b2-8d2f-f3739ea0c1bc','27cd4793-e6fc-4b30-86d8-ca03f60a2b72');
+INSERT INTO BlockRelationship VALUES('74530211-fd44-4433-ae8d-899bd3eb62d7','dd48a968-6e8e-497e-b575-d6a0e14e3756','27cd4793-e6fc-4b30-86d8-ca03f60a2b72');
 CREATE TABLE IF NOT EXISTS "RelationshipMetadata" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "key" TEXT NOT NULL,
@@ -1621,6 +1660,25 @@ INSERT INTO Module VALUES('bb270f75-e382-4100-b91a-75669dee7023','39132bd5-4b02-
 INSERT INTO Module VALUES('a180a176-e7e7-49a6-b30e-73254e0af87b','60390e82-1be6-4f11-b718-940a67dc5656','cdcfa7d2-c193-4cb2-9bd1-dc801d3ba801');
 INSERT INTO Module VALUES('14128ba1-6cb8-42cf-8d99-285a8cd54225','afe666b0-5af9-4d5c-aab9-e951263cd682','57f5acd2-11e7-4115-b0aa-fceb095dfafb');
 INSERT INTO Module VALUES('052fac9c-f53b-4290-aeec-114a9e7cca2b','f28b45bd-560f-418d-ba7f-c721e73a1702','81c35ea8-d863-4acd-bc95-4e32a4f21163');
+INSERT INTO Module VALUES('0c3afe7d-23de-4272-8dec-a40835f4bcd7','0f8a07e7-9d51-488e-a657-d5d103213520','032ec505-5241-4cb3-9cde-e92ccb274540');
+INSERT INTO Module VALUES('f46dec7e-3ba7-4bfb-b408-39436164b00b','692475b3-1d00-4e02-a82d-8ff5b39b7279','a66ec35f-ce55-47ac-b696-cdb8a67b2895');
+INSERT INTO Module VALUES('83190065-cf83-4061-9d1a-f43ded735978','42329c62-addd-4db3-b694-51366aa9ca83','356ba71d-9454-463f-b076-98d6e642238d');
+INSERT INTO Module VALUES('35afad6a-0ab5-41e4-b75b-20e15b01bb10','03e75d8b-7aa0-44d2-bf8c-ccfdd73dfba9','1986b111-3431-4243-9475-efb1bdf0da71');
+INSERT INTO Module VALUES('8b621043-829a-44e4-86cf-7a26d8991ba1','c524e189-5b5d-47d6-a829-387cd80a835b','ee2a471f-d1ba-42d0-b3a9-8edf9a12ba95');
+INSERT INTO Module VALUES('1f1d19d8-7f16-4348-aca8-d3f404621a02','03927310-5ac0-4f62-93d6-e810b9925d23','95643205-d99a-4e18-b9fe-84fc4c994114');
+INSERT INTO Module VALUES('592c2471-e745-482a-8544-4c6c7b66d5a4','a8ad2f10-7c71-4bde-8634-4374ef544eb9','c128d1d2-b1de-4003-91b6-c426323be5ab');
+INSERT INTO Module VALUES('57329dda-a6a7-4934-a18e-f5cf56d5be20','8c62a710-1e3e-4420-b374-87f13fd2e5ae','c6567013-25fc-42d9-9f1b-31efdd0563d2');
+INSERT INTO Module VALUES('9f342ea7-41c8-4b5e-b642-3ec3dabbf7ea','b54bfda8-2894-4934-bd7e-d6ac661c0c4c','c7c6aa66-cf21-40d4-9223-bd3fd635042b');
+INSERT INTO Module VALUES('da800781-bead-4b94-8a50-bedcff6ea799','d6b597c3-7418-429b-9be5-49521e56ca36','feacd14a-92b7-4478-ae19-19dcf8fa535b');
+INSERT INTO Module VALUES('9daa472b-67d5-4873-9990-361c89474ef8','8d6f20d6-025d-46ee-a6d3-ada54d6ef6c3','00d83329-6634-467b-8bd7-2d4cb98d0351');
+INSERT INTO Module VALUES('a5373990-60bf-46a3-98b5-21d1d29a5ad7','27c84758-a065-489e-9df9-28888322c2ec','aba2472c-b951-42b2-8d2f-f3739ea0c1bc');
+INSERT INTO Module VALUES('f45625b9-d3a0-47a4-b8e2-c831014a10ac','ff6454e9-1ea2-4967-9540-de910efe235a','b48c33db-edce-45d5-8fee-2bb1ad3f2805');
+INSERT INTO Module VALUES('758693e2-8654-45c9-a60c-d4046299b049','d2853bc8-cf39-4b43-af46-0aba083d8a29','62caf27f-97d4-4cd8-bfd8-a2250bfba2a1');
+INSERT INTO Module VALUES('8c3c6cc9-c6f5-47e3-861e-67130a37adf4','a987201f-ef51-40fb-8145-21c91d8c25ad','48c54973-fc8b-4fc2-9b95-64abb0279204');
+INSERT INTO Module VALUES('058c42d3-c1c9-4da9-8668-207054bc4492','68e03e32-2207-4b77-9185-e8d75e5d1a12','e0a30e60-c75f-4a29-bf5f-e25352bf702b');
+INSERT INTO Module VALUES('77d70606-1261-43bb-9d1a-9d9f6fb42869','726de93b-aa2a-4fec-b23a-fbdb08dfa7d8','f602a509-3037-46cd-b697-a9977e057ca6');
+INSERT INTO Module VALUES('698d9f73-00fa-4f16-a466-ab7280120b61','4d42d6cf-3599-4234-b433-a00939290317','dd48a968-6e8e-497e-b575-d6a0e14e3756');
+INSERT INTO Module VALUES('d0e3de79-e16b-4b07-9c45-41e58c36f992','9862bdf2-62bd-4331-a648-4c4248919ff8','27cd4793-e6fc-4b30-86d8-ca03f60a2b72');
 CREATE TABLE IF NOT EXISTS "Translation" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "en_text" TEXT NOT NULL,
@@ -17219,6 +17277,25 @@ INSERT INTO Translation VALUES('39132bd5-4b02-489c-b6f7-a9d8a478fe35','Inverse F
 INSERT INTO Translation VALUES('60390e82-1be6-4f11-b718-940a67dc5656','Sequences','סדרות');
 INSERT INTO Translation VALUES('afe666b0-5af9-4d5c-aab9-e951263cd682','Infinite Sequence','סדרה אינסופית');
 INSERT INTO Translation VALUES('3d563644-0264-4a9d-a89d-02f957c3c208','Finite Sequence','סדרה סופית');
+INSERT INTO Translation VALUES('0f8a07e7-9d51-488e-a657-d5d103213520','Equivalence','שקילות');
+INSERT INTO Translation VALUES('692475b3-1d00-4e02-a82d-8ff5b39b7279','Cardinality','עוצמה');
+INSERT INTO Translation VALUES('42329c62-addd-4db3-b694-51366aa9ca83','Countable Sets','קבוצות בנות מנייה');
+INSERT INTO Translation VALUES('03e75d8b-7aa0-44d2-bf8c-ccfdd73dfba9','Aleph Zero Cardinality','העוצמה א0');
+INSERT INTO Translation VALUES('c524e189-5b5d-47d6-a829-387cd80a835b','Uncountable Sets','קבוצות שאינן בנות מנייה');
+INSERT INTO Translation VALUES('03927310-5ac0-4f62-93d6-e810b9925d23','Union of Countable Sets','איחוד קבוצות בנות מנייה');
+INSERT INTO Translation VALUES('a8ad2f10-7c71-4bde-8634-4374ef544eb9','Intersection of Countable Sets','חיתוך קבוצות בנות מנייה');
+INSERT INTO Translation VALUES('8c62a710-1e3e-4420-b374-87f13fd2e5ae','Proof of Countable Sets','הוכחת קבוצות בנות מנייה');
+INSERT INTO Translation VALUES('b54bfda8-2894-4934-bd7e-d6ac661c0c4c','Proof of Uncountable Sets','הוכחת קבוצות שאינן בנות מנייה');
+INSERT INTO Translation VALUES('d6b597c3-7418-429b-9be5-49521e56ca36','Power Set of Sets','קבוצת החזקה של הקבוצות');
+INSERT INTO Translation VALUES('8d6f20d6-025d-46ee-a6d3-ada54d6ef6c3','Definition of Order Between Cardinalities','הגדרת סדר בין עוצמות');
+INSERT INTO Translation VALUES('27c84758-a065-489e-9df9-28888322c2ec','Cantor Theorem','משפט קנטור');
+INSERT INTO Translation VALUES('ff6454e9-1ea2-4967-9540-de910efe235a','Cantor-Bernstein Theorem','משפט קנטור ברנשטיין');
+INSERT INTO Translation VALUES('d2853bc8-cf39-4b43-af46-0aba083d8a29','Sandwich Rule','כלל הסנדוויץ');
+INSERT INTO Translation VALUES('a987201f-ef51-40fb-8145-21c91d8c25ad','Arithmetic of Cardinalities','אריתמטיקה של עוצמות');
+INSERT INTO Translation VALUES('68e03e32-2207-4b77-9185-e8d75e5d1a12','Addition of Cardinalities','חיבור עוצמות');
+INSERT INTO Translation VALUES('726de93b-aa2a-4fec-b23a-fbdb08dfa7d8','Multiplication of Cardinalities','כפל עוצמות');
+INSERT INTO Translation VALUES('4d42d6cf-3599-4234-b433-a00939290317','Exponentiation of Cardinalities','חזקה של עוצמות');
+INSERT INTO Translation VALUES('9862bdf2-62bd-4331-a648-4c4248919ff8','Continuum Hypothesis','השערת הרצף');
 CREATE TABLE IF NOT EXISTS "Question" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "validationStatus" TEXT NOT NULL DEFAULT 'ai_generated',
@@ -38048,6 +38125,25 @@ INSERT INTO _ModuleHierarchy VALUES('2c49fc8f-e851-4115-8037-d990ac963b29','4466
 INSERT INTO _ModuleHierarchy VALUES('1a772cf9-c647-4056-907b-1bdebaeb0651','4466954b-008a-4e4f-aa82-c59f11c13314');
 INSERT INTO _ModuleHierarchy VALUES('e7b1f1b7-7e65-4f21-9e29-e6d36ecd3f71','4466954b-008a-4e4f-aa82-c59f11c13314');
 INSERT INTO _ModuleHierarchy VALUES('090d9797-46b6-4973-89ac-d15b95dfb9e2','4466954b-008a-4e4f-aa82-c59f11c13314');
+INSERT INTO _ModuleHierarchy VALUES('1f1d19d8-7f16-4348-aca8-d3f404621a02','dbc849d7-4ecf-48f8-a0f4-db0f7b5a42f6');
+INSERT INTO _ModuleHierarchy VALUES('8c3c6cc9-c6f5-47e3-861e-67130a37adf4','dbc849d7-4ecf-48f8-a0f4-db0f7b5a42f6');
+INSERT INTO _ModuleHierarchy VALUES('9daa472b-67d5-4873-9990-361c89474ef8','dbc849d7-4ecf-48f8-a0f4-db0f7b5a42f6');
+INSERT INTO _ModuleHierarchy VALUES('57329dda-a6a7-4934-a18e-f5cf56d5be20','dbc849d7-4ecf-48f8-a0f4-db0f7b5a42f6');
+INSERT INTO _ModuleHierarchy VALUES('9f342ea7-41c8-4b5e-b642-3ec3dabbf7ea','dbc849d7-4ecf-48f8-a0f4-db0f7b5a42f6');
+INSERT INTO _ModuleHierarchy VALUES('35afad6a-0ab5-41e4-b75b-20e15b01bb10','dbc849d7-4ecf-48f8-a0f4-db0f7b5a42f6');
+INSERT INTO _ModuleHierarchy VALUES('d0e3de79-e16b-4b07-9c45-41e58c36f992','dbc849d7-4ecf-48f8-a0f4-db0f7b5a42f6');
+INSERT INTO _ModuleHierarchy VALUES('698d9f73-00fa-4f16-a466-ab7280120b61','dbc849d7-4ecf-48f8-a0f4-db0f7b5a42f6');
+INSERT INTO _ModuleHierarchy VALUES('058c42d3-c1c9-4da9-8668-207054bc4492','dbc849d7-4ecf-48f8-a0f4-db0f7b5a42f6');
+INSERT INTO _ModuleHierarchy VALUES('592c2471-e745-482a-8544-4c6c7b66d5a4','dbc849d7-4ecf-48f8-a0f4-db0f7b5a42f6');
+INSERT INTO _ModuleHierarchy VALUES('758693e2-8654-45c9-a60c-d4046299b049','dbc849d7-4ecf-48f8-a0f4-db0f7b5a42f6');
+INSERT INTO _ModuleHierarchy VALUES('77d70606-1261-43bb-9d1a-9d9f6fb42869','dbc849d7-4ecf-48f8-a0f4-db0f7b5a42f6');
+INSERT INTO _ModuleHierarchy VALUES('a5373990-60bf-46a3-98b5-21d1d29a5ad7','dbc849d7-4ecf-48f8-a0f4-db0f7b5a42f6');
+INSERT INTO _ModuleHierarchy VALUES('f45625b9-d3a0-47a4-b8e2-c831014a10ac','dbc849d7-4ecf-48f8-a0f4-db0f7b5a42f6');
+INSERT INTO _ModuleHierarchy VALUES('f46dec7e-3ba7-4bfb-b408-39436164b00b','dbc849d7-4ecf-48f8-a0f4-db0f7b5a42f6');
+INSERT INTO _ModuleHierarchy VALUES('83190065-cf83-4061-9d1a-f43ded735978','dbc849d7-4ecf-48f8-a0f4-db0f7b5a42f6');
+INSERT INTO _ModuleHierarchy VALUES('8b621043-829a-44e4-86cf-7a26d8991ba1','dbc849d7-4ecf-48f8-a0f4-db0f7b5a42f6');
+INSERT INTO _ModuleHierarchy VALUES('da800781-bead-4b94-8a50-bedcff6ea799','dbc849d7-4ecf-48f8-a0f4-db0f7b5a42f6');
+INSERT INTO _ModuleHierarchy VALUES('0c3afe7d-23de-4272-8dec-a40835f4bcd7','dbc849d7-4ecf-48f8-a0f4-db0f7b5a42f6');
 CREATE TABLE IF NOT EXISTS "_ModuleToQuestion" (
     "A" TEXT NOT NULL,
     "B" TEXT NOT NULL,
