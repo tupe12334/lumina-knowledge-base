@@ -16979,7 +16979,7 @@ INSERT INTO Translation VALUES('227fe2e4-2bac-41e9-836f-1a7488dad2d6','Recursion
 INSERT INTO Translation VALUES('046fb2f1-9dfa-4689-9006-aea316908e48','Relations','יחסים');
 INSERT INTO Translation VALUES('f7943ca8-9c0c-4a23-b43d-cbd10c22fab2','Functions','פונקציות');
 INSERT INTO Translation VALUES('57de1f75-3337-44e6-a57f-8564eefde142','Cardinalities','עוצמות');
-INSERT INTO Translation VALUES('f4a65773-5f0b-45c2-a232-e05fd505d90f','Set','קבוצה');
+INSERT INTO Translation VALUES('f4a65773-5f0b-45c2-a232-e05fd505d90f','Sets','קבוצות');
 CREATE TABLE IF NOT EXISTS "Question" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "validationStatus" TEXT NOT NULL DEFAULT 'ai_generated',
