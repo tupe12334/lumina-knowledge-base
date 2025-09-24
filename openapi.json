@@ -1474,6 +1474,55 @@
         ]
       }
     },
+    "/modules/by-questions": {
+      "get": {
+        "description": "Returns modules sorted by question count (least questions first). Use limit query parameter to specify number of results.",
+        "operationId": "ModulesController_getModulesByQuestionCount",
+        "parameters": [
+          {
+            "name": "limit",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of modules sorted by question count (least to most).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "en_name": {
+                        "type": "string"
+                      },
+                      "questions_amount": {
+                        "type": "number"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Get modules sorted by question count",
+        "tags": [
+          "modules"
+        ]
+      }
+    },
     "/modules/{id}": {
       "get": {
         "description": "Returns a single module by its ID.",

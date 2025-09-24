@@ -111,6 +111,31 @@ export class ModulesController {
     return this.modulesService.getModulesSummary();
   }
 
+  @Get('by-questions')
+  @ApiOperation({
+    summary: 'Get modules sorted by question count',
+    description:
+      'Returns modules sorted by question count (least questions first). Use limit query parameter to specify number of results.',
+  })
+  @ApiOkResponse({
+    description: 'A list of modules sorted by question count (least to most).',
+    schema: {
+      type: 'array',
+      items: {
+        type: 'object',
+        properties: {
+          id: { type: 'string' },
+          en_name: { type: 'string' },
+          questions_amount: { type: 'number' },
+        },
+      },
+    },
+  })
+  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
+  async getModulesByQuestionCount(@Query('limit') limit?: number) {
+    return this.modulesService.getModulesByQuestionCount(limit);
+  }
+
   @Get()
   @ApiOperation({
     summary: 'Retrieve all modules',
