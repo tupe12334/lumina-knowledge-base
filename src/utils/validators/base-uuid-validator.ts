@@ -3,6 +3,8 @@ import { Logger } from '@nestjs/common';
 import { PrismaClient } from '@prisma/client';
 import { ValidationResult } from './types';
 
+export { ValidationResult } from './types';
+
 export abstract class BaseUuidValidator {
   protected logger: Logger;
 
