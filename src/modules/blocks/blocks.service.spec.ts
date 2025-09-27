@@ -8,7 +8,7 @@ import { BadRequestException, NotFoundException } from '@nestjs/common';
 
 vi.mock('@prisma/client', async () => {
   const actual = await vi.importActual('@prisma/client');
-  const { Prisma } = actual as any;
+  const { Prisma } = actual as { Prisma: unknown };
 
   return {
     ...actual,

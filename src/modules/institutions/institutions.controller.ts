@@ -172,7 +172,9 @@ export class InstitutionsController {
     try {
       return await this.institutionsService.generateSummary(id);
     } catch (err: unknown) {
-      if (err instanceof NotFoundException) throw err;
+      if (err instanceof NotFoundException && err instanceof Error) {
+        throw new NotFoundException(err.message);
+      }
       const message = err instanceof Error ? err.message : String(err);
       if (message.toLowerCase().includes('not found')) {
         throw new NotFoundException(message);

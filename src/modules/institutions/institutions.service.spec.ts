@@ -33,8 +33,8 @@ describe('InstitutionsService', () => {
         },
       ],
     };
-    if (mockPrismaService.institution && mockPrismaService.institution.findMany) {
-      (mockPrismaService.institution.findMany as unknown as ReturnType<typeof vi.fn>).mockResolvedValue([institution]);
+    if (mockPrismaService.institution?.findMany) {
+      vi.mocked(mockPrismaService.institution.findMany).mockResolvedValue([institution]);
     }
 
     const result = await service.findAll();
@@ -72,7 +72,7 @@ describe('InstitutionsService', () => {
       };
 
       if (mockPrismaService.institution && mockPrismaService.institution.findUnique) {
-        (mockPrismaService.institution.findUnique as unknown as ReturnType<typeof vi.fn>).mockResolvedValue(mockInstitution);
+        vi.mocked(mockPrismaService.institution.findUnique).mockResolvedValue(mockInstitution);
       }
 
       const result = await service.generateSummary('inst-123');
@@ -99,7 +99,7 @@ describe('InstitutionsService', () => {
       };
 
       if (mockPrismaService.institution && mockPrismaService.institution.findUnique) {
-        (mockPrismaService.institution.findUnique as unknown as ReturnType<typeof vi.fn>).mockResolvedValue(mockInstitution);
+        vi.mocked(mockPrismaService.institution.findUnique).mockResolvedValue(mockInstitution);
       }
 
       const result = await service.generateSummary('inst-456');
@@ -129,7 +129,7 @@ describe('InstitutionsService', () => {
       };
 
       if (mockPrismaService.institution && mockPrismaService.institution.findUnique) {
-        (mockPrismaService.institution.findUnique as unknown as ReturnType<typeof vi.fn>).mockResolvedValue(mockInstitution);
+        vi.mocked(mockPrismaService.institution.findUnique).mockResolvedValue(mockInstitution);
       }
 
       const result = await service.generateSummary('inst-789');

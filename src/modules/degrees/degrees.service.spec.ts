@@ -1,6 +1,10 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { DegreesService } from './degrees.service';
 import { PrismaService } from '../../prisma/prisma.service';
+import { DegreesSummaryService } from './services/degrees-summary.service';
+import { DegreesRelationshipService } from './services/degrees-relationship.service';
+import { DegreesQueryService } from './services/degrees-query.service';
+import { DegreesCrudService } from './services/degrees-crud.service';
 import {
   NotFoundException,
   InternalServerErrorException,
@@ -15,8 +19,39 @@ describe('DegreesService', () => {
     },
   };
 
+  const mockSummaryService = {
+    generateSummary: vi.fn(),
+  };
+
+  const mockRelationshipService = {
+    setFacultyForDegree: vi.fn(),
+    addCourse: vi.fn(),
+    removeCourse: vi.fn(),
+    getCoursesByDegreeId: vi.fn(),
+  };
+
+  const mockQueryService = {
+    findAll: vi.fn(),
+    findUnique: vi.fn(),
+    findByUniversityId: vi.fn(),
+    findByFacultyId: vi.fn(),
+  };
+
+  const mockCrudService = {
+    create: vi.fn(),
+    createMany: vi.fn(),
+    update: vi.fn(),
+    delete: vi.fn(),
+  };
+
   beforeEach(() => {
-    service = new DegreesService(mockPrismaService satisfies PrismaService);
+    service = new DegreesService(
+      mockPrismaService satisfies PrismaService,
+      mockSummaryService satisfies DegreesSummaryService,
+      mockRelationshipService satisfies DegreesRelationshipService,
+      mockQueryService satisfies DegreesQueryService,
+      mockCrudService satisfies DegreesCrudService,
+    );
   });
 
   it('returns degrees from prisma', async () => {
@@ -30,13 +65,14 @@ describe('DegreesService', () => {
         },
       },
     };
-    mockPrismaService.degree.findMany.mockResolvedValue([degree]);
+    mockQueryService.findAll.mockResolvedValue([degree]);
 
     const result = await service.findAll();
 
     expect(result).toHaveLength(1);
     expect(result[0].name.en_text).toBe('Computer Science');
     expect(result[0].institution && result[0].institution.name.en_text).toBe('University of Technology');
+    expect(mockQueryService.findAll).toHaveBeenCalledWith(undefined);
   });
 
   describe('findAll with search query', () => {
@@ -51,21 +87,11 @@ describe('DegreesService', () => {
           },
         },
       };
-      mockPrismaService.degree.findMany.mockResolvedValue([degree]);
+      mockQueryService.findAll.mockResolvedValue([degree]);
 
       await service.findAll({ name: 'Computer' });
 
-      expect(mockPrismaService.degree.findMany).toHaveBeenCalledWith({
-        where: {
-          name: {
-            OR: [
-              { en_text: { contains: 'Computer' } },
-              { he_text: { contains: 'Computer' } },
-            ],
-          },
-        },
-        include: expect.any(Object),
-      });
+      expect(mockQueryService.findAll).toHaveBeenCalledWith({ name: 'Computer' });
     });
 
     it('should search degrees by Hebrew name', async () => {
@@ -79,84 +105,42 @@ describe('DegreesService', () => {
           },
         },
       };
-      mockPrismaService.degree.findMany.mockResolvedValue([degree]);
+      mockQueryService.findAll.mockResolvedValue([degree]);
 
       await service.findAll({ name: 'מדעי' });
 
-      expect(mockPrismaService.degree.findMany).toHaveBeenCalledWith({
-        where: {
-          name: {
-            OR: [
-              { en_text: { contains: 'מדעי' } },
-              { he_text: { contains: 'מדעי' } },
-            ],
-          },
-        },
-        include: expect.any(Object),
-      });
+      expect(mockQueryService.findAll).toHaveBeenCalledWith({ name: 'מדעי' });
     });
 
     it('should not apply name filter when no search term provided', async () => {
-      mockPrismaService.degree.findMany.mockResolvedValue([]);
+      mockQueryService.findAll.mockResolvedValue([]);
 
       await service.findAll({});
 
-      expect(mockPrismaService.degree.findMany).toHaveBeenCalledWith({
-        where: {},
-        include: expect.any(Object),
-      });
+      expect(mockQueryService.findAll).toHaveBeenCalledWith({});
     });
   });
 
   describe('generateSummary', () => {
     it('should generate a comprehensive degree summary', async () => {
-      const mockDegree = {
-        id: 'degree-123',
-        name: {
-          en_text: 'Bachelor of Computer Science',
-          he_text: 'תואר ראשון במדעי המחשב',
-        },
-        description: {
-          en_text: 'Comprehensive CS program',
-          he_text: 'תכנית מקיפה במדעי המחשב',
-        },
-        institution: {
-          name: {
-            en_text: 'Harvard University',
-            he_text: 'אוניברסיטת הרווארד',
-          },
-        },
-        faculty: {
-          name: {
-            en_text: 'Computer Science Faculty',
-            he_text: 'פקולטה למדעי המחשב',
-          },
-        },
-        courses: [
-          {
-            name: { en_text: 'Algorithms', he_text: 'אלגוריתמים' },
-          },
-          {
-            name: { en_text: 'Data Structures', he_text: 'מבני נתונים' },
-          },
-        ],
-      };
+      const expectedSummary = `Degree: Bachelor of Computer Science
+ID: degree-123
+Institution: Harvard University
+Faculty: Computer Science Faculty
+Associated Courses: 2 courses - Algorithms, Data Structures`;
 
-      mockPrismaService.degree.findUnique.mockResolvedValue(mockDegree);
+      mockSummaryService.generateSummary.mockResolvedValue(expectedSummary);
 
       const result = await service.generateSummary('degree-123');
 
-      expect(result).toContain('Degree: Bachelor of Computer Science');
-      expect(result).toContain('ID: degree-123');
-      expect(result).toContain('Institution: Harvard University');
-      expect(result).toContain('Faculty: Computer Science Faculty');
-      expect(result).toContain(
-        'Associated Courses: 2 courses - Algorithms, Data Structures',
-      );
+      expect(mockSummaryService.generateSummary).toHaveBeenCalledWith('degree-123');
+      expect(result).toBe(expectedSummary);
     });
 
     it('should throw NotFoundException when degree does not exist', async () => {
-      mockPrismaService.degree.findUnique.mockResolvedValue(null);
+      mockSummaryService.generateSummary.mockRejectedValue(
+        new NotFoundException('Degree with ID non-existent not found')
+      );
 
       await expect(service.generateSummary('non-existent')).rejects.toThrow(
         NotFoundException,
@@ -164,8 +148,9 @@ describe('DegreesService', () => {
     });
 
     it('should throw InternalServerErrorException on database error', async () => {
-      const dbError = new Error('Database connection failed');
-      mockPrismaService.degree.findUnique.mockRejectedValue(dbError);
+      mockSummaryService.generateSummary.mockRejectedValue(
+        new InternalServerErrorException('Failed to generate degree summary: Database connection failed')
+      );
 
       await expect(service.generateSummary('degree-123')).rejects.toThrow(
         InternalServerErrorException,

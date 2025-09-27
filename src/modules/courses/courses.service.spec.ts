@@ -9,6 +9,11 @@ import { PrismaService } from '../../prisma/prisma.service';
 import { CreateCourseRelationshipInput } from './dto/create-course-relationship.input';
 import { DeleteCourseRelationshipInput } from './dto/delete-course-relationship.input';
 import { CourseRelationshipService } from './services/course-relationship.service';
+import { CourseDeletionService } from './services/course-deletion.service';
+import { CourseSummaryService } from './services/course-summary.service';
+import { CourseUpdateService } from './services/course-update.service';
+import { CourseCreationService } from './services/course-creation.service';
+import { CourseQueryService } from './services/course-query.service';
 
 // Test helpers
 const createMockPrismaService = () => ({
@@ -28,17 +33,54 @@ const createMockCourseRelationshipService = () => ({
   deleteCourseRelationship: vi.fn(),
 });
 
+const createMockCourseDeletionService = () => ({
+  deleteCourse: vi.fn(),
+});
+
+const createMockCourseSummaryService = () => ({
+  generateSummary: vi.fn(),
+});
+
+const createMockCourseUpdateService = () => ({
+  updateCourse: vi.fn(),
+  setCourseModules: vi.fn(),
+});
+
+const createMockCourseCreationService = () => ({
+  create: vi.fn(),
+  createMany: vi.fn(),
+});
+
+const createMockCourseQueryService = () => ({
+  findAll: vi.fn(),
+  findUnique: vi.fn(),
+});
+
 const createServiceForTests = (
   mockPrisma: ReturnType<typeof createMockPrismaService>,
-  mockCourseRelationshipService: ReturnType<typeof createMockCourseRelationshipService> = createMockCourseRelationshipService()
+  mockCourseRelationshipService: ReturnType<typeof createMockCourseRelationshipService> = createMockCourseRelationshipService(),
+  mockCourseDeletionService: ReturnType<typeof createMockCourseDeletionService> = createMockCourseDeletionService(),
+  mockCourseSummaryService: ReturnType<typeof createMockCourseSummaryService> = createMockCourseSummaryService(),
+  mockCourseUpdateService: ReturnType<typeof createMockCourseUpdateService> = createMockCourseUpdateService(),
+  mockCourseCreationService: ReturnType<typeof createMockCourseCreationService> = createMockCourseCreationService(),
+  mockCourseQueryService: ReturnType<typeof createMockCourseQueryService> = createMockCourseQueryService()
 ) => {
   return new CoursesService(
     mockPrisma satisfies PrismaService,
-    mockCourseRelationshipService satisfies CourseRelationshipService
+    mockCourseRelationshipService satisfies CourseRelationshipService,
+    mockCourseDeletionService satisfies CourseDeletionService,
+    mockCourseSummaryService satisfies CourseSummaryService,
+    mockCourseUpdateService satisfies CourseUpdateService,
+    mockCourseCreationService satisfies CourseCreationService,
+    mockCourseQueryService satisfies CourseQueryService
   );
 };
 
-const createBasicCourseTests = (service: CoursesService, mockPrisma: ReturnType<typeof createMockPrismaService>) => ({
+const createBasicCourseTests = (
+  service: CoursesService,
+  mockPrisma: ReturnType<typeof createMockPrismaService>,
+  mockCourseQueryService: ReturnType<typeof createMockCourseQueryService>
+) => ({
   testReturnsCoursesFromPrisma: async () => {
     const course = {
       id: '1',
@@ -50,7 +92,7 @@ const createBasicCourseTests = (service: CoursesService, mockPrisma: ReturnType<
         name: { en_text: 'institution', he_text: 'מוסד' },
       },
     };
-    mockPrisma.course.findMany.mockResolvedValue([course]);
+    mockCourseQueryService.findAll.mockResolvedValue([course]);
 
     const result = await service.findAll();
 
@@ -67,19 +109,42 @@ const setupTestsForCoursesService = () => {
   let service: CoursesService;
   let mockPrismaService: ReturnType<typeof createMockPrismaService>;
   let mockCourseRelationshipService: ReturnType<typeof createMockCourseRelationshipService>;
+  let mockCourseDeletionService: ReturnType<typeof createMockCourseDeletionService>;
+  let mockCourseSummaryService: ReturnType<typeof createMockCourseSummaryService>;
+  let mockCourseUpdateService: ReturnType<typeof createMockCourseUpdateService>;
+  let mockCourseCreationService: ReturnType<typeof createMockCourseCreationService>;
+  let mockCourseQueryService: ReturnType<typeof createMockCourseQueryService>;
   let basicTests: ReturnType<typeof createBasicCourseTests>;
 
   beforeEach(() => {
     mockPrismaService = createMockPrismaService();
     mockCourseRelationshipService = createMockCourseRelationshipService();
-    service = createServiceForTests(mockPrismaService, mockCourseRelationshipService);
-    basicTests = createBasicCourseTests(service, mockPrismaService);
+    mockCourseDeletionService = createMockCourseDeletionService();
+    mockCourseSummaryService = createMockCourseSummaryService();
+    mockCourseUpdateService = createMockCourseUpdateService();
+    mockCourseCreationService = createMockCourseCreationService();
+    mockCourseQueryService = createMockCourseQueryService();
+    service = createServiceForTests(
+      mockPrismaService,
+      mockCourseRelationshipService,
+      mockCourseDeletionService,
+      mockCourseSummaryService,
+      mockCourseUpdateService,
+      mockCourseCreationService,
+      mockCourseQueryService
+    );
+    basicTests = createBasicCourseTests(service, mockPrismaService, mockCourseQueryService);
   });
 
   return {
     getService: () => service,
     getMockPrisma: () => mockPrismaService,
     getMockCourseRelationshipService: () => mockCourseRelationshipService,
+    getMockCourseDeletionService: () => mockCourseDeletionService,
+    getMockCourseSummaryService: () => mockCourseSummaryService,
+    getMockCourseUpdateService: () => mockCourseUpdateService,
+    getMockCourseCreationService: () => mockCourseCreationService,
+    getMockCourseQueryService: () => mockCourseQueryService,
     getBasicTests: () => basicTests
   };
 };
@@ -93,80 +158,46 @@ describe('CoursesService - Basic Operations', () => {
 });
 
 describe('CoursesService - generateSummary', () => {
-  const { getService, getMockPrisma } = setupTestsForCoursesService();
+  const { getService, getMockCourseSummaryService } = setupTestsForCoursesService();
 
   it('should generate a comprehensive course summary', async () => {
-    const mockCourse = {
-      id: 'course-123',
-      name: {
-        en_text: 'Introduction to Computer Science',
-        he_text: 'מבוא למדעי המחשב',
-      },
-      description: { en_text: 'Fundamental concepts', he_text: 'מושגי יסוד' },
-      creditPoints: 4.5,
-      institution: {
-        name: {
-          en_text: 'Harvard University',
-          he_text: 'אוניברסיטת הרווארד',
-        },
-      },
-      Degree: [
-        {
-          name: {
-            en_text: 'Bachelor of CS',
-            he_text: 'תואר ראשון במדעי המחשב',
-          },
-        },
-      ],
-      modules: [
-        {
-          name: { en_text: 'Algorithms', he_text: 'אלגוריתמים' },
-        },
-        {
-          name: { en_text: 'Data Structures', he_text: 'מבני נתונים' },
-        },
-      ],
-      CourseBlocks: [],
-    };
+    const expectedSummary = `Course: Introduction to Computer Science
+ID: course-123
+Institution: Harvard University
+Associated Degrees: Bachelor of CS
+Modules: 2 modules - Algorithms, Data Structures
+Prerequisites: None
+Postrequisites: None`;
 
-    getMockPrisma().course.findUnique.mockResolvedValue(mockCourse);
+    getMockCourseSummaryService().generateSummary.mockResolvedValue(expectedSummary);
 
     const result = await getService().generateSummary('course-123');
 
-    expect(result).toContain('Course: Introduction to Computer Science');
-    expect(result).toContain('ID: course-123');
-    expect(result).toContain('Institution: Harvard University');
-    expect(result).toContain('Associated Degrees: Bachelor of CS');
-    expect(result).toContain(
-      'Modules: 2 modules - Algorithms, Data Structures',
-    );
+    expect(getMockCourseSummaryService().generateSummary).toHaveBeenCalledWith('course-123');
+    expect(result).toBe(expectedSummary);
   });
 
   it('should handle course with no blocks', async () => {
-    const mockCourse = {
-      id: 'course-456',
-      name: { en_text: 'Simple Course', he_text: 'קורס פשוט' },
-      description: { en_text: 'Basic course', he_text: 'קורס בסיסי' },
-      creditPoints: 2.0,
-      institution: {
-        name: { en_text: 'Small College', he_text: 'מכללה קטנה' },
-      },
-      Degree: [],
-      modules: [],
-      CourseBlocks: [],
-    };
+    const expectedSummary = `Course: Simple Course
+ID: course-456
+Institution: Small College
+Associated Degrees: None
+Modules: 0 modules - None
+Prerequisites: None
+Postrequisites: None`;
 
-    getMockPrisma().course.findUnique.mockResolvedValue(mockCourse);
+    getMockCourseSummaryService().generateSummary.mockResolvedValue(expectedSummary);
 
     const result = await getService().generateSummary('course-456');
 
-    expect(result).toContain('Course: Simple Course');
-    expect(result).toContain('Associated Degrees: None');
-    expect(result).toContain('Modules: 0 modules - None');
+    expect(getMockCourseSummaryService().generateSummary).toHaveBeenCalledWith('course-456');
+    expect(result).toBe(expectedSummary);
   });
 
   it('should throw NotFoundException when course does not exist', async () => {
-    getMockPrisma().course.findUnique.mockResolvedValue(null);
+    getMockCourseSummaryService().generateSummary.mockRejectedValue(
+      new NotFoundException('Course with ID non-existent not found')
+    );
 
     await expect(getService().generateSummary('non-existent')).rejects.toThrow(
       NotFoundException,
@@ -177,8 +208,9 @@ describe('CoursesService - generateSummary', () => {
   });
 
   it('should throw InternalServerErrorException on database error', async () => {
-    const dbError = new Error('Database connection failed');
-    getMockPrisma().course.findUnique.mockRejectedValue(dbError);
+    getMockCourseSummaryService().generateSummary.mockRejectedValue(
+      new InternalServerErrorException('Failed to generate course summary: Database connection failed')
+    );
 
     await expect(getService().generateSummary('course-123')).rejects.toThrow(
       InternalServerErrorException,

@@ -664,8 +664,8 @@ export class ModulesService {
       const summaryData = this.extractModuleSummaryData(module);
       return this.buildModuleSummary(module, summaryData);
     } catch (error: unknown) {
-      if (error instanceof NotFoundException) {
-        throw error;
+      if (error instanceof NotFoundException && error instanceof Error) {
+        throw new NotFoundException(error.message);
       }
       throw new InternalServerErrorException(
         `Failed to generate module summary: ${error instanceof Error ? error.message : String(error)}`,

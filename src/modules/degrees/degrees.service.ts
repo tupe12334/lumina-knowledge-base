@@ -1,7 +1,6 @@
 import {
   Injectable,
   NotFoundException,
-  InternalServerErrorException,
 } from '@nestjs/common';
 import { PrismaService } from '../../prisma/prisma.service';
 import { Degree } from './models/Degree.entity';
@@ -9,6 +8,10 @@ import { DegreesQueryDto } from './dto/degrees-query.dto';
 import { CreateDegreeInput } from './dto/create-degree.input';
 import { CreateManyDegreesInput } from './dto/create-many-degrees.input';
 import { UpdateDegreeInput } from './dto/update-degree.input';
+import { DegreesSummaryService } from './services/degrees-summary.service';
+import { DegreesRelationshipService } from './services/degrees-relationship.service';
+import { DegreesQueryService } from './services/degrees-query.service';
+import { DegreesCrudService } from './services/degrees-crud.service';
 
 type OptionalString = string | null;
 
@@ -19,28 +22,16 @@ type OptionalString = string | null;
  */
 @Injectable()
 export class DegreesService {
-  constructor(private readonly prisma: PrismaService) {}
+  constructor(
+    private readonly prisma: PrismaService,
+    private readonly summaryService: DegreesSummaryService,
+    private readonly relationshipService: DegreesRelationshipService,
+    private readonly queryService: DegreesQueryService,
+    private readonly crudService: DegreesCrudService,
+  ) {}
 
   async create(createDegreeInput: CreateDegreeInput): Promise<Degree> {
-    const { name, universityId } = createDegreeInput;
-    return this.prisma.degree.create({
-      data: {
-        institution: {
-          connect: {
-            id: universityId,
-          },
-        },
-        name: {
-          create: {
-            en_text: name,
-            he_text: name,
-          },
-        },
-      },
-      include: {
-        name: true,
-      },
-    });
+    return this.crudService.create(createDegreeInput);
   }
 
   /**
@@ -49,31 +40,7 @@ export class DegreesService {
    * @returns The number of degrees created
    */
   async createMany(input: CreateManyDegreesInput) {
-    return this.prisma.$transaction(async (prisma) => {
-      let createdCount = 0;
-
-      for (const degreeData of input.degrees) {
-        const { name, universityId } = degreeData;
-        await prisma.degree.create({
-          data: {
-            institution: {
-              connect: {
-                id: universityId,
-              },
-            },
-            name: {
-              create: {
-                en_text: name,
-                he_text: name,
-              },
-            },
-          },
-        });
-        createdCount++;
-      }
-
-      return { count: createdCount };
-    });
+    return this.crudService.createMany(input);
   }
 
   /**
@@ -82,63 +49,7 @@ export class DegreesService {
    * @returns Promise<Degree[]> Array of all degrees
    */
   async findAll(query?: DegreesQueryDto): Promise<Degree[]> {
-    const degrees = await this.prisma.degree.findMany({
-      where: {
-        ...(query && query.name
-          ? {
-              name: {
-                OR: [
-                  {
-                    en_text: {
-                      contains: query.name,
-                    },
-                  },
-                  {
-                    he_text: {
-                      contains: query.name,
-                    },
-                  },
-                ],
-              },
-            }
-          : {}),
-        ...(query && query.facultyId ? { facultyId: query.facultyId } : {}),
-        ...(query && query.universityId ? { institutionId: query.universityId } : {}),
-        ...(query && query.minCourseCount !== undefined && query.minCourseCount > 0
-          ? {
-              courses: {
-                some: {},
-              },
-            }
-          : {}),
-      },
-      include: {
-        name: true,
-        institution: {
-          include: {
-            name: true,
-          },
-        },
-        faculty: {
-          include: {
-            name: true,
-            description: true,
-          },
-        },
-        courses: {
-          include: {
-            name: true,
-          },
-        },
-      },
-    });
-
-    // For minCourseCount > 1, filter the results after querying
-    if (query && query.minCourseCount !== undefined && query.minCourseCount > 1) {
-      return degrees.filter(degree => degree.courses.length >= query.minCourseCount!);
-    }
-
-    return degrees;
+    return this.queryService.findAll(query);
   }
 
   /**
@@ -148,71 +59,18 @@ export class DegreesService {
    * @returns Promise<Degree | null> The degree if found, null otherwise
    */
   async findUnique(id: string): Promise<Degree | null> {
-    const degree = await this.prisma.degree.findUnique({
-      where: { id },
-      include: {
-        name: true,
-        institution: {
-          include: {
-            name: true,
-          },
-        },
-        faculty: {
-          include: {
-            name: true,
-            description: true,
-          },
-        },
-        courses: {
-          include: {
-            name: true,
-            Block: {
-              include: {
-                postrequisiteOf: true,
-                prerequisiteFor: true,
-              },
-            },
-          },
-        },
-      },
-    });
-
-    if (!degree) {
-      return null;
-    }
-
-    return degree;
+    return this.queryService.findUnique(id);
   }
 
   async update(
     id: string,
     updateDegreeInput: UpdateDegreeInput,
   ): Promise<Degree> {
-    const { universityId, name } = updateDegreeInput;
-    return this.prisma.degree.update({
-      where: { id },
-      data: {
-        ...(universityId
-          ? { institution: { connect: { id: universityId } } }
-          : {}),
-        ...(name ? { name: { update: { en_text: name, he_text: name } } } : {}),
-      },
-      include: {
-        name: true,
-      },
-    });
+    return this.crudService.update(id, updateDegreeInput);
   }
 
   async delete(id: string): Promise<Degree> {
-    return this.prisma.degree.delete({
-      where: { id },
-      include: {
-        name: true,
-        institution: { include: { name: true } },
-        faculty: { include: { name: true, description: true } },
-        courses: { include: { name: true } },
-      },
-    });
+    return this.crudService.delete(id);
   }
 
   /**
@@ -221,36 +79,7 @@ export class DegreesService {
    * @returns Promise<Degree[]> Array of degrees for the specified university
    */
   async findByUniversityId(institutionId: string): Promise<Degree[]> {
-    const degrees = await this.prisma.degree.findMany({
-      where: { institutionId },
-      include: {
-        name: true,
-        institution: {
-          include: {
-            name: true,
-          },
-        },
-        faculty: {
-          include: {
-            name: true,
-            description: true,
-          },
-        },
-        courses: {
-          include: {
-            name: true,
-            Block: {
-              include: {
-                postrequisiteOf: true,
-                prerequisiteFor: true,
-              },
-            },
-          },
-        },
-      },
-    });
-
-    return degrees;
+    return this.queryService.findByUniversityId(institutionId);
   }
 
   /**
@@ -259,36 +88,7 @@ export class DegreesService {
    * @returns Promise<Degree[]> Array of degrees for the specified faculty
    */
   async findByFacultyId(facultyId: string): Promise<Degree[]> {
-    const degrees = await this.prisma.degree.findMany({
-      where: { facultyId },
-      include: {
-        name: true,
-        institution: {
-          include: {
-            name: true,
-          },
-        },
-        faculty: {
-          include: {
-            name: true,
-            description: true,
-          },
-        },
-        courses: {
-          include: {
-            name: true,
-            Block: {
-              include: {
-                postrequisiteOf: true,
-                prerequisiteFor: true,
-              },
-            },
-          },
-        },
-      },
-    });
-
-    return degrees;
+    return this.queryService.findByFacultyId(facultyId);
   }
 
   /**
@@ -301,29 +101,7 @@ export class DegreesService {
     degreeId: string,
     facultyId: OptionalString,
   ): Promise<Degree> {
-    await this.prisma.degree.update({
-      where: { id: degreeId },
-      data: {
-        facultyId:
-          facultyId !== null && facultyId !== undefined ? facultyId : null,
-      },
-    });
-
-    const updated = await this.prisma.degree.findUnique({
-      where: { id: degreeId },
-      include: {
-        name: true,
-        institution: { include: { name: true } },
-        faculty: { include: { name: true, description: true } },
-        courses: { include: { name: true } },
-      },
-    });
-
-    if (!updated) {
-      throw new NotFoundException('Degree not found after update');
-    }
-
-    return updated;
+    return this.relationshipService.setFacultyForDegree(degreeId, facultyId);
   }
 
   /**
@@ -333,50 +111,7 @@ export class DegreesService {
    * @returns The updated degree with the course added.
    */
   async addCourse(degreeId: string, courseId: string): Promise<Degree> {
-    // Validate that the degree exists
-    const degree = await this.prisma.degree.findUnique({
-      where: { id: degreeId },
-    });
-
-    if (!degree) {
-      throw new NotFoundException(`Degree with ID ${degreeId} not found`);
-    }
-
-    // Validate that the course exists
-    const course = await this.prisma.course.findUnique({
-      where: { id: courseId },
-    });
-
-    if (!course) {
-      throw new NotFoundException(`Course with ID ${courseId} not found`);
-    }
-
-    // Connect the course to the degree
-    await this.prisma.degree.update({
-      where: { id: degreeId },
-      data: {
-        courses: {
-          connect: { id: courseId },
-        },
-      },
-    });
-
-    // Fetch the updated degree with all its relations
-    const updatedDegree = await this.prisma.degree.findUnique({
-      where: { id: degreeId },
-      include: {
-        name: true,
-        institution: { include: { name: true } },
-        faculty: { include: { name: true, description: true } },
-        courses: { include: { name: true } },
-      },
-    });
-
-    if (!updatedDegree) {
-      throw new NotFoundException('Degree not found after update'); // Should not happen if degree was found initially
-    }
-
-    return updatedDegree;
+    return this.relationshipService.addCourse(degreeId, courseId);
   }
 
   /**
@@ -386,53 +121,7 @@ export class DegreesService {
    * @returns The updated degree with the course removed.
    */
   async removeCourse(degreeId: string, courseId: string): Promise<Degree> {
-    // Validate that the degree exists
-    const degree = await this.prisma.degree.findUnique({
-      where: { id: degreeId },
-      include: {
-        courses: {
-          where: { id: courseId },
-        },
-      },
-    });
-
-    if (!degree) {
-      throw new NotFoundException(`Degree with ID ${degreeId} not found`);
-    }
-
-    // Check if the course is actually connected to this degree
-    if (degree.courses.length === 0) {
-      throw new NotFoundException(
-        `Course with ID ${courseId} is not associated with degree ${degreeId}`
-      );
-    }
-
-    // Disconnect the course from the degree
-    await this.prisma.degree.update({
-      where: { id: degreeId },
-      data: {
-        courses: {
-          disconnect: { id: courseId },
-        },
-      },
-    });
-
-    // Fetch the updated degree with all its relations
-    const updatedDegree = await this.prisma.degree.findUnique({
-      where: { id: degreeId },
-      include: {
-        name: true,
-        institution: { include: { name: true } },
-        faculty: { include: { name: true, description: true } },
-        courses: { include: { name: true } },
-      },
-    });
-
-    if (!updatedDegree) {
-      throw new NotFoundException('Degree not found after update'); // Should not happen if degree was found initially
-    }
-
-    return updatedDegree;
+    return this.relationshipService.removeCourse(degreeId, courseId);
   }
 
   /**
@@ -442,22 +131,7 @@ export class DegreesService {
    * @throws NotFoundException if the degree doesn't exist
    */
   async getCoursesByDegreeId(degreeId: string) {
-    const degree = await this.prisma.degree.findUnique({
-      where: { id: degreeId },
-      include: {
-        courses: {
-          include: {
-            name: true,
-          },
-        },
-      },
-    });
-
-    if (!degree) {
-      throw new NotFoundException(`Degree with ID ${degreeId} not found`);
-    }
-
-    return degree.courses;
+    return this.relationshipService.getCoursesByDegreeId(degreeId);
   }
 
   /**
@@ -468,63 +142,6 @@ export class DegreesService {
    * @throws InternalServerErrorException if database operation fails
    */
   async generateSummary(id: string): Promise<string> {
-    try {
-      const degree = await this.prisma.degree.findUnique({
-        where: { id },
-        include: {
-          name: true,
-          institution: {
-            include: {
-              name: true,
-            },
-          },
-          faculty: {
-            include: {
-              name: true,
-            },
-          },
-          courses: {
-            include: {
-              name: true,
-            },
-          },
-        },
-      });
-
-      if (!degree) {
-        throw new NotFoundException(`Degree with ID ${id} not found`);
-      }
-
-      const degreeName =
-        (degree.name && degree.name.en_text) || 'No English translation available';
-      const universityName =
-        (degree.institution && degree.institution.name && degree.institution.name.en_text) || 'No English translation available';
-      const facultyName =
-        (degree.faculty && degree.faculty.name && degree.faculty.name.en_text) || 'Not assigned to specific faculty';
-
-      // Build associated courses
-      const courseCount = degree.courses.length;
-      const courseNames = degree.courses
-        .map(
-          (course) =>
-            (course.name && course.name.en_text) || 'No English translation available',
-        )
-        .join(', ');
-
-      const summary = `Degree: ${degreeName}
-ID: ${degree.id}
-Institution: ${universityName}
-Faculty: ${facultyName}
-Associated Courses: ${courseCount} courses - ${courseNames || 'None'}`;
-
-      return summary;
-    } catch (error: unknown) {
-      if (error instanceof NotFoundException) {
-        throw error;
-      }
-      throw new InternalServerErrorException(
-        `Failed to generate degree summary: ${error instanceof Error ? error.message : String(error)}`,
-      );
-    }
+    return this.summaryService.generateSummary(id);
   }
 }

@@ -100,7 +100,7 @@ describe('Health E2E - Main Endpoint', () => {
   it('GET /health returns ok with expected indicators', async () => {
     const unknownServer: unknown = getApp().getHttpServer();
     if (!isHttpServer(unknownServer)) {
-      throw new Error('HTTP server not started');
+      throw new CustomError('HTTP server not started');
     }
     const res = await request(unknownServer).get('/health').expect(200);
     const BodySchema = z.object({
@@ -137,7 +137,7 @@ describe('Health E2E - Liveness Endpoint', () => {
   it('GET /health/liveness returns ok with memory indicators', async () => {
     const unknownServer: unknown = getApp().getHttpServer();
     if (!isHttpServer(unknownServer)) {
-      throw new Error('HTTP server not started');
+      throw new CustomError('HTTP server not started');
     }
     const res = await request(unknownServer)
       .get('/health/liveness')
@@ -169,7 +169,7 @@ describe('Health E2E - Readiness Endpoint', () => {
   it('GET /health/readiness returns ok with db rows and storage', async () => {
     const unknownServer: unknown = getApp().getHttpServer();
     if (!isHttpServer(unknownServer)) {
-      throw new Error('HTTP server not started');
+      throw new CustomError('HTTP server not started');
     }
     const res = await request(unknownServer)
       .get('/health/readiness')
