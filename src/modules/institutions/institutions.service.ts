@@ -178,12 +178,12 @@ Faculty Details:
 ${facultyDetails}`;
 
       return summary;
-    } catch (error) {
+    } catch (error: unknown) {
       if (error instanceof NotFoundException) {
         throw error;
       }
       throw new InternalServerErrorException(
-        `Failed to generate institution summary: ${error.message}`,
+        `Failed to generate institution summary: ${error instanceof Error ? error.message : String(error)}`,
       );
     }
   }

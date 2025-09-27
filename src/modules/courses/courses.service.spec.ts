@@ -8,6 +8,7 @@ import { CoursesService } from './courses.service';
 import { PrismaService } from '../../prisma/prisma.service';
 import { CreateCourseRelationshipInput } from './dto/create-course-relationship.input';
 import { DeleteCourseRelationshipInput } from './dto/delete-course-relationship.input';
+import { CourseRelationshipService } from './services/course-relationship.service';
 
 // Test helpers
 const createMockPrismaService = () => ({
@@ -22,8 +23,19 @@ const createMockPrismaService = () => ({
   },
 });
 
-const createServiceForTests = (mockPrisma: ReturnType<typeof createMockPrismaService>) => {
-  return new CoursesService(mockPrisma satisfies PrismaService);
+const createMockCourseRelationshipService = () => ({
+  createCourseRelationship: vi.fn(),
+  deleteCourseRelationship: vi.fn(),
+});
+
+const createServiceForTests = (
+  mockPrisma: ReturnType<typeof createMockPrismaService>,
+  mockCourseRelationshipService: ReturnType<typeof createMockCourseRelationshipService> = createMockCourseRelationshipService()
+) => {
+  return new CoursesService(
+    mockPrisma satisfies PrismaService,
+    mockCourseRelationshipService satisfies CourseRelationshipService
+  );
 };
 
 const createBasicCourseTests = (service: CoursesService, mockPrisma: ReturnType<typeof createMockPrismaService>) => ({
@@ -54,15 +66,22 @@ const createBasicCourseTests = (service: CoursesService, mockPrisma: ReturnType<
 const setupTestsForCoursesService = () => {
   let service: CoursesService;
   let mockPrismaService: ReturnType<typeof createMockPrismaService>;
+  let mockCourseRelationshipService: ReturnType<typeof createMockCourseRelationshipService>;
   let basicTests: ReturnType<typeof createBasicCourseTests>;
 
   beforeEach(() => {
     mockPrismaService = createMockPrismaService();
-    service = createServiceForTests(mockPrismaService);
+    mockCourseRelationshipService = createMockCourseRelationshipService();
+    service = createServiceForTests(mockPrismaService, mockCourseRelationshipService);
     basicTests = createBasicCourseTests(service, mockPrismaService);
   });
 
-  return { getService: () => service, getMockPrisma: () => mockPrismaService, getBasicTests: () => basicTests };
+  return {
+    getService: () => service,
+    getMockPrisma: () => mockPrismaService,
+    getMockCourseRelationshipService: () => mockCourseRelationshipService,
+    getBasicTests: () => basicTests
+  };
 };
 
 describe('CoursesService - Basic Operations', () => {
@@ -171,7 +190,7 @@ describe('CoursesService - generateSummary', () => {
 });
 
 describe('CoursesService - createCourseRelationship', () => {
-  const { getService, getMockPrisma } = setupTestsForCoursesService();
+  const { getService, getMockCourseRelationshipService } = setupTestsForCoursesService();
 
   it('should create a relationship between two courses', async () => {
     const input: CreateCourseRelationshipInput = {
@@ -180,32 +199,18 @@ describe('CoursesService - createCourseRelationship', () => {
       metadata: { type: 'hard' },
     };
 
-    const mockCourse1 = {
-      id: 'course-1',
-      Block: { id: 'block-1' },
-    };
-    const mockCourse2 = {
-      id: 'course-2',
-      Block: { id: 'block-2' },
-    };
-
-    const mockRelationship = {
+    const expectedResult = {
       id: 'relationship-1',
       prerequisite: { id: 'block-1' },
       postrequisite: { id: 'block-2' },
-      metadata: [{ key: 'TYPE', value: 'hard' }],
+      metadata: '{"TYPE":"hard"}',
     };
 
-    getMockPrisma().course.findUnique
-      .mockResolvedValueOnce(mockCourse1)
-      .mockResolvedValueOnce(mockCourse2);
-    getMockPrisma().blockRelationship.findUnique.mockResolvedValue(null);
-    getMockPrisma().blockRelationship.create.mockResolvedValue(
-      mockRelationship,
-    );
+    getMockCourseRelationshipService().createCourseRelationship.mockResolvedValue(expectedResult);
 
     const result = await getService().createCourseRelationship(input);
 
+    expect(getMockCourseRelationshipService().createCourseRelationship).toHaveBeenCalledWith(input);
     expect(result.id).toBe('relationship-1');
     expect(result.metadata).toBe('{"TYPE":"hard"}');
   });
@@ -215,6 +220,10 @@ describe('CoursesService - createCourseRelationship', () => {
       prerequisiteCourseId: 'course-1',
       postrequisiteCourseId: 'course-1',
     };
+
+    getMockCourseRelationshipService().createCourseRelationship.mockRejectedValue(
+      new BadRequestException('A course cannot be a prerequisite to itself')
+    );
 
     await expect(getService().createCourseRelationship(input)).rejects.toThrow(
       BadRequestException,
@@ -227,9 +236,9 @@ describe('CoursesService - createCourseRelationship', () => {
       postrequisiteCourseId: 'course-2',
     };
 
-    getMockPrisma().course.findUnique
-      .mockResolvedValueOnce(null)
-      .mockResolvedValueOnce({ id: 'course-2', Block: { id: 'block-2' } });
+    getMockCourseRelationshipService().createCourseRelationship.mockRejectedValue(
+      new NotFoundException('Prerequisite course with ID non-existent not found')
+    );
 
     await expect(getService().createCourseRelationship(input)).rejects.toThrow(
       NotFoundException,
@@ -238,7 +247,7 @@ describe('CoursesService - createCourseRelationship', () => {
 });
 
 describe('CoursesService - deleteCourseRelationship', () => {
-  const { getService, getMockPrisma } = setupTestsForCoursesService();
+  const { getService, getMockCourseRelationshipService } = setupTestsForCoursesService();
 
   it('should delete a relationship between two courses', async () => {
     const input: DeleteCourseRelationshipInput = {
@@ -246,34 +255,18 @@ describe('CoursesService - deleteCourseRelationship', () => {
       postrequisiteCourseId: 'course-2',
     };
 
-    const mockCourse1 = {
-      id: 'course-1',
-      Block: { id: 'block-1' },
-    };
-    const mockCourse2 = {
-      id: 'course-2',
-      Block: { id: 'block-2' },
-    };
-
-    const mockRelationship = {
+    const expectedResult = {
       id: 'relationship-1',
       prerequisite: { id: 'block-1' },
       postrequisite: { id: 'block-2' },
-      metadata: [{ key: 'TYPE', value: 'hard' }],
+      metadata: '{"TYPE":"hard"}',
     };
 
-    getMockPrisma().course.findUnique
-      .mockResolvedValueOnce(mockCourse1)
-      .mockResolvedValueOnce(mockCourse2);
-    getMockPrisma().blockRelationship.findUnique.mockResolvedValue(
-      mockRelationship,
-    );
-    getMockPrisma().blockRelationship.delete.mockResolvedValue(
-      mockRelationship,
-    );
+    getMockCourseRelationshipService().deleteCourseRelationship.mockResolvedValue(expectedResult);
 
     const result = await getService().deleteCourseRelationship(input);
 
+    expect(getMockCourseRelationshipService().deleteCourseRelationship).toHaveBeenCalledWith(input);
     expect(result.id).toBe('relationship-1');
     expect(result.metadata).toBe('{"TYPE":"hard"}');
   });
@@ -284,19 +277,9 @@ describe('CoursesService - deleteCourseRelationship', () => {
       postrequisiteCourseId: 'course-2',
     };
 
-    const mockCourse1 = {
-      id: 'course-1',
-      Block: { id: 'block-1' },
-    };
-    const mockCourse2 = {
-      id: 'course-2',
-      Block: { id: 'block-2' },
-    };
-
-    getMockPrisma().course.findUnique
-      .mockResolvedValueOnce(mockCourse1)
-      .mockResolvedValueOnce(mockCourse2);
-    getMockPrisma().blockRelationship.findUnique.mockResolvedValue(null);
+    getMockCourseRelationshipService().deleteCourseRelationship.mockRejectedValue(
+      new NotFoundException('Relationship not found between these courses')
+    );
 
     await expect(getService().deleteCourseRelationship(input)).rejects.toThrow(
       NotFoundException,

@@ -198,7 +198,7 @@ export class QuestionsService {
         Validation Status: ${question.validationStatus}
         Modules: ${question.Modules && question.Modules.length > 0 ? question.Modules.map(m => m.name && m.name.en_text ? m.name.en_text : 'Unnamed').join(', ') : 'None'}
         Answers: ${question.Answer && question.Answer.length ? question.Answer.length : 0} answer(s)`;
-    } catch (error) {
+    } catch (error: unknown) {
       if (error instanceof NotFoundException) {
         throw error;
       }

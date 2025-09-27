@@ -663,12 +663,12 @@ export class ModulesService {
 
       const summaryData = this.extractModuleSummaryData(module);
       return this.buildModuleSummary(module, summaryData);
-    } catch (error) {
+    } catch (error: unknown) {
       if (error instanceof NotFoundException) {
         throw error;
       }
       throw new InternalServerErrorException(
-        `Failed to generate module summary: ${error.message}`,
+        `Failed to generate module summary: ${error instanceof Error ? error.message : String(error)}`,
       );
     }
   }

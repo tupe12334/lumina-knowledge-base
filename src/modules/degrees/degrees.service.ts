@@ -518,12 +518,12 @@ Faculty: ${facultyName}
 Associated Courses: ${courseCount} courses - ${courseNames || 'None'}`;
 
       return summary;
-    } catch (error) {
+    } catch (error: unknown) {
       if (error instanceof NotFoundException) {
         throw error;
       }
       throw new InternalServerErrorException(
-        `Failed to generate degree summary: ${error.message}`,
+        `Failed to generate degree summary: ${error instanceof Error ? error.message : String(error)}`,
       );
     }
   }

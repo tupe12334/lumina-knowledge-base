@@ -4,7 +4,7 @@ import {
   BadRequestException,
   InternalServerErrorException,
 } from '@nestjs/common';
-import { RelationshipMetadataKey, Prisma } from '@prisma/client';
+import { Prisma } from '@prisma/client';
 import { PrismaService } from '../../prisma/prisma.service';
 import { Course } from './models/Course.entity';
 import { CreateCourseRelationshipInput } from './dto/create-course-relationship.input';
@@ -17,27 +17,16 @@ import { SetCourseModulesInput } from './dto/set-course-modules.input';
 import { CreateCourseInput } from './dto/create-course.input';
 import { CreateManyCoursesInput } from './dto/create-many-courses.input';
 import { CoursesQueryInput } from './dto/courses-query.input';
+import { CourseRelationshipService } from './services/course-relationship.service';
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-function createValidMetadataEntries(metadata: Record<string, unknown>) {
-  const validEntries: Array<{ key: RelationshipMetadataKey; value: string }> = [];
-  for (const [key, value] of Object.entries(metadata)) {
-    if (key === RelationshipMetadataKey.REASON ||
-        key === RelationshipMetadataKey.TYPE ||
-        key === RelationshipMetadataKey.DESCRIPTION) {
-      const typedKey = key === RelationshipMetadataKey.REASON ? RelationshipMetadataKey.REASON :
-                      key === RelationshipMetadataKey.TYPE ? RelationshipMetadataKey.TYPE :
-                      RelationshipMetadataKey.DESCRIPTION;
-      validEntries.push({ key: typedKey, value: String(value) });
-    }
-  }
-  return validEntries;
-}
-
 @Injectable()
 export class CoursesService {
-  constructor(private readonly prisma: PrismaService) {}
+  constructor(
+    private readonly prisma: PrismaService,
+    private readonly courseRelationshipService: CourseRelationshipService,
+  ) {}
 
   async create(createCourseInput: CreateCourseInput): Promise<Course> {
     const { name, universityId } = createCourseInput;
@@ -204,92 +193,7 @@ export class CoursesService {
   async createCourseRelationship(
     relationshipData: CreateCourseRelationshipInput,
   ): Promise<CourseRelationshipResult> {
-    const { prerequisiteCourseId, postrequisiteCourseId, metadata } =
-      relationshipData;
-
-    if (prerequisiteCourseId === postrequisiteCourseId) {
-      throw new BadRequestException(
-        'A course cannot be a prerequisite to itself',
-      );
-    }
-
-    // Validate that both courses exist
-    const [prerequisiteCourse, postrequisiteCourse] = await Promise.all([
-      this.prisma.course.findUnique({
-        where: { id: prerequisiteCourseId },
-        include: { Block: true },
-      }),
-      this.prisma.course.findUnique({
-        where: { id: postrequisiteCourseId },
-        include: { Block: true },
-      }),
-    ]);
-
-    if (!prerequisiteCourse) {
-      throw new NotFoundException(
-        `Prerequisite course with ID ${prerequisiteCourseId} not found`,
-      );
-    }
-
-    if (!postrequisiteCourse) {
-      throw new NotFoundException(
-        `Postrequisite course with ID ${postrequisiteCourseId} not found`,
-      );
-    }
-
-    // Check if relationship already exists
-    const existingRelationship = await this.prisma.blockRelationship.findUnique(
-      {
-        where: {
-          prerequisiteId_postrequisiteId: {
-            prerequisiteId: prerequisiteCourse.Block.id,
-            postrequisiteId: postrequisiteCourse.Block.id,
-          },
-        },
-      },
-    );
-
-    if (existingRelationship) {
-      throw new BadRequestException(
-        'Relationship already exists between these courses',
-      );
-    }
-
-    // Create the relationship
-    const relationship = await this.prisma.blockRelationship.create({
-      data: {
-        prerequisiteId: prerequisiteCourse.Block.id,
-        postrequisiteId: postrequisiteCourse.Block.id,
-        metadata: metadata
-          ? {
-              create: createValidMetadataEntries(metadata),
-            }
-          : undefined,
-      },
-      include: {
-        prerequisite: true,
-        postrequisite: true,
-        metadata: true,
-      },
-
-    });
-
-    // Format metadata for response
-    const formattedMetadata =
-      relationship.metadata ? relationship.metadata.reduce(
-        (acc, meta) => {
-          acc[meta.key] = meta.value;
-          return acc;
-        },
-        {} satisfies Record<string, string>,
-      ) : {};
-
-    return {
-      id: relationship.id,
-      prerequisite: relationship.prerequisite,
-      postrequisite: relationship.postrequisite,
-      metadata: JSON.stringify(formattedMetadata),
-    };
+    return this.courseRelationshipService.createCourseRelationship(relationshipData);
   }
 
   /**
@@ -300,81 +204,7 @@ export class CoursesService {
   async deleteCourseRelationship(
     relationshipData: DeleteCourseRelationshipInput,
   ): Promise<CourseRelationshipResult> {
-    const { prerequisiteCourseId, postrequisiteCourseId } = relationshipData;
-
-    // Validate that both courses exist
-    const [prerequisiteCourse, postrequisiteCourse] = await Promise.all([
-      this.prisma.course.findUnique({
-        where: { id: prerequisiteCourseId },
-        include: { Block: true },
-      }),
-      this.prisma.course.findUnique({
-        where: { id: postrequisiteCourseId },
-        include: { Block: true },
-      }),
-    ]);
-
-    if (!prerequisiteCourse) {
-      throw new NotFoundException(
-        `Prerequisite course with ID ${prerequisiteCourseId} not found`,
-      );
-    }
-
-    if (!postrequisiteCourse) {
-      throw new NotFoundException(
-        `Postrequisite course with ID ${postrequisiteCourseId} not found`,
-      );
-    }
-
-    // Find the relationship to delete
-    const existingRelationship = await this.prisma.blockRelationship.findUnique(
-      {
-        where: {
-          prerequisiteId_postrequisiteId: {
-            prerequisiteId: prerequisiteCourse.Block.id,
-            postrequisiteId: postrequisiteCourse.Block.id,
-          },
-        },
-        include: {
-          prerequisite: true,
-          postrequisite: true,
-          metadata: true,
-        },
-      },
-    );
-
-    if (!existingRelationship) {
-      throw new NotFoundException(
-        'Relationship not found between these courses',
-      );
-    }
-
-    // Format metadata for response before deletion
-    const formattedMetadata =
-      existingRelationship.metadata ? existingRelationship.metadata.reduce(
-        (acc, meta) => {
-          acc[meta.key] = meta.value;
-          return acc;
-        },
-        {} satisfies Record<string, string>,
-      ) : {};
-
-    // Delete the relationship
-    await this.prisma.blockRelationship.delete({
-      where: {
-        prerequisiteId_postrequisiteId: {
-          prerequisiteId: prerequisiteCourse.Block.id,
-          postrequisiteId: postrequisiteCourse.Block.id,
-        },
-      },
-    });
-
-    return {
-      id: existingRelationship.id,
-      prerequisite: existingRelationship.prerequisite,
-      postrequisite: existingRelationship.postrequisite,
-      metadata: JSON.stringify(formattedMetadata),
-    };
+    return this.courseRelationshipService.deleteCourseRelationship(relationshipData);
   }
 
   /**
@@ -850,12 +680,12 @@ export class CoursesService {
 
       const summaryData = this.extractCourseSummaryData(course);
       return this.buildCourseSummary(course, summaryData);
-    } catch (error) {
+    } catch (error: unknown) {
       if (error instanceof NotFoundException) {
         throw error;
       }
       throw new InternalServerErrorException(
-        `Failed to generate course summary: ${error.message}`,
+        `Failed to generate course summary: ${error instanceof Error ? error.message : String(error)}`,
       );
     }
   }

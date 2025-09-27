@@ -294,7 +294,7 @@ export class ModulesController {
       if (message.toLowerCase().includes('not found')) {
         throw new NotFoundException(message);
       }
-      throw err;
+      throw err instanceof Error ? err : new Error(String(err));
     }
   }
 }
