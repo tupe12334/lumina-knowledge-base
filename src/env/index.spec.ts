@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { loadEnv } from 'src/env';
+import { loadEnv } from './load-env';
 
 describe('env/loadEnv', () => {
   it('provides defaults and coercions (happy path)', () => {
