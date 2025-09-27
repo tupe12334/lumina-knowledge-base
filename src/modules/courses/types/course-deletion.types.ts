@@ -26,7 +26,11 @@ export interface ModuleForDeletion {
 // Course with modules for deletion operations
 export interface CourseWithModules {
   id: string;
-  Block: { id: string };
+  Block: {
+    id: string;
+    prerequisiteFor: Array<unknown>;
+    postrequisiteOf: Array<unknown>;
+  };
   translationId: string;
   modules: Array<ModuleForDeletion>;
 }

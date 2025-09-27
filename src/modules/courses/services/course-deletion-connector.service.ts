@@ -1,15 +1,10 @@
 import { Injectable } from '@nestjs/common';
+import { CourseDeletionTransaction } from '../types/course-deletion.types';
 
 @Injectable()
 export class CourseDeletionConnectorService {
-  async disconnectModuleFromCourse(tx: unknown, courseId: string, moduleId: string) {
-    const typedTx = tx as {
-      course: {
-        update: (args: unknown) => Promise<unknown>;
-      };
-    };
-
-    await typedTx.course.update({
+  async disconnectModuleFromCourse(tx: CourseDeletionTransaction, courseId: string, moduleId: string) {
+    await tx.course.update({
       where: { id: courseId },
       data: {
         modules: {

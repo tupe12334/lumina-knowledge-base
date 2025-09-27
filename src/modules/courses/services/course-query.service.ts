@@ -35,7 +35,6 @@ export class CourseQueryService {
         const bInDegree = degreeId
           ? (b.Degree && b.Degree.some((d) => d.id === degreeId))
           : false;
-
         // Check if course belongs to user's institution
         const aInUniversity = universityId
           ? a.institutionId === universityId
@@ -43,18 +42,15 @@ export class CourseQueryService {
         const bInUniversity = universityId
           ? b.institutionId === universityId
           : false;
-
         // Priority scoring: degree = 3, institution = 2, other = 1
         const aScore = aInDegree ? 3 : aInUniversity ? 2 : 1;
         const bScore = bInDegree ? 3 : bInUniversity ? 2 : 1;
-
         return bScore - aScore; // Sort in descending order (higher score first)
       });
     }
 
     return courses;
   }
-
   async findUnique(id: string): Promise<Course | null> {
     const course = await this.prisma.course.findUnique({
       where: { id },
@@ -95,11 +91,9 @@ export class CourseQueryService {
         },
       },
     });
-
     if (!course) {
       return null;
     }
-
     return course;
   }
 }

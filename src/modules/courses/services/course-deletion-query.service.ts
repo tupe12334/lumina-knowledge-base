@@ -4,6 +4,7 @@ import {
   BadRequestException,
 } from '@nestjs/common';
 import { PrismaService } from '../../../prisma/prisma.service';
+import { CourseWithModules } from '../types/course-deletion.types';
 
 @Injectable()
 export class CourseDeletionQueryService {
@@ -71,22 +72,12 @@ export class CourseDeletionQueryService {
     return course;
   }
 
-  validateCourseDeletion(course: unknown, force: boolean) {
-    const typedCourse = course as {
-      Block: {
-        prerequisiteFor: unknown[];
-        postrequisiteOf: unknown[];
-      };
-      modules: Array<{
-        Questions: unknown[];
-      }>;
-    };
-
+  validateCourseDeletion(course: CourseWithModules, force: boolean) {
     if (!force) {
       const hasRelationships =
-        typedCourse.Block.prerequisiteFor.length > 0 ||
-        typedCourse.Block.postrequisiteOf.length > 0;
-      const hasModulesWithQuestions = typedCourse.modules.some(
+        course.Block.prerequisiteFor.length > 0 ||
+        course.Block.postrequisiteOf.length > 0;
+      const hasModulesWithQuestions = course.modules.some(
         (module) => module.Questions.length > 0,
       );
 

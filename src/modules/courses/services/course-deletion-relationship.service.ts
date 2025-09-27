@@ -1,4 +1,9 @@
 import { Injectable } from '@nestjs/common';
+import {
+  CourseDeletionTransaction,
+  CourseWithModules,
+  ModuleWithBlock
+} from '../types/course-deletion.types';
 
 interface DeletionCounters {
   deletedRelationships: number;
@@ -8,26 +13,12 @@ interface DeletionCounters {
 
 @Injectable()
 export class CourseDeletionRelationshipService {
-  async deleteCourseRelationships(tx: unknown, course: unknown, counters: DeletionCounters) {
-    const typedTx = tx as {
-      blockRelationship: {
-        findMany: (args: unknown) => Promise<Array<{ id: string; metadata: unknown }>>;
-        delete: (args: { where: { id: string } }) => Promise<unknown>;
-      };
-      relationshipMetadata: {
-        deleteMany: (args: { where: { blockRelationshipId: string } }) => Promise<unknown>;
-      };
-    };
-
-    const typedCourse = course as {
-      Block: { id: string };
-    };
-
-    const courseRelationships = await typedTx.blockRelationship.findMany({
+  async deleteCourseRelationships(tx: CourseDeletionTransaction, course: CourseWithModules, counters: DeletionCounters) {
+    const courseRelationships = await tx.blockRelationship.findMany({
       where: {
         OR: [
-          { prerequisiteId: typedCourse.Block.id },
-          { postrequisiteId: typedCourse.Block.id },
+          { prerequisiteId: course.Block.id },
+          { postrequisiteId: course.Block.id },
         ],
       },
       include: {
@@ -36,36 +27,22 @@ export class CourseDeletionRelationshipService {
     });
 
     for (const relationship of courseRelationships) {
-      await typedTx.relationshipMetadata.deleteMany({
+      await tx.relationshipMetadata.deleteMany({
         where: { blockRelationshipId: relationship.id },
       });
-      await typedTx.blockRelationship.delete({
+      await tx.blockRelationship.delete({
         where: { id: relationship.id },
       });
       counters.deletedRelationships++;
     }
   }
 
-  async deleteModuleRelationships(tx: unknown, module: unknown) {
-    const typedTx = tx as {
-      blockRelationship: {
-        findMany: (args: unknown) => Promise<Array<{ id: string; metadata: unknown }>>;
-        delete: (args: { where: { id: string } }) => Promise<unknown>;
-      };
-      relationshipMetadata: {
-        deleteMany: (args: { where: { blockRelationshipId: string } }) => Promise<unknown>;
-      };
-    };
-
-    const typedModule = module as {
-      Block: { id: string };
-    };
-
-    const moduleRelationships = await typedTx.blockRelationship.findMany({
+  async deleteModuleRelationships(tx: CourseDeletionTransaction, module: ModuleWithBlock) {
+    const moduleRelationships = await tx.blockRelationship.findMany({
       where: {
         OR: [
-          { prerequisiteId: typedModule.Block.id },
-          { postrequisiteId: typedModule.Block.id },
+          { prerequisiteId: module.Block.id },
+          { postrequisiteId: module.Block.id },
         ],
       },
       include: {
@@ -74,10 +51,10 @@ export class CourseDeletionRelationshipService {
     });
 
     for (const relationship of moduleRelationships) {
-      await typedTx.relationshipMetadata.deleteMany({
+      await tx.relationshipMetadata.deleteMany({
         where: { blockRelationshipId: relationship.id },
       });
-      await typedTx.blockRelationship.delete({
+      await tx.blockRelationship.delete({
         where: { id: relationship.id },
       });
     }
