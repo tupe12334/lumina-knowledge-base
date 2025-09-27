@@ -1,50 +1,27 @@
 import { Injectable } from '@nestjs/common';
+import {
+  CourseDeletionTransaction,
+  ModuleWithBlock,
+} from '../types/course-deletion.types';
 
 @Injectable()
 export class CourseDeletionEntityService {
-  async deleteModuleAndBlock(tx: unknown, module: unknown) {
-    const typedModule = module as {
-      id: string;
-      Block: { id: string };
-    };
-
-    const typedTx = tx as {
-      module: {
-        delete: (args: { where: { id: string } }) => Promise<unknown>;
-      };
-      block: {
-        delete: (args: { where: { id: string } }) => Promise<unknown>;
-      };
-    };
-
-    await typedTx.module.delete({
-      where: { id: typedModule.id },
+  async deleteModuleAndBlock(tx: CourseDeletionTransaction, module: ModuleWithBlock) {
+    await tx.module.delete({
+      where: { id: module.id },
     });
-    await typedTx.block.delete({
-      where: { id: typedModule.Block.id },
+    await tx.block.delete({
+      where: { id: module.Block.id },
     });
   }
 
-  async deleteModuleTranslationIfUnused(tx: unknown, module: unknown) {
-    const typedModule = module as {
-      translationId: string;
-    };
-
-    const typedTx = tx as {
-      module: {
-        findFirst: (args: { where: { translationId: string } }) => Promise<unknown | null>;
-      };
-      translation: {
-        delete: (args: { where: { id: string } }) => Promise<unknown>;
-      };
-    };
-
-    const translationUsage = await typedTx.module.findFirst({
-      where: { translationId: typedModule.translationId },
+  async deleteModuleTranslationIfUnused(tx: CourseDeletionTransaction, module: { translationId: string }) {
+    const translationUsage = await tx.module.findFirst({
+      where: { translationId: module.translationId },
     });
     if (!translationUsage) {
-      await typedTx.translation.delete({
-        where: { id: typedModule.translationId },
+      await tx.translation.delete({
+        where: { id: module.translationId },
       });
     }
   }

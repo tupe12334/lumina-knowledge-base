@@ -3,6 +3,7 @@ import { CourseDeletionRelationshipService } from './course-deletion-relationshi
 import { CourseDeletionQuestionService } from './course-deletion-question.service';
 import { CourseDeletionEntityService } from './course-deletion-entity.service';
 import { CourseDeletionConnectorService } from './course-deletion-connector.service';
+import { CourseDeletionTransaction, ModuleForDeletion, CourseWithModules } from '../types/course-deletion.types';
 
 interface DeletionCounters {
   deletedRelationships: number;
@@ -19,15 +20,8 @@ export class CourseDeletionModuleService {
     private readonly connectorService: CourseDeletionConnectorService,
   ) {}
 
-  async handleCourseModules(tx: unknown, course: unknown, courseId: string, counters: DeletionCounters) {
-    const typedCourse = course as {
-      modules: Array<{
-        id: string;
-        Course: Array<{ id: string }>;
-      }>;
-    };
-
-    for (const module of typedCourse.modules) {
+  async handleCourseModules(tx: CourseDeletionTransaction, course: CourseWithModules, courseId: string, counters: DeletionCounters) {
+    for (const module of course.modules) {
       const otherCourseModules = module.Course.filter(
         (c) => c.id !== courseId,
       );
@@ -40,7 +34,7 @@ export class CourseDeletionModuleService {
     }
   }
 
-  private async deleteOrphanedModule(tx: unknown, module: unknown, counters: DeletionCounters) {
+  private async deleteOrphanedModule(tx: CourseDeletionTransaction, module: ModuleForDeletion, counters: DeletionCounters) {
     counters.orphanedModules++;
 
     await this.questionService.deleteModuleQuestions(tx, module, counters);

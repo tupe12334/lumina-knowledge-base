@@ -43,6 +43,9 @@ const createMockCourseSummaryService = () => ({
 
 const createMockCourseUpdateService = () => ({
   updateCourse: vi.fn(),
+});
+
+const createMockCourseModuleService = () => ({
   setCourseModules: vi.fn(),
 });
 
@@ -62,17 +65,19 @@ const createServiceForTests = (
   mockCourseDeletionService: ReturnType<typeof createMockCourseDeletionService> = createMockCourseDeletionService(),
   mockCourseSummaryService: ReturnType<typeof createMockCourseSummaryService> = createMockCourseSummaryService(),
   mockCourseUpdateService: ReturnType<typeof createMockCourseUpdateService> = createMockCourseUpdateService(),
+  mockCourseModuleService: ReturnType<typeof createMockCourseModuleService> = createMockCourseModuleService(),
   mockCourseCreationService: ReturnType<typeof createMockCourseCreationService> = createMockCourseCreationService(),
   mockCourseQueryService: ReturnType<typeof createMockCourseQueryService> = createMockCourseQueryService()
 ) => {
   return new CoursesService(
-    mockPrisma satisfies PrismaService,
-    mockCourseRelationshipService satisfies CourseRelationshipService,
-    mockCourseDeletionService satisfies CourseDeletionService,
-    mockCourseSummaryService satisfies CourseSummaryService,
-    mockCourseUpdateService satisfies CourseUpdateService,
-    mockCourseCreationService satisfies CourseCreationService,
-    mockCourseQueryService satisfies CourseQueryService
+    mockPrisma as any,
+    mockCourseRelationshipService as any,
+    mockCourseDeletionService as any,
+    mockCourseSummaryService as any,
+    mockCourseUpdateService as any,
+    mockCourseModuleService as any,
+    mockCourseCreationService as any,
+    mockCourseQueryService as any
   );
 };
 

@@ -32,6 +32,7 @@ import { QuestionsQueryDto } from './dto/question-query.dto';
 import { DeleteQuestionInput } from './dto/delete-question.input';
 import { Question } from './models/Question.entity';
 import { PaginatedQuestionsResponse } from './dto/paginated-questions-response.dto';
+import { QuestionsApiDecorators } from './decorators/questions-api.decorators';
 
 @ApiTags('questions')
 @Controller('questions')
@@ -39,65 +40,19 @@ export class QuestionsController {
   constructor(private readonly questionsService: QuestionsService) {}
 
   @Post()
-  @ApiOperation({
-    summary: 'Create a new question',
-    description: 'Creates a new question record.',
-  })
-  @ApiCreatedResponse({
-    type: Question,
-    description: 'The newly created question.',
-  })
-  @ApiResponse({ status: 400, description: 'Bad Request.' })
-  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
+  @QuestionsApiDecorators.CreateQuestion()
   create(@Body() createQuestionDto: CreateQuestionInput) {
     return this.questionsService.create(createQuestionDto);
   }
 
   @Post('bulk')
-  @ApiOperation({
-    summary: 'Create multiple questions',
-    description: 'Creates multiple question records in a single operation.',
-  })
-  @ApiCreatedResponse({
-    description: 'The number of questions created.',
-    schema: {
-      type: 'object',
-      properties: {
-        count: {
-          type: 'number',
-          description: 'Number of questions created',
-          example: 5,
-        },
-      },
-    },
-  })
-  @ApiResponse({ status: 400, description: 'Bad Request.' })
-  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
+  @QuestionsApiDecorators.CreateMany()
   createMany(@Body() createManyQuestionsDto: CreateManyQuestionsInput) {
     return this.questionsService.createMany(createManyQuestionsDto);
   }
 
   @Post('bulk-complete')
-  @ApiOperation({
-    summary: 'Create complete questions with translations and answers',
-    description:
-      'Creates multiple complete question records with translations and answers in a single operation.',
-  })
-  @ApiCreatedResponse({
-    description: 'The number of questions created.',
-    schema: {
-      type: 'object',
-      properties: {
-        count: {
-          type: 'number',
-          description: 'Number of questions created',
-          example: 5,
-        },
-      },
-    },
-  })
-  @ApiResponse({ status: 400, description: 'Bad Request.' })
-  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
+  @QuestionsApiDecorators.CreateCompleteQuestions()
   createCompleteMany(
     @Body() createCompleteQuestionsDto: CreateCompleteQuestionsInput,
   ) {
@@ -105,60 +60,25 @@ export class QuestionsController {
   }
 
   @Get()
-  @ApiOperation({
-    summary: 'Retrieve all questions',
-    description: 'Returns a list of all questions.',
-  })
-  @ApiOkResponse({
-    type: Question,
-    isArray: true,
-    description: 'A list of questions.',
-  })
-  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
+  @QuestionsApiDecorators.FindAll()
   findAll(@Query() query: QuestionsQueryDto) {
     return this.questionsService.findAll(query);
   }
 
   @Get('paginated')
-  @ApiOperation({
-    summary: 'Retrieve paginated questions',
-    description: 'Returns paginated questions for infinite scroll.',
-  })
-  @ApiOkResponse({
-    type: PaginatedQuestionsResponse,
-    description: 'Paginated questions with metadata.',
-  })
-  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
+  @QuestionsApiDecorators.FindAllPaginated()
   findAllPaginated(@Query() query: QuestionsQueryDto) {
     return this.questionsService.findAllPaginated(query);
   }
 
   @Get(':id')
-  @ApiOperation({
-    summary: 'Retrieve a question by ID',
-    description: 'Returns a single question by its ID.',
-  })
-  @ApiParam({ name: 'id', description: 'The ID of the question', type: String })
-  @ApiOkResponse({
-    type: Question,
-    description: 'The question with the specified ID.',
-  })
-  @ApiResponse({ status: 404, description: 'Question not found.' })
-  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
+  @QuestionsApiDecorators.FindOne()
   findOne(@Param('id') id: string) {
     return this.questionsService.findUnique(id);
   }
 
   @Put(':id')
-  @ApiOperation({
-    summary: 'Update a question by ID',
-    description: 'Updates an existing question record.',
-  })
-  @ApiParam({ name: 'id', description: 'The ID of the question', type: String })
-  @ApiOkResponse({ type: Question, description: 'The updated question.' })
-  @ApiResponse({ status: 400, description: 'Bad Request.' })
-  @ApiResponse({ status: 404, description: 'Question not found.' })
-  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
+  @QuestionsApiDecorators.Update()
   update(
     @Param('id') id: string,
     @Body() updateQuestionDto: Omit<UpdateQuestionInput, 'id'>,
@@ -167,39 +87,15 @@ export class QuestionsController {
   }
 
   @Delete(':id')
-  @ApiOperation({
-    summary: 'Delete a question by ID',
-    description: 'Deletes a question record by its ID.',
-  })
-  @ApiParam({ name: 'id', description: 'The ID of the question', type: String })
   @HttpCode(HttpStatus.NO_CONTENT)
-  @ApiNoContentResponse({ description: 'Question successfully deleted.' })
-  @ApiResponse({ status: 404, description: 'Question not found.' })
-  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
+  @QuestionsApiDecorators.Delete()
   remove(@Param('id') id: string) {
     return this.questionsService.remove(id);
   }
 
   @Get(':id/summary')
-  @ApiOperation({
-    summary: 'Get question summary',
-    description:
-      'Returns a human-readable plain text summary for the specified question.',
-  })
-  @ApiParam({
-    name: 'id',
-    description: 'The ID of the question',
-    type: String,
-  })
-  @ApiProduces('text/plain')
-  @ApiOkResponse({
-    description: 'Plain text summary of the question',
-    schema: { type: 'string' },
-  })
-  @ApiResponse({ status: 400, description: 'Invalid ID format' })
-  @ApiResponse({ status: 404, description: 'Question not found' })
-  @ApiResponse({ status: 500, description: 'Internal Server Error' })
   @Header('Content-Type', 'text/plain; charset=utf-8')
+  @QuestionsApiDecorators.GetSummary()
   async getSummary(
     @Param('id', new ParseUUIDPipe({ version: '4' })) id: string,
   ): Promise<string> {

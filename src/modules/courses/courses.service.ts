@@ -21,6 +21,7 @@ import { CourseRelationshipService } from './services/course-relationship.servic
 import { CourseDeletionService } from './services/course-deletion.service';
 import { CourseSummaryService } from './services/course-summary.service';
 import { CourseUpdateService } from './services/course-update.service';
+import { CourseModuleService } from './services/course-module.service';
 import { CourseCreationService } from './services/course-creation.service';
 import { CourseQueryService } from './services/course-query.service';
 
@@ -34,6 +35,7 @@ export class CoursesService {
     private readonly courseDeletionService: CourseDeletionService,
     private readonly courseSummaryService: CourseSummaryService,
     private readonly courseUpdateService: CourseUpdateService,
+    private readonly courseModuleService: CourseModuleService,
     private readonly courseCreationService: CourseCreationService,
     private readonly courseQueryService: CourseQueryService,
   ) {}
@@ -110,7 +112,7 @@ export class CoursesService {
    * Sets the modules of a course, replacing any existing assignments.
    */
   async setCourseModules(input: SetCourseModulesInput): Promise<Course> {
-    return this.courseUpdateService.setCourseModules(input);
+    return this.courseModuleService.setCourseModules(input);
   }
 
   /**
