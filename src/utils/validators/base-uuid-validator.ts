@@ -1,13 +1,7 @@
 import { validate as uuidValidate, v4 as uuidv4 } from 'uuid';
 import { Logger } from '@nestjs/common';
 import { PrismaClient } from '@prisma/client';
-
-export interface ValidationResult {
-  tableName: string;
-  invalidCount: number;
-  fixedCount: number;
-  errors: string[];
-}
+import { ValidationResult } from './types';
 
 export abstract class BaseUuidValidator {
   protected logger: Logger;
