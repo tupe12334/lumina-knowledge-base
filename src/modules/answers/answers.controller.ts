@@ -74,6 +74,6 @@ export class AnswersController {
   @HttpCode(HttpStatus.NO_CONTENT)
   @ApiNoContentResponse()
   remove(@Param('id') id: string) {
-    return this.answersService.remove(id);
+    return this.answersService.delete(id);
   }
 }

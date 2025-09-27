@@ -3,10 +3,20 @@ import { PrismaModule } from '../../prisma/prisma.module';
 import { ModulesService } from './modules.service';
 import { QuestionsModule } from '../questions/questions.module';
 import { ModulesController } from './modules.controller';
+import { ModulesQueryService } from './services/modules-query.service';
+import { ModulesCrudService } from './services/modules-crud.service';
+import { ModulesRelationshipService } from './services/modules-relationship.service';
+import { ModulesSummaryService } from './services/modules-summary.service';
 
 @Module({
   imports: [PrismaModule, QuestionsModule],
-  providers: [ModulesService],
+  providers: [
+    ModulesService,
+    ModulesQueryService,
+    ModulesCrudService,
+    ModulesRelationshipService,
+    ModulesSummaryService,
+  ],
   exports: [ModulesService],
   controllers: [ModulesController],
 })
