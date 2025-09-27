@@ -942,7 +942,7 @@
                     "count": {
                       "type": "number",
                       "description": "Number of courses created",
-                      "example": 5
+                      "example": 10
                     }
                   }
                 }
