@@ -8,6 +8,7 @@ import {
   Min,
   Max,
 } from 'class-validator';
+import { Transform } from 'class-transformer';
 import { QuestionType, QuestionValidationStatus } from '@prisma/client';
 
 export class QuestionsQueryDto {
@@ -66,12 +67,14 @@ export class QuestionsQueryDto {
 
   // Pagination fields
   @ApiPropertyOptional({ minimum: 0 })
+  @Transform(({ value }) => parseInt(value, 10))
   @IsInt()
   @Min(0)
   @IsOptional()
   offset?: number;
 
   @ApiPropertyOptional({ minimum: 1, maximum: 100 })
+  @Transform(({ value }) => parseInt(value, 10))
   @IsInt()
   @Min(1)
   @Max(100)
@@ -99,6 +102,7 @@ export class QuestionsQueryDto {
   hasAnswers?: boolean;
 
   @ApiPropertyOptional({ minimum: 1 })
+  @Transform(({ value }) => parseInt(value, 10))
   @IsInt()
   @Min(1)
   @IsOptional()
