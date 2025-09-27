@@ -31,22 +31,24 @@ export class InstitutionsSummaryService {
         throw new NotFoundException(`Institution with ID ${id} not found`);
       }
 
-      const institutionName = institution.name?.en_text || 'Unknown Institution';
-      const facultyCount = institution.Faculty?.length || 0;
-      const degreeCount = institution.Degree?.length || 0;
-      const courseCount = institution.courses?.length || 0;
+      const institutionName = institution.name && institution.name.en_text ? institution.name.en_text : 'Unknown Institution';
+      const facultyCount = institution.Faculty ? institution.Faculty.length : 0;
+      const degreeCount = institution.Degree ? institution.Degree.length : 0;
+      const courseCount = institution.courses ? institution.courses.length : 0;
 
       const facultyNames = institution.Faculty
-        ?.map((faculty) => faculty.name?.en_text || 'No English translation available')
-        .slice(0, 5);
+        ? institution.Faculty.map((faculty) => faculty.name && faculty.name.en_text ? faculty.name.en_text : 'No English translation available')
+            .slice(0, 5)
+        : undefined;
 
       const facultyList = facultyNames && facultyNames.length > 0
         ? facultyNames.join(', ')
         : 'No faculties available';
 
       const facultyDetails = institution.Faculty
-        ?.map((faculty) => `- ${faculty.name?.en_text || 'No English translation available'}`)
-        .join('\n') || 'No faculty details available';
+        ? institution.Faculty.map((faculty) => `- ${faculty.name && faculty.name.en_text ? faculty.name.en_text : 'No English translation available'}`)
+            .join('\n')
+        : 'No faculty details available';
 
       const summary = `Institution Summary for ${id}
 
