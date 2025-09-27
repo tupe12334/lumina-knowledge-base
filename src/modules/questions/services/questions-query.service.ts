@@ -41,8 +41,9 @@ export class QuestionsQueryService {
       this.prisma.question.count({ where }),
     ]);
 
+    const typedQuestions: Question[] = questions;
     return {
-      questions: questions as Question[],
+      questions: typedQuestions,
       totalCount: total,
       offset: skip,
       limit,

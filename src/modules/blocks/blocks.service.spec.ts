@@ -2,6 +2,8 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { createPrismock } from 'prismock';
 import { BlocksService } from './blocks.service';
 import { PrismaService } from '../../prisma/prisma.service';
+import { BlocksQueryService } from './services/blocks-query.service';
+import { BlocksRelationshipService } from './services/blocks-relationship.service';
 import { CreateBlockRelationshipInput } from './dto/create-block-relationship.input';
 import { DeleteBlockRelationshipInput } from './dto/delete-block-relationship.input';
 import { BadRequestException, NotFoundException } from '@nestjs/common';
@@ -18,10 +20,14 @@ vi.mock('@prisma/client', async () => {
 
 let prisma: PrismaService;
 let service: BlocksService;
+let queryService: BlocksQueryService;
+let relationshipService: BlocksRelationshipService;
 
 beforeEach(() => {
   prisma = new PrismaService();
-  service = new BlocksService(prisma);
+  queryService = new BlocksQueryService(prisma);
+  relationshipService = new BlocksRelationshipService(prisma);
+  service = new BlocksService(queryService, relationshipService);
 });
 
 // Test helper functions

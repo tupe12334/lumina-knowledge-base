@@ -2,10 +2,11 @@ import { describe, it, expect, vi, afterEach } from 'vitest';
 import { OpenAPIObject } from '@nestjs/swagger';
 import { saveOpenapiSpec } from './save-openapi-spec';
 
-import { writeFile } from 'fs/promises';
+import { writeFile, mkdir } from 'fs/promises';
 
 vi.mock('fs/promises', () => ({
   writeFile: vi.fn(),
+  mkdir: vi.fn(),
 }));
 
 describe('saveOpenapiSpec', () => {

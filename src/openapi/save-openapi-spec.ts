@@ -27,12 +27,17 @@ export const saveOpenapiSpec = async (
   const sanitizedFileName = baseName.replace(/[^a-zA-Z0-9.-]/g, '_');
   const allowedFileName = sanitizedFileName.endsWith('.json') ? sanitizedFileName : 'openapi.json';
 
-  const docsPath = resolve(process.cwd(), 'docs');
+  const baseDocsPath = 'docs';
+  const docsPath = resolve(process.cwd(), baseDocsPath);
 
   await mkdir(docsPath, { recursive: true });
 
-  const targetPath = resolve(docsPath, allowedFileName);
-  await writeFile(targetPath, JSON.stringify(document, null, 2), {
+  const safeTargetPath = resolve(docsPath, allowedFileName);
+  if (!safeTargetPath.startsWith(docsPath)) {
+    throw new BadRequestException('Invalid target path');
+  }
+
+  await writeFile(safeTargetPath, JSON.stringify(document, null, 2), {
     encoding: 'utf8',
   });
 };

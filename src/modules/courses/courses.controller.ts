@@ -13,7 +13,16 @@ import {
   Header,
   Query,
 } from '@nestjs/common';
-import { ApiTags } from '@nestjs/swagger';
+import {
+  ApiTags,
+  ApiOperation,
+  ApiCreatedResponse,
+  ApiOkResponse,
+  ApiNoContentResponse,
+  ApiResponse,
+  ApiParam,
+  ApiProduces,
+} from '@nestjs/swagger';
 import { CoursesService } from './courses.service';
 import { CreateCourseInput } from './dto/create-course.input';
 import { CreateManyCoursesInput } from './dto/create-many-courses.input';
@@ -25,18 +34,7 @@ import { DeleteCourseInput } from './dto/delete-course.input';
 import { Course } from './models/Course.entity';
 import { CourseRelationshipResult } from './dto/course-relationship-result.type';
 import { CoursesQueryInput } from './dto/courses-query.input';
-import {
-  CreateCourseApi,
-  CreateManyCoursesApi,
-  FindAllCoursesApi,
-  FindOneCourseApi,
-  UpdateCourseApi,
-  DeleteCourseApi,
-  CreateRelationshipApi,
-  DeleteRelationshipApi,
-  SetModulesApi,
-  GetSummaryApi,
-} from './decorators/courses-api.decorators';
+import { CoursesApiDecorators } from './decorators/courses-api.decorators';
 
 @ApiTags('courses')
 @Controller('courses')
@@ -44,31 +42,13 @@ export class CoursesController {
   constructor(private readonly coursesService: CoursesService) {}
 
   @Post()
-  @CreateCourseApi()
+  @CoursesApiDecorators.CreateCourse()
   create(@Body() createCourseDto: CreateCourseInput) {
     return this.coursesService.create(createCourseDto);
   }
 
   @Post('bulk')
-  @ApiOperation({
-    summary: 'Create multiple courses',
-    description: 'Creates multiple course records in a single operation.',
-  })
-  @ApiCreatedResponse({
-    description: 'The number of courses created.',
-    schema: {
-      type: 'object',
-      properties: {
-        count: {
-          type: 'number',
-          description: 'Number of courses created',
-          example: 5,
-        },
-      },
-    },
-  })
-  @ApiResponse({ status: 400, description: 'Bad Request.' })
-  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
+  @CoursesApiDecorators.CreateMany()
   createMany(@Body() createManyCoursesDto: CreateManyCoursesInput) {
     return this.coursesService.createMany(createManyCoursesDto);
   }

@@ -23,7 +23,7 @@ export class ModulesService {
     private readonly summaryService: ModulesSummaryService,
   ) {}
 
-  async findUnique(id: string): Promise<ModuleEntity | null> {
+  async findUnique(id: string): Promise<any> {
     return this.queryService.findUnique(id);
   }
 
