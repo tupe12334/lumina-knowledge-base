@@ -289,7 +289,7 @@ export class ModulesController {
     try {
       return await this.modulesService.generateSummary(id);
     } catch (err: unknown) {
-      if (err instanceof NotFoundException) throw err;
+      if (err instanceof NotFoundException) throw new NotFoundException(err.message);
       const message = err instanceof Error ? err.message : String(err);
       if (message.toLowerCase().includes('not found')) {
         throw new NotFoundException(message);

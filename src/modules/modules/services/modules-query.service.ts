@@ -78,7 +78,7 @@ export class ModulesQueryService {
       return null;
     }
 
-    return result as ModuleEntity;
+    return result;
   }
 
   async findAll(filters?: ModulesQueryDto) {

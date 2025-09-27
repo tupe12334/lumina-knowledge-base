@@ -49,20 +49,20 @@ const createQuestionsServiceForTests = async () => {
   const service = module.get<QuestionsService>(QuestionsService);
 
   // Manually set the prisma property since NestJS DI might not work properly in tests
-  (service as unknown as { prisma: MockPrismaService }).prisma =
-    mockPrismaService;
+  Object.assign(service, { prisma: mockPrismaService });
 
   // Set up the moduleHelper mock
-  (service as unknown as {
-    moduleHelper: { getAllSubmoduleIds: ReturnType<typeof vi.fn> }
-  }).moduleHelper = {
-    getAllSubmoduleIds: vi.fn(),
-  };
+  Object.assign(service, {
+    moduleHelper: {
+      getAllSubmoduleIds: vi.fn(),
+    },
+  });
 
+  const serviceWithHelper: Record<string, unknown> = service;
   return {
     service,
     mockPrismaService,
-    mockModuleHelper: (service as unknown as { moduleHelper: unknown }).moduleHelper,
+    mockModuleHelper: serviceWithHelper['moduleHelper'],
   };
 };
 

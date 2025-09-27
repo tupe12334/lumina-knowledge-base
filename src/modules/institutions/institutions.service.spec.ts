@@ -33,7 +33,7 @@ describe('InstitutionsService', () => {
         },
       ],
     };
-    if (mockPrismaService.institution?.findMany) {
+    if (mockPrismaService.institution && mockPrismaService.institution.findMany) {
       vi.mocked(mockPrismaService.institution.findMany).mockResolvedValue([institution]);
     }
 
