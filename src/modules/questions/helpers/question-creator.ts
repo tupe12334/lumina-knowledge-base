@@ -1,3 +1,4 @@
+import { BadRequestException } from '@nestjs/common';
 import { Prisma, PrismaClient, Units } from '@prisma/client';
 import { PrismaService } from '../../../prisma/prisma.service';
 import { CreateCompleteQuestionsInput } from '../dto/create-complete-questions.input';
@@ -19,7 +20,10 @@ export class QuestionCreator {
     });
   }
 
-  private async createSingleCompleteQuestion(prisma: Prisma.TransactionClient, questionData: CreateCompleteQuestionInput) {
+  private async createSingleCompleteQuestion(
+    prisma: Prisma.TransactionClient,
+    questionData: CreateCompleteQuestionInput,
+  ) {
     const {
       en_text,
       he_text,
@@ -34,7 +38,9 @@ export class QuestionCreator {
     } = questionData;
 
     if (!validationStatus) {
-      throw new Error('validationStatus is required for question creation');
+      throw new BadRequestException(
+        'validationStatus is required for question creation',
+      );
     }
 
     const translation = await prisma.translation.create({
@@ -47,7 +53,9 @@ export class QuestionCreator {
         validationStatus,
         text: { connect: { id: translation.id } },
         Modules: {
-          connect: moduleIds ? moduleIds.map((id: string) => ({ id })) : undefined,
+          connect: moduleIds
+            ? moduleIds.map((id: string) => ({ id }))
+            : undefined,
         },
       },
     });
@@ -67,25 +75,50 @@ export class QuestionCreator {
     questionId: string,
     answerData: {
       type: string;
-      selectAnswers?: Array<{ en_text: string; he_text: string; is_correct: boolean }>;
+      selectAnswers?: Array<{
+        en_text: string;
+        he_text: string;
+        is_correct: boolean;
+      }>;
       numberAnswer?: number;
       booleanAnswer?: number;
       unitValue?: number;
       unit?: Units;
-    }
+    },
   ) {
-    const { type, selectAnswers, numberAnswer, booleanAnswer, unitValue, unit } = answerData;
+    const {
+      type,
+      selectAnswers,
+      numberAnswer,
+      booleanAnswer,
+      unitValue,
+      unit,
+    } = answerData;
 
     if (type === 'selection' && selectAnswers && selectAnswers.length > 0) {
       await this.createSelectAnswers(prisma, questionId, selectAnswers);
     } else if (type === 'boolean' && booleanAnswer !== undefined) {
       await this.createBooleanAnswer(prisma, questionId, booleanAnswer);
     } else if (type === 'value') {
-      await this.createValueAnswer(prisma, questionId, unitValue, unit, numberAnswer);
+      await this.createValueAnswer(
+        prisma,
+        questionId,
+        unitValue,
+        unit,
+        numberAnswer,
+      );
     }
   }
 
-  private async createSelectAnswers(prisma: Prisma.TransactionClient, questionId: string, selectAnswers: Array<{ en_text: string; he_text: string; is_correct: boolean }>) {
+  private async createSelectAnswers(
+    prisma: Prisma.TransactionClient,
+    questionId: string,
+    selectAnswers: Array<{
+      en_text: string;
+      he_text: string;
+      is_correct: boolean;
+    }>,
+  ) {
     const answerTranslations = await Promise.all(
       selectAnswers.map((answer) =>
         prisma.translation.create({
@@ -103,11 +136,15 @@ export class QuestionCreator {
         SelectAnswer: {
           create: selectAnswers.map((answer, index) => {
             if (index < 0 || index >= answerTranslations.length) {
-              throw new Error(`Invalid index ${index} for answerTranslations array`);
+              throw new BadRequestException(
+                `Invalid index ${index} for answerTranslations array`,
+              );
             }
             const translation = answerTranslations[index];
             if (!translation) {
-              throw new Error(`Missing translation for answer at index ${index}`);
+              throw new BadRequestException(
+                `Missing translation for answer at index ${index}`,
+              );
             }
             return {
               isCorrect: answer.is_correct,
@@ -119,7 +156,11 @@ export class QuestionCreator {
     });
   }
 
-  private async createBooleanAnswer(prisma: Prisma.TransactionClient, questionId: string, booleanAnswer: number) {
+  private async createBooleanAnswer(
+    prisma: Prisma.TransactionClient,
+    questionId: string,
+    booleanAnswer: number,
+  ) {
     await prisma.answer.create({
       data: {
         question: { connect: { id: questionId } },
@@ -135,7 +176,7 @@ export class QuestionCreator {
     questionId: string,
     unitValue?: number,
     unit?: Units,
-    numberAnswer?: number
+    numberAnswer?: number,
   ) {
     const answerData: Prisma.AnswerCreateInput = {
       question: { connect: { id: questionId } },

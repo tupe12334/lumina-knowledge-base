@@ -320,7 +320,7 @@ export class DegreesService {
     });
 
     if (!updated) {
-      throw new Error('Degree not found after update');
+      throw new NotFoundException('Degree not found after update');
     }
 
     return updated;
@@ -373,7 +373,7 @@ export class DegreesService {
     });
 
     if (!updatedDegree) {
-      throw new Error('Degree not found after update'); // Should not happen if degree was found initially
+      throw new NotFoundException('Degree not found after update'); // Should not happen if degree was found initially
     }
 
     return updatedDegree;
@@ -429,7 +429,7 @@ export class DegreesService {
     });
 
     if (!updatedDegree) {
-      throw new Error('Degree not found after update'); // Should not happen if degree was found initially
+      throw new NotFoundException('Degree not found after update'); // Should not happen if degree was found initially
     }
 
     return updatedDegree;

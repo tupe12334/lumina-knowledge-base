@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, InternalServerErrorException } from '@nestjs/common';
 import { exec } from 'child_process';
 import { promisify } from 'util';
 import { join } from 'path';
@@ -19,12 +19,12 @@ export class DatabaseService {
       const { stdout, stderr } = await execAsync(`sqlite3 "${dbPath}" .dump`);
 
       if (stderr) {
-        throw new Error(`SQLite dump error: ${stderr}`);
+        throw new InternalServerErrorException(`SQLite dump error: ${stderr}`);
       }
 
       return stdout;
     } catch (error) {
-      throw new Error(
+      throw new InternalServerErrorException(
         `Failed to create database dump: ${error instanceof Error ? error.message : String(error)}`,
       );
     }
@@ -81,7 +81,7 @@ export class DatabaseService {
         timestamp: new Date().toISOString(),
       };
     } catch (error) {
-      throw new Error(
+      throw new InternalServerErrorException(
         `Failed to get database info: ${error instanceof Error ? error.message : String(error)}`,
       );
     }
