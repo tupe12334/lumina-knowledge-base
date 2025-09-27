@@ -13,6 +13,8 @@ import { ModulesIncludesService } from './services/modules-includes.service';
 import { ModulesQuestionFilterService } from './services/modules-question-filter.service';
 import { ModulesStatsService } from './services/modules-stats.service';
 import { ModulesTextSummaryService } from './services/modules-text-summary.service';
+import { ModulesDataExtractorService } from './services/modules-data-extractor.service';
+import { ModulesTextBuilderService } from './services/modules-text-builder.service';
 import { ModulesRelationshipHelperService } from './services/modules-relationship-helper.service';
 
 @Module({
@@ -29,6 +31,8 @@ import { ModulesRelationshipHelperService } from './services/modules-relationshi
     ModulesQuestionFilterService,
     ModulesStatsService,
     ModulesTextSummaryService,
+    ModulesDataExtractorService,
+    ModulesTextBuilderService,
     ModulesRelationshipHelperService,
   ],
   exports: [ModulesService],

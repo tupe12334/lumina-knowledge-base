@@ -11,11 +11,11 @@ import { QuestionCreator } from '../helpers/question-creator';
 
 @Injectable()
 export class QuestionsCrudService {
-  private questionCreator: QuestionCreator;
-
-  constructor(private readonly prisma: PrismaService) {
-    this.questionCreator = new QuestionCreator(prisma);
-  }
+  constructor(
+    private readonly prisma: PrismaService,
+    private readonly questionCreator: QuestionCreator,
+    private readonly queryBuilder: QuestionQueryBuilder,
+  ) {}
 
   async create(createQuestionInput: CreateQuestionInput) {
     const { translationId, type, moduleIds, validationStatus } = createQuestionInput;
@@ -31,7 +31,7 @@ export class QuestionsCrudService {
           ? { connect: moduleIds.map((id) => ({ id })) }
           : undefined,
       },
-      include: QuestionQueryBuilder.buildInclude(),
+      include: this.queryBuilder.buildInclude(),
     });
   }
 
@@ -61,7 +61,7 @@ export class QuestionsCrudService {
     return this.questionCreator.createCompleteMany(input);
   }
 
-  async update(updateQuestionInput: UpdateQuestionInput): Promise<Question> {
+  async update(updateQuestionInput: UpdateQuestionInput): Promise<any> {
     const { id, translationId, type, moduleIds, validationStatus } = updateQuestionInput;
 
     const existingQuestion = await this.prisma.question.findUnique({
@@ -88,7 +88,7 @@ export class QuestionsCrudService {
         ...(translationId && { text: { connect: { id: translationId } } }),
         ...(moduleConnections && { Modules: moduleConnections }),
       },
-      include: QuestionQueryBuilder.buildInclude(),
+      include: this.queryBuilder.buildInclude(),
     });
   }
 

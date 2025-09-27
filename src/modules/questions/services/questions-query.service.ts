@@ -10,13 +10,16 @@ import { ModuleHierarchyHelper } from '../helpers/module-hierarchy-helper';
 export class QuestionsQueryService {
   private moduleHelper: ModuleHierarchyHelper;
 
-  constructor(private readonly prisma: PrismaService) {
+  constructor(
+    private readonly prisma: PrismaService,
+    private readonly queryBuilder: QuestionQueryBuilder,
+  ) {
     this.moduleHelper = new ModuleHierarchyHelper(prisma);
   }
 
   async findAll(query?: QuestionsQueryDto) {
-    const where = query ? QuestionQueryBuilder.buildWhereClause(query) : {};
-    const include = QuestionQueryBuilder.buildInclude();
+    const where = query ? this.queryBuilder.buildWhereClause(query) : {};
+    const include = this.queryBuilder.buildInclude();
 
     return this.prisma.question.findMany({ where, include });
   }
@@ -24,8 +27,8 @@ export class QuestionsQueryService {
   async findAllPaginated(
     query?: QuestionsQueryDto,
   ): Promise<PaginatedQuestionsResponse> {
-    const where = query ? QuestionQueryBuilder.buildWhereClause(query) : {};
-    const include = QuestionQueryBuilder.buildInclude();
+    const where = query ? this.queryBuilder.buildWhereClause(query) : {};
+    const include = this.queryBuilder.buildInclude();
 
     const page = query && query.page !== undefined ? parseInt(String(query.page), 10) : 1;
     const limit = query && query.limit !== undefined ? parseInt(String(query.limit), 10) : 10;
@@ -41,7 +44,7 @@ export class QuestionsQueryService {
       this.prisma.question.count({ where }),
     ]);
 
-    const typedQuestions: Question[] = questions;
+    const typedQuestions: any[] = questions;
     return {
       questions: typedQuestions,
       totalCount: total,
@@ -51,10 +54,10 @@ export class QuestionsQueryService {
     };
   }
 
-  async findUnique(id: string): Promise<Question | null> {
+  async findUnique(id: string): Promise<any | null> {
     return this.prisma.question.findUnique({
       where: { id },
-      include: QuestionQueryBuilder.buildInclude(),
+      include: this.queryBuilder.buildInclude(),
     });
   }
 

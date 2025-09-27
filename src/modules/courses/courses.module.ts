@@ -8,6 +8,9 @@ import { CourseDeletionService } from './services/course-deletion.service';
 import { CourseDeletionQueryService } from './services/course-deletion-query.service';
 import { CourseDeletionRelationshipService } from './services/course-deletion-relationship.service';
 import { CourseDeletionModuleService } from './services/course-deletion-module.service';
+import { CourseDeletionQuestionService } from './services/course-deletion-question.service';
+import { CourseDeletionEntityService } from './services/course-deletion-entity.service';
+import { CourseDeletionConnectorService } from './services/course-deletion-connector.service';
 import { CourseSummaryService } from './services/course-summary.service';
 import { CourseUpdateService } from './services/course-update.service';
 import { CourseCreationService } from './services/course-creation.service';
@@ -24,6 +27,9 @@ import { CourseTextFormatterService } from './services/course-text-formatter.ser
     CourseDeletionQueryService,
     CourseDeletionRelationshipService,
     CourseDeletionModuleService,
+    CourseDeletionQuestionService,
+    CourseDeletionEntityService,
+    CourseDeletionConnectorService,
     CourseSummaryService,
     CourseUpdateService,
     CourseCreationService,

@@ -1,11 +1,15 @@
 import { Injectable, NotFoundException, InternalServerErrorException } from '@nestjs/common';
 import { PrismaService } from '../../../prisma/prisma.service';
-
-/* eslint-disable @typescript-eslint/no-explicit-any */
+import { ModulesDataExtractorService } from './modules-data-extractor.service';
+import { ModulesTextBuilderService } from './modules-text-builder.service';
 
 @Injectable()
 export class ModulesTextSummaryService {
-  constructor(private readonly prisma: PrismaService) {}
+  constructor(
+    private readonly prisma: PrismaService,
+    private readonly dataExtractor: ModulesDataExtractorService,
+    private readonly textBuilder: ModulesTextBuilderService,
+  ) {}
 
   /**
    * Generates a human-readable summary of a module including its courses, questions, hierarchy, and prerequisites.
@@ -22,8 +26,8 @@ export class ModulesTextSummaryService {
         throw new NotFoundException(`Module with ID ${id} not found`);
       }
 
-      const summaryData = this.extractModuleSummaryData(module);
-      return this.buildModuleSummary(module, summaryData);
+      const summaryData = this.dataExtractor.extractModuleSummaryData(module);
+      return this.textBuilder.buildModuleSummary(module, summaryData);
     } catch (error: unknown) {
       if (error instanceof NotFoundException && error instanceof Error) {
         throw new NotFoundException(error.message);
@@ -89,89 +93,4 @@ export class ModulesTextSummaryService {
     });
   }
 
-  private extractModuleSummaryData(module: any) {
-    const moduleName =
-      (module.name && module.name.en_text) || 'No English translation available';
-
-    const courseNames = module.Course.map(
-      (course: any) => (course.name && course.name.en_text) || 'No English translation available',
-    ).join(', ');
-
-    const questionCount = module.Questions.length;
-    const questionTypes = [
-      ...new Set(module.Questions.map((q: any) => q.type)),
-    ].join(', ');
-
-    const parentModuleNames = module.parentModules
-      .map(
-        (parent: any) =>
-          (parent.name && parent.name.en_text) || 'No English translation available',
-      )
-      .join(', ');
-
-    const subModuleNames = module.subModules
-      .map((sub: any) => (sub.name && sub.name.en_text) || 'No English translation available')
-      .join(', ');
-
-    const prerequisites = this.extractModulePrerequisites(module);
-    const postrequisites = this.extractModulePostrequisites(module);
-
-    return {
-      moduleName,
-      courseNames,
-      questionCount,
-      questionTypes,
-      parentModuleNames,
-      subModuleNames,
-      prerequisites,
-      postrequisites,
-    };
-  }
-
-  private extractModulePrerequisites(module: any): string {
-    if (!module.Block || !module.Block.postrequisiteOf) {
-      return 'None';
-    }
-
-    const prerequisites = module.Block.postrequisiteOf
-      .flatMap(
-        (rel: any) =>
-          (rel.prerequisite.Module && rel.prerequisite.Module.map(
-            (m: any) => (m.name && m.name.en_text) || 'No English translation available',
-          )) || [],
-      )
-      .filter((name: string) => name !== 'No English translation available')
-      .join(', ');
-
-    return prerequisites || 'None';
-  }
-
-  private extractModulePostrequisites(module: any): string {
-    if (!module.Block || !module.Block.prerequisiteFor) {
-      return 'None';
-    }
-
-    const postrequisites = module.Block.prerequisiteFor
-      .flatMap(
-        (rel: any) =>
-          (rel.postrequisite.Module && rel.postrequisite.Module.map(
-            (m: any) => (m.name && m.name.en_text) || 'No English translation available',
-          )) || [],
-      )
-      .filter((name: string) => name !== 'No English translation available')
-      .join(', ');
-
-    return postrequisites || 'None';
-  }
-
-  private buildModuleSummary(module: any, data: any): string {
-    return `Module: ${data.moduleName}
-ID: ${module.id}
-Associated Courses: ${data.courseNames || 'None'}
-Questions: ${data.questionCount} questions of types ${data.questionTypes || 'None'}
-Parent Modules: ${data.parentModuleNames || 'None'}
-Sub-modules: ${data.subModuleNames || 'None'}
-Prerequisites: ${data.prerequisites}
-Postrequisites: ${data.postrequisites}`;
-  }
 }
