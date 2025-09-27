@@ -1,5 +1,6 @@
 import { Prisma, PrismaClient } from '@prisma/client';
-import { BaseUuidValidator, ValidationResult } from './base-uuid-validator';
+import { BaseUuidValidator } from './base-uuid-validator';
+import { ValidationResult } from './types';
 
 export class ModuleValidator extends BaseUuidValidator {
   constructor() {

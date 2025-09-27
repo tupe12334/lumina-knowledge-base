@@ -1,6 +1,7 @@
 import { Logger } from '@nestjs/common';
 import { PrismaClient } from '@prisma/client';
-import { ValidationResult, BaseUuidValidator } from './base-uuid-validator';
+import { BaseUuidValidator } from './base-uuid-validator';
+import { ValidationResult } from './types';
 import { TranslationValidator } from './translation-validator';
 import { QuestionValidator } from './question-validator';
 import { ModuleValidator } from './module-validator';

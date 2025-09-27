@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client';
-import { ValidationResult } from './base-uuid-validator';
+import { ValidationResult } from './types';
 import { UuidValidatorManager } from './uuid-validator-manager.class';
 
 /**

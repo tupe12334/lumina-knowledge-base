@@ -1,12 +1,6 @@
 import { PrismaClient } from '@prisma/client';
 import { validateAndFixAllDatabaseUUIDs as validateUUIDs, UuidValidatorManager } from './validators';
-
-export interface ValidationResult {
-  tableName: string;
-  invalidCount: number;
-  fixedCount: number;
-  errors: string[];
-}
+import { ValidationResult } from './validators/types';
 
 /**
  * Validates and fixes all UUIDs in the database using only type-safe Prisma operations
