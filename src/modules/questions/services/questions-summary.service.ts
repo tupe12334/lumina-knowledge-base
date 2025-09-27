@@ -36,10 +36,11 @@ export class QuestionsSummaryService {
         throw new NotFoundException(`Question with ID ${id} not found`);
       }
 
-      const questionText = question.text?.en_text || 'No English text available';
+      const questionText = question.text && question.text.en_text ? question.text.en_text : 'No English text available';
       const moduleNames = question.Modules
-        ?.map((module) => module.name?.en_text || 'Unknown Module')
-        .join(', ') || 'No modules assigned';
+        ? question.Modules.map((module) => module.name && module.name.en_text ? module.name.en_text : 'Unknown Module')
+            .join(', ')
+        : 'No modules assigned';
 
       const summary = `Question Summary for ${id}
 
@@ -52,9 +53,9 @@ Question Details:
 - Question ID: ${id}
 - Type: ${question.type}
 - Status: ${question.validationStatus}
-- Associated Modules: ${question.Modules?.length || 0}
-- Available Answers: ${question.Answer?.length || 0}
-- Question Parts: ${question.Parts?.length || 0}`;
+- Associated Modules: ${question.Modules ? question.Modules.length : 0}
+- Available Answers: ${question.Answer ? question.Answer.length : 0}
+- Question Parts: ${question.Parts ? question.Parts.length : 0}`;
 
       return summary;
     } catch (error: unknown) {

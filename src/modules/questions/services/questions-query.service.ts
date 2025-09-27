@@ -27,8 +27,8 @@ export class QuestionsQueryService {
     const where = query ? QuestionQueryBuilder.buildWhereClause(query) : {};
     const include = QuestionQueryBuilder.buildInclude();
 
-    const page = query?.page ?? 1;
-    const limit = query?.limit ?? 10;
+    const page = query && query.page !== undefined ? query.page : 1;
+    const limit = query && query.limit !== undefined ? query.limit : 10;
     const skip = (page - 1) * limit;
 
     const [questions, total] = await Promise.all([
