@@ -49,7 +49,9 @@ export const stableStringify = (input: unknown): string => {
         if (Object.prototype.hasOwnProperty.call(value, k)) {
           const descriptor = Object.getOwnPropertyDescriptor(value, k);
           if (descriptor && descriptor.enumerable && typeof k === 'string') {
-            out[k] = normalize(value[k]);
+            // Use Reflect.get for safer property access
+            const propertyValue = Reflect.get(value, k);
+            Reflect.set(out, k, normalize(propertyValue));
           }
         }
       }
