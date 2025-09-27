@@ -1,0 +1,5129 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/health": {
+      "get": {
+        "description": "Checks the health of various services including database, memory, and disk.",
+        "operationId": "HealthController_check",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "The Health Check is successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "ok"
+                    },
+                    "info": {
+                      "type": "object",
+                      "example": {
+                        "database": {
+                          "status": "up"
+                        }
+                      },
+                      "additionalProperties": {
+                        "type": "object",
+                        "required": [
+                          "status"
+                        ],
+                        "properties": {
+                          "status": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": true
+                      },
+                      "nullable": true
+                    },
+                    "error": {
+                      "type": "object",
+                      "example": {},
+                      "additionalProperties": {
+                        "type": "object",
+                        "required": [
+                          "status"
+                        ],
+                        "properties": {
+                          "status": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": true
+                      },
+                      "nullable": true
+                    },
+                    "details": {
+                      "type": "object",
+                      "example": {
+                        "database": {
+                          "status": "up"
+                        }
+                      },
+                      "additionalProperties": {
+                        "type": "object",
+                        "required": [
+                          "status"
+                        ],
+                        "properties": {
+                          "status": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Health check failed"
+          },
+          "503": {
+            "description": "The Health Check is not successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "error"
+                    },
+                    "info": {
+                      "type": "object",
+                      "example": {
+                        "database": {
+                          "status": "up"
+                        }
+                      },
+                      "additionalProperties": {
+                        "type": "object",
+                        "required": [
+                          "status"
+                        ],
+                        "properties": {
+                          "status": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": true
+                      },
+                      "nullable": true
+                    },
+                    "error": {
+                      "type": "object",
+                      "example": {
+                        "redis": {
+                          "status": "down",
+                          "message": "Could not connect"
+                        }
+                      },
+                      "additionalProperties": {
+                        "type": "object",
+                        "required": [
+                          "status"
+                        ],
+                        "properties": {
+                          "status": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": true
+                      },
+                      "nullable": true
+                    },
+                    "details": {
+                      "type": "object",
+                      "example": {
+                        "database": {
+                          "status": "up"
+                        },
+                        "redis": {
+                          "status": "down",
+                          "message": "Could not connect"
+                        }
+                      },
+                      "additionalProperties": {
+                        "type": "object",
+                        "required": [
+                          "status"
+                        ],
+                        "properties": {
+                          "status": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "Perform health check",
+        "tags": [
+          "health"
+        ]
+      }
+    },
+    "/health/liveness": {
+      "get": {
+        "description": "Checks if the application is alive.",
+        "operationId": "HealthController_liveness",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "The Health Check is successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "ok"
+                    },
+                    "info": {
+                      "type": "object",
+                      "example": {
+                        "database": {
+                          "status": "up"
+                        }
+                      },
+                      "additionalProperties": {
+                        "type": "object",
+                        "required": [
+                          "status"
+                        ],
+                        "properties": {
+                          "status": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": true
+                      },
+                      "nullable": true
+                    },
+                    "error": {
+                      "type": "object",
+                      "example": {},
+                      "additionalProperties": {
+                        "type": "object",
+                        "required": [
+                          "status"
+                        ],
+                        "properties": {
+                          "status": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": true
+                      },
+                      "nullable": true
+                    },
+                    "details": {
+                      "type": "object",
+                      "example": {
+                        "database": {
+                          "status": "up"
+                        }
+                      },
+                      "additionalProperties": {
+                        "type": "object",
+                        "required": [
+                          "status"
+                        ],
+                        "properties": {
+                          "status": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Liveness check failed"
+          },
+          "503": {
+            "description": "The Health Check is not successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "error"
+                    },
+                    "info": {
+                      "type": "object",
+                      "example": {
+                        "database": {
+                          "status": "up"
+                        }
+                      },
+                      "additionalProperties": {
+                        "type": "object",
+                        "required": [
+                          "status"
+                        ],
+                        "properties": {
+                          "status": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": true
+                      },
+                      "nullable": true
+                    },
+                    "error": {
+                      "type": "object",
+                      "example": {
+                        "redis": {
+                          "status": "down",
+                          "message": "Could not connect"
+                        }
+                      },
+                      "additionalProperties": {
+                        "type": "object",
+                        "required": [
+                          "status"
+                        ],
+                        "properties": {
+                          "status": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": true
+                      },
+                      "nullable": true
+                    },
+                    "details": {
+                      "type": "object",
+                      "example": {
+                        "database": {
+                          "status": "up"
+                        },
+                        "redis": {
+                          "status": "down",
+                          "message": "Could not connect"
+                        }
+                      },
+                      "additionalProperties": {
+                        "type": "object",
+                        "required": [
+                          "status"
+                        ],
+                        "properties": {
+                          "status": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "Perform liveness check",
+        "tags": [
+          "health"
+        ]
+      }
+    },
+    "/health/readiness": {
+      "get": {
+        "description": "Checks if the application is ready to handle requests.",
+        "operationId": "HealthController_readiness",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "The Health Check is successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "ok"
+                    },
+                    "info": {
+                      "type": "object",
+                      "example": {
+                        "database": {
+                          "status": "up"
+                        }
+                      },
+                      "additionalProperties": {
+                        "type": "object",
+                        "required": [
+                          "status"
+                        ],
+                        "properties": {
+                          "status": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": true
+                      },
+                      "nullable": true
+                    },
+                    "error": {
+                      "type": "object",
+                      "example": {},
+                      "additionalProperties": {
+                        "type": "object",
+                        "required": [
+                          "status"
+                        ],
+                        "properties": {
+                          "status": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": true
+                      },
+                      "nullable": true
+                    },
+                    "details": {
+                      "type": "object",
+                      "example": {
+                        "database": {
+                          "status": "up"
+                        }
+                      },
+                      "additionalProperties": {
+                        "type": "object",
+                        "required": [
+                          "status"
+                        ],
+                        "properties": {
+                          "status": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Readiness check failed"
+          },
+          "503": {
+            "description": "The Health Check is not successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "error"
+                    },
+                    "info": {
+                      "type": "object",
+                      "example": {
+                        "database": {
+                          "status": "up"
+                        }
+                      },
+                      "additionalProperties": {
+                        "type": "object",
+                        "required": [
+                          "status"
+                        ],
+                        "properties": {
+                          "status": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": true
+                      },
+                      "nullable": true
+                    },
+                    "error": {
+                      "type": "object",
+                      "example": {
+                        "redis": {
+                          "status": "down",
+                          "message": "Could not connect"
+                        }
+                      },
+                      "additionalProperties": {
+                        "type": "object",
+                        "required": [
+                          "status"
+                        ],
+                        "properties": {
+                          "status": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": true
+                      },
+                      "nullable": true
+                    },
+                    "details": {
+                      "type": "object",
+                      "example": {
+                        "database": {
+                          "status": "up"
+                        },
+                        "redis": {
+                          "status": "down",
+                          "message": "Could not connect"
+                        }
+                      },
+                      "additionalProperties": {
+                        "type": "object",
+                        "required": [
+                          "status"
+                        ],
+                        "properties": {
+                          "status": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "Perform readiness check",
+        "tags": [
+          "health"
+        ]
+      }
+    },
+    "/database/dump": {
+      "get": {
+        "description": "Retrieves a dump of the database in SQL format.",
+        "operationId": "DatabaseController_getDump",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Database dump in SQL format"
+          },
+          "500": {
+            "description": "Failed to create database dump"
+          }
+        },
+        "summary": "Get database dump",
+        "tags": [
+          "database"
+        ]
+      }
+    },
+    "/database/info": {
+      "get": {
+        "description": "Retrieves information about the database.",
+        "operationId": "DatabaseController_getDatabaseInfo",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Database information"
+          },
+          "500": {
+            "description": "Failed to get database info"
+          }
+        },
+        "summary": "Get database information",
+        "tags": [
+          "database"
+        ]
+      }
+    },
+    "/universities": {
+      "post": {
+        "description": "Creates a new institution record.",
+        "operationId": "InstitutionsController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateInstitutionInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The newly created institution.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Institution"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Create a new institution",
+        "tags": [
+          "universities"
+        ]
+      },
+      "get": {
+        "description": "Returns a list of all institutions.",
+        "operationId": "InstitutionsController_findAll",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "A list of institutions.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Institution"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Retrieve all institutions",
+        "tags": [
+          "universities"
+        ]
+      }
+    },
+    "/universities/bulk": {
+      "post": {
+        "description": "Creates multiple institution records in a single operation.",
+        "operationId": "InstitutionsController_createMany",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateManyInstitutionsInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The number of institutions created.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "number",
+                      "description": "Number of institutions created",
+                      "example": 5
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Create multiple institutions",
+        "tags": [
+          "universities"
+        ]
+      }
+    },
+    "/universities/{id}": {
+      "get": {
+        "description": "Returns a single institution by its ID.",
+        "operationId": "InstitutionsController_findOne",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "The ID of the institution",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The institution with the specified ID.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Institution"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Institution not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Retrieve an institution by ID",
+        "tags": [
+          "universities"
+        ]
+      },
+      "put": {
+        "description": "Updates an existing institution record.",
+        "operationId": "InstitutionsController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "The ID of the institution",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The updated institution.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Institution"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "404": {
+            "description": "Institution not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Update an institution by ID",
+        "tags": [
+          "universities"
+        ]
+      },
+      "delete": {
+        "description": "Deletes an institution record by its ID.",
+        "operationId": "InstitutionsController_remove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "The ID of the institution",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Institution successfully deleted."
+          },
+          "404": {
+            "description": "Institution not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Delete an institution by ID",
+        "tags": [
+          "universities"
+        ]
+      }
+    },
+    "/universities/{id}/summary": {
+      "get": {
+        "description": "Returns a human-readable plain text summary for the specified institution.",
+        "operationId": "InstitutionsController_getSummary",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "The ID of the institution",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Plain text summary of the institution",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID format"
+          },
+          "404": {
+            "description": "University not found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "summary": "Get institution summary",
+        "tags": [
+          "universities"
+        ]
+      }
+    },
+    "/courses": {
+      "post": {
+        "description": "Creates a new course record.",
+        "operationId": "CoursesController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCourseInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The newly created course.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Course"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Create a new course",
+        "tags": [
+          "courses"
+        ]
+      },
+      "get": {
+        "description": "Returns a list of all courses. Optionally filter by university or degree.",
+        "operationId": "CoursesController_findAll",
+        "parameters": [
+          {
+            "name": "universityId",
+            "required": false,
+            "in": "query",
+            "description": "Filter courses by institution ID",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "degreeId",
+            "required": false,
+            "in": "query",
+            "description": "Filter courses by degree ID",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortByDegree",
+            "required": false,
+            "in": "query",
+            "description": "Sort courses to prioritize degree courses first",
+            "schema": {
+              "default": false,
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of courses.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Course"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Retrieve all courses",
+        "tags": [
+          "courses"
+        ]
+      }
+    },
+    "/courses/bulk": {
+      "post": {
+        "description": "Creates multiple course records in a single operation.",
+        "operationId": "CoursesController_createMany",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateManyCoursesInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The number of courses created.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "number",
+                      "description": "Number of courses created",
+                      "example": 5
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Create multiple courses",
+        "tags": [
+          "courses"
+        ]
+      }
+    },
+    "/courses/{id}": {
+      "get": {
+        "description": "Returns a single course by its ID.",
+        "operationId": "CoursesController_findOne",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "The ID of the course",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The course with the specified ID.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Course"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Course not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Retrieve a course by ID",
+        "tags": [
+          "courses"
+        ]
+      },
+      "put": {
+        "description": "Updates an existing course record.",
+        "operationId": "CoursesController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "The ID of the course",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The updated course.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Course"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "404": {
+            "description": "Course not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Update a course by ID",
+        "tags": [
+          "courses"
+        ]
+      },
+      "delete": {
+        "description": "Deletes a course record by its ID.",
+        "operationId": "CoursesController_remove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "The ID of the course",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Course successfully deleted."
+          },
+          "404": {
+            "description": "Course not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Delete a course by ID",
+        "tags": [
+          "courses"
+        ]
+      }
+    },
+    "/courses/relationship": {
+      "post": {
+        "description": "Creates a new relationship between courses.",
+        "operationId": "CoursesController_createRelationship",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCourseRelationshipInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The newly created course relationship.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CourseRelationshipResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Create a course relationship",
+        "tags": [
+          "courses"
+        ]
+      },
+      "delete": {
+        "description": "Deletes an existing relationship between courses.",
+        "operationId": "CoursesController_deleteRelationship",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteCourseRelationshipInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Course relationship successfully deleted."
+          },
+          "404": {
+            "description": "Course relationship not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Delete a course relationship",
+        "tags": [
+          "courses"
+        ]
+      }
+    },
+    "/courses/{id}/modules": {
+      "post": {
+        "description": "Sets or updates the modules associated with a course.",
+        "operationId": "CoursesController_setModules",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "The ID of the course",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The course with the updated modules.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Course"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "404": {
+            "description": "Course or Module not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Set modules for a course",
+        "tags": [
+          "courses"
+        ]
+      }
+    },
+    "/courses/{id}/summary": {
+      "get": {
+        "description": "Returns a human-readable plain text summary for the specified course.",
+        "operationId": "CoursesController_getSummary",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "The ID of the course",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Plain text summary of the course",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID format"
+          },
+          "404": {
+            "description": "Course not found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "summary": "Get course summary",
+        "tags": [
+          "courses"
+        ]
+      }
+    },
+    "/modules": {
+      "post": {
+        "description": "Creates a new module record.",
+        "operationId": "ModulesController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateModuleInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The newly created module.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Module"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Create a new module",
+        "tags": [
+          "modules"
+        ]
+      },
+      "get": {
+        "description": "Returns a list of all modules.",
+        "operationId": "ModulesController_findAll",
+        "parameters": [
+          {
+            "name": "minQuestions",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "maxQuestions",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "exactQuestions",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "courseId",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "universityId",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "nameSearch",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "hasQuestions",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "hasPrerequisites",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "hasPostrequisites",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "hasSubModules",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "hasParentModules",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "fewQuestions",
+            "required": false,
+            "in": "query",
+            "description": "Filter modules with fewer than 20 questions",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of modules.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Module"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Retrieve all modules",
+        "tags": [
+          "modules"
+        ]
+      }
+    },
+    "/modules/bulk": {
+      "post": {
+        "description": "Creates multiple module records in a single operation.",
+        "operationId": "ModulesController_createMany",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateManyModulesInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The number of modules created.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "number",
+                      "description": "Number of modules created",
+                      "example": 5
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Create multiple modules",
+        "tags": [
+          "modules"
+        ]
+      }
+    },
+    "/modules/questions-data": {
+      "get": {
+        "description": "Returns all modules with id, en_name, and questions_amount, sorted by question count (least questions first).",
+        "operationId": "ModulesController_getModulesQuestionsData",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "A list of modules with their question counts.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "en_name": {
+                        "type": "string"
+                      },
+                      "questions_amount": {
+                        "type": "number"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Get modules questions data",
+        "tags": [
+          "modules"
+        ]
+      }
+    },
+    "/modules/by-questions": {
+      "get": {
+        "description": "Returns modules sorted by question count (least questions first). Use limit query parameter to specify number of results.",
+        "operationId": "ModulesController_getModulesByQuestionCount",
+        "parameters": [
+          {
+            "name": "limit",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of modules sorted by question count (least to most).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "en_name": {
+                        "type": "string"
+                      },
+                      "questions_amount": {
+                        "type": "number"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Get modules sorted by question count",
+        "tags": [
+          "modules"
+        ]
+      }
+    },
+    "/modules/{id}": {
+      "get": {
+        "description": "Returns a single module by its ID.",
+        "operationId": "ModulesController_findOne",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "The ID of the module",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The module with the specified ID.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Module"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Module not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Retrieve a module by ID",
+        "tags": [
+          "modules"
+        ]
+      },
+      "put": {
+        "description": "Updates an existing module record.",
+        "operationId": "ModulesController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "The ID of the module",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The updated module.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Module"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "404": {
+            "description": "Module not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Update a module by ID",
+        "tags": [
+          "modules"
+        ]
+      },
+      "delete": {
+        "description": "Deletes a module record by its ID.",
+        "operationId": "ModulesController_remove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "The ID of the module",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Module successfully deleted."
+          },
+          "404": {
+            "description": "Module not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Delete a module by ID",
+        "tags": [
+          "modules"
+        ]
+      }
+    },
+    "/modules/relationship": {
+      "post": {
+        "description": "Creates a new relationship between modules.",
+        "operationId": "ModulesController_createRelationship",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateModuleRelationshipInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The newly created module relationship.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModuleRelationshipResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Create a module relationship",
+        "tags": [
+          "modules"
+        ]
+      },
+      "delete": {
+        "description": "Deletes an existing relationship between modules.",
+        "operationId": "ModulesController_deleteRelationship",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteModuleRelationshipInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Module relationship successfully deleted."
+          },
+          "404": {
+            "description": "Module relationship not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Delete a module relationship",
+        "tags": [
+          "modules"
+        ]
+      }
+    },
+    "/modules/{id}/summary": {
+      "get": {
+        "description": "Returns a human-readable plain text summary for the specified module.",
+        "operationId": "ModulesController_getSummary",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "The ID of the module",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Plain text summary of the module",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID format"
+          },
+          "404": {
+            "description": "Module not found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "summary": "Get module summary",
+        "tags": [
+          "modules"
+        ]
+      }
+    },
+    "/questions": {
+      "post": {
+        "description": "Creates a new question record.",
+        "operationId": "QuestionsController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateQuestionInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The newly created question.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Question"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Create a new question",
+        "tags": [
+          "questions"
+        ]
+      },
+      "get": {
+        "description": "Returns a list of all questions.",
+        "operationId": "QuestionsController_findAll",
+        "parameters": [
+          {
+            "name": "id",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "type",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/QuestionType"
+            }
+          },
+          {
+            "name": "validationStatus",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/QuestionValidationStatus"
+            }
+          },
+          {
+            "name": "moduleId",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "moduleIds",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "includeSubmodules",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "courseId",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "courseIds",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "questionType",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/QuestionType"
+            }
+          },
+          {
+            "name": "questionTypes",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/QuestionType"
+            }
+          },
+          {
+            "name": "offset",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "minimum": 0,
+              "type": "number"
+            }
+          },
+          {
+            "name": "limit",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "minimum": 1,
+              "maximum": 100,
+              "type": "number"
+            }
+          },
+          {
+            "name": "ids",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "textSearch",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "hasParts",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "hasAnswers",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "page",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "minimum": 1,
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of questions.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Question"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Retrieve all questions",
+        "tags": [
+          "questions"
+        ]
+      }
+    },
+    "/questions/bulk": {
+      "post": {
+        "description": "Creates multiple question records in a single operation.",
+        "operationId": "QuestionsController_createMany",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateManyQuestionsInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The number of questions created.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "number",
+                      "description": "Number of questions created",
+                      "example": 5
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Create multiple questions",
+        "tags": [
+          "questions"
+        ]
+      }
+    },
+    "/questions/bulk-complete": {
+      "post": {
+        "description": "Creates multiple complete question records with translations and answers in a single operation.",
+        "operationId": "QuestionsController_createCompleteMany",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCompleteQuestionsInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The number of questions created.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "number",
+                      "description": "Number of questions created",
+                      "example": 5
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Create complete questions with translations and answers",
+        "tags": [
+          "questions"
+        ]
+      }
+    },
+    "/questions/paginated": {
+      "get": {
+        "description": "Returns paginated questions for infinite scroll.",
+        "operationId": "QuestionsController_findAllPaginated",
+        "parameters": [
+          {
+            "name": "id",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "type",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/QuestionType"
+            }
+          },
+          {
+            "name": "validationStatus",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/QuestionValidationStatus"
+            }
+          },
+          {
+            "name": "moduleId",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "moduleIds",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "includeSubmodules",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "courseId",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "courseIds",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "questionType",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/QuestionType"
+            }
+          },
+          {
+            "name": "questionTypes",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/QuestionType"
+            }
+          },
+          {
+            "name": "offset",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "minimum": 0,
+              "type": "number"
+            }
+          },
+          {
+            "name": "limit",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "minimum": 1,
+              "maximum": 100,
+              "type": "number"
+            }
+          },
+          {
+            "name": "ids",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "textSearch",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "hasParts",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "hasAnswers",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "page",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "minimum": 1,
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paginated questions with metadata.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaginatedQuestionsResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Retrieve paginated questions",
+        "tags": [
+          "questions"
+        ]
+      }
+    },
+    "/questions/{id}": {
+      "get": {
+        "description": "Returns a single question by its ID.",
+        "operationId": "QuestionsController_findOne",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "The ID of the question",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The question with the specified ID.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Question"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Question not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Retrieve a question by ID",
+        "tags": [
+          "questions"
+        ]
+      },
+      "put": {
+        "description": "Updates an existing question record.",
+        "operationId": "QuestionsController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "The ID of the question",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The updated question.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Question"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "404": {
+            "description": "Question not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Update a question by ID",
+        "tags": [
+          "questions"
+        ]
+      },
+      "delete": {
+        "description": "Deletes a question record by its ID.",
+        "operationId": "QuestionsController_remove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "The ID of the question",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Question successfully deleted."
+          },
+          "404": {
+            "description": "Question not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Delete a question by ID",
+        "tags": [
+          "questions"
+        ]
+      }
+    },
+    "/questions/{id}/summary": {
+      "get": {
+        "description": "Returns a human-readable plain text summary for the specified question.",
+        "operationId": "QuestionsController_getSummary",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "The ID of the question",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Plain text summary of the question",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID format"
+          },
+          "404": {
+            "description": "Question not found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "summary": "Get question summary",
+        "tags": [
+          "questions"
+        ]
+      }
+    },
+    "/degrees": {
+      "post": {
+        "description": "Creates a new degree record.",
+        "operationId": "DegreesController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateDegreeInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The newly created degree.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Degree"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Create a new degree",
+        "tags": [
+          "degrees"
+        ]
+      },
+      "get": {
+        "description": "Returns a list of all degrees.",
+        "operationId": "DegreesController_findAll",
+        "parameters": [
+          {
+            "name": "name",
+            "required": false,
+            "in": "query",
+            "description": "Filter by name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "facultyId",
+            "required": false,
+            "in": "query",
+            "description": "Filter by faculty id",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "universityId",
+            "required": false,
+            "in": "query",
+            "description": "Filter by institution id",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "minCourseCount",
+            "required": false,
+            "in": "query",
+            "description": "Filter by minimum course count",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of degrees.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Degree"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Retrieve all degrees",
+        "tags": [
+          "degrees"
+        ]
+      }
+    },
+    "/degrees/bulk": {
+      "post": {
+        "description": "Creates multiple degree records in a single operation.",
+        "operationId": "DegreesController_createMany",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateManyDegreesInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The number of degrees created.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "number",
+                      "description": "Number of degrees created",
+                      "example": 5
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Create multiple degrees",
+        "tags": [
+          "degrees"
+        ]
+      }
+    },
+    "/degrees/{id}": {
+      "get": {
+        "description": "Returns a single degree by its ID.",
+        "operationId": "DegreesController_findOne",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "The ID of the degree",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The degree with the specified ID.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Degree"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Degree not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Retrieve a degree by ID",
+        "tags": [
+          "degrees"
+        ]
+      },
+      "put": {
+        "description": "Updates an existing degree record.",
+        "operationId": "DegreesController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "The ID of the degree",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The updated degree.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Degree"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "404": {
+            "description": "Degree not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Update a degree by ID",
+        "tags": [
+          "degrees"
+        ]
+      },
+      "delete": {
+        "description": "Deletes a degree record by its ID.",
+        "operationId": "DegreesController_remove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "The ID of the degree",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Degree successfully deleted."
+          },
+          "404": {
+            "description": "Degree not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Delete a degree by ID",
+        "tags": [
+          "degrees"
+        ]
+      }
+    },
+    "/degrees/{id}/faculty": {
+      "post": {
+        "description": "Sets or updates the faculty associated with a degree.",
+        "operationId": "DegreesController_setFaculty",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "The ID of the degree",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The degree with the updated faculty.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Degree"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "404": {
+            "description": "Degree or Faculty not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Set faculty for a degree",
+        "tags": [
+          "degrees"
+        ]
+      }
+    },
+    "/degrees/{id}/courses": {
+      "post": {
+        "description": "Adds a course to the specified degree.",
+        "operationId": "DegreesController_addCourse",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "The ID of the degree",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddCourseDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The degree with the added course.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Degree"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "404": {
+            "description": "Degree or Course not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Add a course to a degree",
+        "tags": [
+          "degrees"
+        ]
+      },
+      "get": {
+        "description": "Returns all courses associated with the specified degree.",
+        "operationId": "DegreesController_getCourses",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "The ID of the degree",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of courses for the degree"
+          },
+          "400": {
+            "description": "Invalid ID format"
+          },
+          "404": {
+            "description": "Degree not found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "summary": "Get courses for a degree",
+        "tags": [
+          "degrees"
+        ]
+      }
+    },
+    "/degrees/{id}/courses/{courseId}": {
+      "delete": {
+        "description": "Removes a course from the specified degree.",
+        "operationId": "DegreesController_removeCourse",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "The ID of the degree",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "courseId",
+            "required": true,
+            "in": "path",
+            "description": "The ID of the course to remove",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The degree with the course removed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Degree"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "404": {
+            "description": "Degree or Course not found, or Course not associated with Degree."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Remove a course from a degree",
+        "tags": [
+          "degrees"
+        ]
+      }
+    },
+    "/degrees/{id}/summary": {
+      "get": {
+        "description": "Returns a human-readable plain text summary for the specified degree.",
+        "operationId": "DegreesController_getSummary",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "The ID of the degree",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Plain text summary of the degree",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID format"
+          },
+          "404": {
+            "description": "Degree not found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "summary": "Get degree summary",
+        "tags": [
+          "degrees"
+        ]
+      }
+    },
+    "/blocks": {
+      "post": {
+        "operationId": "BlocksController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateBlockInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Block"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Create a new block",
+        "tags": [
+          "blocks"
+        ]
+      },
+      "get": {
+        "operationId": "BlocksController_findAll",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Block"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "Retrieve all blocks",
+        "tags": [
+          "blocks"
+        ]
+      }
+    },
+    "/blocks/bulk": {
+      "post": {
+        "operationId": "BlocksController_createMany",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateManyBlocksInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Number of blocks created"
+          }
+        },
+        "summary": "Create multiple blocks",
+        "tags": [
+          "blocks"
+        ]
+      }
+    },
+    "/blocks/{id}": {
+      "get": {
+        "operationId": "BlocksController_findOne",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Block"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Retrieve a block by ID",
+        "tags": [
+          "blocks"
+        ]
+      },
+      "put": {
+        "operationId": "BlocksController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateBlockInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Block"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Update a block by ID",
+        "tags": [
+          "blocks"
+        ]
+      },
+      "delete": {
+        "operationId": "BlocksController_remove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        },
+        "summary": "Delete a block by ID",
+        "tags": [
+          "blocks"
+        ]
+      }
+    },
+    "/blocks/relationship": {
+      "post": {
+        "operationId": "BlocksController_createRelationship",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateBlockRelationshipInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BlockRelationshipResult"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Create a block relationship",
+        "tags": [
+          "blocks"
+        ]
+      },
+      "delete": {
+        "operationId": "BlocksController_deleteRelationship",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteBlockRelationshipInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        },
+        "summary": "Delete a block relationship",
+        "tags": [
+          "blocks"
+        ]
+      }
+    },
+    "/faculties": {
+      "post": {
+        "description": "Creates a new faculty record.",
+        "operationId": "FacultiesController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateFacultyInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Faculty created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Faculty"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Create a new faculty",
+        "tags": [
+          "faculties"
+        ]
+      },
+      "get": {
+        "description": "Returns a list of all faculties.",
+        "operationId": "FacultiesController_findAll",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "A list of faculties.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Faculty"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Retrieve all faculties",
+        "tags": [
+          "faculties"
+        ]
+      }
+    },
+    "/faculties/bulk": {
+      "post": {
+        "description": "Creates multiple faculty records in a single operation.",
+        "operationId": "FacultiesController_createMany",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateManyFacultiesInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The number of faculties created.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "number",
+                      "description": "Number of faculties created",
+                      "example": 5
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Create multiple faculties",
+        "tags": [
+          "faculties"
+        ]
+      }
+    },
+    "/faculties/{id}": {
+      "get": {
+        "description": "Returns a single faculty by its ID.",
+        "operationId": "FacultiesController_findOne",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "The ID of the faculty",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The faculty with the specified ID.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Faculty"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Faculty not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Retrieve a faculty by ID",
+        "tags": [
+          "faculties"
+        ]
+      },
+      "put": {
+        "description": "Updates an existing faculty record.",
+        "operationId": "FacultiesController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "The ID of the faculty",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The updated faculty.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Faculty"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request."
+          },
+          "404": {
+            "description": "Faculty not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Update a faculty by ID",
+        "tags": [
+          "faculties"
+        ]
+      },
+      "delete": {
+        "description": "Deletes a faculty record by its ID.",
+        "operationId": "FacultiesController_remove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "The ID of the faculty",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Faculty deleted"
+          },
+          "404": {
+            "description": "Faculty not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Delete a faculty by ID",
+        "tags": [
+          "faculties"
+        ]
+      }
+    },
+    "/faculties/university/{universityId}": {
+      "get": {
+        "description": "Returns a list of faculties associated with a specific university ID.",
+        "operationId": "FacultiesController_findByUniversity",
+        "parameters": [
+          {
+            "name": "universityId",
+            "required": true,
+            "in": "path",
+            "description": "The ID of the university",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of faculties for the specified university.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Faculty"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "University not found."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        },
+        "summary": "Retrieve faculties by university ID",
+        "tags": [
+          "faculties"
+        ]
+      }
+    },
+    "/translations": {
+      "post": {
+        "operationId": "TranslationsController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateTranslationInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Translation"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Create a new translation",
+        "tags": [
+          "translations"
+        ]
+      },
+      "get": {
+        "operationId": "TranslationsController_findAll",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Translation"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "Retrieve all translations",
+        "tags": [
+          "translations"
+        ]
+      }
+    },
+    "/translations/bulk": {
+      "post": {
+        "operationId": "TranslationsController_createMany",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateManyTranslationsInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Number of translations created"
+          }
+        },
+        "summary": "Create multiple translations",
+        "tags": [
+          "translations"
+        ]
+      }
+    },
+    "/translations/{id}": {
+      "get": {
+        "operationId": "TranslationsController_findOne",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Translation"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Retrieve a translation by ID",
+        "tags": [
+          "translations"
+        ]
+      },
+      "put": {
+        "operationId": "TranslationsController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTranslationInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Translation"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Update a translation by ID",
+        "tags": [
+          "translations"
+        ]
+      },
+      "delete": {
+        "operationId": "TranslationsController_remove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        },
+        "summary": "Delete a translation by ID",
+        "tags": [
+          "translations"
+        ]
+      }
+    },
+    "/answers": {
+      "post": {
+        "operationId": "AnswersController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAnswerInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Answer"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Create a new answer",
+        "tags": [
+          "answers"
+        ]
+      },
+      "get": {
+        "operationId": "AnswersController_findAll",
+        "parameters": [
+          {
+            "name": "questionId",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Answer"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "Retrieve all answers",
+        "tags": [
+          "answers"
+        ]
+      }
+    },
+    "/answers/bulk": {
+      "post": {
+        "operationId": "AnswersController_createMany",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateManyAnswersInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Number of answers created"
+          }
+        },
+        "summary": "Create multiple answers",
+        "tags": [
+          "answers"
+        ]
+      }
+    },
+    "/answers/{id}": {
+      "get": {
+        "operationId": "AnswersController_findOne",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Answer"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Retrieve an answer by ID",
+        "tags": [
+          "answers"
+        ]
+      },
+      "put": {
+        "operationId": "AnswersController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Answer"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Update an answer by ID",
+        "tags": [
+          "answers"
+        ]
+      },
+      "delete": {
+        "operationId": "AnswersController_remove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        },
+        "summary": "Delete an answer by ID",
+        "tags": [
+          "answers"
+        ]
+      }
+    },
+    "/system/db-hash": {
+      "get": {
+        "description": "Returns a deterministic SHA-256 hash representing the current database contents.",
+        "operationId": "DataHashController_getDbHash",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Database data hash"
+          }
+        },
+        "summary": "Get database data hash",
+        "tags": [
+          "system"
+        ]
+      }
+    }
+  },
+  "info": {
+    "title": "Lumina API",
+    "description": "API documentation for Lumina server",
+    "version": "1.0",
+    "contact": {}
+  },
+  "tags": [],
+  "servers": [],
+  "components": {
+    "schemas": {
+      "CreateInstitutionInput": {
+        "type": "object",
+        "properties": {
+          "en_text": {
+            "type": "string",
+            "description": "English name of the institution"
+          },
+          "he_text": {
+            "type": "string",
+            "description": "Hebrew name of the institution"
+          }
+        },
+        "required": [
+          "en_text",
+          "he_text"
+        ]
+      },
+      "Translation": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "en_text": {
+            "type": "string"
+          },
+          "he_text": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "en_text",
+          "he_text"
+        ]
+      },
+      "Faculty": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "$ref": "#/components/schemas/Translation"
+          },
+          "description": {
+            "$ref": "#/components/schemas/Translation"
+          },
+          "degrees": {
+            "nullable": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Degree"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "description",
+          "degrees"
+        ]
+      },
+      "Degree": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "$ref": "#/components/schemas/Translation"
+          },
+          "institutionId": {
+            "type": "string"
+          },
+          "institution": {
+            "nullable": true,
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Institution"
+              }
+            ]
+          },
+          "courses": {
+            "nullable": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Course"
+            }
+          },
+          "facultyId": {
+            "type": "string",
+            "nullable": true
+          },
+          "faculty": {
+            "nullable": true,
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Faculty"
+              }
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "institutionId",
+          "institution",
+          "courses",
+          "facultyId",
+          "faculty"
+        ]
+      },
+      "Institution": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "$ref": "#/components/schemas/Translation"
+          },
+          "courses": {
+            "nullable": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Course"
+            }
+          },
+          "degrees": {
+            "nullable": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Degree"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "courses",
+          "degrees"
+        ]
+      },
+      "RelationshipMetadataKey": {
+        "type": "string",
+        "enum": [
+          "REASON",
+          "TYPE",
+          "DESCRIPTION"
+        ]
+      },
+      "RelationshipMetadata": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "key": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/RelationshipMetadataKey"
+              }
+            ]
+          },
+          "value": {
+            "type": "string"
+          },
+          "blockRelationshipId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "key",
+          "value",
+          "blockRelationshipId"
+        ]
+      },
+      "BlockRelationship": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "prerequisiteId": {
+            "type": "string"
+          },
+          "postrequisiteId": {
+            "type": "string"
+          },
+          "prerequisite": {
+            "nullable": true,
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Block"
+              }
+            ]
+          },
+          "postrequisite": {
+            "nullable": true,
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Block"
+              }
+            ]
+          },
+          "metadata": {
+            "nullable": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RelationshipMetadata"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "prerequisiteId",
+          "postrequisiteId",
+          "prerequisite",
+          "postrequisite",
+          "metadata"
+        ]
+      },
+      "Block": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "prerequisiteFor": {
+            "nullable": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BlockRelationship"
+            }
+          },
+          "postrequisiteOf": {
+            "nullable": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BlockRelationship"
+            }
+          },
+          "modules": {
+            "nullable": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Module"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "prerequisiteFor",
+          "postrequisiteOf",
+          "modules"
+        ]
+      },
+      "QuestionValidationStatus": {
+        "type": "string",
+        "enum": [
+          "ai_generated",
+          "in_manual_review",
+          "approved",
+          "rejected"
+        ]
+      },
+      "SelectAnswer": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "isCorrect": {
+            "type": "boolean"
+          },
+          "translationId": {
+            "type": "string"
+          },
+          "text": {
+            "$ref": "#/components/schemas/Translation"
+          },
+          "answerId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "isCorrect",
+          "translationId",
+          "text",
+          "answerId"
+        ]
+      },
+      "UnitAnswer": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "value": {
+            "type": "number"
+          },
+          "unit": {
+            "type": "string"
+          },
+          "answerId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "value",
+          "unit",
+          "answerId"
+        ]
+      },
+      "NumberAnswer": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "value": {
+            "type": "number"
+          },
+          "answerId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "value",
+          "answerId"
+        ]
+      },
+      "BooleanAnswer": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "value": {
+            "type": "boolean"
+          },
+          "answerId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "value",
+          "answerId"
+        ]
+      },
+      "Answer": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "questionId": {
+            "type": "string"
+          },
+          "SelectAnswer": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SelectAnswer"
+            }
+          },
+          "UnitAnswer": {
+            "$ref": "#/components/schemas/UnitAnswer"
+          },
+          "NumberAnswer": {
+            "$ref": "#/components/schemas/NumberAnswer"
+          }
+        },
+        "required": [
+          "id",
+          "questionId"
+        ]
+      },
+      "QuestionType": {
+        "type": "string",
+        "enum": [
+          "selection",
+          "value",
+          "boolean",
+          "void"
+        ]
+      },
+      "QuestionPart": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "questionId": {
+            "type": "string"
+          },
+          "partQuestionId": {
+            "type": "string"
+          },
+          "order": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "id",
+          "questionId",
+          "partQuestionId",
+          "order"
+        ]
+      },
+      "Question": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "validationStatus": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/QuestionValidationStatus"
+              }
+            ]
+          },
+          "translationId": {
+            "type": "string"
+          },
+          "text": {
+            "$ref": "#/components/schemas/Translation"
+          },
+          "Answer": {
+            "nullable": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Answer"
+            }
+          },
+          "type": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/QuestionType"
+              }
+            ]
+          },
+          "Modules": {
+            "nullable": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Module"
+            }
+          },
+          "Parts": {
+            "nullable": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/QuestionPart"
+            }
+          },
+          "PartOf": {
+            "nullable": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/QuestionPart"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "validationStatus",
+          "translationId",
+          "text",
+          "Answer",
+          "type",
+          "Modules",
+          "Parts",
+          "PartOf"
+        ]
+      },
+      "Module": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "$ref": "#/components/schemas/Translation"
+          },
+          "translationId": {
+            "type": "string"
+          },
+          "subModules": {
+            "nullable": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Module"
+            }
+          },
+          "parentModules": {
+            "nullable": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Module"
+            }
+          },
+          "Block": {
+            "nullable": true,
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Block"
+              }
+            ]
+          },
+          "questions": {
+            "nullable": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Question"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "translationId",
+          "subModules",
+          "parentModules",
+          "Block",
+          "questions"
+        ]
+      },
+      "Course": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "$ref": "#/components/schemas/Translation"
+          },
+          "institutionId": {
+            "type": "string"
+          },
+          "institution": {
+            "nullable": true,
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Institution"
+              }
+            ]
+          },
+          "modules": {
+            "nullable": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Module"
+            }
+          },
+          "publishedAt": {
+            "format": "date-time",
+            "type": "string",
+            "nullable": true
+          },
+          "Block": {
+            "nullable": true,
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Block"
+              }
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "institutionId",
+          "institution",
+          "modules",
+          "publishedAt",
+          "Block"
+        ]
+      },
+      "CreateManyInstitutionsInput": {
+        "type": "object",
+        "properties": {
+          "universities": {
+            "description": "Array of institution data to create",
+            "example": [
+              {
+                "en_text": "Harvard University",
+                "he_text": "אוניברסיטת הרווארד"
+              },
+              {
+                "en_text": "MIT",
+                "he_text": "מכון הטכנולוגי של מסצ׳וסטס"
+              }
+            ],
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateInstitutionInput"
+            }
+          }
+        },
+        "required": [
+          "universities"
+        ]
+      },
+      "CreateCourseInput": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Course name"
+          },
+          "universityId": {
+            "type": "string",
+            "description": "Owning institution id",
+            "format": "uuid"
+          }
+        },
+        "required": [
+          "name",
+          "universityId"
+        ]
+      },
+      "CreateManyCoursesInput": {
+        "type": "object",
+        "properties": {
+          "courses": {
+            "description": "Array of course data to create",
+            "example": [
+              {
+                "name": "Computer Science",
+                "universityId": "uuid1"
+              },
+              {
+                "name": "Mathematics",
+                "universityId": "uuid2"
+              }
+            ],
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateCourseInput"
+            }
+          }
+        },
+        "required": [
+          "courses"
+        ]
+      },
+      "CreateCourseRelationshipInput": {
+        "type": "object",
+        "properties": {
+          "prerequisiteCourseId": {
+            "type": "string",
+            "description": "The ID of the prerequisite course"
+          },
+          "postrequisiteCourseId": {
+            "type": "string",
+            "description": "The ID of the postrequisite course"
+          },
+          "metadata": {
+            "type": "object",
+            "description": "Optional metadata for the relationship (JSON string)"
+          }
+        },
+        "required": [
+          "prerequisiteCourseId",
+          "postrequisiteCourseId"
+        ]
+      },
+      "CourseRelationshipResult": {
+        "type": "object",
+        "properties": {}
+      },
+      "DeleteCourseRelationshipInput": {
+        "type": "object",
+        "properties": {
+          "prerequisiteCourseId": {
+            "type": "string",
+            "description": "The ID of the prerequisite course"
+          },
+          "postrequisiteCourseId": {
+            "type": "string",
+            "description": "The ID of the postrequisite course"
+          }
+        },
+        "required": [
+          "prerequisiteCourseId",
+          "postrequisiteCourseId"
+        ]
+      },
+      "CreateModuleInput": {
+        "type": "object",
+        "properties": {
+          "en_text": {
+            "type": "string",
+            "description": "English name of the module"
+          },
+          "he_text": {
+            "type": "string",
+            "description": "Hebrew name of the module"
+          },
+          "courseId": {
+            "type": "string",
+            "description": "ID of the course this module belongs to"
+          }
+        },
+        "required": [
+          "en_text",
+          "he_text",
+          "courseId"
+        ]
+      },
+      "CreateManyModulesInput": {
+        "type": "object",
+        "properties": {
+          "modules": {
+            "description": "Array of module data to create",
+            "example": [
+              {
+                "en_text": "Linear Algebra",
+                "he_text": "אלגברה לינארית",
+                "courseId": "uuid1"
+              },
+              {
+                "en_text": "Calculus",
+                "he_text": "חשבון אינפיניטסימלי",
+                "courseId": "uuid2"
+              }
+            ],
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateModuleInput"
+            }
+          }
+        },
+        "required": [
+          "modules"
+        ]
+      },
+      "CreateModuleRelationshipInput": {
+        "type": "object",
+        "properties": {
+          "prerequisiteModuleId": {
+            "type": "string",
+            "description": "The ID of the prerequisite module"
+          },
+          "postrequisiteModuleId": {
+            "type": "string",
+            "description": "The ID of the postrequisite module"
+          },
+          "metadata": {
+            "type": "object",
+            "description": "Optional metadata for the relationship (JSON string)"
+          }
+        },
+        "required": [
+          "prerequisiteModuleId",
+          "postrequisiteModuleId"
+        ]
+      },
+      "ModuleRelationshipResult": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "prerequisite": {
+            "$ref": "#/components/schemas/Block"
+          },
+          "postrequisite": {
+            "$ref": "#/components/schemas/Block"
+          },
+          "metadata": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "id",
+          "prerequisite",
+          "postrequisite",
+          "metadata"
+        ]
+      },
+      "DeleteModuleRelationshipInput": {
+        "type": "object",
+        "properties": {
+          "prerequisiteModuleId": {
+            "type": "string",
+            "description": "The ID of the prerequisite module"
+          },
+          "postrequisiteModuleId": {
+            "type": "string",
+            "description": "The ID of the postrequisite module"
+          }
+        },
+        "required": [
+          "prerequisiteModuleId",
+          "postrequisiteModuleId"
+        ]
+      },
+      "CreateQuestionInput": {
+        "type": "object",
+        "properties": {
+          "validationStatus": {
+            "type": "string",
+            "enum": [
+              "ai_generated",
+              "in_manual_review",
+              "approved",
+              "rejected"
+            ],
+            "description": "The validation status of the question"
+          },
+          "translationId": {
+            "type": "string",
+            "description": "The ID of the translation for the question text"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "selection",
+              "value",
+              "boolean",
+              "void"
+            ],
+            "description": "The type of the question"
+          },
+          "moduleIds": {
+            "description": "Optional list of module IDs this question belongs to",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "translationId",
+          "type"
+        ]
+      },
+      "CreateManyQuestionsInput": {
+        "type": "object",
+        "properties": {
+          "questions": {
+            "description": "Array of question data to create",
+            "example": [
+              {
+                "type": "selection",
+                "translationId": "uuid1",
+                "moduleIds": [
+                  "uuid1"
+                ]
+              },
+              {
+                "type": "value",
+                "translationId": "uuid2",
+                "moduleIds": [
+                  "uuid2"
+                ]
+              }
+            ],
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateQuestionInput"
+            }
+          }
+        },
+        "required": [
+          "questions"
+        ]
+      },
+      "CreateCompleteSelectAnswerInput": {
+        "type": "object",
+        "properties": {
+          "en_text": {
+            "type": "string",
+            "description": "English text for the answer option",
+            "example": "The derivative of a function"
+          },
+          "he_text": {
+            "type": "string",
+            "description": "Hebrew text for the answer option",
+            "example": "הנגזרת של פונקציה"
+          },
+          "is_correct": {
+            "type": "boolean",
+            "description": "Whether this answer option is correct",
+            "example": true
+          }
+        },
+        "required": [
+          "en_text",
+          "he_text",
+          "is_correct"
+        ]
+      },
+      "CreateCompleteQuestionInput": {
+        "type": "object",
+        "properties": {
+          "en_text": {
+            "type": "string",
+            "description": "English text for the question",
+            "example": "What is the primary concept in differential calculus?"
+          },
+          "he_text": {
+            "type": "string",
+            "description": "Hebrew text for the question",
+            "example": "מה המושג העיקרי בחשבון דיפרנציאלי?"
+          },
+          "type": {
+            "type": "string",
+            "description": "Type of the question",
+            "enum": [
+              "selection",
+              "value",
+              "boolean",
+              "void"
+            ],
+            "example": "selection"
+          },
+          "moduleIds": {
+            "description": "Array of module IDs this question belongs to",
+            "example": [
+              "uuid-1",
+              "uuid-2"
+            ],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "validationStatus": {
+            "type": "string",
+            "description": "Validation status of the question",
+            "enum": [
+              "ai_generated",
+              "in_manual_review",
+              "approved",
+              "rejected"
+            ],
+            "example": "ai_generated",
+            "default": "ai_generated"
+          },
+          "selectAnswers": {
+            "description": "Answer options for selection type questions",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateCompleteSelectAnswerInput"
+            }
+          },
+          "numberAnswer": {
+            "type": "number",
+            "description": "Numeric answer for value type questions",
+            "example": 42
+          },
+          "booleanAnswer": {
+            "type": "number",
+            "description": "Boolean answer for boolean type questions (true = 1, false = 0)",
+            "example": 1
+          },
+          "unitValue": {
+            "type": "number",
+            "description": "Unit value for unit-based answers",
+            "example": 9.8
+          },
+          "unit": {
+            "type": "string",
+            "description": "Unit for unit-based answers",
+            "enum": [
+              "meter",
+              "kilogram",
+              "second",
+              "ampere",
+              "kelvin",
+              "mole",
+              "candela"
+            ],
+            "example": "meter"
+          }
+        },
+        "required": [
+          "en_text",
+          "he_text",
+          "type",
+          "moduleIds",
+          "validationStatus"
+        ]
+      },
+      "CreateCompleteQuestionsInput": {
+        "type": "object",
+        "properties": {
+          "questions": {
+            "description": "Array of complete questions to create",
+            "example": [
+              {
+                "en_text": "What is calculus?",
+                "he_text": "מה זה חשבון אינפיניטסימלי?",
+                "type": "selection",
+                "moduleIds": [
+                  "uuid-1"
+                ],
+                "selectAnswers": [
+                  {
+                    "en_text": "A branch of mathematics",
+                    "he_text": "ענף במתמטיקה",
+                    "is_correct": true
+                  },
+                  {
+                    "en_text": "A type of calculator",
+                    "he_text": "סוג של מחשבון",
+                    "is_correct": false
+                  }
+                ]
+              }
+            ],
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateCompleteQuestionInput"
+            }
+          }
+        },
+        "required": [
+          "questions"
+        ]
+      },
+      "PaginatedQuestionsResponse": {
+        "type": "object",
+        "properties": {}
+      },
+      "CreateDegreeInput": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Degree name"
+          },
+          "universityId": {
+            "type": "string",
+            "description": "Owning institution id",
+            "format": "uuid"
+          }
+        },
+        "required": [
+          "name",
+          "universityId"
+        ]
+      },
+      "CreateManyDegreesInput": {
+        "type": "object",
+        "properties": {
+          "degrees": {
+            "description": "Array of degree data to create",
+            "example": [
+              {
+                "name": "Bachelor of Science",
+                "universityId": "uuid1"
+              },
+              {
+                "name": "Master of Arts",
+                "universityId": "uuid2"
+              }
+            ],
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateDegreeInput"
+            }
+          }
+        },
+        "required": [
+          "degrees"
+        ]
+      },
+      "AddCourseDto": {
+        "type": "object",
+        "properties": {
+          "courseId": {
+            "type": "string",
+            "description": "ID of the course to add"
+          }
+        },
+        "required": [
+          "courseId"
+        ]
+      },
+      "CreateBlockInput": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of the block"
+          },
+          "moduleId": {
+            "type": "string",
+            "description": "ID of the module this block belongs to"
+          }
+        },
+        "required": [
+          "name",
+          "moduleId"
+        ]
+      },
+      "CreateManyBlocksInput": {
+        "type": "object",
+        "properties": {
+          "blocks": {
+            "description": "Array of block data to create",
+            "example": [
+              {
+                "name": "Introduction",
+                "moduleId": "uuid1"
+              },
+              {
+                "name": "Advanced Topics",
+                "moduleId": "uuid2"
+              }
+            ],
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateBlockInput"
+            }
+          }
+        },
+        "required": [
+          "blocks"
+        ]
+      },
+      "UpdateBlockInput": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of the block"
+          },
+          "moduleId": {
+            "type": "string",
+            "description": "ID of the module this block belongs to"
+          },
+          "id": {
+            "type": "string",
+            "description": "Block ID"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      },
+      "CreateBlockRelationshipInput": {
+        "type": "object",
+        "properties": {
+          "prerequisiteBlockId": {
+            "type": "string",
+            "description": "The ID of the prerequisite block"
+          },
+          "postrequisiteBlockId": {
+            "type": "string",
+            "description": "The ID of the postrequisite block"
+          },
+          "metadata": {
+            "type": "object",
+            "description": "Optional metadata for the relationship (JSON string)"
+          }
+        },
+        "required": [
+          "prerequisiteBlockId",
+          "postrequisiteBlockId"
+        ]
+      },
+      "BlockRelationshipResult": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "prerequisite": {
+            "$ref": "#/components/schemas/Block"
+          },
+          "postrequisite": {
+            "$ref": "#/components/schemas/Block"
+          },
+          "metadata": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "id",
+          "prerequisite",
+          "postrequisite",
+          "metadata"
+        ]
+      },
+      "DeleteBlockRelationshipInput": {
+        "type": "object",
+        "properties": {
+          "prerequisiteBlockId": {
+            "type": "string",
+            "description": "The ID of the prerequisite block"
+          },
+          "postrequisiteBlockId": {
+            "type": "string",
+            "description": "The ID of the postrequisite block"
+          }
+        },
+        "required": [
+          "prerequisiteBlockId",
+          "postrequisiteBlockId"
+        ]
+      },
+      "CreateFacultyInput": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of the faculty"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the faculty"
+          },
+          "universityId": {
+            "type": "string",
+            "description": "ID of the institution this faculty belongs to"
+          }
+        },
+        "required": [
+          "name",
+          "description",
+          "universityId"
+        ]
+      },
+      "CreateManyFacultiesInput": {
+        "type": "object",
+        "properties": {
+          "faculties": {
+            "description": "Array of faculty data to create",
+            "example": [
+              {
+                "name": "Computer Science",
+                "description": "CS Department",
+                "universityId": "uuid1"
+              },
+              {
+                "name": "Mathematics",
+                "description": "Math Department",
+                "universityId": "uuid2"
+              }
+            ],
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateFacultyInput"
+            }
+          }
+        },
+        "required": [
+          "faculties"
+        ]
+      },
+      "CreateTranslationInput": {
+        "type": "object",
+        "properties": {
+          "en_text": {
+            "type": "string",
+            "description": "English text"
+          },
+          "he_text": {
+            "type": "string",
+            "description": "Hebrew text"
+          }
+        },
+        "required": [
+          "en_text",
+          "he_text"
+        ]
+      },
+      "CreateManyTranslationsInput": {
+        "type": "object",
+        "properties": {
+          "translations": {
+            "description": "Array of translation data to create",
+            "example": [
+              {
+                "en_text": "Hello",
+                "he_text": "שלום"
+              },
+              {
+                "en_text": "Goodbye",
+                "he_text": "להתראות"
+              }
+            ],
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateTranslationInput"
+            }
+          }
+        },
+        "required": [
+          "translations"
+        ]
+      },
+      "UpdateTranslationInput": {
+        "type": "object",
+        "properties": {
+          "en_text": {
+            "type": "string",
+            "description": "English text"
+          },
+          "he_text": {
+            "type": "string",
+            "description": "Hebrew text"
+          },
+          "id": {
+            "type": "string",
+            "description": "Translation ID"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      },
+      "CreateSelectAnswerInputItem": {
+        "type": "object",
+        "properties": {
+          "isCorrect": {
+            "type": "boolean",
+            "description": "Whether the answer item is correct"
+          },
+          "translationId": {
+            "type": "string",
+            "description": "Translation id for answer text",
+            "format": "uuid"
+          }
+        },
+        "required": [
+          "isCorrect",
+          "translationId"
+        ]
+      },
+      "CreateAnswerInput": {
+        "type": "object",
+        "properties": {
+          "questionId": {
+            "type": "string",
+            "description": "Question id",
+            "format": "uuid"
+          },
+          "selectAnswers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateSelectAnswerInputItem"
+            }
+          },
+          "unitValue": {
+            "type": "number",
+            "description": "Unit value for unit-based answers",
+            "example": 9.8
+          },
+          "unit": {
+            "type": "string",
+            "description": "Unit for unit-based answers",
+            "enum": [
+              "meter",
+              "kilogram",
+              "second",
+              "ampere",
+              "kelvin",
+              "mole",
+              "candela"
+            ],
+            "example": "meter"
+          },
+          "numberAnswer": {
+            "type": "number",
+            "description": "Numeric answer (when not unit based)"
+          }
+        },
+        "required": [
+          "questionId"
+        ]
+      },
+      "CreateManyAnswersInput": {
+        "type": "object",
+        "properties": {
+          "answers": {
+            "description": "Array of answer data to create",
+            "example": [
+              {
+                "questionId": "uuid1",
+                "answerType": "selection"
+              },
+              {
+                "questionId": "uuid2",
+                "answerType": "unit"
+              }
+            ],
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateAnswerInput"
+            }
+          }
+        },
+        "required": [
+          "answers"
+        ]
+      }
+    }
+  }
+}
