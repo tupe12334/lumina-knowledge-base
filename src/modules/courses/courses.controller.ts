@@ -10,20 +10,12 @@ import {
   HttpStatus,
   Query,
 } from '@nestjs/common';
-import {
-  ApiTags,
-  ApiOperation,
-  ApiOkResponse,
-  ApiNoContentResponse,
-  ApiResponse,
-  ApiParam,
-} from '@nestjs/swagger';
+import { ApiTags } from '@nestjs/swagger';
 import { CoursesService } from './courses.service';
 import { CreateCourseInput } from './dto/create-course.input';
 import { CreateManyCoursesInput } from './dto/create-many-courses.input';
 import { UpdateCourseInput } from './dto/update-course.input';
 import { DeleteCourseInput } from './dto/delete-course.input';
-import { Course } from './models/Course.entity';
 import { CoursesQueryInput } from './dto/courses-query.input';
 import { CoursesApiDecorators } from './decorators/courses-api.decorators';
 

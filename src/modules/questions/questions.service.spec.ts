@@ -8,7 +8,7 @@ import {
 } from '@nestjs/common';
 
 // Mock service type
-type MockPrismaService = {
+interface MockPrismaService {
   question: {
     findMany: ReturnType<typeof vi.fn>;
     findUnique: ReturnType<typeof vi.fn>;
@@ -19,7 +19,7 @@ type MockPrismaService = {
   module: {
     findUnique: ReturnType<typeof vi.fn>;
   };
-};
+}
 
 // Helper function to create and configure the service
 const createQuestionsServiceForTests = async () => {

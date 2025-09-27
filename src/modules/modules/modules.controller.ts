@@ -35,12 +35,12 @@ import { ModuleRelationshipResult } from './dto/module-relationship-result.dto';
 
 // Type declarations for query parameter conversions
 type BooleanOrString = boolean | string;
-type FewQuestionsQuery = { fewQuestions?: BooleanOrString };
-type HasQuestionsQuery = { hasQuestions?: BooleanOrString };
-type HasPrerequisitesQuery = { hasPrerequisites?: BooleanOrString };
-type HasPostrequisitesQuery = { hasPostrequisites?: BooleanOrString };
-type HasSubModulesQuery = { hasSubModules?: BooleanOrString };
-type HasParentModulesQuery = { hasParentModules?: BooleanOrString };
+interface FewQuestionsQuery { fewQuestions?: BooleanOrString }
+interface HasQuestionsQuery { hasQuestions?: BooleanOrString }
+interface HasPrerequisitesQuery { hasPrerequisites?: BooleanOrString }
+interface HasPostrequisitesQuery { hasPostrequisites?: BooleanOrString }
+interface HasSubModulesQuery { hasSubModules?: BooleanOrString }
+interface HasParentModulesQuery { hasParentModules?: BooleanOrString }
 
 @ApiTags('modules')
 @Controller('modules')
