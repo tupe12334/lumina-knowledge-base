@@ -31,9 +31,14 @@ const createMockHealthIndicatorService = () => ({
       [key]: { status: 'up', ...data }
     })),
     down: vi.fn().mockImplementation((data: Record<string, unknown>) => {
-      const error = new Error(key);
-      Object.assign(error, { [key]: { status: 'down', ...data } });
-      throw new Error(error.message);
+      class HealthCheckError extends Error {
+        constructor(message: string, public details?: Record<string, unknown>) {
+          super(message);
+          this.name = 'HealthCheckError';
+        }
+      }
+      const errorDetails = { [key]: { status: 'down', ...data } };
+      throw new HealthCheckError(key, errorDetails);
     })
   }))
 });
@@ -42,7 +47,7 @@ describe('DbRowsHealthIndicator', () => {
   it('returns up when total rows > min', async () => {
     const mockHealthIndicatorService = createMockHealthIndicatorService();
 
-    const indicator = new DbRowsHealthIndicator({
+    const mockPrismaService: any = {
       institution: mockDelegate(10),
       faculty: mockDelegate(10),
       degree: mockDelegate(10),
@@ -58,12 +63,10 @@ describe('DbRowsHealthIndicator', () => {
       selectAnswer: mockDelegate(10),
       unitAnswer: mockDelegate(10),
       numberAnswer: mockDelegate(10),
-    } satisfies PrismaPickMock as PrismaService,
-    mockHealthIndicatorService as HealthIndicatorService);
-
-    const res = (await indicator.isHealthy('db_rows', 100)) as {
-      db_rows: { status: string; totalRows: number };
     };
+    const indicator = new DbRowsHealthIndicator(mockPrismaService, mockHealthIndicatorService as any);
+
+    const res: any = await indicator.isHealthy('db_rows', 100);
     expect(res.db_rows.status).toBe('up');
     expect(res.db_rows.totalRows).toBeGreaterThan(100);
   });
@@ -71,7 +74,7 @@ describe('DbRowsHealthIndicator', () => {
   it('throws HealthCheckError when total rows <= min', async () => {
     const mockHealthIndicatorService = createMockHealthIndicatorService();
 
-    const indicator = new DbRowsHealthIndicator({
+    const mockPrismaService: any = {
       institution: mockDelegate(1),
       faculty: mockDelegate(1),
       degree: mockDelegate(1),
@@ -87,8 +90,8 @@ describe('DbRowsHealthIndicator', () => {
       selectAnswer: mockDelegate(1),
       unitAnswer: mockDelegate(1),
       numberAnswer: mockDelegate(1),
-    } satisfies PrismaPickMock as PrismaService,
-    mockHealthIndicatorService as HealthIndicatorService);
+    };
+    const indicator = new DbRowsHealthIndicator(mockPrismaService, mockHealthIndicatorService as any);
 
     await expect(indicator.isHealthy('db_rows', 100)).rejects.toMatchObject({
       message: 'db_rows',

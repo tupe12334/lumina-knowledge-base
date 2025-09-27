@@ -1,267 +1,54 @@
-import {
-  Injectable,
-  NotFoundException,
-  BadRequestException,
-} from '@nestjs/common';
-import { RelationshipMetadataKey, Prisma } from '@prisma/client';
-import { PrismaService } from '../../prisma/prisma.service';
+import { Injectable } from '@nestjs/common';
 import { Block } from './models/Block.entity';
-import { RelationshipMetadata } from './models/RelationshipMetadata.entity';
 import { CreateBlockRelationshipInput } from './dto/create-block-relationship.input';
 import { DeleteBlockRelationshipInput } from './dto/delete-block-relationship.input';
 import { BlockRelationshipResult } from './dto/block-relationship-result.type';
 import { CreateBlockInput } from './dto/create-block.input';
 import { CreateManyBlocksInput } from './dto/create-many-blocks.input';
 import { UpdateBlockInput } from './dto/update-block.input';
+import { BlocksQueryService } from './services/blocks-query.service';
+import { BlocksRelationshipService } from './services/blocks-relationship.service';
 
-function createValidMetadataEntries(metadata: Record<string, unknown>) {
-  const validEntries: Array<{ key: RelationshipMetadataKey; value: string }> = [];
-  for (const [key, value] of Object.entries(metadata)) {
-    if (key === RelationshipMetadataKey.REASON ||
-        key === RelationshipMetadataKey.TYPE ||
-        key === RelationshipMetadataKey.DESCRIPTION) {
-      const typedKey = key === RelationshipMetadataKey.REASON ? RelationshipMetadataKey.REASON :
-                      key === RelationshipMetadataKey.TYPE ? RelationshipMetadataKey.TYPE :
-                      RelationshipMetadataKey.DESCRIPTION;
-      validEntries.push({ key: typedKey, value: String(value) });
-    }
-  }
-  return validEntries;
-}
-
-type RelationshipWithIncludes = Prisma.BlockRelationshipGetPayload<{
-  include: { prerequisite: true; postrequisite: true; metadata: true };
-}>;
-
-/**
- * Service handling block retrieval and relationship logic.
- */
 @Injectable()
 export class BlocksService {
-  constructor(private readonly prisma: PrismaService) {}
+  constructor(
+    private readonly queryService: BlocksQueryService,
+    private readonly relationshipService: BlocksRelationshipService,
+  ) {}
 
   async create(createBlockInput: CreateBlockInput): Promise<Block> {
-    return this.prisma.block.create({ data: createBlockInput });
+    return this.queryService.create(createBlockInput);
   }
 
-  /**
-   * Creates multiple blocks in a single operation.
-   * @param input - The data for creating multiple blocks
-   * @returns The number of blocks created
-   */
   async createMany(input: CreateManyBlocksInput) {
-    const blockDataArray = input.blocks.map(() => ({}));
-
-    const result = await this.prisma.block.createMany({
-      data: blockDataArray,
-    });
-
-    return { count: result.count };
+    return this.queryService.createMany(input);
   }
 
   async findAll(): Promise<Block[]> {
-    return this.prisma.block.findMany();
+    return this.queryService.findAll();
   }
 
-  /**
-   * Find a block by its id.
-   *
-   * @param id - Block identifier
-   * @returns The block if found otherwise null
-   */
   async findUnique(id: string): Promise<Block | null> {
-    return this.prisma.block.findUnique({
-      where: { id },
-      include: {
-        Module: { include: { name: true } },
-        prerequisiteFor: {
-          include: {
-            prerequisite: { include: { Module: { include: { name: true } } } },
-            metadata: true,
-          },
-        },
-        postrequisiteOf: {
-          include: {
-            postrequisite: { include: { Module: { include: { name: true } } } },
-            metadata: true,
-          },
-        },
-      },
-    });
+    return this.queryService.findUnique(id);
   }
 
   async update(id: string, updateBlockInput: UpdateBlockInput): Promise<Block> {
-    return this.prisma.block.update({
-      where: { id },
-      data: updateBlockInput,
-    });
+    return this.queryService.update(id, updateBlockInput);
   }
 
   async delete(id: string): Promise<Block> {
-    return this.prisma.block.delete({ where: { id } });
-  }
-
-  /**
-   * Creates a prerequisite/postrequisite relationship between two blocks.
-   * @param relationshipData - The relationship data containing block IDs and optional metadata
-   * @returns The created relationship with full details
-   */
-
-  private async validateBlocksExist(prerequisiteBlockId: string, postrequisiteBlockId: string) {
-    const [prerequisiteBlock, postrequisiteBlock] = await Promise.all([
-      this.prisma.block.findUnique({ where: { id: prerequisiteBlockId } }),
-      this.prisma.block.findUnique({ where: { id: postrequisiteBlockId } }),
-    ]);
-
-    if (!prerequisiteBlock) {
-      throw new NotFoundException(`Prerequisite block with ID ${prerequisiteBlockId} not found`);
-    }
-
-    if (!postrequisiteBlock) {
-      throw new NotFoundException(`Postrequisite block with ID ${postrequisiteBlockId} not found`);
-    }
-  }
-
-  private async checkExistingRelationship(prerequisiteBlockId: string, postrequisiteBlockId: string) {
-    const existingRelationship = await this.prisma.blockRelationship.findUnique({
-      where: {
-        prerequisiteId_postrequisiteId: {
-          prerequisiteId: prerequisiteBlockId,
-          postrequisiteId: postrequisiteBlockId,
-        },
-      },
-    });
-
-    if (existingRelationship) {
-      throw new BadRequestException('Relationship already exists between these blocks');
-    }
-  }
-
-  private formatRelationshipMetadata(metadata: RelationshipMetadata[] | undefined) {
-    return metadata ? metadata.reduce(
-      (acc, meta) => {
-        acc[meta.key] = meta.value;
-        return acc;
-      },
-      {} satisfies Record<string, string>,
-    ) : {};
+    return this.queryService.delete(id);
   }
 
   async createBlockRelationship(
     relationshipData: CreateBlockRelationshipInput,
   ): Promise<BlockRelationshipResult> {
-    const { prerequisiteBlockId, postrequisiteBlockId, metadata } = relationshipData;
-
-    if (prerequisiteBlockId === postrequisiteBlockId) {
-      throw new BadRequestException('A block cannot be a prerequisite to itself');
-    }
-
-    await this.validateBlocksExist(prerequisiteBlockId, postrequisiteBlockId);
-    await this.checkExistingRelationship(prerequisiteBlockId, postrequisiteBlockId);
-
-    const relationship = await this.prisma.blockRelationship.create({
-      data: {
-        prerequisiteId: prerequisiteBlockId,
-        postrequisiteId: postrequisiteBlockId,
-        metadata: metadata ? { create: createValidMetadataEntries(metadata) } : undefined,
-      },
-      include: {
-        prerequisite: true,
-        postrequisite: true,
-        metadata: true,
-      },
-    });
-
-    const formattedMetadata = this.formatRelationshipMetadata(relationship.metadata);
-
-    return {
-      id: relationship.id,
-      prerequisite: relationship.prerequisite,
-      postrequisite: relationship.postrequisite,
-      metadata: JSON.stringify(formattedMetadata),
-    };
+    return this.relationshipService.createBlockRelationship(relationshipData);
   }
 
-  /**
-   * Deletes a prerequisite/postrequisite relationship between two blocks.
-   * @param relationshipData - The relationship data containing block IDs
-   * @returns The deleted relationship with full details
-   */
   async deleteBlockRelationship(
     relationshipData: DeleteBlockRelationshipInput,
   ): Promise<BlockRelationshipResult> {
-    const { prerequisiteBlockId, postrequisiteBlockId } = relationshipData;
-
-    // Validate that both blocks exist
-    const [prerequisiteBlock, postrequisiteBlock] = await Promise.all([
-      this.prisma.block.findUnique({
-        where: { id: prerequisiteBlockId },
-      }),
-      this.prisma.block.findUnique({
-        where: { id: postrequisiteBlockId },
-      }),
-    ]);
-
-    if (!prerequisiteBlock) {
-      throw new NotFoundException(
-        `Prerequisite block with ID ${prerequisiteBlockId} not found`,
-      );
-    }
-
-    if (!postrequisiteBlock) {
-      throw new NotFoundException(
-        `Postrequisite block with ID ${postrequisiteBlockId} not found`,
-      );
-    }
-
-    // Find the relationship to delete
-    const existingRelationship = await this.prisma.blockRelationship.findUnique(
-      {
-        where: {
-          prerequisiteId_postrequisiteId: {
-            prerequisiteId: prerequisiteBlockId,
-            postrequisiteId: postrequisiteBlockId,
-          },
-        },
-        include: {
-          prerequisite: true,
-          postrequisite: true,
-          metadata: true,
-        },
-      },
-    );
-
-    if (!existingRelationship) {
-      throw new NotFoundException(
-        'Relationship not found between these blocks',
-      );
-    }
-
-    // Format metadata for response before deletion
-    const formattedMetadata =
-      existingRelationship.metadata ? existingRelationship.metadata.reduce(
-        (acc, meta) => {
-          acc[meta.key] = meta.value;
-          return acc;
-        },
-        {} satisfies Record<string, string>,
-      ) : {};
-
-    // Delete the relationship
-    await this.prisma.blockRelationship.delete({
-      where: {
-        prerequisiteId_postrequisiteId: {
-          prerequisiteId: prerequisiteBlockId,
-          postrequisiteId: postrequisiteBlockId,
-        },
-      },
-    });
-
-    return {
-      id: existingRelationship.id,
-      prerequisite: existingRelationship.prerequisite,
-      postrequisite: existingRelationship.postrequisite,
-      metadata: JSON.stringify(formattedMetadata),
-    };
+    return this.relationshipService.deleteBlockRelationship(relationshipData);
   }
 }

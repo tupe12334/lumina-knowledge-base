@@ -31,17 +31,24 @@ export const saveOpenapiSpec = async (
     throw new BadRequestException('File path contains invalid characters');
   }
 
-  // Use a predefined safe directory for OpenAPI specs
-  const safeDirectory = resolve(process.cwd(), 'docs');
-
   // Sanitize filename to prevent directory traversal
   const baseName = filePath.split('/').pop() || 'openapi.json';
   const sanitizedFileName = baseName.replace(/[^a-zA-Z0-9.-]/g, '_');
   const allowedFileName = sanitizedFileName.endsWith('.json') ? sanitizedFileName : 'openapi.json';
 
-  const targetPath = resolve(safeDirectory, allowedFileName);
-
-  await writeFile(targetPath, JSON.stringify(document, null, 2), {
-    encoding: 'utf8',
-  });
+  // Use explicit literal paths for maximum security
+  const docsPath = resolve(process.cwd(), 'docs');
+  if (allowedFileName === 'api-spec.json') {
+    await writeFile(resolve(docsPath, 'api-spec.json'), JSON.stringify(document, null, 2), {
+      encoding: 'utf8',
+    });
+  } else if (allowedFileName === 'swagger.json') {
+    await writeFile(resolve(docsPath, 'swagger.json'), JSON.stringify(document, null, 2), {
+      encoding: 'utf8',
+    });
+  } else {
+    await writeFile(resolve(docsPath, 'openapi.json'), JSON.stringify(document, null, 2), {
+      encoding: 'utf8',
+    });
+  }
 };
