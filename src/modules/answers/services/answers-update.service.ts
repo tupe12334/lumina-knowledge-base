@@ -28,7 +28,7 @@ export class AnswersUpdateService {
     if (selectAnswers && selectAnswers.length > 0) {
       await this.prisma.selectAnswer.createMany({
         data: selectAnswers.map((s) => ({
-          isCorrect: s.isCorrect ?? false,
+          isCorrect: s.isCorrect !== undefined ? s.isCorrect : false,
           answerId,
           translationId: s.translationId!,
         })),

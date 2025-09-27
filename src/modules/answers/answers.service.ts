@@ -4,12 +4,14 @@ import { CreateManyAnswersInput } from './dto/create-many-answers.input';
 import { UpdateAnswerInput } from './dto/update-answer.input';
 import { AnswersQueryDto } from './dto/answers-query.dto';
 import { AnswersQueryService } from './services/answers-query.service';
+import { AnswersCreateService } from './services/answers-create.service';
 import { AnswersCrudService } from './services/answers-crud.service';
 
 @Injectable()
 export class AnswersService {
   constructor(
     private readonly queryService: AnswersQueryService,
+    private readonly createService: AnswersCreateService,
     private readonly crudService: AnswersCrudService,
   ) {}
 
@@ -22,11 +24,11 @@ export class AnswersService {
   }
 
   async create(data: CreateAnswerInput) {
-    return this.crudService.create(data);
+    return this.createService.create(data);
   }
 
   async createMany(data: CreateManyAnswersInput) {
-    return this.crudService.createMany(data);
+    return this.createService.createMany(data);
   }
 
   async update(data: UpdateAnswerInput) {
