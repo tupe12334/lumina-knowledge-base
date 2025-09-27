@@ -15,6 +15,29 @@ export const serverEnvSchema = z.object({
     )
     .pipe(z.array(z.string()).min(1))
     .optional(),
+  CORS_CREDENTIALS: z
+    .preprocess((val) => val === true || val === 'true', z.boolean())
+    .default(true),
+  CORS_METHODS: z
+    .string()
+    .default('GET,POST,PUT,DELETE,PATCH,OPTIONS')
+    .transform((s) =>
+      s
+        .split(',')
+        .map((p) => p.trim())
+        .filter((p) => p.length > 0),
+    )
+    .pipe(z.array(z.string()).min(1)),
+  CORS_ALLOWED_HEADERS: z
+    .string()
+    .default('Content-Type,Authorization,Accept')
+    .transform((s) =>
+      s
+        .split(',')
+        .map((p) => p.trim())
+        .filter((p) => p.length > 0),
+    )
+    .pipe(z.array(z.string()).min(1)),
   BLOCK_MUTATIONS: z
     .preprocess((val) => val === true || val === 'true', z.boolean())
     .default(true),
