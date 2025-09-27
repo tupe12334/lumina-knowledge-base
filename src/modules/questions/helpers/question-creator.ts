@@ -140,7 +140,7 @@ export class QuestionCreator {
                 `Invalid index ${index} for answerTranslations array`,
               );
             }
-            const translation = answerTranslations[index];
+            const translation = answerTranslations.at(index);
             if (!translation) {
               throw new BadRequestException(
                 `Missing translation for answer at index ${index}`,
