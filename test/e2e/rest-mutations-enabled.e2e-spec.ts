@@ -42,7 +42,7 @@ describe('REST Mutations Enabled (e2e)', () => {
 
   beforeAll(async () => {
     // Ensure mutations are enabled for this test
-    env.BLOCK_MUTATIONS = false;
+    process.env.BLOCK_MUTATIONS = 'false';
 
     const moduleFixture = await Test.createTestingModule({
       imports: [MutationsGuardModule.register({ configFactory: new EnvConfigFactory() })],

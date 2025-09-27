@@ -42,7 +42,7 @@ describe('REST Mutations Disabled (e2e)', () => {
 
   beforeAll(async () => {
     // Ensure mutations are disabled for this test
-    env.BLOCK_MUTATIONS = true;
+    process.env.BLOCK_MUTATIONS = 'true';
 
     const moduleFixture = await Test.createTestingModule({
       imports: [MutationsGuardModule.register({ configFactory: new EnvConfigFactory() })],
@@ -58,7 +58,7 @@ describe('REST Mutations Disabled (e2e)', () => {
   });
 
   afterAll(async () => {
-    env.BLOCK_MUTATIONS = false; // Reset for other tests
+    process.env.BLOCK_MUTATIONS = 'false'; // Reset for other tests
     if (app) {
       await app.close();
     }
@@ -78,7 +78,7 @@ describe('REST Mutations Disabled (e2e)', () => {
       .expect(403)
       .expect((res) => {
         expect(res.body.message).toBe(
-          'HTTP POST mutations are currently blocked.',
+          'HTTP POST mutations are currently blocked. Use @AllowMutations() decorator to override.',
         );
       });
   });
@@ -90,7 +90,7 @@ describe('REST Mutations Disabled (e2e)', () => {
       .expect(403)
       .expect((res) => {
         expect(res.body.message).toBe(
-          'HTTP PUT mutations are currently blocked.',
+          'HTTP PUT mutations are currently blocked. Use @AllowMutations() decorator to override.',
         );
       });
   });
@@ -101,7 +101,7 @@ describe('REST Mutations Disabled (e2e)', () => {
       .expect(403)
       .expect((res) => {
         expect(res.body.message).toBe(
-          'HTTP DELETE mutations are currently blocked.',
+          'HTTP DELETE mutations are currently blocked. Use @AllowMutations() decorator to override.',
         );
       });
   });

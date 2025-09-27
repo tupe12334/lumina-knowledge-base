@@ -1,6 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { createPrismock } from 'prismock';
-import { Prisma } from '@prisma/client';
 import { BlocksService } from './blocks.service';
 import { PrismaService } from '../../prisma/prisma.service';
 import { CreateBlockRelationshipInput } from './dto/create-block-relationship.input';
@@ -9,6 +8,7 @@ import { BadRequestException, NotFoundException } from '@nestjs/common';
 
 vi.mock('@prisma/client', async () => {
   const actual = await vi.importActual('@prisma/client');
+  const { Prisma } = actual as any;
 
   return {
     ...actual,

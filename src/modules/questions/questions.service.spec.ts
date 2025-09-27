@@ -53,7 +53,18 @@ const createQuestionsServiceForTests = async () => {
   (service as const as unknown as { prisma: MockPrismaService }).prisma =
     mockPrismaService;
 
-  return { service, mockPrismaService };
+  // Set up the moduleHelper mock
+  (service as const as unknown as {
+    moduleHelper: { getAllSubmoduleIds: ReturnType<typeof vi.fn> }
+  }).moduleHelper = {
+    getAllSubmoduleIds: vi.fn(),
+  };
+
+  return {
+    service,
+    mockPrismaService,
+    mockModuleHelper: (service as any).moduleHelper,
+  };
 };
 
 // Helper function for basic findAll tests
@@ -97,9 +108,9 @@ const createGetAllSubmoduleIdsTests = (service: QuestionsService, mockPrismaServ
 
       const result = await (
         service as const as unknown as {
-          getAllSubmoduleIds: (id: string) => Promise<string[]>;
+          moduleHelper: { getAllSubmoduleIds: (id: string) => Promise<string[]> };
         }
-      ).getAllSubmoduleIds('module-1');
+      ).moduleHelper.getAllSubmoduleIds('module-1');
       expect(result).toEqual([]);
     });
 
@@ -125,9 +136,9 @@ const createGetAllSubmoduleIdsTests = (service: QuestionsService, mockPrismaServ
 
       const result = await (
         service as const as unknown as {
-          getAllSubmoduleIds: (id: string) => Promise<string[]>;
+          moduleHelper: { getAllSubmoduleIds: (id: string) => Promise<string[]> };
         }
-      ).getAllSubmoduleIds('module-1');
+      ).moduleHelper.getAllSubmoduleIds('module-1');
       expect(result).toEqual(
         expect.arrayContaining(['module-2', 'module-3', 'module-4']),
       );
@@ -148,9 +159,9 @@ const createGetAllSubmoduleIdsTests = (service: QuestionsService, mockPrismaServ
 
       const result = await (
         service as const as unknown as {
-          getAllSubmoduleIds: (id: string) => Promise<string[]>;
+          moduleHelper: { getAllSubmoduleIds: (id: string) => Promise<string[]> };
         }
-      ).getAllSubmoduleIds('module-1');
+      ).moduleHelper.getAllSubmoduleIds('module-1');
       // Should include all unique modules found, avoiding infinite loops
       expect(result).toEqual(expect.arrayContaining(['module-2']));
       expect(Array.isArray(result) && !result.includes('module-1')).toBe(false); // The original module shouldn't be included
@@ -311,10 +322,10 @@ const createGenerateSummaryTests = (service: QuestionsService, mockPrismaService
       const result = await service.generateSummary('question-123');
 
       expect(result).toContain(
-        'Question: What is the time complexity of quicksort?',
+        'Text: What is the time complexity of quicksort?',
       );
-      expect(result).toContain('ID: question-123');
-      expect(result).toContain('Associated Modules: Algorithms');
+      expect(result).toContain('Question Summary for question-123');
+      expect(result).toContain('Modules: Algorithms');
     });
 
     it('should throw NotFoundException when question does not exist', async () => {
@@ -336,7 +347,7 @@ const createGenerateSummaryTests = (service: QuestionsService, mockPrismaService
         InternalServerErrorException,
       );
       await expect(service.generateSummary('question-123')).rejects.toThrow(
-        'Failed to generate question summary',
+        'Failed to generate summary for question',
       );
     });
   });
@@ -345,11 +356,13 @@ const createGenerateSummaryTests = (service: QuestionsService, mockPrismaService
 describe('QuestionsService', () => {
   let service: QuestionsService;
   let mockPrismaService: MockPrismaService;
+  let mockModuleHelper: any;
 
   beforeEach(async () => {
     const testSetup = await createQuestionsServiceForTests();
     service = testSetup.service;
     mockPrismaService = testSetup.mockPrismaService;
+    mockModuleHelper = testSetup.mockModuleHelper;
   });
 
   it('returns questions from prisma', async () => {
@@ -388,9 +401,9 @@ describe('QuestionsService', () => {
 
       const result = await (
         service as const as unknown as {
-          getAllSubmoduleIds: (id: string) => Promise<string[]>;
+          moduleHelper: { getAllSubmoduleIds: (id: string) => Promise<string[]> };
         }
-      ).getAllSubmoduleIds('module-1');
+      ).moduleHelper.getAllSubmoduleIds('module-1');
       expect(result).toEqual([]);
     });
 
@@ -416,9 +429,9 @@ describe('QuestionsService', () => {
 
       const result = await (
         service as const as unknown as {
-          getAllSubmoduleIds: (id: string) => Promise<string[]>;
+          moduleHelper: { getAllSubmoduleIds: (id: string) => Promise<string[]> };
         }
-      ).getAllSubmoduleIds('module-1');
+      ).moduleHelper.getAllSubmoduleIds('module-1');
       expect(result).toEqual(
         expect.arrayContaining(['module-2', 'module-3', 'module-4']),
       );
@@ -439,9 +452,9 @@ describe('QuestionsService', () => {
 
       const result = await (
         service as const as unknown as {
-          getAllSubmoduleIds: (id: string) => Promise<string[]>;
+          moduleHelper: { getAllSubmoduleIds: (id: string) => Promise<string[]> };
         }
-      ).getAllSubmoduleIds('module-1');
+      ).moduleHelper.getAllSubmoduleIds('module-1');
       // Should include all unique modules found, avoiding infinite loops
       expect(result).toEqual(expect.arrayContaining(['module-2']));
       expect(Array.isArray(result) && !result.includes('module-1')).toBe(false); // The original module shouldn't be included
@@ -596,10 +609,10 @@ describe('QuestionsService', () => {
       const result = await service.generateSummary('question-123');
 
       expect(result).toContain(
-        'Question: What is the time complexity of quicksort?',
+        'Text: What is the time complexity of quicksort?',
       );
-      expect(result).toContain('ID: question-123');
-      expect(result).toContain('Associated Modules: Algorithms');
+      expect(result).toContain('Question Summary for question-123');
+      expect(result).toContain('Modules: Algorithms');
     });
 
     it('should throw NotFoundException when question does not exist', async () => {
@@ -621,7 +634,7 @@ describe('QuestionsService', () => {
         InternalServerErrorException,
       );
       await expect(service.generateSummary('question-123')).rejects.toThrow(
-        'Failed to generate question summary',
+        'Failed to generate summary for question',
       );
     });
   });
