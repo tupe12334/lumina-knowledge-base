@@ -12,10 +12,25 @@ import { CourseSummaryService } from './services/course-summary.service';
 import { CourseUpdateService } from './services/course-update.service';
 import { CourseCreationService } from './services/course-creation.service';
 import { CourseQueryService } from './services/course-query.service';
+import { CourseIncludesService } from './services/course-includes.service';
+import { CourseTextFormatterService } from './services/course-text-formatter.service';
 
 @Module({
   imports: [PrismaModule, ModulesModule],
-  providers: [CoursesService, CourseRelationshipService, CourseDeletionService, CourseDeletionQueryService, CourseDeletionRelationshipService, CourseDeletionModuleService, CourseSummaryService, CourseUpdateService, CourseCreationService, CourseQueryService],
+  providers: [
+    CoursesService,
+    CourseRelationshipService,
+    CourseDeletionService,
+    CourseDeletionQueryService,
+    CourseDeletionRelationshipService,
+    CourseDeletionModuleService,
+    CourseSummaryService,
+    CourseUpdateService,
+    CourseCreationService,
+    CourseQueryService,
+    CourseIncludesService,
+    CourseTextFormatterService,
+  ],
   controllers: [CoursesController],
 })
 export class CoursesModule {}

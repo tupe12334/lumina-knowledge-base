@@ -6,6 +6,8 @@ import { DegreesSummaryService } from './services/degrees-summary.service';
 import { DegreesRelationshipService } from './services/degrees-relationship.service';
 import { DegreesQueryService } from './services/degrees-query.service';
 import { DegreesCrudService } from './services/degrees-crud.service';
+import { DegreesIncludesService } from './services/degrees-includes.service';
+import { DegreesQueryBuilderService } from './services/degrees-query-builder.service';
 
 @Module({
   imports: [PrismaModule],
@@ -15,6 +17,8 @@ import { DegreesCrudService } from './services/degrees-crud.service';
     DegreesRelationshipService,
     DegreesQueryService,
     DegreesCrudService,
+    DegreesIncludesService,
+    DegreesQueryBuilderService,
   ],
   exports: [DegreesService],
   controllers: [DegreesController],
