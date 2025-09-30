@@ -44,7 +44,7 @@ export class QuestionsQueryService {
       this.prisma.question.count({ where }),
     ]);
 
-    const typedQuestions: any[] = questions;
+    const typedQuestions: Question[] = questions;
     return {
       questions: typedQuestions,
       totalCount: total,
@@ -54,7 +54,7 @@ export class QuestionsQueryService {
     };
   }
 
-  async findUnique(id: string): Promise<any | null> {
+  async findUnique(id: string): Promise<Question | null> {
     return this.prisma.question.findUnique({
       where: { id },
       include: this.queryBuilder.buildInclude(),

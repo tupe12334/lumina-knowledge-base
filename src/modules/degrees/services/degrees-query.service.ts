@@ -38,7 +38,7 @@ export class DegreesQueryService {
    * @param id - The unique identifier of the degree
    * @returns Promise<Degree | null> The degree if found, null otherwise
    */
-  async findUnique(id: string): Promise<any> {
+  async findUnique(id: string): Promise<any | null> {
     const degree = await this.prisma.degree.findUnique({
       where: { id },
       include: this.includesService.getDetailedInclude(),

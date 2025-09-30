@@ -9,4 +9,8 @@ export interface CourseWithModules {
   };
   translationId: string;
   modules: Array<ModuleForDeletion>;
+  name: {
+    en_text?: string;
+    he_text?: string;
+  };
 }

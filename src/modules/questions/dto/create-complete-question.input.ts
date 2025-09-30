@@ -1,32 +1,12 @@
 import { ApiProperty } from '@nestjs/swagger';
-import {
-  IsArray,
-  IsNotEmpty,
-  ValidateNested,
-  IsString,
-  IsOptional,
-  IsEnum,
-  IsNumber,
-} from 'class-validator';
+import { IsArray, IsNotEmpty, ValidateNested, IsString, IsOptional, IsEnum, IsNumber } from 'class-validator';
 import { Type } from 'class-transformer';
 import { QuestionType } from '@prisma/client';
 import { CreateCompleteSelectAnswerInput } from './create-complete-select-answer.input';
-
-type ValidationStatusType =
-  | 'ai_generated'
-  | 'in_manual_review'
-  | 'approved'
-  | 'rejected';
-
-type UnitType =
-  | 'meter'
-  | 'kilogram'
-  | 'second'
-  | 'ampere'
-  | 'kelvin'
-  | 'mole'
-  | 'candela';
-
+import { ValidationStatusType } from '../types/validation-status.type';
+import { VALIDATION_STATUS_VALUES } from '../constants/validation-status.constants';
+import { UnitType } from '../types/unit.type';
+import { UNIT_VALUES } from '../constants/unit.constants';
 export class CreateCompleteQuestionInput {
   @ApiProperty({
     description: 'English text for the question',
@@ -63,12 +43,12 @@ export class CreateCompleteQuestionInput {
 
   @ApiProperty({
     description: 'Validation status of the question',
-    enum: ['ai_generated', 'in_manual_review', 'approved', 'rejected'],
+    enum: VALIDATION_STATUS_VALUES,
     example: 'ai_generated',
     default: 'ai_generated',
   })
   @IsOptional()
-  @IsEnum(['ai_generated', 'in_manual_review', 'approved', 'rejected'])
+  @IsEnum(VALIDATION_STATUS_VALUES)
   validationStatus?: ValidationStatusType;
 
   @ApiProperty({
@@ -109,30 +89,13 @@ export class CreateCompleteQuestionInput {
   @IsOptional()
   @IsNumber()
   unitValue?: number;
-
   @ApiProperty({
     description: 'Unit for unit-based answers',
     required: false,
-    enum: [
-      'meter',
-      'kilogram',
-      'second',
-      'ampere',
-      'kelvin',
-      'mole',
-      'candela',
-    ],
+    enum: UNIT_VALUES,
     example: 'meter',
   })
   @IsOptional()
-  @IsEnum([
-    'meter',
-    'kilogram',
-    'second',
-    'ampere',
-    'kelvin',
-    'mole',
-    'candela',
-  ])
+  @IsEnum(UNIT_VALUES)
   unit?: UnitType;
 }

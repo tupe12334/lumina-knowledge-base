@@ -37,7 +37,8 @@ export class ModuleHierarchyHelper {
     }
   }
 
-  async getModulesWithFewestQuestions(limit: number = 5): Promise<Array<{ id: string; questionCount: number }>> {
+  async getModulesWithFewestQuestions(limit?: number): Promise<Array<{ id: string; questionCount: number }>> {
+    const queryLimit = limit || 5;
     const modules = await this.prisma.module.findMany({
       include: {
         _count: {
@@ -51,7 +52,7 @@ export class ModuleHierarchyHelper {
           _count: 'asc',
         },
       },
-      take: limit,
+      take: queryLimit,
     });
 
     return modules.map(module => ({

@@ -75,7 +75,7 @@ export class CourseUpdateService {
     });
   }
 
-  private async findUpdatedCourse(courseId: string): Promise<Course> {
+  private async findUpdatedCourse(courseId: string): Promise<any> {
     const updated = await this.prisma.course.findUnique({
       where: { id: courseId },
       include: this.includes.getCourseDetailsInclude(),
@@ -87,7 +87,7 @@ export class CourseUpdateService {
       );
     }
 
-    return updated as unknown as Course;
+    return updated;
   }
 
 }

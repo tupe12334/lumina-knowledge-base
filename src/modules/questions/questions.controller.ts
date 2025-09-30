@@ -1,28 +1,5 @@
-import {
-  Controller,
-  Get,
-  Post,
-  Body,
-  Param,
-  Delete,
-  Put,
-  HttpCode,
-  HttpStatus,
-  Query,
-  ParseUUIDPipe,
-  NotFoundException,
-  Header,
-} from '@nestjs/common';
-import {
-  ApiTags,
-  ApiCreatedResponse,
-  ApiOkResponse,
-  ApiNoContentResponse,
-  ApiOperation,
-  ApiProduces,
-  ApiResponse,
-  ApiParam,
-} from '@nestjs/swagger';
+import { Controller, Get, Post, Body, Param, Delete, Put, HttpCode, HttpStatus, Query, ParseUUIDPipe, NotFoundException, Header } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
 import { QuestionsService } from './questions.service';
 import { CreateQuestionInput } from './dto/create-question.input';
 import { CreateManyQuestionsInput } from './dto/create-many-questions.input';

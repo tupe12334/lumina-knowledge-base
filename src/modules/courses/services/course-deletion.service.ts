@@ -30,11 +30,7 @@ export class CourseDeletionService {
       await this.moduleService.handleCourseModules(tx, course, courseId, counters);
       await this.deleteCourseAndBlock(tx, course, courseId);
 
-      const typedCourse = course as {
-        name: { en_text?: string; he_text?: string };
-      };
-
-      const courseName = typedCourse.name.en_text || typedCourse.name.he_text || 'Unknown Course';
+      const courseName = course.name.en_text || course.name.he_text || 'Unknown Course';
 
       return {
         courseId,
@@ -49,38 +45,26 @@ export class CourseDeletionService {
   }
 
 
-  private async deleteCourseAndBlock(tx: unknown, course: unknown, courseId: string) {
-    const typedTx = tx as {
-      course: {
-        delete: (args: { where: { id: string } }) => Promise<unknown>;
-        findFirst: (args: { where: { translationId: string } }) => Promise<unknown | null>;
-      };
-      block: {
-        delete: (args: { where: { id: string } }) => Promise<unknown>;
-      };
-      translation: {
-        delete: (args: { where: { id: string } }) => Promise<unknown>;
-      };
-    };
+  private async deleteCourseAndBlock(tx: any, course: any, courseId: string) {
 
     const typedCourse = course as {
       Block: { id: string };
       translationId: string;
     };
 
-    await typedTx.course.delete({
+    await tx.course.delete({
       where: { id: courseId },
     });
-    await typedTx.block.delete({
-      where: { id: typedCourse.Block.id },
+    await tx.block.delete({
+      where: { id: course.Block.id },
     });
 
-    const translationUsage = await typedTx.course.findFirst({
-      where: { translationId: typedCourse.translationId },
+    const translationUsage = await tx.course.findFirst({
+      where: { translationId: course.translationId },
     });
     if (!translationUsage) {
-      await typedTx.translation.delete({
-        where: { id: typedCourse.translationId },
+      await tx.translation.delete({
+        where: { id: course.translationId },
       });
     }
   }

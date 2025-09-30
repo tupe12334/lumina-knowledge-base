@@ -35,10 +35,12 @@ export class DbRowsHealthIndicator {
   ) {}
 
   async isHealthy(
-    key = 'db_rows',
-    minRows = 100,
+    key?: string,
+    minRows?: number,
   ): Promise<HealthIndicatorResult> {
-    const indicator = this.healthIndicatorService.check(key);
+    const healthKey = key || 'db_rows';
+    const minimumRows = minRows || 100;
+    const indicator = this.healthIndicatorService.check(healthKey);
 
     const delegates: CountableDelegate[] = [
       this.prisma.institution,
@@ -61,18 +63,18 @@ export class DbRowsHealthIndicator {
     const counts = await Promise.all(delegates.map((d) => d.count()));
     const totalRows = counts.reduce((a, b) => a + b, 0);
 
-    const isUp = totalRows > minRows;
+    const isUp = totalRows > minimumRows;
 
     if (isUp) {
       return indicator.up({
         totalRows,
-        minRequired: minRows,
+        minRequired: minimumRows,
       });
     }
 
     return indicator.down({
       totalRows,
-      minRequired: minRows,
+      minRequired: minimumRows,
     });
   }
 }
