@@ -8,32 +8,26 @@ import { UpdateFacultyInput } from './dto/update-faculty.input';
 export class FacultiesService {
   constructor(private prisma: PrismaService) {}
 
+  private getFacultyInclude() {
+    return {
+      name: true,
+      description: true,
+    };
+  }
+
+  private createFacultyData(name: string, description: string, universityId: string) {
+    return {
+      institution: { connect: { id: universityId } },
+      name: { create: { en_text: name, he_text: name } },
+      description: { create: { en_text: description, he_text: description } },
+    };
+  }
+
   async create(createFacultyInput: CreateFacultyInput) {
     const { name, description, universityId } = createFacultyInput;
     return this.prisma.faculty.create({
-      data: {
-        institution: {
-          connect: {
-            id: universityId,
-          },
-        },
-        name: {
-          create: {
-            en_text: name,
-            he_text: name,
-          },
-        },
-        description: {
-          create: {
-            en_text: description,
-            he_text: description,
-          },
-        },
-      },
-      include: {
-        name: true,
-        description: true,
-      },
+      data: this.createFacultyData(name, description, universityId),
+      include: this.getFacultyInclude(),
     });
   }
 
@@ -49,25 +43,7 @@ export class FacultiesService {
       for (const facultyData of input.faculties) {
         const { name, description, universityId } = facultyData;
         await prisma.faculty.create({
-          data: {
-            institution: {
-              connect: {
-                id: universityId,
-              },
-            },
-            name: {
-              create: {
-                en_text: name,
-                he_text: name,
-              },
-            },
-            description: {
-              create: {
-                en_text: description,
-                he_text: description,
-              },
-            },
-          },
+          data: this.createFacultyData(name, description, universityId),
         });
         createdCount++;
       }
@@ -78,32 +54,21 @@ export class FacultiesService {
 
   async findAll() {
     return this.prisma.faculty.findMany({
-      include: {
-        name: true,
-        description: true,
-      },
+      include: this.getFacultyInclude(),
     });
   }
 
   async getFacultiesByInstitution(institutionId: string) {
     return this.prisma.faculty.findMany({
-      where: {
-        institutionId,
-      },
-      include: {
-        name: true,
-        description: true,
-      },
+      where: { institutionId },
+      include: this.getFacultyInclude(),
     });
   }
 
   async getFacultyById(id: string) {
     return this.prisma.faculty.findUnique({
       where: { id },
-      include: {
-        name: true,
-        description: true,
-      },
+      include: this.getFacultyInclude(),
     });
   }
 
@@ -124,10 +89,7 @@ export class FacultiesService {
             }
           : {}),
       },
-      include: {
-        name: true,
-        description: true,
-      },
+      include: this.getFacultyInclude(),
     });
   }
 

@@ -1,18 +1,4 @@
-import {
-  Controller,
-  Get,
-  Post,
-  Body,
-  Param,
-  Delete,
-  Put,
-  HttpCode,
-  HttpStatus,
-  Query,
-  ParseUUIDPipe,
-  NotFoundException,
-  Header,
-} from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Delete, Put, HttpCode, HttpStatus, Query, ParseUUIDPipe, Header } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 import { ModulesService } from './modules.service';
 import { CreateModuleInput } from './dto/create-module.input';
@@ -22,20 +8,16 @@ import { ModulesQueryDto } from './dto/modules-query.dto';
 import { CreateModuleRelationshipInput } from './dto/create-module-relationship.input';
 import { DeleteModuleRelationshipInput } from './dto/delete-module-relationship.input';
 import { ModulesApiDecorators } from './decorators/modules-api.decorators';
-
-// Type declarations for query parameter conversions
-type BooleanOrString = boolean | string;
-interface FewQuestionsQuery { fewQuestions?: BooleanOrString }
-interface HasQuestionsQuery { hasQuestions?: BooleanOrString }
-interface HasPrerequisitesQuery { hasPrerequisites?: BooleanOrString }
-interface HasPostrequisitesQuery { hasPostrequisites?: BooleanOrString }
-interface HasSubModulesQuery { hasSubModules?: BooleanOrString }
-interface HasParentModulesQuery { hasParentModules?: BooleanOrString }
+import { ModulesQueryConverterService } from './services/modules-query-converter.service';
+import { ErrorHandlerHelper } from './helpers/error-handler.helper';
 
 @ApiTags('modules')
 @Controller('modules')
 export class ModulesController {
-  constructor(private readonly modulesService: ModulesService) {}
+  constructor(
+    private readonly modulesService: ModulesService,
+    private readonly queryConverter: ModulesQueryConverterService,
+  ) {}
 
   @Post()
   @ModulesApiDecorators.Create()
@@ -60,47 +42,17 @@ export class ModulesController {
   async getModulesByQuestionCount(@Query('limit') limit?: number) {
     return this.modulesService.getModulesByQuestionCount(limit);
   }
-
   @Get()
   @ModulesApiDecorators.FindAll()
   findAll(@Query() query: ModulesQueryDto) {
-    // Create a converted query object to handle string to boolean conversion
-    const convertedQuery = { ...query };
-
-    if (typeof query.fewQuestions === 'string') {
-      const typedQuery = convertedQuery satisfies FewQuestionsQuery;
-      typedQuery.fewQuestions = String(query.fewQuestions).toLowerCase() === 'true';
-    }
-    if (typeof query.hasQuestions === 'string') {
-      const typedQuery = convertedQuery satisfies HasQuestionsQuery;
-      typedQuery.hasQuestions = String(query.hasQuestions).toLowerCase() === 'true';
-    }
-    if (typeof query.hasPrerequisites === 'string') {
-      const typedQuery = convertedQuery satisfies HasPrerequisitesQuery;
-      typedQuery.hasPrerequisites = String(query.hasPrerequisites).toLowerCase() === 'true';
-    }
-    if (typeof query.hasPostrequisites === 'string') {
-      const typedQuery = convertedQuery satisfies HasPostrequisitesQuery;
-      typedQuery.hasPostrequisites = String(query.hasPostrequisites).toLowerCase() === 'true';
-    }
-    if (typeof query.hasSubModules === 'string') {
-      const typedQuery = convertedQuery satisfies HasSubModulesQuery;
-      typedQuery.hasSubModules = String(query.hasSubModules).toLowerCase() === 'true';
-    }
-    if (typeof query.hasParentModules === 'string') {
-      const typedQuery = convertedQuery satisfies HasParentModulesQuery;
-      typedQuery.hasParentModules = String(query.hasParentModules).toLowerCase() === 'true';
-    }
-
+    const convertedQuery = this.queryConverter.convertQueryParameters(query);
     return this.modulesService.findAll(convertedQuery);
   }
-
   @Get(':id')
   @ModulesApiDecorators.FindOne()
   findOne(@Param('id') id: string) {
     return this.modulesService.findUnique(id);
   }
-
   @Put(':id')
   @ModulesApiDecorators.Update()
   update(
@@ -109,14 +61,12 @@ export class ModulesController {
   ) {
     return this.modulesService.update(id, { ...updateModuleDto, id });
   }
-
   @Delete(':id')
   @ModulesApiDecorators.Delete()
   @HttpCode(HttpStatus.NO_CONTENT)
   remove(@Param('id') id: string) {
     return this.modulesService.delete(id);
   }
-
   @Post('relationship')
   @ModulesApiDecorators.CreateRelationship()
   createRelationship(
@@ -126,7 +76,6 @@ export class ModulesController {
       createModuleRelationshipDto,
     );
   }
-
   @Delete('relationship')
   @ModulesApiDecorators.DeleteRelationship()
   deleteRelationship(
@@ -136,7 +85,6 @@ export class ModulesController {
       deleteModuleRelationshipDto,
     );
   }
-
   @Get(':id/summary')
   @ModulesApiDecorators.GetSummary()
   @Header('Content-Type', 'text/plain; charset=utf-8')
@@ -146,12 +94,7 @@ export class ModulesController {
     try {
       return await this.modulesService.generateSummary(id);
     } catch (err: unknown) {
-      if (err instanceof NotFoundException) throw new NotFoundException(err.message);
-      const message = err instanceof Error ? err.message : String(err);
-      if (message.toLowerCase().includes('not found')) {
-        throw new NotFoundException(message);
-      }
-      throw err instanceof Error ? err : new Error(String(err));
+      ErrorHandlerHelper.handleSummaryError(err);
     }
   }
 }

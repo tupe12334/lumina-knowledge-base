@@ -1,131 +1,35 @@
-import {
-  IsOptional,
-  IsInt,
-  Min,
-  IsString,
-  IsBoolean,
-  IsUUID,
-} from 'class-validator';
-import { ApiPropertyOptional } from '@nestjs/swagger';
-import { Transform, Type } from 'class-transformer';
+import { IntQueryProperty, BooleanQueryProperty, StringQueryProperty, UuidQueryProperty } from '../decorators/query-property.decorator';
 
 export class ModulesQueryDto {
-  @ApiPropertyOptional()
-  @IsOptional()
-  @IsInt()
-  @Min(0)
-  @Transform(({ value }: { value: unknown }) => {
-    const parsed = parseInt(String(value), 10);
-    return isNaN(parsed) ? undefined : parsed;
-  })
+  @IntQueryProperty()
   minQuestions?: number;
-
-  @ApiPropertyOptional()
-  @IsOptional()
-  @IsInt()
-  @Min(0)
-  @Transform(({ value }: { value: unknown }) => {
-    const parsed = parseInt(String(value), 10);
-    return isNaN(parsed) ? undefined : parsed;
-  })
+  @IntQueryProperty()
   maxQuestions?: number;
-
-  @ApiPropertyOptional()
-  @IsOptional()
-  @IsInt()
-  @Min(0)
-  @Transform(({ value }: { value: unknown }) => {
-    const parsed = parseInt(String(value), 10);
-    return isNaN(parsed) ? undefined : parsed;
-  })
+  @IntQueryProperty()
   exactQuestions?: number;
 
-  @ApiPropertyOptional()
-  @IsOptional()
-  @IsUUID()
+  @UuidQueryProperty()
   courseId?: string;
-
-  @ApiPropertyOptional()
-  @IsOptional()
-  @IsUUID()
+  @UuidQueryProperty()
   universityId?: string;
-
-  @ApiPropertyOptional()
-  @IsOptional()
-  @IsString()
+  @StringQueryProperty()
   nameSearch?: string;
 
-  @ApiPropertyOptional()
-  @IsOptional()
-  @IsBoolean()
-  @Type(() => Boolean)
-  @Transform(({ value }: { value: unknown }) => {
-    if (typeof value === 'string') {
-      return value.toLowerCase() === 'true';
-    }
-    return value;
-  })
+  @BooleanQueryProperty()
   hasQuestions?: boolean;
 
-  @ApiPropertyOptional()
-  @IsOptional()
-  @IsBoolean()
-  @Type(() => Boolean)
-  @Transform(({ value }: { value: unknown }) => {
-    if (typeof value === 'string') {
-      return value.toLowerCase() === 'true';
-    }
-    return value;
-  })
+  @BooleanQueryProperty()
   hasPrerequisites?: boolean;
 
-  @ApiPropertyOptional()
-  @IsOptional()
-  @IsBoolean()
-  @Type(() => Boolean)
-  @Transform(({ value }: { value: unknown }) => {
-    if (typeof value === 'string') {
-      return value.toLowerCase() === 'true';
-    }
-    return value;
-  })
+  @BooleanQueryProperty()
   hasPostrequisites?: boolean;
 
-  @ApiPropertyOptional()
-  @IsOptional()
-  @IsBoolean()
-  @Type(() => Boolean)
-  @Transform(({ value }: { value: unknown }) => {
-    if (typeof value === 'string') {
-      return value.toLowerCase() === 'true';
-    }
-    return value;
-  })
+  @BooleanQueryProperty()
   hasSubModules?: boolean;
 
-  @ApiPropertyOptional()
-  @IsOptional()
-  @IsBoolean()
-  @Type(() => Boolean)
-  @Transform(({ value }: { value: unknown }) => {
-    if (typeof value === 'string') {
-      return value.toLowerCase() === 'true';
-    }
-    return value;
-  })
+  @BooleanQueryProperty()
   hasParentModules?: boolean;
 
-  @ApiPropertyOptional({
-    description: 'Filter modules with fewer than 20 questions',
-  })
-  @IsOptional()
-  @IsBoolean()
-  @Type(() => Boolean)
-  @Transform(({ value }: { value: unknown }) => {
-    if (typeof value === 'string') {
-      return value.toLowerCase() === 'true';
-    }
-    return value;
-  })
+  @BooleanQueryProperty()
   fewQuestions?: boolean;
 }
