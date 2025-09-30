@@ -47,10 +47,6 @@ export class CourseDeletionService {
 
   private async deleteCourseAndBlock(tx: any, course: any, courseId: string) {
 
-    const typedCourse = course as {
-      Block: { id: string };
-      translationId: string;
-    };
 
     await tx.course.delete({
       where: { id: courseId },

@@ -6,7 +6,7 @@ import { Transform, Type } from 'class-transformer';
  * Creates a standard integer query property decorator
  */
 export const IntQueryProperty = () => {
-  return function (target: any, propertyKey: string) {
+  return function (target: object, propertyKey: string) {
     ApiPropertyOptional()(target, propertyKey);
     IsOptional()(target, propertyKey);
     IsInt()(target, propertyKey);
@@ -22,7 +22,7 @@ export const IntQueryProperty = () => {
  * Creates a standard boolean query property decorator
  */
 export const BooleanQueryProperty = () => {
-  return function (target: any, propertyKey: string) {
+  return function (target: object, propertyKey: string) {
     ApiPropertyOptional()(target, propertyKey);
     IsOptional()(target, propertyKey);
     IsBoolean()(target, propertyKey);
@@ -38,7 +38,7 @@ export const BooleanQueryProperty = () => {
  * Creates a standard string query property decorator
  */
 export const StringQueryProperty = () => {
-  return function (target: any, propertyKey: string) {
+  return function (target: object, propertyKey: string) {
     ApiPropertyOptional()(target, propertyKey);
     IsOptional()(target, propertyKey);
     IsString()(target, propertyKey);
@@ -49,7 +49,7 @@ export const StringQueryProperty = () => {
  * Creates a standard UUID query property decorator
  */
 export const UuidQueryProperty = () => {
-  return function (target: any, propertyKey: string) {
+  return function (target: object, propertyKey: string) {
     ApiPropertyOptional()(target, propertyKey);
     IsOptional()(target, propertyKey);
     IsUUID(4)(target, propertyKey);

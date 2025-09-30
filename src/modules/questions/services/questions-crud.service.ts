@@ -61,7 +61,7 @@ export class QuestionsCrudService {
     return this.questionCreator.createCompleteMany(input);
   }
 
-  async update(updateQuestionInput: UpdateQuestionInput): Promise<any> {
+  async update(updateQuestionInput: UpdateQuestionInput): Promise<Question> {
     const { id, translationId, type, moduleIds, validationStatus } = updateQuestionInput;
 
     const existingQuestion = await this.prisma.question.findUnique({

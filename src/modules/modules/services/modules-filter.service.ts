@@ -4,7 +4,10 @@ import { PrismaService } from '../../../prisma/prisma.service';
 import { ModulesQueryDto } from '../dto/modules-query.dto';
 import { ModulesQuestionFilterService } from './modules-question-filter.service';
 
-type ModuleWithCount = any & { _count: { Questions: number } };
+interface ModuleWithCount {
+  id: string;
+  _count: { Questions: number };
+}
 
 @Injectable()
 export class ModulesFilterService {

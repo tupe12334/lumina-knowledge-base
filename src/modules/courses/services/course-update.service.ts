@@ -29,7 +29,7 @@ export class CourseUpdateService {
 
     const course = await this.findCourseForUpdate(courseId);
     await this.performUpdatesInTransaction(courseId, course.translationId, input);
-    return this.findUpdatedCourse(courseId);
+    return this.findUpdatedCourse(courseId) as any;
   }
 
   private async findCourseForUpdate(courseId: string) {
