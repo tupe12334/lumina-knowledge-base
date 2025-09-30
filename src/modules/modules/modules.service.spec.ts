@@ -3,6 +3,10 @@ import { createPrismock } from 'prismock';
 import { PrismaClient } from '@prisma/client';
 import { ModulesService } from './modules.service';
 import { PrismaService } from '../../prisma/prisma.service';
+import { ModulesQueryService } from './services/modules-query.service';
+import { ModulesCrudService } from './services/modules-crud.service';
+import { ModulesRelationshipService } from './services/modules-relationship.service';
+import { ModulesSummaryService } from './services/modules-summary.service';
 import { NotFoundException } from '@nestjs/common';
 
 vi.mock('@prisma/client', async () => {
@@ -18,10 +22,24 @@ vi.mock('@prisma/client', async () => {
 
 let prisma: PrismaService;
 let service: ModulesService;
+let queryService: ModulesQueryService;
+let crudService: ModulesCrudService;
+let relationshipService: ModulesRelationshipService;
+let summaryService: ModulesSummaryService;
 
 beforeEach(() => {
   prisma = new PrismaService();
-  service = new ModulesService(prisma);
+  queryService = new ModulesQueryService(prisma);
+  crudService = new ModulesCrudService(prisma);
+  relationshipService = new ModulesRelationshipService(prisma);
+  summaryService = new ModulesSummaryService(prisma);
+  service = new ModulesService(
+    prisma,
+    queryService,
+    crudService,
+    relationshipService,
+    summaryService,
+  );
 });
 
 describe('ModulesService', () => {

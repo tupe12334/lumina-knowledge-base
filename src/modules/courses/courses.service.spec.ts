@@ -135,6 +135,7 @@ const setupTestsForCoursesService = () => {
       mockCourseDeletionService,
       mockCourseSummaryService,
       mockCourseUpdateService,
+      { setCourseModules: vi.fn() } as any,
       mockCourseCreationService,
       mockCourseQueryService
     );

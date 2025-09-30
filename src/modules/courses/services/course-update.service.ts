@@ -6,31 +6,18 @@ import {
 import { PrismaService } from '../../../prisma/prisma.service';
 import { Course } from '../models/Course.entity';
 import { UpdateCourseInput } from '../dto/update-course.input';
+import { CourseIncludesService } from './course-includes.service';
 
 @Injectable()
 export class CourseUpdateService {
-  constructor(private readonly prisma: PrismaService) {}
+  constructor(
+    private readonly prisma: PrismaService,
+    private readonly includes: CourseIncludesService,
+  ) {}
 
-  /**
-   * Generic course update supporting translation and optional fields.
-   * If no updatable fields are provided, throws BadRequest.
-   */
   async updateCourse(input: UpdateCourseInput): Promise<Course> {
     const { courseId, enText, heText, universityId, publishedAt } = input;
 
-    this.validateUpdateInput(enText, heText, universityId, publishedAt);
-    const course = await this.findCourseForUpdate(courseId);
-    await this.performUpdatesInTransaction(courseId, course.translationId, input);
-
-    return this.findUpdatedCourse(courseId);
-  }
-
-  private validateUpdateInput(
-    enText: string | null | undefined,
-    heText: string | null | undefined,
-    universityId: string | null | undefined,
-    publishedAt: Date | null | undefined,
-  ) {
     if (
       typeof enText !== 'string' &&
       typeof heText !== 'string' &&
@@ -39,6 +26,10 @@ export class CourseUpdateService {
     ) {
       throw new BadRequestException('No fields provided to update');
     }
+
+    const course = await this.findCourseForUpdate(courseId);
+    await this.performUpdatesInTransaction(courseId, course.translationId, input);
+    return this.findUpdatedCourse(courseId);
   }
 
   private async findCourseForUpdate(courseId: string) {
@@ -87,29 +78,7 @@ export class CourseUpdateService {
   private async findUpdatedCourse(courseId: string): Promise<Course> {
     const updated = await this.prisma.course.findUnique({
       where: { id: courseId },
-      include: {
-        institution: { include: { name: true } },
-        name: true,
-        Block: {
-          include: {
-            postrequisiteOf: true,
-            prerequisiteFor: true,
-          },
-        },
-        modules: {
-          include: {
-            name: true,
-            Block: {
-              include: {
-                postrequisiteOf: true,
-                prerequisiteFor: true,
-              },
-            },
-            subModules: { include: { name: true } },
-            parentModules: { include: { name: true } },
-          },
-        },
-      },
+      include: this.includes.getCourseDetailsInclude(),
     });
 
     if (!updated) {
@@ -118,7 +87,7 @@ export class CourseUpdateService {
       );
     }
 
-    return updated;
+    return updated as unknown as Course;
   }
 
 }

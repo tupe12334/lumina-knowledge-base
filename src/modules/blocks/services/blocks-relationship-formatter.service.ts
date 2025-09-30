@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { Prisma } from '@prisma/client';
 import { BlockRelationshipResult } from '../dto/block-relationship-result.type';
-import { formatRelationshipMetadata } from '../helpers/relationship-metadata.helper';
+import { formatRelationshipMetadata } from '../helpers/format-relationship-metadata.helper';
 
 type RelationshipWithIncludes = Prisma.BlockRelationshipGetPayload<{
   include: { prerequisite: true; postrequisite: true; metadata: true };

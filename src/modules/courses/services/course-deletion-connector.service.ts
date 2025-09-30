@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { CourseDeletionTransaction } from '../types/course-deletion.types';
+import { CourseDeletionTransaction } from '../types/course-deletion-transaction.type';
 
 @Injectable()
 export class CourseDeletionConnectorService {

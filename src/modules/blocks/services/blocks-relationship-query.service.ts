@@ -2,7 +2,7 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { Prisma } from '@prisma/client';
 import { PrismaService } from '../../../prisma/prisma.service';
 import { CreateBlockRelationshipInput } from '../dto/create-block-relationship.input';
-import { createValidMetadataEntries } from '../helpers/relationship-metadata.helper';
+import { createValidMetadataEntries } from '../helpers/create-valid-metadata-entries.helper';
 
 type RelationshipWithIncludes = Prisma.BlockRelationshipGetPayload<{
   include: { prerequisite: true; postrequisite: true; metadata: true };

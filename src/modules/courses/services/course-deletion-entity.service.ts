@@ -1,8 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import {
-  CourseDeletionTransaction,
-  ModuleWithBlock,
-} from '../types/course-deletion.types';
+import { CourseDeletionTransaction } from '../types/course-deletion-transaction.type';
+import { ModuleWithBlock } from '../types/module-with-block.type';
 
 @Injectable()
 export class CourseDeletionEntityService {

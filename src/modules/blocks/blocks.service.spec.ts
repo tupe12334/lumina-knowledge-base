@@ -4,6 +4,9 @@ import { BlocksService } from './blocks.service';
 import { PrismaService } from '../../prisma/prisma.service';
 import { BlocksQueryService } from './services/blocks-query.service';
 import { BlocksRelationshipService } from './services/blocks-relationship.service';
+import { BlocksRelationshipValidatorService } from './services/blocks-relationship-validator.service';
+import { BlocksRelationshipQueryService } from './services/blocks-relationship-query.service';
+import { BlocksRelationshipFormatterService } from './services/blocks-relationship-formatter.service';
 import { CreateBlockRelationshipInput } from './dto/create-block-relationship.input';
 import { DeleteBlockRelationshipInput } from './dto/delete-block-relationship.input';
 import { BadRequestException, NotFoundException } from '@nestjs/common';
@@ -22,11 +25,21 @@ let prisma: PrismaService;
 let service: BlocksService;
 let queryService: BlocksQueryService;
 let relationshipService: BlocksRelationshipService;
+let relationshipValidator: BlocksRelationshipValidatorService;
+let relationshipQuery: BlocksRelationshipQueryService;
+let relationshipFormatter: BlocksRelationshipFormatterService;
 
 beforeEach(() => {
   prisma = new PrismaService();
   queryService = new BlocksQueryService(prisma);
-  relationshipService = new BlocksRelationshipService(prisma);
+  relationshipValidator = new BlocksRelationshipValidatorService(prisma);
+  relationshipQuery = new BlocksRelationshipQueryService(prisma);
+  relationshipFormatter = new BlocksRelationshipFormatterService();
+  relationshipService = new BlocksRelationshipService(
+    relationshipValidator,
+    relationshipQuery,
+    relationshipFormatter,
+  );
   service = new BlocksService(queryService, relationshipService);
 });
 

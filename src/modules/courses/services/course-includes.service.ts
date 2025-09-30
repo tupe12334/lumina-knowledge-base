@@ -53,4 +53,30 @@ export class CourseIncludesService {
       },
     };
   }
+
+  getCourseDetailsInclude(): Prisma.CourseInclude {
+    return {
+      institution: { include: { name: true } },
+      name: true,
+      Block: {
+        include: {
+          postrequisiteOf: true,
+          prerequisiteFor: true,
+        },
+      },
+      modules: {
+        include: {
+          name: true,
+          Block: {
+            include: {
+              postrequisiteOf: true,
+              prerequisiteFor: true,
+            },
+          },
+          subModules: { include: { name: true } },
+          parentModules: { include: { name: true } },
+        },
+      },
+    };
+  }
 }

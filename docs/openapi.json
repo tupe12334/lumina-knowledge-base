@@ -860,7 +860,7 @@
         ]
       },
       "get": {
-        "description": "Returns a list of all courses. Optionally filter by university or degree.",
+        "description": "Returns a list of all courses with optional filtering.",
         "operationId": "CoursesController_findAll",
         "parameters": [
           {
@@ -971,7 +971,7 @@
             "name": "id",
             "required": true,
             "in": "path",
-            "description": "The ID of the course",
+            "description": "Course ID",
             "schema": {
               "type": "string"
             }
@@ -979,7 +979,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The course with the specified ID.",
+            "description": "The requested course.",
             "content": {
               "application/json": {
                 "schema": {
@@ -995,7 +995,7 @@
             "description": "Internal Server Error."
           }
         },
-        "summary": "Retrieve a course by ID",
+        "summary": "Retrieve a specific course",
         "tags": [
           "courses"
         ]
@@ -1008,7 +1008,7 @@
             "name": "id",
             "required": true,
             "in": "path",
-            "description": "The ID of the course",
+            "description": "Course ID",
             "schema": {
               "type": "string"
             }
@@ -1035,20 +1035,20 @@
             "description": "Internal Server Error."
           }
         },
-        "summary": "Update a course by ID",
+        "summary": "Update a course",
         "tags": [
           "courses"
         ]
       },
       "delete": {
-        "description": "Deletes a course record by its ID.",
+        "description": "Deletes a course and optionally its related data.",
         "operationId": "CoursesController_remove",
         "parameters": [
           {
             "name": "id",
             "required": true,
             "in": "path",
-            "description": "The ID of the course",
+            "description": "Course ID",
             "schema": {
               "type": "string"
             }
@@ -1058,6 +1058,9 @@
           "204": {
             "description": "Course successfully deleted."
           },
+          "400": {
+            "description": "Bad Request."
+          },
           "404": {
             "description": "Course not found."
           },
@@ -1065,7 +1068,7 @@
             "description": "Internal Server Error."
           }
         },
-        "summary": "Delete a course by ID",
+        "summary": "Delete a course",
         "tags": [
           "courses"
         ]
@@ -1074,7 +1077,7 @@
     "/courses/relationship": {
       "post": {
         "description": "Creates a new relationship between courses.",
-        "operationId": "CoursesController_createRelationship",
+        "operationId": "CoursesRelationshipController_createRelationship",
         "parameters": [],
         "requestBody": {
           "required": true,
@@ -1111,7 +1114,7 @@
       },
       "delete": {
         "description": "Deletes an existing relationship between courses.",
-        "operationId": "CoursesController_deleteRelationship",
+        "operationId": "CoursesRelationshipController_deleteRelationship",
         "parameters": [],
         "requestBody": {
           "required": true,
@@ -1143,7 +1146,7 @@
     "/courses/{id}/modules": {
       "post": {
         "description": "Sets or updates the modules associated with a course.",
-        "operationId": "CoursesController_setModules",
+        "operationId": "CoursesModuleController_setModules",
         "parameters": [
           {
             "name": "id",
@@ -1185,7 +1188,7 @@
     "/courses/{id}/summary": {
       "get": {
         "description": "Returns a human-readable plain text summary for the specified course.",
-        "operationId": "CoursesController_getSummary",
+        "operationId": "CoursesModuleController_getSummary",
         "parameters": [
           {
             "name": "id",
@@ -1263,7 +1266,7 @@
         ]
       },
       "get": {
-        "description": "Returns a list of all modules.",
+        "description": "Returns a list of all modules with optional filtering.",
         "operationId": "ModulesController_findAll",
         "parameters": [
           {
@@ -1476,7 +1479,7 @@
     },
     "/modules/by-questions": {
       "get": {
-        "description": "Returns modules sorted by question count (least questions first). Use limit query parameter to specify number of results.",
+        "description": "Returns all modules with id, en_name, and questions_amount, sorted by question count (least questions first).",
         "operationId": "ModulesController_getModulesByQuestionCount",
         "parameters": [
           {
@@ -1490,7 +1493,7 @@
         ],
         "responses": {
           "200": {
-            "description": "A list of modules sorted by question count (least to most).",
+            "description": "A list of modules with their question counts.",
             "content": {
               "application/json": {
                 "schema": {
@@ -1517,7 +1520,7 @@
             "description": "Internal Server Error."
           }
         },
-        "summary": "Get modules sorted by question count",
+        "summary": "Get modules questions data",
         "tags": [
           "modules"
         ]
@@ -1532,7 +1535,7 @@
             "name": "id",
             "required": true,
             "in": "path",
-            "description": "The ID of the module",
+            "description": "Module ID",
             "schema": {
               "type": "string"
             }
@@ -1540,7 +1543,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The module with the specified ID.",
+            "description": "The requested module.",
             "content": {
               "application/json": {
                 "schema": {
@@ -1556,7 +1559,7 @@
             "description": "Internal Server Error."
           }
         },
-        "summary": "Retrieve a module by ID",
+        "summary": "Retrieve a specific module",
         "tags": [
           "modules"
         ]
@@ -1569,7 +1572,7 @@
             "name": "id",
             "required": true,
             "in": "path",
-            "description": "The ID of the module",
+            "description": "Module ID",
             "schema": {
               "type": "string"
             }
@@ -1596,20 +1599,20 @@
             "description": "Internal Server Error."
           }
         },
-        "summary": "Update a module by ID",
+        "summary": "Update a module",
         "tags": [
           "modules"
         ]
       },
       "delete": {
-        "description": "Deletes a module record by its ID.",
+        "description": "Deletes a module record.",
         "operationId": "ModulesController_remove",
         "parameters": [
           {
             "name": "id",
             "required": true,
             "in": "path",
-            "description": "The ID of the module",
+            "description": "Module ID",
             "schema": {
               "type": "string"
             }
@@ -1626,7 +1629,7 @@
             "description": "Internal Server Error."
           }
         },
-        "summary": "Delete a module by ID",
+        "summary": "Delete a module",
         "tags": [
           "modules"
         ]
@@ -1634,7 +1637,7 @@
     },
     "/modules/relationship": {
       "post": {
-        "description": "Creates a new relationship between modules.",
+        "description": "Creates a prerequisite/postrequisite relationship between two modules.",
         "operationId": "ModulesController_createRelationship",
         "parameters": [],
         "requestBody": {
@@ -1649,7 +1652,7 @@
         },
         "responses": {
           "201": {
-            "description": "The newly created module relationship.",
+            "description": "The created relationship.",
             "content": {
               "application/json": {
                 "schema": {
@@ -1661,6 +1664,9 @@
           "400": {
             "description": "Bad Request."
           },
+          "404": {
+            "description": "Module not found."
+          },
           "500": {
             "description": "Internal Server Error."
           }
@@ -1671,7 +1677,7 @@
         ]
       },
       "delete": {
-        "description": "Deletes an existing relationship between modules.",
+        "description": "Removes a prerequisite/postrequisite relationship between two modules.",
         "operationId": "ModulesController_deleteRelationship",
         "parameters": [],
         "requestBody": {
@@ -1685,11 +1691,18 @@
           }
         },
         "responses": {
-          "204": {
-            "description": "Module relationship successfully deleted."
+          "200": {
+            "description": "The deleted relationship.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModuleRelationshipResult"
+                }
+              }
+            }
           },
           "404": {
-            "description": "Module relationship not found."
+            "description": "Relationship not found."
           },
           "500": {
             "description": "Internal Server Error."
@@ -1703,14 +1716,14 @@
     },
     "/modules/{id}/summary": {
       "get": {
-        "description": "Returns a human-readable plain text summary for the specified module.",
+        "description": "Generates a comprehensive summary of the module.",
         "operationId": "ModulesController_getSummary",
         "parameters": [
           {
             "name": "id",
             "required": true,
             "in": "path",
-            "description": "The ID of the module",
+            "description": "Module ID",
             "schema": {
               "type": "string"
             }
@@ -1718,23 +1731,21 @@
         ],
         "responses": {
           "200": {
-            "description": "Plain text summary of the module",
+            "description": "Module summary generated successfully.",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "example": "Module: Introduction to Programming..."
                 }
               }
             }
           },
-          "400": {
-            "description": "Invalid ID format"
-          },
           "404": {
-            "description": "Module not found"
+            "description": "Module not found."
           },
           "500": {
-            "description": "Internal Server Error"
+            "description": "Internal Server Error."
           }
         },
         "summary": "Get module summary",
@@ -1782,7 +1793,7 @@
         ]
       },
       "get": {
-        "description": "Returns a list of all questions.",
+        "description": "Returns a list of all questions with optional filtering.",
         "operationId": "QuestionsController_findAll",
         "parameters": [
           {
@@ -2053,7 +2064,7 @@
     },
     "/questions/paginated": {
       "get": {
-        "description": "Returns paginated questions for infinite scroll.",
+        "description": "Returns a paginated list of questions with optional filtering.",
         "operationId": "QuestionsController_findAllPaginated",
         "parameters": [
           {
@@ -2208,7 +2219,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Paginated questions with metadata.",
+            "description": "A paginated list of questions.",
             "content": {
               "application/json": {
                 "schema": {

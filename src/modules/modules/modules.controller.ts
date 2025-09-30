@@ -13,16 +13,7 @@ import {
   NotFoundException,
   Header,
 } from '@nestjs/common';
-import {
-  ApiTags,
-  ApiCreatedResponse,
-  ApiOkResponse,
-  ApiNoContentResponse,
-  ApiOperation,
-  ApiResponse,
-  ApiParam,
-  ApiProduces,
-} from '@nestjs/swagger';
+import { ApiTags } from '@nestjs/swagger';
 import { ModulesService } from './modules.service';
 import { CreateModuleInput } from './dto/create-module.input';
 import { CreateManyModulesInput } from './dto/create-many-modules.input';
@@ -30,8 +21,7 @@ import { UpdateModuleInput } from './dto/update-module.input';
 import { ModulesQueryDto } from './dto/modules-query.dto';
 import { CreateModuleRelationshipInput } from './dto/create-module-relationship.input';
 import { DeleteModuleRelationshipInput } from './dto/delete-module-relationship.input';
-import { Module } from './models/Module.entity';
-import { ModuleRelationshipResult } from './dto/module-relationship-result.dto';
+import { ModulesApiDecorators } from './decorators/modules-api.decorators';
 
 // Type declarations for query parameter conversions
 type BooleanOrString = boolean | string;
@@ -48,105 +38,31 @@ export class ModulesController {
   constructor(private readonly modulesService: ModulesService) {}
 
   @Post()
-  @ApiOperation({
-    summary: 'Create a new module',
-    description: 'Creates a new module record.',
-  })
-  @ApiCreatedResponse({
-    type: Module,
-    description: 'The newly created module.',
-  })
-  @ApiResponse({ status: 400, description: 'Bad Request.' })
-  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
+  @ModulesApiDecorators.Create()
   create(@Body() createModuleDto: CreateModuleInput) {
     return this.modulesService.create(createModuleDto);
   }
 
   @Post('bulk')
-  @ApiOperation({
-    summary: 'Create multiple modules',
-    description: 'Creates multiple module records in a single operation.',
-  })
-  @ApiCreatedResponse({
-    description: 'The number of modules created.',
-    schema: {
-      type: 'object',
-      properties: {
-        count: {
-          type: 'number',
-          description: 'Number of modules created',
-          example: 5,
-        },
-      },
-    },
-  })
-  @ApiResponse({ status: 400, description: 'Bad Request.' })
-  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
+  @ModulesApiDecorators.CreateMany()
   createMany(@Body() createManyModulesDto: CreateManyModulesInput) {
     return this.modulesService.createMany(createManyModulesDto);
   }
 
   @Get('questions-data')
-  @ApiOperation({
-    summary: 'Get modules questions data',
-    description:
-      'Returns all modules with id, en_name, and questions_amount, sorted by question count (least questions first).',
-  })
-  @ApiOkResponse({
-    description: 'A list of modules with their question counts.',
-    schema: {
-      type: 'array',
-      items: {
-        type: 'object',
-        properties: {
-          id: { type: 'string' },
-          en_name: { type: 'string' },
-          questions_amount: { type: 'number' },
-        },
-      },
-    },
-  })
-  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
+  @ModulesApiDecorators.GetQuestionsData()
   async getModulesQuestionsData() {
     return this.modulesService.getModulesSummary();
   }
 
   @Get('by-questions')
-  @ApiOperation({
-    summary: 'Get modules sorted by question count',
-    description:
-      'Returns modules sorted by question count (least questions first). Use limit query parameter to specify number of results.',
-  })
-  @ApiOkResponse({
-    description: 'A list of modules sorted by question count (least to most).',
-    schema: {
-      type: 'array',
-      items: {
-        type: 'object',
-        properties: {
-          id: { type: 'string' },
-          en_name: { type: 'string' },
-          questions_amount: { type: 'number' },
-        },
-      },
-    },
-  })
-  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
+  @ModulesApiDecorators.GetQuestionsData()
   async getModulesByQuestionCount(@Query('limit') limit?: number) {
     return this.modulesService.getModulesByQuestionCount(limit);
   }
 
   @Get()
-  @ApiOperation({
-    summary: 'Retrieve all modules',
-    description: 'Returns a list of all modules.',
-  })
-  @ApiOkResponse({
-    type: Module,
-    isArray: true,
-    description: 'A list of modules.',
-  })
-  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
+  @ModulesApiDecorators.FindAll()
   findAll(@Query() query: ModulesQueryDto) {
     // Create a converted query object to handle string to boolean conversion
     const convertedQuery = { ...query };
@@ -180,31 +96,13 @@ export class ModulesController {
   }
 
   @Get(':id')
-  @ApiOperation({
-    summary: 'Retrieve a module by ID',
-    description: 'Returns a single module by its ID.',
-  })
-  @ApiParam({ name: 'id', description: 'The ID of the module', type: String })
-  @ApiOkResponse({
-    type: Module,
-    description: 'The module with the specified ID.',
-  })
-  @ApiResponse({ status: 404, description: 'Module not found.' })
-  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
+  @ModulesApiDecorators.FindOne()
   findOne(@Param('id') id: string) {
     return this.modulesService.findUnique(id);
   }
 
   @Put(':id')
-  @ApiOperation({
-    summary: 'Update a module by ID',
-    description: 'Updates an existing module record.',
-  })
-  @ApiParam({ name: 'id', description: 'The ID of the module', type: String })
-  @ApiOkResponse({ type: Module, description: 'The updated module.' })
-  @ApiResponse({ status: 400, description: 'Bad Request.' })
-  @ApiResponse({ status: 404, description: 'Module not found.' })
-  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
+  @ModulesApiDecorators.Update()
   update(
     @Param('id') id: string,
     @Body() updateModuleDto: Omit<UpdateModuleInput, 'id'>,
@@ -213,30 +111,14 @@ export class ModulesController {
   }
 
   @Delete(':id')
-  @ApiOperation({
-    summary: 'Delete a module by ID',
-    description: 'Deletes a module record by its ID.',
-  })
-  @ApiParam({ name: 'id', description: 'The ID of the module', type: String })
+  @ModulesApiDecorators.Delete()
   @HttpCode(HttpStatus.NO_CONTENT)
-  @ApiNoContentResponse({ description: 'Module successfully deleted.' })
-  @ApiResponse({ status: 404, description: 'Module not found.' })
-  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
   remove(@Param('id') id: string) {
     return this.modulesService.delete(id);
   }
 
   @Post('relationship')
-  @ApiOperation({
-    summary: 'Create a module relationship',
-    description: 'Creates a new relationship between modules.',
-  })
-  @ApiCreatedResponse({
-    type: ModuleRelationshipResult,
-    description: 'The newly created module relationship.',
-  })
-  @ApiResponse({ status: 400, description: 'Bad Request.' })
-  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
+  @ModulesApiDecorators.CreateRelationship()
   createRelationship(
     @Body() createModuleRelationshipDto: CreateModuleRelationshipInput,
   ) {
@@ -246,15 +128,7 @@ export class ModulesController {
   }
 
   @Delete('relationship')
-  @ApiOperation({
-    summary: 'Delete a module relationship',
-    description: 'Deletes an existing relationship between modules.',
-  })
-  @ApiNoContentResponse({
-    description: 'Module relationship successfully deleted.',
-  })
-  @ApiResponse({ status: 404, description: 'Module relationship not found.' })
-  @ApiResponse({ status: 500, description: 'Internal Server Error.' })
+  @ModulesApiDecorators.DeleteRelationship()
   deleteRelationship(
     @Body() deleteModuleRelationshipDto: DeleteModuleRelationshipInput,
   ) {
@@ -264,24 +138,7 @@ export class ModulesController {
   }
 
   @Get(':id/summary')
-  @ApiOperation({
-    summary: 'Get module summary',
-    description:
-      'Returns a human-readable plain text summary for the specified module.',
-  })
-  @ApiParam({
-    name: 'id',
-    description: 'The ID of the module',
-    type: String,
-  })
-  @ApiProduces('text/plain')
-  @ApiOkResponse({
-    description: 'Plain text summary of the module',
-    schema: { type: 'string' },
-  })
-  @ApiResponse({ status: 400, description: 'Invalid ID format' })
-  @ApiResponse({ status: 404, description: 'Module not found' })
-  @ApiResponse({ status: 500, description: 'Internal Server Error' })
+  @ModulesApiDecorators.GetSummary()
   @Header('Content-Type', 'text/plain; charset=utf-8')
   async getSummary(
     @Param('id', new ParseUUIDPipe({ version: '4' })) id: string,

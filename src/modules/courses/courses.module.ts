@@ -6,6 +6,8 @@ import { CoursesController } from './courses.controller';
 import { CoursesRelationshipController } from './controllers/courses-relationship.controller';
 import { CoursesModuleController } from './controllers/courses-module.controller';
 import { CourseRelationshipService } from './services/course-relationship.service';
+import { CourseRelationshipValidatorService } from './services/course-relationship-validator.service';
+import { CourseRelationshipDatabaseService } from './services/course-relationship-database.service';
 import { CourseDeletionService } from './services/course-deletion.service';
 import { CourseDeletionQueryService } from './services/course-deletion-query.service';
 import { CourseDeletionRelationshipService } from './services/course-deletion-relationship.service';
@@ -26,6 +28,8 @@ import { CourseTextFormatterService } from './services/course-text-formatter.ser
   providers: [
     CoursesService,
     CourseRelationshipService,
+    CourseRelationshipValidatorService,
+    CourseRelationshipDatabaseService,
     CourseDeletionService,
     CourseDeletionQueryService,
     CourseDeletionRelationshipService,

@@ -3,7 +3,9 @@ import { CourseDeletionRelationshipService } from './course-deletion-relationshi
 import { CourseDeletionQuestionService } from './course-deletion-question.service';
 import { CourseDeletionEntityService } from './course-deletion-entity.service';
 import { CourseDeletionConnectorService } from './course-deletion-connector.service';
-import { CourseDeletionTransaction, ModuleForDeletion, CourseWithModules } from '../types/course-deletion.types';
+import { CourseDeletionTransaction } from '../types/course-deletion-transaction.type';
+import { ModuleForDeletion } from '../types/module-for-deletion.type';
+import { CourseWithModules } from '../types/course-with-modules.type';
 
 interface DeletionCounters {
   deletedRelationships: number;

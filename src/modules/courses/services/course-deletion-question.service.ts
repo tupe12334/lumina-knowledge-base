@@ -1,9 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import {
-  CourseDeletionTransaction,
-  ModuleWithQuestions,
-  QuestionWithAnswers
-} from '../types/course-deletion.types';
+import { CourseDeletionTransaction } from '../types/course-deletion-transaction.type';
+import { ModuleWithQuestions } from '../types/module-with-questions.type';
+import { QuestionWithAnswers } from '../types/question-with-answers.type';
 
 interface DeletionCounters {
   deletedRelationships: number;

@@ -4,7 +4,7 @@ import {
   BadRequestException,
 } from '@nestjs/common';
 import { PrismaService } from '../../../prisma/prisma.service';
-import { CourseWithModules } from '../types/course-deletion.types';
+import { CourseWithModules } from '../types/course-with-modules.type';
 
 @Injectable()
 export class CourseDeletionQueryService {
