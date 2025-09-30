@@ -29,20 +29,23 @@ export class ModulesQueryService {
   }
 
   async findAll(filters?: ModulesQueryDto) {
-    const baseInclude = this.includesService.getBaseInclude();
+    // Use course modules include when courseId is provided to get Block relationships
+    const include = filters?.courseId
+      ? this.includesService.getCourseModulesInclude()
+      : this.includesService.getBaseInclude();
     const whereClause = this.queryBuilder.buildWhereClause(filters);
 
     if (this.filterService.needsQuestionCount(filters)) {
       return this.filterService.findAllWithComplexFilters(
         filters!,
-        baseInclude,
+        include,
         whereClause,
       );
     }
 
     return this.prisma.module.findMany({
       where: whereClause,
-      include: baseInclude,
+      include: include,
     });
   }
 

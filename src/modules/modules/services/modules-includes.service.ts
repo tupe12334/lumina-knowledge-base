@@ -88,6 +88,38 @@ export class ModulesIncludesService {
   getCourseModulesInclude(): Prisma.ModuleInclude {
     return {
       name: true,
+      Block: {
+        include: {
+          prerequisiteFor: {
+            include: {
+              postrequisite: {
+                include: {
+                  Module: {
+                    include: {
+                      name: true,
+                    },
+                  },
+                },
+              },
+              metadata: true,
+            },
+          },
+          postrequisiteOf: {
+            include: {
+              prerequisite: {
+                include: {
+                  Module: {
+                    include: {
+                      name: true,
+                    },
+                  },
+                },
+              },
+              metadata: true,
+            },
+          },
+        },
+      },
       Course: {
         include: {
           name: true,
