@@ -1,7 +1,6 @@
 import { applyDecorators } from '@nestjs/common';
 import { ApiCreatedResponse, ApiNoContentResponse, ApiOkResponse, ApiOperation, ApiResponse, ApiParam } from '@nestjs/swagger';
 import { Faculty } from '../models/Faculty.entity';
-
 export const FacultiesApiDecorators = {
   Create: () =>
     applyDecorators(
@@ -16,7 +15,6 @@ export const FacultiesApiDecorators = {
       ApiResponse({ status: 400, description: 'Bad Request.' }),
       ApiResponse({ status: 500, description: 'Internal Server Error.' }),
     ),
-
   CreateMany: () =>
     applyDecorators(
       ApiOperation({
@@ -35,7 +33,6 @@ export const FacultiesApiDecorators = {
       ApiResponse({ status: 400, description: 'Bad Request.' }),
       ApiResponse({ status: 500, description: 'Internal Server Error.' }),
     ),
-
   FindAll: () =>
     applyDecorators(
       ApiOperation({
@@ -49,7 +46,6 @@ export const FacultiesApiDecorators = {
       }),
       ApiResponse({ status: 500, description: 'Internal Server Error.' }),
     ),
-
   FindOne: () =>
     applyDecorators(
       ApiOperation({
@@ -64,7 +60,6 @@ export const FacultiesApiDecorators = {
       ApiResponse({ status: 404, description: 'Faculty not found.' }),
       ApiResponse({ status: 500, description: 'Internal Server Error.' }),
     ),
-
   Update: () =>
     applyDecorators(
       ApiOperation({
@@ -77,7 +72,6 @@ export const FacultiesApiDecorators = {
       ApiResponse({ status: 404, description: 'Faculty not found.' }),
       ApiResponse({ status: 500, description: 'Internal Server Error.' }),
     ),
-
   Delete: () =>
     applyDecorators(
       ApiOperation({
@@ -89,7 +83,6 @@ export const FacultiesApiDecorators = {
       ApiResponse({ status: 404, description: 'Faculty not found.' }),
       ApiResponse({ status: 500, description: 'Internal Server Error.' }),
     ),
-
   FindByUniversity: () =>
     applyDecorators(
       ApiOperation({
@@ -104,5 +97,4 @@ export const FacultiesApiDecorators = {
       }),
       ApiResponse({ status: 404, description: 'University not found.' }),
       ApiResponse({ status: 500, description: 'Internal Server Error.' }),
-    ),
-};
+    ), };

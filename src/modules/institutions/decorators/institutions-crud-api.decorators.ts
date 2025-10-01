@@ -1,12 +1,5 @@
 import { applyDecorators } from '@nestjs/common';
-import {
-  ApiCreatedResponse,
-  ApiOkResponse,
-  ApiNoContentResponse,
-  ApiOperation,
-  ApiResponse,
-  ApiParam,
-} from '@nestjs/swagger';
+import { ApiCreatedResponse, ApiOkResponse, ApiNoContentResponse, ApiOperation, ApiResponse, ApiParam } from '@nestjs/swagger';
 import { Institution } from '../models/Institution.entity';
 
 export const InstitutionsCrudApiDecorators = {

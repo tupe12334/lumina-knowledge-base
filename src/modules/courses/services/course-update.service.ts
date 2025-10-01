@@ -3,10 +3,15 @@ import {
   NotFoundException,
   BadRequestException,
 } from '@nestjs/common';
+import { Prisma } from '@prisma/client';
 import { PrismaService } from '../../../prisma/prisma.service';
 import { Course } from '../models/Course.entity';
 import { UpdateCourseInput } from '../dto/update-course.input';
 import { CourseIncludesService } from './course-includes.service';
+
+type CourseWithDetails = Prisma.CourseGetPayload<{
+  include: ReturnType<CourseIncludesService['getCourseDetailsInclude']>;
+}>;
 
 @Injectable()
 export class CourseUpdateService {
@@ -29,7 +34,8 @@ export class CourseUpdateService {
 
     const course = await this.findCourseForUpdate(courseId);
     await this.performUpdatesInTransaction(courseId, course.translationId, input);
-    return this.findUpdatedCourse(courseId) as any;
+    const updatedCourse = await this.findUpdatedCourse(courseId);
+    return updatedCourse as unknown as Course;
   }
 
   private async findCourseForUpdate(courseId: string) {
@@ -75,7 +81,7 @@ export class CourseUpdateService {
     });
   }
 
-  private async findUpdatedCourse(courseId: string): Promise<any> {
+  private async findUpdatedCourse(courseId: string): Promise<CourseWithDetails> {
     const updated = await this.prisma.course.findUnique({
       where: { id: courseId },
       include: this.includes.getCourseDetailsInclude(),
