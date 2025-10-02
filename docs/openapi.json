@@ -1266,7 +1266,7 @@
         ]
       },
       "get": {
-        "description": "Returns a list of all modules with optional filtering.",
+        "description": "Returns a list of all modules.",
         "operationId": "ModulesController_findAll",
         "parameters": [
           {
@@ -1361,7 +1361,6 @@
             "name": "fewQuestions",
             "required": false,
             "in": "query",
-            "description": "Filter modules with fewer than 20 questions",
             "schema": {
               "type": "boolean"
             }
@@ -1535,7 +1534,7 @@
             "name": "id",
             "required": true,
             "in": "path",
-            "description": "Module ID",
+            "description": "The ID of the module",
             "schema": {
               "type": "string"
             }
@@ -1543,7 +1542,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The requested module.",
+            "description": "The module with the specified ID.",
             "content": {
               "application/json": {
                 "schema": {
@@ -1559,7 +1558,7 @@
             "description": "Internal Server Error."
           }
         },
-        "summary": "Retrieve a specific module",
+        "summary": "Retrieve a module by ID",
         "tags": [
           "modules"
         ]
@@ -1572,7 +1571,7 @@
             "name": "id",
             "required": true,
             "in": "path",
-            "description": "Module ID",
+            "description": "The ID of the module",
             "schema": {
               "type": "string"
             }
@@ -1599,20 +1598,20 @@
             "description": "Internal Server Error."
           }
         },
-        "summary": "Update a module",
+        "summary": "Update a module by ID",
         "tags": [
           "modules"
         ]
       },
       "delete": {
-        "description": "Deletes a module record.",
+        "description": "Deletes a module record by its ID.",
         "operationId": "ModulesController_remove",
         "parameters": [
           {
             "name": "id",
             "required": true,
             "in": "path",
-            "description": "Module ID",
+            "description": "The ID of the module",
             "schema": {
               "type": "string"
             }
@@ -1629,7 +1628,7 @@
             "description": "Internal Server Error."
           }
         },
-        "summary": "Delete a module",
+        "summary": "Delete a module by ID",
         "tags": [
           "modules"
         ]
@@ -3111,7 +3110,7 @@
         },
         "responses": {
           "201": {
-            "description": "Faculty created",
+            "description": "The newly created faculty.",
             "content": {
               "application/json": {
                 "schema": {
@@ -3300,7 +3299,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Faculty deleted"
+            "description": "Faculty successfully deleted."
           },
           "404": {
             "description": "Faculty not found."
