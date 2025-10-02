@@ -1,7 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { ModulesQueryDto } from '../dto/modules-query.dto';
 
-type ModuleWithCount = any & { _count: { Questions: number } };
+interface ModuleWithCount {
+  id: string;
+  _count: { Questions: number };
+}
 
 @Injectable()
 export class ModulesQuestionFilterService {

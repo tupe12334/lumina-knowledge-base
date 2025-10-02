@@ -1,9 +1,18 @@
 import { Injectable } from '@nestjs/common';
+import { Prisma } from '@prisma/client';
 import { PrismaService } from '../../../prisma/prisma.service';
 import { Degree } from '../models/Degree.entity';
 import { DegreesQueryDto } from '../dto/degrees-query.dto';
 import { DegreesIncludesService } from './degrees-includes.service';
 import { DegreesQueryBuilderService } from './degrees-query-builder.service';
+
+type DegreeWithBaseInclude = Prisma.DegreeGetPayload<{
+  include: ReturnType<DegreesIncludesService['getBaseInclude']>;
+}>;
+
+type DegreeWithDetailedInclude = Prisma.DegreeGetPayload<{
+  include: ReturnType<DegreesIncludesService['getDetailedInclude']>;
+}>;
 
 @Injectable()
 export class DegreesQueryService {
@@ -18,7 +27,7 @@ export class DegreesQueryService {
    * Includes related university and course information.
    * @returns Promise<Degree[]> Array of all degrees
    */
-  async findAll(query?: DegreesQueryDto): Promise<any[]> {
+  async findAll(query?: DegreesQueryDto): Promise<DegreeWithBaseInclude[]> {
     const degrees = await this.prisma.degree.findMany({
       where: this.queryBuilder.buildWhereClause(query),
       include: this.includesService.getBaseInclude(),
@@ -38,7 +47,7 @@ export class DegreesQueryService {
    * @param id - The unique identifier of the degree
    * @returns Promise<Degree | null> The degree if found, null otherwise
    */
-  async findUnique(id: string): Promise<any | null> {
+  async findUnique(id: string): Promise<DegreeWithDetailedInclude | null> {
     const degree = await this.prisma.degree.findUnique({
       where: { id },
       include: this.includesService.getDetailedInclude(),
@@ -56,14 +65,14 @@ export class DegreesQueryService {
    * @param universityId - The unique identifier of the university
    * @returns Promise<Degree[]> Array of degrees for the specified university
    */
-  async findByUniversityId(institutionId: string): Promise<any[]> {
+  async findByUniversityId(institutionId: string): Promise<DegreeWithDetailedInclude[]> {
     return this.prisma.degree.findMany({
       where: { institutionId },
       include: this.includesService.getDetailedInclude(),
     });
   }
 
-  async findByFacultyId(facultyId: string): Promise<any[]> {
+  async findByFacultyId(facultyId: string): Promise<DegreeWithDetailedInclude[]> {
     return this.prisma.degree.findMany({
       where: { facultyId },
       include: this.includesService.getDetailedInclude(),

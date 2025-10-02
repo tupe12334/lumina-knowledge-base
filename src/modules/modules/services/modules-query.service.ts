@@ -1,10 +1,15 @@
 import { Injectable } from '@nestjs/common';
+import { Prisma } from '@prisma/client';
 import { PrismaService } from '../../../prisma/prisma.service';
 import { Module as ModuleEntity } from '../models/Module.entity';
 import { ModulesQueryDto } from '../dto/modules-query.dto';
 import { ModulesQueryBuilderService } from './modules-query-builder.service';
 import { ModulesFilterService } from './modules-filter.service';
 import { ModulesIncludesService } from './modules-includes.service';
+
+type ModuleWithDetailedInclude = Prisma.ModuleGetPayload<{
+  include: ReturnType<ModulesIncludesService['getDetailedInclude']>;
+}>;
 
 @Injectable()
 export class ModulesQueryService {
@@ -15,7 +20,7 @@ export class ModulesQueryService {
     private readonly includesService: ModulesIncludesService,
   ) {}
 
-  async findUnique(id: string): Promise<any> {
+  async findUnique(id: string): Promise<ModuleWithDetailedInclude | null> {
     const result = await this.prisma.module.findUnique({
       where: { id },
       include: this.includesService.getDetailedInclude(),
@@ -30,7 +35,7 @@ export class ModulesQueryService {
 
   async findAll(filters?: ModulesQueryDto) {
     // Use course modules include when courseId is provided to get Block relationships
-    const include = filters?.courseId
+    const include = (filters && filters.courseId)
       ? this.includesService.getCourseModulesInclude()
       : this.includesService.getBaseInclude();
     const whereClause = this.queryBuilder.buildWhereClause(filters);

@@ -49,7 +49,8 @@ export class DegreesService {
    * @returns Promise<Degree[]> Array of all degrees
    */
   async findAll(query?: DegreesQueryDto): Promise<Degree[]> {
-    return this.queryService.findAll(query);
+    const result = await this.queryService.findAll(query);
+    return result as unknown as Degree[];
   }
 
   /**
@@ -59,7 +60,8 @@ export class DegreesService {
    * @returns Promise<Degree | null> The degree if found, null otherwise
    */
   async findUnique(id: string): Promise<Degree | null> {
-    return this.queryService.findUnique(id);
+    const result = await this.queryService.findUnique(id);
+    return result as unknown as Degree | null;
   }
 
   async update(
@@ -79,7 +81,8 @@ export class DegreesService {
    * @returns Promise<Degree[]> Array of degrees for the specified university
    */
   async findByUniversityId(institutionId: string): Promise<Degree[]> {
-    return this.queryService.findByUniversityId(institutionId);
+    const result = await this.queryService.findByUniversityId(institutionId);
+    return result as unknown as Degree[];
   }
 
   /**
@@ -88,7 +91,8 @@ export class DegreesService {
    * @returns Promise<Degree[]> Array of degrees for the specified faculty
    */
   async findByFacultyId(facultyId: string): Promise<Degree[]> {
-    return this.queryService.findByFacultyId(facultyId);
+    const result = await this.queryService.findByFacultyId(facultyId);
+    return result as unknown as Degree[];
   }
 
   /**

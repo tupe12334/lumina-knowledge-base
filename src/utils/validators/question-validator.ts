@@ -60,17 +60,20 @@ export class QuestionValidator extends BaseUuidValidator {
 
   private async replaceQuestionWithNewId(prisma: PrismaClient, question: QuestionWithRelations, newId: string) {
     await prisma.$transaction(async (tx) => {
-      await tx.question.create({
-        data: {
-          id: newId,
-          validationStatus: question.validationStatus,
-          ...(question.translationId && { translationId: question.translationId }),
-          type: question.type,
-          Modules: {
-            connect: question.Modules.map((m) => ({ id: m.id })),
-          },
-        } as any,
-      });
+      const baseData = {
+        id: newId,
+        validationStatus: question.validationStatus as any,
+        type: question.type as any,
+        Modules: {
+          connect: question.Modules.map((m) => ({ id: m.id })),
+        },
+      };
+
+      const questionCreateData: Prisma.QuestionCreateInput = question.translationId
+        ? { ...baseData, text: { connect: { id: question.translationId } } }
+        : baseData as Prisma.QuestionCreateInput;
+
+      await tx.question.create({ data: questionCreateData });
       await this.updateQuestionReferences(tx, question.id, newId);
       await this.updateQuestionRelationships(tx, question, newId);
       await tx.question.delete({ where: { id: question.id } });

@@ -4,7 +4,14 @@ import { CreateModuleRelationshipInput } from '../dto/create-module-relationship
 import { DeleteModuleRelationshipInput } from '../dto/delete-module-relationship.input';
 import { ModuleRelationshipResult } from '../dto/module-relationship-result.type';
 import { ModulesRelationshipHelperService } from './modules-relationship-helper.service';
-import { formatMetadata } from '../utils/relationship-metadata.utils';
+import { formatMetadata, RelationshipMetadata } from '../utils/relationship-metadata.utils';
+
+interface RelationshipWithMetadata {
+  id: string;
+  prerequisite: { id: string };
+  postrequisite: { id: string };
+  metadata: RelationshipMetadata[];
+}
 
 @Injectable()
 export class ModulesRelationshipService {
@@ -74,7 +81,7 @@ export class ModulesRelationshipService {
     };
   }
 
-  private formatRelationshipResult(relationship: any): ModuleRelationshipResult {
+  private formatRelationshipResult(relationship: RelationshipWithMetadata): ModuleRelationshipResult {
     const formattedMetadata = formatMetadata(relationship.metadata);
 
     return {
