@@ -7,21 +7,22 @@ import { ModulesSummaryService } from './services/modules-summary.service';
 import { NotFoundException } from '@nestjs/common';
 
 let service: ModulesService;
-let mockQueryService: Partial<ModulesQueryService>;
-let mockCrudService: Partial<ModulesCrudService>;
-let mockRelationshipService: Partial<ModulesRelationshipService>;
-let mockSummaryService: Partial<ModulesSummaryService>;
+
+const mockQueryService: Partial<ModulesQueryService> = {
+  findUnique: vi.fn(),
+  findAll: vi.fn(),
+};
+
+const mockCrudService: Partial<ModulesCrudService> = {};
+
+const mockRelationshipService: Partial<ModulesRelationshipService> = {};
+
+const mockSummaryService: Partial<ModulesSummaryService> = {
+  generateSummary: vi.fn(),
+};
 
 beforeEach(() => {
-  mockQueryService = {
-    findUnique: vi.fn(),
-    findAll: vi.fn(),
-  };
-  mockCrudService = {};
-  mockRelationshipService = {};
-  mockSummaryService = {
-    generateSummary: vi.fn(),
-  };
+  vi.clearAllMocks();
   // @ts-expect-error - Mocking services for tests
   service = new ModulesService(
     mockQueryService,
@@ -40,7 +41,8 @@ describe('ModulesService', () => {
       };
 
       if (mockQueryService.findUnique) {
-        vi.mocked(mockQueryService.findUnique).mockResolvedValue(mockModule);
+        // @ts-expect-error - Mocking partial module data for tests
+        mockQueryService.findUnique.mockResolvedValue(mockModule);
       }
 
       const result = await service.findUnique('test-module-1');
@@ -64,7 +66,8 @@ describe('ModulesService', () => {
       ];
 
       if (mockQueryService.findAll) {
-        vi.mocked(mockQueryService.findAll).mockResolvedValue(mockModules);
+        // @ts-expect-error - Mocking partial module data for tests
+        mockQueryService.findAll.mockResolvedValue(mockModules);
       }
 
       const result = await service.findAll();
@@ -78,7 +81,7 @@ describe('ModulesService', () => {
   describe('generateSummary', () => {
     it('should throw NotFoundException when module does not exist', async () => {
       if (mockSummaryService.generateSummary) {
-        vi.mocked(mockSummaryService.generateSummary).mockRejectedValue(
+        mockSummaryService.generateSummary.mockRejectedValue(
           new NotFoundException('Module with ID non-existent not found'),
         );
       }
@@ -99,7 +102,7 @@ Description: No courses
 Courses: None`;
 
       if (mockSummaryService.generateSummary) {
-        vi.mocked(mockSummaryService.generateSummary).mockResolvedValue(mockSummary);
+        mockSummaryService.generateSummary.mockResolvedValue(mockSummary);
       }
 
       const result = await service.generateSummary(moduleId);
