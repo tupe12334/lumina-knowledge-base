@@ -17,6 +17,7 @@ import { ModulesDataExtractorService } from './services/modules-data-extractor.s
 import { ModulesTextBuilderService } from './services/modules-text-builder.service';
 import { ModulesRelationshipHelperService } from './services/modules-relationship-helper.service';
 import { ModulesRelationshipQueryService } from './services/modules-relationship-query.service';
+import { ModulesQueryConverterService } from './services/modules-query-converter.service';
 
 @Module({
   imports: [PrismaModule, QuestionsModule],
@@ -36,6 +37,7 @@ import { ModulesRelationshipQueryService } from './services/modules-relationship
     ModulesTextBuilderService,
     ModulesRelationshipHelperService,
     ModulesRelationshipQueryService,
+    ModulesQueryConverterService,
   ],
   exports: [ModulesService],
   controllers: [ModulesController],
