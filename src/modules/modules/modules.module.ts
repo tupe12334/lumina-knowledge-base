@@ -16,6 +16,7 @@ import { ModulesTextSummaryService } from './services/modules-text-summary.servi
 import { ModulesDataExtractorService } from './services/modules-data-extractor.service';
 import { ModulesTextBuilderService } from './services/modules-text-builder.service';
 import { ModulesRelationshipHelperService } from './services/modules-relationship-helper.service';
+import { ModulesRelationshipQueryService } from './services/modules-relationship-query.service';
 
 @Module({
   imports: [PrismaModule, QuestionsModule],
@@ -34,6 +35,7 @@ import { ModulesRelationshipHelperService } from './services/modules-relationshi
     ModulesDataExtractorService,
     ModulesTextBuilderService,
     ModulesRelationshipHelperService,
+    ModulesRelationshipQueryService,
   ],
   exports: [ModulesService],
   controllers: [ModulesController],

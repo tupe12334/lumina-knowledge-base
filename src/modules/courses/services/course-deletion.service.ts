@@ -1,10 +1,19 @@
 import { Injectable } from '@nestjs/common';
+import { Prisma } from '@prisma/client';
 import { PrismaService } from '../../../prisma/prisma.service';
 import { DeleteCourseInput } from '../dto/delete-course.input';
 import { DeleteCourseResult } from '../dto/delete-course-result.type';
 import { CourseDeletionQueryService } from './course-deletion-query.service';
 import { CourseDeletionRelationshipService } from './course-deletion-relationship.service';
 import { CourseDeletionModuleService } from './course-deletion-module.service';
+
+type TransactionClient = Prisma.TransactionClient;
+interface CourseWithBlock {
+  id: string;
+  translationId: string;
+  Block: { id: string };
+  name: { en_text: string; he_text: string };
+}
 
 @Injectable()
 export class CourseDeletionService {
@@ -45,7 +54,7 @@ export class CourseDeletionService {
   }
 
 
-  private async deleteCourseAndBlock(tx: any, course: any, courseId: string) {
+  private async deleteCourseAndBlock(tx: TransactionClient, course: CourseWithBlock, courseId: string) {
 
 
     await tx.course.delete({

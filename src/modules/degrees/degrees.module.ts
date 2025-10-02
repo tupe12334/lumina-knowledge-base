@@ -4,6 +4,7 @@ import { PrismaModule } from '../../prisma/prisma.module';
 import { DegreesController } from './degrees.controller';
 import { DegreesSummaryService } from './services/degrees-summary.service';
 import { DegreesRelationshipService } from './services/degrees-relationship.service';
+import { DegreesCourseRelationshipService } from './services/degrees-course-relationship.service';
 import { DegreesQueryService } from './services/degrees-query.service';
 import { DegreesCrudService } from './services/degrees-crud.service';
 import { DegreesIncludesService } from './services/degrees-includes.service';
@@ -15,6 +16,7 @@ import { DegreesQueryBuilderService } from './services/degrees-query-builder.ser
     DegreesService,
     DegreesSummaryService,
     DegreesRelationshipService,
+    DegreesCourseRelationshipService,
     DegreesQueryService,
     DegreesCrudService,
     DegreesIncludesService,

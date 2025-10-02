@@ -4,6 +4,7 @@ import { CreateModuleRelationshipInput } from '../dto/create-module-relationship
 import { DeleteModuleRelationshipInput } from '../dto/delete-module-relationship.input';
 import { ModuleRelationshipResult } from '../dto/module-relationship-result.type';
 import { ModulesRelationshipHelperService } from './modules-relationship-helper.service';
+import { formatMetadata } from '../utils/relationship-metadata.utils';
 
 @Injectable()
 export class ModulesRelationshipService {
@@ -61,7 +62,7 @@ export class ModulesRelationshipService {
       modules.postrequisite,
     );
 
-    const formattedMetadata = this.helper.formatMetadata(relationship.metadata);
+    const formattedMetadata = formatMetadata(relationship.metadata);
 
     await this.helper.deleteRelationship(relationship.id);
 
@@ -74,7 +75,7 @@ export class ModulesRelationshipService {
   }
 
   private formatRelationshipResult(relationship: any): ModuleRelationshipResult {
-    const formattedMetadata = this.helper.formatMetadata(relationship.metadata);
+    const formattedMetadata = formatMetadata(relationship.metadata);
 
     return {
       id: relationship.id,
