@@ -47,7 +47,7 @@ describe('DbRowsHealthIndicator', () => {
   it('returns up when total rows > min', async () => {
     const mockHealthIndicatorService = createMockHealthIndicatorService();
 
-    const mockPrismaService: any = {
+    const mockPrismaService = {
       institution: mockDelegate(10),
       faculty: mockDelegate(10),
       degree: mockDelegate(10),
@@ -64,9 +64,10 @@ describe('DbRowsHealthIndicator', () => {
       unitAnswer: mockDelegate(10),
       numberAnswer: mockDelegate(10),
     };
-    const indicator = new DbRowsHealthIndicator(mockPrismaService, mockHealthIndicatorService as any);
+    // @ts-expect-error - Mocking PrismaService and HealthIndicatorService for tests
+    const indicator = new DbRowsHealthIndicator(mockPrismaService, mockHealthIndicatorService);
 
-    const res: any = await indicator.isHealthy('db_rows', 100);
+    const res = await indicator.isHealthy('db_rows', 100);
     expect(res.db_rows.status).toBe('up');
     expect(res.db_rows.totalRows).toBeGreaterThan(100);
   });
@@ -74,7 +75,7 @@ describe('DbRowsHealthIndicator', () => {
   it('throws HealthCheckError when total rows <= min', async () => {
     const mockHealthIndicatorService = createMockHealthIndicatorService();
 
-    const mockPrismaService: any = {
+    const mockPrismaService = {
       institution: mockDelegate(1),
       faculty: mockDelegate(1),
       degree: mockDelegate(1),
@@ -91,7 +92,8 @@ describe('DbRowsHealthIndicator', () => {
       unitAnswer: mockDelegate(1),
       numberAnswer: mockDelegate(1),
     };
-    const indicator = new DbRowsHealthIndicator(mockPrismaService, mockHealthIndicatorService as any);
+    // @ts-expect-error - Mocking PrismaService and HealthIndicatorService for tests
+    const indicator = new DbRowsHealthIndicator(mockPrismaService, mockHealthIndicatorService);
 
     await expect(indicator.isHealthy('db_rows', 100)).rejects.toMatchObject({
       message: 'db_rows',

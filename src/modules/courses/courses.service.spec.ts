@@ -14,9 +14,10 @@ import { CourseSummaryService } from './services/course-summary.service';
 import { CourseUpdateService } from './services/course-update.service';
 import { CourseCreationService } from './services/course-creation.service';
 import { CourseQueryService } from './services/course-query.service';
+import { CourseModuleService } from './services/course-module.service';
 
 // Test helpers
-const createMockPrismaService = () => ({
+const createMockPrismaService = (): Partial<PrismaService> => ({
   course: {
     findMany: vi.fn(),
     findUnique: vi.fn(),
@@ -28,33 +29,33 @@ const createMockPrismaService = () => ({
   },
 });
 
-const createMockCourseRelationshipService = () => ({
+const createMockCourseRelationshipService = (): Partial<CourseRelationshipService> => ({
   createCourseRelationship: vi.fn(),
   deleteCourseRelationship: vi.fn(),
 });
 
-const createMockCourseDeletionService = () => ({
+const createMockCourseDeletionService = (): Partial<CourseDeletionService> => ({
   deleteCourse: vi.fn(),
 });
 
-const createMockCourseSummaryService = () => ({
+const createMockCourseSummaryService = (): Partial<CourseSummaryService> => ({
   generateSummary: vi.fn(),
 });
 
-const createMockCourseUpdateService = () => ({
+const createMockCourseUpdateService = (): Partial<CourseUpdateService> => ({
   updateCourse: vi.fn(),
 });
 
-const createMockCourseModuleService = () => ({
+const createMockCourseModuleService = (): Partial<CourseModuleService> => ({
   setCourseModules: vi.fn(),
 });
 
-const createMockCourseCreationService = () => ({
+const createMockCourseCreationService = (): Partial<CourseCreationService> => ({
   create: vi.fn(),
   createMany: vi.fn(),
 });
 
-const createMockCourseQueryService = () => ({
+const createMockCourseQueryService = (): Partial<CourseQueryService> => ({
   findAll: vi.fn(),
   findUnique: vi.fn(),
 });
@@ -69,15 +70,16 @@ const createServiceForTests = (
   mockCourseCreationService: ReturnType<typeof createMockCourseCreationService> = createMockCourseCreationService(),
   mockCourseQueryService: ReturnType<typeof createMockCourseQueryService> = createMockCourseQueryService()
 ) => {
+  // @ts-expect-error - Mocking services for tests
   return new CoursesService(
-    mockPrisma as any,
-    mockCourseRelationshipService as any,
-    mockCourseDeletionService as any,
-    mockCourseSummaryService as any,
-    mockCourseUpdateService as any,
-    mockCourseModuleService as any,
-    mockCourseCreationService as any,
-    mockCourseQueryService as any
+    mockPrisma,
+    mockCourseRelationshipService,
+    mockCourseDeletionService,
+    mockCourseSummaryService,
+    mockCourseUpdateService,
+    mockCourseModuleService,
+    mockCourseCreationService,
+    mockCourseQueryService
   );
 };
 
@@ -129,13 +131,14 @@ const setupTestsForCoursesService = () => {
     mockCourseUpdateService = createMockCourseUpdateService();
     mockCourseCreationService = createMockCourseCreationService();
     mockCourseQueryService = createMockCourseQueryService();
+    const mockModuleService = createMockCourseModuleService();
     service = createServiceForTests(
       mockPrismaService,
       mockCourseRelationshipService,
       mockCourseDeletionService,
       mockCourseSummaryService,
       mockCourseUpdateService,
-      { setCourseModules: vi.fn() } as any,
+      mockModuleService,
       mockCourseCreationService,
       mockCourseQueryService
     );

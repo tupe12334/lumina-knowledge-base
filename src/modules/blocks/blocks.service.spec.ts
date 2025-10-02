@@ -12,7 +12,7 @@ import { DeleteBlockRelationshipInput } from './dto/delete-block-relationship.in
 import { BadRequestException, NotFoundException } from '@nestjs/common';
 
 vi.mock('@prisma/client', async () => {
-  const actual: any = await vi.importActual('@prisma/client');
+  const actual: { Prisma: unknown } = await vi.importActual('@prisma/client');
   const { Prisma } = actual;
 
   return {
@@ -63,10 +63,15 @@ const setupBlockTestData = async () => {
   return { moduleName, block };
 };
 
+interface BlockWithModule {
+  id: string;
+  Module?: Array<{ id: string; name?: { en_text: string } }>;
+}
+
 const validateBlockResult = (result: unknown) => {
   expect(result).toBeDefined();
 
-  const withModule: any = result;
+  const withModule: BlockWithModule = result;
 
   expect(withModule && withModule.id).toBe('b1');
   expect(withModule && withModule.Module).toHaveLength(1);

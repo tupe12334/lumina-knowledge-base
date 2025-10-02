@@ -5,7 +5,6 @@ import {
 } from '@nestjs/common';
 import { Prisma } from '@prisma/client';
 import { PrismaService } from '../../../prisma/prisma.service';
-import { Course } from '../models/Course.entity';
 import { UpdateCourseInput } from '../dto/update-course.input';
 import { CourseIncludesService } from './course-includes.service';
 
