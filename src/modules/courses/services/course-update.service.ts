@@ -20,7 +20,7 @@ export class CourseUpdateService {
     private readonly includes: CourseIncludesService,
   ) {}
 
-  async updateCourse(input: UpdateCourseInput): Promise<Course> {
+  async updateCourse(input: UpdateCourseInput) {
     const { courseId, enText, heText, universityId, publishedAt } = input;
 
     if (
@@ -34,8 +34,7 @@ export class CourseUpdateService {
 
     const course = await this.findCourseForUpdate(courseId);
     await this.performUpdatesInTransaction(courseId, course.translationId, input);
-    const updatedCourse = await this.findUpdatedCourse(courseId);
-    return updatedCourse as unknown as Course;
+    return this.findUpdatedCourse(courseId);
   }
 
   private async findCourseForUpdate(courseId: string) {

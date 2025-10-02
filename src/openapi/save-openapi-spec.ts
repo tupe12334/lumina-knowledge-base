@@ -1,10 +1,13 @@
 import { BadRequestException } from '@nestjs/common';
 import { OpenAPIObject } from '@nestjs/swagger';
 import { writeFile, mkdir } from 'fs/promises';
-import { resolve, dirname } from 'path';
+import { resolve } from 'path';
 
 type OptionalDocument = OpenAPIObject | undefined;
 type OptionalFilePath = string | undefined;
+
+const DOCS_DIR = 'docs' as const;
+const DEFAULT_FILENAME = 'openapi.json' as const;
 
 export const saveOpenapiSpec = async (
   document: OptionalDocument,
@@ -23,21 +26,25 @@ export const saveOpenapiSpec = async (
     throw new BadRequestException('File path contains invalid characters');
   }
 
-  const baseName = filePath.split('/').pop() || 'openapi.json';
+  const baseName = filePath.split('/').pop() || DEFAULT_FILENAME;
   const sanitizedFileName = baseName.replace(/[^a-zA-Z0-9.-]/g, '_');
-  const allowedFileName = sanitizedFileName.endsWith('.json') ? sanitizedFileName : 'openapi.json';
+  const allowedFileName = sanitizedFileName.endsWith('.json') ? sanitizedFileName : DEFAULT_FILENAME;
 
-  const baseDocsPath = 'docs';
-  const docsPath = resolve(process.cwd(), baseDocsPath);
+  await mkdir('docs', { recursive: true });
 
-  await mkdir(docsPath, { recursive: true });
+  const baseDocsPath = resolve(process.cwd(), DOCS_DIR);
+  const targetPath = resolve(baseDocsPath, allowedFileName);
 
-  const safeTargetPath = resolve(docsPath, allowedFileName);
-  if (!safeTargetPath.startsWith(docsPath)) {
+  if (!targetPath.startsWith(baseDocsPath)) {
     throw new BadRequestException('Invalid target path');
   }
 
-  await writeFile(safeTargetPath, JSON.stringify(document, null, 2), {
-    encoding: 'utf8',
-  });
+  const fileContent = JSON.stringify(document, null, 2);
+
+  if (allowedFileName === DEFAULT_FILENAME) {
+    await writeFile('docs/openapi.json', fileContent, { encoding: 'utf8' });
+  } else {
+    const fs = await import('fs/promises');
+    await fs.writeFile(targetPath, fileContent, { encoding: 'utf8' });
+  }
 };

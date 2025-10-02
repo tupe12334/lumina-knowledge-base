@@ -98,7 +98,7 @@ export class CoursesService {
    * Generic course update supporting translation and optional fields.
    * If no updatable fields are provided, throws BadRequest.
    */
-  async updateCourse(input: UpdateCourseInput): Promise<Course> {
+  async updateCourse(input: UpdateCourseInput) {
     return this.courseUpdateService.updateCourse(input);
   }
 

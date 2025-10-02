@@ -60,10 +60,11 @@ Question Details:
       return summary;
     } catch (error: unknown) {
       if (error instanceof NotFoundException) {
-        throw error;
+        throw new NotFoundException(error.message);
       }
+      const errorMessage = error instanceof Error ? error.message : String(error);
       throw new InternalServerErrorException(
-        `Failed to generate summary for question: ${error instanceof Error ? error.message : String(error)}`,
+        `Failed to generate summary for question: ${errorMessage}`,
       );
     }
   }

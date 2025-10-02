@@ -1,5 +1,4 @@
 import { Injectable } from '@nestjs/common';
-import { PrismaService } from '../../prisma/prisma.service';
 import { Module as ModuleEntity } from './models/Module.entity';
 import { ModulesQueryDto } from './dto/modules-query.dto';
 import { CreateModuleRelationshipInput } from './dto/create-module-relationship.input';
@@ -16,14 +15,13 @@ import { ModulesSummaryService } from './services/modules-summary.service';
 @Injectable()
 export class ModulesService {
   constructor(
-    private readonly prisma: PrismaService,
     private readonly queryService: ModulesQueryService,
     private readonly crudService: ModulesCrudService,
     private readonly relationshipService: ModulesRelationshipService,
     private readonly summaryService: ModulesSummaryService,
   ) {}
 
-  async findUnique(id: string): Promise<any> {
+  async findUnique(id: string) {
     return this.queryService.findUnique(id);
   }
 

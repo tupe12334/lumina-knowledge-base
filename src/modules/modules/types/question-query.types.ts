@@ -1,9 +1,2 @@
-import { BooleanOrString } from './base-query.types';
-
-export interface FewQuestionsQuery {
-  fewQuestions?: BooleanOrString;
-}
-
-export interface HasQuestionsQuery {
-  hasQuestions?: BooleanOrString;
-}
+export { FewQuestionsQuery } from './few-questions-query.types';
+export { HasQuestionsQuery } from './has-questions-query.types';

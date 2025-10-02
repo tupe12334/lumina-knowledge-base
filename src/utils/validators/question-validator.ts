@@ -1,12 +1,12 @@
-import { Prisma, PrismaClient } from '@prisma/client';
+import { Prisma, PrismaClient, QuestionType, QuestionValidationStatus } from '@prisma/client';
 import { BaseUuidValidator } from './base-uuid-validator';
 import { ValidationResult } from './types';
 
 interface QuestionWithRelations {
   id: string;
-  validationStatus: unknown;
-  translationId: string | null;
-  type: unknown;
+  validationStatus: QuestionValidationStatus;
+  translationId: string;
+  type: QuestionType;
   Modules: Array<{ id: string }>;
   Parts: Array<{ id: string }>;
   PartOf: Array<{ id: string }>;
@@ -60,18 +60,15 @@ export class QuestionValidator extends BaseUuidValidator {
 
   private async replaceQuestionWithNewId(prisma: PrismaClient, question: QuestionWithRelations, newId: string) {
     await prisma.$transaction(async (tx) => {
-      const baseData = {
+      const questionCreateData: Prisma.QuestionCreateInput = {
         id: newId,
-        validationStatus: question.validationStatus as any,
-        type: question.type as any,
+        validationStatus: question.validationStatus,
+        type: question.type,
+        text: { connect: { id: question.translationId } },
         Modules: {
           connect: question.Modules.map((m) => ({ id: m.id })),
         },
       };
-
-      const questionCreateData: Prisma.QuestionCreateInput = question.translationId
-        ? { ...baseData, text: { connect: { id: question.translationId } } }
-        : baseData as Prisma.QuestionCreateInput;
 
       await tx.question.create({ data: questionCreateData });
       await this.updateQuestionReferences(tx, question.id, newId);

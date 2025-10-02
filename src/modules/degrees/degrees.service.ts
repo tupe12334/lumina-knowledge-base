@@ -1,8 +1,4 @@
-import {
-  Injectable,
-  NotFoundException,
-} from '@nestjs/common';
-import { PrismaService } from '../../prisma/prisma.service';
+import { Injectable } from '@nestjs/common';
 import { Degree } from './models/Degree.entity';
 import { DegreesQueryDto } from './dto/degrees-query.dto';
 import { CreateDegreeInput } from './dto/create-degree.input';
@@ -23,7 +19,6 @@ type OptionalString = string | null;
 @Injectable()
 export class DegreesService {
   constructor(
-    private readonly prisma: PrismaService,
     private readonly summaryService: DegreesSummaryService,
     private readonly relationshipService: DegreesRelationshipService,
     private readonly queryService: DegreesQueryService,
@@ -48,9 +43,8 @@ export class DegreesService {
    * Includes related university and course information.
    * @returns Promise<Degree[]> Array of all degrees
    */
-  async findAll(query?: DegreesQueryDto): Promise<Degree[]> {
-    const result = await this.queryService.findAll(query);
-    return result as unknown as Degree[];
+  async findAll(query?: DegreesQueryDto) {
+    return this.queryService.findAll(query);
   }
 
   /**
@@ -59,9 +53,8 @@ export class DegreesService {
    * @param id - The unique identifier of the degree
    * @returns Promise<Degree | null> The degree if found, null otherwise
    */
-  async findUnique(id: string): Promise<Degree | null> {
-    const result = await this.queryService.findUnique(id);
-    return result as unknown as Degree | null;
+  async findUnique(id: string) {
+    return this.queryService.findUnique(id);
   }
 
   async update(
@@ -80,9 +73,8 @@ export class DegreesService {
    * @param universityId - The unique identifier of the university
    * @returns Promise<Degree[]> Array of degrees for the specified university
    */
-  async findByUniversityId(institutionId: string): Promise<Degree[]> {
-    const result = await this.queryService.findByUniversityId(institutionId);
-    return result as unknown as Degree[];
+  async findByUniversityId(institutionId: string) {
+    return this.queryService.findByUniversityId(institutionId);
   }
 
   /**
@@ -90,9 +82,8 @@ export class DegreesService {
    * @param facultyId - The unique identifier of the faculty
    * @returns Promise<Degree[]> Array of degrees for the specified faculty
    */
-  async findByFacultyId(facultyId: string): Promise<Degree[]> {
-    const result = await this.queryService.findByFacultyId(facultyId);
-    return result as unknown as Degree[];
+  async findByFacultyId(facultyId: string) {
+    return this.queryService.findByFacultyId(facultyId);
   }
 
   /**

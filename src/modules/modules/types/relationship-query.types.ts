@@ -1,9 +1,2 @@
-import { BooleanOrString } from './base-query.types';
-
-export interface HasPrerequisitesQuery {
-  hasPrerequisites?: BooleanOrString;
-}
-
-export interface HasPostrequisitesQuery {
-  hasPostrequisites?: BooleanOrString;
-}
+export { HasPrerequisitesQuery } from './has-prerequisites-query.types';
+export { HasPostrequisitesQuery } from './has-postrequisites-query.types';

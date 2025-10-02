@@ -1,9 +1,2 @@
-import { BooleanOrString } from './base-query.types';
-
-export interface HasSubModulesQuery {
-  hasSubModules?: BooleanOrString;
-}
-
-export interface HasParentModulesQuery {
-  hasParentModules?: BooleanOrString;
-}
+export { HasSubModulesQuery } from './has-sub-modules-query.types';
+export { HasParentModulesQuery } from './has-parent-modules-query.types';
