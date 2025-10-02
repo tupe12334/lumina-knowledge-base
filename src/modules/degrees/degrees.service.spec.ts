@@ -1,6 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { DegreesService } from './degrees.service';
-import { PrismaService } from '../../prisma/prisma.service';
 import { DegreesSummaryService } from './services/degrees-summary.service';
 import { DegreesRelationshipService } from './services/degrees-relationship.service';
 import { DegreesQueryService } from './services/degrees-query.service';
@@ -12,12 +11,6 @@ import {
 
 describe('DegreesService', () => {
   let service: DegreesService;
-  const mockPrismaService = {
-    degree: {
-      findMany: vi.fn(),
-      findUnique: vi.fn(),
-    },
-  };
 
   const mockSummaryService = {
     generateSummary: vi.fn(),
@@ -45,12 +38,12 @@ describe('DegreesService', () => {
   };
 
   beforeEach(() => {
+    // @ts-expect-error - Mocking services for tests
     service = new DegreesService(
-      mockPrismaService satisfies PrismaService,
-      mockSummaryService satisfies DegreesSummaryService,
-      mockRelationshipService satisfies DegreesRelationshipService,
-      mockQueryService satisfies DegreesQueryService,
-      mockCrudService satisfies DegreesCrudService,
+      mockSummaryService,
+      mockRelationshipService,
+      mockQueryService,
+      mockCrudService,
     );
   });
 

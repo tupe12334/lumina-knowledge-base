@@ -1,118 +1,88 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { createPrismock } from 'prismock';
-import { PrismaClient } from '@prisma/client';
 import { ModulesService } from './modules.service';
-import { PrismaService } from '../../prisma/prisma.service';
 import { ModulesQueryService } from './services/modules-query.service';
 import { ModulesCrudService } from './services/modules-crud.service';
 import { ModulesRelationshipService } from './services/modules-relationship.service';
 import { ModulesSummaryService } from './services/modules-summary.service';
 import { NotFoundException } from '@nestjs/common';
 
-vi.mock('@prisma/client', async () => {
-  const actual = (await vi.importActual(
-    '@prisma/client',
-  )) satisfies typeof import('@prisma/client');
-
-  return {
-    ...actual,
-    PrismaClient: createPrismock(actual.Prisma) satisfies typeof PrismaClient,
-  };
-});
-
-let prisma: PrismaService;
 let service: ModulesService;
-let queryService: ModulesQueryService;
-let crudService: ModulesCrudService;
-let relationshipService: ModulesRelationshipService;
-let summaryService: ModulesSummaryService;
+let mockQueryService: Partial<ModulesQueryService>;
+let mockCrudService: Partial<ModulesCrudService>;
+let mockRelationshipService: Partial<ModulesRelationshipService>;
+let mockSummaryService: Partial<ModulesSummaryService>;
 
 beforeEach(() => {
-  prisma = new PrismaService();
-  queryService = new ModulesQueryService(prisma);
-  crudService = new ModulesCrudService(prisma);
-  relationshipService = new ModulesRelationshipService(prisma);
-  summaryService = new ModulesSummaryService(prisma);
+  mockQueryService = {
+    findUnique: vi.fn(),
+    findAll: vi.fn(),
+  };
+  mockCrudService = {};
+  mockRelationshipService = {};
+  mockSummaryService = {
+    generateSummary: vi.fn(),
+  };
+  // @ts-expect-error - Mocking services for tests
   service = new ModulesService(
-    prisma,
-    queryService,
-    crudService,
-    relationshipService,
-    summaryService,
+    mockQueryService,
+    mockCrudService,
+    mockRelationshipService,
+    mockSummaryService,
   );
 });
 
 describe('ModulesService', () => {
   describe('findUnique', () => {
     it('returns module from prisma', async () => {
-      const block = await prisma.block.create({ data: {} });
-      const name1 = await prisma.translation.create({
-        data: { en_text: 'module', he_text: 'מודול' },
-      });
+      const mockModule = {
+        id: 'test-module-1',
+        name: { en_text: 'module', he_text: 'מודול' },
+      };
 
-      const moduleId = `test-module-1-${Date.now()}`;
-      await prisma.module.create({
-        data: {
-          id: moduleId,
-          translationId: name1.id,
-          blockId: block.id,
-        },
-      });
+      if (mockQueryService.findUnique) {
+        vi.mocked(mockQueryService.findUnique).mockResolvedValue(mockModule);
+      }
 
-      const result = await service.findUnique(moduleId);
+      const result = await service.findUnique('test-module-1');
 
-      expect(result && result.id).toBe(moduleId);
+      expect(result && result.id).toBe('test-module-1');
       expect(result && result.name.en_text).toBe('module');
     });
   });
 
   describe('findAll', () => {
     it('returns all modules when no filters provided', async () => {
-      const block = await prisma.block.create({ data: {} });
-      const name1 = await prisma.translation.create({
-        data: { en_text: 'module1', he_text: 'מודול1' },
-      });
-      const name2 = await prisma.translation.create({
-        data: { en_text: 'module2', he_text: 'מודול2' },
-      });
+      const mockModules = [
+        {
+          id: 'module1',
+          name: { en_text: 'module1', he_text: 'מודול1' },
+        },
+        {
+          id: 'module2',
+          name: { en_text: 'module2', he_text: 'מודול2' },
+        },
+      ];
 
-      const module1Id = `findall-m1-${Date.now()}`;
-      const module2Id = `findall-m2-${Date.now() + 1}`;
-      await prisma.module.create({
-        data: { id: module1Id, translationId: name1.id, blockId: block.id },
-      });
-      await prisma.module.create({
-        data: { id: module2Id, translationId: name2.id, blockId: block.id },
-      });
+      if (mockQueryService.findAll) {
+        vi.mocked(mockQueryService.findAll).mockResolvedValue(mockModules);
+      }
 
       const result = await service.findAll();
 
-      expect(result.length).toBeGreaterThanOrEqual(2);
-      expect(result.map((m) => m.id)).toContain(module1Id);
-      expect(result.map((m) => m.id)).toContain(module2Id);
-    });
-
-    it('filters modules by minimum question count', () => {
-      // Skip this test for now due to prismock limitations with many-to-many relations
-      // The real implementation will work correctly
-      expect(true).toBe(true);
-    });
-
-    it('filters modules by exact question count', () => {
-      // Skip this test for now due to prismock limitations with many-to-many relations
-      // The real implementation will work correctly
-      expect(true).toBe(true);
-    });
-
-    it('returns empty array when no modules match exact question count', () => {
-      // Skip this test for now due to prismock limitations with many-to-many relations
-      // The real implementation will work correctly
-      expect(true).toBe(true);
+      expect(result.length).toBe(2);
+      expect(result.map((m) => m.id)).toContain('module1');
+      expect(result.map((m) => m.id)).toContain('module2');
     });
   });
 
   describe('generateSummary', () => {
     it('should throw NotFoundException when module does not exist', async () => {
+      if (mockSummaryService.generateSummary) {
+        vi.mocked(mockSummaryService.generateSummary).mockRejectedValue(
+          new NotFoundException('Module with ID non-existent not found'),
+        );
+      }
+
       await expect(service.generateSummary('non-existent')).rejects.toThrow(
         NotFoundException,
       );
@@ -122,22 +92,15 @@ describe('ModulesService', () => {
     });
 
     it('should generate summary for module without courses', async () => {
-      const block = await prisma.block.create({ data: {} });
-      const moduleName = await prisma.translation.create({
-        data: { en_text: 'Empty Module', he_text: 'מודול ריק' },
-      });
-      const moduleDesc = await prisma.translation.create({
-        data: { en_text: 'No courses', he_text: 'אין קורסים' },
-      });
+      const moduleId = 'summary-test-module';
+      const mockSummary = `Module: Empty Module
+ID: ${moduleId}
+Description: No courses
+Courses: None`;
 
-      const moduleId = `summary-test-module-${Date.now()}`;
-      await prisma.module.create({
-        data: {
-          id: moduleId,
-          translationId: moduleName.id,
-          blockId: block.id,
-        },
-      });
+      if (mockSummaryService.generateSummary) {
+        vi.mocked(mockSummaryService.generateSummary).mockResolvedValue(mockSummary);
+      }
 
       const result = await service.generateSummary(moduleId);
 

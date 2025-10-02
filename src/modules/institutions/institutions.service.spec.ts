@@ -1,6 +1,8 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { InstitutionsService } from './institutions.service';
-import { PrismaService } from '../../prisma/prisma.service';
+import { InstitutionsQueryService } from './services/institutions-query.service';
+import { InstitutionsCrudService } from './services/institutions-crud.service';
+import { InstitutionsSummaryService } from './services/institutions-summary.service';
 import {
   NotFoundException,
   InternalServerErrorException,
@@ -8,16 +10,21 @@ import {
 
 describe('InstitutionsService', () => {
   let service: InstitutionsService;
-  let mockPrismaService: Partial<PrismaService>;
+  let mockQueryService: Partial<InstitutionsQueryService>;
+  let mockCrudService: Partial<InstitutionsCrudService>;
+  let mockSummaryService: Partial<InstitutionsSummaryService>;
 
   beforeEach(() => {
-    mockPrismaService = {
-      institution: {
-        findMany: vi.fn(),
-        findUnique: vi.fn(),
-      },
+    mockQueryService = {
+      findAll: vi.fn(),
+      findUnique: vi.fn(),
     };
-    service = new InstitutionsService(mockPrismaService);
+    mockCrudService = {};
+    mockSummaryService = {
+      generateSummary: vi.fn(),
+    };
+    // @ts-expect-error - Mocking services for tests
+    service = new InstitutionsService(mockQueryService, mockCrudService, mockSummaryService);
   });
 
   it('returns institutions from prisma', async () => {
@@ -33,8 +40,8 @@ describe('InstitutionsService', () => {
         },
       ],
     };
-    if (mockPrismaService.institution && mockPrismaService.institution.findMany) {
-      vi.mocked(mockPrismaService.institution.findMany).mockResolvedValue([institution]);
+    if (mockQueryService.findAll) {
+      vi.mocked(mockQueryService.findAll).mockResolvedValue([institution]);
     }
 
     const result = await service.findAll();
@@ -47,32 +54,17 @@ describe('InstitutionsService', () => {
 
   describe('generateSummary', () => {
     it('should generate a comprehensive institution summary', async () => {
-      const mockInstitution = {
-        id: 'inst-123',
-        name: { en_text: 'Harvard University', he_text: 'אוניברסיטת הרווארד' },
-        Faculty: [
-          { name: { en_text: 'Computer Science', he_text: 'מדעי המחשב' } },
-          { name: { en_text: 'Mathematics', he_text: 'מתמטיקה' } },
-        ],
-        Degree: [
-          {
-            name: {
-              en_text: 'BSc Computer Science',
-              he_text: 'תואר ראשון במדעי המחשב',
-            },
-          },
-          {
-            name: { en_text: 'MSc Mathematics', he_text: 'תואר שני במתמטיקה' },
-          },
-        ],
-        courses: [
-          { name: { en_text: 'Algorithms', he_text: 'אלגוריתמים' } },
-          { name: { en_text: 'Calculus', he_text: 'חשבון אינפיניטסימלי' } },
-        ],
-      };
+      const mockSummary = `Institution: Harvard University
+ID: inst-123
+Faculties: 2 faculties including Computer Science, Mathematics
+Degrees: 2 degree programs
+Courses: 2 courses offered
+Faculty Details:
+- Computer Science
+- Mathematics`;
 
-      if (mockPrismaService.institution && mockPrismaService.institution.findUnique) {
-        vi.mocked(mockPrismaService.institution.findUnique).mockResolvedValue(mockInstitution);
+      if (mockSummaryService.generateSummary) {
+        vi.mocked(mockSummaryService.generateSummary).mockResolvedValue(mockSummary);
       }
 
       const result = await service.generateSummary('inst-123');
@@ -90,16 +82,14 @@ describe('InstitutionsService', () => {
     });
 
     it('should handle institution with no faculties', async () => {
-      const mockInstitution = {
-        id: 'inst-456',
-        name: { en_text: 'Simple University', he_text: 'אוניברסיטה פשוטה' },
-        Faculty: [],
-        Degree: [],
-        courses: [],
-      };
+      const mockSummary = `Institution: Simple University
+ID: inst-456
+Faculties: 0 faculties
+Degrees: 0 degree programs
+Courses: 0 courses offered`;
 
-      if (mockPrismaService.institution && mockPrismaService.institution.findUnique) {
-        vi.mocked(mockPrismaService.institution.findUnique).mockResolvedValue(mockInstitution);
+      if (mockSummaryService.generateSummary) {
+        vi.mocked(mockSummaryService.generateSummary).mockResolvedValue(mockSummary);
       }
 
       const result = await service.generateSummary('inst-456');
@@ -112,24 +102,14 @@ describe('InstitutionsService', () => {
     });
 
     it('should handle missing English translations gracefully', async () => {
-      const mockInstitution = {
-        id: 'inst-789',
-        name: { he_text: 'אוניברסיטה עברית בלבד' },
-        Faculty: [
-          { name: { he_text: 'מדעי המחשב' } },
-        ],
-        Degree: [
-          {
-            name: { he_text: 'תואר ראשון במדעי המחשב' },
-          },
-        ],
-        courses: [
-          { name: { he_text: 'אלגוריתמים' } },
-        ],
-      };
+      const mockSummary = `Institution:
+ID: inst-789
+Faculties: 1 faculties including No English translation available
+Degrees: 1 degree programs
+Courses: 1 courses offered`;
 
-      if (mockPrismaService.institution && mockPrismaService.institution.findUnique) {
-        vi.mocked(mockPrismaService.institution.findUnique).mockResolvedValue(mockInstitution);
+      if (mockSummaryService.generateSummary) {
+        vi.mocked(mockSummaryService.generateSummary).mockResolvedValue(mockSummary);
       }
 
       const result = await service.generateSummary('inst-789');
@@ -142,7 +122,11 @@ describe('InstitutionsService', () => {
     });
 
     it('should throw NotFoundException when institution does not exist', async () => {
-      mockPrismaService.institution.findUnique.mockResolvedValue(null);
+      if (mockSummaryService.generateSummary) {
+        vi.mocked(mockSummaryService.generateSummary).mockRejectedValue(
+          new NotFoundException('Institution not found'),
+        );
+      }
 
       await expect(service.generateSummary('non-existent-id')).rejects.toThrow(
         NotFoundException,
@@ -150,9 +134,11 @@ describe('InstitutionsService', () => {
     });
 
     it('should throw InternalServerErrorException on database error', async () => {
-      mockPrismaService.institution.findUnique.mockRejectedValue(
-        new Error('Database connection failed'),
-      );
+      if (mockSummaryService.generateSummary) {
+        vi.mocked(mockSummaryService.generateSummary).mockRejectedValue(
+          new InternalServerErrorException('Database connection failed'),
+        );
+      }
 
       await expect(service.generateSummary('inst-123')).rejects.toThrow(
         InternalServerErrorException,
