@@ -1,29 +1,9 @@
 import { describe, it, expect, vi } from 'vitest';
 import { DbRowsHealthIndicator } from './db-rows.indicator';
-import type { PrismaService } from 'src/prisma/prisma.service';
-import type { HealthIndicatorService } from '@nestjs/terminus';
 
 const mockDelegate = (count: number) => ({
   count: vi.fn().mockResolvedValue(count),
 });
-
-type PrismaPickMock = Record<string, { count: () => Promise<number> }> & {
-  institution: { count: () => Promise<number> };
-  faculty: { count: () => Promise<number> };
-  degree: { count: () => Promise<number> };
-  course: { count: () => Promise<number> };
-  module: { count: () => Promise<number> };
-  block: { count: () => Promise<number> };
-  blockRelationship: { count: () => Promise<number> };
-  relationshipMetadata: { count: () => Promise<number> };
-  translation: { count: () => Promise<number> };
-  question: { count: () => Promise<number> };
-  questionPart: { count: () => Promise<number> };
-  answer: { count: () => Promise<number> };
-  selectAnswer: { count: () => Promise<number> };
-  unitAnswer: { count: () => Promise<number> };
-  numberAnswer: { count: () => Promise<number> };
-};
 
 const createMockHealthIndicatorService = () => ({
   check: vi.fn().mockImplementation((key: string) => ({
