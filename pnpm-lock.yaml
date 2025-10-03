@@ -99,6 +99,9 @@ importers:
       eslint-config-prettier:
         specifier: ^10.1.8
         version: 10.1.8(eslint@9.34.0(jiti@2.5.1))
+      eslint-plugin-ddd:
+        specifier: ^0.4.0
+        version: 0.4.0(eslint@9.34.0(jiti@2.5.1))
       eslint-plugin-prettier:
         specifier: ^5.5.4
         version: 5.5.4(@types/eslint@9.6.1)(eslint-config-prettier@10.1.8(eslint@9.34.0(jiti@2.5.1)))(eslint@9.34.0(jiti@2.5.1))(prettier@3.6.2)
@@ -2354,6 +2357,12 @@ packages:
   eslint-plugin-class-export@1.0.1:
     resolution: {integrity: sha512-LEfBQ5vOaE4Fl9UVQ8axwPNXMSQNCROr83xn7zjL5D9UoYjhXFZNjQka/2Xmod5U24ZeUI5CxjcAF8d8HHs4cw==}
     engines: {node: '>=12.0.0'}
+    peerDependencies:
+      eslint: '>=9.0.0'
+
+  eslint-plugin-ddd@0.4.0:
+    resolution: {integrity: sha512-59fFaoYiHzSAgT3aRVvHBj7DMjZir8nYsd/LJSK9RlMJjWypSn10Is8jiyJaDP20dVyVHgcY+EVn+HI9NnFyRw==}
+    engines: {node: '>=16.0.0'}
     peerDependencies:
       eslint: '>=9.0.0'
 
@@ -6568,6 +6577,10 @@ snapshots:
       - supports-color
 
   eslint-plugin-class-export@1.0.1(eslint@9.34.0(jiti@2.5.1)):
+    dependencies:
+      eslint: 9.34.0(jiti@2.5.1)
+
+  eslint-plugin-ddd@0.4.0(eslint@9.34.0(jiti@2.5.1)):
     dependencies:
       eslint: 9.34.0(jiti@2.5.1)
 
