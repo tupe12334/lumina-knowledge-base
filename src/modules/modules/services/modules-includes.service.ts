@@ -17,7 +17,12 @@ export class ModulesIncludesService {
 
   private getModuleRelationshipsInclude() {
     return {
-      subModules: { include: { name: true } },
+      subModules: {
+        include: {
+          name: true,
+          Block: this.getBlockInclude(),
+        }
+      },
       parentModules: { include: { name: true } },
     };
   }
