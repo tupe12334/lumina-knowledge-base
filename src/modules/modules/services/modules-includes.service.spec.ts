@@ -24,29 +24,16 @@ describe('ModulesIncludesService', () => {
 
       expect(result.subModules).toBeDefined();
       expect(result.subModules).toHaveProperty('include');
-
-      const subModulesInclude = result.subModules as { include: { name: boolean; Block: object } };
-      expect(subModulesInclude.include.name).toBe(true);
-      expect(subModulesInclude.include.Block).toBeDefined();
+      expect(result.subModules).toHaveProperty('include.name', true);
+      expect(result.subModules).toHaveProperty('include.Block');
     });
 
     it('should include prerequisiteFor and postrequisiteOf in Block relationships', () => {
       const result = service.getBaseInclude();
 
-      const subModulesInclude = result.subModules as {
-        include: {
-          Block: {
-            include: {
-              prerequisiteFor: object;
-              postrequisiteOf: object;
-            }
-          }
-        }
-      };
-
-      expect(subModulesInclude.include.Block).toHaveProperty('include');
-      expect(subModulesInclude.include.Block.include).toHaveProperty('prerequisiteFor');
-      expect(subModulesInclude.include.Block.include).toHaveProperty('postrequisiteOf');
+      expect(result.subModules).toHaveProperty('include.Block.include');
+      expect(result.subModules).toHaveProperty('include.Block.include.prerequisiteFor');
+      expect(result.subModules).toHaveProperty('include.Block.include.postrequisiteOf');
     });
   });
 
@@ -67,88 +54,39 @@ describe('ModulesIncludesService', () => {
       const result = service.getDetailedInclude();
 
       expect(result.Block).toBeDefined();
-      const blockInclude = result.Block as { include: { prerequisiteFor: object; postrequisiteOf: object } };
-
-      expect(blockInclude).toHaveProperty('include');
-      expect(blockInclude.include).toHaveProperty('prerequisiteFor');
-      expect(blockInclude.include).toHaveProperty('postrequisiteOf');
+      expect(result.Block).toHaveProperty('include');
+      expect(result.Block).toHaveProperty('include.prerequisiteFor');
+      expect(result.Block).toHaveProperty('include.postrequisiteOf');
     });
 
     it('should include nested Block relationships in prerequisiteFor', () => {
       const result = service.getDetailedInclude();
 
-      const blockInclude = result.Block as {
-        include: {
-          prerequisiteFor: {
-            include: {
-              postrequisite: object;
-              metadata: boolean;
-            }
-          }
-        }
-      };
-
-      expect(blockInclude.include.prerequisiteFor).toHaveProperty('include');
-      expect(blockInclude.include.prerequisiteFor.include).toHaveProperty('postrequisite');
-      expect(blockInclude.include.prerequisiteFor.include).toHaveProperty('metadata');
+      expect(result.Block).toHaveProperty('include.prerequisiteFor.include');
+      expect(result.Block).toHaveProperty('include.prerequisiteFor.include.postrequisite');
+      expect(result.Block).toHaveProperty('include.prerequisiteFor.include.metadata', true);
     });
 
     it('should include nested Block relationships in postrequisiteOf', () => {
       const result = service.getDetailedInclude();
 
-      const blockInclude = result.Block as {
-        include: {
-          postrequisiteOf: {
-            include: {
-              prerequisite: object;
-              metadata: boolean;
-            }
-          }
-        }
-      };
-
-      expect(blockInclude.include.postrequisiteOf).toHaveProperty('include');
-      expect(blockInclude.include.postrequisiteOf.include).toHaveProperty('prerequisite');
-      expect(blockInclude.include.postrequisiteOf.include).toHaveProperty('metadata');
+      expect(result.Block).toHaveProperty('include.postrequisiteOf.include');
+      expect(result.Block).toHaveProperty('include.postrequisiteOf.include.prerequisite');
+      expect(result.Block).toHaveProperty('include.postrequisiteOf.include.metadata', true);
     });
 
     it('should include Module names in prerequisite and postrequisite relationships', () => {
       const result = service.getDetailedInclude();
 
-      const blockInclude = result.Block as {
-        include: {
-          prerequisiteFor: {
-            include: {
-              postrequisite: {
-                include: {
-                  Module: { include: { name: boolean } }
-                }
-              }
-            }
-          };
-          postrequisiteOf: {
-            include: {
-              prerequisite: {
-                include: {
-                  Module: { include: { name: boolean } }
-                }
-              }
-            }
-          }
-        }
-      };
+      expect(result.Block).toHaveProperty('include.prerequisiteFor.include.postrequisite.include');
+      expect(result.Block).toHaveProperty('include.prerequisiteFor.include.postrequisite.include.Module');
+      expect(result.Block).toHaveProperty('include.prerequisiteFor.include.postrequisite.include.Module.include');
+      expect(result.Block).toHaveProperty('include.prerequisiteFor.include.postrequisite.include.Module.include.name', true);
 
-      // Check prerequisiteFor -> postrequisite -> Module -> name
-      expect(blockInclude.include.prerequisiteFor.include.postrequisite).toHaveProperty('include');
-      const prereqPostreqInclude = blockInclude.include.prerequisiteFor.include.postrequisite.include;
-      expect(prereqPostreqInclude.Module).toHaveProperty('include');
-      expect(prereqPostreqInclude.Module.include.name).toBe(true);
-
-      // Check postrequisiteOf -> prerequisite -> Module -> name
-      expect(blockInclude.include.postrequisiteOf.include.prerequisite).toHaveProperty('include');
-      const postreqPrereqInclude = blockInclude.include.postrequisiteOf.include.prerequisite.include;
-      expect(postreqPrereqInclude.Module).toHaveProperty('include');
-      expect(postreqPrereqInclude.Module.include.name).toBe(true);
+      expect(result.Block).toHaveProperty('include.postrequisiteOf.include.prerequisite.include');
+      expect(result.Block).toHaveProperty('include.postrequisiteOf.include.prerequisite.include.Module');
+      expect(result.Block).toHaveProperty('include.postrequisiteOf.include.prerequisite.include.Module.include');
+      expect(result.Block).toHaveProperty('include.postrequisiteOf.include.prerequisite.include.Module.include.name', true);
     });
   });
 
@@ -175,14 +113,8 @@ describe('ModulesIncludesService', () => {
       const baseInclude = service.getBaseInclude();
       const detailedInclude = service.getDetailedInclude();
 
-      const baseSubModulesInclude = baseInclude.subModules as {
-        include: { Block: object }
-      };
-      const detailedBlockInclude = detailedInclude.Block;
-
-      // Both should have Block with prerequisiteFor and postrequisiteOf
-      expect(baseSubModulesInclude.include.Block).toBeDefined();
-      expect(detailedBlockInclude).toBeDefined();
+      expect(baseInclude.subModules).toHaveProperty('include.Block');
+      expect(detailedInclude.Block).toBeDefined();
     });
   });
 });
