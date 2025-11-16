@@ -1,8 +1,8 @@
 #!/usr/bin/env tsx
 /**
- * Data migration script to convert existing Yes/No and True/False questions 
+ * Data migration script to convert existing Yes/No and True/False questions
  * from 'selection' type to 'boolean' type with BooleanAnswer records.
- * 
+ *
  * This script will:
  * 1. Find all selection questions with exactly 2 answers that are Yes/No or True/False
  * 2. Convert them to boolean type
@@ -23,7 +23,7 @@ interface QuestionToMigrate {
 
 async function findQuestionsToMigrate(): Promise<QuestionToMigrate[]> {
   console.log('🔍 Finding questions to migrate...');
-  
+
   // Find all selection questions with exactly 2 answers
   const questions = await prisma.question.findMany({
     where: {
@@ -55,19 +55,19 @@ async function findQuestionsToMigrate(): Promise<QuestionToMigrate[]> {
         }));
 
         // Check if it's a yes/no question
-        const isYesNoQuestion = 
-          options.some(opt => opt.text === 'yes') && 
+        const isYesNoQuestion =
+          options.some(opt => opt.text === 'yes') &&
           options.some(opt => opt.text === 'no');
 
-        // Check if it's a true/false question  
-        const isTrueFalseQuestion = 
-          options.some(opt => opt.text === 'true') && 
+        // Check if it's a true/false question
+        const isTrueFalseQuestion =
+          options.some(opt => opt.text === 'true') &&
           options.some(opt => opt.text === 'false');
 
         if (isYesNoQuestion || isTrueFalseQuestion) {
           // Determine the correct boolean value
           let correctAnswerValue: boolean;
-          
+
           if (isYesNoQuestion) {
             const correctOption = options.find(opt => opt.isCorrect);
             correctAnswerValue = correctOption?.text === 'yes';
@@ -82,7 +82,7 @@ async function findQuestionsToMigrate(): Promise<QuestionToMigrate[]> {
             answerIds: [answer.id],
             selectAnswerIds: options.map(opt => opt.id),
           });
-          
+
           console.log(`  ✅ Found question "${question.id}" - correct answer: ${correctAnswerValue}`);
         }
       }
