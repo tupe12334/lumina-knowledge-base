@@ -63,3 +63,6 @@ generated/
 tsconfig.build.tsbuildinfo
 
 .local/
+
+# Turbo
+.turbo
