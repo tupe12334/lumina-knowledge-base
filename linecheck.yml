@@ -1,0 +1,30 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/tupe12334/linecheck/main/schema/linecheck.schema.json
+
+rules:
+  - pattern: "**/*.spec.ts"
+    warn: 300
+    warn_message: "Long spec — group cases into separate spec files per behaviour"
+    error: 500
+  - pattern: "test/**/*.ts"
+    warn: 300
+    warn_message: "Long e2e spec — split by endpoint"
+    error: 500
+  - pattern: "**/*.ts"
+    warn: 200
+    warn_message: "Getting long — consider splitting into smaller modules"
+    error: 400
+    error_message: "File exceeds the hard limit — split by responsibility before merging"
+
+exclude:
+  - "node_modules/**"
+  - "dist/**"
+  - "coverage/**"
+  - "**/__snapshots__/**"
+  - "**/*.bak"
+  - "prisma/migrations/**"
+  - "pnpm-lock.yaml"
+  - "dump.sql"
+  # generated API spec dumps, not hand-written source
+  - "openapi.json"
+  - "docs/openapi.json"
+  - "prisma/main.db"
