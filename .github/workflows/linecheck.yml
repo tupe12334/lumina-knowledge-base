@@ -1,0 +1,17 @@
+name: linecheck
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run linecheck
+        uses: tupe12334/linecheck@46425a15cb028ac3bcb602cab0479e510f749d22
+        with:
+          paths: .
